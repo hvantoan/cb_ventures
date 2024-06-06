@@ -4,7 +4,7 @@ import { removeItem, setItem } from '@/utils/localStorageControl'
 import { LoginAction } from './actionCreator'
 
 const initState = {
-  login: Cookies.get('loggedIn') || '',
+  isLoggedIn: Cookies.get('loggedIn') || false,
   loading: false,
   error: '',
 }
@@ -16,7 +16,7 @@ const authReducer = createSlice({
     logOutAction(state) {
       removeItem('access_token')
       setItem('loggedIn', false)
-      state.login = JSON.stringify(false)
+      state.isLoggedIn = JSON.stringify(false)
     },
   },
   extraReducers(builder) {
@@ -26,7 +26,7 @@ const authReducer = createSlice({
       })
       .addCase(LoginAction.fulfilled, (state) => {
         state.loading = false
-        state.login = JSON.stringify(true)
+        state.isLoggedIn = JSON.stringify(true)
         setItem('loggedIn', true)
       })
       .addCase(LoginAction.rejected, (state, action) => {

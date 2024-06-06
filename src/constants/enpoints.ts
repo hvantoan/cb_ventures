@@ -1,7 +1,7 @@
 
 const Enpoints = {
-    REGISTER: "api/auth/register",
-    LOGIN: "api/auth/login",
+    REGISTER: "auth/register",
+    LOGIN: "auth/login",
 };
 
 

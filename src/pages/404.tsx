@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { Spin } from 'antd';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react'
+import { Spin } from 'antd'
+import Link from 'next/link'
 
-import Heading from '@/src/components/heading';
-import { Buttons } from '@/src/components/buttons';
-import Image from 'next/image';
+import Heading from '@/components/heading'
+import { Buttons } from '@/components/buttons'
+import Image from 'next/image'
 
 function NotFound() {
   const [state, setState] = useState({
     isLoading: true,
-  });
+  })
   useEffect(() => {
     setTimeout(() => {
-      setState({ isLoading: false });
-    }, 1500);
-  }, []);
+      setState({ isLoading: false })
+    }, 1500)
+  }, [])
 
   return (
     <main className="min-h-[715px] lg:min-h-[580px]">
@@ -42,7 +42,7 @@ function NotFound() {
         </div>
       )}
     </main>
-  );
+  )
 }
 
-export default NotFound;
+export default NotFound

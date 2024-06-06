@@ -6,29 +6,33 @@ import { useDispatch } from 'react-redux'
 import { ReactSVG } from 'react-svg'
 import { UilFacebook, UilTwitter, UilGithub } from '@iconscout/react-unicons'
 import { CheckBox } from '@/components/checkbox'
+import { AppDispatch } from '@/redux/store'
+import { LoginAction } from '@/redux/auth/actionCreator'
+import { loginReq } from '@/models/authModel'
 
 function SignIn() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
 
   const router = useRouter()
 
   // @ts-ignore
-  dispatch(logInAction())
 
-  const [data, setData] = useState({
-    email: '',
-    password: '',
+  const [data, setData] = useState<loginReq>({
+    username: 'admin',
+    password: '123',
   })
 
-  const handleLogin = async (e: any) => {
+  const handleLogin = async (req: loginReq) => {
     try {
       setError('')
       setLoading(true)
       // @ts-ignore
-      dispatch(logInAction(() => router.push('/admin')))
+      dispatch(LoginAction(req)).then(() => {
+        router.push('/')
+      })
       console.log('Succesfully Logged In!')
     } catch (err) {
       console.log(err)
@@ -48,13 +52,13 @@ function SignIn() {
 
   useEffect(() => {
     // Use Initial Email & Password
-    let email = document.querySelector('input[type="email"]')
+    let email = document.querySelector('input[type="text"]')
     let emailValue = (email as HTMLInputElement).value
     let password = document.querySelector('input[type="password"]')
     let passwordValue = (password as HTMLInputElement).value
 
     setData({
-      email: emailValue,
+      username: emailValue,
       password: passwordValue,
     })
   }, [])
@@ -64,34 +68,34 @@ function SignIn() {
       <Col xxl={6} xl={8} md={12} sm={18} xs={24}>
         <div className="mt-6 bg-white rounded-md dark:bg-white/10 shadow-regular dark:shadow-none">
           <div className="px-5 py-4 text-center border-b border-gray-200 dark:border-white/10">
-            <h2 className="mb-0 text-xl font-semibold text-dark dark:text-white/[.87]">Sign in HexaDash</h2>
+            <h2 className="mb-0 text-xl font-semibold text-dark dark:text-white/[.87]">Đăng nhập CB Ventures</h2>
           </div>
-          <div className="px-10 pt-8 pb-6">
+          <div className="px-8 pt-6 pb-4">
             <Form name="login" form={form} onFinish={handleLogin} layout="vertical">
               <Form.Item
-                name="email"
-                rules={[{ message: 'Please input your username or Email!', required: true }]}
-                initialValue="hexadash@dm.com"
-                label="Username or Email Address"
+                name="username"
+                rules={[{ message: 'Tên đăng nhập không được để trống', required: true }]}
+                initialValue={data.username}
+                label="Tên đăng nhập"
                 className="[&>div>div>label]:text-sm [&>div>div>label]:text-dark dark:[&>div>div>label]:text-white/60 [&>div>div>label]:font-medium"
               >
                 <Input
-                  type="email"
-                  value={data.email}
+                  type="text"
+                  value={data.username}
                   placeholder="name@example.com"
                   className="h-12 p-3 hover:border-primary focus:border-primary rounded-4"
                   onChange={(e: any) =>
                     setData({
                       ...data,
-                      email: e.target.value,
+                      username: e.target.value,
                     })
                   }
                 />
               </Form.Item>
               <Form.Item
                 name="password"
-                initialValue="123456"
-                label="Password"
+                initialValue="123"
+                label="Mật khẩu"
                 className="[&>div>div>label]:text-sm [&>div>div>label]:text-dark dark:[&>div>div>label]:text-white/60 [&>div>div>label]:font-medium"
               >
                 <Input.Password
@@ -103,7 +107,7 @@ function SignIn() {
                   }
                   value={data.password}
                   type="password"
-                  placeholder="Password"
+                  placeholder="Mật khẩu"
                   className="h-12 p-3 hover:border-primary focus:border-primary rounded-4"
                 />
               </Form.Item>
@@ -113,10 +117,10 @@ function SignIn() {
                   checked={state.checked}
                   className="text-xs text-light dark:text-white/60"
                 >
-                  Keep me logged in
+                  Giữ đăng nhập
                 </CheckBox>
                 <Link className=" text-primary text-13" href="/forgotPassword">
-                  Forgot password?
+                  Quên mật khẩu?
                 </Link>
               </div>
               <Form.Item>
@@ -126,7 +130,7 @@ function SignIn() {
                   type="primary"
                   size="large"
                 >
-                  {loading ? 'Loading...' : 'Sign In'}
+                  {loading ? 'Đang tải...' : 'Đăng nhập'}
                 </Button>
               </Form.Item>
               {error && <p className="text-danger mb-10 text-center text-base">{error}</p>}
@@ -141,7 +145,7 @@ function SignIn() {
                   >
                     <ReactSVG
                       className="[&>div>svg>path]:fill-google-plus group-hover:[&>div>svg>path]:fill-white"
-                      src="/hexadash-nextjs/img/icon/google-plus.svg"
+                      src="/img/icon/google-plus.svg"
                     />
                   </Link>
                 </li>
@@ -172,11 +176,11 @@ function SignIn() {
               </ul>
             </Form>
           </div>
-          <div className="p-6 text-center bg-gray-100 dark:bg-white/10 rounded-b-md">
+          <div className="p-2 text-center bg-gray-100 dark:bg-white/10 rounded-b-md">
             <p className="mb-0 text-sm font-medium text-body dark:text-white/60">
-              Don`t have an account?
+              Bạn chưa có tài khoản?
               <Link href="/register" className="ltr:ml-1.5 rtl:mr-1.5 text-info hover:text-primary">
-                Sign up
+                Đăng ký
               </Link>
             </p>
           </div>

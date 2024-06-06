@@ -21,7 +21,7 @@ import Settings from './settings'
 import PopOver from '@/components/popup'
 import Heading from '@/components/heading'
 import DropDown from '@/components/dropdown'
-import { logoutAction as logOutAction } from '@/redux/auth/reducers'
+import { logOutAction } from '@/redux/auth/reducers'
 
 const AuthInfo = React.memo((props: any) => {
   const router = useRouter()

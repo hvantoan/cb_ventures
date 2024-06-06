@@ -1,13 +1,15 @@
-import { SearchOutlined } from '@ant-design/icons';
-import { Button, Input, AutoComplete } from 'antd';
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { selectLayout } from '@/redux/rootReducers'
+import { RootState } from '@/redux/store'
+import { SearchOutlined } from '@ant-design/icons'
+import { Button, Input, AutoComplete } from 'antd'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 
-const mockVal = (str:any, repeat = 1) => ({
+const mockVal = (str: any, repeat = 1) => ({
   value: str.repeat(repeat),
-});
+})
 
-const renderItem = (title:any, count:any) => {
+const renderItem = (title: any, count: any) => {
   return {
     value: title,
     label: (
@@ -22,36 +24,32 @@ const renderItem = (title:any, count:any) => {
         {count}
       </div>
     ),
-  };
-};
+  }
+}
 
-const AutoCompleted = React.memo((props:any) => {
-  const { rtl } = useSelector((state:any) => {
-    return {
-      rtl: state.ChangeLayoutMode.rtlData,
-    };
-  });
+const AutoCompleted = React.memo((props: any) => {
+  const { rtlData } = useSelector(selectLayout)
 
-  const { customComponent, patterns, patternButtons, width, placeholder } = props;
+  const { customComponent, patterns, patternButtons, width, placeholder } = props
 
-  const [value, setValue] = useState('');
-  const [options, setOptions] = useState([]);
-  const [anotherOptions, setAnotherOptions] = useState([]);
+  const [value, setValue] = useState('')
+  const [options, setOptions] = useState([])
+  const [anotherOptions, setAnotherOptions] = useState([])
 
-  const getPanelValue = (searchText:any) =>
-    !searchText ? [] : [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)];
+  const getPanelValue = (searchText: any) =>
+    !searchText ? [] : [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)]
 
-  const onSearching = (searchText:any) => {
+  const onSearching = (searchText: any) => {
     //@ts-ignore
-    setOptions(getPanelValue(searchText));
-  };
-  
-  const onChange = (data:any) => {
-    setValue(data);
-  };
-  const onSelect = (data:any) => {
-    console.log('onSelect', data);
-  };
+    setOptions(getPanelValue(searchText))
+  }
+
+  const onChange = (data: any) => {
+    setValue(data)
+  }
+  const onSelect = (data: any) => {
+    console.log('onSelect', data)
+  }
 
   return customComponent ? (
     <AutoComplete options={options} onChange={onChange} style={{ width }} onSelect={onSelect} onSearch={onSearching}>
@@ -75,7 +73,7 @@ const AutoCompleted = React.memo((props:any) => {
           patternButtons ? (
             <Button
               className="h-[38px] rounded-tl-none rounded-bl-none"
-              style={{ [rtl ? 'marginLeft' : 'marginRight']: -20 }}
+              style={{ [rtlData ? 'marginLeft' : 'marginRight']: -20 }}
               type="primary"
             >
               <SearchOutlined className="flex text-light dark:text-white/[.87] [&>svg]:text-light dark:[&>svg]:text-white/[.87]" />
@@ -96,7 +94,7 @@ const AutoCompleted = React.memo((props:any) => {
       onChange={onChange}
       placeholder={placeholder}
     />
-  );
-});
+  )
+})
 
-export { AutoCompleted };
+export { AutoCompleted }

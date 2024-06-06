@@ -1,8 +1,7 @@
 import { Spin } from 'antd'
 import dynamic from 'next/dynamic'
-import React, { useEffect } from 'react'
+import React from 'react'
 
-import DemoOne from './admin'
 const SignIn = dynamic(() => import('../authentication/SignIn'), {
   loading: () => (
     <>
@@ -22,8 +21,7 @@ const isUserLoggedIn = () => {
 
 const Home = () => {
   const isLoggedIn = isUserLoggedIn()
-
-  return isLoggedIn ? <DemoOne /> : <SignIn />
+  return isLoggedIn ? <Home /> : <SignIn />
 }
 
 export default Home

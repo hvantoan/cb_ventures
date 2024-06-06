@@ -4,7 +4,7 @@ const config = {
   menuCollapse: false,
   topMenu: false,
   rtl: false,
-  mainTemplate: 'lightMode',
+  mainTemplate: 'darkMode',
   loggedIn: false,
   theme,
 }

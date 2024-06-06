@@ -1,80 +1,78 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from 'react';
-import Image from 'next/image';
-import {
-  UilPen,
-  UilTimes,
-} from '@iconscout/react-unicons';
-import FontAwesome from 'react-fontawesome';
-import { useSelector, useDispatch } from 'react-redux';
-import { useTranslation } from 'react-i18next';
-import { changeMenuMode, changeDirectionMode, changeLayoutMode } from '@/redux/themeLayout/actionCreator';
-import { Button } from 'antd';
+import React, { useState } from 'react'
+import Image from 'next/image'
+import { UilPen, UilTimes } from '@iconscout/react-unicons'
+import FontAwesome from 'react-fontawesome'
+import { useSelector, useDispatch } from 'react-redux'
+import { useTranslation } from 'react-i18next'
+import { changeMenuMode, changeDirectionMode, changeLayoutMode } from '@/redux/themeLayout/reducers'
+import { Button } from 'antd'
+import { AppDispatch } from '@/redux/store'
 
-const Customizer = (props:any) => {
-  const { t } = useTranslation();
+const Customizer = (props: any) => {
+  const { t } = useTranslation()
   const [state, setState] = useState({
     customizerAction: false,
-  });
+  })
 
-  const { customizerAction } = state;
+  const { customizerAction } = state
 
   // open Customizer Function
   const showCustomizer = () => {
     setState({
       customizerAction: !customizerAction,
-    });
-  };
+    })
+  }
 
-  const { rtl, layoutMode, topMenu } = useSelector((state:any) => {
+  const { rtl, layoutMode, topMenu } = useSelector((state: any) => {
     return {
       rtl: state.ChangeLayoutMode.rtlData,
       layoutMode: state.ChangeLayoutMode.mode,
       topMenu: state.ChangeLayoutMode.topMenu,
-    };
-  });
+    }
+  })
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>()
 
   const darkmodeActivated = () => {
-    document.body.classList.add('dark');
-    document.body.classList.add('dark');
-  };
+    document.body.classList.add('dark')
+    document.body.classList.add('dark')
+  }
 
   const darkmodeDeactivated = () => {
-    document.body.classList.remove('dark');
-    document.body.classList.remove('dark');
-  };
+    document.body.classList.remove('dark')
+    document.body.classList.remove('dark')
+  }
 
-  const changeLayout = (mode:string) => {
+  const changeLayout = (mode: string) => {
     // @ts-ignore
-    dispatch(changeLayoutMode(mode));
-  };
+    dispatch(changeLayoutMode(mode))
+  }
 
-  const changeNavbar = (topMode:boolean) => {
-    const html:any = document.querySelector('html');
+  const changeNavbar = (topMode: boolean) => {
+    const html: any = document.querySelector('html')
     if (topMode) {
-      html.classList.add('hexadash-topmenu');
+      html.classList.add('hexadash-topmenu')
     } else {
-      html.classList.remove('hexadash-topmenu');
+      html.classList.remove('hexadash-topmenu')
     }
 
     // @ts-ignore
-    dispatch(changeMenuMode(topMode));
-  };
+    dispatch(changeMenuMode(topMode))
+  }
 
-  const changeLayoutDirection = (rtlMode:boolean) => {
+  const changeLayoutDirection = (rtlMode: boolean) => {
     if (rtlMode) {
-      const html:any = document.querySelector('html');
-      html.setAttribute('dir', 'rtl');
+      const html: any = document.querySelector('html')
+      html.setAttribute('dir', 'rtl')
     } else {
-      const html:any = document.querySelector('html');
-      html.setAttribute('dir', 'ltr');
+      const html: any = document.querySelector('html')
+      html.setAttribute('dir', 'ltr')
     }
     // @ts-ignore
-    dispatch(changeDirectionMode(rtlMode));
-  };
+    dispatch(changeDirectionMode(rtlMode))
+  }
 
   // changeLayoutDirection(rtl);
 
@@ -83,7 +81,7 @@ const Customizer = (props:any) => {
       <Button
         className="inline-flex items-center bg-normalBG hover:bg-primary/10 hover:text-primary dark:bg-[#282b37] dark:text-white/60 min-h-[34px] sm:w-[34px] sm:justify-center px-4 sm:px-0 sm:mx-[10px] xl:mx-[12px] mx-[20px] rounded-2xl gap-[8px] dark:hover:bg-white/60 group dark:hover:text-dark border-transparent shadow-none outline-none transition duration-300"
         onClick={() => {
-          showCustomizer();
+          showCustomizer()
         }}
       >
         <UilPen className="w-3.5 h-3.5 sm:mr-0 text-body group-hover:text-primary dark:text-white/60 dark:group-hover:text-currentColor" />
@@ -100,14 +98,16 @@ const Customizer = (props:any) => {
       >
         <div className="h-full">
           <div className="relative px-6 pb-4 pt-9">
-            <h4 className="mb-0.5 text-dark dark:text-white/[.87] text-base capitalize font-semibold">{t('Customizer')}</h4>
+            <h4 className="mb-0.5 text-dark dark:text-white/[.87] text-base capitalize font-semibold">
+              {t('Customizer')}
+            </h4>
             <span className="dark:text-white/60">
               {t('Customize')} {t('your')} {t('overview')} {t('page')} {t('layout')}
             </span>
             <Button
               className="absolute border-none shadow-none top-7 ltr:right-4 rtl:left-4"
               onClick={() => {
-                showCustomizer();
+                showCustomizer()
               }}
             >
               <UilTimes className="text-danger" />
@@ -122,12 +122,12 @@ const Customizer = (props:any) => {
                 <li className="relative ">
                   <Button
                     onClick={() => {
-                      showCustomizer();
-                      changeLayoutDirection(false);
+                      showCustomizer()
+                      changeLayoutDirection(false)
                     }}
-                    className='p-0 border-none shadow-none'
+                    className="p-0 border-none shadow-none"
                   >
-                    <Image src='/img/ltr.png' alt="" width="141" height="87" />
+                    <Image src="/img/ltr.png" alt="" width="141" height="87" />
                     <FontAwesome
                       className={!rtl ? 'block absolute top-4 end-4 text-success' : 'hidden'}
                       name="check-circle"
@@ -137,17 +137,17 @@ const Customizer = (props:any) => {
                 <li className="relative">
                   <Button
                     onClick={() => {
-                      showCustomizer();
-                      changeLayoutDirection(true);
+                      showCustomizer()
+                      changeLayoutDirection(true)
                     }}
-                    className='p-0 border-none shadow-none'
+                    className="p-0 border-none shadow-none"
                   >
-                    <Image src='/img/rtl.png' alt="" width="141" height="87" />
+                    <Image src="/img/rtl.png" alt="" width="141" height="87" />
                     <FontAwesome
                       className={rtl ? 'block absolute top-4 end-4 text-success' : 'hidden'}
                       name="check-circle"
                     />
-                  </Button> 
+                  </Button>
                 </li>
               </ul>
             </div>
@@ -159,13 +159,13 @@ const Customizer = (props:any) => {
                 <li className="relative">
                   <Button
                     onClick={() => {
-                      showCustomizer();
-                      darkmodeDeactivated();
-                      changeLayout('lightMode');
+                      showCustomizer()
+                      darkmodeDeactivated()
+                      changeLayout('lightMode')
                     }}
-                    className='p-0 border-none shadow-none'
+                    className="p-0 border-none shadow-none"
                   >
-                    <Image src='/img/light.png' alt="" width="141" height="87" />
+                    <Image src="/img/light.png" alt="" width="141" height="87" />
                     <FontAwesome
                       className={layoutMode === 'lightMode' ? 'block absolute top-4 end-4 text-success' : 'hidden'}
                       name="check-circle"
@@ -175,13 +175,13 @@ const Customizer = (props:any) => {
                 <li className="relative">
                   <Button
                     onClick={() => {
-                      showCustomizer();
-                      darkmodeActivated();
-                      changeLayout('darkMode');
+                      showCustomizer()
+                      darkmodeActivated()
+                      changeLayout('darkMode')
                     }}
-                    className='p-0 border-none shadow-none'
+                    className="p-0 border-none shadow-none"
                   >
-                    <Image src='/img/dark.png' alt="" width="141" height="87" />
+                    <Image src="/img/dark.png" alt="" width="141" height="87" />
                     <FontAwesome
                       className={layoutMode === 'darkMode' ? 'block absolute top-4 end-4 text-success' : 'hidden'}
                       name="check-circle"
@@ -198,12 +198,12 @@ const Customizer = (props:any) => {
                 <li className="relative">
                   <Button
                     onClick={() => {
-                      showCustomizer();
-                      changeNavbar(false);
+                      showCustomizer()
+                      changeNavbar(false)
                     }}
-                    className='p-0 border-none shadow-none'
+                    className="p-0 border-none shadow-none"
                   >
-                    <Image src='/img/side.png' alt="" width="141" height="87" />
+                    <Image src="/img/side.png" alt="" width="141" height="87" />
                     <FontAwesome
                       className={!topMenu ? 'block absolute top-4 end-4 text-success' : 'hidden'}
                       name="check-circle"
@@ -213,12 +213,12 @@ const Customizer = (props:any) => {
                 <li className="relative">
                   <Button
                     onClick={() => {
-                      showCustomizer();
-                      changeNavbar(true);
+                      showCustomizer()
+                      changeNavbar(true)
                     }}
-                    className='p-0 border-none shadow-none'
+                    className="p-0 border-none shadow-none"
                   >
-                    <Image src='/img/top.png' alt="" width="141" height="87" />
+                    <Image src="/img/top.png" alt="" width="141" height="87" />
                     <FontAwesome
                       className={topMenu ? 'block absolute top-4 end-4 text-success' : 'hidden'}
                       name="check-circle"
@@ -231,7 +231,7 @@ const Customizer = (props:any) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Customizer;
+export default Customizer

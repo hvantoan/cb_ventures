@@ -1,24 +1,19 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { ReactSVG } from 'react-svg';
-import { Row, Col, Form, Input, Button } from 'antd';
-import {
-  UilFacebook,
-  UilTwitter,
-  UilGithub,
- } from '@iconscout/react-unicons';
+import React, { useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { ReactSVG } from 'react-svg'
+import { Row, Col, Form, Input, Button } from 'antd'
+import { UilFacebook, UilTwitter, UilGithub } from '@iconscout/react-unicons'
 
-import { useDispatch } from 'react-redux';
-import { CheckBox } from '@/components/checkbox';
-import { registerAction } from '@/redux/authentication/actionCreator';
+import { useDispatch } from 'react-redux'
+import { CheckBox } from '@/components/checkbox'
+import { RegisterAction } from '@/redux/auth/actionCreator'
 
 function SignUp() {
+  const [error, setError] = useState('')
 
-  const [error, setError] = useState("");
-
-  const router = useRouter();
-  const dispatch = useDispatch();
+  const router = useRouter()
+  const dispatch = useDispatch()
 
   const [data, setData] = useState({
     name: '',
@@ -27,27 +22,26 @@ function SignUp() {
   })
 
   const handleSignup = async (e: any) => {
-    if(data.password.length < 6) {
-      setError("Password should be at least 6 characters");
-      return;
+    if (data.password.length < 6) {
+      setError('Mật khẩu phải có ít nhất 6 ký tự!')
+      return
     }
     try {
-      await signup(data.email, data.password, data.name)
       // @ts-ignore
-      dispatch(registerAction(() => router.push('/admin')));
+      dispatch(RegisterAction())
     } catch (err) {
       console.log(err)
-      setError("Failed to SignUp!");
+      setError('Failed to SignUp!')
     }
   }
 
   const [state, setState] = useState({
     checked: false,
-  });
+  })
 
-  const onChange = (checked:any) => {
-    setState({ ...state, checked });
-  };
+  const onChange = (checked: any) => {
+    setState({ ...state, checked })
+  }
 
   return (
     <Row justify="center">
@@ -64,8 +58,8 @@ function SignUp() {
                 className="[&>div>div>label]:text-sm [&>div>div>label]:text-dark dark:[&>div>div>label]:text-white/60 [&>div>div>label]:font-medium"
                 rules={[{ required: true, message: 'Please input your Full name!' }]}
               >
-                <Input 
-                  placeholder="Full name" 
+                <Input
+                  placeholder="Full name"
                   onChange={(e: any) =>
                     setData({
                       ...data,
@@ -77,12 +71,12 @@ function SignUp() {
                 />
               </Form.Item>
               <Form.Item
-                name="email"
-                label="Email Address"
+                name="username"
+                label="Tên đăng nhập"
                 className="[&>div>div>label]:text-sm [&>div>div>label]:text-dark dark:[&>div>div>label]:text-white/60 [&>div>div>label]:font-medium"
-                rules={[{ required: true, message: 'Please input your email!', type: 'email' }]}
+                rules={[{ required: true, message: 'Tên đăng nhập không được để trống' }]}
               >
-                <Input 
+                <Input
                   placeholder="name@example.com"
                   onChange={(e: any) =>
                     setData({
@@ -100,7 +94,7 @@ function SignUp() {
                 className="[&>div>div>label]:text-sm [&>div>div>label]:text-dark dark:[&>div>div>label]:text-white/60 [&>div>div>label]:font-medium"
                 rules={[{ required: true, message: 'Please input your password!' }]}
               >
-                <Input.Password 
+                <Input.Password
                   placeholder="Password"
                   onChange={(e: any) =>
                     setData({
@@ -108,7 +102,7 @@ function SignUp() {
                       password: e.target.value,
                     })
                   }
-                  value={data.password} 
+                  value={data.password}
                   className="h-12 p-3 hover:border-primary focus:border-primary rounded-4"
                 />
               </Form.Item>
@@ -140,7 +134,7 @@ function SignUp() {
                   >
                     <ReactSVG
                       className="[&>div>svg>path]:fill-google-plus group-hover:[&>div>svg>path]:fill-white"
-                      src='/hexadash-nextjs/img/icon/google-plus.svg'
+                      src="/img/icon/google-plus.svg"
                     />
                   </Link>
                 </li>
@@ -182,7 +176,7 @@ function SignUp() {
         </div>
       </Col>
     </Row>
-  );
+  )
 }
 
-export default SignUp;
+export default SignUp

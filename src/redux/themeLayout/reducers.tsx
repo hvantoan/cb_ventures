@@ -1,7 +1,19 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import staticData from '../../config/config'
 
-const initialState = {
+interface layout {
+  rtlData: boolean
+  topMenu: boolean
+  mode: string
+  menuCollapse: boolean
+  loading: boolean
+  rtlLoading: boolean
+  menuLoading: boolean
+  mainContentLoading: boolean
+  error: null
+}
+
+const initLayout: layout = {
   rtlData: staticData.rtl,
   topMenu: staticData.topMenu,
   mode: staticData.mainTemplate,
@@ -14,7 +26,7 @@ const initialState = {
 }
 
 const layoutReducer = createSlice({
-  initialState,
+  initialState: initLayout,
   name: 'layout',
   reducers: {
     changeLayoutMode(state, action: PayloadAction<string>) {

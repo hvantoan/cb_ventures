@@ -51,8 +51,6 @@ import versions from '../demoData/changelog.json'
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { changeMenuMode, changeDirectionMode, changeLayoutMode } from '../redux/themeLayout/actionCreator'
-
 function MenuItems() {
   const path = '/admin'
   const { t } = useTranslation()

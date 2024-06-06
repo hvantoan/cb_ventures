@@ -1,6 +1,6 @@
-import { Spin } from 'antd';
+import { Spin } from 'antd'
 import dynamic from 'next/dynamic'
-import React from 'react';
+import React from 'react'
 
 const SignUp = dynamic(() => import('../authentication/SignUp'), {
   loading: () => (
@@ -10,12 +10,10 @@ const SignUp = dynamic(() => import('../authentication/SignUp'), {
       </div>
     </>
   ),
-});
+})
 
 const Register = () => {
-  return (
-    <SignUp />
-  );
-};
+  return <SignUp />
+}
 
-export default Register;
+export default Register

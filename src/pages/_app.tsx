@@ -2,16 +2,18 @@ import '@/styles/globals.css'
 import { useRouter } from 'next/router'
 import type { AppProps } from 'next/app'
 
-import { Provider } from 'react-redux'
 import AdminLayout from './adminLayout'
 import AuthLayout from './authLayout'
-import { store } from '../redux/store'
 import '../i18n/config'
+import { wrapper } from '@/redux/store'
+import { FC } from 'react'
+import { Provider } from 'react-redux'
 
-function App({ Component, pageProps }: AppProps) {
+const App: FC<AppProps> = ({ Component, ...rest }) => {
   const router = useRouter()
   const { pathname } = router
-
+  const { store, props } = wrapper.useWrappedStore(rest)
+  const { pageProps } = props
   const renderLayout = () => {
     if (
       pathname == '/' ||
@@ -39,5 +41,4 @@ function App({ Component, pageProps }: AppProps) {
     </>
   )
 }
-
-export default App
+export default wrapper.withRedux(App)
