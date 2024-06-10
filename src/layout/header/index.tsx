@@ -12,20 +12,24 @@ import { Col, Layout, Row } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeMenuCollapse } from '@/redux/themeLayout/reducers'
 import { AppDispatch } from '@/redux/store'
+import { createSelector } from '@reduxjs/toolkit'
+import { selectLayout } from '@/redux/rootReducers'
 
 const { Header } = Layout
 
 const HeaderTop = () => {
   const [hide, setHide] = useState(true)
 
-  const { rtl, layoutMode, topMenu, collapsed } = useSelector((state: any) => {
+  var selectLayoutSetting = createSelector(selectLayout, (layout) => {
     return {
-      rtl: state.ChangeLayoutMode.rtlData,
-      layoutMode: state.ChangeLayoutMode.mode,
-      topMenu: state.ChangeLayoutMode.topMenu,
-      collapsed: state.ChangeLayoutMode.menuCollapse,
+      rtl: layout.rtlData,
+      layoutMode: layout.mode,
+      topMenu: layout.topMenu,
+      collapsed: layout.menuCollapse,
     }
   })
+
+  const { rtl, layoutMode, topMenu, collapsed } = useSelector(selectLayoutSetting)
 
   const [isBrowser, setIsBrowser] = useState(false)
 

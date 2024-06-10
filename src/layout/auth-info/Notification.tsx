@@ -6,11 +6,12 @@ import { ReactSVG } from 'react-svg'
 
 import PopOver from '@/components/popup'
 import Heading from '@/components/heading'
+import { RootState } from '@/redux/store'
 
 const NotificationBox = React.memo(() => {
-  const { rtl } = useSelector((state: any) => {
+  const { rtl } = useSelector((state: RootState) => {
     return {
-      rtl: state.ChangeLayoutMode.rtlData,
+      rtl: state.layout.rtlData,
     }
   })
 

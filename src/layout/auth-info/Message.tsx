@@ -7,11 +7,12 @@ import Heading from '@/components/heading'
 import Messages from '@/demoData/message.json'
 import { useSelector } from 'react-redux'
 import { ReactSVG } from 'react-svg'
+import { RootState } from '@/redux/store'
 
 const MessageBox = React.memo((props: any) => {
-  const { rtl } = useSelector((state: any) => {
+  const { rtl } = useSelector((state: RootState) => {
     return {
-      rtl: state.ChangeLayoutMode.rtlData,
+      rtl: state.layout.rtlData,
     }
   })
 

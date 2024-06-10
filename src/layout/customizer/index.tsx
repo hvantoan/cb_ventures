@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { changeMenuMode, changeDirectionMode, changeLayoutMode } from '@/redux/themeLayout/reducers'
 import { Button } from 'antd'
-import { AppDispatch } from '@/redux/store'
+import { AppDispatch, RootState } from '@/redux/store'
 
 const Customizer = (props: any) => {
   const { t } = useTranslation()
@@ -25,11 +25,11 @@ const Customizer = (props: any) => {
     })
   }
 
-  const { rtl, layoutMode, topMenu } = useSelector((state: any) => {
+  const { rtl, layoutMode, topMenu } = useSelector((state: RootState) => {
     return {
-      rtl: state.ChangeLayoutMode.rtlData,
-      layoutMode: state.ChangeLayoutMode.mode,
-      topMenu: state.ChangeLayoutMode.topMenu,
+      rtl: state.layout.rtlData,
+      layoutMode: state.layout.mode,
+      topMenu: state.layout.topMenu,
     }
   })
 

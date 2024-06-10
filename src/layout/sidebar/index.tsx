@@ -1,22 +1,22 @@
-import { useSelector } from 'react-redux';
-import MenuItems from '../../layout/MenuItems';
+import { useSelector } from 'react-redux'
+import MenuItems from '../../layout/MenuItems'
 
-import { Layout } from 'antd';
+import { Layout } from 'antd'
+import { RootState } from '@/redux/store'
 
-const { Sider } = Layout;
+const { Sider } = Layout
 
 const Sidebar = () => {
-
-  const { topMenu, collapsed } = useSelector((state:any) => {
+  const { topMenu, collapsed } = useSelector((state: RootState) => {
     return {
-      topMenu: state.ChangeLayoutMode.topMenu,
-      collapsed: state.ChangeLayoutMode.menuCollapse,
-    };
-  });
+      topMenu: state.layout.topMenu,
+      collapsed: state.layout.menuCollapse,
+    }
+  })
 
   return (
     <>
-      {!topMenu || typeof window !== 'undefined' && window.innerWidth < 1200 ? (
+      {!topMenu || (typeof window !== 'undefined' && window.innerWidth < 1200) ? (
         <Sider
           width={collapsed ? 80 : 280}
           collapsed={collapsed}
@@ -24,9 +24,9 @@ const Sidebar = () => {
         >
           <MenuItems />
         </Sider>
-      ) : null }
+      ) : null}
     </>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

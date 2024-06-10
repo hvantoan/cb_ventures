@@ -50,13 +50,14 @@ import { useTranslation } from 'react-i18next'
 import versions from '../demoData/changelog.json'
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '@/redux/store'
 
 function MenuItems() {
   const path = '/admin'
   const { t } = useTranslation()
-  const { topMenu } = useSelector((state: any) => {
+  const { topMenu } = useSelector((state: RootState) => {
     return {
-      topMenu: state.ChangeLayoutMode.topMenu,
+      topMenu: state.layout.topMenu,
     }
   })
 

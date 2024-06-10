@@ -3,17 +3,26 @@ import { useRouter } from 'next/router'
 import type { AppProps } from 'next/app'
 
 import AdminLayout from './adminLayout'
-import AuthLayout from './authLayout'
 import '../i18n/config'
 import { wrapper } from '@/redux/store'
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Provider } from 'react-redux'
+import dynamic from 'next/dynamic'
+import AuthLayout from './authLayout'
 
 const App: FC<AppProps> = ({ Component, ...rest }) => {
   const router = useRouter()
   const { pathname } = router
   const { store, props } = wrapper.useWrappedStore(rest)
   const { pageProps } = props
+
+  const [docEnv, setDocEnv] = useState(false)
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      setDocEnv(true)
+    }
+  }, [])
+
   const renderLayout = () => {
     if (
       pathname == '/' ||
@@ -37,7 +46,7 @@ const App: FC<AppProps> = ({ Component, ...rest }) => {
 
   return (
     <>
-      <Provider store={store}>{renderLayout()}</Provider>
+      <Provider store={store}>{docEnv && renderLayout()}</Provider>
     </>
   )
 }
