@@ -1,8 +1,8 @@
 /* eslint-disable react/display-name */
-import React, { useState } from 'react';
-import Link from 'next/link';
-import DashboardChart from '@/components/charts/DashboardChart';
-import { chartLinearGradient } from '@/components/utilities';
+import React, { useState } from 'react'
+import Link from 'next/link'
+import DashboardChart from '@/components/charts/DashboardChart'
+import { chartLinearGradient } from '@/components/utilities'
 
 const salesRevenue = {
   today: {
@@ -17,44 +17,43 @@ const salesRevenue = {
     users: [20, 36, 25, 50, 40, 55, 40, 75, 35, 40, 35, 58],
     labels: ['Jan', 'Feb', 'Mar', 'App', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Oct', 'Dec'],
   },
-};
-
-interface revenueData {
-  today: string[][];
-  week: string[][];
-  month: string[][];
 }
 
-const SaleRevenue = React.memo(({ title }:any) => {
+interface revenueData {
+  today: string[][]
+  week: string[][]
+  month: string[][]
+}
 
+const SaleRevenue = React.memo(({ title }: any) => {
   const [state, setState] = useState({
     revenue: 'today',
-  });
+  })
 
   /* State destructuring */
-  const {revenue}:any = state;
+  const { revenue }: any = state
 
-  const handleTabActivation = (value:any, event:any) => {
-    event.preventDefault();
+  const handleTabActivation = (value: any, event: any) => {
+    event.preventDefault()
     setState({
       ...state,
       revenue: value,
-    });
-  };
+    })
+  }
 
   const options = {
     animation: {
-      animateScale: true,
+      animateScale: false,
       animateRotate: true,
     },
-  };
+  }
 
   const defaultGradientBG = chartLinearGradient(document.createElement('canvas'), 300, {
     start: '#8231D340',
     end: '#ffffff05',
-  });
+  })
 
-  const canvasElement = document.getElementById('hexadash-sales-revenue') as HTMLCanvasElement | null;
+  const canvasElement = document.getElementById('hexadash-sales-revenue') as HTMLCanvasElement | null
 
   const salesRevenueDatasets = [
     {
@@ -62,16 +61,15 @@ const SaleRevenue = React.memo(({ title }:any) => {
       borderColor: '#8231D3',
       borderWidth: 3,
       fill: true,
-      backgroundColor: () =>
-      {
+      backgroundColor: () => {
         if (canvasElement) {
           const gradientBG = chartLinearGradient(canvasElement, 300, {
             start: '#8231D340',
             end: '#ffffff05',
-          });
-          return gradientBG;
+          })
+          return gradientBG
         } else {
-          return defaultGradientBG;
+          return defaultGradientBG
         }
       },
       label: 'Current period',
@@ -86,7 +84,7 @@ const SaleRevenue = React.memo(({ title }:any) => {
       pointStyle: 'circle',
       pointHoverBorderWidth: 2,
     },
-  ];
+  ]
 
   return (
     <div className="h-full">
@@ -152,9 +150,9 @@ const SaleRevenue = React.memo(({ title }:any) => {
               }}
               scales={{
                 y: {
-                  border: { 
+                  border: {
                     dash: [4, 4],
-                   },
+                  },
                   grid: {
                     color: '#485e9029',
                     tickLength: 0,
@@ -171,14 +169,14 @@ const SaleRevenue = React.memo(({ title }:any) => {
                     min: 0,
                     stepSize: 20,
                     padding: 10,
-                    callback(label:any) {
-                      return `${label}k`;
+                    callback(label: any) {
+                      return `${label}k`
                     },
                   },
                 },
 
                 x: {
-                  border:{
+                  border: {
                     display: false,
                   },
                   grid: {
@@ -195,17 +193,17 @@ const SaleRevenue = React.memo(({ title }:any) => {
                 },
               }}
               tooltip={{
-                custom(tooltip:any) {
-                  if (!tooltip) return;
-                  tooltip.displayColors = false;
+                custom(tooltip: any) {
+                  if (!tooltip) return
+                  tooltip.displayColors = false
                 },
                 callbacks: {
                   title() {
-                    return `Total Revenue`;
+                    return `Total Revenue`
                   },
-                  label(t:any) {
-                    const { formattedValue, dataset } = t;
-                    return `${formattedValue}k ${dataset.label}`;
+                  label(t: any) {
+                    const { formattedValue, dataset } = t
+                    return `${formattedValue}k ${dataset.label}`
                   },
                 },
               }}
@@ -216,8 +214,7 @@ const SaleRevenue = React.memo(({ title }:any) => {
         </div>
       )}
     </div>
-  );
-});
+  )
+})
 
-
-export default SaleRevenue;
+export default SaleRevenue

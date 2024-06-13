@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 import {
   UilArrowDown,
   UilArrowUp,
@@ -9,10 +9,10 @@ import {
   UilFileAlt,
   UilFile,
   UilTimes,
-} from '@iconscout/react-unicons';
-import DashboardChart from '@/components/charts/DashboardChart';
-import { Cards } from '@/components/cards/frame/cards-frame';
-import { customTooltips } from '@/components/utilities';
+} from '@iconscout/react-unicons'
+import DashboardChart from '@/components/charts/DashboardChart'
+import { Cards } from '@/components/cards/frame/cards-frame'
+import { customTooltips } from '@/components/utilities'
 
 const salesRevenue = {
   users: ['72.6K', [0, 25, 20, 5, 60, 18, 20, 45, 35, 50, 48, 45], [20, 40, 55, 26, 40, 55, 38, 35, 25, 70, 20, 80]],
@@ -21,69 +21,69 @@ const salesRevenue = {
   totalSales: '5550',
   salesDown: '15',
   labels: ['Jan', 'Feb', 'Mar', 'App', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-};
+}
 
-const SalesReport = React.memo((title:any) => {
-  const moreContent = [  
+const SalesReport = React.memo((title: any) => {
+  const moreContent = [
     {
-        key: '1',
-        label: (
-          <Link
-            className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
-            href="#"
-          >
-            <UilPrint className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" />
-            <span>Printer</span>
-          </Link>
-        ),
+      key: '1',
+      label: (
+        <Link
+          className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
+          href="#"
+        >
+          <UilPrint className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" />
+          <span>Printer</span>
+        </Link>
+      ),
     },
     {
-        key: '2',
-        label: (
-          <Link
-            className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
-            href="#"
-          >
-            <UilBookOpen className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" />
-            <span>PDF</span>
-          </Link>
-        ),
+      key: '2',
+      label: (
+        <Link
+          className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
+          href="#"
+        >
+          <UilBookOpen className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" />
+          <span>PDF</span>
+        </Link>
+      ),
     },
     {
-        key: '3',
-        label: (
-          <Link
-            className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
-            href="#"
-          >
-            <UilFileAlt className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" />
-            <span>Google Sheets</span>
-          </Link>
-        ),
+      key: '3',
+      label: (
+        <Link
+          className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
+          href="#"
+        >
+          <UilFileAlt className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" />
+          <span>Google Sheets</span>
+        </Link>
+      ),
     },
     {
-        key: '4',
-        label: (
-          <Link
-            className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
-            href="#"
-          >
-            <UilTimes className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" />
-            <span>Excel (XLSX)</span>
-          </Link>
-        ),
+      key: '4',
+      label: (
+        <Link
+          className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
+          href="#"
+        >
+          <UilTimes className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" />
+          <span>Excel (XLSX)</span>
+        </Link>
+      ),
     },
     {
-        key: '5',
-        label: (
-          <Link
-            className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
-            href="#"
-          >
-            <UilFile className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" />
-            <span>CSV</span>
-          </Link>
-        ),
+      key: '5',
+      label: (
+        <Link
+          className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
+          href="#"
+        >
+          <UilFile className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" />
+          <span>CSV</span>
+        </Link>
+      ),
     },
   ]
 
@@ -128,7 +128,7 @@ const SalesReport = React.memo((title:any) => {
       pointStyle: 'circle',
       pointHoverBorderWidth: 2,
     },
-  ];
+  ]
 
   return (
     <div className="h-full">
@@ -179,9 +179,9 @@ const SalesReport = React.memo((title:any) => {
               }}
               scales={{
                 y: {
-                  border: { 
+                  border: {
                     dash: [4, 4],
-                   },
+                  },
                   grid: {
                     color: '#485e9029',
                     tickLength: 0,
@@ -198,8 +198,8 @@ const SalesReport = React.memo((title:any) => {
                     min: 50,
                     stepSize: 20,
                     padding: 10,
-                    callback(label:any) {
-                      return `${label}k`;
+                    callback(label: any) {
+                      return `${label}k`
                     },
                   },
                 },
@@ -224,11 +224,11 @@ const SalesReport = React.memo((title:any) => {
                 custom: customTooltips,
                 callbacks: {
                   title() {
-                    return `Total Revenue`;
+                    return `Total Revenue`
                   },
-                  label(t:any) {
-                    const { formattedValue, dataset } = t;
-                    return `${dataset.label}: ${formattedValue}k`;
+                  label(t: any) {
+                    const { formattedValue, dataset } = t
+                    return `${dataset.label}: ${formattedValue}k`
                   },
                 },
               }}
@@ -238,7 +238,7 @@ const SalesReport = React.memo((title:any) => {
         </Cards>
       )}
     </div>
-  );
-});
+  )
+})
 
-export default SalesReport;
+export default SalesReport

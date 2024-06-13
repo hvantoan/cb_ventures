@@ -1,7 +1,8 @@
 import dynamic from 'next/dynamic'
-import React from 'react';
-import { Row, Col, Skeleton } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col, Skeleton } from 'antd'
+import { PageHeaders } from '@/components/page-headers'
+import { useTranslation } from 'react-i18next'
 
 const OverviewDataList = dynamic(() => import('@/dashboard/demo-1/OverviewDataList'), {
   loading: () => (
@@ -9,45 +10,44 @@ const OverviewDataList = dynamic(() => import('@/dashboard/demo-1/OverviewDataLi
       <Skeleton active />
     </>
   ),
-});
+})
 const SalesReport = dynamic(() => import('@/dashboard/demo-1/SalesReport'), {
   loading: () => (
     <>
       <Skeleton active />
     </>
   ),
-});
+})
 const SalesGrowth = dynamic(() => import('@/dashboard/demo-1/SalesGrowth'), {
   loading: () => (
     <>
       <Skeleton active />
     </>
   ),
-});
+})
 const SalesByLocation = dynamic(() => import('@/dashboard/demo-1/SalesByLocation'), {
   loading: () => (
     <>
       <Skeleton active />
     </>
   ),
-});
+})
 const TopSellingProduct = dynamic(() => import('@/dashboard/demo-1/TopSellingProducts'), {
   loading: () => (
     <>
       <Skeleton active />
     </>
   ),
-});
+})
 const BrowserState = dynamic(() => import('@/dashboard/demo-1/BrowserState'), {
   loading: () => (
     <>
       <Skeleton active />
     </>
   ),
-});
+})
 
 const DemoOne = () => {
-
   const PageRoutes = [
     {
       path: 'admin',
@@ -57,7 +57,7 @@ const DemoOne = () => {
       path: 'first',
       breadcrumbName: 'Demo 1',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -94,4 +94,3 @@ const DemoOne = () => {
 }
 
 export default DemoOne
-

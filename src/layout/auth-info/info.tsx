@@ -149,23 +149,10 @@ const AuthInfo = React.memo((props: any) => {
       label: (
         <Link
           href="#"
-          onClick={(e) => onFlagChangeHandle('esp', e)}
+          onClick={(e) => onFlagChangeHandle('vi', e)}
           className="flex items-center bg-white dark:bg-white/10 hover:bg-primary/[.05] rounded-4 px-3 py-1.5 text-sm text-dark dark:text-white/60"
         >
-          <Image className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" src="/img/flag/esp.png" alt="" width="20" height="20" />
-          <span>Spanish</span>
-        </Link>
-      ),
-    },
-    {
-      key: '3',
-      label: (
-        <Link
-          href="#"
-          onClick={(e) => onFlagChangeHandle('ar', e)}
-          className="flex items-center bg-white dark:bg-white/10 hover:bg-primary/[.05] rounded-4 px-3 py-1.5 text-sm text-dark dark:text-white/60"
-        >
-          <Image className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" src="/img/flag/ar.png" alt="" width="20" height="20" />
+          <Image className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" src="/img/flag/vi.png" alt="" width="20" height="20" />
           <span>Arabic</span>
         </Link>
       ),

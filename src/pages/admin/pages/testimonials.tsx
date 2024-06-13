@@ -137,10 +137,10 @@ function Testimonials() {
               })}
             </Swiper>
             <div className="swiper-button-prev">
-              <img src="/img/icon/arrow-left.png" />
+              <img src="/img/icon/arrow-left.png" title="" alt="" />
             </div>
             <div className="swiper-button-next">
-              <img src="/img/icon/arrow-right.png" />
+              <img src="/img/icon/arrow-right.png" title="" alt="" />
             </div>
           </div>
           <div className="relative px-24 lg:px-14 md:px-10 sm:px-[15px] xs:px-0 theme-2 pt-16 pb-[75px] lg:pb-[50px]">
@@ -188,10 +188,10 @@ function Testimonials() {
                 )
               })}
               <div className="swiper-button-prev">
-                <img src="/img/icon/arrow-left.png" />
+                <img src="/img/icon/arrow-left.png" title="" alt="" />
               </div>
               <div className="swiper-button-next">
-                <img src="/img/icon/arrow-right.png" />
+                <img src="/img/icon/arrow-right.png" title="" alt="" />
               </div>
             </Swiper>
           </div>
@@ -260,10 +260,10 @@ function Testimonials() {
                 )
               })}
               <div className="swiper-button-prev start-[100px]">
-                <img src="/img/icon/arrow-left.png" />
+                <img src="/img/icon/arrow-left.png" title="" alt="" />
               </div>
               <div className="swiper-button-next end-[100px]">
-                <img src="/img/icon/arrow-right.png" />
+                <img src="/img/icon/arrow-right.png" title="" alt="" />
               </div>
             </Swiper>
           </div>

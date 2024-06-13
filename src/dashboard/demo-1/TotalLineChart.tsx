@@ -1,19 +1,15 @@
 /* eslint-disable react/display-name */
 /* eslint-disable no-param-reassign */
-import React from 'react';
-import { Row, Col } from 'antd';
-import {
-  UilArrowDown,
-  UilArrowUp,
- } from '@iconscout/react-unicons';
-import DashboardChart from '@/components/charts/DashboardChart';
+import React from 'react'
+import { Row, Col } from 'antd'
+import { UilArrowDown, UilArrowUp } from '@iconscout/react-unicons'
+import DashboardChart from '@/components/charts/DashboardChart'
 
-import totalChartData from '../../demoData/TotalSaleChart.json';
-
+import totalChartData from '../../demoData/TotalSaleChart.json'
 const TotalLineChart = React.memo(() => {
   return (
     <Row gutter={25}>
-      {totalChartData.map((item:any, i:any) => {
+      {totalChartData.map((item: any, i: any) => {
         return (
           <Col xxl={8} md={i === 2 ? 24 : 12} sm={24} xs={24} key={i} className="mb-[25px]">
             <div className="hexadash-total-chart">
@@ -60,24 +56,24 @@ const TotalLineChart = React.memo(() => {
                     ]}
                     height={window.innerWidth <= 575 ? 200 : 180}
                     tooltip={{
-                      custom(tooltip:any) {
-                        if (!tooltip) return;
-                        tooltip.displayColors = false;
+                      custom(tooltip: any) {
+                        if (!tooltip) return
+                        tooltip.displayColors = false
                       },
                       callbacks: {
-                        title(t:any) {
-                          const { label } = t[0];
-                          return `${label}`;
+                        title(t: any) {
+                          const { label } = t[0]
+                          return `${label}`
                         },
-                        label(t:any) {
-                          const { formattedValue } = t;
-                          return `  ${item.title}: ${formattedValue}k`;
+                        label(t: any) {
+                          const { formattedValue } = t
+                          return `  ${item.title}: ${formattedValue}k`
                         },
                         labelColor() {
                           return {
                             backgroundColor: item.lineColor,
                             borderColor: 'transparent',
-                          };
+                          }
                         },
                       },
                     }}
@@ -86,10 +82,10 @@ const TotalLineChart = React.memo(() => {
               </div>
             </div>
           </Col>
-        );
+        )
       })}
     </Row>
-  );
-});
+  )
+})
 
-export default TotalLineChart;
+export default TotalLineChart

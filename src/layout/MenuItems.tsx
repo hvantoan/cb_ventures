@@ -51,6 +51,7 @@ import versions from '../demoData/changelog.json'
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@/redux/store'
+import { changeDirectionMode, changeLayoutMode, changeMenuMode } from '@/redux/themeLayout/reducers'
 
 function MenuItems() {
   const path = '/admin'
@@ -260,17 +261,6 @@ function MenuItems() {
       null,
       null
     ),
-    getItem(t('email'), 'email', !topMenu && <UilEnvelope />, [
-      getItem(<Link href={`${path}/email/inbox`}>{t('inbox')}</Link>, 'inbox', null, null),
-      getItem(
-        <Link href={`${path}/email/1585118055048`}>
-          {t('read')} {t('email')}
-        </Link>,
-        'single',
-        null,
-        null
-      ),
-    ]),
     getItem(
       <Link href={`${path}/chat/private/rofiq@gmail.com`}>{t('chat')}</Link>,
       'chat',

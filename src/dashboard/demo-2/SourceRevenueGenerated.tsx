@@ -7,11 +7,12 @@ import { UilBookOpen, UilFile, UilFileAlt, UilPrint, UilTimes, UilFacebook, UilT
 import config from '../../config/config'
 import { Cards } from '@/components/cards/frame/cards-frame'
 import DashboardChart from '@/components/charts/DashboardChart'
+import { RootState } from '@/redux/store'
 
 const SourceRevenueGenerated = React.memo(() => {
-  const { mainContent } = useSelector((state: any) => {
+  const { mainContent } = useSelector((state: RootState) => {
     return {
-      mainContent: state.ChangeLayoutMode.mode,
+      mainContent: state.layout.mode,
     }
   })
   const { theme } = config

@@ -25,9 +25,10 @@ import {
   TimeSeriesScale,
   Title,
   Tooltip,
-} from 'chart.js';
-import { useEffect } from 'react';
-import { customTooltips } from '../utilities';
+} from 'chart.js'
+import { useEffect } from 'react'
+import { customTooltips } from '../utilities'
+import { he } from 'date-fns/locale'
 
 Chart.register(
   ArcElement,
@@ -53,8 +54,8 @@ Chart.register(
   Legend,
   Title,
   Tooltip,
-  SubTitle,
-);
+  SubTitle
+)
 
 function DashboardChart({
   type,
@@ -70,15 +71,15 @@ function DashboardChart({
   elements,
   option,
   ...props
-}:any) {
+}: any) {
   useEffect(() => {
-    let chart:any = null;
-    let unmounted = false;
-    const canvas = document.getElementById(id) as HTMLCanvasElement; // Use optional chaining here
-
+    let chart: any = null
+    let unmounted = false
+    const canvas = document.getElementById(id) as HTMLCanvasElement // Use optional chaining here
+    console.log(canvas)
     if (!canvas) {
       // Element with the provided ID not found, handle the error or return early
-      return;
+      return
     }
     if (!unmounted) {
       chart = new Chart(canvas, {
@@ -90,6 +91,7 @@ function DashboardChart({
         options: {
           responsive: true,
           maintainAspectRatio: true,
+
           layout,
           hover: {
             mode: 'index',
@@ -131,16 +133,16 @@ function DashboardChart({
           scales,
           ...option,
         },
-      });
+      })
     }
 
+    console.log(id, scales)
     return () => {
-      chart.destroy();
-      unmounted = true;
-    };
-  }, [type, datasets, labels, id, layout, legend, elements, scales, tooltip, option]);
-
-  return <canvas width={width} height={height} id={id} {...props} />;
+      chart.destroy()
+      unmounted = true
+    }
+  }, [type, datasets, labels, id, layout, legend, elements, scales, tooltip, option])
+  return <canvas width={width} height={height} id={id} {...props} />
 }
 
 DashboardChart.defaultProps = {
@@ -206,8 +208,8 @@ DashboardChart.defaultProps = {
         stepStartValue: 5,
         stepSize: 20,
         padding: 10,
-        callback(label:any) {
-          return `${label}k`;
+        callback(label: any) {
+          return `${label}k`
         },
       },
     },
@@ -234,20 +236,20 @@ DashboardChart.defaultProps = {
   },
   tooltip: {
     callbacks: {
-      label(t:any) {
-        const dstLabel = t.dataset.label;
-        const { formattedValue } = t;
-        return `  ${formattedValue} ${dstLabel}`;
+      label(t: any) {
+        const dstLabel = t.dataset.label
+        const { formattedValue } = t
+        return `  ${formattedValue} ${dstLabel}`
       },
-      labelColor(t:any) {
+      labelColor(t: any) {
         return {
           backgroundColor: t.dataset.backgroundColor,
           borderColor: 'transparent',
-        };
+        }
       },
     },
   },
   option: {},
-};
+}
 
-export default DashboardChart;
+export default DashboardChart
