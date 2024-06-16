@@ -2,7 +2,7 @@ import { theme } from './theme/themeVariables'
 
 const config = {
   menuCollapse: false,
-  topMenu: false,
+  topMenu: true,
   rtl: false,
   mainTemplate: 'darkMode',
   loggedIn: false,
