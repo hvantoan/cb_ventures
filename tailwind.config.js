@@ -81,6 +81,7 @@ module.exports = {
         'gray-hbr': '#585858',
         'light-hbr': '#585858',
         'light-extra-hbr': '#585858',
+        'success-light': '#33CC99',
         regular: '#F1F2F6',
         normal: '#E3E6EF',
         deep: '#C6D0DC',
@@ -140,6 +141,9 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'landing-bg1': "url('/img/landing/landing-bg1.png')",
+        'landing-bg2': "url('/img/landing/landing-bg2.png')",
+         'landing-bg3': "url('/img/landing/landing-bg3.jpg')"
       },
     },
     screens: {
