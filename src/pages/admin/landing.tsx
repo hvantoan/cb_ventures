@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import React from 'react'
-import { Row, Col, Skeleton } from 'antd'
+import { Row, Col, Skeleton, Card } from 'antd'
 import { PageHeaders } from '@/components/page-headers'
 import SmartTrading from '@/landing/service/SmartTrading'
 import SocialAssistant from '@/landing/service/SocialAssistant'
@@ -65,6 +65,55 @@ const Services = dynamic(() => import('@/landing/Services'), {
     </>
   ),
 })
+const ProductResearch = dynamic(() => import('@/landing/RoadMap/ProductResearch'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
+const ProductRoadMapHead = dynamic(() => import('@/landing/RoadMap/ProductRoadMapHead'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
+const FramingIdea = dynamic(() => import('@/landing/RoadMap/FramingIdea'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
+const FinalDesign = dynamic(() => import('@/landing/RoadMap/FinalDesign'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
+const LaunchProject = dynamic(() => import('@/landing/RoadMap/LaunchProject'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
+const DesignFirstDraft = dynamic(() => import('@/landing/RoadMap/DesignFirstDraft'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
+const ProjectDevelopment = dynamic(() => import('@/landing/RoadMap/ProjectDevelopment'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
 
 const Landing = () => {
   return (
@@ -98,7 +147,7 @@ const Landing = () => {
             </Col>
           </Row>
         </div>
-        <div className="bg-landing-bg3 py-[100px] bg-full">
+        <div className="bg-success-transparent py-[100px] bg-full">
           <Row gutter={25} className="px-64">
             <Col xxl={8} xs={24}>
               <FeaturesText />
@@ -108,12 +157,10 @@ const Landing = () => {
             </Col>
           </Row>
         </div>
-        <div className="bg-landing-bg2 py-[100px] bg-full">
+        <div className="bg-landing-bg1 py-[100px] bg-full">
           <Row gutter={25} className="px-64 place-content-center">
             <Services />
           </Row>
-        </div>
-        <div className="bg-landing-bg2 py-[100px] bg-full">
           <Row gutter={25} className="px-64 grid grid-cols-3 gap-6">
             <SmartTrading></SmartTrading>
             <SocialAssistant></SocialAssistant>
@@ -121,6 +168,30 @@ const Landing = () => {
             <Cryptocurrency></Cryptocurrency>
             <ChangesToExchangeOrders></ChangesToExchangeOrders>
             <PriceNotification></PriceNotification>
+          </Row>
+        </div>
+        <div className="bg-landing-bg1 py-[100px] bg-full">
+          <Row gutter={25} className="px-64 place-content-center">
+            <ProductRoadMapHead></ProductRoadMapHead>
+          </Row>
+          <Row gutter={25} className="px-64">
+            <Col xxl={11} xs={24} className='pt-[170px]'>
+              <FramingIdea></FramingIdea>
+              <FinalDesign></FinalDesign>
+              <LaunchProject></LaunchProject>
+            </Col>
+            <Col xxl={2} xs={24}>
+              <div className="flex justify-center w-full">
+                <div className="h-[1170px] bg-success-transparent w-[12px] rounded">
+                  <div className="w-full h-[800px] bg-primary rounded"></div>
+                </div>
+              </div>
+            </Col>
+            <Col xxl={11} xs={24}>
+              <ProductResearch></ProductResearch>
+              <DesignFirstDraft></DesignFirstDraft>
+              <ProjectDevelopment></ProjectDevelopment>
+            </Col>
           </Row>
         </div>
       </div>
