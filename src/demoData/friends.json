@@ -4,34 +4,84 @@
     "name": "Meyri Carles",
     "designation": "UI Designer",
     "status": true,
-    "img": "img/chat-author/t1.jpg"
+    "img": "/img/tradingMaster/pro-trader-avatar-1.jpg"
   },
   {
     "key": 2,
     "name": "Shreyu Neu",
     "designation": "Product Designer",
     "status": false,
-    "img": "img/chat-author/t2.jpg"
+    "img": "/img/tradingMaster/pro-trader-avatar-1.jpg"
   },
   {
     "key": 3,
     "name": "Domnic Harris",
     "designation": "Executive Assistant",
     "status": false,
-    "img": "img/chat-author/t3.jpg"
+    "img": "/img/tradingMaster/pro-trader-avatar-1.jpg"
   },
   {
     "key": 4,
     "name": "Khalid Hasan",
     "designation": "UI Director",
     "status": false,
-    "img": "img/chat-author/t4.jpg"
+    "img": "/img/tradingMaster/pro-trader-avatar-1.jpg"
   },
   {
     "key": 5,
     "name": "Tuhin Molla",
     "designation": "System Administrator",
     "status": false,
-    "img": "img/chat-author/t5.png"
+    "img": "/img/tradingMaster/pro-trader-avatar-1.jpg"
+  },
+  {
+    "key": 6,
+    "name": "Tuhin Molla",
+    "designation": "System Administrator",
+    "status": false,
+    "img": "/img/tradingMaster/pro-trader-avatar-1.jpg"
+  },
+  {
+    "key": 7,
+    "name": "Tuhin Molla",
+    "designation": "System Administrator",
+    "status": false,
+    "img": "/img/tradingMaster/pro-trader-avatar-1.jpg"
+  },
+  {
+    "key": 8,
+    "name": "Tuhin Molla",
+    "designation": "System Administrator",
+    "status": false,
+    "img": "/img/tradingMaster/pro-trader-avatar-1.jpg"
+  },
+  {
+    "key": 9,
+    "name": "Tuhin Molla",
+    "designation": "System Administrator",
+    "status": false,
+    "img": "/img/tradingMaster/pro-trader-avatar-1.jpg"
+  },
+  {
+    "key": 10,
+    "name": "Tuhin Molla",
+    "designation": "System Administrator",
+    "status": false,
+    "img": "/img/tradingMaster/pro-trader-avatar-1.jpg"
+  },
+  {
+    "key": 11,
+    "name": "Tuhin Molla",
+    "designation": "System Administrator",
+    "status": false,
+    "img": "/img/tradingMaster/pro-trader-avatar-1.jpg"
+  },
+  {
+    "key": 12,
+    "name": "Tuhin Molla",
+    "designation": "System Administrator",
+    "status": false,
+    "img": "/img/tradingMaster/pro-trader-avatar-1.jpg"
   }
+  
 ]

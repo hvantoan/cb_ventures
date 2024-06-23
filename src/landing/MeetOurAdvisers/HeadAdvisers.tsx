@@ -2,15 +2,15 @@ import React from 'react'
 import { Row, Col, Card, Button, Image } from 'antd'
 import { Cards } from '@/components/cards/frame/cards-frame'
 import { scales } from 'chart.js'
-import SmartTrading from './service/SmartTrading'
 
-const Services = React.memo((column: any) => {
+
+const HeadAdvisers = React.memo((column: any) => {
   return (
     <div className='p-0'>
       <Row >
         <h1 className="text-5xl w-full place-self-center text-center">
-          <span className="text-primary">Services </span>
-          We Offer
+            Meet Our
+          <span className="text-primary"> Advisers</span>
         </h1>
       </Row>
       <Row className='place-content-center'>
@@ -21,4 +21,4 @@ const Services = React.memo((column: any) => {
     </div>
   )
 })
-export default Services
+export default HeadAdvisers

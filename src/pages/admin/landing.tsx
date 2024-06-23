@@ -58,7 +58,7 @@ const FeaturesText = dynamic(() => import('@/landing/FeaturesText'), {
     </>
   ),
 })
-const Services = dynamic(() => import('@/landing/Services'), {
+const ServicesHead = dynamic(() => import('@/landing/service/ServicesHead'), {
   loading: () => (
     <>
       <Skeleton active />
@@ -114,7 +114,70 @@ const ProjectDevelopment = dynamic(() => import('@/landing/RoadMap/ProjectDevelo
     </>
   ),
 })
+const PricingHead = dynamic(() => import('@/landing/Pricing/PricingHead'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
+const BasicPricing = dynamic(() => import('@/landing/Pricing/BasicPricing'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
+const PremiunPricing = dynamic(() => import('@/landing/Pricing/PremiunPricing'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
+const StandardPricing = dynamic(() => import('@/landing/Pricing/StandardPricing'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
+const HeadAdvisers = dynamic(() => import('@/landing/MeetOurAdvisers/HeadAdvisers'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
+const AdviserData = dynamic(() => import('@/landing/MeetOurAdvisers/AdviserData'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
+const ProTraders = dynamic(() => import('@/landing/ProTraders'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
+const Subscribe = dynamic(() => import('@/landing/Subscribe'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
 
+const Footer = dynamic(() => import('@/landing/Footer'), {
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
 const Landing = () => {
   return (
     <>
@@ -159,7 +222,7 @@ const Landing = () => {
         </div>
         <div className="bg-landing-bg1 py-[100px] bg-full">
           <Row gutter={25} className="px-64 place-content-center">
-            <Services />
+            <ServicesHead />
           </Row>
           <Row gutter={25} className="px-64 grid grid-cols-3 gap-6">
             <SmartTrading></SmartTrading>
@@ -175,7 +238,7 @@ const Landing = () => {
             <ProductRoadMapHead></ProductRoadMapHead>
           </Row>
           <Row gutter={25} className="px-64">
-            <Col xxl={11} xs={24} className='pt-[170px]'>
+            <Col xxl={11} xs={24} className="pt-[170px]">
               <FramingIdea></FramingIdea>
               <FinalDesign></FinalDesign>
               <LaunchProject></LaunchProject>
@@ -193,6 +256,43 @@ const Landing = () => {
               <ProjectDevelopment></ProjectDevelopment>
             </Col>
           </Row>
+        </div>
+        <div className="bg-success-transparent py-[100px] bg-full">
+          <Row gutter={25} className="px-64 place-content-center">
+            <PricingHead></PricingHead>
+          </Row>
+          <Row gutter={25} className="px-64 flex flex-row place-content-center">
+            <div className="w-[350px] my-[40px] hover:my-[20px]">
+              <BasicPricing></BasicPricing>
+            </div>
+            <div className="w-[350px] my-[40px] hover:my-[20px] ml-[30px]">
+              <BasicPricing></BasicPricing>
+            </div>
+            <div className="w-[350px] my-[40px] hover:my-[20px] ml-[30px]">
+              <BasicPricing></BasicPricing>
+            </div>
+          </Row>
+        </div>
+        <div className="bg-landing-bg1 py-[100px] bg-full">
+          <Row gutter={25} className="px-64 place-content-center">
+            <HeadAdvisers></HeadAdvisers>
+          </Row>
+          <div className="px-64 place-content-center">
+            <AdviserData></AdviserData>
+          </div>
+        </div>
+        <div className="bg-success-transparent py-[100px] bg-full">
+          <div className='px-64 place-content-center'>
+            <ProTraders></ProTraders>
+          </div>
+        </div>
+        <div className="bg-landing-bg1 py-[100px] bg-full">
+          <div className='flex flex-row px-64 place-content-center '>
+            <Subscribe></Subscribe>
+          </div>
+        </div>
+        <div className="bg-landing-bg1 bg-full">
+            <Footer></Footer>
         </div>
       </div>
     </>

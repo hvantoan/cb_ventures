@@ -97,6 +97,7 @@ module.exports = {
         normalBGdark: 'rgb(255, 255, 255, .10)',
         deepBGdark: 'rgb(255, 255, 255, .10)',
         whiteDark: 'rgb(255, 255, 255, .10)',
+        darkHard: 'rgb(0, 0, 0, .60)',
         currentColor: 'currentColor',
       },
       boxShadow: {
