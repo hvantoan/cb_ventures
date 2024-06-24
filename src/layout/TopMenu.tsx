@@ -79,7 +79,11 @@ function TopMenu() {
               </li>
             </ul>
           </li>
-
+          <li>
+            <Link href={`${path}/landing`} onClick={addParentActive}>
+              Landing
+            </Link>
+          </li>
           <li className="has-subMenu">
             <Link href="#" className="parent">
               Apps

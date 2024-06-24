@@ -2751,3 +2751,7 @@ as conflicts may arise in other places
     @apply max-w-[600px] mx-auto;
   }
 }
+
+.card-no-padding .ant-card-body {
+  padding: 8px !important;
+}

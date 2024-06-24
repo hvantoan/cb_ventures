@@ -142,6 +142,7 @@ function MenuItems() {
   }
 
   const items = [
+    getItem(t('landing'), 'landing', !topMenu && <UilCreateDashboard />, []),
     getItem(t('dashboard'), 'dashboard', !topMenu && <UilCreateDashboard />, [
       getItem(
         <Link href={`${path}`}>
