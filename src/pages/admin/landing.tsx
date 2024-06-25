@@ -182,9 +182,9 @@ const Landing = () => {
   return (
     <>
       <PageHeaders className="flex items-center justify-between px-8 xl:px-[15px] pb-6 sm:pb-[30px] bg-transparent sm:flex-col" />
-      <div className="min-h-[715px] lg:min-h-[580px] flex-1 h-auto xl:px-[15px] pb-[30px] bg-transparent">
-        <div className="bg-landing-bg1 py-[100px]">
-          <Row gutter={25} className="px-64">
+      <div className="flex-1 h-auto xl:px-[15px] pb-[30px] bg-transparent sm:w-full">
+        <div className="bg-landing-bg1 lg:py-[100px]">
+          <Row gutter={25} className="lg:px-64 sm:px-0">
             <Col xxl={12} xs={24}>
               <BannerHeader />
             </Col>
@@ -194,28 +194,28 @@ const Landing = () => {
           </Row>
         </div>
         <div className="bg-landing-bg2">
-          <Row gutter={25} className="px-64">
+          <Row gutter={25} className="lg:px-64 sm:px-0">
             <Col xs={24}>
               <PartnerRow />
             </Col>
           </Row>
         </div>
         <div className="bg-landing-bg1 py-[100px]">
-          <Row gutter={25} className="px-64">
-            <Col xxl={12} xs={24}>
+          <Row gutter={25} className="lg:px-64 sm:px-0">
+            <Col xxl={12} xs={24} sm={24}>
               <ExploreImage />
             </Col>
-            <Col xxl={12} xs={24}>
+            <Col xxl={12} xs={24} sm={24}>
               <ExploreText />
             </Col>
           </Row>
         </div>
         <div className="bg-success-transparent py-[100px] bg-full">
-          <Row gutter={25} className="px-64">
-            <Col xxl={8} xs={24}>
+          <Row gutter={25} className="lg:px-64">
+            <Col xxl={8} xs={24} sm={24}>
               <FeaturesText />
             </Col>
-            <Col xxl={16} xs={24}>
+            <Col xxl={16} xs={24} sm={24}>
               <FeaturesImage />
             </Col>
           </Row>
