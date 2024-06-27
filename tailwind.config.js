@@ -148,6 +148,7 @@ module.exports = {
       },
     },
     screens: {
+      '5xl': { max: '1899px' },
       '4xl': { max: '1699px' },
       '3xl': { max: '1599px' },
       '2xl': { max: '1299px' },

@@ -12,18 +12,18 @@ const AdviserData = React.memo(() => {
             </div>
           </Col>
           <Col xxl={12} xs={24}>
-            <div className="pl-[20px]">
-              <h1 className="text-5xl w-full text-left">
+            <div className="pl-[20px] sm:place-content-center">
+              <h1 className="text-5xl w-full text-left sm:text-center">
                 <span className="text-secondary-hbr">Subscribe </span>
                 Our News
               </h1>
             </div>
             <div className="pl-[20px]">
-              <p className="text-dark/60 pt-5 pb-30 pr-20 text-lg">
+              <p className="text-dark/60 pt-5 pb-30 pr-20 text-lg sm:text-center">
                 Unlock the full potential of our product with our amazing features and top-notch customer support!
               </p>
             </div>
-            <div className="pl-[20px] mt-[40px]">
+            <div className="pl-[20px] mt-[40px] sm:flex sm:place-content-center">
               <form className="w-full max-w-lg">
                 <div className="flex items-center py-2">
                   <input

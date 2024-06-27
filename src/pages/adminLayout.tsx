@@ -59,7 +59,7 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
         <Sidebar />
 
         <Layout
-          className={`max-w-full duration-[300ms] ${
+          className={`duration-[300ms] ${
             !topMenu ? `xl:ps-0 ease-[ease] ${collapsed ? 'ps-[80px]' : 'ps-[280px] delay-[150ms]'}` : ''
           }`}
         >

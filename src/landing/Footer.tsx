@@ -6,7 +6,7 @@ import { scales } from 'chart.js'
 const HeadAdvisers = React.memo((column: any) => {
   return (
     <div>
-      <footer className="bg-white dark:bg-gray-900 ">
+      <footer>
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between px-64">
             <div className="grid grid-cols-6 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -111,7 +111,7 @@ const HeadAdvisers = React.memo((column: any) => {
               </a>
               . All Rights Reserved.
             </span>
-            <div className="flex sm:justify-center sm:mt-0 mr-64 absolute end-0">
+            <div className="flex sm:justify-center sm:mt-0 sm:mr-0 absolute 5xl:mr-64 end-0 sm:static">
               <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                 <svg
                   className="w-4 h-4"

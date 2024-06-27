@@ -6,10 +6,10 @@ import { scales } from 'chart.js'
 const PartnerRow = React.memo((column: any) => {
   return (
     <div>
-      <Row className="py-[40px] lg:space-x-20 sm:space-x-0 font-bold place-content-center">
-        <a className="text-secondary-hbr text-4xl pl-[0px] text-bold lg:content-center pb-[4px] sm:w-6/12 sm:text-center">coinbase</a>
-        <a href="" className='sm:w-6/12'>
-          <Row className='sm:place-content-center'>
+      <Row className="py-[40px] 5xl:space-x-20  font-bold place-content-center">
+        <a className="text-secondary-hbr text-4xl pl-[0px] text-bold 5xl:content-center pb-[4px]">coinbase</a>
+        <a href="">
+          <Row >
             <img
               width="48"
               height="48"
@@ -19,8 +19,8 @@ const PartnerRow = React.memo((column: any) => {
             <p className="text-success-hbr text-3xl ml-[5px] content-center">Spotify</p>
           </Row>
         </a>
-        <a href="" className='sm:w-6/12 sm:mt-[20px]'>
-          <Row className='sm:place-content-center'>
+        <a href="" >
+          <Row>
             <img
               width="48"
               height="48"
@@ -30,8 +30,8 @@ const PartnerRow = React.memo((column: any) => {
             <p className="text-pink text-3xl ml-[5px] content-center">Slack</p>
           </Row>
         </a>
-        <a href="" className='sm:w-6/12 sm:mt-[20px]'>
-          <Row className='sm:place-content-center'>
+        <a href="" >
+          <Row >
             <img
               width="48"
               height="48"
@@ -41,10 +41,10 @@ const PartnerRow = React.memo((column: any) => {
             <p className="text-pink text-3xl ml-[5px] content-center">Dropbox</p>
           </Row>
         </a>
-        <a className="text-pink text-4xl lg:pl-[0px] text-bold content-center sm:w-6/12 sm:mt-[20px]">
-            <img src='/img/icon/webflow-icon.png' width={100} height={60} className='scale-150 sm:ml-[40px]'></img>
+        <a className="text-pink text-4xl 5xl:pl-[0px] text-bold content-center">
+            <img src='/img/icon/webflow-icon.png' width={100} height={60} className='scale-150'></img>
         </a>
-        <a className="text-link text-4xl text-bold content-center pb-[4px] sm:w-6/12 sm:mt-[20px] sm:text-center">zoom</a>
+        <a className="text-link text-4xl text-bold content-center pb-[4px]">zoom</a>
       </Row>
     </div>
   )

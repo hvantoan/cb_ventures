@@ -6,12 +6,12 @@ const BannerHeader = React.memo((column: any) => {
   return (
     <div>
       <Row className='sm:place-content-center'>
-        <h1 className="text-7xl sm:text-4xl sm:text-center">
+        <h1 className="text-7xl sm:text-7xl sm:text-center sm:w-full">
           ROAD MAP
           <span className="text-primary"> Investment Solution</span>
         </h1>
-        <p className="text-white/60 pt-10 pb-10 text-3xl sm:text-center sm:text-xl">EXPERT ADVISOR INVESTMENT CONSULTANT</p>
-        <Button className="h-150 pl-[40px] sm:pl-[30px] pr-[30px] sm:pr-[20px] py-[30px] text-base/[20px] sm:w-[160px]" htmlType="button" type="primary">
+        <p className="text-white/60 pt-10 pb-10 text-3xl sm:text-center sm:w-full">EXPERT ADVISOR INVESTMENT CONSULTANT</p>
+        <Button className="h-150 pl-[40px] pr-[30px] sm:pr-[20px] py-[30px] text-base/[20px] sm:w-[160px]" htmlType="button" type="primary">
           <p className='text-dark text-base/[20px]'>Get Started</p>
           <img
             width="48"
@@ -20,7 +20,7 @@ const BannerHeader = React.memo((column: any) => {
             alt="external-arrow-up-right-arrows-thin-kawalan-studio"
           />
         </Button>
-        <Button className="h-150 pl-[40px] sm:pl-[30px] pr-[30px] sm:pr-[3 0px] py-[30px] text-base/[20px] text-dark lg:ml-[15px] bg-body text-pink sm:w-[160px]" htmlType="button">
+        <Button className="h-150 pl-[40px] pr-[30px] sm:pr-[3 0px] py-[30px] text-base/[20px] text-dark 5xl:ml-[15px] bg-body text-pink sm:w-[160px]" htmlType="button">
           <img
             width="24"
             height="24"
@@ -33,7 +33,7 @@ const BannerHeader = React.memo((column: any) => {
       <Row className="pt-[60px]">
         <h2 className="text-2xl sm:text-center sm:w-full"> FOLLOW US</h2>
       </Row>
-      <Row className="pt-[20px]">
+      <Row className="pt-[20px] sm:place-content-center">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 40 40">
           <circle
             cx="20"
