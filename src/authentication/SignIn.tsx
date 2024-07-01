@@ -51,7 +51,6 @@ function SignIn() {
   }
 
   useEffect(() => {
-    // Use Initial Email & Password
     let email = document.querySelector('input[type="text"]')
     let emailValue = (email as HTMLInputElement).value
     let password = document.querySelector('input[type="password"]')

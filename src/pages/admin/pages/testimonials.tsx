@@ -110,7 +110,7 @@ function Testimonials() {
               Testimonial 1
             </h2>
             <Swiper {...paramsOne} className="px-5 pt-10 pb-[60px]">
-              {users.map((user: any, index: number) => {
+              {users?.map((user: any, index: number) => {
                 return (
                   <SwiperSlide
                     key={index + 1}
@@ -148,7 +148,7 @@ function Testimonials() {
               Testimonial 2
             </h2>
             <Swiper {...paramsTwo} className="px-5 pt-0 pb-[60px]">
-              {users.map((user: any, index: number) => {
+              {users?.map((user: any, index: number) => {
                 return (
                   <SwiperSlide key={index + 1}>
                     <div className="p-10 text-center bg-white rounded-lg sm:px-5 dark:bg-white/10">
@@ -201,7 +201,7 @@ function Testimonials() {
             </h2>
             <div className="relative">
               <Swiper {...galleryParams} className="px-5">
-                {users.map((user: any, index: number) => {
+                {users?.map((user: any, index: number) => {
                   return (
                     <SwiperSlide key={index + 1}>
                       <div className="px-5 pt-36 lg:pt-32 ssm:pt-28">
@@ -235,7 +235,7 @@ function Testimonials() {
               Testimonial 4
             </h2>
             <Swiper {...paramsThree} className="px-5 pt-0 pb-[60px]">
-              {users.map((user: any, index: number) => {
+              {users?.map((user: any, index: number) => {
                 return (
                   <SwiperSlide key={index + 1}>
                     <div className="max-w-[1000px] 3xl:max-w-[570px] lg:max-w-[450px] p-12 sm:px-5 mx-auto text-center bg-white rounded-lg shadow-lg dark:bg-white/10">

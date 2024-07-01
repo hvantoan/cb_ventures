@@ -15,7 +15,6 @@ const SignIn = dynamic(() => import('../authentication/SignIn'), {
 // Function to check if the user is logged in
 const isUserLoggedIn = () => {
   const isLoggedIn = false
-
   return isLoggedIn
 }
 
