@@ -5,7 +5,7 @@ import { UilEllipsisV } from '@iconscout/react-unicons'
 import Customizer from '../customizer'
 import TopMenu from '@/layout/TopMenu'
 import Search from '@/layout/auth-info/Search'
-import AuthInfo from '@/layout/auth-info/info'
+import AuthInfo from '@/layout/auth-info/Info'
 import { ReactSVG } from 'react-svg'
 
 import { Col, Layout, Row } from 'antd'

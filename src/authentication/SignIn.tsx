@@ -8,7 +8,7 @@ import { UilFacebook, UilTwitter, UilGithub } from '@iconscout/react-unicons'
 import { CheckBox } from '@/components/checkbox'
 import { AppDispatch } from '@/redux/store'
 import { LoginAction } from '@/redux/auth/actionCreator'
-import { loginReq } from '@/models/authModel'
+import { LoginReq } from '@/models/AuthModel'
 
 function SignIn() {
   const [error, setError] = useState('')
@@ -20,12 +20,12 @@ function SignIn() {
 
   // @ts-ignore
 
-  const [data, setData] = useState<loginReq>({
+  const [data, setData] = useState<LoginReq>({
     username: 'admin',
     password: '123',
   })
 
-  const handleLogin = async (req: loginReq) => {
+  const handleLogin = async (req: LoginReq) => {
     try {
       setError('')
       setLoading(true)

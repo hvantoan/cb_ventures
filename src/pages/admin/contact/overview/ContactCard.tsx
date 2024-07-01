@@ -5,15 +5,16 @@ import { useSelector, useDispatch } from 'react-redux'
 import Link from 'next/link'
 import { Row, Form, Input } from 'antd'
 import DropDown from '@/components/dropdown'
-import { contactDeleteData } from '@/redux/contact/actionCreator'
+import { ContactDeleteData } from '@/redux/contact/actionCreator'
 import { Buttons } from '@/components/buttons'
 import { Modals } from '@/components/modals/antd-modals'
+import { RootState } from '@/redux/store'
 
 function ContactCard({ user }: any) {
   const dispatch = useDispatch()
-  const { users } = useSelector((state: any) => {
+  const { users } = useSelector((state: RootState) => {
     return {
-      users: state.Contact.data,
+      users: state.contact.data,
     }
   })
   const { id, name, designation, img, email, phone, company } = user
@@ -21,7 +22,7 @@ function ContactCard({ user }: any) {
   const onHandleDelete = (id: any) => {
     const value = users.filter((item: any) => item.id !== id)
     //@ts-ignore
-    dispatch(contactDeleteData(value))
+    dispatch(ContactDeleteData(value))
   }
 
   const [state, setState] = useState({
