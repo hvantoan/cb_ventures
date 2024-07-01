@@ -1,8 +1,8 @@
-import React from 'react';
-import { Alert } from 'antd';
+import React from 'react'
+import { Alert } from 'antd'
 
-function AlertText(props:any) {
-  const { type, icon, message, description, showIcon, closable, closeIcon } = props;
+function AlertText(props: any) {
+  const { type, icon, message, description, showIcon, closable, closeIcon } = props
 
   return (
     <Alert
@@ -14,7 +14,7 @@ function AlertText(props:any) {
       closeIcon={closeIcon && closeIcon}
       icon={icon && icon}
     />
-  );
+  )
 }
 
-export default AlertText;
+export default AlertText

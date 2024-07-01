@@ -6,8 +6,9 @@ import Link from 'next/link'
 import Heading from '@/components/heading'
 import { AutoCompleted } from '@/components/autoComplete'
 import { Buttons } from '@/components/buttons'
-import { contactDeleteData, contactSearchData, contactAddData } from '@/redux/contact/actionCreator'
+import { ContactDeleteData, ContactSearchData, ContactAddData } from '@/redux/contact/actionCreator'
 import { Modals } from '@/components/modals/antd-modals'
+import { RootState } from '@/redux/store'
 
 const ContactLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter()
@@ -15,9 +16,9 @@ const ContactLayout = ({ children }: { children: React.ReactNode }) => {
   const currentPath = pathname.split('/')[3]
 
   const dispatch = useDispatch()
-  const { users } = useSelector((state: any) => {
+  const { users } = useSelector((state: RootState) => {
     return {
-      users: state.Contact.data,
+      users: state.contact.data,
     }
   })
   const [form] = Form.useForm()
@@ -34,15 +35,16 @@ const ContactLayout = ({ children }: { children: React.ReactNode }) => {
 
   const { update }: any = state
 
-  const handleSearch = (searchText: any) => {
+  const handleSearch = (searchText: string) => {
+    console.log(searchText)
     //@ts-ignore
-    dispatch(contactSearchData(searchText))
+    dispatch(ContactSearchData(searchText))
   }
 
   const onHandleDelete = (id: any) => {
     const value = users.filter((item: any) => item.id !== id)
     //@ts-ignore
-    dispatch(contactDeleteData(value))
+    dispatch(ContactDeleteData(value))
   }
 
   const showModal = () => {
@@ -77,7 +79,7 @@ const ContactLayout = ({ children }: { children: React.ReactNode }) => {
     const max = Math.max(...arrayData)
     dispatch(
       //@ts-ignore
-      contactAddData([
+      ContactAddData([
         ...users,
         {
           ...values,

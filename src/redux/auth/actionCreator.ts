@@ -1,11 +1,11 @@
 import authApi from '@/config/api/authApi'
-import { loginReq } from '@/models/authModel'
+import { LoginReq as LoginReq } from '@/models/AuthModel'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
-export const LoginAction = createAsyncThunk('auth/login', async (userData: loginReq, { rejectWithValue }) => {
+export const LoginAction = createAsyncThunk('auth/login', async (userData: LoginReq, { rejectWithValue }) => {
   try {
     console.log(userData)
-    // const { data } = await authApi.login(userData)
+    const { data } = await authApi.login(userData)
     localStorage.setItem('userInfo', JSON.stringify(true))
     return true
   } catch (error: any) {
