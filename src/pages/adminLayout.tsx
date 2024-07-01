@@ -54,10 +54,8 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <ThemeProvider theme={theme}>
       <HeaderTop />
-
       <div className="flex flex-row gap-5 mt-[72px]">
         <Sidebar />
-
         <Layout
           className={`max-w-full duration-[300ms] ${
             !topMenu ? `xl:ps-0 ease-[ease] ${collapsed ? 'ps-[80px]' : 'ps-[280px] delay-[150ms]'}` : ''

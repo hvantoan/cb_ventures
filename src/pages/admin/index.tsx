@@ -2,7 +2,6 @@ import dynamic from 'next/dynamic'
 import React from 'react'
 import { Row, Col, Skeleton } from 'antd'
 import { PageHeaders } from '@/components/page-headers'
-import { useTranslation } from 'react-i18next'
 
 const OverviewDataList = dynamic(() => import('@/dashboard/demo-1/OverviewDataList'), {
   loading: () => (
