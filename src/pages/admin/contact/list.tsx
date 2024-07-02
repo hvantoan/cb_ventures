@@ -6,19 +6,23 @@ import Link from 'next/link'
 import { Form, Input } from 'antd'
 import Heading from '@/components/heading'
 import { Buttons } from '@/components/buttons'
-import { onStarUpdate, contactDeleteData } from '@/redux/contact/actionCreator'
+import { OnStarUpdate, ContactDeleteData } from '@/redux/contact/actionCreator'
 import DropDown from '@/components/dropdown'
 import { Modals } from '@/components/modals/antd-modals'
 
 import ContactLayout from './Layout'
+import { AppDispatch, RootState } from '@/redux/store'
+import { Contact } from '@/redux/contact/reducer'
 
 function ContactTable() {
-  const dispatch = useDispatch()
-  const { users } = useSelector((state: any) => {
+  const dispatch = useDispatch<AppDispatch>()
+  const { users } = useSelector((state: RootState) => {
     return {
-      users: state.Contact.data,
+      users: state.contact.data,
     }
   })
+
+  console.log(users.length)
 
   const [state, setState] = useState({
     selectedRowKeys: 0,
@@ -34,8 +38,7 @@ function ContactTable() {
 
   const onHandleDelete = (id: any) => {
     const value = users.filter((item: any) => item.id !== id)
-    //@ts-ignore
-    dispatch(contactDeleteData(value))
+    dispatch(ContactDeleteData(value))
   }
 
   const showEditModal = (data: any, id: any) => {
@@ -80,11 +83,12 @@ function ContactTable() {
 
   const usersTableData: any = []
 
-  users
-    .sort((a: any, b: any) => {
+  let sortData = [...users]
+  sortData
+    .sort((a: Contact, b: Contact) => {
       return b.time - a.time
     })
-    .map((user: any) => {
+    .map((user: Contact) => {
       const { id, name, designation, img, stared, email, phone, company } = user
 
       const moreContent = [
@@ -137,7 +141,7 @@ function ContactTable() {
           <div className="min-w-[150px] text-end -m-2">
             <Buttons
               //@ts-ignore
-              onClick={() => dispatch(onStarUpdate(users, id))}
+              onClick={() => dispatch(OnStarUpdate(users, id))}
               href="#"
               shape="circle"
               className="inline-flex items-center w-8 h-8 p-0 bg-transparent border-none shadow-none text-light-extra dark:text-white/60"

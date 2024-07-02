@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
-import React from 'react';
-import { Row, Col, Skeleton } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col, Skeleton } from 'antd'
+import { PageHeaders } from '@/components/page-headers'
 
 const OverviewDataList = dynamic(() => import('@/dashboard/demo-2/OverviewDataList'), {
   loading: () => (
@@ -9,38 +9,37 @@ const OverviewDataList = dynamic(() => import('@/dashboard/demo-2/OverviewDataLi
       <Skeleton active />
     </>
   ),
-});
+})
 const SaleRevenue = dynamic(() => import('@/dashboard/demo-2/SaleRevenue'), {
   loading: () => (
     <>
       <Skeleton active />
     </>
   ),
-});
+})
 const SourceRevenueGenerated = dynamic(() => import('@/dashboard/demo-2/SourceRevenueGenerated'), {
   loading: () => (
     <>
       <Skeleton active />
     </>
   ),
-});
+})
 const NewProduct = dynamic(() => import('@/dashboard/demo-2/NewProduct'), {
   loading: () => (
     <>
       <Skeleton active />
     </>
   ),
-});
+})
 const BestSeller = dynamic(() => import('@/dashboard/demo-2/BestSeller'), {
   loading: () => (
     <>
       <Skeleton active />
     </>
   ),
-});
+})
 
 const DemoTwo = () => {
-
   const PageRoutes = [
     {
       path: 'admin',
@@ -50,7 +49,7 @@ const DemoTwo = () => {
       path: 'first',
       breadcrumbName: 'Demo 2',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -82,4 +81,3 @@ const DemoTwo = () => {
 }
 
 export default DemoTwo
-
