@@ -1,19 +1,19 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { Row, Col } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
-import config from '@/config/config';
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { Row, Col } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
+import config from '@/config/config'
 
-import DashboardChart from '@/components/charts/DashboardChart';
-import DoughnutChart from '@/components/charts/DoughnutChart';
+import DashboardChart from '@/components/Charts/DashboardChart'
+import DoughnutChart from '@/components/Charts/DoughnutChart'
 
 function ChartJs() {
-  const { mainContent } = useSelector((state:any) => {
+  const { mainContent } = useSelector((state: any) => {
     return {
       mainContent: state.ChangeLayoutMode.mode,
-    };
-  });
-  const { theme } = config;
+    }
+  })
+  const { theme } = config
   const PageRoutes = [
     {
       path: 'index',
@@ -23,7 +23,7 @@ function ChartJs() {
       path: 'first',
       breadcrumbName: 'Chart',
     },
-  ];
+  ]
   const barChart = {
     height: 200,
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -64,8 +64,8 @@ function ChartJs() {
           max: 80,
           stepSize: 20,
           padding: 10,
-          callback(label:any) {
-            return `${label}`;
+          callback(label: any) {
+            return `${label}`
           },
         },
       },
@@ -84,7 +84,7 @@ function ChartJs() {
         },
       },
     },
-  };
+  }
 
   const chartjsAreaChart = {
     height: 250,
@@ -142,7 +142,7 @@ function ChartJs() {
         display: false,
       },
     },
-  };
+  }
 
   const chartjsDonutChart = {
     height: 150,
@@ -170,7 +170,7 @@ function ChartJs() {
         },
       },
     },
-  };
+  }
 
   const chartjsLineChart = {
     height: 210,
@@ -194,20 +194,20 @@ function ChartJs() {
     ],
     tooltip: {
       callbacks: {
-        label(t:any) {
-          const dstLabel = t.dataset.label;
-          const { formattedValue } = t;
-          return `  ${formattedValue} ${dstLabel}`;
+        label(t: any) {
+          const dstLabel = t.dataset.label
+          const { formattedValue } = t
+          return `  ${formattedValue} ${dstLabel}`
         },
-        labelColor(t:any) {
+        labelColor(t: any) {
           return {
             backgroundColor: t.dataset.borderColor,
             borderColor: 'transparent',
-          };
+          }
         },
       },
     },
-  };
+  }
 
   const chartjsBarChartTransparent = {
     height: 176,
@@ -236,7 +236,7 @@ function ChartJs() {
         usePointStyle: true,
       },
     },
-  };
+  }
 
   const chartjsPieChart = {
     height: 300,
@@ -264,19 +264,19 @@ function ChartJs() {
     tooltip: {
       mode: 'index',
       callbacks: {
-        label(t:any) {
-          const { dataset, label, dataIndex } = t;
-          return `  ${label} ${dataset.data[dataIndex]}`;
+        label(t: any) {
+          const { dataset, label, dataIndex } = t
+          return `  ${label} ${dataset.data[dataIndex]}`
         },
-        labelColor({ dataIndex, dataset }:any) {
+        labelColor({ dataIndex, dataset }: any) {
           return {
             backgroundColor: dataset.backgroundColor[dataIndex],
             borderColor: 'transparent',
-          };
+          }
         },
       },
     },
-  };
+  }
 
   return (
     <>
@@ -333,8 +333,8 @@ function ChartJs() {
                         max: 80,
                         stepSize: 20,
                         padding: 10,
-                        callback(label:any) {
-                          return `${label}k`;
+                        callback(label: any) {
+                          return `${label}k`
                         },
                       },
                     },
@@ -441,7 +441,7 @@ function ChartJs() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default ChartJs;
+export default ChartJs

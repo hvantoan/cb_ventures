@@ -1,14 +1,13 @@
-import React from 'react';
-import Link from 'next/link';
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
-import { ArrowRightOutlined } from '@ant-design/icons';
-import { Buttons } from '@/components/buttons';
+import React from 'react'
+import Link from 'next/link'
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
+import { ArrowRightOutlined } from '@ant-design/icons'
+import { Buttons } from '@/components/Buttons'
 
-import articles from '@/demoData/article.json';
+import articles from '@/demoData/article.json'
 
-function PopularArticle () {
-
-  const path = '/admin/pages/knowledgeBase';
+function PopularArticle() {
+  const path = '/admin/pages/knowledgeBase'
 
   return (
     <>
@@ -40,18 +39,20 @@ function PopularArticle () {
         </ResponsiveMasonry>
       </div>
       <div className="pt-4 text-center">
-        <h2 className="mb-3 font-semibold text-dark dark:text-white/[.87] text-[22px]">
-          Still no luck? We can help!
-        </h2>
+        <h2 className="mb-3 font-semibold text-dark dark:text-white/[.87] text-[22px]">Still no luck? We can help!</h2>
         <p className="mb-[30px] text-body dark:text-white/60 text-[15px] font-normal">
           Contact us and we’ll get back to you as soon as possible.
         </p>
-        <Buttons className="bg-primary text-white mx-auto px-8 h-[50px] text-sm font-medium" type="primary" size="large">
+        <Buttons
+          className="bg-primary text-white mx-auto px-8 h-[50px] text-sm font-medium"
+          type="primary"
+          size="large"
+        >
           Submit a Request
         </Buttons>
       </div>
     </>
-  );
+  )
 }
 
-export default PopularArticle;
+export default PopularArticle

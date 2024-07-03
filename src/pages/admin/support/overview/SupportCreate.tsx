@@ -1,19 +1,18 @@
-import React, { useEffect } from 'react';
-import { Form, Input, Select } from 'antd';
-import { Buttons } from '@/components/buttons';
-import { Modals } from '@/components/modals/antd-modals';
+import React, { useEffect } from 'react'
+import { Form, Input, Select } from 'antd'
+import { Buttons } from '@/components/Buttons'
+import { Modals } from '@/components/Modals/antd-modals'
 
-const { Option } = Select;
+const { Option } = Select
 
-function SupportCreate({ visible, onCancel, handleSubmit }:any) {
-
-  const handleOk = (value:any) => {
-    handleSubmit(value);
-  };
+function SupportCreate({ visible, onCancel, handleSubmit }: any) {
+  const handleOk = (value: any) => {
+    handleSubmit(value)
+  }
 
   const handleCancel = () => {
-    onCancel();
-  };
+    onCancel()
+  }
 
   return (
     <Modals
@@ -103,7 +102,7 @@ function SupportCreate({ visible, onCancel, handleSubmit }:any) {
         </>
       </div>
     </Modals>
-  );
+  )
 }
 
-export default SupportCreate;
+export default SupportCreate

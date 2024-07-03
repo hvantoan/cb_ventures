@@ -1,9 +1,9 @@
-import React from 'react';
-import { Row, Col, Collapse } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
-import versions from '@/demoData/changelog.json';
+import React from 'react'
+import { Row, Col, Collapse } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
+import versions from '@/demoData/changelog.json'
 
-const { Panel } = Collapse;
+const { Panel } = Collapse
 
 function ChangeLog() {
   const PageRoutes = [
@@ -15,7 +15,7 @@ function ChangeLog() {
       path: '',
       breadcrumbName: 'Changelog',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -35,7 +35,9 @@ function ChangeLog() {
                         Version {versions[0].version}{' '}
                       </span>
                       <span className="mx-2 text-lg font-medium text-dark dark:text-white/[.87]">-</span>
-                      <span className="text-[#868eae] dark:text-white/60 text-base font-normal">{versions[0].date}</span>
+                      <span className="text-[#868eae] dark:text-white/60 text-base font-normal">
+                        {versions[0].date}
+                      </span>
                     </h1>
                   </div>
                   <div className="p-[25px]">
@@ -53,7 +55,7 @@ function ChangeLog() {
                               >
                                 {item}
                               </li>
-                            );
+                            )
                           })}
                         </ul>
                       </div>
@@ -129,7 +131,7 @@ function ChangeLog() {
                                           >
                                             {item}
                                           </li>
-                                        );
+                                        )
                                       })}
                                     </ul>
                                   </div>
@@ -175,7 +177,7 @@ function ChangeLog() {
                               </div>
                             </Panel>
                           )
-                        );
+                        )
                       })}
                     </Collapse>
                   </div>
@@ -202,7 +204,7 @@ function ChangeLog() {
                           </span>
                           <span className="text-sm text-body dark:text-white/60">{version.date}</span>
                         </li>
-                      );
+                      )
                     })}
                   </ul>
                 </div>
@@ -212,7 +214,7 @@ function ChangeLog() {
         </>
       </main>
     </>
-  );
+  )
 }
 
-export default ChangeLog;
+export default ChangeLog

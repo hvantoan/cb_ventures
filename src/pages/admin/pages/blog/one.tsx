@@ -1,11 +1,11 @@
-import { Row, Col } from 'antd';
-import React from 'react';
-import { PageHeaders } from '@/components/page-headers';
-import BlogCard from '@/components/cards/BlogCard';
+import { Row, Col } from 'antd'
+import React from 'react'
+import { PageHeaders } from '@/components/PageHeaders'
+import BlogCard from '@/components/Cards/BlogCard'
 
-import cardData from '@/demoData/sampleCards.json';
+import cardData from '@/demoData/sampleCards.json'
 
-const { BlogCardData } = cardData;
+const { BlogCardData } = cardData
 
 function BlogOne() {
   const PageRoutes = [
@@ -17,7 +17,7 @@ function BlogOne() {
       path: '',
       breadcrumbName: 'Blog One',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -32,12 +32,12 @@ function BlogOne() {
               <Col key={blog.id} xl={8} sm={12} xs={24} className="mb-[25px]">
                 <BlogCard item={blog} />
               </Col>
-            );
+            )
           })}
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default BlogOne;
+export default BlogOne

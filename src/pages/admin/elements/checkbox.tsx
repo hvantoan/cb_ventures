@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Row, Col } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
-import { CheckBox } from '@/components/checkbox';
+import React, { useState } from 'react'
+import { Row, Col } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
+import { CheckBox } from '@/components/Checkbox'
 
 function Checkboxs() {
   const PageRoutes = [
@@ -13,19 +13,19 @@ function Checkboxs() {
       path: '',
       breadcrumbName: 'Checkbox',
     },
-  ];
+  ]
   const [state, setState] = useState({
     checkData: [],
     checked: false,
-  });
+  })
 
-  const multipleChange = (childData:any) => {
-    setState({ ...state, checkData: childData });
-  };
+  const multipleChange = (childData: any) => {
+    setState({ ...state, checkData: childData })
+  }
 
-  const onChange = (checked:any) => {
-    setState({ ...state, checked });
-  };
+  const onChange = (checked: any) => {
+    setState({ ...state, checked })
+  }
 
   return (
     <>
@@ -85,7 +85,7 @@ function Checkboxs() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default Checkboxs;
+export default Checkboxs

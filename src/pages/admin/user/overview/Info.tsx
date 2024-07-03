@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Row, Col, Form, Input, Upload, Select } from 'antd'
 import Link from 'next/link'
 import { UilCamera } from '@iconscout/react-unicons'
-import { Buttons } from '@/components/buttons'
-import Heading from '@/components/heading'
+import { Buttons } from '@/components/Buttons'
+import Heading from '@/components/Heading'
 
 const { Option } = Select
 function Info() {

@@ -1,45 +1,45 @@
-import React, { useState } from 'react';
-import { Row, Col, Upload, message } from 'antd';
-import { UploadOutlined, LoadingOutlined, PlusOutlined } from '@ant-design/icons';
-import { PageHeaders } from '@/components/page-headers';
+import React, { useState } from 'react'
+import { Row, Col, Upload, message } from 'antd'
+import { UploadOutlined, LoadingOutlined, PlusOutlined } from '@ant-design/icons'
+import { PageHeaders } from '@/components/PageHeaders'
 
-import { Buttons } from '@/components/buttons';
+import { Buttons } from '@/components/Buttons'
 
-const props:any = {
+const props: any = {
   name: 'file',
   action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
   headers: {
     authorization: 'authorization-text',
   },
-  onChange(info:any) {
+  onChange(info: any) {
     if (info.file.status !== 'uploading') {
       // console.log(info.file, info.fileList);
     }
     if (info.file.status === 'done') {
-      message.success(`${info.file.name} file uploaded successfully`);
+      message.success(`${info.file.name} file uploaded successfully`)
     } else if (info.file.status === 'error') {
-      message.error(`${info.file.name} file upload failed.`);
+      message.error(`${info.file.name} file upload failed.`)
     }
   },
-};
+}
 
-const getBase64 = (img:any, callback:any) => {
-  const reader = new FileReader();
-  reader.addEventListener('load', () => callback(reader.result));
-  reader.readAsDataURL(img);
-};
+const getBase64 = (img: any, callback: any) => {
+  const reader = new FileReader()
+  reader.addEventListener('load', () => callback(reader.result))
+  reader.readAsDataURL(img)
+}
 
-const beforeUpload = (file:any) => {
-  const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+const beforeUpload = (file: any) => {
+  const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png'
   if (!isJpgOrPng) {
-    message.error('You can only upload JPG/PNG file!');
+    message.error('You can only upload JPG/PNG file!')
   }
-  const isLt2M = file.size / 1024 / 1024 < 2;
+  const isLt2M = file.size / 1024 / 1024 < 2
   if (!isLt2M) {
-    message.error('Image must smaller than 2MB!');
+    message.error('Image must smaller than 2MB!')
   }
-  return isJpgOrPng && isLt2M;
-};
+  return isJpgOrPng && isLt2M
+}
 
 function Uploads() {
   const PageRoutes = [
@@ -51,8 +51,8 @@ function Uploads() {
       path: '',
       breadcrumbName: 'Upload',
     },
-  ];
-  const [state, setState]:any = useState({
+  ]
+  const [state, setState]: any = useState({
     fileList: [
       {
         uid: '-1',
@@ -84,53 +84,53 @@ function Uploads() {
         url: 'http://www.baidu.com/zzz.png',
       },
     ],
-  });
+  })
 
-  const onHandleChange = (info:any) => {
+  const onHandleChange = (info: any) => {
     if (info.file.status === 'uploading') {
-      setState({ ...state, loading: true });
-      return;
+      setState({ ...state, loading: true })
+      return
     }
     if (info.file.status === 'done') {
       // Get this url from response in real world.
-      getBase64(info.file.originFileObj, (imageUrl:any) =>
+      getBase64(info.file.originFileObj, (imageUrl: any) =>
         setState({
           imageUrl,
           loading: false,
-        }),
-      );
+        })
+      )
     }
-  };
+  }
 
-  const handleChange = (info:any) => {
-    let fileList = [...info.fileList];
-    fileList = fileList.slice(-2);
+  const handleChange = (info: any) => {
+    let fileList = [...info.fileList]
+    fileList = fileList.slice(-2)
     fileList = fileList.map((file) => {
       if (file.response) {
         // eslint-disable-next-line no-param-reassign
-        file.url = file.response.url;
+        file.url = file.response.url
       }
-      return file;
-    });
-    setState({ ...state, fileList });
-  };
+      return file
+    })
+    setState({ ...state, fileList })
+  }
 
   const uploadButton = (
     <div>
       {state.loading ? <LoadingOutlined /> : <PlusOutlined />}
       <div className="ant-upload-text">Upload</div>
     </div>
-  );
-  const { imageUrl, defaultFilelist }:any = state;
+  )
+  const { imageUrl, defaultFilelist }: any = state
 
-  const defaultProps:any = {
+  const defaultProps: any = {
     action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-    onChange({ file, fileList }:any) {
+    onChange({ file, fileList }: any) {
       if (file.status !== 'uploading') {
-        setState({ ...state, defaultFilelist: [...defaultFilelist, fileList] });
+        setState({ ...state, defaultFilelist: [...defaultFilelist, fileList] })
       }
     },
-  };
+  }
 
   return (
     <>
@@ -150,7 +150,12 @@ function Uploads() {
               </div>
               <div className="p-[25px] [&>span>div>span>button]:text-[14px] [&>span>div>span>button]:flex [&>span>div>span>button]:items-center">
                 <Upload {...props}>
-                  <Buttons className="btn-outlined border-regular dark:border-white/10 dark:text-white/[.87] hover:border-primary hover:text-primary" size="large" type="light" outlined>
+                  <Buttons
+                    className="btn-outlined border-regular dark:border-white/10 dark:text-white/[.87] hover:border-primary hover:text-primary"
+                    size="large"
+                    type="light"
+                    outlined
+                  >
                     <UploadOutlined /> Click to Upload
                   </Buttons>
                 </Upload>
@@ -185,10 +190,13 @@ function Uploads() {
                 </h1>
               </div>
               <div className="p-[25px] [&>span>div>span>button]:text-[14px] [&>span>div>span>button]:flex [&>span>div>span>button]:items-center">
-                <Upload
-                  fileList={state.fileList}
-                >
-                  <Buttons className="btn-outlined border-regular dark:border-white/10 dark:text-white/[.87] hover:border-primary hover:text-primary" size="large" type="light" outlined>
+                <Upload fileList={state.fileList}>
+                  <Buttons
+                    className="btn-outlined border-regular dark:border-white/10 dark:text-white/[.87] hover:border-primary hover:text-primary"
+                    size="large"
+                    type="light"
+                    outlined
+                  >
                     <UploadOutlined /> Upload
                   </Buttons>
                 </Upload>
@@ -202,7 +210,12 @@ function Uploads() {
               </div>
               <div className="p-[25px] [&>span>div>span>button]:text-[14px] [&>span>div>span>button]:flex [&>span>div>span>button]:items-center">
                 <Upload fileList={defaultFilelist}>
-                  <Buttons className="btn-outlined border-regular dark:border-white/10 dark:text-white/[.87] hover:border-primary hover:text-primary" size="large" type="light" outlined>
+                  <Buttons
+                    className="btn-outlined border-regular dark:border-white/10 dark:text-white/[.87] hover:border-primary hover:text-primary"
+                    size="large"
+                    type="light"
+                    outlined
+                  >
                     <UploadOutlined /> Upload
                   </Buttons>
                 </Upload>
@@ -212,7 +225,7 @@ function Uploads() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default Uploads;
+export default Uploads

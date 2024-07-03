@@ -1,6 +1,6 @@
-import React from 'react';
-import { Row, Col, Skeleton } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col, Skeleton } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
 import dynamic from 'next/dynamic'
 
 const OrderSummary = dynamic(() => import('../ecommerce/overview/Ordersummary'), {
@@ -9,14 +9,14 @@ const OrderSummary = dynamic(() => import('../ecommerce/overview/Ordersummary'),
       <Skeleton active />
     </>
   ),
-});
+})
 const SalesByLocation = dynamic(() => import('@/dashboard/demo-1/SalesByLocation'), {
   loading: () => (
     <>
       <Skeleton active />
     </>
   ),
-});
+})
 
 function WidgetsCard() {
   const PageRoutes = [
@@ -28,7 +28,7 @@ function WidgetsCard() {
       path: 'first',
       breadcrumbName: 'Widgets Mixed',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -51,7 +51,7 @@ function WidgetsCard() {
         </>
       </main>
     </>
-  );
+  )
 }
 
-export default WidgetsCard;
+export default WidgetsCard

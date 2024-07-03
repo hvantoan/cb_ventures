@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { UilEllipsisH } from '@iconscout/react-unicons'
 import { Input } from 'antd'
 import { useSelector, useDispatch } from 'react-redux'
-import { Buttons } from '@/components/buttons'
+import { Buttons } from '@/components/Buttons'
 import { submitPost } from '@/redux/profile/actionCreator'
 
 function Post() {
@@ -58,6 +58,7 @@ function Post() {
     <>
       {drawer && (
         <button
+          title="Close"
           className="after:content-[''] after:w-full after:h-full after:left-0 after:top-0 after:bg-black after:opacity-70 after:fixed after:z-[999]"
           onClick={() => setDrawer(false)}
         />

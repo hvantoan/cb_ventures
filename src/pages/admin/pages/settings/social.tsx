@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import dynamic from 'next/dynamic';
-import { Spin, Row, Col, Form, Input } from 'antd';
-import FontAwesome from 'react-fontawesome';
-import { Buttons } from '@/components/buttons';
-import Heading from '@/components/heading';
+import React, { useState } from 'react'
+import dynamic from 'next/dynamic'
+import { Spin, Row, Col, Form, Input } from 'antd'
+import FontAwesome from 'react-fontawesome'
+import { Buttons } from '@/components/Buttons'
+import Heading from '@/components/Heading'
 
 const SettingsLayout = dynamic(() => import('./Layout'), {
   loading: () => (
@@ -11,22 +11,22 @@ const SettingsLayout = dynamic(() => import('./Layout'), {
       <Spin />
     </div>
   ),
-});
+})
 
 function SocialProfile() {
-  const [form] = Form.useForm();
+  const [form] = Form.useForm()
   const [state, setState] = useState({
     values: null,
-  });
+  })
 
-  const handleSubmit = (values:any) => {
-    setState({ ...state, values });
-  };
+  const handleSubmit = (values: any) => {
+    setState({ ...state, values })
+  }
 
-  const handleCancel = (e:any) => {
-    e.preventDefault();
-    form.resetFields();
-  };
+  const handleCancel = (e: any) => {
+    e.preventDefault()
+    form.resetFields()
+  }
 
   return (
     <>
@@ -45,7 +45,11 @@ function SocialProfile() {
               <Row justify="center">
                 <Col xxl={12} sm={16} xs={24}>
                   <Form name="social" onFinish={handleSubmit}>
-                    <Form.Item name="facebook" label="Facebook" className="[&>.ant-form-item-row]:flex-col [&>.ant-form-item-row>div]:flex-1 mb-4 form-label-w-full form-label-text-start">
+                    <Form.Item
+                      name="facebook"
+                      label="Facebook"
+                      className="[&>.ant-form-item-row]:flex-col [&>.ant-form-item-row>div]:flex-1 mb-4 form-label-w-full form-label-text-start"
+                    >
                       <Input
                         className="ltr:pl-[45px] rtl:pr-[45px] text-body placeholder:text-body dark:text-white/60 font-normal border border-normal dark:border-white/10 shadow-none"
                         prefix={
@@ -59,7 +63,11 @@ function SocialProfile() {
                         placeholder="URL"
                       />
                     </Form.Item>
-                    <Form.Item name="twitter" label="Twitter" className="[&>.ant-form-item-row]:flex-col [&>.ant-form-item-row>div]:flex-1 mb-4 form-label-w-full form-label-text-start">
+                    <Form.Item
+                      name="twitter"
+                      label="Twitter"
+                      className="[&>.ant-form-item-row]:flex-col [&>.ant-form-item-row>div]:flex-1 mb-4 form-label-w-full form-label-text-start"
+                    >
                       <Input
                         className="ltr:pl-[45px] rtl:pr-[45px] text-body placeholder:text-body dark:text-white/60 font-normal border border-normal shadow-none dark:border-white/10"
                         prefix={
@@ -73,7 +81,11 @@ function SocialProfile() {
                         placeholder="@username"
                       />
                     </Form.Item>
-                    <Form.Item name="dribbble" label="Dribbble" className="[&>.ant-form-item-row]:flex-col [&>.ant-form-item-row>div]:flex-1 mb-4 form-label-w-full form-label-text-start">
+                    <Form.Item
+                      name="dribbble"
+                      label="Dribbble"
+                      className="[&>.ant-form-item-row]:flex-col [&>.ant-form-item-row>div]:flex-1 mb-4 form-label-w-full form-label-text-start"
+                    >
                       <Input
                         className="ltr:pl-[45px] rtl:pr-[45px] text-body placeholder:text-body dark:text-white/60 font-normal border border-normal shadow-none dark:border-white/10"
                         prefix={
@@ -87,7 +99,11 @@ function SocialProfile() {
                         placeholder="URL"
                       />
                     </Form.Item>
-                    <Form.Item name="instagram" label="Instagram" className="[&>.ant-form-item-row]:flex-col [&>.ant-form-item-row>div]:flex-1 mb-4 form-label-w-full form-label-text-start">
+                    <Form.Item
+                      name="instagram"
+                      label="Instagram"
+                      className="[&>.ant-form-item-row]:flex-col [&>.ant-form-item-row>div]:flex-1 mb-4 form-label-w-full form-label-text-start"
+                    >
                       <Input
                         className="ltr:pl-[45px] rtl:pr-[45px] text-body placeholder:text-body dark:text-white/60 font-normal border border-normal shadow-none dark:border-white/10"
                         prefix={
@@ -101,7 +117,11 @@ function SocialProfile() {
                         placeholder="URL"
                       />
                     </Form.Item>
-                    <Form.Item name="github" label="GitHub" className="[&>.ant-form-item-row]:flex-col [&>.ant-form-item-row>div]:flex-1 mb-4 form-label-w-full form-label-text-start">
+                    <Form.Item
+                      name="github"
+                      label="GitHub"
+                      className="[&>.ant-form-item-row]:flex-col [&>.ant-form-item-row>div]:flex-1 mb-4 form-label-w-full form-label-text-start"
+                    >
                       <Input
                         className="ltr:pl-[45px] rtl:pr-[45px] text-body placeholder:text-body dark:text-white/60 font-normal border border-normal shadow-none dark:border-white/10"
                         prefix={
@@ -115,7 +135,11 @@ function SocialProfile() {
                         placeholder="Username"
                       />
                     </Form.Item>
-                    <Form.Item name="Medium" label="Medium" className="[&>.ant-form-item-row]:flex-col [&>.ant-form-item-row>div]:flex-1 mb-0 form-label-w-full form-label-text-start">
+                    <Form.Item
+                      name="Medium"
+                      label="Medium"
+                      className="[&>.ant-form-item-row]:flex-col [&>.ant-form-item-row>div]:flex-1 mb-0 form-label-w-full form-label-text-start"
+                    >
                       <Input
                         className="ltr:pl-[45px] rtl:pr-[45px] text-body placeholder:text-body dark:text-white/60 font-normal border border-normal shadow-none dark:border-white/10"
                         prefix={
@@ -130,7 +154,12 @@ function SocialProfile() {
                       />
                     </Form.Item>
                     <div className="mt-[48px] mb-[30px] flex items-center flex-wrap gap-[15px]">
-                      <Buttons size="default" htmlType="submit" type="primary" className="px-5 text-white bg-primary hover:bg-primary-hbr h-11">
+                      <Buttons
+                        size="default"
+                        htmlType="submit"
+                        type="primary"
+                        className="px-5 text-white bg-primary hover:bg-primary-hbr h-11"
+                      >
                         Update Social Profile
                       </Buttons>
                       <Buttons
@@ -150,7 +179,7 @@ function SocialProfile() {
         </div>
       </SettingsLayout>
     </>
-  );
+  )
 }
 
-export default SocialProfile;
+export default SocialProfile

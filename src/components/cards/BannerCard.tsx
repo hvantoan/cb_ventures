@@ -1,59 +1,54 @@
-import {
-  UilEllipsisH,
-  UilEye,
-  UilHeart
-} from '@iconscout/react-unicons';
-import React from 'react';
-import DropDown from '../dropdown';
-import { Buttons } from '../buttons';
+import { UilEllipsisH, UilEye, UilHeart } from '@iconscout/react-unicons'
+import React from 'react'
+import DropDown from '../Dropdown'
+import { Buttons } from '../Buttons'
 import Link from 'next/link'
 
-
-function BannerCard( { item }:any ) {
+function BannerCard({ item }: any) {
   const moreContent = [
     {
-        key: '1',
-        label: (
-            <Link
-                className="group flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary px-3 py-1.5 text-sm gap-[10px] [&>svg]:w-[14px] [&>svg]:h-[14px] [&>svg]:text-light-extra dark:[&>svg]:text-white/60"
-                href="#"
-            >
-                View
-            </Link>
-        ),
+      key: '1',
+      label: (
+        <Link
+          className="group flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary px-3 py-1.5 text-sm gap-[10px] [&>svg]:w-[14px] [&>svg]:h-[14px] [&>svg]:text-light-extra dark:[&>svg]:text-white/60"
+          href="#"
+        >
+          View
+        </Link>
+      ),
     },
     {
-        key: '2',
-        label: (
-            <Link
-                className="group flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary px-3 py-1.5 text-sm gap-[10px] [&>svg]:w-[14px] [&>svg]:h-[14px] [&>svg]:text-light-extra dark:[&>svg]:text-white/60"
-                href="#"
-            >
-                Edit
-            </Link>
-        ),
+      key: '2',
+      label: (
+        <Link
+          className="group flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary px-3 py-1.5 text-sm gap-[10px] [&>svg]:w-[14px] [&>svg]:h-[14px] [&>svg]:text-light-extra dark:[&>svg]:text-white/60"
+          href="#"
+        >
+          Edit
+        </Link>
+      ),
     },
     {
-        key: '3',
-        label: (
-            <Link
-                className="group flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary px-3 py-1.5 text-sm gap-[10px] [&>svg]:w-[14px] [&>svg]:h-[14px] [&>svg]:text-light-extra dark:[&>svg]:text-white/60"
-                href="#"
-            >
-                Delete
-            </Link>
-        ),
+      key: '3',
+      label: (
+        <Link
+          className="group flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary px-3 py-1.5 text-sm gap-[10px] [&>svg]:w-[14px] [&>svg]:h-[14px] [&>svg]:text-light-extra dark:[&>svg]:text-white/60"
+          href="#"
+        >
+          Delete
+        </Link>
+      ),
     },
-]
-  const { content, icon, title, authorName, authorImg, type, bgImage, titleColor, subTitleColor } = item;
+  ]
+  const { content, icon, title, authorName, authorImg, type, bgImage, titleColor, subTitleColor } = item
   return (
     <div
       className={`border-regular dark:border-white/10 border-1 pt-[20px] px-[25px] pb-[25px] bg-${type} [&.bg-primary]:border-none dark:[&.bg-white]:bg-dark rounded-10 bg-cover bg-center`}
-      style={{ 
-        backgroundImage: bgImage && `url(/img/sampleCards/${bgImage})`, 
-        backgroundSize: 'cover', 
-        backgroundRepeat: 'no-repeat', 
-        backgroundPosition: 'center center' 
+      style={{
+        backgroundImage: bgImage && `url(/img/sampleCards/${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
       }}
     >
       <div className="flex items-center justify-between">
@@ -63,10 +58,11 @@ function BannerCard( { item }:any ) {
           <img className="w-[14px] h-[14px]" src={`/img/icon/${icon}`} alt="HexaDash Banner" />
           <span>{title}</span>
         </h4>
-        <DropDown
-          customContent={moreContent}
-        >
-          <Buttons className="text-light-extra dark:text-white/60 -mt-[15px] border-0 shadow-none outline-none" onClick={(e:any) => e.preventDefault()}>
+        <DropDown customContent={moreContent}>
+          <Buttons
+            className="text-light-extra dark:text-white/60 -mt-[15px] border-0 shadow-none outline-none"
+            onClick={(e: any) => e.preventDefault()}
+          >
             <UilEllipsisH className="w-[24px] h-[24px] m-0 dark:text-white/60" />
           </Buttons>
         </DropDown>
@@ -93,8 +89,7 @@ function BannerCard( { item }:any ) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-
-export default BannerCard;
+export default BannerCard

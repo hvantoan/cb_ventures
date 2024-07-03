@@ -1,68 +1,65 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Row, Col, Pagination } from 'antd';
-import Link from 'next/link';
-import { PageHeaders } from '@/components/page-headers';
-import Heading from '@/components/heading';
-import { AutoComplete, Input } from 'antd';
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { Row, Col, Pagination } from 'antd'
+import Link from 'next/link'
+import { PageHeaders } from '@/components/PageHeaders'
+import Heading from '@/components/Heading'
+import { AutoComplete, Input } from 'antd'
 
 const mockVal = (str: string, repeat = 1) => ({
   value: str.repeat(repeat),
-});
+})
 
 function SearchResult() {
-  const [activeValue, setActiveValue] = useState('all');
+  const [activeValue, setActiveValue] = useState('all')
 
-  const searchData = useSelector((state:any) => state.headerSearchData);
+  const searchData = useSelector((state: any) => state.headerSearchData)
   const [state, setState] = useState({
     notData: searchData,
     activeClass: 'all',
     current: 0,
     pageSize: 0,
-  });
+  })
 
-  const onShowSizeChange = (current:any, pageSize:any) => {
-    setState({ ...state, current, pageSize });
-  };
+  const onShowSizeChange = (current: any, pageSize: any) => {
+    setState({ ...state, current, pageSize })
+  }
 
-  const onHandleChange = (current:any, pageSize:any) => {
+  const onHandleChange = (current: any, pageSize: any) => {
     // You can create pagination in here
-    setState({ ...state, current, pageSize });
-  };
-  const [value, setValue] = useState('');
-  const [options, setOptions] = useState<{ value: string }[]>([]);
-  const [anotherOptions, setAnotherOptions] = useState<{ value: string }[]>([]);
+    setState({ ...state, current, pageSize })
+  }
+  const [value, setValue] = useState('')
+  const [options, setOptions] = useState<{ value: string }[]>([])
+  const [anotherOptions, setAnotherOptions] = useState<{ value: string }[]>([])
 
   const getPanelValue = (searchText: string) =>
-    !searchText ? [] : [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)];
+    !searchText ? [] : [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)]
 
   const onSelect = (data: string) => {
-    console.log('onSelect', data);
-  };
+    console.log('onSelect', data)
+  }
 
   const onChange = (data: string) => {
-    setValue(data);
-  };
+    setValue(data)
+  }
 
   return (
     <>
-      <PageHeaders 
-        title="Search Result" 
-        className="flex justify-between items-center bg-transparent px-8 py-[18px]" 
-      />
+      <PageHeaders title="Search Result" className="flex justify-between items-center bg-transparent px-8 py-[18px]" />
 
       <main className="min-h-[715px] lg:min-h-[580px] bg-transparent px-8 xl:px-[15px] pb-[50px] ssm:pb-[30px]">
         <Row gutter={25}>
           <Col xs={24}>
             <div className="">
-            <AutoComplete
-              className="w-1/2 search-result-wrapper h-[50px]"
-              options={options}
-              onSelect={onSelect}
-              onSearch={(text) => setOptions(getPanelValue(text))}
-            >
-              <Input.Search className="text-[15px]" size="large" placeholder="Type and search" />
-            </AutoComplete>
+              <AutoComplete
+                className="w-1/2 search-result-wrapper h-[50px]"
+                options={options}
+                onSelect={onSelect}
+                onSearch={(text) => setOptions(getPanelValue(text))}
+              >
+                <Input.Search className="text-[15px]" size="large" placeholder="Type and search" />
+              </AutoComplete>
             </div>
           </Col>
           <Col xs={24}>
@@ -261,7 +258,7 @@ function SearchResult() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default SearchResult;
+export default SearchResult

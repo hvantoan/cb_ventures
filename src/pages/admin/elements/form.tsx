@@ -1,31 +1,31 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
-import { Row, Col, Form, Select, Input, InputNumber } from 'antd';
-import { UilPlus } from '@iconscout/react-unicons';
-import { PageHeaders } from '@/components/page-headers';
-import { Cards } from '@/components/cards/frame/cards-frame';
-import { CasCader } from '@/components/cascader';
-import { Buttons } from '@/components/buttons';
-import { ShareButtonPageHeader } from '@/components/buttons/share-button';
-import { ExportButtonPageHeader } from '@/components/buttons/export-button';
-import { CalendarButtonPageHeader } from '@/components/buttons/calendar-button';
+import React, { useState } from 'react'
+import { Row, Col, Form, Select, Input, InputNumber } from 'antd'
+import { UilPlus } from '@iconscout/react-unicons'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Cards } from '@/components/Cards/Frame/cards-frame'
+import { CasCader } from '@/components/Cascader'
+import { Buttons } from '@/components/Buttons'
+import { ShareButtonPageHeader } from '@/components/Buttons/ShareButton'
+import { ExportButtonPageHeader } from '@/components/Buttons/ExportButton'
+import { CalendarButtonPageHeader } from '@/components/Buttons/Calendar-button'
 
-const { Option } = Select;
-const { TextArea } = Input;
+const { Option } = Select
+const { TextArea } = Input
 
 function Forms() {
-  const [form] = Form.useForm();
+  const [form] = Form.useForm()
   const [state, setstate] = useState({
     values: {},
     cascaderItem: [],
-  });
-  const handleSubmit = (values:any) => {
-    setstate({ ...state, values });
-  };
+  })
+  const handleSubmit = (values: any) => {
+    setstate({ ...state, values })
+  }
 
-  const onChangeCascader = (value:any) => {
-    setstate({ ...state, cascaderItem: value });
-  };
+  const onChangeCascader = (value: any) => {
+    setstate({ ...state, cascaderItem: value })
+  }
 
   return (
     <>
@@ -37,7 +37,11 @@ function Forms() {
             <CalendarButtonPageHeader />
             <ExportButtonPageHeader />
             <ShareButtonPageHeader />
-            <Buttons size="small" type="primary" className="text-[14px] font-medium border-none leading-[22px] dark:bg-white/10 text-theme-gray dark:text-white/60 dark:focus:text-dark dark:hover:text-dark inline-flex items-center justify-center rounded-[4px] px-[20px] h-[34px] gap-[8px]">
+            <Buttons
+              size="small"
+              type="primary"
+              className="text-[14px] font-medium border-none leading-[22px] dark:bg-white/10 text-theme-gray dark:text-white/60 dark:focus:text-dark dark:hover:text-dark inline-flex items-center justify-center rounded-[4px] px-[20px] h-[34px] gap-[8px]"
+            >
               <UilPlus />
               Add New
             </Buttons>
@@ -84,7 +88,7 @@ function Forms() {
                       showSearch
                       placeholder="Please Slelect"
                       optionFilterProp="children"
-                      filterOption={(input:any, option:any) =>
+                      filterOption={(input: any, option: any) =>
                         option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                       }
                     >
@@ -106,7 +110,7 @@ function Forms() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default Forms;
+export default Forms

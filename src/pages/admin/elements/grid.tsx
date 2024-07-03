@@ -1,7 +1,7 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
-import { Cards } from '@/components/cards/frame/cards-frame';
+import React from 'react'
+import { Row, Col } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Cards } from '@/components/Cards/Frame/cards-frame'
 
 function Grid() {
   const PageRoutes = [
@@ -13,7 +13,7 @@ function Grid() {
       path: '',
       breadcrumbName: 'Grid',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -248,7 +248,7 @@ function Grid() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default Grid;
+export default Grid

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import SwiperCore from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
-import { PageHeaders } from '@/components/page-headers'
+import { PageHeaders } from '@/components/PageHeaders'
 
 import 'swiper/css'
 import 'swiper/css/pagination'

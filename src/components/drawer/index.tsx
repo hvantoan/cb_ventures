@@ -1,51 +1,51 @@
-import { Radio, Drawer } from 'antd';
-import React, { useState } from 'react';
-import { Buttons } from '../buttons';
+import { Radio, Drawer } from 'antd'
+import React, { useState } from 'react'
+import { Buttons } from '../Buttons'
 
-const RadioGroup = Radio.Group;
+const RadioGroup = Radio.Group
 
-function Drawers(props:any) {
-  const { width, title, placement, children, customPlacement, render, childDrawer, childTitle, btnText } = props;
+function Drawers(props: any) {
+  const { width, title, placement, children, customPlacement, render, childDrawer, childTitle, btnText } = props
   const [state, setState] = useState({
     open: false,
     placement: placement || 'right',
     childrenDrawer: false,
-  });
+  })
 
   const showDrawer = () => {
     setState({
       ...state,
       open: true,
-    });
-  };
+    })
+  }
 
   const onClose = () => {
     setState({
       ...state,
       open: false,
-    });
-  };
+    })
+  }
 
-  const onChange = (e:any) => {
+  const onChange = (e: any) => {
     setState({
       ...state,
       placement: e.target.value,
-    });
-  };
+    })
+  }
 
   const showChildrenDrawer = () => {
     setState({
       ...state,
       childrenDrawer: true,
-    });
-  };
+    })
+  }
 
   const onChildrenDrawerClose = () => {
     setState({
       ...state,
       childrenDrawer: false,
-    });
-  };
+    })
+  }
 
   return (
     <>
@@ -97,9 +97,7 @@ function Drawers(props:any) {
             </Drawer>
             {children}
 
-            <div
-              className="absolute bottom-0 w-full bg-white border-t dark:bg-white/10 dark:border-white/10 border-[#e8e8e8] py-[10px] px-[16px] start-0 text-end rounded-s-4"
-            >
+            <div className="absolute bottom-0 w-full bg-white border-t dark:bg-white/10 dark:border-white/10 border-[#e8e8e8] py-[10px] px-[16px] start-0 text-end rounded-s-4">
               <Buttons
                 className=" dark:bg-transparent dark:border-white/10 dark:text-white/[.87]"
                 style={{
@@ -117,7 +115,7 @@ function Drawers(props:any) {
         )}
       </Drawer>
     </>
-  );
+  )
 }
 
-export { Drawers };
+export { Drawers }

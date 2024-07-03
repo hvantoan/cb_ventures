@@ -3,7 +3,7 @@
 import React from 'react'
 import { Row, Col } from 'antd'
 import { UilArrowDown, UilArrowUp } from '@iconscout/react-unicons'
-import DashboardChart from '@/components/charts/DashboardChart'
+import DashboardChart from '@/components/Charts/DashboardChart'
 
 import totalChartData from '../../demoData/TotalSaleChart.json'
 const TotalLineChart = React.memo(() => {

@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import React from 'react'
 import Link from 'next/link'
 import {
@@ -10,8 +9,8 @@ import {
   UilFile,
   UilTimes,
 } from '@iconscout/react-unicons'
-import DashboardChart from '@/components/charts/DashboardChart'
-import { Cards } from '@/components/cards/frame/cards-frame'
+import DashboardChart from '@/components/Charts/DashboardChart'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
 import { customTooltips } from '@/components/utilities'
 
 const salesRevenue = {

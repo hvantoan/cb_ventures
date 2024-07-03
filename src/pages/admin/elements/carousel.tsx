@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Row, Col, Carousel, Radio } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
+import React, { useState } from 'react'
+import { Row, Col, Carousel, Radio } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
 
 function Carousels() {
   const PageRoutes = [
@@ -12,19 +12,22 @@ function Carousels() {
       path: '',
       breadcrumbName: 'Cards',
     },
-  ];
+  ]
 
-  const [state, setState]:any = useState({
+  const [state, setState]: any = useState({
     dotPosition: 'top',
     changeValues: [],
-  });
+  })
 
   const onChange = (currentSlide: number) => {
-    setState((prevState: { changeValues: any; }) => ({ ...prevState, changeValues: [...prevState.changeValues, currentSlide] }));
-  };
+    setState((prevState: { changeValues: any }) => ({
+      ...prevState,
+      changeValues: [...prevState.changeValues, currentSlide],
+    }))
+  }
 
-  const handlePositionChange = ( dotPosition:any ) => setState({ dotPosition: dotPosition.target.value });
-  const { dotPosition } = state;
+  const handlePositionChange = (dotPosition: any) => setState({ dotPosition: dotPosition.target.value })
+  const { dotPosition } = state
 
   return (
     <>
@@ -94,10 +97,30 @@ function Carousels() {
                 </div>
                 <div className="relative p-[25px]">
                   <Radio.Group onChange={handlePositionChange} value={dotPosition} style={{ marginBottom: 8 }}>
-                    <Radio.Button className="h-[38px] text-light dark:text-white/60 [&.ant-radio-button-wrapper-checked]:bg-primary [&.ant-radio-button-wrapper-checked]:border-primary [&.ant-radio-button-wrapper-checked]:text-white [&>span]:font-semibold [&>span]:leading-[36px]" value="top">Top</Radio.Button>
-                    <Radio.Button className="h-[38px] text-light dark:text-white/60 [&.ant-radio-button-wrapper-checked]:bg-primary [&.ant-radio-button-wrapper-checked]:border-primary [&.ant-radio-button-wrapper-checked]:text-white [&>span]:font-semibold [&>span]:leading-[36px]" value="bottom">Bottom</Radio.Button>
-                    <Radio.Button className="h-[38px] text-light dark:text-white/60 [&.ant-radio-button-wrapper-checked]:bg-primary [&.ant-radio-button-wrapper-checked]:border-primary [&.ant-radio-button-wrapper-checked]:text-white [&>span]:font-semibold [&>span]:leading-[36px]" value="left">Left</Radio.Button>
-                    <Radio.Button className="h-[38px] text-light dark:text-white/60 [&.ant-radio-button-wrapper-checked]:bg-primary [&.ant-radio-button-wrapper-checked]:border-primary [&.ant-radio-button-wrapper-checked]:text-white [&>span]:font-semibold [&>span]:leading-[36px]" value="right">Right</Radio.Button>
+                    <Radio.Button
+                      className="h-[38px] text-light dark:text-white/60 [&.ant-radio-button-wrapper-checked]:bg-primary [&.ant-radio-button-wrapper-checked]:border-primary [&.ant-radio-button-wrapper-checked]:text-white [&>span]:font-semibold [&>span]:leading-[36px]"
+                      value="top"
+                    >
+                      Top
+                    </Radio.Button>
+                    <Radio.Button
+                      className="h-[38px] text-light dark:text-white/60 [&.ant-radio-button-wrapper-checked]:bg-primary [&.ant-radio-button-wrapper-checked]:border-primary [&.ant-radio-button-wrapper-checked]:text-white [&>span]:font-semibold [&>span]:leading-[36px]"
+                      value="bottom"
+                    >
+                      Bottom
+                    </Radio.Button>
+                    <Radio.Button
+                      className="h-[38px] text-light dark:text-white/60 [&.ant-radio-button-wrapper-checked]:bg-primary [&.ant-radio-button-wrapper-checked]:border-primary [&.ant-radio-button-wrapper-checked]:text-white [&>span]:font-semibold [&>span]:leading-[36px]"
+                      value="left"
+                    >
+                      Left
+                    </Radio.Button>
+                    <Radio.Button
+                      className="h-[38px] text-light dark:text-white/60 [&.ant-radio-button-wrapper-checked]:bg-primary [&.ant-radio-button-wrapper-checked]:border-primary [&.ant-radio-button-wrapper-checked]:text-white [&>span]:font-semibold [&>span]:leading-[36px]"
+                      value="right"
+                    >
+                      Right
+                    </Radio.Button>
                   </Radio.Group>
                   <Carousel dotPosition={dotPosition}>
                     <div className="bg-light h-[150px] text-center overflow-hidden">
@@ -143,7 +166,7 @@ function Carousels() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default Carousels;
+export default Carousels

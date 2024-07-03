@@ -1,12 +1,12 @@
-import React from 'react';
-import { Row, Col, Statistic } from 'antd';
-import { LikeOutlined, ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col, Statistic } from 'antd'
+import { LikeOutlined, ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons'
+import { PageHeaders } from '@/components/PageHeaders'
 
-import { Buttons } from '@/components/buttons';
+import { Buttons } from '@/components/Buttons'
 
-const deadline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30;
-const { Countdown } = Statistic;
+const deadline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30
+const { Countdown } = Statistic
 
 function Statistics() {
   const PageRoutes = [
@@ -18,8 +18,8 @@ function Statistics() {
       path: '',
       breadcrumbName: 'Statistics',
     },
-  ];
-  const onFinish = () => {};
+  ]
+  const onFinish = () => {}
 
   return (
     <>
@@ -39,10 +39,10 @@ function Statistics() {
               </div>
               <Row gutter={16} className="p-[25px]">
                 <Col span={12}>
-                  <Statistic 
-                    className="[&>.ant-statistic-title]:text-body [&>.ant-statistic-title]:dark:text-white/60 [&>.ant-statistic-title]:text-[15px] [&>.ant-statistic-content]:text-[20px]" 
-                    title="Active Users" 
-                    value={112893} 
+                  <Statistic
+                    className="[&>.ant-statistic-title]:text-body [&>.ant-statistic-title]:dark:text-white/60 [&>.ant-statistic-title]:text-[15px] [&>.ant-statistic-content]:text-[20px]"
+                    title="Active Users"
+                    value={112893}
                   />
                 </Col>
                 <Col span={12}>
@@ -150,7 +150,7 @@ function Statistics() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default Statistics;
+export default Statistics

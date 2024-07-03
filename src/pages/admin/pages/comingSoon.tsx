@@ -5,8 +5,8 @@ import Countdown from 'react-countdown'
 import FontAwesome from 'react-fontawesome'
 import { useSelector } from 'react-redux'
 import Link from 'next/link'
-import { Buttons } from '@/components/buttons'
-import { PageHeaders } from '@/components/page-headers'
+import { Buttons } from '@/components/Buttons'
+import { PageHeaders } from '@/components/PageHeaders'
 import Image from 'next/image'
 
 function ComingSoon() {

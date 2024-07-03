@@ -1,17 +1,13 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useState, useLayoutEffect } from 'react';
-import Link from 'next/link';
-import FontAwesome from 'react-fontawesome';
-import {
-  UilTimes,
-  UilAlignLeft,
-  UilAlignRight 
-} from '@iconscout/react-unicons';
-import SingleKnowledgeDetails from './overview/SingleKnowledge/Details';
-import GeneralKnowledgeTop from './overview/GeneralKnowledgeTop';
-import SideNav from './overview/SingleKnowledge/SideNav';
-import { PageHeaders } from '@/components/page-headers';
-import { Buttons } from '@/components/buttons';
+import React, { useState, useLayoutEffect } from 'react'
+import Link from 'next/link'
+import FontAwesome from 'react-fontawesome'
+import { UilTimes, UilAlignLeft, UilAlignRight } from '@iconscout/react-unicons'
+import SingleKnowledgeDetails from './overview/SingleKnowledge/Details'
+import GeneralKnowledgeTop from './overview/GeneralKnowledgeTop'
+import SideNav from './overview/SingleKnowledge/SideNav'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Buttons } from '@/components/Buttons'
 
 function SingleKnowledge() {
   const PageRoutes = [
@@ -23,35 +19,35 @@ function SingleKnowledge() {
       path: '',
       breadcrumbName: 'Knowledgebase',
     },
-  ];
+  ]
 
-  const path = '/admin/pages/knowledgeBase';
-  
+  const path = '/admin/pages/knowledgeBase'
+
   const [state, setState] = useState({
     responsive: 0,
     collapsed: false,
-  });
-  const { responsive, collapsed } = state;
+  })
+  const { responsive, collapsed } = state
 
   useLayoutEffect(() => {
     function updateSize() {
-      const width = window.innerWidth;
+      const width = window.innerWidth
       setState((prevState) => ({
         ...prevState, // Preserve other properties in the state
         responsive: width,
-      }));
+      }))
     }
-    window.addEventListener('resize', updateSize);
-    updateSize();
-    return () => window.removeEventListener('resize', updateSize);
-  }, []);
+    window.addEventListener('resize', updateSize)
+    updateSize()
+    return () => window.removeEventListener('resize', updateSize)
+  }, [])
 
   const toggleCollapsed = () => {
     setState({
       ...state,
       collapsed: !collapsed,
-    });
-  };
+    })
+  }
 
   return (
     <>
@@ -103,7 +99,8 @@ function SingleKnowledge() {
                   <SideNav />
                 </div>
               ) : (
-                <div className={`fixed top-[64px] ltr:left-0 rtl:right-0 bg-white dark:bg-dark w-[300px] h-full overflow-y-auto z-20 transition ${
+                <div
+                  className={`fixed top-[64px] ltr:left-0 rtl:right-0 bg-white dark:bg-dark w-[300px] h-full overflow-y-auto z-20 transition ${
                     collapsed ? 'translate-x-0' : 'ltr:-translate-x-[300px] rtl:translate-x-[300px]'
                   } `}
                 >
@@ -136,7 +133,7 @@ function SingleKnowledge() {
         </div>
       </main>
     </>
-  );
+  )
 }
 
-export default SingleKnowledge;
+export default SingleKnowledge

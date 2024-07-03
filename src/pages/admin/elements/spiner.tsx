@@ -1,9 +1,9 @@
-import React from 'react';
-import { Row, Col, Spin } from 'antd';
-import { LoadingOutlined } from '@ant-design/icons';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col, Spin } from 'antd'
+import { LoadingOutlined } from '@ant-design/icons'
+import { PageHeaders } from '@/components/PageHeaders'
 
-const antIcon = <LoadingOutlined style={{ fontSize: 24 }} />;
+const antIcon = <LoadingOutlined style={{ fontSize: 24 }} />
 
 function Spiner() {
   const PageRoutes = [
@@ -15,7 +15,7 @@ function Spiner() {
       path: '',
       breadcrumbName: 'Spin',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -71,14 +71,17 @@ function Spiner() {
                 </h1>
               </div>
               <div className="m-[25px]">
-                <Spin indicator={antIcon} className="bg-section dark:bg-[#1b1c29]  text-primary w-full px-[50px] py-[30px] rounded-4" />
+                <Spin
+                  indicator={antIcon}
+                  className="bg-section dark:bg-[#1b1c29]  text-primary w-full px-[50px] py-[30px] rounded-4"
+                />
               </div>
             </div>
           </Col>
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default Spiner;
+export default Spiner

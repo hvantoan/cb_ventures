@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import Heading from '@/components/heading'
-import { Buttons } from '@/components/buttons'
+import Heading from '@/components/Heading'
+import { Buttons } from '@/components/Buttons'
 
 function UserCardList({ user }: any) {
   const { name, designation, img, content } = user

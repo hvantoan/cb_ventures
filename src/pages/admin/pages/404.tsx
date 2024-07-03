@@ -1,9 +1,7 @@
-import NotFound from "@/pages/404";
+import NotFound from '@/pages/shared/404'
 
 function ErrorPage() {
-  return (
-    <NotFound />
-  )
+  return <NotFound />
 }
 
-export default ErrorPage;
+export default ErrorPage

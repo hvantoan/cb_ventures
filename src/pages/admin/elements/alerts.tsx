@@ -1,9 +1,8 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import { UilQuestionCircle, UilLayers, UilCheckCircle, UilFileTimes } from '@iconscout/react-unicons';
-import { PageHeaders } from '@/components/page-headers';
-import AlertText from '@/components/alerts';
-
+import React from 'react'
+import { Row, Col } from 'antd'
+import { UilQuestionCircle, UilLayers, UilCheckCircle, UilFileTimes } from '@iconscout/react-unicons'
+import { PageHeaders } from '@/components/PageHeaders'
+import AlertText from '@/components/Alerts'
 
 function Alerts() {
   const PageRoutes = [
@@ -15,7 +14,7 @@ function Alerts() {
       path: '',
       breadcrumbName: 'Alerts',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -70,10 +69,34 @@ function Alerts() {
                 </div>
                 <div className="gap-y-[15px] inline-flex flex-col w-full p-[25px]">
                   <div className="alert-empty-message gap-y-[15px] inline-flex flex-col w-full">
-                    <AlertText showIcon icon={<UilQuestionCircle className="w-[16px] he-[16px]" />} message="" description="Success Tips" type="success" />
-                    <AlertText showIcon icon={<UilQuestionCircle className="w-[16px] he-[16px]" />} message="" description="Informational Notes" type="info" />
-                    <AlertText showIcon icon={<UilQuestionCircle className="w-[16px] he-[16px]" />} message="" description="Warning" type="warning" />
-                    <AlertText showIcon icon={<UilQuestionCircle className="w-[16px] he-[16px]" />} message="" description="Error" type="error" />
+                    <AlertText
+                      showIcon
+                      icon={<UilQuestionCircle className="w-[16px] he-[16px]" />}
+                      message=""
+                      description="Success Tips"
+                      type="success"
+                    />
+                    <AlertText
+                      showIcon
+                      icon={<UilQuestionCircle className="w-[16px] he-[16px]" />}
+                      message=""
+                      description="Informational Notes"
+                      type="info"
+                    />
+                    <AlertText
+                      showIcon
+                      icon={<UilQuestionCircle className="w-[16px] he-[16px]" />}
+                      message=""
+                      description="Warning"
+                      type="warning"
+                    />
+                    <AlertText
+                      showIcon
+                      icon={<UilQuestionCircle className="w-[16px] he-[16px]" />}
+                      message=""
+                      description="Error"
+                      type="error"
+                    />
                   </div>
                   <AlertText
                     showIcon
@@ -180,7 +203,7 @@ function Alerts() {
         </main>
       </>
     </>
-  );
+  )
 }
 
-export default Alerts;
+export default Alerts

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Row, Col } from 'antd';
+import React from 'react'
+import { Row, Col } from 'antd'
 // eslint-disable-next-line import/no-extraneous-dependencies
-import * as Unicons from '@iconscout/react-unicons';
-import { PageHeaders } from '@/components/page-headers';
-import Heading from '@/components/heading';
+import * as Unicons from '@iconscout/react-unicons'
+import { PageHeaders } from '@/components/PageHeaders'
+import Heading from '@/components/Heading'
 
 function UnIconsSvg() {
   return (
@@ -25,7 +25,7 @@ function UnIconsSvg() {
                 <div className="p-[25px]">
                   <Row gutter={15}>
                     {Object.keys(Unicons).map((icon) => {
-                      const IconTag = Unicons[icon];
+                      const IconTag = Unicons[icon]
                       return (
                         <Col xl={6} md={12} xs={24} key={icon}>
                           <div className="flex items-center mb-[15px]">
@@ -33,7 +33,7 @@ function UnIconsSvg() {
                             <span className="text-body dark:text-white/60">{icon.substring(3)}</span>
                           </div>
                         </Col>
-                      );
+                      )
                     })}
                   </Row>
                 </div>
@@ -43,7 +43,7 @@ function UnIconsSvg() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default UnIconsSvg;
+export default UnIconsSvg

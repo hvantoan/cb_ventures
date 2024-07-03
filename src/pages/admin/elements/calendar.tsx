@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Row, Col, Calendar, Badge } from 'antd';
-import moment from 'moment';
-import { PageHeaders } from '@/components/page-headers';
+import React, { useState } from 'react'
+import { Row, Col, Calendar, Badge } from 'antd'
+import moment from 'moment'
+import { PageHeaders } from '@/components/PageHeaders'
 
 function Calendars() {
   const PageRoutes = [
@@ -13,36 +13,36 @@ function Calendars() {
       path: '',
       breadcrumbName: 'Calendar',
     },
-  ];
+  ]
 
   const [state, setState] = useState({
     value: moment('2017-01-25'),
     selectedValue: moment('2017-01-25'),
-  });
+  })
 
   const onPanelChange = (value: any) => {
-    setState(prevState => ({
+    setState((prevState) => ({
       ...prevState,
       value: value,
-    }));
-  };
+    }))
+  }
 
-  const getListData = (value:any) => {
-    let listData;
+  const getListData = (value: any) => {
+    let listData
     switch (value.date()) {
       case 8:
         listData = [
           { type: 'warning', content: 'This is warning event.' },
           { type: 'success', content: 'This is usual event.' },
-        ];
-        break;
+        ]
+        break
       case 10:
         listData = [
           { type: 'warning', content: 'This is warning event.' },
           { type: 'success', content: 'This is usual event.' },
           { type: 'error', content: 'This is error event.' },
-        ];
-        break;
+        ]
+        break
       case 15:
         listData = [
           { type: 'warning', content: 'This is warning event' },
@@ -51,42 +51,42 @@ function Calendars() {
           { type: 'error', content: 'This is error event 2.' },
           { type: 'error', content: 'This is error event 3.' },
           { type: 'error', content: 'This is error event 4.' },
-        ];
-        break;
+        ]
+        break
       default:
     }
-    return listData || [];
-  };
+    return listData || []
+  }
 
-  const cellRender = (value:any) => {
-    const listData = getListData(value);
+  const cellRender = (value: any) => {
+    const listData = getListData(value)
     return (
       <ul className="events">
-        {listData.map((item:any) => (
+        {listData.map((item: any) => (
           <li key={item.content}>
             <Badge status={item.type} text={item.content} />
           </li>
         ))}
       </ul>
-    );
-  };
+    )
+  }
 
-  const getMonthData = (value:any) => {
+  const getMonthData = (value: any) => {
     if (value.month() === 8) {
-      return 1394;
+      return 1394
     }
-    return true;
-  };
+    return true
+  }
 
-  const monthCellRender = (value:any) => {
-    const num = getMonthData(value);
+  const monthCellRender = (value: any) => {
+    const num = getMonthData(value)
     return num ? (
       <div className="notes-month">
         <section>{num}</section>
         <span>Backlog number</span>
       </div>
-    ) : null;
-  };
+    ) : null
+  }
 
   return (
     <>
@@ -126,7 +126,7 @@ function Calendars() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default Calendars;
+export default Calendars

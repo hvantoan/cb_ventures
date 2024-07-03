@@ -1,12 +1,12 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
-import { PageHeaders } from '@/components/page-headers';
-import { Buttons } from '@/components/buttons';
+import React from 'react'
+import { Row, Col } from 'antd'
+import { PlusOutlined } from '@ant-design/icons'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Buttons } from '@/components/Buttons'
 
-import { ShareButtonPageHeader } from '@/components/buttons/share-button';
-import { ExportButtonPageHeader } from '@/components/buttons/export-button';
-import { CalendarButtonPageHeader } from '@/components/buttons/calendar-button';
+import { ShareButtonPageHeader } from '@/components/Buttons/ShareButton'
+import { ExportButtonPageHeader } from '@/components/Buttons/ExportButton'
+import { CalendarButtonPageHeader } from '@/components/Buttons/Calendar-button'
 
 const routes = [
   {
@@ -21,7 +21,7 @@ const routes = [
     path: 'second',
     breadcrumbName: 'Third-level Menu',
   },
-];
+]
 
 function PageHeaderElement() {
   const PageRoutes = [
@@ -33,7 +33,7 @@ function PageHeaderElement() {
       path: '',
       breadcrumbName: 'Notifications',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -175,7 +175,7 @@ function PageHeaderElement() {
         </Row>
       </div>
     </>
-  );
+  )
 }
 
-export default PageHeaderElement;
+export default PageHeaderElement

@@ -11,11 +11,7 @@ export const store = configureStore({
 })
 
 export const makeStore = () => {
-  return configureStore({
-    reducer: rootReducers,
-    devTools: true,
-    // middleware: (getDefaultMiddleware) => getDefaultMiddleware()
-  })
+  return store
 }
 
 // Infer the type of makeStore

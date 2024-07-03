@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Row, Col, TimePicker, Button } from 'antd';
-import dayjs from 'dayjs';
-import { PageHeaders } from '@/components/page-headers';
+import React, { useState } from 'react'
+import { Row, Col, TimePicker, Button } from 'antd'
+import dayjs from 'dayjs'
+import { PageHeaders } from '@/components/PageHeaders'
 
-const format = 'HH:mm';
+const format = 'HH:mm'
 function TimePickers() {
   const PageRoutes = [
     {
@@ -14,14 +14,14 @@ function TimePickers() {
       path: '',
       breadcrumbName: 'Time Picker',
     },
-  ];
-  const [state, setState] = useState({ open: false });
+  ]
+  const [state, setState] = useState({ open: false })
 
-  const handleOpenChange = (open:any) => {
-    setState({ open });
-  };
+  const handleOpenChange = (open: any) => {
+    setState({ open })
+  }
 
-  const handleClose = () => setState({ open: false });
+  const handleClose = () => setState({ open: false })
 
   return (
     <>
@@ -159,7 +159,7 @@ function TimePickers() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default TimePickers;
+export default TimePickers

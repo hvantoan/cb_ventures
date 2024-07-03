@@ -1,31 +1,31 @@
 /* eslint-disable react/jsx-no-bind */
-import React from 'react';
-import { Row, Col, Form, Input, Select, Upload, message, Radio, Checkbox } from 'antd';
-import Link from 'next/link';
-import GridForm from './overview/GridForm';
-import SizedForm from './overview/SizedForm';
-import InputForm from './overview/InputForm';
+import React from 'react'
+import { Row, Col, Form, Input, Select, Upload, message, Radio, Checkbox } from 'antd'
+import Link from 'next/link'
+import GridForm from './overview/GridForm'
+import SizedForm from './overview/SizedForm'
+import InputForm from './overview/InputForm'
 
-import { PageHeaders } from '@/components/page-headers';
+import { PageHeaders } from '@/components/PageHeaders'
 
-const { Option } = Select;
-const { TextArea } = Input;
+const { Option } = Select
+const { TextArea } = Input
 const props = {
   name: 'file',
   action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
   headers: {
     authorization: 'authorization-text',
   },
-  onChange(info:any) {
+  onChange(info: any) {
     if (info.file.status !== 'uploading') {
     }
     if (info.file.status === 'done') {
-      message.success(`${info.file.name} file uploaded successfully`);
+      message.success(`${info.file.name} file uploaded successfully`)
     } else if (info.file.status === 'error') {
-      message.error(`${info.file.name} file upload failed.`);
+      message.error(`${info.file.name} file upload failed.`)
     }
   },
-};
+}
 function FormElements() {
   const PageRoutes = [
     {
@@ -36,7 +36,7 @@ function FormElements() {
       path: 'first',
       breadcrumbName: 'Form Elements',
     },
-  ];
+  ]
   function onChange() {}
   return (
     <>
@@ -66,7 +66,10 @@ function FormElements() {
                     <TextArea className="border-normal dark:border-whiteDark hover:border-primary focus:border-primary" />
                   </Form.Item>
                   <Form.Item name="unresizable-textarea" label="Unresizable Textarea">
-                    <TextArea className="border-normal dark:border-whiteDark hover:border-primary focus:border-primary" style={{resize: 'none',}} />
+                    <TextArea
+                      className="border-normal dark:border-whiteDark hover:border-primary focus:border-primary"
+                      style={{ resize: 'none' }}
+                    />
                   </Form.Item>
                 </Form>
               </div>
@@ -200,7 +203,7 @@ function FormElements() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default FormElements;
+export default FormElements

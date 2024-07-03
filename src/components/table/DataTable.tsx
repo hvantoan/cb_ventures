@@ -1,38 +1,38 @@
-import { UilSearch } from '@iconscout/react-unicons';
-import { Input, Select, Table } from 'antd';
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { dataLiveFilter, filterWithSubmit } from '@/redux/data-filter/actionCreator';
-import { Buttons } from '../buttons';
+import { UilSearch } from '@iconscout/react-unicons'
+import { Input, Select, Table } from 'antd'
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { dataLiveFilter, filterWithSubmit } from '@/redux/data-filter/actionCreator'
+import { Buttons } from '../Buttons'
 
-function DataTable({ filterOption, filterOnchange, rowSelection, tableData, columns }:any) {
-  const dispatch = useDispatch();
-  const handleIdSearch = (e:any) => {
-    const id = e.currentTarget.value;
+function DataTable({ filterOption, filterOnchange, rowSelection, tableData, columns }: any) {
+  const dispatch = useDispatch()
+  const handleIdSearch = (e: any) => {
+    const id = e.currentTarget.value
     // @ts-ignore
-    dispatch(dataLiveFilter(id, 'id'));
-  };
-  const handleStatusSearch = (value:any) => {
+    dispatch(dataLiveFilter(id, 'id'))
+  }
+  const handleStatusSearch = (value: any) => {
     // @ts-ignore
-    dispatch(dataLiveFilter(value, 'status'));
-  };
+    dispatch(dataLiveFilter(value, 'status'))
+  }
 
-  const handleDataUser = (e:any) => {
-    const { value } = e.currentTarget;
+  const handleDataUser = (e: any) => {
+    const { value } = e.currentTarget
     // @ts-ignore
-    dispatch(dataLiveFilter(value, 'name'));
-  };
+    dispatch(dataLiveFilter(value, 'name'))
+  }
 
   const handleSearch = () => {
-    const idElement = document.querySelector('.search-input') as HTMLInputElement | null;
+    const idElement = document.querySelector('.search-input') as HTMLInputElement | null
     if (idElement) {
-      const id = idElement.value;
-      const status = idElement.title;
+      const id = idElement.value
+      const status = idElement.title
       // @ts-ignore
-      dispatch(filterWithSubmit(id, status)); // Assuming your action only requires the ID
+      dispatch(filterWithSubmit(id, status)) // Assuming your action only requires the ID
     }
-  };
-  const prefix = <UilSearch className="w-4 h-4 ltr:mr-2 rtl:ml-2 text-light dark:text-white/60" />;
+  }
+  const prefix = <UilSearch className="w-4 h-4 ltr:mr-2 rtl:ml-2 text-light dark:text-white/60" />
   return (
     <>
       {filterOption ? (
@@ -48,7 +48,11 @@ function DataTable({ filterOption, filterOnchange, rowSelection, tableData, colu
               </div>
               <div className="inline-flex items-center">
                 <span className="ltr:mr-2 rtl:ml-2 dark:text-white/60">Status:</span>
-                <Select style={{ width: 200 }} defaultValue="active" className="[&>.ant-select-selector]:h-10 [&>.ant-select-selector]:px-5 [&>.ant-select-selector]:border-normal [&>.ant-select-selector]:dark:border-light [&>.ant-select-selector>.ant-select-selection-item]:leading-[36px] [&>.ant-select-selector>.ant-select-selection-item]:text-light">
+                <Select
+                  style={{ width: 200 }}
+                  defaultValue="active"
+                  className="[&>.ant-select-selector]:h-10 [&>.ant-select-selector]:px-5 [&>.ant-select-selector]:border-normal [&>.ant-select-selector]:dark:border-light [&>.ant-select-selector>.ant-select-selection-item]:leading-[36px] [&>.ant-select-selector>.ant-select-selection-item]:text-light"
+                >
                   <Select.Option value="active">Active</Select.Option>
                   <Select.Option value="deactivated">Deactivated</Select.Option>
                   <Select.Option value="blocked">Blocked</Select.Option>
@@ -72,7 +76,12 @@ function DataTable({ filterOption, filterOnchange, rowSelection, tableData, colu
               </div>
               <div className="inline-flex items-center">
                 <span className="ltr:mr-2 rtl:ml-2 dark:text-white/60">Status:</span>
-                <Select onChange={handleStatusSearch} style={{ width: 200 }} defaultValue="active" className="[&>.ant-select-selector]:h-10 [&>.ant-select-selector]:px-5 [&>.ant-select-selector]:border-normal [&>.ant-select-selector]:dark:border-white/10 [&>.ant-select-selector>.ant-select-selection-item]:leading-[36px] [&>.ant-select-selector>.ant-select-selection-item]:text-light [&>.ant-select-arrow]:dark:text-white/10">
+                <Select
+                  onChange={handleStatusSearch}
+                  style={{ width: 200 }}
+                  defaultValue="active"
+                  className="[&>.ant-select-selector]:h-10 [&>.ant-select-selector]:px-5 [&>.ant-select-selector]:border-normal [&>.ant-select-selector]:dark:border-white/10 [&>.ant-select-selector>.ant-select-selection-item]:leading-[36px] [&>.ant-select-selector>.ant-select-selection-item]:text-light [&>.ant-select-arrow]:dark:text-white/10"
+                >
                   <Select.Option value="active">Active</Select.Option>
                   <Select.Option value="deactivated">Deactivated</Select.Option>
                   <Select.Option value="blocked">Blocked</Select.Option>
@@ -100,28 +109,30 @@ function DataTable({ filterOption, filterOnchange, rowSelection, tableData, colu
               // type: state.selectionType,
               ...rowSelection,
             }}
-            pagination={{ 
-              pageSize: 10, 
-              showSizeChanger: true, 
-              className: 'text-end [&>li]:margin-0 [&>li]:border [&>li]:margin-0 [&>li]:bg-white [&>li]:rounded-6 dark:[&>li]:bg-white/10 dark:[&>li]:margin-0 [&>li]:border-regular dark:[&>li]:border-white/10 [&>li>.ant-pagination-item-link]:flex [&>li>.ant-pagination-item-link]:items-center [&>li>.ant-pagination-item-link]:justify-center [&>li>.ant-pagination-item-link]:border-none [&>li>.ant-pagination-item-link>.anticon>svg]:text-light [&>li>.ant-pagination-item-link>.anticon>svg]:dark:text-white/30 [&>.ant-pagination-item>a]:text-body [&>.ant-pagination-item>a]:dark:text-white/60 [&>.ant-pagination-item-active]:bg-primary [&>.ant-pagination-item.ant-pagination-item-active>a]:text-white [&>.ant-pagination-item.ant-pagination-item-active>a]:dark:text-white/60 [&>.ant-pagination-options>.ant-select:hover>.ant-select-selector]:border-primary [&>.ant-pagination-options>.ant-select>.ant-select-selector]:h-[33px] dark:[&>.ant-pagination-options>.ant-select>.ant-select-selector]:text-white/[.60] dark:[&>.ant-pagination-options>.ant-select>.ant-select-arrow]:text-white/[.60] [&>.ant-pagination-options>.ant-select>.ant-select-selector]:border-0 dark:[&>.ant-pagination-options>.ant-select>.ant-select-selector]:border-white/10 [&>.ant-pagination-options>.ant-select>.ant-select-selector]:rounded-6'
+            pagination={{
+              pageSize: 10,
+              showSizeChanger: true,
+              className:
+                'text-end [&>li]:margin-0 [&>li]:border [&>li]:margin-0 [&>li]:bg-white [&>li]:rounded-6 dark:[&>li]:bg-white/10 dark:[&>li]:margin-0 [&>li]:border-regular dark:[&>li]:border-white/10 [&>li>.ant-pagination-item-link]:flex [&>li>.ant-pagination-item-link]:items-center [&>li>.ant-pagination-item-link]:justify-center [&>li>.ant-pagination-item-link]:border-none [&>li>.ant-pagination-item-link>.anticon>svg]:text-light [&>li>.ant-pagination-item-link>.anticon>svg]:dark:text-white/30 [&>.ant-pagination-item>a]:text-body [&>.ant-pagination-item>a]:dark:text-white/60 [&>.ant-pagination-item-active]:bg-primary [&>.ant-pagination-item.ant-pagination-item-active>a]:text-white [&>.ant-pagination-item.ant-pagination-item-active>a]:dark:text-white/60 [&>.ant-pagination-options>.ant-select:hover>.ant-select-selector]:border-primary [&>.ant-pagination-options>.ant-select>.ant-select-selector]:h-[33px] dark:[&>.ant-pagination-options>.ant-select>.ant-select-selector]:text-white/[.60] dark:[&>.ant-pagination-options>.ant-select>.ant-select-arrow]:text-white/[.60] [&>.ant-pagination-options>.ant-select>.ant-select-selector]:border-0 dark:[&>.ant-pagination-options>.ant-select>.ant-select-selector]:border-white/10 [&>.ant-pagination-options>.ant-select>.ant-select-selector]:rounded-6',
             }}
             dataSource={tableData}
             columns={columns}
           />
         ) : (
-          <Table 
-            dataSource={tableData} 
-            columns={columns} 
-            pagination={{ 
-              pageSize: 10, 
-              showSizeChanger: true, 
-              className: 'text-end [&>li]:margin-0 [&>li]:border [&>li]:margin-0 [&>li]:bg-white [&>li]:rounded-6 dark:[&>li]:bg-white/10 dark:[&>li]:margin-0 [&>li]:border-regular dark:[&>li]:border-white/10 [&>li>.ant-pagination-item-link]:flex [&>li>.ant-pagination-item-link]:items-center [&>li>.ant-pagination-item-link]:justify-center [&>li>.ant-pagination-item-link]:border-none [&>li>.ant-pagination-item-link>.anticon>svg]:text-light [&>li>.ant-pagination-item-link>.anticon>svg]:dark:text-white/30 [&>.ant-pagination-item>a]:text-body [&>.ant-pagination-item>a]:dark:text-white/60 [&>.ant-pagination-item-active]:bg-primary [&>.ant-pagination-item.ant-pagination-item-active>a]:text-white [&>.ant-pagination-item.ant-pagination-item-active>a]:dark:text-white/60 [&>.ant-pagination-options>.ant-select:hover>.ant-select-selector]:border-primary [&>.ant-pagination-options>.ant-select>.ant-select-selector]:h-[33px] dark:[&>.ant-pagination-options>.ant-select>.ant-select-selector]:text-white/[.60] dark:[&>.ant-pagination-options>.ant-select>.ant-select-arrow]:text-white/[.60] [&>.ant-pagination-options>.ant-select>.ant-select-selector]:border-0 dark:[&>.ant-pagination-options>.ant-select>.ant-select-selector]:border-white/10 [&>.ant-pagination-options>.ant-select>.ant-select-selector]:rounded-6'
-            }} 
+          <Table
+            dataSource={tableData}
+            columns={columns}
+            pagination={{
+              pageSize: 10,
+              showSizeChanger: true,
+              className:
+                'text-end [&>li]:margin-0 [&>li]:border [&>li]:margin-0 [&>li]:bg-white [&>li]:rounded-6 dark:[&>li]:bg-white/10 dark:[&>li]:margin-0 [&>li]:border-regular dark:[&>li]:border-white/10 [&>li>.ant-pagination-item-link]:flex [&>li>.ant-pagination-item-link]:items-center [&>li>.ant-pagination-item-link]:justify-center [&>li>.ant-pagination-item-link]:border-none [&>li>.ant-pagination-item-link>.anticon>svg]:text-light [&>li>.ant-pagination-item-link>.anticon>svg]:dark:text-white/30 [&>.ant-pagination-item>a]:text-body [&>.ant-pagination-item>a]:dark:text-white/60 [&>.ant-pagination-item-active]:bg-primary [&>.ant-pagination-item.ant-pagination-item-active>a]:text-white [&>.ant-pagination-item.ant-pagination-item-active>a]:dark:text-white/60 [&>.ant-pagination-options>.ant-select:hover>.ant-select-selector]:border-primary [&>.ant-pagination-options>.ant-select>.ant-select-selector]:h-[33px] dark:[&>.ant-pagination-options>.ant-select>.ant-select-selector]:text-white/[.60] dark:[&>.ant-pagination-options>.ant-select>.ant-select-arrow]:text-white/[.60] [&>.ant-pagination-options>.ant-select>.ant-select-selector]:border-0 dark:[&>.ant-pagination-options>.ant-select>.ant-select-selector]:border-white/10 [&>.ant-pagination-options>.ant-select>.ant-select-selector]:rounded-6',
+            }}
           />
         )}
       </div>
     </>
-  );
+  )
 }
 
-export default DataTable;
+export default DataTable

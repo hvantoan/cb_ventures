@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import { Row, Col, Form, Input, DatePicker, Radio } from 'antd';
-import Link from 'next/link';
-import { Buttons } from '@/components/buttons';
-import Heading from '@/components/heading';
+import React, { useState } from 'react'
+import { Row, Col, Form, Input, DatePicker, Radio } from 'antd'
+import Link from 'next/link'
+import { Buttons } from '@/components/Buttons'
+import Heading from '@/components/Heading'
 
-const dateFormat = 'MM/DD/YYYY';
+const dateFormat = 'MM/DD/YYYY'
 
 function Work() {
-  const [form] = Form.useForm();
+  const [form] = Form.useForm()
   const [state, setState] = useState({
     values: '',
-  });
-  const handleSubmit = (values:any) => {
-    setState({ ...state, values });
-  };
+  })
+  const handleSubmit = (values: any) => {
+    setState({ ...state, values })
+  }
 
   return (
     <Row justify="center">
@@ -79,7 +79,7 @@ function Work() {
                   className="bg-regularBG dark:bg-regularBGdark h-[38px] ltr:mr-[20px] rtl:ml-[20px] px-[22px] text-[15px] text-body dark:text-white/60 hover:text-light font-normal border-regular dark:border-white/10"
                   type="default"
                   onClick={() => {
-                    return form.resetFields();
+                    return form.resetFields()
                   }}
                 >
                   Reset
@@ -97,7 +97,7 @@ function Work() {
         </div>
       </Col>
     </Row>
-  );
+  )
 }
 
-export default Work;
+export default Work

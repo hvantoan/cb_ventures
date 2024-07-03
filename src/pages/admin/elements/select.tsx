@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Row, Col, Select, Radio } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
+import React, { useState } from 'react'
+import { Row, Col, Select, Radio } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
 
-const { Option, OptGroup } = Select;
-const provinceData = ['Zhejiang', 'Jiangsu'];
-const cityData:any = {
+const { Option, OptGroup } = Select
+const provinceData = ['Zhejiang', 'Jiangsu']
+const cityData: any = {
   Zhejiang: ['Hangzhou', 'Ningbo', 'Wenzhou'],
   Jiangsu: ['Nanjing', 'Suzhou', 'Zhenjiang'],
-};
+}
 
 function Selects() {
   const PageRoutes = [
@@ -19,44 +19,44 @@ function Selects() {
       path: '',
       breadcrumbName: 'Select',
     },
-  ];
-  const [state, setState]:any = useState({
+  ]
+  const [state, setState]: any = useState({
     selectedItems: [],
     size: 'default',
     cities: cityData[provinceData[0]],
     secondCity: cityData[provinceData[0]][0],
-  });
+  })
 
-  const handleChange = (selectedItems:any) => {
-    setState({ ...state, selectedItems });
-  };
-
-  const children = [];
-  for (let i = 10; i < 36; i += 1) {
-    children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
+  const handleChange = (selectedItems: any) => {
+    setState({ ...state, selectedItems })
   }
 
-  const handleSizeChange = (e:any) => {
-    setState({ ...state, size: e.target.value });
-  };
-  const { size, cities }:any = state;
+  const children = []
+  for (let i = 10; i < 36; i += 1) {
+    children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>)
+  }
 
-  const { selectedItems } = state;
-  const OPTIONS = ['Apples', 'Nails', 'Bananas', 'Helicopters'];
-  const filteredOptions = OPTIONS.filter((o:any) => !selectedItems.includes(o));
+  const handleSizeChange = (e: any) => {
+    setState({ ...state, size: e.target.value })
+  }
+  const { size, cities }: any = state
 
-  const handleProvinceChange = (value:any) => {
+  const { selectedItems } = state
+  const OPTIONS = ['Apples', 'Nails', 'Bananas', 'Helicopters']
+  const filteredOptions = OPTIONS.filter((o: any) => !selectedItems.includes(o))
+
+  const handleProvinceChange = (value: any) => {
     setState({
       cities: cityData[value],
       secondCity: cityData[value][0],
-    });
-  };
+    })
+  }
 
-  const onSecondCityChange = (value:any) => {
+  const onSecondCityChange = (value: any) => {
     setState({
       secondCity: value,
-    });
-  };
+    })
+  }
 
   return (
     <>
@@ -118,7 +118,7 @@ function Selects() {
                   style={{ width: 200 }}
                   placeholder="Select a person"
                   optionFilterProp="children"
-                  filterOption={(input:any, option:any) =>
+                  filterOption={(input: any, option: any) =>
                     option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                   }
                 >
@@ -273,7 +273,7 @@ function Selects() {
                   value={state.secondCity}
                   onChange={onSecondCityChange}
                 >
-                  {cities.map((city:any) => (
+                  {cities.map((city: any) => (
                     <Option key={city}>{city}</Option>
                   ))}
                 </Select>
@@ -362,7 +362,7 @@ function Selects() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default Selects;
+export default Selects

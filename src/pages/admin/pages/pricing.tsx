@@ -1,11 +1,11 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
 
-import Heading from '@/components/heading';
-import { List } from '@/components/pricing';
-import { Buttons } from '@/components/buttons';
-import { Cards } from '@/components/cards/frame/cards-frame';
+import Heading from '@/components/Heading'
+import { List } from '@/components/pricing'
+import { Buttons } from '@/components/Buttons'
+import { Cards } from '@/components/Cards/Frame/cards-frame'
 
 function PricingTable() {
   const PageRoutes = [
@@ -17,7 +17,7 @@ function PricingTable() {
       path: '',
       breadcrumbName: 'Pricing Table',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -62,7 +62,10 @@ function PricingTable() {
               >
                 Business
               </Buttons>
-              <Heading as="h3" className="relative bottom-1.5 mb-0 text-dark dark:text-white/[.87] text-4xl font-semibold">
+              <Heading
+                as="h3"
+                className="relative bottom-1.5 mb-0 text-dark dark:text-white/[.87] text-4xl font-semibold"
+              >
                 <sup className="relative text-base font-semibold text-gray-400 -top-3">$</sup>19
                 <sub className="relative bottom-0 ml-2.5 text-light dark:text-white/60 text-13 font-normal">
                   Per month
@@ -93,7 +96,10 @@ function PricingTable() {
               >
                 Basic Plan
               </Buttons>
-              <Heading as="h3" className="relative bottom-1.5 mb-0 text-dark dark:text-white/[.87] text-4xl font-semibold">
+              <Heading
+                as="h3"
+                className="relative bottom-1.5 mb-0 text-dark dark:text-white/[.87] text-4xl font-semibold"
+              >
                 <sup className="relative text-base font-semibold text-gray-400 -top-3">$</sup>39
                 <sub className="relative bottom-0 ml-2.5 text-light dark:text-white/60 text-13 font-normal">
                   Per month
@@ -125,7 +131,10 @@ function PricingTable() {
               >
                 Enterprise
               </Buttons>
-              <Heading as="h3" className="relative bottom-1.5 mb-0 text-dark dark:text-white/[.87] text-4xl font-semibold">
+              <Heading
+                as="h3"
+                className="relative bottom-1.5 mb-0 text-dark dark:text-white/[.87] text-4xl font-semibold"
+              >
                 <sup className="relative text-base font-semibold text-gray-400 -top-3">$</sup>79
                 <sub className="relative bottom-0 ml-2.5 text-light dark:text-white/60 text-13 font-normal">
                   Per month
@@ -291,7 +300,7 @@ function PricingTable() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default PricingTable;
+export default PricingTable

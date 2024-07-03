@@ -6,7 +6,7 @@ import { Row, Col, Form, Input, Button } from 'antd'
 import { UilFacebook, UilTwitter, UilGithub } from '@iconscout/react-unicons'
 
 import { useDispatch } from 'react-redux'
-import { CheckBox } from '@/components/checkbox'
+import { CheckBox } from '@/components/Checkbox'
 import { RegisterAction } from '@/redux/auth/actionCreator'
 
 function SignUp() {

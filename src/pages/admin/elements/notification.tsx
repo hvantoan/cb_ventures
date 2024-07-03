@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
-import { Row, Col, notification, Divider } from 'antd';
+import React, { useEffect } from 'react'
+import { Row, Col, notification, Divider } from 'antd'
 import {
   SmileOutlined,
   RadiusUpleftOutlined,
   RadiusUprightOutlined,
   RadiusBottomleftOutlined,
   RadiusBottomrightOutlined,
-} from '@ant-design/icons';
-import { PageHeaders } from '@/components/page-headers';
-import { Buttons } from '@/components/buttons';
+} from '@ant-design/icons'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Buttons } from '@/components/Buttons'
 
 function Notifications() {
   const PageRoutes = [
@@ -20,17 +20,17 @@ function Notifications() {
       path: '',
       breadcrumbName: 'Notifications',
     },
-  ];
+  ]
 
-  const [api, contextHolder]:any = notification.useNotification();
+  const [api, contextHolder]: any = notification.useNotification()
 
-  const openNotificationWithIcon = (type:any) => {
+  const openNotificationWithIcon = (type: any) => {
     api[type]({
       message: 'Notification Title',
       description:
         'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
-    });
-  };
+    })
+  }
 
   const openNotification = () => {
     notification.open({
@@ -38,22 +38,22 @@ function Notifications() {
       description:
         'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
       onClick: () => {},
-    });
-  };
+    })
+  }
 
   const openNotification2 = () => {
     const args = {
       message: 'Notification Title',
       description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
       duration: 0,
-    };
-    notification.open(args);
-  };
+    }
+    notification.open(args)
+  }
 
-  const close = () => {};
+  const close = () => {}
 
   const openNotification3 = () => {
-    const key:any = `open${Date.now()}`;
+    const key: any = `open${Date.now()}`
     const btn = (
       <Buttons
         className="bg-primary hover:bg-primary-hbr border-solid border-1 border-primary text-white dark:text-white/[.87] text-[14px] font-semibold leading-[22px] inline-flex items-center justify-center rounded-[4px] px-[20px] h-[44px]"
@@ -63,7 +63,7 @@ function Notifications() {
       >
         Confirm
       </Buttons>
-    );
+    )
     notification.open({
       message: 'Notification Title',
       description:
@@ -71,9 +71,8 @@ function Notifications() {
       btn,
       key,
       onClose: close,
-    });
-  };
-
+    })
+  }
 
   // const [api, contextHolder]:any = notification.useNotification();
 
@@ -84,7 +83,6 @@ function Notifications() {
   //       'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
   //   });
   // };
-  
 
   const openNotificationCustomIcon = () => {
     notification.open({
@@ -92,8 +90,8 @@ function Notifications() {
       description:
         'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
       icon: <SmileOutlined style={{ color: '#108ee9' }} />,
-    });
-  };
+    })
+  }
 
   const openNotificationCustomStyle = () => {
     notification.open({
@@ -104,17 +102,17 @@ function Notifications() {
         width: 600,
         marginLeft: 335 - 600,
       },
-    });
-  };
+    })
+  }
 
-  const openNotificationPlacement = (placement:any) => {
+  const openNotificationPlacement = (placement: any) => {
     notification.info({
       message: `Notification ${placement}`,
       description:
         'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
       placement,
-    });
-  };
+    })
+  }
 
   return (
     <>
@@ -315,7 +313,7 @@ function Notifications() {
         </Row>
       </div>
     </>
-  );
+  )
 }
 
-export default Notifications;
+export default Notifications

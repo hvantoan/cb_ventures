@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import React from 'react'
 import { Row, Col, Skeleton } from 'antd'
-import { PageHeaders } from '@/components/page-headers'
+import { PageHeaders } from '@/components/PageHeaders'
 
 const OverviewDataList = dynamic(() => import('@/dashboard/demo-1/OverviewDataList'), {
   loading: () => (
@@ -46,7 +46,7 @@ const BrowserState = dynamic(() => import('@/dashboard/demo-1/BrowserState'), {
   ),
 })
 
-const DemoOne = () => {
+const AdminPage = () => {
   const PageRoutes = [
     {
       path: 'admin',
@@ -92,4 +92,4 @@ const DemoOne = () => {
   )
 }
 
-export default DemoOne
+export default AdminPage

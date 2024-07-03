@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Row, Col } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
-import { CasCader } from '@/components/cascader';
+import React, { useState } from 'react'
+import { Row, Col } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
+import { CasCader } from '@/components/Cascader'
 
 const options = [
   {
@@ -14,7 +14,7 @@ const options = [
     label: 'Jiangsu',
     isLeaf: false,
   },
-];
+]
 
 function CasCaders() {
   const PageRoutes = [
@@ -26,18 +26,18 @@ function CasCaders() {
       path: '',
       breadcrumbName: 'CasCader',
     },
-  ];
-  const [state, setState]:any = useState({
+  ]
+  const [state, setState]: any = useState({
     value: null,
     loading: [],
-  });
-  const onChange = (value:any) => {
-    setState({ ...state, value });
-  };
+  })
+  const onChange = (value: any) => {
+    setState({ ...state, value })
+  }
 
-  const onChangeLoading = (value:any, selectedOptions:any) => {
-    setState({ ...state, loading: [value, selectedOptions] });
-  };
+  const onChangeLoading = (value: any, selectedOptions: any) => {
+    setState({ ...state, loading: [value, selectedOptions] })
+  }
 
   return (
     <>
@@ -105,7 +105,11 @@ function CasCaders() {
                   </h1>
                 </div>
                 <div className="p-[25px] [&>.ant-select>.ant-select-selector]:h-10 [&>.ant-select>.ant-select-selector]:px-3 [&>.ant-select>.ant-select-selector>.ant-select-selection-placeholder]:leading-[38px] [&>.ant-select>.ant-select-selector>.ant-select-selection-item]:leading-[38px] [&>.ant-select:hover>.ant-select-selector]:border-primary [&>.ant-select-focused>.ant-select-selector]:border-primary [&>.ant-select-single]:h-[40px]">
-                  <CasCader fieldNames={{ label: 'name', value: 'code', children: 'items' }} onChange={onChange} data={options} />
+                  <CasCader
+                    fieldNames={{ label: 'name', value: 'code', children: 'items' }}
+                    onChange={onChange}
+                    data={options}
+                  />
                 </div>
               </div>
             </Col>
@@ -168,7 +172,7 @@ function CasCaders() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default CasCaders;
+export default CasCaders

@@ -1,25 +1,25 @@
-import React, { useState, useLayoutEffect } from 'react';
-import { Row, Col } from 'antd';
-import { PieChart, Pie, Sector, Cell, Tooltip } from 'recharts';
-import { PageHeaders } from '@/components/page-headers';
-import { Cards } from '@/components/cards/frame/cards-frame';
+import React, { useState, useLayoutEffect } from 'react'
+import { Row, Col } from 'antd'
+import { PieChart, Pie, Sector, Cell, Tooltip } from 'recharts'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Cards } from '@/components/Cards/Frame/cards-frame'
 
-import rechartdata from '@/demoData/recharts.json';
+import rechartdata from '@/demoData/recharts.json'
 
-const { data01, data02 } = rechartdata;
+const { data01, data02 } = rechartdata
 
-function renderActiveShape(props:any) {
-  const RADIAN = Math.PI / 180;
-  const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent, value } = props;
-  const sin = Math.sin(-RADIAN * midAngle);
-  const cos = Math.cos(-RADIAN * midAngle);
-  const sx = cx + (outerRadius + 10) * cos;
-  const sy = cy + (outerRadius + 10) * sin;
-  const mx = cx + (outerRadius + 30) * cos;
-  const my = cy + (outerRadius + 30) * sin;
-  const ex = mx + (cos >= 0 ? 1 : -1) * 22;
-  const ey = my;
-  const textAnchor = cos >= 0 ? 'start' : 'end';
+function renderActiveShape(props: any) {
+  const RADIAN = Math.PI / 180
+  const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent, value } = props
+  const sin = Math.sin(-RADIAN * midAngle)
+  const cos = Math.cos(-RADIAN * midAngle)
+  const sx = cx + (outerRadius + 10) * cos
+  const sy = cy + (outerRadius + 10) * sin
+  const mx = cx + (outerRadius + 30) * cos
+  const my = cy + (outerRadius + 30) * sin
+  const ex = mx + (cos >= 0 ? 1 : -1) * 22
+  const ey = my
+  const textAnchor = cos >= 0 ? 'start' : 'end'
 
   return (
     <g>
@@ -51,7 +51,7 @@ function renderActiveShape(props:any) {
         {`(Rate ${(percent * 100).toFixed(2)}%)`}
       </text>
     </g>
-  );
+  )
 }
 
 function ReChartPie() {
@@ -64,50 +64,48 @@ function ReChartPie() {
       path: 'first',
       breadcrumbName: 'Pie Chart',
     },
-  ];
+  ]
   const [state, setState] = useState({
     activeIndex: 0,
     responsive: 0,
-  });
+  })
 
-  const { responsive, activeIndex } = state;
+  const { responsive, activeIndex } = state
 
   useLayoutEffect(() => {
     function updateSize() {
-      const element:any = document.querySelector('.recharts-wrapper');
-      const cardBody:any = document.querySelector('.ant-card-body');
+      const element: any = document.querySelector('.recharts-wrapper')
+      const cardBody: any = document.querySelector('.ant-card-body')
       const width =
-        element !== null
-          ? element.closest('.ant-card-body').clientWidth
-          : cardBody ? cardBody.clientWidth : 500;
-      setState({ responsive: width, activeIndex });
+        element !== null ? element.closest('.ant-card-body').clientWidth : cardBody ? cardBody.clientWidth : 500
+      setState({ responsive: width, activeIndex })
     }
-    window.addEventListener('resize', updateSize);
-    updateSize();
-    return () => window.removeEventListener('resize', updateSize);
-  }, [activeIndex]);
+    window.addEventListener('resize', updateSize)
+    updateSize()
+    return () => window.removeEventListener('resize', updateSize)
+  }, [activeIndex])
 
-  const onPieEnter = (data:any, index:any) => {
+  const onPieEnter = (data: any, index: any) => {
     setState({
       ...state,
       activeIndex: index,
-    });
-  };
+    })
+  }
 
   // pie chart with customize label
-  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042']
 
-  const RADIAN = Math.PI / 180;
-  function renderCustomizedLabel({ cx, cy, midAngle, innerRadius, outerRadius, percent }:any) {
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-    const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+  const RADIAN = Math.PI / 180
+  function renderCustomizedLabel({ cx, cy, midAngle, innerRadius, outerRadius, percent }: any) {
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5
+    const x = cx + radius * Math.cos(-midAngle * RADIAN)
+    const y = cy + radius * Math.sin(-midAngle * RADIAN)
 
     return (
       <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
         {`${(percent * 100).toFixed(0)}%`}
       </text>
-    );
+    )
   }
 
   return (
@@ -204,7 +202,7 @@ function ReChartPie() {
                   dataKey="value"
                 >
                   {data01.map((entry, index) => {
-                    return <Cell key={`cell-${entry.name}`} fill={COLORS[index % COLORS.length]} />;
+                    return <Cell key={`cell-${entry.name}`} fill={COLORS[index % COLORS.length]} />
                   })}
                 </Pie>
               </PieChart>
@@ -257,7 +255,7 @@ function ReChartPie() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default ReChartPie;
+export default ReChartPie

@@ -1,14 +1,14 @@
 import '@/styles/globals.css'
+import '../i18n/config'
+
 import { useRouter } from 'next/router'
 import type { AppProps } from 'next/app'
 
-import AdminLayout from './adminLayout'
-import '../i18n/config'
+import AdminLayout from '@/layouts/AdminLayout'
+import AuthLayout from '@/layouts/AuthLayout'
 import { wrapper } from '@/redux/store'
 import { FC, useEffect, useState } from 'react'
 import { Provider } from 'react-redux'
-import dynamic from 'next/dynamic'
-import AuthLayout from './authLayout'
 
 const App: FC<AppProps> = ({ Component, ...rest }) => {
   const router = useRouter()
@@ -35,12 +35,14 @@ const App: FC<AppProps> = ({ Component, ...rest }) => {
           <Component {...pageProps} />
         </AuthLayout>
       )
-    } else {
+    } else if (pathname.startsWith('/admin')) {
       return (
         <AdminLayout>
           <Component {...pageProps} />
         </AdminLayout>
       )
+    } else {
+      return <Component {...pageProps} />
     }
   }
 

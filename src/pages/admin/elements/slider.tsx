@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Row, Col } from 'antd';
-import { PageHeaders } from '@/components/page-headers/';
+import React, { useState } from 'react'
+import { Row, Col } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
 
-import { Sliders } from '@/components/slider';
+import { Sliders } from '@/components/slider'
 
 function SliderElement() {
   const PageRoutes = [
@@ -14,11 +14,11 @@ function SliderElement() {
       path: '',
       breadcrumbName: 'Sliders',
     },
-  ];
+  ]
   const [state, setstate] = useState({
     onChangeValue: null,
     afterChangeValue: null,
-  });
+  })
   const marks = {
     0: '0°C',
     26: '26°C',
@@ -29,21 +29,21 @@ function SliderElement() {
       },
       label: <strong>100°C</strong>,
     },
-  };
+  }
 
-  const onChange = (value:any) => {
-    setstate({ ...state, onChangeValue: value });
-  };
+  const onChange = (value: any) => {
+    setstate({ ...state, onChangeValue: value })
+  }
 
-  const onAfterChange = (value:any) => {
-    setstate({ ...state, afterChangeValue: value });
-  };
+  const onAfterChange = (value: any) => {
+    setstate({ ...state, afterChangeValue: value })
+  }
 
   const style = {
     display: 'inline-block',
     height: 300,
     marginLeft: 70,
-  };
+  }
 
   return (
     <>
@@ -80,7 +80,7 @@ function SliderElement() {
                   </div>
                 </div>
                 <div className="slider-with-input__single">
-                <h3 className="text-[15px] font-medium mb-2">With Decimal</h3>
+                  <h3 className="text-[15px] font-medium mb-2">With Decimal</h3>
                   <div className="ltr:[&>div>div:first-child>div]:mr-[20px] rtl:[&>div>div:first-child>div]:ml-[20px]">
                     <Sliders input min={0} max={1} step={0.01} />
                   </div>
@@ -152,7 +152,7 @@ function SliderElement() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default SliderElement;
+export default SliderElement

@@ -1,6 +1,6 @@
 import { Enpoints } from '@/constants/enpoints'
-import { axiosNotToken } from './axiosClient'
 import { LoginReq, RegisterReq } from '@/models/AuthModel'
+import { axiosNotToken } from './axiosClient'
 
 const authApi = {
   login: (data: LoginReq) => axiosNotToken.post(Enpoints.LOGIN, data),

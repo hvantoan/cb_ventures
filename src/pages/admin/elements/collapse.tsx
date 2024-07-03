@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Row, Col, Collapse, theme } from 'antd';
-import { RightOutlined } from '@ant-design/icons';
-import { PageHeaders } from '@/components/page-headers';
-import type { CollapseProps } from 'antd';
-import type { CSSProperties } from 'react';
+import React, { useState } from 'react'
+import { Row, Col, Collapse, theme } from 'antd'
+import { RightOutlined } from '@ant-design/icons'
+import { PageHeaders } from '@/components/PageHeaders'
+import type { CollapseProps } from 'antd'
+import type { CSSProperties } from 'react'
 
 function Collapses() {
   const PageRoutes = [
@@ -15,27 +15,26 @@ function Collapses() {
       path: '',
       breadcrumbName: 'Collapse',
     },
-  ];
+  ]
   const [state, setstate] = useState({
     key: 0,
-  });
-  const onChange = (key: string | string[]) => {
-  };
+  })
+  const onChange = (key: string | string[]) => {}
 
-  const { token } = theme.useToken();
+  const { token } = theme.useToken()
 
   const panelStyle: React.CSSProperties = {
     marginBottom: 24,
     background: token.colorFillAlter,
     borderRadius: token.borderRadiusLG,
     border: 'none',
-  };
+  }
 
   const text = `
     A dog is a type of domesticated animal.
     Known for its loyalty and faithfulness,
     it can be found as a welcome guest in many households across the world.
-  `;
+  `
 
   const items: CollapseProps['items'] = [
     {
@@ -53,7 +52,7 @@ function Collapses() {
       label: 'This is panel header 3',
       children: <p>{text}</p>,
     },
-  ];
+  ]
 
   const itemsNest: CollapseProps['items'] = [
     {
@@ -61,13 +60,19 @@ function Collapses() {
       label: 'This is panel nest panel',
       children: <p>{text}</p>,
     },
-  ];
-  
+  ]
+
   const itemsMain: CollapseProps['items'] = [
     {
       key: '1',
       label: 'This is panel header 1',
-      children: <Collapse className="bg-transparent border-regular dark:border-white/10 [&>.ant-collapse-item]:border-regular dark:[&>.ant-collapse-item]:border-white/10 [&>.ant-collapse-item>.ant-collapse-content]:border-regular dark:[&>.ant-collapse-item>.ant-collapse-content]:border-white/10 [&>.ant-collapse-item>.ant-collapse-header>.ant-collapse-expand-icon>.anticon>svg]:w-2" defaultActiveKey="1" items={itemsNest} />,
+      children: (
+        <Collapse
+          className="bg-transparent border-regular dark:border-white/10 [&>.ant-collapse-item]:border-regular dark:[&>.ant-collapse-item]:border-white/10 [&>.ant-collapse-item>.ant-collapse-content]:border-regular dark:[&>.ant-collapse-item>.ant-collapse-content]:border-white/10 [&>.ant-collapse-item>.ant-collapse-header>.ant-collapse-expand-icon>.anticon>svg]:w-2"
+          defaultActiveKey="1"
+          items={itemsNest}
+        />
+      ),
     },
     {
       key: '2',
@@ -79,7 +84,7 @@ function Collapses() {
       label: 'This is panel header 3',
       children: <p>{text}</p>,
     },
-  ];
+  ]
 
   const noArrow: CollapseProps['items'] = [
     {
@@ -93,14 +98,14 @@ function Collapses() {
       children: <p>{text}</p>,
       showArrow: false,
     },
-  ];
+  ]
 
   const borderLessText = (
     <p style={{ paddingLeft: 24 }}>
-      A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found
-      as a welcome guest in many households across the world.
+      A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest
+      in many households across the world.
     </p>
-  );
+  )
   const borderLessItems: CollapseProps['items'] = [
     {
       key: '1',
@@ -117,7 +122,7 @@ function Collapses() {
       label: 'This is panel header 3',
       children: borderLessText,
     },
-  ];
+  ]
 
   const getItems: (panelStyle: CSSProperties) => CollapseProps['items'] = (panelStyle) => [
     {
@@ -138,11 +143,9 @@ function Collapses() {
       children: <p>{text}</p>,
       style: panelStyle,
     },
-  ];
-
+  ]
 
   return (
-    
     <>
       <PageHeaders
         className="flex items-center justify-between px-8 xl:px-[15px] pt-[18px] pb-6 sm:pb-[30px] bg-transparent sm:flex-col"
@@ -161,8 +164,12 @@ function Collapses() {
                     </h1>
                   </div>
                   <div className="p-[25px]">
-                    <Collapse defaultActiveKey={['1']} onChange={onChange} items={items} className="bg-transparent border-regular dark:border-white/10 [&>.ant-collapse-item]:border-regular dark:[&>.ant-collapse-item]:border-white/10 [&>.ant-collapse-item>.ant-collapse-content]:border-regular dark:[&>.ant-collapse-item>.ant-collapse-content]:border-white/10 [&>.ant-collapse-item>.ant-collapse-header>.ant-collapse-expand-icon>.anticon>svg]:w-2">
-                    </Collapse>
+                    <Collapse
+                      defaultActiveKey={['1']}
+                      onChange={onChange}
+                      items={items}
+                      className="bg-transparent border-regular dark:border-white/10 [&>.ant-collapse-item]:border-regular dark:[&>.ant-collapse-item]:border-white/10 [&>.ant-collapse-item>.ant-collapse-content]:border-regular dark:[&>.ant-collapse-item>.ant-collapse-content]:border-white/10 [&>.ant-collapse-item>.ant-collapse-header>.ant-collapse-expand-icon>.anticon>svg]:w-2"
+                    ></Collapse>
                   </div>
                 </div>
                 <div className="bg-white dark:bg-white/10 m-0 p-0 text-theme-gray dark:text-white/60 text-[15px] mb-[25px] rounded-10 relative">
@@ -172,8 +179,11 @@ function Collapses() {
                     </h1>
                   </div>
                   <div className="p-[25px]">
-                    <Collapse onChange={onChange} items={itemsMain} className="bg-transparent border-regular dark:border-white/10 [&>.ant-collapse-item]:border-regular dark:[&>.ant-collapse-item]:border-white/10 [&>.ant-collapse-item>.ant-collapse-content]:border-regular dark:[&>.ant-collapse-item>.ant-collapse-content]:border-white/10 [&>.ant-collapse-item>.ant-collapse-header>.ant-collapse-expand-icon>.anticon>svg]:w-2">
-                    </Collapse>
+                    <Collapse
+                      onChange={onChange}
+                      items={itemsMain}
+                      className="bg-transparent border-regular dark:border-white/10 [&>.ant-collapse-item]:border-regular dark:[&>.ant-collapse-item]:border-white/10 [&>.ant-collapse-item>.ant-collapse-content]:border-regular dark:[&>.ant-collapse-item>.ant-collapse-content]:border-white/10 [&>.ant-collapse-item>.ant-collapse-header>.ant-collapse-expand-icon>.anticon>svg]:w-2"
+                    ></Collapse>
                   </div>
                 </div>
                 <div className="bg-white dark:bg-white/10 m-0 p-0 text-theme-gray dark:text-white/60 text-[15px] mb-[25px] rounded-10 relative">
@@ -183,8 +193,12 @@ function Collapses() {
                     </h1>
                   </div>
                   <div className="p-[25px]">
-                    <Collapse defaultActiveKey={['1']} onChange={onChange} items={noArrow} className="bg-transparent border-regular dark:border-white/10 [&>.ant-collapse-item]:border-regular dark:[&>.ant-collapse-item]:border-white/10 [&>.ant-collapse-item>.ant-collapse-content]:border-regular dark:[&>.ant-collapse-item>.ant-collapse-content]:border-white/10 [&>.ant-collapse-item>.ant-collapse-header>.ant-collapse-expand-icon>.anticon>svg]:w-2">
-                    </Collapse>
+                    <Collapse
+                      defaultActiveKey={['1']}
+                      onChange={onChange}
+                      items={noArrow}
+                      className="bg-transparent border-regular dark:border-white/10 [&>.ant-collapse-item]:border-regular dark:[&>.ant-collapse-item]:border-white/10 [&>.ant-collapse-item>.ant-collapse-content]:border-regular dark:[&>.ant-collapse-item>.ant-collapse-content]:border-white/10 [&>.ant-collapse-item>.ant-collapse-header>.ant-collapse-expand-icon>.anticon>svg]:w-2"
+                    ></Collapse>
                   </div>
                 </div>
               </Col>
@@ -196,8 +210,12 @@ function Collapses() {
                     </h1>
                   </div>
                   <div className="p-[25px]">
-                    <Collapse defaultActiveKey={['1']} accordion items={items} className="bg-transparent border-regular dark:border-white/10 [&>.ant-collapse-item]:border-regular dark:[&>.ant-collapse-item]:border-white/10 [&>.ant-collapse-item>.ant-collapse-content]:border-regular dark:[&>.ant-collapse-item>.ant-collapse-content]:border-white/10 [&>.ant-collapse-item>.ant-collapse-header>.ant-collapse-expand-icon>.anticon>svg]:w-2">
-                    </Collapse>
+                    <Collapse
+                      defaultActiveKey={['1']}
+                      accordion
+                      items={items}
+                      className="bg-transparent border-regular dark:border-white/10 [&>.ant-collapse-item]:border-regular dark:[&>.ant-collapse-item]:border-white/10 [&>.ant-collapse-item>.ant-collapse-content]:border-regular dark:[&>.ant-collapse-item>.ant-collapse-content]:border-white/10 [&>.ant-collapse-item>.ant-collapse-header>.ant-collapse-expand-icon>.anticon>svg]:w-2"
+                    ></Collapse>
                   </div>
                 </div>
                 <div className="bg-white dark:bg-white/10 m-0 p-0 text-theme-gray dark:text-white/60 text-[15px] mb-[25px] rounded-10 relative">
@@ -207,8 +225,12 @@ function Collapses() {
                     </h1>
                   </div>
                   <div className="p-[25px]">
-                    <Collapse items={borderLessItems} defaultActiveKey={['1']} bordered={false} className="bg-transparent border-regular dark:border-white/10 [&>.ant-collapse-item]:border-regular dark:[&>.ant-collapse-item]:border-white/10 [&>.ant-collapse-item>.ant-collapse-content]:border-regular dark:[&>.ant-collapse-item>.ant-collapse-content]:border-white/10 [&>.ant-collapse-item>.ant-collapse-header>.ant-collapse-expand-icon>.anticon>svg]:w-2">
-                    </Collapse>
+                    <Collapse
+                      items={borderLessItems}
+                      defaultActiveKey={['1']}
+                      bordered={false}
+                      className="bg-transparent border-regular dark:border-white/10 [&>.ant-collapse-item]:border-regular dark:[&>.ant-collapse-item]:border-white/10 [&>.ant-collapse-item>.ant-collapse-content]:border-regular dark:[&>.ant-collapse-item>.ant-collapse-content]:border-white/10 [&>.ant-collapse-item>.ant-collapse-header>.ant-collapse-expand-icon>.anticon>svg]:w-2"
+                    ></Collapse>
                   </div>
                 </div>
                 <div className="bg-white dark:bg-white/10 m-0 p-0 text-theme-gray dark:text-white/60 text-[15px] mb-[25px] rounded-10 relative">
@@ -225,9 +247,7 @@ function Collapses() {
                       style={{ background: token.colorBgContainer }}
                       items={getItems(panelStyle)}
                       className="bg-transparent border-regular dark:border-white/10 [&>.ant-collapse-item]:border-regular dark:[&>.ant-collapse-item]:border-white/10 [&>.ant-collapse-item>.ant-collapse-content]:border-regular dark:[&>.ant-collapse-item>.ant-collapse-content]:border-white/10 [&>.ant-collapse-item>.ant-collapse-header>.ant-collapse-expand-icon>.anticon>svg]:w-2"
-                    >
-
-                    </Collapse>
+                    ></Collapse>
                   </div>
                 </div>
               </Col>
@@ -236,7 +256,7 @@ function Collapses() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default Collapses;
+export default Collapses

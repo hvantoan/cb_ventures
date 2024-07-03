@@ -1,6 +1,6 @@
-import React from 'react';
-import { Row, Col, Skeleton } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col, Skeleton } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
 
 function Skeletons() {
   const PageRoutes = [
@@ -12,7 +12,7 @@ function Skeletons() {
       path: '',
       breadcrumbName: 'Skeleton',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -59,7 +59,7 @@ function Skeletons() {
         </Row>
       </div>
     </>
-  );
+  )
 }
 
-export default Skeletons;
+export default Skeletons

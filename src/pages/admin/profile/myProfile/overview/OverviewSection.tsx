@@ -1,5 +1,5 @@
-import React from 'react';
-import { Row, Col, Table } from 'antd';
+import React from 'react'
+import { Row, Col, Table } from 'antd'
 import {
   UilTimes,
   UilArrowUp,
@@ -8,10 +8,10 @@ import {
   UilBookOpen,
   UilFileAlt,
   UilFile,
-} from '@iconscout/react-unicons';
-import Link from 'next/link';
-import { Cards } from '@/components/cards/frame/cards-frame';
-import DashboardChart from '@/components/charts/DashboardChart';
+} from '@iconscout/react-unicons'
+import Link from 'next/link'
+import { Cards } from '@/components/Cards/Frame/cards-frame'
+import DashboardChart from '@/components/Charts/DashboardChart'
 
 const moreContent = [
   {
@@ -21,7 +21,7 @@ const moreContent = [
         className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
         href="#"
       >
-        <UilPrint className="h-[14px] w-[14px] me-2"/>
+        <UilPrint className="h-[14px] w-[14px] me-2" />
         <span>Printer</span>
       </Link>
     ),
@@ -33,7 +33,7 @@ const moreContent = [
         className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
         href="#"
       >
-        <UilBookOpen className="h-[14px] w-[14px] me-2"/>
+        <UilBookOpen className="h-[14px] w-[14px] me-2" />
         <span>PDF</span>
       </Link>
     ),
@@ -45,7 +45,7 @@ const moreContent = [
         className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
         href="#"
       >
-        <UilFile className="h-[14px] w-[14px] me-2"/>
+        <UilFile className="h-[14px] w-[14px] me-2" />
         <span>Google Sheets</span>
       </Link>
     ),
@@ -74,7 +74,7 @@ const moreContent = [
       </Link>
     ),
   },
-];
+]
 
 function OverviewContent() {
   const dataSource = [
@@ -118,7 +118,7 @@ function OverviewContent() {
       revenue: '$38,536',
       className: 'text-[14px] text-theme-gray dark:text-white/60 font-medium',
     },
-  ];
+  ]
 
   const columns = [
     {
@@ -149,7 +149,7 @@ function OverviewContent() {
       className:
         'text-[14px] font-normal text-theme-gray dark:text-white/60 dark:border-white/10 before:hidden px-[25px] [th&]:text-dark [th&]:font-medium [th&]:text-[15px]',
     },
-  ];
+  ]
 
   return (
     <Row gutter={25}>
@@ -358,7 +358,7 @@ function OverviewContent() {
         </>
       </Col>
     </Row>
-  );
+  )
 }
 
-export default OverviewContent;
+export default OverviewContent

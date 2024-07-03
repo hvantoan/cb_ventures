@@ -1,8 +1,8 @@
-import React from 'react';
-import { Buttons } from '@/components/buttons';
+import React from 'react'
+import { Buttons } from '@/components/Buttons'
 
-function SampleCardOne({ item }:any) {
-  const { content, title, img } = item;
+function SampleCardOne({ item }: any) {
+  const { content, title, img } = item
   return (
     <figure className="mb-0 bg-white dark:bg-white/10 rounded-10">
       <img className="w-full rounded-t-10" src={`/${img}`} alt="" />
@@ -14,8 +14,7 @@ function SampleCardOne({ item }:any) {
         </Buttons>
       </figcaption>
     </figure>
-  );
+  )
 }
 
-
-export default SampleCardOne;
+export default SampleCardOne

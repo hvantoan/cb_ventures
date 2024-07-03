@@ -1,33 +1,33 @@
 /* eslint-disable react/jsx-no-bind */
-import { Col, Row } from 'antd';
-import React, { useState } from 'react';
-import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
-import {Tooltip} from 'react-tooltip';
-import Heading from '@/components/heading';
-import { PageHeaders } from '@/components/page-headers';
+import { Col, Row } from 'antd'
+import React, { useState } from 'react'
+import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps'
+import { Tooltip } from 'react-tooltip'
+import Heading from '@/components/Heading'
+import { PageHeaders } from '@/components/PageHeaders'
 
 import 'react-tooltip/dist/react-tooltip.css'
 
 // const geoUrl = 'https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json';
 
-const geoUrl = 'https://unpkg.com/world-atlas@2.0.2/countries-110m.json';
+const geoUrl = 'https://unpkg.com/world-atlas@2.0.2/countries-110m.json'
 
 function VectorMaps() {
-  const [position, setPosition] = useState({ coordinates: [0, 0], zoom: 1 });
-  const [content, setContent] = useState('');
+  const [position, setPosition] = useState({ coordinates: [0, 0], zoom: 1 })
+  const [content, setContent] = useState('')
 
   function handleZoomIn() {
-    if (position.zoom >= 4) return;
-    setPosition((pos) => ({ ...pos, zoom: pos.zoom * 2 }));
+    if (position.zoom >= 4) return
+    setPosition((pos) => ({ ...pos, zoom: pos.zoom * 2 }))
   }
 
   function handleZoomOut() {
-    if (position.zoom <= 1) return;
-    setPosition((pos) => ({ ...pos, zoom: pos.zoom / 2 }));
+    if (position.zoom <= 1) return
+    setPosition((pos) => ({ ...pos, zoom: pos.zoom / 2 }))
   }
 
-  function handleMoveEnd(pos:any) {
-    setPosition(pos);
+  function handleMoveEnd(pos: any) {
+    setPosition(pos)
   }
   return (
     <>
@@ -46,10 +46,7 @@ function VectorMaps() {
                   </Heading>
                 </div>
                 <div className="p-[25px]">
-                  <Tooltip
-                    anchorSelect=".rsm-geographies path"
-                    content={content}
-                  />
+                  <Tooltip anchorSelect=".rsm-geographies path" content={content} />
                   <ComposableMap
                     data-tip=""
                     data-html
@@ -58,9 +55,9 @@ function VectorMaps() {
                     }}
                     viewBox={`20, ${window.innerWidth <= 479 ? 20 : 150}, 800, ${window.innerWidth <= 479 ? 500 : 320}`}
                   >
-                    <ZoomableGroup 
-                      zoom={position.zoom} 
-                      // center={position.coordinates} 
+                    <ZoomableGroup
+                      zoom={position.zoom}
+                      // center={position.coordinates}
                       onMoveEnd={handleMoveEnd}
                     >
                       <Geographies geography={geoUrl}>
@@ -70,11 +67,11 @@ function VectorMaps() {
                               key={geo.rsmKey}
                               geography={geo}
                               onMouseEnter={() => {
-                                const { name } = geo.properties;
-                                setContent(`${name}`);
+                                const { name } = geo.properties
+                                setContent(`${name}`)
                               }}
                               onMouseLeave={() => {
-                                setContent('');
+                                setContent('')
                               }}
                               fill="#DBE1E8"
                               stroke="#FFF"
@@ -141,7 +138,7 @@ function VectorMaps() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default VectorMaps;
+export default VectorMaps

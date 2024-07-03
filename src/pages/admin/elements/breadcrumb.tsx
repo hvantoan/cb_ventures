@@ -1,8 +1,8 @@
-import React from 'react';
-import { Row, Col, Breadcrumb } from 'antd';
-import Link from 'next/link';
-import { HomeOutlined } from '@ant-design/icons';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col, Breadcrumb } from 'antd'
+import Link from 'next/link'
+import { HomeOutlined } from '@ant-design/icons'
+import { PageHeaders } from '@/components/PageHeaders'
 
 const menuItems = [
   {
@@ -29,7 +29,7 @@ const menuItems = [
       </a>
     ),
   },
-];
+]
 
 function Breadcrumbs() {
   const PageRoutes = [
@@ -41,7 +41,7 @@ function Breadcrumbs() {
       path: '',
       breadcrumbName: 'Avatar',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -60,19 +60,20 @@ function Breadcrumbs() {
                   </h1>
                 </div>
                 <>
-                  <Breadcrumb className="p-[25px]"
+                  <Breadcrumb
+                    className="p-[25px]"
                     items={[
-                        {
-                          title: <Link href="#">Application Center</Link>,
-                        },
-                        {
-                          title: <Link href="">Application List</Link>,
-                        },
-                        {
-                          title: 'An Application',
-                        },
-                      ]}
-                    />
+                      {
+                        title: <Link href="#">Application Center</Link>,
+                      },
+                      {
+                        title: <Link href="">Application List</Link>,
+                      },
+                      {
+                        title: 'An Application',
+                      },
+                    ]}
+                  />
                 </>
               </div>
               <div className="bg-white dark:bg-white/10 m-0 p-0 text-theme-gray dark:text-white/60 text-[15px] mb-[25px] rounded-10 relative">
@@ -81,8 +82,8 @@ function Breadcrumbs() {
                     Bread crumbs with drop down menu
                   </h1>
                 </div>
-                
-                <div className='p-[25px] [&>.ant-breadcrumb>ol>li>.ant-dropdown-trigger>.anticon]:text-[10px] [&>.ant-breadcrumb>ol>li>.ant-dropdown-trigger>.anticon]:align-baseline'>
+
+                <div className="p-[25px] [&>.ant-breadcrumb>ol>li>.ant-dropdown-trigger>.anticon]:text-[10px] [&>.ant-breadcrumb>ol>li>.ant-dropdown-trigger>.anticon]:align-baseline">
                   <Breadcrumb
                     items={[
                       {
@@ -113,7 +114,8 @@ function Breadcrumbs() {
                   </h1>
                 </div>
                 <>
-                  <Breadcrumb className="p-[25px]"
+                  <Breadcrumb
+                    className="p-[25px]"
                     items={[
                       {
                         title: <HomeOutlined className="inline-flex items-center text-light dark:text-white/60" />,
@@ -122,7 +124,11 @@ function Breadcrumbs() {
                         title: <Link href="">Application Center</Link>,
                       },
                       {
-                        title: <Link href="#"><span>Application List</span></Link>,
+                        title: (
+                          <Link href="#">
+                            <span>Application List</span>
+                          </Link>
+                        ),
                       },
                       {
                         title: 'An Application',
@@ -139,10 +145,12 @@ function Breadcrumbs() {
                   </h1>
                 </div>
                 <>
-                  <Breadcrumb className="p-[25px]" separator=">"
+                  <Breadcrumb
+                    className="p-[25px]"
+                    separator=">"
                     items={[
                       {
-                        title: "Home",
+                        title: 'Home',
                       },
                       {
                         title: <Link href="">Application Center</Link>,
@@ -164,30 +172,32 @@ function Breadcrumbs() {
                     Configuring the Separator
                   </h1>
                 </div>
-                <Breadcrumb className="p-[25px]" separator=""
+                <Breadcrumb
+                  className="p-[25px]"
+                  separator=""
                   items={[
-                      {
-                        title: 'Location',
-                      },
-                      {
-                        type: 'separator',
-                        separator: ':',
-                      },
-                      {
-                        title: <Link href="">Application Center</Link>,
-                      },
-                      {
-                        type: 'separator',
-                      },
-                      {
-                        title: <Link href="#">Application List</Link>,
-                      },
-                      {
-                        type: 'separator',
-                      },
-                      {
-                        title: 'An Application',
-                      },
+                    {
+                      title: 'Location',
+                    },
+                    {
+                      type: 'separator',
+                      separator: ':',
+                    },
+                    {
+                      title: <Link href="">Application Center</Link>,
+                    },
+                    {
+                      type: 'separator',
+                    },
+                    {
+                      title: <Link href="#">Application List</Link>,
+                    },
+                    {
+                      type: 'separator',
+                    },
+                    {
+                      title: 'An Application',
+                    },
                   ]}
                 />
               </div>
@@ -196,7 +206,7 @@ function Breadcrumbs() {
         </main>
       </>
     </>
-  );
+  )
 }
 
-export default Breadcrumbs;
+export default Breadcrumbs

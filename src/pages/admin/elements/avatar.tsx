@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Row, Col, Avatar, Badge } from 'antd';
+import React, { useState } from 'react'
+import { Row, Col, Avatar, Badge } from 'antd'
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { UserOutlined } from '@ant-design/icons';
-import { useSelector } from 'react-redux';
-import { PageHeaders } from '@/components/page-headers';
-import { Buttons } from '@/components/buttons';
+import { UserOutlined } from '@ant-design/icons'
+import { useSelector } from 'react-redux'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Buttons } from '@/components/Buttons'
 
-const UserList = ['U', 'Lucy', 'Tom', 'Edward'];
-const ColorList = ['#f56a00', '#7265e6', '#ffbf00', '#00a2ae'];
+const UserList = ['U', 'Lucy', 'Tom', 'Edward']
+const ColorList = ['#f56a00', '#7265e6', '#ffbf00', '#00a2ae']
 
 function Avatars() {
   const PageRoutes = [
@@ -19,15 +19,15 @@ function Avatars() {
       path: '',
       breadcrumbName: 'Avatar',
     },
-  ];
-  const rtl = useSelector((state:any) => state.ChangeLayoutMode.rtlData);
-  const [user, setUser]:any = useState(UserList[0]);
-  const [color, setColor] = useState(ColorList[0]);
+  ]
+  const rtl = useSelector((state: any) => state.ChangeLayoutMode.rtlData)
+  const [user, setUser]: any = useState(UserList[0])
+  const [color, setColor] = useState(ColorList[0])
   const changeUser = () => {
-    const index = UserList.indexOf(user);
-    setUser(index < UserList.length - 1 ? UserList[index + 1] : UserList[0]);
-    setColor(index < ColorList.length - 1 ? ColorList[index + 1] : ColorList[0]);
-  };
+    const index = UserList.indexOf(user)
+    setUser(index < UserList.length - 1 ? UserList[index + 1] : UserList[0])
+    setColor(index < ColorList.length - 1 ? ColorList[index + 1] : ColorList[0])
+  }
 
   return (
     <>
@@ -166,7 +166,7 @@ function Avatars() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default Avatars;
+export default Avatars

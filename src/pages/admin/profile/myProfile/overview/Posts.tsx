@@ -19,8 +19,8 @@ import { useSelector, useDispatch } from 'react-redux'
 //@ts-ignore
 import { LightBox } from 'react-lightbox-pack'
 import 'react-lightbox-pack/dist/index.css'
-import { Cards } from '@/components/cards/frame/cards-frame'
-import { Buttons } from '@/components/buttons'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
+import { Buttons } from '@/components/Buttons'
 import { likeUpdate, commentUpdate, postDelete } from '@/redux/profile/actionCreator'
 
 function ExampleComment({ children, replay }: any) {

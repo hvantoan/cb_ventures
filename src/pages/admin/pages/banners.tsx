@@ -1,6 +1,6 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
 
 import {
   Banner1,
@@ -16,7 +16,7 @@ import {
   BannerCard2,
   BannerCta,
   BannerCta2,
-} from '@/components/banners';
+} from '@/components/Banners'
 
 function Banners() {
   const PageRoutes = [
@@ -28,7 +28,7 @@ function Banners() {
       path: '',
       breadcrumbName: 'Banners',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -80,7 +80,7 @@ function Banners() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default Banners;
+export default Banners

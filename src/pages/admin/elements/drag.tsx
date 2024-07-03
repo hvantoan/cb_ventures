@@ -1,7 +1,7 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
-import DragAndDropTable from '@/components/table/DragTable';
+import React from 'react'
+import { Row, Col } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
+import DragAndDropTable from '@/components/table/DragTable'
 
 function UserListDataTable() {
   const PageRoutes = [
@@ -13,7 +13,7 @@ function UserListDataTable() {
       path: '',
       breadcrumbName: 'Drag & Drop',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -29,7 +29,7 @@ function UserListDataTable() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default UserListDataTable;
+export default UserListDataTable

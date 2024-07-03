@@ -1,10 +1,10 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import dynamic from 'next/dynamic';
-import Link from 'next/link';
-import KnowledgeBaseTop from './overview/KnowledgeBaseTop';
-import { PageHeaders } from '@/components/page-headers';
-import { Skeleton } from 'antd';
+import React from 'react'
+import { useRouter } from 'next/router'
+import dynamic from 'next/dynamic'
+import Link from 'next/link'
+import KnowledgeBaseTop from './overview/KnowledgeBaseTop'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Skeleton } from 'antd'
 
 const PopularArticle = dynamic(() => import('./overview/PopularArticle'), {
   loading: () => (
@@ -12,7 +12,7 @@ const PopularArticle = dynamic(() => import('./overview/PopularArticle'), {
       <Skeleton active />
     </>
   ),
-});
+})
 
 const KnowledgeBaseLayout = ({ children }: { children: React.ReactNode }) => {
   const PageRoutes = [
@@ -24,13 +24,13 @@ const KnowledgeBaseLayout = ({ children }: { children: React.ReactNode }) => {
       path: '',
       breadcrumbName: 'Knowledgebase',
     },
-  ];
+  ]
 
-  const router = useRouter();
-  const { pathname } = router;
-  const currentPath = pathname.split('/')[4];
+  const router = useRouter()
+  const { pathname } = router
+  const currentPath = pathname.split('/')[4]
 
-  const path = '/admin/pages/knowledgeBase';
+  const path = '/admin/pages/knowledgeBase'
 
   return (
     <>
@@ -86,16 +86,14 @@ const KnowledgeBaseLayout = ({ children }: { children: React.ReactNode }) => {
               </nav>
             </div>
 
-            <>
-              {children}
-            </>
+            <>{children}</>
 
             <PopularArticle />
           </div>
         </div>
       </main>
     </>
-  );
+  )
 }
 
-export default KnowledgeBaseLayout;
+export default KnowledgeBaseLayout

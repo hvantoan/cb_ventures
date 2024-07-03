@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { Upload } from 'antd'
 import { UilCamera, UilSetting, UilBell, UilUser, UilUsersAlt } from '@iconscout/react-unicons'
 import Link from 'next/link'
-import Heading from '@/components/heading'
+import Heading from '@/components/Heading'
 import Image from 'next/image'
 
 function AuthorBox() {

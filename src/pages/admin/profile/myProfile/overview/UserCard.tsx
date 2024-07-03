@@ -2,8 +2,8 @@ import React from 'react'
 import { UilEnvelope, UilUserPlus } from '@iconscout/react-unicons'
 import Link from 'next/link'
 import { Col, Row } from 'antd'
-import Heading from '@/components/heading'
-import { Buttons } from '@/components/buttons'
+import Heading from '@/components/Heading'
+import { Buttons } from '@/components/Buttons'
 
 function UserCards({ user }: any) {
   const { name, designation, img } = user

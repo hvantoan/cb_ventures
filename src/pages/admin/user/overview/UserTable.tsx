@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { Table } from 'antd'
 import Link from 'next/link'
 import { UilEye, UilEdit, UilTrashAlt } from '@iconscout/react-unicons'
-import Heading from '@/components/heading'
+import Heading from '@/components/Heading'
 
 function UserListTable() {
   const { users } = useSelector((state: any) => {

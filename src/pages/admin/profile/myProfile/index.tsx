@@ -1,7 +1,7 @@
-import React from 'react';
-import { Row, Col, Skeleton } from 'antd';
-import Link from 'next/link';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col, Skeleton } from 'antd'
+import Link from 'next/link'
+import { PageHeaders } from '@/components/PageHeaders'
 import dynamic from 'next/dynamic'
 
 const UserCards = dynamic(() => import('./overview/UserCard'), {
@@ -10,21 +10,21 @@ const UserCards = dynamic(() => import('./overview/UserCard'), {
       <Skeleton avatar active paragraph={{ rows: 3 }} />
     </div>
   ),
-});
+})
 const UserBio = dynamic(() => import('./overview/UserBio'), {
   loading: () => (
     <div className="bg-white dark:bg-white/10 p-[25px] rounded-[10px]">
       <Skeleton avatar active paragraph={{ rows: 3 }} />
     </div>
   ),
-});
+})
 const CoverSection = dynamic(() => import('./overview/CoverSection'), {
   loading: () => (
     <div className="bg-white dark:bg-white/10 p-[25px] rounded-[10px]">
       <Skeleton active />
     </div>
   ),
-});
+})
 
 function MyProfile() {
   const PageRoutes = [
@@ -36,8 +36,8 @@ function MyProfile() {
       path: '',
       breadcrumbName: 'My Profile',
     },
-  ];
-  const path = '.';
+  ]
+  const path = '.'
   return (
     <>
       <PageHeaders
@@ -48,9 +48,7 @@ function MyProfile() {
       <main className="min-h-[715px] lg:min-h-[580px] bg-transparent px-8 xl:px-[15px] pb-[50px] ssm:pb-[30px]">
         <Row gutter={25}>
           <Col xxl={6} lg={8} md={10} xs={24}>
-            <UserCards
-              user={{ name: 'Duran Clyton', designation: 'UI/UX Designer', img: 'img/users/1.png' }}
-            />
+            <UserCards user={{ name: 'Duran Clyton', designation: 'UI/UX Designer', img: 'img/users/1.png' }} />
             <div className="mt-[25px]">
               <UserBio />
             </div>
@@ -91,8 +89,7 @@ function MyProfile() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-
-export default MyProfile;
+export default MyProfile

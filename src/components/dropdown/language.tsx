@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
-import { Dropdown } from 'antd';
+import React from 'react'
+import Link from 'next/link'
+import { Dropdown } from 'antd'
 
-function DropDown(props:any) {
-  const { content, placement, action, children, style, className } = props;
+function DropDown(props: any) {
+  const { content, placement, action, children, style, className } = props
 
   return (
     <>
@@ -17,7 +17,7 @@ function DropDown(props:any) {
         <span>{children}</span>
       </Dropdown>
     </>
-  );
+  )
 }
 
 const contents = (
@@ -43,8 +43,7 @@ const contents = (
       </Link>
     </div>
   </>
-);
-
+)
 
 const items = [
   {
@@ -81,7 +80,7 @@ const items = [
       </Link>
     ),
     disabled: true,
-  }
-];
+  },
+]
 
-export default DropDown;
+export default DropDown

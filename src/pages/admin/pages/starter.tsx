@@ -1,6 +1,6 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
 
 function BlankPage() {
   const PageRoutes = [
@@ -12,7 +12,7 @@ function BlankPage() {
       path: '',
       breadcrumbName: 'Blank Page',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -32,7 +32,7 @@ function BlankPage() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default BlankPage;
+export default BlankPage
