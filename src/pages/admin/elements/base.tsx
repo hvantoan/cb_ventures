@@ -1,9 +1,9 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
-import { Cards } from '@/components/cards/frame/cards-frame';
-import { Buttons } from '@/components/buttons';
-import Heading from '@/components/heading';
+import React from 'react'
+import { Row, Col } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
+import { Buttons } from '@/components/Buttons'
+import Heading from '@/components/Heading'
 
 // @Todo console warning from button
 
@@ -17,7 +17,7 @@ function DashboardBase() {
       path: '',
       breadcrumbName: 'Theme Configuration',
     },
-  ];
+  ]
   return (
     <>
       <>
@@ -553,7 +553,7 @@ function DashboardBase() {
                 <Cards
                   headless
                   title={
-                    <span className='block text-dark dark:text-white/[.87] font-semibold text-[20px] leading-[24px] mb-[30px]'>
+                    <span className="block text-dark dark:text-white/[.87] font-semibold text-[20px] leading-[24px] mb-[30px]">
                       Typography <span className="text-primary">Jost</span>
                     </span>
                   }
@@ -698,7 +698,9 @@ function DashboardBase() {
                 <Cards headless size="large" className="mb-[25px] ant-card-body-p-25">
                   <div className="mb-5">
                     <div className="mb-[15px]">
-                      <Heading as="h5" className="text-dark dark:text-white/[.87] text-lg">Body Text Normal</Heading>
+                      <Heading as="h5" className="text-dark dark:text-white/[.87] text-lg">
+                        Body Text Normal
+                      </Heading>
                       <ul className="flex flex-wrap gap-x-[20px] gap-y-[10px]">
                         <li className="text-primary">Font Size - 15px</li>
                         <li className="text-secondary">Font weight - 400</li>
@@ -707,7 +709,10 @@ function DashboardBase() {
                     </div>
                     <>
                       <p className="text-[15px] font-normal dark:text-white/60 leading-[25px] ">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                        sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                       </p>
                     </>
                   </div>
@@ -722,7 +727,10 @@ function DashboardBase() {
                     </div>
                     <>
                       <p className="text-[14px] font-normal leading-[22px]  text-theme-gray dark:text-white/60">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                        sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                       </p>
                     </>
                   </div>
@@ -737,7 +745,10 @@ function DashboardBase() {
                     </div>
                     <>
                       <p className="text-[16px] font-normal leading-[27px] text-theme-gray dark:text-white/60">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                        sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                       </p>
                     </>
                   </div>
@@ -748,7 +759,7 @@ function DashboardBase() {
         </main>
       </>
     </>
-  );
+  )
 }
 
-export default DashboardBase;
+export default DashboardBase

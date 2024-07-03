@@ -1,14 +1,14 @@
-import React, { useLayoutEffect, useState } from 'react';
-import { Row, Col } from 'antd';
-import { RadialBarChart, RadialBar, Legend } from 'recharts';
-import { PageHeaders } from '@/components/page-headers';
-import { Cards } from '@/components/cards/frame/cards-frame';
+import React, { useLayoutEffect, useState } from 'react'
+import { Row, Col } from 'antd'
+import { RadialBarChart, RadialBar, Legend } from 'recharts'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Cards } from '@/components/Cards/Frame/cards-frame'
 
 const style = {
   top: 0,
   right: '20%',
   lineHeight: '24px',
-};
+}
 const data = [
   {
     name: '18-24',
@@ -52,7 +52,7 @@ const data = [
     pv: 4800,
     fill: '#ffc658',
   },
-];
+]
 
 function ReChartRadial() {
   const PageRoutes = [
@@ -64,31 +64,29 @@ function ReChartRadial() {
       path: 'first',
       breadcrumbName: 'Radial Chart',
     },
-  ];
-  const [state, setState]:any = useState({
+  ]
+  const [state, setState]: any = useState({
     responsive: 1096,
-  });
+  })
 
-  const { responsive } = state;
+  const { responsive } = state
 
   useLayoutEffect(() => {
     function updateSize() {
-      const element:any = document.querySelector('.recharts-wrapper');
-      const cardBody:any = document.querySelector('.ant-card-body');
+      const element: any = document.querySelector('.recharts-wrapper')
+      const cardBody: any = document.querySelector('.ant-card-body')
       const width =
-        element !== null
-          ? element.closest('.ant-card-body').clientWidth
-          : cardBody ? cardBody.clientWidth : 1096;
-      setState({ responsive: width });
+        element !== null ? element.closest('.ant-card-body').clientWidth : cardBody ? cardBody.clientWidth : 1096
+      setState({ responsive: width })
     }
-    window.addEventListener('resize', updateSize);
-    updateSize();
-    return () => window.removeEventListener('resize', updateSize);
-  }, []);
-  
-  const height = responsive >= 797 ? responsive / 3 : responsive / 1.5;
-  const width = responsive - (5 * responsive) / 100;
-  
+    window.addEventListener('resize', updateSize)
+    updateSize()
+    return () => window.removeEventListener('resize', updateSize)
+  }, [])
+
+  const height = responsive >= 797 ? responsive / 3 : responsive / 1.5
+  const width = responsive - (5 * responsive) / 100
+
   return (
     <>
       <PageHeaders
@@ -109,7 +107,7 @@ function ReChartRadial() {
                 outerRadius={responsive >= 797 ? 140 : 90}
                 barSize={10}
                 data={data}
-              > 
+              >
                 <RadialBar
                   // minAngle={15}
                   // clockWise
@@ -131,7 +129,7 @@ function ReChartRadial() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default ReChartRadial;
+export default ReChartRadial

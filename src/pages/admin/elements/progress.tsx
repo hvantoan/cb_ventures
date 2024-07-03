@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Row, Col, Progress, Button, Tooltip } from 'antd';
-import { useSelector } from 'react-redux';
-import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
-import { PageHeaders } from '@/components/page-headers';
+import React, { useState } from 'react'
+import { Row, Col, Progress, Button, Tooltip } from 'antd'
+import { useSelector } from 'react-redux'
+import { MinusOutlined, PlusOutlined } from '@ant-design/icons'
+import { PageHeaders } from '@/components/PageHeaders'
 
-const ButtonGroup = Button.Group;
+const ButtonGroup = Button.Group
 
 function ProgressBar() {
   const PageRoutes = [
@@ -16,27 +16,27 @@ function ProgressBar() {
       path: '',
       breadcrumbName: 'Progress Bar',
     },
-  ];
-  const rtl = useSelector((state:any) => state.ChangeLayoutMode.rtlData);
+  ]
+  const rtl = useSelector((state: any) => state.ChangeLayoutMode.rtlData)
   const [state, setState] = useState({
     percent: 0,
-  });
+  })
 
   const increase = () => {
-    let percent = state.percent + 10;
+    let percent = state.percent + 10
     if (percent > 100) {
-      percent = 100;
+      percent = 100
     }
-    setState({ percent });
-  };
+    setState({ percent })
+  }
 
   const decline = () => {
-    let percent = state.percent - 10;
+    let percent = state.percent - 10
     if (percent < 0) {
-      percent = 0;
+      percent = 0
     }
-    setState({ percent });
-  };
+    setState({ percent })
+  }
 
   return (
     <>
@@ -105,8 +105,16 @@ function ProgressBar() {
               <div className="p-[25px] flex flex-wrap items-center gap-[10px]">
                 <Progress type="circle" percent={state.percent} />
                 <ButtonGroup>
-                  <Button onClick={decline} icon={<MinusOutlined className="text-dark dark:text-white/[.87]" />} className="flex items-center justify-center text-body hover:text-primary border-normal hover:border-primary" />
-                  <Button onClick={increase} icon={<PlusOutlined className="text-dark dark:text-white/[.87]" />} className="flex items-center justify-center text-body hover:text-primary border-normal hover:border-primary" />
+                  <Button
+                    onClick={decline}
+                    icon={<MinusOutlined className="text-dark dark:text-white/[.87]" />}
+                    className="flex items-center justify-center text-body hover:text-primary border-normal hover:border-primary"
+                  />
+                  <Button
+                    onClick={increase}
+                    icon={<PlusOutlined className="text-dark dark:text-white/[.87]" />}
+                    className="flex items-center justify-center text-body hover:text-primary border-normal hover:border-primary"
+                  />
                 </ButtonGroup>
               </div>
             </div>
@@ -154,12 +162,7 @@ function ProgressBar() {
                 </h1>
               </div>
               <div className="p-[25px]">
-                <Progress
-                  className="flex items-center"
-                  size="small"
-                  percent={30}
-                  style={{ marginBottom: '15px' }}
-                />
+                <Progress className="flex items-center" size="small" percent={30} style={{ marginBottom: '15px' }} />
                 <Progress
                   className="flex items-center"
                   size="small"
@@ -167,7 +170,7 @@ function ProgressBar() {
                   status="exception"
                   style={{ marginBottom: '15px' }}
                 />
-                <Progress className="flex items-center" size="small" percent={100}/>
+                <Progress className="flex items-center" size="small" percent={100} />
               </div>
             </div>
             <div className="bg-white dark:bg-white/10 m-0 p-0 text-theme-gray dark:text-white/60 text-[15px] mb-[25px] rounded-10 relative">
@@ -191,8 +194,16 @@ function ProgressBar() {
               <div className="p-[25px]">
                 <Progress percent={state.percent} />
                 <ButtonGroup>
-                  <Button className="inline-flex items-center justify-center" onClick={decline} icon={<MinusOutlined className="text-dark dark:text-white/[.87]" />} />
-                  <Button className="inline-flex items-center justify-center" onClick={increase} icon={<PlusOutlined className="text-dark dark:text-white/[.87]" />} />
+                  <Button
+                    className="inline-flex items-center justify-center"
+                    onClick={decline}
+                    icon={<MinusOutlined className="text-dark dark:text-white/[.87]" />}
+                  />
+                  <Button
+                    className="inline-flex items-center justify-center"
+                    onClick={increase}
+                    icon={<PlusOutlined className="text-dark dark:text-white/[.87]" />}
+                  />
                 </ButtonGroup>
               </div>
             </div>
@@ -254,7 +265,7 @@ function ProgressBar() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default ProgressBar;
+export default ProgressBar

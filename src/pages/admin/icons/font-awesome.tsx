@@ -1,14 +1,14 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import FontAwesome from 'react-fontawesome';
-import { PageHeaders } from '@/components/page-headers';
-import Heading from '@/components/heading';
-import icons from '@/config/icon/icon.json';
+import React from 'react'
+import { Row, Col } from 'antd'
+import FontAwesome from 'react-fontawesome'
+import { PageHeaders } from '@/components/PageHeaders'
+import Heading from '@/components/Heading'
+import icons from '@/config/icon/icon.json'
 
-const { faIcons } = icons;
+const { faIcons } = icons
 
 function FaIcons() {
-  let key = 0;
+  let key = 0
   return (
     <>
       <PageHeaders
@@ -28,7 +28,7 @@ function FaIcons() {
                 <div className="p-[25px]">
                   <Row gutter={25}>
                     {faIcons.map((icon) => {
-                      key += 1;
+                      key += 1
                       return (
                         <Col lg={6} md={12} xs={24} key={key}>
                           <div className="flex items-center mb-[15px]">
@@ -41,7 +41,7 @@ function FaIcons() {
                             <span className="text-body dark:text-white/60">{icon}</span>
                           </div>
                         </Col>
-                      );
+                      )
                     })}
                   </Row>
                 </div>
@@ -51,7 +51,7 @@ function FaIcons() {
         </Row>
       </div>
     </>
-  );
+  )
 }
 
-export default FaIcons;
+export default FaIcons

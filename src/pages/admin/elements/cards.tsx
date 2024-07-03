@@ -1,15 +1,9 @@
-import React from 'react';
-import { Row, Col, Card } from 'antd';
-import {
-  UilTimes,
-  UilPrint,
-  UilBookOpen,
-  UilFileAlt,
-  UilFile
- } from '@iconscout/react-unicons';
- import Link from 'next/link';
-import { PageHeaders } from '@/components/page-headers';
-import { Cards } from '@/components/cards/frame/cards-frame';
+import React from 'react'
+import { Row, Col, Card } from 'antd'
+import { UilTimes, UilPrint, UilBookOpen, UilFileAlt, UilFile } from '@iconscout/react-unicons'
+import Link from 'next/link'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Cards } from '@/components/Cards/Frame/cards-frame'
 
 const content = (
   <>
@@ -51,7 +45,7 @@ const content = (
       </Link>
     </div>
   </>
-);
+)
 
 function CardContainer() {
   const PageRoutes = [
@@ -63,7 +57,7 @@ function CardContainer() {
       path: '',
       breadcrumbName: 'Cards',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -222,14 +216,54 @@ function CardContainer() {
                   title="Grid Card"
                   size="large"
                 >
-                  <Card.Grid className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10" style={{ width: '25%', textAlign: 'center', padding: 24 }}>Content</Card.Grid>
-                  <Card.Grid className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10" style={{ width: '25%', textAlign: 'center', padding: 24 }}>Content</Card.Grid>
-                  <Card.Grid className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10" style={{ width: '25%', textAlign: 'center', padding: 24 }}>Content</Card.Grid>
-                  <Card.Grid className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10" style={{ width: '25%', textAlign: 'center', padding: 24 }}>Content</Card.Grid>
-                  <Card.Grid className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10" style={{ width: '25%', textAlign: 'center', padding: 24 }}>Content</Card.Grid>
-                  <Card.Grid className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10" style={{ width: '25%', textAlign: 'center', padding: 24 }}>Content</Card.Grid>
-                  <Card.Grid className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10" style={{ width: '25%', textAlign: 'center', padding: 24 }}>Content</Card.Grid>
-                  <Card.Grid className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10" style={{ width: '25%', textAlign: 'center', padding: 24 }}>Content</Card.Grid>
+                  <Card.Grid
+                    className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10"
+                    style={{ width: '25%', textAlign: 'center', padding: 24 }}
+                  >
+                    Content
+                  </Card.Grid>
+                  <Card.Grid
+                    className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10"
+                    style={{ width: '25%', textAlign: 'center', padding: 24 }}
+                  >
+                    Content
+                  </Card.Grid>
+                  <Card.Grid
+                    className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10"
+                    style={{ width: '25%', textAlign: 'center', padding: 24 }}
+                  >
+                    Content
+                  </Card.Grid>
+                  <Card.Grid
+                    className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10"
+                    style={{ width: '25%', textAlign: 'center', padding: 24 }}
+                  >
+                    Content
+                  </Card.Grid>
+                  <Card.Grid
+                    className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10"
+                    style={{ width: '25%', textAlign: 'center', padding: 24 }}
+                  >
+                    Content
+                  </Card.Grid>
+                  <Card.Grid
+                    className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10"
+                    style={{ width: '25%', textAlign: 'center', padding: 24 }}
+                  >
+                    Content
+                  </Card.Grid>
+                  <Card.Grid
+                    className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10"
+                    style={{ width: '25%', textAlign: 'center', padding: 24 }}
+                  >
+                    Content
+                  </Card.Grid>
+                  <Card.Grid
+                    className="hover:shadow-[0_5px_20px_rgba(146,153,184,0.03)] dark:text-white/60 dark:shadow-[0_0_1px_rgba(146,153,184,0.60)] dark:border-white/10"
+                    style={{ width: '25%', textAlign: 'center', padding: 24 }}
+                  >
+                    Content
+                  </Card.Grid>
                 </Cards>
               </div>
             </Col>
@@ -282,7 +316,7 @@ function CardContainer() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default CardContainer;
+export default CardContainer

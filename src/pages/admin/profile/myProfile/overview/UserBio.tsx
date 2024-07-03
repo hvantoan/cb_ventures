@@ -1,12 +1,8 @@
-import React from 'react';
-import {
-  UilPhone,
-  UilGlobe,
-  UilEnvelope
-} from '@iconscout/react-unicons';
-import FontAwesome from 'react-fontawesome';
-import { Buttons } from '@/components/buttons';
-import socialMediaLinks from '@/demoData/socialMediaLinks.json';
+import React from 'react'
+import { UilPhone, UilGlobe, UilEnvelope } from '@iconscout/react-unicons'
+import FontAwesome from 'react-fontawesome'
+import { Buttons } from '@/components/Buttons'
+import socialMediaLinks from '@/demoData/socialMediaLinks.json'
 
 function UserBio() {
   return (
@@ -20,7 +16,9 @@ function UserBio() {
           </p>
         </article>
         <address className="mb-[22px] pb-[22px] border-regular border-b-1 dark:border-white/10">
-          <h5 className="text-[12px] text-light dark:text-white/60 uppercase mb-[16px] font-medium not-italic">Contact Info</h5>
+          <h5 className="text-[12px] text-light dark:text-white/60 uppercase mb-[16px] font-medium not-italic">
+            Contact Info
+          </h5>
           <ul className="mb-0 user-info__contact">
             <li className="flex items-center mb-[14px] last:mb-0 gap-[12px] text-theme-gray dark:text-white/60 text-[14px] not-italic">
               <UilEnvelope className="w-[16px] h-[16px] text-light dark:text-white/60" />{' '}
@@ -72,7 +70,7 @@ function UserBio() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default UserBio;
+export default UserBio

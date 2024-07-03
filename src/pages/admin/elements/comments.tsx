@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Row, Col, Tooltip, Avatar, List } from 'antd';
-import { Comment } from '@ant-design/compatible';
-import moment from 'moment';
-import Link from 'next/link';
-import { LikeOutlined, DislikeOutlined } from '@ant-design/icons';
-import { PageHeaders } from '@/components/page-headers';
-import CommentEditor from '@/components/comments/comments-editor';
+import React, { useState } from 'react'
+import { Row, Col, Tooltip, Avatar, List } from 'antd'
+import { Comment } from '@ant-design/compatible'
+import moment from 'moment'
+import Link from 'next/link'
+import { LikeOutlined, DislikeOutlined } from '@ant-design/icons'
+import { PageHeaders } from '@/components/PageHeaders'
+import CommentEditor from '@/components/Comments/comments-editor'
 
-function ExampleComment({ children }:any) {
+function ExampleComment({ children }: any) {
   return (
     <Comment
       actions={[<span key="comment-nested-reply-to">Reply</span>]}
@@ -22,7 +22,7 @@ function ExampleComment({ children }:any) {
     >
       {children}
     </Comment>
-  );
+  )
 }
 
 function Comments() {
@@ -35,30 +35,30 @@ function Comments() {
       path: '',
       breadcrumbName: 'Comments',
     },
-  ];
-  const [state, setState]:any = useState({
+  ]
+  const [state, setState]: any = useState({
     likes: 0,
     dislikes: 0,
     action: '',
-  });
+  })
 
   const like = () => {
     setState({
       likes: 1,
       dislikes: 0,
       action: 'liked',
-    });
-  };
+    })
+  }
 
   const dislike = () => {
     setState({
       likes: 0,
       dislikes: 1,
       action: 'disliked',
-    });
-  };
+    })
+  }
 
-  const { likes, dislikes, action } = state;
+  const { likes, dislikes, action } = state
 
   const actions = [
     <span key="comment-basic-like">
@@ -74,7 +74,7 @@ function Comments() {
       <span style={{ paddingLeft: 8, cursor: 'auto' }}>{dislikes}</span>
     </span>,
     <span key="comment-basic-reply-to">Reply</span>,
-  ];
+  ]
 
   const data = [
     {
@@ -83,7 +83,8 @@ function Comments() {
       avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
       content: (
         <p className="text-light dark:text-white/60">
-          We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.
+          We supply a series of design principles, practical patterns and high quality design resources (Sketch and
+          Axure), to help people create their product prototypes beautifully and efficiently.
         </p>
       ),
       datetime: (
@@ -108,7 +109,7 @@ function Comments() {
         </Tooltip>
       ),
     },
-  ];
+  ]
 
   return (
     <>
@@ -216,7 +217,7 @@ function Comments() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default Comments;
+export default Comments

@@ -1,11 +1,11 @@
-import React, { useLayoutEffect, useState } from 'react';
-import { Row, Col } from 'antd';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
-import { PageHeaders } from '@/components/page-headers';
-import { Cards } from '@/components/cards/frame/cards-frame';
-import reChartData from '@/demoData/recharts.json';
+import React, { useLayoutEffect, useState } from 'react'
+import { Row, Col } from 'antd'
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Cards } from '@/components/Cards/Frame/cards-frame'
+import reChartData from '@/demoData/recharts.json'
 
-const { data, nullChart } = reChartData;
+const { data, nullChart } = reChartData
 
 function RechartArea() {
   const PageRoutes = [
@@ -17,26 +17,24 @@ function RechartArea() {
       path: 'first',
       breadcrumbName: 'Area Chart',
     },
-  ];
+  ]
   const [state, setState] = useState({
     responsive: 0,
-  });
-  const { responsive } = state;
+  })
+  const { responsive } = state
 
   useLayoutEffect(() => {
     function updateSize() {
-      const element:any = document.querySelector('.recharts-wrapper');
-      const cardBody:any = document.querySelector('.ant-card-body');
+      const element: any = document.querySelector('.recharts-wrapper')
+      const cardBody: any = document.querySelector('.ant-card-body')
       const width =
-        element !== null
-          ? element.closest('.ant-card-body').clientWidth
-          : cardBody ? cardBody.clientWidth : 500;
-      setState({ responsive: width });
+        element !== null ? element.closest('.ant-card-body').clientWidth : cardBody ? cardBody.clientWidth : 500
+      setState({ responsive: width })
     }
-    window.addEventListener('resize', updateSize);
-    updateSize();
-    return () => window.removeEventListener('resize', updateSize);
-  }, []);
+    window.addEventListener('resize', updateSize)
+    updateSize()
+    return () => window.removeEventListener('resize', updateSize)
+  }, [])
 
   return (
     <>
@@ -142,7 +140,7 @@ function RechartArea() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default RechartArea;
+export default RechartArea

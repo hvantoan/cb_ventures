@@ -1,12 +1,12 @@
-import React from 'react';
-import { Row, Col, Table } from 'antd';
-import Heading from '@/components/heading';
-import { PageHeaders } from '@/components/page-headers';
-import DragAndDropTable from '@/components/table/DragTable';
-import SaleByLocation from '@/dashboard/demo-1/SalesByLocation';
-import BestSeller from '@/dashboard/demo-2/BestSeller';
-import TopSellingProduct from '@/dashboard/demo-1/TopSellingProducts';
-import BrowserState from '@/dashboard/demo-1/BrowserState';
+import React from 'react'
+import { Row, Col, Table } from 'antd'
+import Heading from '@/components/Heading'
+import { PageHeaders } from '@/components/PageHeaders'
+import DragAndDropTable from '@/components/table/DragTable'
+import SaleByLocation from '@/dashboard/demo-1/SalesByLocation'
+import BestSeller from '@/dashboard/demo-2/BestSeller'
+import TopSellingProduct from '@/dashboard/demo-1/TopSellingProducts'
+import BrowserState from '@/dashboard/demo-1/BrowserState'
 
 function Tables() {
   const dataSource = [
@@ -24,7 +24,7 @@ function Tables() {
       address: '10 Downing Street',
       className: 'ltr:pr-4 rtl:pl-4 text-light dark:text-white/60 text-[15px] py-4 before:hidden',
     },
-  ];
+  ]
 
   const columns = [
     {
@@ -45,7 +45,7 @@ function Tables() {
       key: 'address',
       className: 'ltr:pr-4 rtl:pl-4 text-dark dark:text-white/[.87] text-[15px] py-4 before:hidden border-none',
     },
-  ];
+  ]
 
   return (
     <>
@@ -84,7 +84,7 @@ function Tables() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default Tables;
+export default Tables

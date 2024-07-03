@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-import Heading from '@/components/heading'
+import Heading from '@/components/Heading'
 
 function Maintenance() {
   return (

@@ -1,30 +1,26 @@
 /* eslint-disable react/jsx-no-bind */
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Row, Col, Table, Radio, Divider } from 'antd';
-import {
-  UilEye,
-  UilEdit,
-  UilTrash
-} from '@iconscout/react-unicons';
-import Link from 'next/link';
-import { PageHeaders } from '@/components/page-headers';
-import Heading from '@/components/heading';
-import DataTable from '@/components/table/DataTable';
-import UserListTable from '../user/overview/UserTable';
-import TaskList from '../project/[id]/overview/Tasklist';
-import ProjectList from '../project/overview/ProjectList';
+import React, { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { Row, Col, Table, Radio, Divider } from 'antd'
+import { UilEye, UilEdit, UilTrash } from '@iconscout/react-unicons'
+import Link from 'next/link'
+import { PageHeaders } from '@/components/PageHeaders'
+import Heading from '@/components/Heading'
+import DataTable from '@/components/table/DataTable'
+import UserListTable from '../user/overview/UserTable'
+import TaskList from '../project/[id]/overview/Tasklist'
+import ProjectList from '../project/overview/ProjectList'
 
-import { tableReadData } from '@/redux/data-filter/actionCreator';
+import { tableReadData } from '@/redux/data-filter/actionCreator'
 
 function DataTables() {
-  const dispatch = useDispatch();
-  const [state, setState]:any = useState({
+  const dispatch = useDispatch()
+  const [state, setState]: any = useState({
     selectionType: 'checkbox',
     selectedRowKeys: null,
     selectedRows: null,
     values: {},
-  });
+  })
 
   const PageRoutes = [
     {
@@ -35,7 +31,7 @@ function DataTables() {
       path: 'first',
       breadcrumbName: 'Table',
     },
-  ];
+  ]
 
   const dataSource = [
     {
@@ -50,7 +46,7 @@ function DataTables() {
       age: 42,
       address: '10 Downing Street',
     },
-  ];
+  ]
 
   const columns = [
     {
@@ -68,19 +64,19 @@ function DataTables() {
       dataIndex: 'address',
       key: 'address',
     },
-  ];
+  ]
 
   const rowSelection = {
-    onChange: (selectedRowKeys:any, selectedRows:any) => {
-      setState({ ...state, selectedRowKeys, selectedRows });
+    onChange: (selectedRowKeys: any, selectedRows: any) => {
+      setState({ ...state, selectedRowKeys, selectedRows })
     },
-    getCheckboxProps: (record:any) => ({
+    getCheckboxProps: (record: any) => ({
       disabled: record.name === 'Disabled User', // Column configuration not to be checked
       name: record.name,
     }),
-  };
+  }
 
-  const columnsSort:any = [
+  const columnsSort: any = [
     {
       title: 'Name',
       dataIndex: 'name',
@@ -110,15 +106,15 @@ function DataTables() {
       ],
       // specify the condition of filtering result
       // here is that finding the name started with `value`
-      onFilter: (value:any, record:any) => record.name.indexOf(value) === 0,
-      sorter: (a:any, b:any) => a.name.length - b.name.length,
+      onFilter: (value: any, record: any) => record.name.indexOf(value) === 0,
+      sorter: (a: any, b: any) => a.name.length - b.name.length,
       sortDirections: ['descend'],
     },
     {
       title: 'Age',
       dataIndex: 'age',
       defaultSortOrder: 'descend',
-      sorter: (a:any, b:any) => a.age - b.age,
+      sorter: (a: any, b: any) => a.age - b.age,
     },
     {
       title: 'Address',
@@ -134,11 +130,11 @@ function DataTables() {
         },
       ],
       filterMultiple: false,
-      onFilter: (value:any, record:any) => record.address.indexOf(value) === 0,
-      sorter: (a:any, b:any) => a.address.length - b.address.length,
+      onFilter: (value: any, record: any) => record.address.indexOf(value) === 0,
+      sorter: (a: any, b: any) => a.address.length - b.address.length,
       sortDirections: ['descend', 'ascend'],
     },
-  ];
+  ]
 
   const dataSort = [
     {
@@ -189,26 +185,26 @@ function DataTables() {
       age: 25,
       address: 'London No. 2 Lake Park',
     },
-  ];
+  ]
 
   useEffect(() => {
     if (dispatch) {
       // @ts-ignore
-      dispatch(tableReadData());
+      dispatch(tableReadData())
     }
-  }, [dispatch]);
+  }, [dispatch])
 
-  const { TableData } = useSelector((states:any) => {
+  const { TableData } = useSelector((states: any) => {
     return {
       TableData: states.dataTable.tableData,
-    };
-  });
+    }
+  })
 
-  const tableDataSource:any = [];
+  const tableDataSource: any = []
 
   if (TableData.length > 0) {
-    TableData.map((item:any) => {
-      const { id, name, country, company, position, status, date } = item;
+    TableData.map((item: any) => {
+      const { id, name, country, company, position, status, date } = item
       return tableDataSource.push({
         key: id,
         id: <span className="text-body dark:text-white/60 text-[15px] font-medium">{`#${id}`}</span>,
@@ -237,8 +233,8 @@ function DataTables() {
             </Link>
           </div>
         ),
-      });
-    });
+      })
+    })
   }
 
   const dataTableColumn = [
@@ -283,10 +279,10 @@ function DataTables() {
       key: 'action',
       width: '90px',
     },
-  ];
+  ]
 
-  function onChange(pagination:any, filters:any, sorter:any, extra:any) {
-    setState({ ...state, values: { pagination, filters, sorter, extra } });
+  function onChange(pagination: any, filters: any, sorter: any, extra: any) {
+    setState({ ...state, values: { pagination, filters, sorter, extra } })
   }
 
   return (
@@ -355,7 +351,7 @@ function DataTables() {
                   <Heading as="h4" className="text-lg font-medium mb-0">
                     User List
                   </Heading>
-                </div> 
+                </div>
                 <div className="p-[25px]">
                   <UserListTable />
                 </div>
@@ -372,7 +368,7 @@ function DataTables() {
                   <div className="table-responsive table-th-shape-none table-td-text-body dark:text-white/60 table-tr-selected-background-transparent [&>div>div>div>div>div>.ant-table-content>table>thead>tr>th:first-child]:rounded-ss-[10px [&>div>div>div>div>div>.ant-table-content>table>thead>tr>th:last-child]:rounded-es-[10px] [&>div>div>div>div>div>.ant-table-content>table>thead>tr>th]:dark:border-whiteDark">
                     <Radio.Group
                       onChange={({ target: { value } }) => {
-                        setState({ selectionType: value });
+                        setState({ selectionType: value })
                       }}
                       value={state.selectionType}
                       className="custom-radio-group"
@@ -431,7 +427,8 @@ function DataTables() {
                           defaultPageSize: 3,
                           total: dataSort.length,
                           showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} items`,
-                          className: 'text-end [&>li]:margin-0 [&>li]:border [&>li]:margin-0 [&>li]:bg-white [&>li]:rounded-6 dark:[&>li]:bg-white/10 dark:[&>li]:margin-0 [&>li]:border-regular dark:[&>li]:border-white/10 [&>li>.ant-pagination-item-link]:flex [&>li>.ant-pagination-item-link]:items-center [&>li>.ant-pagination-item-link]:justify-center [&>li>.ant-pagination-item-link]:border-none [&>li>.ant-pagination-item-link>.anticon>svg]:text-light [&>li>.ant-pagination-item-link>.anticon>svg]:dark:text-white/30 [&>.ant-pagination-item>a]:text-body [&>.ant-pagination-item>a]:dark:text-white/60 [&>.ant-pagination-item-active]:bg-primary [&>.ant-pagination-item.ant-pagination-item-active>a]:text-white [&>.ant-pagination-item.ant-pagination-item-active>a]:dark:text-white/60 [&>.ant-pagination-options]:border-none [&>.ant-pagination-options>.ant-select:hover>.ant-select-selector]:border-primary [&>.ant-pagination-options>.ant-select>.ant-select-selector]:h-[33px] dark:[&>.ant-pagination-options>.ant-select>.ant-select-selector]:text-white/[.60] dark:[&>.ant-pagination-options>.ant-select>.ant-select-arrow]:text-white/[.60] [&>.ant-pagination-options>.ant-select>.ant-select-selector]:border-0 dark:[&>.ant-pagination-options>.ant-select>.ant-select-selector]:border-white/10 [&>.ant-pagination-options>.ant-select>.ant-select-selector]:rounded-6'
+                          className:
+                            'text-end [&>li]:margin-0 [&>li]:border [&>li]:margin-0 [&>li]:bg-white [&>li]:rounded-6 dark:[&>li]:bg-white/10 dark:[&>li]:margin-0 [&>li]:border-regular dark:[&>li]:border-white/10 [&>li>.ant-pagination-item-link]:flex [&>li>.ant-pagination-item-link]:items-center [&>li>.ant-pagination-item-link]:justify-center [&>li>.ant-pagination-item-link]:border-none [&>li>.ant-pagination-item-link>.anticon>svg]:text-light [&>li>.ant-pagination-item-link>.anticon>svg]:dark:text-white/30 [&>.ant-pagination-item>a]:text-body [&>.ant-pagination-item>a]:dark:text-white/60 [&>.ant-pagination-item-active]:bg-primary [&>.ant-pagination-item.ant-pagination-item-active>a]:text-white [&>.ant-pagination-item.ant-pagination-item-active>a]:dark:text-white/60 [&>.ant-pagination-options]:border-none [&>.ant-pagination-options>.ant-select:hover>.ant-select-selector]:border-primary [&>.ant-pagination-options>.ant-select>.ant-select-selector]:h-[33px] dark:[&>.ant-pagination-options>.ant-select>.ant-select-selector]:text-white/[.60] dark:[&>.ant-pagination-options>.ant-select>.ant-select-arrow]:text-white/[.60] [&>.ant-pagination-options>.ant-select>.ant-select-selector]:border-0 dark:[&>.ant-pagination-options>.ant-select>.ant-select-selector]:border-white/10 [&>.ant-pagination-options>.ant-select>.ant-select-selector]:rounded-6',
                         }}
                         columns={columnsSort}
                         dataSource={dataSort}
@@ -458,7 +455,7 @@ function DataTables() {
         </>
       </div>
     </>
-  );
+  )
 }
 
-export default DataTables;
+export default DataTables

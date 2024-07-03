@@ -1,6 +1,6 @@
-import React from 'react';
-import { Row, Col, Radio } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col, Radio } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
 
 function Radios() {
   const PageRoutes = [
@@ -12,7 +12,7 @@ function Radios() {
       path: '',
       breadcrumbName: 'Radio',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -282,7 +282,7 @@ function Radios() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default Radios;
+export default Radios

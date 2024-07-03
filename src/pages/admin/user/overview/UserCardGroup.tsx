@@ -2,8 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import { Progress } from 'antd'
 import { UilEllipsisH } from '@iconscout/react-unicons'
-import Heading from '@/components/heading'
-import DropDown from '@/components/dropdown'
+import Heading from '@/components/Heading'
+import DropDown from '@/components/Dropdown'
 
 function UserCardGroup({ user }: any) {
   const { title, company, img, icon, content } = user

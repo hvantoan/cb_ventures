@@ -2,9 +2,9 @@ import React from 'react'
 import { Row, Col } from 'antd'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { PageHeaders } from '@/components/page-headers'
-import Heading from '@/components/heading'
-import { Buttons } from '@/components/buttons'
+import { PageHeaders } from '@/components/PageHeaders'
+import Heading from '@/components/Heading'
+import { Buttons } from '@/components/Buttons'
 import Image from 'next/image'
 
 const FaqLayout = ({ children }: { children: React.ReactNode }) => {

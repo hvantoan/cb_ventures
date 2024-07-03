@@ -4,10 +4,10 @@ import { UilPhone, UilEnvelope, UilMapMarker, UilEllipsisH } from '@iconscout/re
 import { useSelector, useDispatch } from 'react-redux'
 import Link from 'next/link'
 import { Row, Form, Input } from 'antd'
-import DropDown from '@/components/dropdown'
+import DropDown from '@/components/Dropdown'
 import { ContactDeleteData } from '@/redux/contact/actionCreator'
-import { Buttons } from '@/components/buttons'
-import { Modals } from '@/components/modals/antd-modals'
+import { Buttons } from '@/components/Buttons'
+import { Modals } from '@/components/Modals/antd-modals'
 import { RootState } from '@/redux/store'
 
 function ContactCard({ user }: any) {

@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { UilPlus } from '@iconscout/react-unicons';
-import { Row, Col, Spin, Skeleton } from 'antd';
-import Link from 'next/link';
-import dynamic from 'next/dynamic';
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { UilPlus } from '@iconscout/react-unicons'
+import { Row, Col, Spin, Skeleton } from 'antd'
+import Link from 'next/link'
+import dynamic from 'next/dynamic'
 
-import { PageHeaders } from '@/components/page-headers';
-import { galleryFilter } from '@/redux/gallary/actionCreator';
-import { Buttons } from '@/components/buttons';
-import { ShareButtonPageHeader } from '@/components/buttons/share-button';
-import { ExportButtonPageHeader } from '@/components/buttons/export-button';
-import { CalendarButtonPageHeader } from '@/components/buttons/calendar-button';
+import { PageHeaders } from '@/components/PageHeaders'
+import { galleryFilter } from '@/redux/gallary/actionCreator'
+import { Buttons } from '@/components/Buttons'
+import { ShareButtonPageHeader } from '@/components/Buttons/ShareButton'
+import { ExportButtonPageHeader } from '@/components/Buttons/ExportButton'
+import { CalendarButtonPageHeader } from '@/components/Buttons/Calendar-button'
 
 const GalleryCards = dynamic(() => import('./overview/GalleryCard'), {
   loading: () => (
@@ -18,28 +18,28 @@ const GalleryCards = dynamic(() => import('./overview/GalleryCard'), {
       <Skeleton active />
     </>
   ),
-});
+})
 
 function GalleryTwo() {
-  const dispatch = useDispatch();
-  const { gallery, isLoading } = useSelector((state:any) => {
+  const dispatch = useDispatch()
+  const { gallery, isLoading } = useSelector((state: any) => {
     return {
       gallery: state.gallery.data,
       isLoading: state.gallery.loading,
-    };
-  });
+    }
+  })
   const [state, setState] = useState({
     activeClass: '',
-  });
+  })
 
-  const handleChange = (value:any) => {
+  const handleChange = (value: any) => {
     //@ts-ignore
-    dispatch(galleryFilter('category', value));
+    dispatch(galleryFilter('category', value))
     setState({
       ...state,
       activeClass: value,
-    });
-  };
+    })
+  }
 
   return (
     <>
@@ -51,7 +51,11 @@ function GalleryTwo() {
             <CalendarButtonPageHeader />
             <ExportButtonPageHeader />
             <ShareButtonPageHeader />
-            <Buttons size="small" type="primary" className="flex items-center justify-center h-8 bg-primary text-white px-3">
+            <Buttons
+              size="small"
+              type="primary"
+              className="flex items-center justify-center h-8 bg-primary text-white px-3"
+            >
               <UilPlus className="w-4 h-4" />
               Add New
             </Buttons>
@@ -138,19 +142,19 @@ function GalleryTwo() {
               </div>
             </Col>
           ) : (
-            gallery.map((item:any) => {
-              const { id } = item;
+            gallery.map((item: any) => {
+              const { id } = item
               return (
                 <Col key={id} xxl={6} lg={8} sm={12} xs={24}>
                   <GalleryCards item={item} />
                 </Col>
-              );
+              )
             })
           )}
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default GalleryTwo;
+export default GalleryTwo

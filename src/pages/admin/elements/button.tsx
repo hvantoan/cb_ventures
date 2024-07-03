@@ -1,12 +1,12 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import { DownOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
-import { UilLayers } from '@iconscout/react-unicons';
-import { PageHeaders } from '@/components/page-headers';
-import { Cards } from '@/components/cards/frame/cards-frame';
-import { BtnGroup, Buttons } from '@/components/buttons';
-import DropDown from '@/components/dropdown';
-import Heading from '@/components/heading';
+import React from 'react'
+import { Row, Col } from 'antd'
+import { DownOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons'
+import { UilLayers } from '@iconscout/react-unicons'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Cards } from '@/components/Cards/Frame/cards-frame'
+import { BtnGroup, Buttons } from '@/components/Buttons'
+import DropDown from '@/components/Dropdown'
+import Heading from '@/components/Heading'
 
 function ButtonComponent() {
   const PageRoutes = [
@@ -18,7 +18,7 @@ function ButtonComponent() {
       path: '',
       breadcrumbName: 'Buttons',
     },
-  ];
+  ]
   return (
     <>
       <>
@@ -289,18 +289,34 @@ function ButtonComponent() {
                         <Buttons className="text-white text-[13px] font-semibold bg-primary border-primary px-[8px]">
                           Today
                         </Buttons>
-                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">Week</Buttons>
-                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">Month</Buttons>
-                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">Year</Buttons>
+                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">
+                          Week
+                        </Buttons>
+                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">
+                          Month
+                        </Buttons>
+                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">
+                          Year
+                        </Buttons>
                       </BtnGroup>
                       <BtnGroup>
-                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">Cancel</Buttons>
-                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">Ok</Buttons>
+                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">
+                          Cancel
+                        </Buttons>
+                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">
+                          Ok
+                        </Buttons>
                       </BtnGroup>
                       <BtnGroup>
-                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">Left</Buttons>
-                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">Middle</Buttons>
-                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">Right</Buttons>
+                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">
+                          Left
+                        </Buttons>
+                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">
+                          Middle
+                        </Buttons>
+                        <Buttons className="dark:bg-white hover:text-primary hover:border-primary text-[13px] font-semibold px-[8px]">
+                          Right
+                        </Buttons>
                       </BtnGroup>
                     </Row>
                   </div>
@@ -660,7 +676,7 @@ function ButtonComponent() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default ButtonComponent;
+export default ButtonComponent

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Row, Col } from 'antd';
+import React from 'react'
+import { Row, Col } from 'antd'
 // eslint-disable-next-line import/no-extraneous-dependencies
-import * as Icons from '@ant-design/icons';
-import { PageHeaders } from '@/components/page-headers';
-import Heading from '@/components/heading';
+import * as Icons from '@ant-design/icons'
+import { PageHeaders } from '@/components/PageHeaders'
+import Heading from '@/components/Heading'
 
 function FeatherSvgIcons() {
   return (
@@ -28,11 +28,11 @@ function FeatherSvgIcons() {
                           item !== 'default' &&
                           item !== 'setTwoToneColor' &&
                           item !== 'getTwoToneColor' &&
-                          item !== 'createFromIconfontCN',
+                          item !== 'createFromIconfontCN'
                       )
                       .map((icon) => {
                         //@ts-ignore
-                        const CustomTag = Icons[icon];
+                        const CustomTag = Icons[icon]
                         return (
                           <Col xl={6} md={12} xs={24} key={icon}>
                             <div className="flex items-center mb-[15px]">
@@ -40,7 +40,7 @@ function FeatherSvgIcons() {
                               <span className="text-body dark:text-white/60">antd {icon}</span>
                             </div>
                           </Col>
-                        );
+                        )
                       })}
                   </Row>
                 </div>
@@ -50,7 +50,7 @@ function FeatherSvgIcons() {
         </Row>
       </div>
     </>
-  );
+  )
 }
 
-export default FeatherSvgIcons;
+export default FeatherSvgIcons

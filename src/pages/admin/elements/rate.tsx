@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { Col, Rate, Row } from 'antd';
-import { useState } from 'react';
-import { PageHeaders } from '@/components/page-headers';
+import { Col, Rate, Row } from 'antd'
+import { useState } from 'react'
+import { PageHeaders } from '@/components/PageHeaders'
 
 function Rating() {
   const PageRoutes = [
@@ -13,17 +13,17 @@ function Rating() {
       path: '',
       breadcrumbName: 'Rating',
     },
-  ];
-  const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
+  ]
+  const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful']
   const [state, setState] = useState({
     value: 3,
-  });
+  })
 
-  const handleChange = (value:any) => {
-    setState({ value });
-  };
+  const handleChange = (value: any) => {
+    setState({ value })
+  }
 
-  const { value } = state;
+  const { value } = state
   return (
     <>
       <PageHeaders
@@ -116,7 +116,7 @@ function Rating() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default Rating;
+export default Rating

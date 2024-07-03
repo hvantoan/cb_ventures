@@ -3,7 +3,7 @@ import { UilEllipsisH } from '@iconscout/react-unicons'
 import Link from 'next/link'
 import FontAwesome from 'react-fontawesome'
 import socialMediaLinks from '@/demoData/socialMediaLinks.json'
-import DropDown from '@/components/dropdown'
+import DropDown from '@/components/Dropdown'
 
 function TeamCard({ user, actions }: any) {
   const { name, designation, img } = user

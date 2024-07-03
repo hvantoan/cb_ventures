@@ -1,33 +1,30 @@
 /* eslint-disable react/display-name */
-import {
-  UilArrowDown,
-  UilArrowUp,
- } from '@iconscout/react-unicons';
-import { Spin } from 'antd';
-import Link from 'next/link';
-import React, { useState } from 'react';
-import { Cards } from '@/components/cards/frame/cards-frame';
-import DashboardChart from '@/components/charts/DashboardChart';
+import { UilArrowDown, UilArrowUp } from '@iconscout/react-unicons'
+import { Spin } from 'antd'
+import Link from 'next/link'
+import React, { useState } from 'react'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
+import DashboardChart from '@/components/Charts/DashboardChart'
 
-import chartData from '../../demoData/dashboardChartContent.json';
+import chartData from '../../demoData/dashboardChartContent.json'
 
 const SalesGrowth = React.memo(() => {
-  const salesGrowthData:any = chartData.salesGrowth;
+  const salesGrowthData: any = chartData.salesGrowth
 
   const [state, setState] = useState({
     sellingTab: 'today',
-  });
+  })
 
   /* State destructuring */
-  const {sellingTab}:any = state;
+  const { sellingTab }: any = state
 
-  const handleChangePeriod = (value:any, event:any) => {
-    event.preventDefault();
+  const handleChangePeriod = (value: any, event: any) => {
+    event.preventDefault()
     setState({
       ...state,
       sellingTab: value,
-    });
-  };
+    })
+  }
 
   const salesGrowthDataset = [
     {
@@ -50,7 +47,7 @@ const SalesGrowth = React.memo(() => {
       barThickness: 12,
       percent: 60,
     },
-  ];
+  ]
 
   return (
     <div className="h-full">
@@ -142,24 +139,24 @@ const SalesGrowth = React.memo(() => {
                 }}
                 tooltip={{
                   callbacks: {
-                    label(t:any) {
-                      const dstLabel = t.dataset.label;
-                      const { formattedValue } = t;
-                      return `  ${formattedValue} ${dstLabel}`;
+                    label(t: any) {
+                      const dstLabel = t.dataset.label
+                      const { formattedValue } = t
+                      return `  ${formattedValue} ${dstLabel}`
                     },
-                    labelColor(t:any) {
+                    labelColor(t: any) {
                       return {
                         backgroundColor: t.dataset.hoverBackgroundColor,
                         borderColor: 'transparent',
-                      };
+                      }
                     },
                   },
                 }}
                 scales={{
                   y: {
-                    border: { 
+                    border: {
                       dash: [4, 4],
-                     },
+                    },
                     grid: {
                       color: '#485e9029',
                       tickLength: 0,
@@ -179,7 +176,7 @@ const SalesGrowth = React.memo(() => {
                   },
 
                   x: {
-                    border:{
+                    border: {
                       display: false,
                     },
                     grid: {
@@ -203,7 +200,7 @@ const SalesGrowth = React.memo(() => {
         )}
       </Cards>
     </div>
-  );
-});
+  )
+})
 
-export default SalesGrowth;
+export default SalesGrowth

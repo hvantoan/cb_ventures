@@ -3,7 +3,7 @@ import { UilSmile, UilFrown } from '@iconscout/react-unicons'
 import FontAwesome from 'react-fontawesome'
 import { Collapse, Row, Col, Form, Input } from 'antd'
 import Link from 'next/link'
-import { Buttons } from '@/components/buttons'
+import { Buttons } from '@/components/Buttons'
 
 const { Panel } = Collapse
 const { TextArea } = Input

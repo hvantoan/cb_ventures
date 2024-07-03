@@ -1,11 +1,11 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
-import Heading from '@/components/heading';
-import { GoogleMaps } from '@/components/maps/google-maps';
-import mapData from '@/config/map/google-maps-styles';
+import React from 'react'
+import { Row, Col } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
+import Heading from '@/components/Heading'
+import { GoogleMaps } from '@/components/Maps/google-maps'
+import mapData from '@/config/map/google-maps-styles'
 
-const { mapOneStyles, mapStyleDark, mapTwoStyles, mapThreeStyles } = mapData;
+const { mapOneStyles, mapStyleDark, mapTwoStyles, mapThreeStyles } = mapData
 
 function GoogleMap() {
   return (
@@ -90,8 +90,8 @@ function GoogleMap() {
                   </Heading>
                 </div>
                 <div className="p-[25px]">
-                  <GoogleMaps 
-                    latitude={42.797897} 
+                  <GoogleMaps
+                    latitude={42.797897}
                     longitude={-33.077641}
                     mapStyles={mapTwoStyles}
                     zoom={4}
@@ -120,7 +120,7 @@ function GoogleMap() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default GoogleMap;
+export default GoogleMap

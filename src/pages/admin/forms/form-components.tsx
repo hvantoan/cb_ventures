@@ -1,26 +1,19 @@
-import React, { useState } from 'react';
-import { Row, Col, Form, Input, Switch, DatePicker, Upload, message } from 'antd';
-import {
-  UilUser,
-  UilEnvelope,
-  UilMapMarker,
-  UilLock,
-  UilCreditCard,
-  UilPhone
-} from '@iconscout/react-unicons';
-import Link from 'next/link';
+import React, { useState } from 'react'
+import { Row, Col, Form, Input, Switch, DatePicker, Upload, message } from 'antd'
+import { UilUser, UilEnvelope, UilMapMarker, UilLock, UilCreditCard, UilPhone } from '@iconscout/react-unicons'
+import Link from 'next/link'
 
-import { Editor } from "@tinymce/tinymce-react";
+import { Editor } from '@tinymce/tinymce-react'
 
-import { Sliders } from '@/components/slider';
-import { Tags } from '@/components/tags';
-import DropDown from '@/components/dropdown';
-import { Buttons } from '@/components/buttons';
-import { PageHeaders } from '@/components/page-headers';
+import { Sliders } from '@/components/slider'
+import { Tags } from '@/components/tags'
+import DropDown from '@/components/Dropdown'
+import { Buttons } from '@/components/Buttons'
+import { PageHeaders } from '@/components/PageHeaders'
 
-const { RangePicker } = DatePicker;
-const { Dragger } = Upload;
-function FormLayout({ onChange }:any) {
+const { RangePicker } = DatePicker
+const { Dragger } = Upload
+function FormLayout({ onChange }: any) {
   const PageRoutes = [
     {
       path: 'index',
@@ -30,37 +23,37 @@ function FormLayout({ onChange }:any) {
       path: 'first',
       breadcrumbName: 'Form Components',
     },
-  ];
+  ]
   const [state, setState] = useState({
     onChangeValue: null,
     value: null,
-  });
+  })
 
-  const onSliderChange = (value:any) => {
-    setState({ ...state, onChangeValue: value });
-  };
+  const onSliderChange = (value: any) => {
+    setState({ ...state, onChangeValue: value })
+  }
 
-  const onTextInput = (value:any) => {
-    setState({ ...state, value });
+  const onTextInput = (value: any) => {
+    setState({ ...state, value })
     if (onChange) {
-      onChange(value.toString('html'));
+      onChange(value.toString('html'))
     }
-  };
-  const log = () => {};
-  
+  }
+  const log = () => {}
+
   const props = {
     name: 'file',
     multiple: true,
     action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-    onChange(info:any) {
-      const { status } = info.file;
+    onChange(info: any) {
+      const { status } = info.file
       if (status === 'done') {
-        message.success(`${info.file.name} file uploaded successfully.`);
+        message.success(`${info.file.name} file uploaded successfully.`)
       } else if (status === 'error') {
-        message.error(`${info.file.name} file upload failed.`);
+        message.error(`${info.file.name} file upload failed.`)
       }
     },
-  };
+  }
   return (
     <>
       <PageHeaders
@@ -113,7 +106,11 @@ function FormLayout({ onChange }:any) {
                           className="[&>div>div>div>div>span>span>svg]:w-[20px] [&>div>div>div>div>span>.ant-input-prefix]:ltr:mr-[15px] rtl:ml-[15px] [&>div>div>div>div>span>span>svg]:h-[20px] [&>div>div>div>div>span>span>svg]:text-light [&>div>div>div>div>span>span>span>svg]:text-light-extra"
                           name="input-password"
                         >
-                          <Input.Password prefix={<UilLock />} placeholder="Password" className="h-12 p-3 rounded-6 border-normal dark:border-whiteDark hover:border-primary focus:border-primary dark:placeholder-white/60" />
+                          <Input.Password
+                            prefix={<UilLock />}
+                            placeholder="Password"
+                            className="h-12 p-3 rounded-6 border-normal dark:border-whiteDark hover:border-primary focus:border-primary dark:placeholder-white/60"
+                          />
                         </Form.Item>
                       </Col>
                       <Col lg={12} xs={24} className="mb-25">
@@ -145,18 +142,27 @@ function FormLayout({ onChange }:any) {
                   </h1>
                 </div>
                 <div className="p-[25px] gap-[10px] flex flex-col">
-                  <DropDown 
+                  <DropDown
                     action={['hover']}
                     placement="bottomLeft"
                     content={
                       <div className="block bg-white dark:bg-[#1b1e2b] shadow-regular dark:shadow-[0_5px_30px_rgba(1,4,19,.40)] py-1">
-                        <Link className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active" href="/admin/features/form-components">
+                        <Link
+                          className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
+                          href="/admin/features/form-components"
+                        >
                           <span>Export to CSV</span>
                         </Link>
-                        <Link className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active" href="/admin/features/form-components">
+                        <Link
+                          className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
+                          href="/admin/features/form-components"
+                        >
                           <span>Export to XML</span>
                         </Link>
-                        <Link className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active" href="/admin/features/form-components">
+                        <Link
+                          className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
+                          href="/admin/features/form-components"
+                        >
                           <span>Export to Drive</span>
                         </Link>
                       </div>
@@ -171,18 +177,27 @@ function FormLayout({ onChange }:any) {
                       Alerts
                     </Buttons>
                   </DropDown>
-                  <DropDown 
+                  <DropDown
                     action={['hover']}
                     placement="bottomLeft"
                     content={
                       <div className="block bg-white dark:bg-[#1b1e2b] shadow-regular dark:shadow-[0_5px_30px_rgba(1,4,19,.40)] py-1">
-                        <Link className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active" href="/admin/features/form-components">
+                        <Link
+                          className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
+                          href="/admin/features/form-components"
+                        >
                           <span>Export to CSV</span>
                         </Link>
-                        <Link className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active" href="/admin/features/form-components">
+                        <Link
+                          className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
+                          href="/admin/features/form-components"
+                        >
                           <span>Export to XML</span>
                         </Link>
-                        <Link className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active" href="/admin/features/form-components">
+                        <Link
+                          className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
+                          href="/admin/features/form-components"
+                        >
                           <span>Export to Drive</span>
                         </Link>
                       </div>
@@ -229,7 +244,7 @@ function FormLayout({ onChange }:any) {
                       branding: false,
                       height: 400,
                       menubar: true,
-                      image_advtab: true
+                      image_advtab: true,
                     }}
                     onChange={onTextInput}
                   />
@@ -303,7 +318,7 @@ function FormLayout({ onChange }:any) {
         </>
       </main>
     </>
-  );
+  )
 }
 
-export default FormLayout;
+export default FormLayout

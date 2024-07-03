@@ -1,27 +1,32 @@
-import React from 'react';
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
+import React from 'react'
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css'
 // eslint-disable-next-line import/no-unresolved
-import 'leaflet/dist/leaflet.css?url=false';
+import 'leaflet/dist/leaflet.css?url=false'
 // import MarkerClusterGroup from 'react-leaflet-cluster';
-import L from 'leaflet';
+import L from 'leaflet'
 
-delete (L.Icon.Default.prototype as any)._getIconUrl;
+delete (L.Icon.Default.prototype as any)._getIconUrl
 
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: '/img/map/marker-icon.png',
   iconUrl: '/img/map/marker-icon.png',
   shadowUrl: '/img/map/marker-shadow.png',
-});
+})
 
-function LeafletMapBasic(props:any) {
-  const { latitude, longitude, width, height, zoom } = props;
+function LeafletMapBasic(props: any) {
+  const { latitude, longitude, width, height, zoom } = props
 
-  const position:any = [latitude, longitude];
+  const position: any = [latitude, longitude]
 
   return (
     <>
-      <MapContainer center={position} zoom={zoom} className="relative [&>.leaflet-map-pane]:w-full [&>.leaflet-map-pane]:h-full" style={{ height: '400px', width: '100%' }}>
+      <MapContainer
+        center={position}
+        zoom={zoom}
+        className="relative [&>.leaflet-map-pane]:w-full [&>.leaflet-map-pane]:h-full"
+        style={{ height: '400px', width: '100%' }}
+      >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -35,21 +40,26 @@ function LeafletMapBasic(props:any) {
         </Marker>
       </MapContainer>
     </>
-  );
+  )
 }
 
-function LeafletMapMultipleIcon(props:any) {
-  const { latitude, longitude, width, height, zoom, data } = props;
+function LeafletMapMultipleIcon(props: any) {
+  const { latitude, longitude, width, height, zoom, data } = props
 
-  const position:any = [latitude, longitude];
+  const position: any = [latitude, longitude]
   return (
     <div>
-      <MapContainer center={position} zoom={zoom} className="relative [&>.leaflet-map-pane]:w-full [&>.leaflet-map-pane]:h-full" style={{ height: '400px', width: '100%' }}>
+      <MapContainer
+        center={position}
+        zoom={zoom}
+        className="relative [&>.leaflet-map-pane]:w-full [&>.leaflet-map-pane]:h-full"
+        style={{ height: '400px', width: '100%' }}
+      >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-        {data.map((item:any) => {
+        {data.map((item: any) => {
           return (
             <Marker key={item.id} position={item.position}>
               <Popup>
@@ -58,22 +68,22 @@ function LeafletMapMultipleIcon(props:any) {
                 Easily customizable.
               </Popup>
             </Marker>
-          );
+          )
         })}
       </MapContainer>
     </div>
-  );
+  )
 }
 
-function LeafletMapCustomIcon(props:any) {
-  const { latitude, longitude, width, height, zoom, faIcon } = props;
+function LeafletMapCustomIcon(props: any) {
+  const { latitude, longitude, width, height, zoom, faIcon } = props
   const fontAwesomeIcon = L.divIcon({
     html: `<i style="color: #2880CA" class="${faIcon}"></i>`,
     iconSize: [20, 20],
     className: 'myDivIcon',
-  });
+  })
 
-  const position:any = [latitude, longitude];
+  const position: any = [latitude, longitude]
   return (
     <div>
       <MapContainer center={position} zoom={zoom} className="relative" style={{ height: '400px', width: '100%' }}>
@@ -90,22 +100,28 @@ function LeafletMapCustomIcon(props:any) {
         </Marker>
       </MapContainer>
     </div>
-  );
+  )
 }
 
-function LeafletMarkerCluster(props:any) {
-  const { latitude, longitude, width, height, zoom, data } = props;
+function LeafletMarkerCluster(props: any) {
+  const { latitude, longitude, width, height, zoom, data } = props
 
-  const position:any = [latitude, longitude];
+  const position: any = [latitude, longitude]
   return (
     <div>
-      <MapContainer center={position} zoom={zoom} maxZoom={18} className="markercluster-map relative" style={{ height: '400px', width: '100%' }}>
+      <MapContainer
+        center={position}
+        zoom={zoom}
+        maxZoom={18}
+        className="markercluster-map relative"
+        style={{ height: '400px', width: '100%' }}
+      >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
         <>
-          {data.map((item:any) => {
+          {data.map((item: any) => {
             return (
               <Marker key={item.id} position={item.position}>
                 <Popup>
@@ -114,12 +130,12 @@ function LeafletMarkerCluster(props:any) {
                   Easily customizable.
                 </Popup>
               </Marker>
-            );
+            )
           })}
         </>
       </MapContainer>
     </div>
-  );
+  )
 }
 
-export { LeafletMapBasic, LeafletMapMultipleIcon, LeafletMapCustomIcon, LeafletMarkerCluster };
+export { LeafletMapBasic, LeafletMapMultipleIcon, LeafletMapCustomIcon, LeafletMarkerCluster }

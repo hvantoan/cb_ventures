@@ -1,7 +1,7 @@
-import React from 'react';
-import { Row, Col, Empty } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
-import { Buttons } from '@/components/buttons';
+import React from 'react'
+import { Row, Col, Empty } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Buttons } from '@/components/Buttons'
 
 function EmptyData() {
   const PageRoutes = [
@@ -13,7 +13,7 @@ function EmptyData() {
       path: '',
       breadcrumbName: 'Empty',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -83,7 +83,7 @@ function EmptyData() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default EmptyData;
+export default EmptyData

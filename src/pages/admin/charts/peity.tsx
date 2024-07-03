@@ -1,7 +1,7 @@
-import React, { useLayoutEffect, useState } from 'react';
-import { Row, Col } from 'antd';
-import { Line } from 'peity-react';
-import { PageHeaders } from '@/components/page-headers';
+import React, { useLayoutEffect, useState } from 'react'
+import { Row, Col } from 'antd'
+import { Line } from 'peity-react'
+import { PageHeaders } from '@/components/PageHeaders'
 
 function Peity() {
   const PageRoutes = [
@@ -13,20 +13,20 @@ function Peity() {
       path: 'first',
       breadcrumbName: 'Peity Chart',
     },
-  ];
+  ]
   const [state, setState] = useState({
     responsive: 0,
-  });
-  const { responsive } = state;
+  })
+  const { responsive } = state
 
   useLayoutEffect(() => {
     const updateSize = () => {
-      setState({ responsive: window.innerWidth });
-    };
-    window.addEventListener('resize', updateSize);
-    updateSize();
-    return () => window.removeEventListener('resize', updateSize);
-  }, []);
+      setState({ responsive: window.innerWidth })
+    }
+    window.addEventListener('resize', updateSize)
+    updateSize()
+    return () => window.removeEventListener('resize', updateSize)
+  }, [])
   return (
     <>
       <PageHeaders
@@ -72,7 +72,7 @@ function Peity() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default Peity;
+export default Peity

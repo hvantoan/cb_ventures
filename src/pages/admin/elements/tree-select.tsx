@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Row, Col, TreeSelect } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
+import React, { useState } from 'react'
+import { Row, Col, TreeSelect } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
 
-const { TreeNode, SHOW_PARENT } = TreeSelect;
+const { TreeNode, SHOW_PARENT } = TreeSelect
 
 const treeData = [
   {
@@ -27,7 +27,7 @@ const treeData = [
     title: 'Node3',
     value: '0-0-0', // Added a node with the key '0-0-0'
   },
-];
+]
 
 function TreeSelects() {
   const PageRoutes = [
@@ -39,8 +39,8 @@ function TreeSelects() {
       path: '',
       breadcrumbName: 'Tree Select',
     },
-  ];
-  const [state, setState]:any = useState({
+  ]
+  const [state, setState]: any = useState({
     value: undefined,
     async_value: undefined,
     multi_value: undefined,
@@ -51,23 +51,23 @@ function TreeSelects() {
       { id: 2, pId: 0, value: '2', title: 'Expand to load' },
       { id: 3, pId: 0, value: '3', title: 'Tree Node', isLeaf: true },
     ],
-  });
+  })
 
-  const onChange = (value:any) => {
-    setState({ ...state, value });
-  };
+  const onChange = (value: any) => {
+    setState({ ...state, value })
+  }
 
-  const onMultiChange = (value:any) => {
-    setState({ ...state, multi_value: value });
-  };
+  const onMultiChange = (value: any) => {
+    setState({ ...state, multi_value: value })
+  }
 
-  const onGenerateChange = (value:any) => {
-    setState({ ...state, generate_value: value });
-  };
+  const onGenerateChange = (value: any) => {
+    setState({ ...state, generate_value: value })
+  }
 
-  const onCheckChange = (value:any) => {
-    setState({ ...state, check_value: value });
-  };
+  const onCheckChange = (value: any) => {
+    setState({ ...state, check_value: value })
+  }
 
   const tProps = {
     treeData,
@@ -79,35 +79,35 @@ function TreeSelects() {
     style: {
       width: '100%',
     },
-  };
+  }
 
-  const genTreeNode = (parentId:any, isLeaf = false) => {
-    const random = Math.random().toString(36).substring(2, 6);
+  const genTreeNode = (parentId: any, isLeaf = false) => {
+    const random = Math.random().toString(36).substring(2, 6)
     return {
       id: random,
       pId: parentId,
       value: random,
       title: isLeaf ? 'Tree Node' : 'Expand to load',
       isLeaf,
-    };
-  };
+    }
+  }
 
-  const onLoadData = (treeNode:any) =>
+  const onLoadData = (treeNode: any) =>
     new Promise<void>((resolve) => {
-      const { id } = treeNode.props;
+      const { id } = treeNode.props
       setTimeout(() => {
         setState({
           ...state,
           asyncTreeData: state.asyncTreeData.concat([genTreeNode(id, false), genTreeNode(id, true)]),
-        });
-        resolve();
-      }, 300);
-    });
+        })
+        resolve()
+      }, 300)
+    })
 
-  const onAsyncChange = (value:any) => {
-    setState({ ...state, async_value: value });
-  };
-  const { asyncTreeData } = state;
+  const onAsyncChange = (value: any) => {
+    setState({ ...state, async_value: value })
+  }
+  const { asyncTreeData } = state
 
   return (
     <>
@@ -244,7 +244,7 @@ function TreeSelects() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default TreeSelects;
+export default TreeSelects

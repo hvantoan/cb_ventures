@@ -1,7 +1,7 @@
-import React from 'react';
-import { Row, Col, Switch } from 'antd';
-import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col, Switch } from 'antd'
+import { CheckOutlined, CloseOutlined } from '@ant-design/icons'
+import { PageHeaders } from '@/components/PageHeaders'
 
 function Switches() {
   const PageRoutes = [
@@ -13,7 +13,7 @@ function Switches() {
       path: '',
       breadcrumbName: 'Switch',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -31,10 +31,7 @@ function Switches() {
                 </h1>
               </div>
               <div className="p-[25px]">
-                <Switch 
-                  defaultChecked 
-                  className="bg-[#c6c6c6] dark:bg-whiteDark [&.ant-switch-checked]:bg-primary"
-                />
+                <Switch defaultChecked className="bg-[#c6c6c6] dark:bg-whiteDark [&.ant-switch-checked]:bg-primary" />
               </div>
             </div>
           </Col>
@@ -46,13 +43,10 @@ function Switches() {
                 </h1>
               </div>
               <div className="flex items-center gap-5 p-[25px]">
-                <Switch 
-                  defaultChecked 
-                  className="bg-[#c6c6c6] dark:bg-whiteDark [&.ant-switch-checked]:bg-primary"
-                />
-                <Switch 
-                  defaultChecked 
-                  size="small" 
+                <Switch defaultChecked className="bg-[#c6c6c6] dark:bg-whiteDark [&.ant-switch-checked]:bg-primary" />
+                <Switch
+                  defaultChecked
+                  size="small"
                   className="bg-[#c6c6c6] dark:bg-whiteDark [&.ant-switch-checked]:bg-primary"
                 />
               </div>
@@ -66,30 +60,27 @@ function Switches() {
                 </h1>
               </div>
               <div className="p-[25px]">
-                <Switch 
-                  checkedChildren="a" 
-                  unCheckedChildren="b" 
-                  defaultChecked 
+                <Switch
+                  checkedChildren="a"
+                  unCheckedChildren="b"
+                  defaultChecked
                   className="mb-2 bg-[#c6c6c6] dark:bg-whiteDark [&.ant-switch-checked]:bg-primary"
                 />
                 <br />
-                <Switch 
-                  checkedChildren="1" 
-                  unCheckedChildren="0" 
+                <Switch
+                  checkedChildren="1"
+                  unCheckedChildren="0"
                   className="mb-2 bg-[#c6c6c6] dark:bg-whiteDark [&.ant-switch-checked]:bg-primary"
                 />
                 <br />
                 <div className="flex items-center gap-5 [&>button>.ant-switch-inner]:flex [&>button>.ant-switch-inner]:items-center [&>button>.ant-switch-inner>.ant-switch-inner-checked]:flex">
-                  <Switch 
-                    checkedChildren={<CheckOutlined />} 
-                    unCheckedChildren={<CloseOutlined />} 
-                    defaultChecked 
+                  <Switch
+                    checkedChildren={<CheckOutlined />}
+                    unCheckedChildren={<CloseOutlined />}
+                    defaultChecked
                     className="bg-[#c6c6c6] dark:bg-whiteDark [&.ant-switch-checked]:bg-primary  [&>.ant-switch-inner>.ant-switch-inner-unchecked]:mt-0"
                   />
-                  <Switch 
-                    defaultChecked 
-                    className="bg-[#c6c6c6] dark:bg-whiteDark [&.ant-switch-checked]:bg-primary"
-                  />
+                  <Switch defaultChecked className="bg-[#c6c6c6] dark:bg-whiteDark [&.ant-switch-checked]:bg-primary" />
                 </div>
               </div>
             </div>
@@ -102,15 +93,15 @@ function Switches() {
                 </h1>
               </div>
               <div className="p-[25px]">
-                <Switch 
-                  loading 
-                  defaultChecked 
+                <Switch
+                  loading
+                  defaultChecked
                   className="bg-[#c6c6c6] dark:bg-whiteDark [&.ant-switch-checked]:bg-primary"
                 />
                 <br />
-                <Switch 
-                  size="small" 
-                  loading 
+                <Switch
+                  size="small"
+                  loading
                   className="bg-[#c6c6c6] dark:bg-whiteDark [&.ant-switch-checked]:bg-primary"
                 />
               </div>
@@ -119,7 +110,7 @@ function Switches() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default Switches;
+export default Switches

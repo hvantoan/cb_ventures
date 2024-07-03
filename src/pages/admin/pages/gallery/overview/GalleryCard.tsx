@@ -1,5 +1,5 @@
 import React from 'react'
-import Heading from '@/components/heading'
+import Heading from '@/components/Heading'
 
 function GalleryCards({ item }: any) {
   const { name, img, category } = item

@@ -1,8 +1,8 @@
-import React from 'react';
-import Heading from '@/components/heading';
+import React from 'react'
+import Heading from '@/components/Heading'
 
-function GalleryCard({ item }:any) {
-  const { name, img, category } = item;
+function GalleryCard({ item }: any) {
+  const { name, img, category } = item
   return (
     <div className="mb-[25px]">
       <figure className="bg-white dark:bg-white/10 rounded-10">
@@ -17,8 +17,7 @@ function GalleryCard({ item }:any) {
         </figcaption>
       </figure>
     </div>
-  );
+  )
 }
 
-
-export default GalleryCard;
+export default GalleryCard

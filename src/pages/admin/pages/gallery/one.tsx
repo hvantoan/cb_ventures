@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Row, Col, Spin, Skeleton } from 'antd';
-import Link from 'next/link';
-import dynamic from 'next/dynamic';
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Row, Col, Spin, Skeleton } from 'antd'
+import Link from 'next/link'
+import dynamic from 'next/dynamic'
 
-import { PageHeaders } from '@/components/page-headers';
-import { galleryFilter } from '@/redux/gallary/actionCreator';
+import { PageHeaders } from '@/components/PageHeaders'
+import { galleryFilter } from '@/redux/gallary/actionCreator'
 
 const GalleryCards = dynamic(() => import('./overview/GalleryCard'), {
   loading: () => (
@@ -13,7 +13,7 @@ const GalleryCards = dynamic(() => import('./overview/GalleryCard'), {
       <Skeleton active />
     </>
   ),
-});
+})
 
 function Gallery() {
   const PageRoutes = [
@@ -25,28 +25,28 @@ function Gallery() {
       path: '',
       breadcrumbName: 'Gallery',
     },
-  ];
+  ]
 
-  const dispatch = useDispatch();
-  const { gallery, isLoading } = useSelector((state:any) => {
+  const dispatch = useDispatch()
+  const { gallery, isLoading } = useSelector((state: any) => {
     return {
       gallery: state.gallery.data,
       isLoading: state.gallery.loading,
-    };
-  });
+    }
+  })
 
   const [state, setState] = useState({
     activeClass: '',
-  });
+  })
 
-  const handleChange = (value:any) => {
+  const handleChange = (value: any) => {
     //@ts-ignore
-    dispatch(galleryFilter('category', value));
+    dispatch(galleryFilter('category', value))
     setState({
       ...state,
       activeClass: value,
-    });
-  };
+    })
+  }
 
   return (
     <>
@@ -135,19 +135,19 @@ function Gallery() {
               </div>
             </Col>
           ) : (
-            gallery.map((item:any) => {
-              const { id } = item;
+            gallery.map((item: any) => {
+              const { id } = item
               return (
                 <Col key={id} xxl={6} lg={8} sm={12} xs={24}>
                   <GalleryCards item={item} />
                 </Col>
-              );
+              )
             })
           )}
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default Gallery;
+export default Gallery

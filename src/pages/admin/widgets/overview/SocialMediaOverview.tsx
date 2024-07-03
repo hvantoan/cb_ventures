@@ -1,7 +1,7 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import { Cards } from '@/components/cards/frame/cards-frame';
-import { SocialMediaContent } from '@/components/social-media/overview';
+import React from 'react'
+import { Row, Col } from 'antd'
+import { Cards } from '@/components/Cards/Frame/cards-frame'
+import { SocialMediaContent } from '@/components/social-media/overview'
 
 function SocialMediaOverview() {
   return (
@@ -34,7 +34,7 @@ function SocialMediaOverview() {
         </Row>
       </Cards>
     </>
-  );
+  )
 }
 
-export default SocialMediaOverview;
+export default SocialMediaOverview

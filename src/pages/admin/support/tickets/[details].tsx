@@ -6,10 +6,10 @@ import { UilSmile, UilUpload, UilImport, UilMessage, UilArrowLeft } from '@icons
 import { useDispatch, useSelector } from 'react-redux'
 import Avatar from 'antd/lib/avatar/avatar'
 import Picker from 'emoji-picker-react'
-import { PageHeaders } from '@/components/page-headers'
-import { Cards } from '@/components/cards/frame/cards-frame'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Cards } from '@/components/Cards/Frame/cards-frame'
 import { singlePageReade, ticketUpdateData } from '@/redux/supportTickets/actionCreator'
-import { Buttons } from '@/components/buttons'
+import { Buttons } from '@/components/Buttons'
 import { idGenerator } from '@/utility'
 import data from '@/demoData/supportData.json'
 

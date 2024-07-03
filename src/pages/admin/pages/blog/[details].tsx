@@ -3,7 +3,7 @@ import { Col, Row } from 'antd'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { PageHeaders } from '@/components/page-headers'
+import { PageHeaders } from '@/components/PageHeaders'
 
 import cardData from '@/demoData/sampleCards.json'
 

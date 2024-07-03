@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Row, Col, Badge, Switch } from 'antd';
-import Link from 'next/link';
-import { ClockCircleOutlined, BellOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons';
-import { PageHeaders } from '@/components/page-headers';
-import { BtnGroup, Buttons } from '@/components/buttons';
+import React, { useState } from 'react'
+import { Row, Col, Badge, Switch } from 'antd'
+import Link from 'next/link'
+import { ClockCircleOutlined, BellOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons'
+import { PageHeaders } from '@/components/PageHeaders'
+import { BtnGroup, Buttons } from '@/components/Buttons'
 
 const colors = [
   'pink',
@@ -19,7 +19,7 @@ const colors = [
   'volcano',
   'gold',
   'lime',
-];
+]
 
 function Badges() {
   const PageRoutes = [
@@ -31,28 +31,28 @@ function Badges() {
       path: '',
       breadcrumbName: 'Avatar',
     },
-  ];
+  ]
   const [state, setState] = useState({
     count: 5,
     show: true,
-  });
+  })
 
   const increase = () => {
-    const count = state.count + 1;
-    setState({ ...state, count });
-  };
+    const count = state.count + 1
+    setState({ ...state, count })
+  }
 
   const decline = () => {
-    let count = state.count - 1;
+    let count = state.count - 1
     if (count < 0) {
-      count = 0;
+      count = 0
     }
-    setState({ ...state, count });
-  };
+    setState({ ...state, count })
+  }
 
-  const onChange = (show:any) => {
-    setState({ ...state, show });
-  };
+  const onChange = (show: any) => {
+    setState({ ...state, show })
+  }
 
   return (
     <>
@@ -162,7 +162,11 @@ function Badges() {
                       count={4}
                       style={{ backgroundColor: '#fff', color: '#999', boxShadow: '0 0 0 1px #d9d9d9 inset' }}
                     />
-                    <Badge className="[&>.ant-badge-count]:text-[12px] [&>.ant-badge-count]:text-px-2" count={109} style={{ backgroundColor: '#01B81A' }} />
+                    <Badge
+                      className="[&>.ant-badge-count]:text-[12px] [&>.ant-badge-count]:text-px-2"
+                      count={109}
+                      style={{ backgroundColor: '#01B81A' }}
+                    />
                   </div>
                 </div>
               </div>
@@ -176,13 +180,15 @@ function Badges() {
                 <div className="p-[25px]">
                   <div className="flex gap-5">
                     <Badge dot>
-                      <BellOutlined className='text-light dark:text-white/60' />
+                      <BellOutlined className="text-light dark:text-white/60" />
                     </Badge>
                     <Badge count={0} dot>
-                      <BellOutlined className='text-light dark:text-white/60' />
+                      <BellOutlined className="text-light dark:text-white/60" />
                     </Badge>
                     <Badge dot>
-                      <Link href="#" className="text-link hover:text-primary">Link something</Link>
+                      <Link href="#" className="text-link hover:text-primary">
+                        Link something
+                      </Link>
                     </Badge>
                   </div>
                 </div>
@@ -201,11 +207,17 @@ function Badges() {
                         <Link href="#" className="head-example" />
                       </Badge>
                       <BtnGroup>
-                        <Buttons onClick={decline} className="flex items-center hover:text-primary hover:border-primary dark:border-white/10">
-                          <MinusOutlined className='text-light dark:text-white/60' />
+                        <Buttons
+                          onClick={decline}
+                          className="flex items-center hover:text-primary hover:border-primary dark:border-white/10"
+                        >
+                          <MinusOutlined className="text-light dark:text-white/60" />
                         </Buttons>
-                        <Buttons onClick={increase} className="flex items-center hover:text-primary hover:border-primary dark:border-white/10">
-                          <PlusOutlined className='text-light dark:text-white/60' />
+                        <Buttons
+                          onClick={increase}
+                          className="flex items-center hover:text-primary hover:border-primary dark:border-white/10"
+                        >
+                          <PlusOutlined className="text-light dark:text-white/60" />
                         </Buttons>
                       </BtnGroup>
                     </div>
@@ -213,7 +225,11 @@ function Badges() {
                       <Badge dot={state.show}>
                         <Link href="#" className="head-example" />
                       </Badge>
-                      <Switch className="bg-[#bfbfbf] [&.ant-switch-checked]:bg-primary" onChange={onChange} checked={state.show} />
+                      <Switch
+                        className="bg-[#bfbfbf] [&.ant-switch-checked]:bg-primary"
+                        onChange={onChange}
+                        checked={state.show}
+                      />
                     </div>
                   </div>
                 </div>
@@ -223,7 +239,7 @@ function Badges() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default Badges;
+export default Badges

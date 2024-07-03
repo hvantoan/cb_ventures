@@ -1,12 +1,12 @@
-import React, { useLayoutEffect, useState } from 'react';
-import { Row, Col } from 'antd';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Legend } from 'recharts';
-import { PageHeaders } from '@/components/page-headers';
-import { Cards } from '@/components/cards/frame/cards-frame';
+import React, { useLayoutEffect, useState } from 'react'
+import { Row, Col } from 'antd'
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Legend } from 'recharts'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Cards } from '@/components/Cards/Frame/cards-frame'
 
-import reChartData from '@/demoData/recharts.json';
+import reChartData from '@/demoData/recharts.json'
 
-const { radar } = reChartData;
+const { radar } = reChartData
 
 function ReChartRadar() {
   const PageRoutes = [
@@ -18,26 +18,24 @@ function ReChartRadar() {
       path: 'first',
       breadcrumbName: 'Radar Chart',
     },
-  ];
+  ]
   const [state, setState] = useState({
     responsive: 0,
-  });
-  const { responsive } = state;
+  })
+  const { responsive } = state
 
   useLayoutEffect(() => {
     function updateSize() {
-      const element:any = document.querySelector('.recharts-wrapper');
-      const cardBody:any = document.querySelector('.ant-card-body');
+      const element: any = document.querySelector('.recharts-wrapper')
+      const cardBody: any = document.querySelector('.ant-card-body')
       const width =
-        element !== null
-          ? element.closest('.ant-card-body').clientWidth
-          : cardBody ? cardBody.clientWidth : 500;
-      setState({ responsive: width });
+        element !== null ? element.closest('.ant-card-body').clientWidth : cardBody ? cardBody.clientWidth : 500
+      setState({ responsive: width })
     }
-    window.addEventListener('resize', updateSize);
-    updateSize();
-    return () => window.removeEventListener('resize', updateSize);
-  }, []);
+    window.addEventListener('resize', updateSize)
+    updateSize()
+    return () => window.removeEventListener('resize', updateSize)
+  }, [])
 
   return (
     <>
@@ -87,7 +85,7 @@ function ReChartRadar() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default ReChartRadar;
+export default ReChartRadar

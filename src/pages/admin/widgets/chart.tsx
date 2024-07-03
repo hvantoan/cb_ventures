@@ -1,11 +1,11 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
 
-import SalesGrowth from '@/dashboard/demo-1/SalesGrowth';
-import SaleRevenue from '@/dashboard/demo-2/SaleRevenue';
-import SalesOverview from '@/dashboard/demo-1/SalesOverview';
-import TotalLineChart from '@/dashboard/demo-1/TotalLineChart';
+import SalesGrowth from '@/dashboard/demo-1/SalesGrowth'
+import SaleRevenue from '@/dashboard/demo-2/SaleRevenue'
+import SalesOverview from '@/dashboard/demo-1/SalesOverview'
+import TotalLineChart from '@/dashboard/demo-1/TotalLineChart'
 // import MonthlyEarning from '@/dashboard/demo-3/MonthlyEarning';
 
 function Widgets() {
@@ -18,7 +18,7 @@ function Widgets() {
       path: 'first',
       breadcrumbName: 'Widgets Charts',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -46,7 +46,7 @@ function Widgets() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default Widgets;
+export default Widgets

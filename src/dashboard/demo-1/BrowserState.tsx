@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Cards } from '@/components/cards/frame/cards-frame'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
 
 const Table = dynamic(() => import('antd').then((mod) => mod.Table), {
   ssr: false,
@@ -11,7 +11,7 @@ const Table = dynamic(() => import('antd').then((mod) => mod.Table), {
 
 import browserStates from '@/demoData/table-data.json'
 
-interface sellingData {
+interface SellingData {
   today: string[][]
   week: string[][]
   month: string[][]
@@ -44,8 +44,8 @@ const BrowserState = React.memo(() => {
     cte: any
     goalRate: any
   }> = []
-  if (browserState !== null && browserState[browserTab as keyof sellingData]) {
-    browserState[browserTab as keyof sellingData].map((value: any, index: number) => {
+  if (browserState !== null && browserState[browserTab as keyof SellingData]) {
+    browserState[browserTab as keyof SellingData].map((value: any, index: number) => {
       const { key, name, img, session, bounceRate, cte, goalRate } = value
       return browserData.push({
         key: index + 1,

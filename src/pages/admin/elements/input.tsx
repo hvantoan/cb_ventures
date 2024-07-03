@@ -1,9 +1,9 @@
-import React from 'react';
-import { Row, Col, Input } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col, Input } from 'antd'
+import { UserOutlined } from '@ant-design/icons'
+import { PageHeaders } from '@/components/PageHeaders'
 
-const { TextArea } = Input;
+const { TextArea } = Input
 function Inputs() {
   const PageRoutes = [
     {
@@ -14,7 +14,7 @@ function Inputs() {
       path: '',
       breadcrumbName: 'Input',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -34,7 +34,7 @@ function Inputs() {
                     </h1>
                   </div>
                   <div className="p-[25px]">
-                    <Input placeholder="Basic usage" className='h-10 px-3 dark:placeholder-white/60' />
+                    <Input placeholder="Basic usage" className="h-10 px-3 dark:placeholder-white/60" />
                   </div>
                 </div>
                 <div className="bg-white dark:bg-white/10 m-0 p-0 text-theme-gray dark:text-white/60 text-[15px] mb-[25px] rounded-10 relative">
@@ -61,7 +61,10 @@ function Inputs() {
                       placeholder="large size"
                       prefix={<UserOutlined className="w-[17px] h-[17px] dark:text-white/60" />}
                     />
-                    <Input placeholder="default size" prefix={<UserOutlined className="w-[15px] h-[15px] dark:text-white/60" />} />
+                    <Input
+                      placeholder="default size"
+                      prefix={<UserOutlined className="w-[15px] h-[15px] dark:text-white/60" />}
+                    />
                     <Input
                       size="small"
                       placeholder="small size"
@@ -75,7 +78,7 @@ function Inputs() {
         </main>
       </>
     </>
-  );
+  )
 }
 
-export default Inputs;
+export default Inputs

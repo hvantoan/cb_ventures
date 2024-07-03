@@ -1,7 +1,7 @@
-import React from 'react';
-import { Row, Col, message, Space } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
-import { Buttons } from '@/components/buttons';
+import React from 'react'
+import { Row, Col, message, Space } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Buttons } from '@/components/Buttons'
 
 function Messages() {
   const PageRoutes = [
@@ -13,32 +13,32 @@ function Messages() {
       path: '',
       breadcrumbName: 'Message',
     },
-  ];
+  ]
   const info = () => {
-    message.info('This is a normal message');
-  };
+    message.info('This is a normal message')
+  }
 
   const success = () => {
-    message.success('This is a success message');
-  };
+    message.success('This is a success message')
+  }
 
   const error = () => {
-    message.error('This is an error message');
-  };
+    message.error('This is an error message')
+  }
 
   const warning = () => {
-    message.warning('This is a warning message');
-  };
+    message.warning('This is a warning message')
+  }
 
   const customSuccess = () => {
-    message.success('This is a prompt message for success, and it will disappear in 10 seconds', 10);
-  };
+    message.success('This is a prompt message for success, and it will disappear in 10 seconds', 10)
+  }
 
   const loadingSuccess = () => {
-    const hide = message.loading('Action in progress..', 0);
+    const hide = message.loading('Action in progress..', 0)
     // Dismiss manually and asynchronously
-    setTimeout(hide, 2500);
-  };
+    setTimeout(hide, 2500)
+  }
 
   return (
     <>
@@ -158,7 +158,7 @@ function Messages() {
         </main>
       </>
     </>
-  );
+  )
 }
 
-export default Messages;
+export default Messages

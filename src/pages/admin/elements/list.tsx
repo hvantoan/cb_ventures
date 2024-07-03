@@ -1,6 +1,6 @@
-import React from 'react';
-import { Row, Col, List } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col, List } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
 
 function Lists() {
   const PageRoutes = [
@@ -12,14 +12,14 @@ function Lists() {
       path: '',
       breadcrumbName: 'List',
     },
-  ];
+  ]
   const data = [
     'Racing car sprays burning fuel into crowd.',
     'Japanese princess to wed commoner.',
     'Australian walks 100km after outback crash.',
     'Man charged over missing wedding girl.',
     'Los Angeles battles huge wildfires.',
-  ];
+  ]
 
   return (
     <>
@@ -56,7 +56,7 @@ function Lists() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default Lists;
+export default Lists

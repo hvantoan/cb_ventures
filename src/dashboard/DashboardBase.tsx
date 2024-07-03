@@ -1,9 +1,9 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
-import { Cards } from '@/components/cards/frame/cards-frame';
-import { Buttons } from '@/components/buttons';
-import Heading from '@/components/heading';
+import React from 'react'
+import { Row, Col } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
+import { Buttons } from '@/components/Buttons'
+import Heading from '@/components/Heading'
 
 // @Todo console warning from button
 
@@ -17,7 +17,7 @@ function DashboardBase() {
       path: '',
       breadcrumbName: 'Theme Configuration',
     },
-  ];
+  ]
   return (
     <>
       <div>
@@ -753,7 +753,7 @@ function DashboardBase() {
         </main>
       </div>
     </>
-  );
+  )
 }
 
-export default DashboardBase;
+export default DashboardBase

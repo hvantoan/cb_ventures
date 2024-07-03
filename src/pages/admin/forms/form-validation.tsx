@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-no-bind */
-import React from 'react';
-import { Row, Col, Form, Input, Button, Checkbox } from 'antd';
+import React from 'react'
+import { Row, Col, Form, Input, Button, Checkbox } from 'antd'
 
-import { PageHeaders } from '@/components/page-headers';
+import { PageHeaders } from '@/components/PageHeaders'
 
 function FormValidation() {
   const PageRoutes = [
@@ -14,7 +14,7 @@ function FormValidation() {
       path: 'first',
       breadcrumbName: 'Form Validation',
     },
-  ];
+  ]
   const validateMessages = {
     types: {
       string: 'Please enter a valid ${label}!',
@@ -28,10 +28,10 @@ function FormValidation() {
       url: 'Please enter a valid URL!',
       hex: 'Please enter a valid hex code!',
     },
-    required: 'This field is required.'
-  };
+    required: 'This field is required.',
+  }
   function onChange() {}
-  const [form] = Form.useForm();
+  const [form] = Form.useForm()
   return (
     <>
       <PageHeaders
@@ -82,20 +82,20 @@ function FormValidation() {
                       </Form.Item>
                     </Col>
                     <Col md={12} xs={24}>
-                      <Form.Item 
-                        className="mb-[20px]" 
-                        name="city" 
-                        label="City" 
+                      <Form.Item
+                        className="mb-[20px]"
+                        name="city"
+                        label="City"
                         rules={[{ type: 'string', message: 'Please enter a valid city!' }]}
                       >
                         <Input className="h-12 p-3 rounded-6 dark:placeholder-white/60" placeholder="City" />
                       </Form.Item>
                     </Col>
                     <Col md={6} xs={24}>
-                      <Form.Item 
-                        className="mb-[20px]" 
-                        name="state" 
-                        label="State" 
+                      <Form.Item
+                        className="mb-[20px]"
+                        name="state"
+                        label="State"
                         rules={[{ type: 'string', message: 'Please enter a valid state!' }]}
                       >
                         <Input className="h-12 p-3 rounded-6 dark:placeholder-white/60" placeholder="State" />
@@ -120,9 +120,7 @@ function FormValidation() {
                       rules={[
                         {
                           validator: (_, value) =>
-                            value
-                              ? Promise.resolve()
-                              : Promise.reject('You must agree before submitting.'),
+                            value ? Promise.resolve() : Promise.reject('You must agree before submitting.'),
                         },
                       ]}
                     >
@@ -259,7 +257,7 @@ function FormValidation() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default FormValidation;
+export default FormValidation

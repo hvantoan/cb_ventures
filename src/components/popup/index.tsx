@@ -1,21 +1,20 @@
+import React from 'react'
+import { Popover } from 'antd'
+import Link from 'next/link'
+import { UilCheckCircle } from '@iconscout/react-unicons'
 
-import React from 'react';
-import { Popover } from 'antd';
-import Link from 'next/link';
-import { UilCheckCircle } from '@iconscout/react-unicons';
-
-function PopOver(props:any) {
-  const { content, placement, title, action, children } = props;
-  const contents = <div>{content ? content : defaultContent}</div>;
+function PopOver(props: any) {
+  const { content, placement, title, action, children } = props
+  const contents = <div>{content ? content : defaultContent}</div>
 
   return (
     <Popover placement={placement} title={title && <p>{title}</p>} content={contents} trigger={action}>
       {children}
     </Popover>
-  );
+  )
 }
 
-const defaultContent:any = (
+const defaultContent: any = (
   <>
     <Link className="text-start py-[6px] flex align-center gap-[6px] hover:text-primary " href="#">
       <UilCheckCircle />
@@ -30,6 +29,6 @@ const defaultContent:any = (
       <span>Btn Dropdown three</span>
     </Link>
   </>
-);
+)
 
-export default PopOver;
+export default PopOver

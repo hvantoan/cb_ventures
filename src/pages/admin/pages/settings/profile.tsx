@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import dynamic from 'next/dynamic';
-import { Spin, Row, Col, Form, Input, Select } from 'antd';
-import { Buttons } from '@/components/buttons';
-import Heading from '@/components/heading';
-import { Tags } from '@/components/tags';
+import React, { useState } from 'react'
+import dynamic from 'next/dynamic'
+import { Spin, Row, Col, Form, Input, Select } from 'antd'
+import { Buttons } from '@/components/Buttons'
+import Heading from '@/components/Heading'
+import { Tags } from '@/components/tags'
 
 const SettingsLayout = dynamic(() => import('./Layout'), {
   loading: () => (
@@ -11,30 +11,30 @@ const SettingsLayout = dynamic(() => import('./Layout'), {
       <Spin />
     </div>
   ),
-});
+})
 
-const { Option } = Select;
+const { Option } = Select
 
 function Profile() {
-  const [form] = Form.useForm();
+  const [form] = Form.useForm()
 
   const [state, setState] = useState({
     tags: ['UI/UX', 'Branding', 'Product Design', 'Web Design'],
     values: null,
-  });
+  })
 
-  const handleSubmit = (values:any) => {
-    setState({ ...state, values: { ...values, tags: state.tags } });
-  };
+  const handleSubmit = (values: any) => {
+    setState({ ...state, values: { ...values, tags: state.tags } })
+  }
 
-  const handleCancel = (e:any) => {
-    e.preventDefault();
-    form.resetFields();
-  };
+  const handleCancel = (e: any) => {
+    e.preventDefault()
+    form.resetFields()
+  }
 
-  const checked = (checked:any) => {
+  const checked = (checked: any) => {
     // setState({ tags: checked });
-  };
+  }
 
   return (
     <>
@@ -118,13 +118,22 @@ function Profile() {
                   >
                     <Input.TextArea rows={3} className="px-5 py-3" />
                   </Form.Item>
-                  <Form.Item name="skills" label="Skills" className="mb-4 form-label-w-full form-label-text-start [&>.ant-row]:flex-col [&>.ant-row>.ant-form-item-control]:flex-1">
+                  <Form.Item
+                    name="skills"
+                    label="Skills"
+                    className="mb-4 form-label-w-full form-label-text-start [&>.ant-row]:flex-col [&>.ant-row>.ant-form-item-control]:flex-1"
+                  >
                     <div className="p-3 border border-gray-200 dark:border-white/10 rounded-md [&>div>div>span>.ant-tag]:inline-flex [&>div>div>span>.ant-tag]:items-center [&>.ant-row]:flex-col [&>.ant-row>.ant-form-item-control]:flex-1">
                       <Tags className="bg-primary" animate onChange={checked} data={state.tags} />
                     </div>
                   </Form.Item>
                   <div className="mt-11">
-                    <Buttons size="default" htmlType="submit" type="primary" className="bg-primary hover:bg-primary-hbr text-white h-11 px-[20px] font-semibold">
+                    <Buttons
+                      size="default"
+                      htmlType="submit"
+                      type="primary"
+                      className="bg-primary hover:bg-primary-hbr text-white h-11 px-[20px] font-semibold"
+                    >
                       Update Profile
                     </Buttons>
                     &nbsp; &nbsp;
@@ -144,7 +153,7 @@ function Profile() {
         </div>
       </SettingsLayout>
     </>
-  );
+  )
 }
 
-export default Profile;
+export default Profile

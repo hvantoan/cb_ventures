@@ -1,8 +1,8 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import OverviewCard from '@/components/cards/OverviewCard';
+import React from 'react'
+import { Row, Col } from 'antd'
+import OverviewCard from '@/components/Cards/OverviewCard'
 
-import SupportOverview from '@/demoData/supportOverview.json';
+import SupportOverview from '@/demoData/supportOverview.json'
 
 const OverviewDataList = React.memo(() => {
   return (
@@ -13,11 +13,11 @@ const OverviewDataList = React.memo(() => {
             <Col xxl={6} sm={12} xs={24} key={i} className="mb-[25px]">
               <OverviewCard className="[&>div]:py-[40px]" data={item} bottomStatus={false} contentFirst />
             </Col>
-          );
+          )
         })}
       </Row>
     </div>
-  );
-});
+  )
+})
 
-export default OverviewDataList;
+export default OverviewDataList

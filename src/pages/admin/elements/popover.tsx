@@ -1,8 +1,8 @@
-import React from 'react';
-import { Row, Col, Button } from 'antd';
-import Link from 'next/link';
-import { PageHeaders } from '@/components/page-headers';
-import PopOver from '@/components/popup';
+import React from 'react'
+import { Row, Col, Button } from 'antd'
+import Link from 'next/link'
+import { PageHeaders } from '@/components/PageHeaders'
+import PopOver from '@/components/popup'
 
 function Popovers() {
   const PageRoutes = [
@@ -14,7 +14,7 @@ function Popovers() {
       path: '',
       breadcrumbName: 'Popovers',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -89,7 +89,7 @@ function Popovers() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default Popovers;
+export default Popovers

@@ -1,23 +1,23 @@
-import React from 'react';
+import React from 'react'
 import dynamic from 'next/dynamic'
-import { Row, Col, Skeleton } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
+import { Row, Col, Skeleton } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
 
 const AuthorBox = dynamic(() => import('./overview/ProfileAuthorBox'), {
-    loading: () => (
-      <>
-        <Skeleton active />
-      </>
-    ),
-});
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
 
 const CoverSection = dynamic(() => import('./overview/CoverSection'), {
-    loading: () => (
-      <>
-        <Skeleton active />
-      </>
-    ),
-});
+  loading: () => (
+    <>
+      <Skeleton active />
+    </>
+  ),
+})
 
 const SettingsLayout = ({ children }: { children: React.ReactNode }) => {
   const PageRoutes = [
@@ -29,7 +29,7 @@ const SettingsLayout = ({ children }: { children: React.ReactNode }) => {
       path: 'first',
       breadcrumbName: 'My Profile',
     },
-  ];
+  ]
 
   return (
     <>
@@ -48,13 +48,13 @@ const SettingsLayout = ({ children }: { children: React.ReactNode }) => {
             <div className="mb-[35px] md:mt-[25px]">
               <CoverSection />
             </div>
-            
+
             {children}
           </Col>
         </Row>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default SettingsLayout;
+export default SettingsLayout

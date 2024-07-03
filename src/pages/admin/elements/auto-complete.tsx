@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Row, Col, Input } from 'antd';
-import { useSelector } from 'react-redux';
-import { PageHeaders } from '@/components/page-headers';
-import { Cards } from '@/components/cards/frame/cards-frame';
-import { AutoCompleted } from '@/components/autoComplete';
+import React, { useState } from 'react'
+import { Row, Col, Input } from 'antd'
+import { useSelector } from 'react-redux'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Cards } from '@/components/Cards/Frame/cards-frame'
+import { AutoCompleted } from '@/components/AutoComplete'
 
-const { TextArea } = Input;
+const { TextArea } = Input
 function AutoCompletePage() {
   const PageRoutes = [
     {
@@ -16,34 +16,34 @@ function AutoCompletePage() {
       path: '',
       breadcrumbName: 'AutoComplete',
     },
-  ];
-  const searchData = useSelector((state:any) => state.headerSearchData);
+  ]
+  const searchData = useSelector((state: any) => state.headerSearchData)
 
-  const [state, setState]:any = useState({
+  const [state, setState]: any = useState({
     dataSource: [],
     notData: searchData,
-  });
-  const { dataSource, notData } = state;
+  })
+  const { dataSource, notData } = state
 
-  const onSearch = (searchText:any) => {
-    let arrayData:any = [];
-    const data = searchData.filter((item:any) => item.title.toUpperCase().startsWith(searchText.toUpperCase()));
+  const onSearch = (searchText: any) => {
+    let arrayData: any = []
+    const data = searchData.filter((item: any) => item.title.toUpperCase().startsWith(searchText.toUpperCase()))
     if (data.length) {
-      data.map((item:any) => arrayData.push(item.title));
+      data.map((item: any) => arrayData.push(item.title))
     } else {
-      arrayData = ['Data Not Found!'];
+      arrayData = ['Data Not Found!']
     }
     setState({
       dataSource: !searchText ? [] : arrayData,
-    });
-  };
+    })
+  }
 
-  const patternSearch = (searchText:any) => {
-    const data = searchData.filter((item:any) => item.title.toUpperCase().startsWith(searchText.toUpperCase()));
+  const patternSearch = (searchText: any) => {
+    const data = searchData.filter((item: any) => item.title.toUpperCase().startsWith(searchText.toUpperCase()))
     setState({
       notData: data,
-    });
-  };
+    })
+  }
 
   return (
     <>
@@ -95,7 +95,13 @@ function AutoCompletePage() {
                     </h1>
                   </div>
                   <div className="p-[25px] [&>.ant-select>.ant-select-selector>.ant-select-selection-placeholder]:leading-[36px]">
-                    <AutoCompleted onSearch={patternSearch} options={notData} placeholder="input here" width="100%" patterns />
+                    <AutoCompleted
+                      onSearch={patternSearch}
+                      options={notData}
+                      placeholder="input here"
+                      width="100%"
+                      patterns
+                    />
                   </div>
                 </div>
               </Col>
@@ -117,7 +123,14 @@ function AutoCompletePage() {
                   className="mb-[25px] bg-white dark:bg-white/10 card-title-bb ant-card-head-px-25 ant-card-body-p-25 [&>.ant-card-body>div>div>span>span>.ant-input-suffix>button>span>svg]:text-white dark:[&>.ant-card-body>div>div>span>span>.ant-input-suffix>button>span>svg]:text-white/60 [&>.ant-card-body>.ant-select>.ant-select-selector>.ant-select-selection-placeholder]:leading-[36px]"
                   title="Lookup-Patterns - Uncertain Category"
                 >
-                  <AutoCompleted options={notData} onSearch={patternSearch} placeholder="input here" width="100%" patterns patternButtons />
+                  <AutoCompleted
+                    options={notData}
+                    onSearch={patternSearch}
+                    placeholder="input here"
+                    width="100%"
+                    patterns
+                    patternButtons
+                  />
                 </Cards>
               </Col>
             </Row>
@@ -125,7 +138,7 @@ function AutoCompletePage() {
         </main>
       </>
     </>
-  );
+  )
 }
 
-export default AutoCompletePage;
+export default AutoCompletePage

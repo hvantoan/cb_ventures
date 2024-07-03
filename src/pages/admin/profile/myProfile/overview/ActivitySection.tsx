@@ -1,7 +1,7 @@
 import React from 'react'
 import { UilAt, UilHeart, UilInbox, UilUpload, UilSignout, UilEllipsisH, UilCommentAlt } from '@iconscout/react-unicons'
 import Link from 'next/link'
-import DropDown from '@/components/dropdown'
+import DropDown from '@/components/Dropdown'
 import { Button } from 'antd'
 
 const items = [

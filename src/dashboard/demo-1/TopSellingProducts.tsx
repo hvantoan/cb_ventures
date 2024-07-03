@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Table } from 'antd'
-import { Cards } from '@/components/cards/frame/cards-frame'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
 
 import topProduct from '../../demoData/table-data.json'
 interface sellingData {

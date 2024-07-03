@@ -1,21 +1,18 @@
-import React from 'react';
-import { Progress } from 'antd';
-import {
-  UilAngleUp,
-  UilAngleDown
-} from '@iconscout/react-unicons';
-import { useSelector } from 'react-redux';
-import { Cards } from '@/components/cards/frame/cards-frame';
-import Heading from '@/components/heading';
-import { Buttons } from '@/components/buttons';
-import DropDown from '@/components/dropdown';
+import React from 'react'
+import { Progress } from 'antd'
+import { UilAngleUp, UilAngleDown } from '@iconscout/react-unicons'
+import { useSelector } from 'react-redux'
+import { Cards } from '@/components/Cards/Frame/cards-frame'
+import Heading from '@/components/Heading'
+import { Buttons } from '@/components/Buttons'
+import DropDown from '@/components/Dropdown'
 
 function DailyOverview() {
-  const { rtl } = useSelector((state:any) => {
+  const { rtl } = useSelector((state: any) => {
     return {
       rtl: state.ChangeLayoutMode.rtlData,
-    };
-  });
+    }
+  })
 
   return (
     <>
@@ -83,7 +80,7 @@ function DailyOverview() {
         </Cards>
       </div>
     </>
-  );
+  )
 }
 
-export default DailyOverview;
+export default DailyOverview

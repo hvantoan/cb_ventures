@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import dynamic from 'next/dynamic';
-import { Spin, Row, Col, Form, Input } from 'antd';
-import { Buttons } from '@/components/buttons';
-import Heading from '@/components/heading';
+import React, { useState } from 'react'
+import dynamic from 'next/dynamic'
+import { Spin, Row, Col, Form, Input } from 'antd'
+import { Buttons } from '@/components/Buttons'
+import Heading from '@/components/Heading'
 
 const SettingsLayout = dynamic(() => import('./Layout'), {
   loading: () => (
@@ -10,28 +10,28 @@ const SettingsLayout = dynamic(() => import('./Layout'), {
       <Spin />
     </div>
   ),
-});
+})
 
 function Account() {
-  const [form] = Form.useForm();
+  const [form] = Form.useForm()
 
   const [state, setState] = useState({
     name: 'clayton',
     values: null,
-  });
+  })
 
-  const handleSubmit = (values:any) => {
-    setState({ ...state, values });
-  };
+  const handleSubmit = (values: any) => {
+    setState({ ...state, values })
+  }
 
-  const handleCancel = (e:any) => {
-    e.preventDefault();
-    form.resetFields();
-  };
+  const handleCancel = (e: any) => {
+    e.preventDefault()
+    form.resetFields()
+  }
 
-  const handleChange = (e:any) => {
+  const handleChange = (e: any) => {
     // setState({ name: e.target.value });
-  };
+  }
 
   return (
     <>
@@ -90,7 +90,11 @@ function Account() {
                             <p className="mb-0 text-body dark:text-white/60">Delete Your Account and Account data</p>
                           </div>
                           <div className="">
-                            <Buttons size="default" type="danger" className="bg-danger text-white h-[38px] px-4 text-sm font-semibold">
+                            <Buttons
+                              size="default"
+                              type="danger"
+                              className="bg-danger text-white h-[38px] px-4 text-sm font-semibold"
+                            >
                               Close Account
                             </Buttons>
                           </div>
@@ -124,7 +128,7 @@ function Account() {
         </div>
       </SettingsLayout>
     </>
-  );
+  )
 }
 
-export default Account;
+export default Account

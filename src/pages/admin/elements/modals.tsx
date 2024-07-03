@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Row, Col } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
-import { Buttons } from '@/components/buttons';
-import { Modals, alertModal } from '@/components/modals/antd-modals';
+import React, { useState } from 'react'
+import { Row, Col } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Buttons } from '@/components/Buttons'
+import { Modals, alertModal } from '@/components/Modals/antd-modals'
 
 const info = () => {
   alertModal.info({
@@ -15,48 +15,48 @@ const info = () => {
       </div>
     ),
     onOk() {},
-  });
-};
+  })
+}
 
 const success = () => {
   alertModal.success({
     content: 'some messages...some messages...',
-  });
-};
+  })
+}
 
 const error = () => {
   alertModal.error({
     title: 'This is an error message',
     content: 'some messages...some messages...',
-  });
-};
+  })
+}
 
 const warning = () => {
   alertModal.warning({
     title: 'This is a warning message',
     content: 'some messages...some messages...',
-  });
-};
+  })
+}
 
 const selfDestroyed = () => {
-  let secondsToGo = 5;
+  let secondsToGo = 5
   const modal = alertModal.success({
     title: 'This is a notification message',
     content: `This modal will be destroyed after ${secondsToGo} second.`,
-  });
+  })
 
   const timer = setInterval(() => {
-    secondsToGo -= 1;
+    secondsToGo -= 1
     modal.update({
       content: `This modal will be destroyed after ${secondsToGo} second.`,
-    });
-  }, 1000);
+    })
+  }, 1000)
 
   setTimeout(() => {
-    clearInterval(timer);
-    modal.destroy();
-  }, secondsToGo * 1000);
-};
+    clearInterval(timer)
+    modal.destroy()
+  }, secondsToGo * 1000)
+}
 
 const showConfirm = () => {
   alertModal.confirm({
@@ -64,12 +64,12 @@ const showConfirm = () => {
     content: 'When clicked the OK button, this dialog will be closed after 1 second',
     onOk() {
       return new Promise((resolve, reject) => {
-        setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
-      }).catch(() => {});
+        setTimeout(Math.random() > 0.5 ? resolve : reject, 1000)
+      }).catch(() => {})
     },
     onCancel() {},
-  });
-};
+  })
+}
 
 function ModalElement() {
   const PageRoutes = [
@@ -81,36 +81,36 @@ function ModalElement() {
       path: '',
       breadcrumbName: 'Modals',
     },
-  ];
-  const [state, setState]:any = useState({ visible: false, modalType: 'primary', colorModal: false });
+  ]
+  const [state, setState]: any = useState({ visible: false, modalType: 'primary', colorModal: false })
 
-  const showModal = (type:any) => {
+  const showModal = (type: any) => {
     setState({
       visible: true,
       modalType: type,
-    });
-  };
+    })
+  }
 
-  const showColorModal = (type:any) => {
+  const showColorModal = (type: any) => {
     setState({
       colorModal: type,
       modalType: type,
-    });
-  };
+    })
+  }
 
   const handleOk = () => {
     setState({
       visible: false,
       colorModal: false,
-    });
-  };
+    })
+  }
 
   const handleCancel = () => {
     setState({
       visible: false,
       colorModal: false,
-    });
-  };
+    })
+  }
 
   return (
     <>
@@ -143,9 +143,10 @@ function ModalElement() {
                   </h1>
                 </div>
                 <div className="p-[25px]">
-                  <p className='mb-4'>
+                  <p className="mb-4">
                     When requiring users to interact with the application, but without jumping to a new page and
-                    interrupting the user&apos;s workflow, you can use Modal to create a new floating layer over the current page to get user feedback or display information. Additionally
+                    interrupting the user&apos;s workflow, you can use Modal to create a new floating layer over the
+                    current page to get user feedback or display information. Additionally
                   </p>
                   <div className="flex flex-wrap items-center gap-[10px]">
                     <Buttons
@@ -183,7 +184,7 @@ function ModalElement() {
             <Col md={12}>
               <Modals
                 type={state.modalType}
-                color = {state.colorModal}
+                color={state.colorModal}
                 title="Basic Modal"
                 visible={state.colorModal}
                 onOk={handleOk}
@@ -202,9 +203,10 @@ function ModalElement() {
                   </h1>
                 </div>
                 <div className="p-[25px]">
-                  <p className='mb-4'>
+                  <p className="mb-4">
                     When requiring users to interact with the application, but without jumping to a new page and
-                    interrupting the user&apos;s workflow, you can use Modal to create a new floating layer over the current page to get user feedback or display information. Additionally
+                    interrupting the user&apos;s workflow, you can use Modal to create a new floating layer over the
+                    current page to get user feedback or display information. Additionally
                   </p>
                   <div className="flex flex-wrap items-center gap-[10px]">
                     <Buttons
@@ -247,9 +249,10 @@ function ModalElement() {
                   </h1>
                 </div>
                 <div className="p-[25px]">
-                  <p className='mb-4'>
+                  <p className="mb-4">
                     When requiring users to interact with the application, but without jumping to a new page and
-                    interrupting the user&apos;s workflow, you can use Modal to create a new floating layer over the current page to get user feedback or display information. Additionally
+                    interrupting the user&apos;s workflow, you can use Modal to create a new floating layer over the
+                    current page to get user feedback or display information. Additionally
                   </p>
                   <div className="flex flex-wrap items-center gap-[10px]">
                     <Buttons
@@ -294,7 +297,7 @@ function ModalElement() {
         </div>
       </>
     </>
-  );
+  )
 }
 
-export default ModalElement;
+export default ModalElement

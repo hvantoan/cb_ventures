@@ -1,11 +1,11 @@
-import React, { useLayoutEffect, useState } from 'react';
-import { Row, Col } from 'antd';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceLine } from 'recharts';
-import { PageHeaders } from '@/components/page-headers';
-import { Cards } from '@/components/cards/frame/cards-frame';
-import rechartdata from '@/demoData/recharts.json';
+import React, { useLayoutEffect, useState } from 'react'
+import { Row, Col } from 'antd'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceLine } from 'recharts'
+import { PageHeaders } from '@/components/PageHeaders'
+import { Cards } from '@/components/Cards/Frame/cards-frame'
+import rechartdata from '@/demoData/recharts.json'
 
-const { data, positiveAndNegative } = rechartdata;
+const { data, positiveAndNegative } = rechartdata
 
 function RechartBar() {
   const PageRoutes = [
@@ -17,26 +17,24 @@ function RechartBar() {
       path: 'first',
       breadcrumbName: 'Bar Chart',
     },
-  ];
+  ]
   const [state, setState] = useState({
     responsive: 0,
-  });
-  const { responsive } = state;
+  })
+  const { responsive } = state
 
   useLayoutEffect(() => {
     function updateSize() {
-      const element:any = document.querySelector('.recharts-wrapper');
-      const cardBody:any = document.querySelector('.ant-card-body');
+      const element: any = document.querySelector('.recharts-wrapper')
+      const cardBody: any = document.querySelector('.ant-card-body')
       const width =
-        element !== null
-          ? element.closest('.ant-card-body').clientWidth
-          : cardBody ? cardBody.clientWidth : 1096;
-      setState({ responsive: width });
+        element !== null ? element.closest('.ant-card-body').clientWidth : cardBody ? cardBody.clientWidth : 1096
+      setState({ responsive: width })
     }
-    window.addEventListener('resize', updateSize);
-    updateSize();
-    return () => window.removeEventListener('resize', updateSize);
-  }, []);
+    window.addEventListener('resize', updateSize)
+    updateSize()
+    return () => window.removeEventListener('resize', updateSize)
+  }, [])
 
   return (
     <>
@@ -198,7 +196,7 @@ function RechartBar() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default RechartBar;
+export default RechartBar

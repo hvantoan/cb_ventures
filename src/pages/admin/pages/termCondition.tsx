@@ -1,7 +1,7 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import Link from 'next/link';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col } from 'antd'
+import Link from 'next/link'
+import { PageHeaders } from '@/components/PageHeaders'
 
 function TermsConditions() {
   const PageRoutes = [
@@ -13,7 +13,7 @@ function TermsConditions() {
       path: '',
       breadcrumbName: 'Terms & Conditions',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -96,7 +96,7 @@ function TermsConditions() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default TermsConditions;
+export default TermsConditions

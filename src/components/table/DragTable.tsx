@@ -1,27 +1,23 @@
 /* eslint-disable react/destructuring-assignment */
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import {
-  UilEdit,
-  UilExpandArrows,
-  UilTrashAlt 
-} from '@iconscout/react-unicons';
-import { CSS } from '@dnd-kit/utilities';
-import { DndContext, closestCenter } from '@dnd-kit/core';
-import { arrayMove, SortableContext, rectSortingStrategy, useSortable } from '@dnd-kit/sortable';
-import Heading from '@/components/heading';
-import { Buttons } from '@/components/buttons';
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { UilEdit, UilExpandArrows, UilTrashAlt } from '@iconscout/react-unicons'
+import { CSS } from '@dnd-kit/utilities'
+import { DndContext, closestCenter } from '@dnd-kit/core'
+import { arrayMove, SortableContext, rectSortingStrategy, useSortable } from '@dnd-kit/sortable'
+import Heading from '@/components/Heading'
+import { Buttons } from '@/components/Buttons'
 
 function DragAndDropTable() {
-  const { users } = useSelector((state:any) => {
+  const { users } = useSelector((state: any) => {
     return {
       users: state.users,
-    };
-  });
+    }
+  })
 
-  const usersTableData:any = [];
-  users.map((user:any, index:any) => {
-    const { name, designation, img } = user;
+  const usersTableData: any = []
+  users.map((user: any, index: any) => {
+    const { name, designation, img } = user
 
     return usersTableData.push({
       key: index + 1,
@@ -60,22 +56,22 @@ function DragAndDropTable() {
           </Buttons>
         </div>
       ),
-    });
-  });
+    })
+  })
 
   const [state, setState] = useState({
     dataSource: usersTableData,
-  });
+  })
 
-  const { dataSource } = state;
+  const { dataSource } = state
 
-  function SortableItem(value:any) {
-    const item = value.value;
-    const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: item });
+  function SortableItem(value: any) {
+    const item = value.value
+    const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: item })
     const style = {
       transform: CSS.Transform.toString(transform),
       transition,
-    };
+    }
 
     return (
       <tr className="ant-table-row" ref={setNodeRef} style={style} {...attributes} {...listeners}>
@@ -89,18 +85,18 @@ function DragAndDropTable() {
         <td className="ant-table-cell">{item.joinDate}</td>
         <td className="ant-table-cell">{item.action}</td>
       </tr>
-    );
+    )
   }
 
-  function handleDragEnd(event:any) {
-    const { active, over } = event;
+  function handleDragEnd(event: any) {
+    const { active, over } = event
 
     if (active && over && active.id !== over.id) {
-      const activeIndex = dataSource.findIndex((item:any) => item.key === active.id.key);
-      const overIndex = dataSource.findIndex((item:any) => item.key === over.id.key);
-      const newData = arrayMove(dataSource, activeIndex, overIndex);
+      const activeIndex = dataSource.findIndex((item: any) => item.key === active.id.key)
+      const overIndex = dataSource.findIndex((item: any) => item.key === over.id.key)
+      const newData = arrayMove(dataSource, activeIndex, overIndex)
 
-      setState({ ...state, dataSource: newData });
+      setState({ ...state, dataSource: newData })
     }
   }
 
@@ -122,7 +118,7 @@ function DragAndDropTable() {
                       <table>
                         <tbody className="ant-table-tbody">
                           <SortableContext items={dataSource} strategy={rectSortingStrategy}>
-                            {dataSource.map((value:any, index:any) => (
+                            {dataSource.map((value: any, index: any) => (
                               <SortableItem key={index} index={index} value={value} />
                             ))}
                           </SortableContext>
@@ -137,7 +133,7 @@ function DragAndDropTable() {
         </div>
       </DndContext>
     </>
-  );
+  )
 }
 
-export default DragAndDropTable;
+export default DragAndDropTable

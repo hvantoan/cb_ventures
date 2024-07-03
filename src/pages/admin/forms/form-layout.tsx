@@ -1,12 +1,12 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import HorizontalForm from './overview/HorizontalForm';
-import HorizontalIconForm from './overview/HorizontalIconForm';
-import VerticalForm from './overview/VerticalForm';
-import VerticalIconForm from './overview/VerticalIconForm';
-import MultiColumnForm from './overview/MultiColumnForm';
+import React from 'react'
+import { Row, Col } from 'antd'
+import HorizontalForm from './overview/HorizontalForm'
+import HorizontalIconForm from './overview/HorizontalIconForm'
+import VerticalForm from './overview/VerticalForm'
+import VerticalIconForm from './overview/VerticalIconForm'
+import MultiColumnForm from './overview/MultiColumnForm'
 
-import { PageHeaders } from '@/components/page-headers';
+import { PageHeaders } from '@/components/PageHeaders'
 
 function FormLayout() {
   const PageRoutes = [
@@ -18,7 +18,7 @@ function FormLayout() {
       path: 'first',
       breadcrumbName: 'Form Layouts',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -46,7 +46,7 @@ function FormLayout() {
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default FormLayout;
+export default FormLayout

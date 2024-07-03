@@ -1,8 +1,8 @@
 import React from 'react'
 import { UilCommentAlt } from '@iconscout/react-unicons'
 import Link from 'next/link'
-import Heading from '@/components/heading'
-import { Buttons } from '@/components/buttons'
+import Heading from '@/components/Heading'
+import { Buttons } from '@/components/Buttons'
 
 function UserCardStyle({ user }: any) {
   const { name, designation, img, cover } = user

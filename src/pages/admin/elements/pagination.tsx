@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Row, Col, Pagination } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
+import React, { useState } from 'react'
+import { Row, Col, Pagination } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
 
 function Paginations() {
   const PageRoutes = [
@@ -12,19 +12,19 @@ function Paginations() {
       path: '',
       breadcrumbName: 'Paginations',
     },
-  ];
-  const [state, setState]:any = useState({
+  ]
+  const [state, setState]: any = useState({
     current: 0,
     pageSize: 0,
     page: 0,
-  });
-  const onShowSizeChange = (current:any, pageSize:any) => {
-    setState({ ...state, current, pageSize });
-  };
+  })
+  const onShowSizeChange = (current: any, pageSize: any) => {
+    setState({ ...state, current, pageSize })
+  }
 
-  const onChange = (pageNumber:any) => {
-    setState({ ...state, pageNumber });
-  };
+  const onChange = (pageNumber: any) => {
+    setState({ ...state, pageNumber })
+  }
 
   return (
     <>
@@ -94,7 +94,7 @@ function Paginations() {
         </Row>
       </div>
     </>
-  );
+  )
 }
 
-export default Paginations;
+export default Paginations

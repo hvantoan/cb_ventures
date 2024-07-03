@@ -1,8 +1,8 @@
-import React from 'react';
-import { Row, Col, Skeleton } from 'antd';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { PageHeaders } from '@/components/page-headers';
+import React from 'react'
+import { Row, Col, Skeleton } from 'antd'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { PageHeaders } from '@/components/PageHeaders'
 import dynamic from 'next/dynamic'
 
 const UserCards = dynamic(() => import('./overview/UserCard'), {
@@ -11,28 +11,28 @@ const UserCards = dynamic(() => import('./overview/UserCard'), {
       <Skeleton avatar active paragraph={{ rows: 3 }} />
     </div>
   ),
-});
+})
 const UserBio = dynamic(() => import('./overview/UserBio'), {
   loading: () => (
     <div className="bg-white dark:bg-white/10 p-[25px] rounded-[10px]">
       <Skeleton avatar active paragraph={{ rows: 3 }} />
     </div>
   ),
-});
+})
 const CoverSection = dynamic(() => import('./overview/CoverSection'), {
   loading: () => (
     <div className="bg-white dark:bg-white/10 p-[25px] rounded-[10px]">
       <Skeleton active />
     </div>
   ),
-});
+})
 
 const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
-  const router = useRouter();
-  const { pathname } = router;
-  const currentPath = pathname.split('/')[4];
+  const router = useRouter()
+  const { pathname } = router
+  const currentPath = pathname.split('/')[4]
 
-  const path = '/admin/profile/myProfile';
+  const path = '/admin/profile/myProfile'
 
   const PageRoutes = [
     {
@@ -43,7 +43,7 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
       path: '',
       breadcrumbName: 'My Profile',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -54,9 +54,7 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
       <main className="min-h-[715px] lg:min-h-[580px] bg-transparent px-8 xl:px-[15px] pb-[50px] ssm:pb-[30px]">
         <Row gutter={25}>
           <Col xxl={6} lg={8} md={10} xs={24}>
-            <UserCards
-              user={{ name: 'Duran Clyton', designation: 'UI/UX Designer', img: 'img/users/1.png' }}
-            />
+            <UserCards user={{ name: 'Duran Clyton', designation: 'UI/UX Designer', img: 'img/users/1.png' }} />
             <div className="mt-[25px]">
               <UserBio />
             </div>
@@ -69,7 +67,11 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
                   <ul className="m-0 flex items-center gap-[22px]">
                     <li>
                       <Link
-                        className={`relative block py-[20px] px-[5px] text-light after:absolute after:bottom-0 ltr:after:left-0 rtl:after:right-0 after:w-full after:h-[2px] after:transition-all after:duration-300 after:ease-in-out font-medium ${currentPath === 'overview' ? 'text-primary after:visible after:bg-primary' : 'after:invisible after:bg-transparent'}`}
+                        className={`relative block py-[20px] px-[5px] text-light after:absolute after:bottom-0 ltr:after:left-0 rtl:after:right-0 after:w-full after:h-[2px] after:transition-all after:duration-300 after:ease-in-out font-medium ${
+                          currentPath === 'overview'
+                            ? 'text-primary after:visible after:bg-primary'
+                            : 'after:invisible after:bg-transparent'
+                        }`}
                         href={`${path}/overview`}
                       >
                         Overview
@@ -77,7 +79,11 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
                     </li>
                     <li>
                       <Link
-                        className={`relative block py-[20px] px-[5px] text-light after:absolute after:bottom-0 ltr:after:left-0 rtl:after:right-0 after:w-full after:h-[2px] after:transition-all after:duration-300 after:ease-in-out font-medium ${currentPath === 'timeline' ? 'text-primary after:visible after:bg-primary' : 'after:invisible after:bg-transparent'}`}
+                        className={`relative block py-[20px] px-[5px] text-light after:absolute after:bottom-0 ltr:after:left-0 rtl:after:right-0 after:w-full after:h-[2px] after:transition-all after:duration-300 after:ease-in-out font-medium ${
+                          currentPath === 'timeline'
+                            ? 'text-primary after:visible after:bg-primary'
+                            : 'after:invisible after:bg-transparent'
+                        }`}
                         href={`${path}/timeline`}
                       >
                         Timeline
@@ -85,7 +91,11 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
                     </li>
                     <li>
                       <Link
-                        className={`relative block py-[20px] px-[5px] text-light after:absolute after:bottom-0 ltr:after:left-0 rtl:after:right-0 after:w-full after:h-[2px] after:transition-all after:duration-300 after:ease-in-out font-medium ${currentPath === 'activity' ? 'text-primary after:visible after:bg-primary' : 'after:invisible after:bg-transparent'}`}
+                        className={`relative block py-[20px] px-[5px] text-light after:absolute after:bottom-0 ltr:after:left-0 rtl:after:right-0 after:w-full after:h-[2px] after:transition-all after:duration-300 after:ease-in-out font-medium ${
+                          currentPath === 'activity'
+                            ? 'text-primary after:visible after:bg-primary'
+                            : 'after:invisible after:bg-transparent'
+                        }`}
                         href={`${path}/activity`}
                       >
                         Activity
@@ -94,13 +104,13 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
                   </ul>
                 </nav>
               </div>
-              { children }
+              {children}
             </>
           </Col>
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default ProfileLayout;
+export default ProfileLayout

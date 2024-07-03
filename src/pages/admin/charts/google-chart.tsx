@@ -1,7 +1,7 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import { PageHeaders } from '@/components/page-headers';
-import gCharts from '@/demoData/google-charts.json';
+import React from 'react'
+import { Row, Col } from 'antd'
+import { PageHeaders } from '@/components/PageHeaders'
+import gCharts from '@/demoData/google-charts.json'
 import {
   GoogleBasicBarChart,
   GoogleMaterialBarChart,
@@ -13,7 +13,7 @@ import {
   GoogleMultiLineChart,
   GoogleBasicPieChart,
   Google3dPieChart,
-} from '@/components/charts/google-chart';
+} from '@/components/charts/google-chart'
 
 const {
   barChartData,
@@ -23,7 +23,7 @@ const {
   MultilineChartData,
   organizationChartData,
   pieChartData,
-} = gCharts;
+} = gCharts
 
 function GoogleChart() {
   const PageRoutes = [
@@ -35,7 +35,7 @@ function GoogleChart() {
       path: 'first',
       breadcrumbName: 'Google Chart',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -229,6 +229,6 @@ function GoogleChart() {
         </Row>
       </main>
     </>
-  );
+  )
 }
-export default GoogleChart;
+export default GoogleChart

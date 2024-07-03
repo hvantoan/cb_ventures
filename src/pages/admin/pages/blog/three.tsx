@@ -1,10 +1,10 @@
-import { Row, Col } from 'antd';
-import React from 'react';
-import { PageHeaders } from '@/components/page-headers';
-import BlogCard from '@/components/cards/BlogCard';
-import cardData from '@/demoData/sampleCards.json';
+import { Row, Col } from 'antd'
+import React from 'react'
+import { PageHeaders } from '@/components/PageHeaders'
+import BlogCard from '@/components/Cards/BlogCard'
+import cardData from '@/demoData/sampleCards.json'
 
-const { BlogCardData } = cardData;
+const { BlogCardData } = cardData
 
 function BlogThree() {
   const PageRoutes = [
@@ -16,7 +16,7 @@ function BlogThree() {
       path: '',
       breadcrumbName: 'Blog Three',
     },
-  ];
+  ]
   return (
     <>
       <PageHeaders
@@ -31,12 +31,12 @@ function BlogThree() {
               <Col key={blog.id} xxl={6} sm={12} xs={24} className="mb-[25px]">
                 <BlogCard item={blog} theme="style-3" />
               </Col>
-            );
+            )
           })}
         </Row>
       </main>
     </>
-  );
+  )
 }
 
-export default BlogThree;
+export default BlogThree
