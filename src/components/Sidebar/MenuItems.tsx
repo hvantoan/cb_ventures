@@ -1,53 +1,32 @@
 import {
-  Uil500px,
   UilAirplay,
   UilArrowGrowth,
   UilAt,
-  UilBagAlt,
   UilBookAlt,
   UilBookOpen,
-  UilBookReader,
-  UilCalendarAlt,
   UilChartBar,
-  UilChat,
-  UilCheckSquare,
   UilCircle,
-  UilClipboardAlt,
   UilClock,
   UilCompactDisc,
-  UilCreateDashboard,
-  UilDatabase,
   UilDocumentLayoutLeft,
   UilEdit,
-  UilEnvelope,
-  UilExchange,
   UilExclamationOctagon,
-  UilExpandArrowsAlt,
   UilFile,
-  UilFileShieldAlt,
-  UilHeadphones,
   UilIcons,
   UilImages,
   UilLayerGroup,
   UilMap,
   UilPresentation,
-  UilQuestionCircle,
   UilSearch,
   UilServer,
   UilSetting,
-  UilShoppingCart,
-  UilSquareFull,
   UilTable,
-  UilUsdCircle,
-  UilUsersAlt,
-  UilWindowSection,
   UilEllipsisV,
 } from '@iconscout/react-unicons'
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { Menu } from 'antd'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'react-i18next'
-import versions from '../demoData/changelog.json'
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@/redux/store'
@@ -80,8 +59,7 @@ function MenuItems() {
   useEffect(() => {
     // Check if the current route matches the base path.
     if (pathname === path) {
-      setOpenKeys(['dashboard']) // active menu key.
-      setOpenItems(['demo-1']) // active menu item.
+      setOpenItems(['dashboard']) // active menu item.
     }
   }, [pathname])
 

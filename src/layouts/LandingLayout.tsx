@@ -1,19 +1,21 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Layout } from 'antd'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import Footer from '@/layouts/Header/footer'
-import Sidebar from '@/layouts/Sidebar'
-import HeaderTop from '@/layouts/Header'
+import Footer from '@/components/Header/footer'
+import Sidebar from '@/components/Sidebar'
+import HeaderTop from '@/components/Header'
 
 const { Content } = Layout
 
 import config from '@/config/config'
 import { RootState } from '@/redux/store'
+import { changeMenuMode } from '@/redux/themeLayout/reducers'
 const { theme } = config
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
+  const dispatch = useDispatch()
   const { isLoggedIn, rtl, mainContent } = useSelector((state: RootState) => {
     return {
       collapsed: state.layout.menuCollapse,
@@ -21,6 +23,10 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
       rtl: state.layout.rtlData,
       mainContent: state.layout.mode,
     }
+  })
+
+  useEffect(() => {
+    dispatch(changeMenuMode(true))
   })
 
   if (mainContent === 'darkMode') {
@@ -39,15 +45,6 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
     if (router.pathname == '/') {
       router.push('/landing')
     }
-    // // If the user is not logged in and trying to access a restricted page, redirect to the login page
-    // if (
-    //   !isLoggedIn &&
-    //   !router.pathname.startsWith('/login') &&
-    //   !router.pathname.startsWith('/register') &&
-    //   !router.pathname.startsWith('/forgot-password')
-    // ) {
-    //   router.push('/landing')
-    // }
   }, [router])
 
   return (

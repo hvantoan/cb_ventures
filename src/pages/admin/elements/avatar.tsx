@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Row, Col, Avatar, Badge } from 'antd'
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { UserOutlined } from '@ant-design/icons'
 import { useSelector } from 'react-redux'
 import { PageHeaders } from '@/components/PageHeaders'
 import { Buttons } from '@/components/Buttons'
+import { RootState } from '@/redux/store'
 
 const UserList = ['U', 'Lucy', 'Tom', 'Edward']
 const ColorList = ['#f56a00', '#7265e6', '#ffbf00', '#00a2ae']
@@ -20,7 +20,7 @@ function Avatars() {
       breadcrumbName: 'Avatar',
     },
   ]
-  const rtl = useSelector((state: any) => state.ChangeLayoutMode.rtlData)
+  const rtl = useSelector((state: RootState) => state.layout.rtlData)
   const [user, setUser]: any = useState(UserList[0])
   const [color, setColor] = useState(ColorList[0])
   const changeUser = () => {

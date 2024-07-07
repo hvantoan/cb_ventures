@@ -3,9 +3,9 @@ import { useRouter } from 'next/router'
 import { Layout } from 'antd'
 import { useSelector } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import Footer from '@/layouts/Header/footer'
-import Sidebar from '@/layouts/Sidebar'
-import HeaderTop from '@/layouts/Header'
+import Footer from '@/components/Header/footer'
+import Sidebar from '@/components/Sidebar'
+import HeaderTop from '@/components/Header'
 
 const { Content } = Layout
 

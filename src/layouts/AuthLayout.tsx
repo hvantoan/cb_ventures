@@ -10,17 +10,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   const { isLoggedIn } = useSelector(selectAuth)
   const router = useRouter()
 
-  useEffect(() => {
-    // TODO: fix redirect to page follow user role
-    // if (
-    //   isLoggedIn &&
-    //   (router.pathname.startsWith('/login') ||
-    //     router.pathname.startsWith('/register') ||
-    //     router.pathname.startsWith('/forgot-password'))
-    // ) {
-    //   router.push('/admin')
-    // }
-  }, [router])
+  useEffect(() => {}, [router])
 
   return (
     <div
