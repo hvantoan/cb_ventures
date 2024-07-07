@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Card, Col, Row } from 'antd'
-const AdviserData = React.memo(() => {
+const Subscribe = React.memo(() => {
   return (
     <div>
       <Card className="bg-primary rounded-lg w-[1200px]">
@@ -47,4 +47,4 @@ const AdviserData = React.memo(() => {
   )
 })
 
-export default AdviserData
+export default Subscribe

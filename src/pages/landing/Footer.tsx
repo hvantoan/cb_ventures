@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col, Card, Button, Image } from 'antd'
 
-const HeadAdvisers = React.memo((column: any) => {
+const Footer = React.memo((column: any) => {
   return (
     <div>
       <footer>
@@ -193,4 +193,4 @@ const HeadAdvisers = React.memo((column: any) => {
     </div>
   )
 })
-export default HeadAdvisers
+export default Footer

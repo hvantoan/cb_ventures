@@ -68,10 +68,7 @@ h6 {
 .ant-btn-primary {
   @apply bg-primary hover:bg-primary-hbr text-white !important;
 }
-.ant-btn-primary svg,
-.ant-btn-primary i {
-  @apply text-white !important;
-}
+
 .ant-picker,
 .ant-form-item-control-input input,
 .ant-input-number-input-wrap input {

@@ -9,186 +9,39 @@ import Cryptocurrency from '@/pages/landing/service/Cryptocurrency'
 import ChangesToExchangeOrders from '@/pages/landing/service/ChangesToExchangeOrders'
 import PriceNotification from '@/pages/landing/service/PriceNotification'
 import { PageContainer } from '@ant-design/pro-layout'
+import ImageBanner from '@/pages/landing/ImageBanner'
+import PartnerRow from './PartnerRow'
+import ExploreImage from './ExploreImage'
+import ExploreText from './ExploreText'
+import FeaturesText from './FeaturesText'
+import FeaturesImage from './FeaturesImage'
+import ServicesHead from './service/ServicesHead'
+import ProductRoadMap from './RoadMap/ProductRoadMapHead'
+import FramingIdea from './RoadMap/FramingIdea'
+import FinalDesign from './RoadMap/FinalDesign'
+import LaunchProject from './RoadMap/LaunchProject'
+import ProductReseach from './RoadMap/ProductResearch'
+import DesignFirstDraft from './RoadMap/DesignFirstDraft'
+import ProjectDevelopment from './RoadMap/ProjectDevelopment'
+import PricingHead from './Pricing/PricingHead'
+import BasicPricing from '@/pages/landing/Pricing/BasicPricing'
+import HeadAdvisers from '@/pages/landing/MeetOurAdvisers/HeadAdvisers'
+import AdviserData from '@/pages/landing/MeetOurAdvisers/AdviserData'
+import ProTraders from './ProTraders'
+import Subscribe from '@/pages/landing/Subscribe'
+import Footer from '@/pages/landing/Footer'
+import Hero from '@/pages/landing/Hero'
 
-const BannerHeader = dynamic(() => import('@/pages/landing/BannerHeader'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const ImageBanner = dynamic(() => import('@/pages/landing/ImageBanner'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const PartnerRow = dynamic(() => import('@/pages/landing/PartnerRow'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const ExploreImage = dynamic(() => import('@/pages/landing/ExploreImage'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const ExploreText = dynamic(() => import('@/pages/landing/ExploreText'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const FeaturesImage = dynamic(() => import('@/pages/landing/FeaturesImage'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const FeaturesText = dynamic(() => import('@/pages/landing/FeaturesText'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const ServicesHead = dynamic(() => import('@/pages/landing/service/ServicesHead'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const ProductResearch = dynamic(() => import('@/pages/landing/RoadMap/ProductResearch'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const ProductRoadMapHead = dynamic(() => import('@/pages/landing/RoadMap/ProductRoadMapHead'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const FramingIdea = dynamic(() => import('@/pages/landing/RoadMap/FramingIdea'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const FinalDesign = dynamic(() => import('@/pages/landing/RoadMap/FinalDesign'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const LaunchProject = dynamic(() => import('@/pages/landing/RoadMap/LaunchProject'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const DesignFirstDraft = dynamic(() => import('@/pages/landing/RoadMap/DesignFirstDraft'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const ProjectDevelopment = dynamic(() => import('@/pages/landing/RoadMap/ProjectDevelopment'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const PricingHead = dynamic(() => import('@/pages/landing/Pricing/PricingHead'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const BasicPricing = dynamic(() => import('@/pages/landing/Pricing/BasicPricing'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const PremiunPricing = dynamic(() => import('@/pages/landing/Pricing/PremiunPricing'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const StandardPricing = dynamic(() => import('@/pages/landing/Pricing/StandardPricing'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const HeadAdvisers = dynamic(() => import('@/pages/landing/MeetOurAdvisers/HeadAdvisers'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const AdviserData = dynamic(() => import('@/pages/landing/MeetOurAdvisers/AdviserData'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const ProTraders = dynamic(() => import('@/pages/landing/ProTraders'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-const Subscribe = dynamic(() => import('@/pages/landing/Subscribe'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
-
-const Footer = dynamic(() => import('@/pages/landing/Footer'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
 const Landing = () => {
   return (
     <>
-      <PageHeaders className="flex items-center justify-between px-8 5xl:px-[15px] pb-6 sm:pb-[30px] bg-transparent sm:flex-col" />
-      <div className="flex-1 h-auto 5xl:px-[15px] pb-[30px] bg-transparent sm:w-full">
+      <Hero />
+      <div className="flex-1 h-auto pb-[30px] bg-transparent sm:w-full">
         <div className="bg-landing-bg1 5xl:py-[100px]">
           <PageContainer>
             <Row gutter={25} className="5xl:px-64 sm:px-0">
               <Col xxl={12} xs={24}>
-                <BannerHeader />
+                {/* <BannerHeader /> */}
               </Col>
               <Col xxl={12} xs={24}>
                 <ImageBanner />
@@ -247,7 +100,7 @@ const Landing = () => {
         <div className="bg-landing-bg1 py-[100px] bg-full">
           <PageContainer>
             <Row gutter={25} className="px-64 place-content-center">
-              <ProductRoadMapHead></ProductRoadMapHead>
+              <ProductRoadMap></ProductRoadMap>
             </Row>
             <Row gutter={25} className="px-64">
               <Col xxl={11} sm={11} xs={11} className="pt-[170px]">
@@ -263,7 +116,7 @@ const Landing = () => {
                 </div>
               </Col>
               <Col xxl={11} sm={11} xs={11}>
-                <ProductResearch></ProductResearch>
+                <ProductReseach></ProductReseach>
                 <DesignFirstDraft></DesignFirstDraft>
                 <ProjectDevelopment></ProjectDevelopment>
               </Col>
