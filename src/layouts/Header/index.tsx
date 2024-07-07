@@ -11,25 +11,21 @@ import { ReactSVG } from 'react-svg'
 import { Col, Layout, Row } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeMenuCollapse } from '@/redux/themeLayout/reducers'
-import { AppDispatch } from '@/redux/store'
-import { createSelector } from '@reduxjs/toolkit'
-import { selectLayout } from '@/redux/rootReducers'
+import { AppDispatch, RootState } from '@/redux/store'
 
 const { Header } = Layout
 
 const HeaderTop = () => {
   const [hide, setHide] = useState(true)
 
-  var selectLayoutSetting = createSelector(selectLayout, (layout) => {
+  const { rtl, layoutMode, topMenu, collapsed } = useSelector((state: RootState) => {
     return {
-      rtl: layout.rtlData,
-      layoutMode: layout.mode,
-      topMenu: layout.topMenu,
-      collapsed: layout.menuCollapse,
+      rtl: state.layout.rtlData,
+      layoutMode: state.layout.mode,
+      topMenu: state.layout.topMenu,
+      collapsed: state.layout.menuCollapse,
     }
   })
-
-  const { rtl, layoutMode, topMenu, collapsed } = useSelector(selectLayoutSetting)
 
   const [isBrowser, setIsBrowser] = useState(false)
 
@@ -54,7 +50,6 @@ const HeaderTop = () => {
   const dispatch = useDispatch<AppDispatch>()
 
   const toggleCollapsed = (value: boolean) => {
-    //@ts-ignore
     dispatch(changeMenuCollapse(value))
   }
 
@@ -91,11 +86,12 @@ const HeaderTop = () => {
             </div>
           </div>
           <div className="flex items-center justify-between flex-auto ltr:mr-[10px] rtl:ml-[10px] [&>div:first-child]:flex [&>div]:items-center ">
-            {isBrowser && window.innerWidth > 1200 && topMenu ? <TopMenu /> : <Customizer rtl={rtl} />}
+            {isBrowser && window.innerWidth > 1200 && topMenu ? <TopMenu /> : <div></div>}
+            {/* {<Customizer rtl={rtl} />} */}
             <div className="flex flex-row items-center md:hidden me-[17px]">
               {isBrowser && window.innerWidth > 1200 && topMenu ? (
                 <div className="flex top-right-wrap">
-                  <Customizer rtl={rtl} />
+                  {/* <Customizer rtl={rtl} /> */}
                   <AuthInfo rtl={rtl} />
                 </div>
               ) : (

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 
-import backgroundImage from '../../../public/img/admin-bg-light.png'
+import backgroundImage from '../../public/img/admin-bg-light.png'
 import { selectAuth } from '@/redux/rootReducers'
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
@@ -11,16 +11,15 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter()
 
   useEffect(() => {
-    // If the user is logged in and trying to access a authentication page, redirect to the admin page
-    if (
-      isLoggedIn &&
-      (router.pathname == '/' ||
-        router.pathname.startsWith('/login') ||
-        router.pathname.startsWith('/register') ||
-        router.pathname.startsWith('/forgot-password'))
-    ) {
-      router.push('/admin')
-    }
+    // TODO: fix redirect to page follow user role
+    // if (
+    //   isLoggedIn &&
+    //   (router.pathname.startsWith('/login') ||
+    //     router.pathname.startsWith('/register') ||
+    //     router.pathname.startsWith('/forgot-password'))
+    // ) {
+    //   router.push('/admin')
+    // }
   }, [router])
 
   return (

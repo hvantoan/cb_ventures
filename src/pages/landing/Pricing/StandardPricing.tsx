@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Card, Button, Image } from 'antd'
-import { Cards } from '@/components/Cards/Frame/cards-frame'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
 import { scales } from 'chart.js'
 
 const StandardPricing = React.memo((column: any) => {

@@ -9,6 +9,7 @@ import AuthLayout from '@/layouts/AuthLayout'
 import { wrapper } from '@/redux/store'
 import { FC, useEffect, useState } from 'react'
 import { Provider } from 'react-redux'
+import LandingLayout from '@/layouts/LandingLayout'
 
 const App: FC<AppProps> = ({ Component, ...rest }) => {
   const router = useRouter()
@@ -24,12 +25,7 @@ const App: FC<AppProps> = ({ Component, ...rest }) => {
   }, [])
 
   const renderLayout = () => {
-    if (
-      pathname == '/' ||
-      pathname.startsWith('/register') ||
-      pathname.startsWith('/forgotPassword') ||
-      pathname.startsWith('/login')
-    ) {
+    if (pathname.startsWith('/register') || pathname.startsWith('/forgotPassword') || pathname.startsWith('/login')) {
       return (
         <AuthLayout>
           <Component {...pageProps} />
@@ -41,15 +37,15 @@ const App: FC<AppProps> = ({ Component, ...rest }) => {
           <Component {...pageProps} />
         </AdminLayout>
       )
-    } else {
-      return <Component {...pageProps} />
     }
+
+    return (
+      <LandingLayout>
+        <Component {...pageProps} />
+      </LandingLayout>
+    )
   }
 
-  return (
-    <>
-      <Provider store={store}>{docEnv && renderLayout()}</Provider>
-    </>
-  )
+  return <Provider store={store}>{docEnv && renderLayout()}</Provider>
 }
 export default wrapper.withRedux(App)

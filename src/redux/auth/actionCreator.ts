@@ -4,9 +4,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 
 export const LoginAction = createAsyncThunk('auth/login', async (userData: LoginReq, { rejectWithValue }) => {
   try {
-    console.log(userData)
     const { data } = await authApi.login(userData)
-    localStorage.setItem('userInfo', JSON.stringify(true))
+    localStorage.setItem('userInfo', JSON.stringify(data))
     return true
   } catch (error: any) {
     if (!error?.response) {

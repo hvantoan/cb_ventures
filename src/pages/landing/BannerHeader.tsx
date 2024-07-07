@@ -7,7 +7,7 @@ const BannerHeader = React.memo((column: any) => {
       <Row className="sm:place-content-center">
         <h1 className="text-7xl sm:text-7xl sm:text-center sm:w-full">
           ROAD MAP
-          <span className="text-primary"> Investment Solution</span>
+          <span className="text-primary">Investment Solution</span>
         </h1>
         <p className="text-white/60 pt-10 pb-10 text-3xl sm:text-center sm:w-full">
           EXPERT ADVISOR INVESTMENT CONSULTANT

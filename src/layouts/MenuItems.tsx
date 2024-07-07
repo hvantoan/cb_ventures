@@ -142,7 +142,6 @@ function MenuItems() {
   }
 
   const items = [
-    getItem(t('landing'), 'landing', !topMenu && <UilCreateDashboard />, []),
     getItem(<Link href={`${path}`}>{t('dashboard')}</Link>, 'dashboard', !topMenu && <UilArrowGrowth />, null),
     getItem(t('contact'), 'contact', !topMenu && <UilAt />, [
       getItem(<Link href={`${path}/contact/grid`}>{t('contact grid')}</Link>, 'contact-grid', null, null),

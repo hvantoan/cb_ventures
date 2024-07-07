@@ -6,7 +6,6 @@ const ProTraders = React.memo(() => {
   const [startNumber, setStartNumber] = useState(0)
   const [endNumber, setEndNumber] = useState(3)
 
-
   function next() {
     if (endNumber != TradingMaster.length) {
       if (endNumber + 3 <= TradingMaster.length) {
@@ -28,7 +27,7 @@ const ProTraders = React.memo(() => {
         setStartNumber(0)
         setEndNumber(endNumber - 1)
       }
-    }  
+    }
   }
 
   return (

@@ -7,7 +7,7 @@ import { Row, Form, Input } from 'antd'
 import DropDown from '@/components/Dropdown'
 import { ContactDeleteData } from '@/redux/contact/actionCreator'
 import { Buttons } from '@/components/Buttons'
-import { Modals } from '@/components/Modals/antd-modals'
+import { Modals } from '@/components/Modals/Modals'
 import { RootState } from '@/redux/store'
 
 function ContactCard({ user }: any) {

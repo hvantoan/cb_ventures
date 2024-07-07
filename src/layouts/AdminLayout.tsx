@@ -40,14 +40,8 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter()
 
   useEffect(() => {
-    // If the user is not logged in and trying to access a restricted page, redirect to the login page
-    if (
-      !isLoggedIn &&
-      !router.pathname.startsWith('/login') &&
-      !router.pathname.startsWith('/register') &&
-      !router.pathname.startsWith('/forgot-password')
-    ) {
-      router.push('/')
+    if (!isLoggedIn && !router.pathname.startsWith('/admin')) {
+      router.push('/login')
     }
   }, [router])
 

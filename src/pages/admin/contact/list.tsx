@@ -8,7 +8,7 @@ import Heading from '@/components/Heading'
 import { Buttons } from '@/components/Buttons'
 import { OnStarUpdate, ContactDeleteData } from '@/redux/contact/actionCreator'
 import DropDown from '@/components/Dropdown'
-import { Modals } from '@/components/Modals/antd-modals'
+import { Modals } from '@/components/Modals/Modals'
 
 import ContactLayout from './Layout'
 import { AppDispatch, RootState } from '@/redux/store'

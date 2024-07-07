@@ -1,11 +1,10 @@
 import React from 'react'
 import { Row, Col, Card, Button, Image } from 'antd'
-import { scales } from 'chart.js'
 
 const LaunchProject = React.memo((column: any) => {
   return (
     <div>
-      <Row className='w-full justify-end mt-[90px]'>
+      <Row className="w-full justify-end mt-[90px]">
         <Card className=" w-[500px] bg-success-transparent p-[10px]">
           <Row className="flex">
             <h1 className="mt-[20px] text-pink text-3xl start-0">Framing Idea</h1>

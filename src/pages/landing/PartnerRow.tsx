@@ -1,7 +1,5 @@
 import React from 'react'
 import { Row, Col, Card, Button, Image } from 'antd'
-import { Cards } from '@/components/Cards/Frame/cards-frame'
-import { scales } from 'chart.js'
 
 const PartnerRow = React.memo((column: any) => {
   return (
@@ -42,7 +40,7 @@ const PartnerRow = React.memo((column: any) => {
           </Row>
         </a>
         <a className="text-pink text-4xl 5xl:pl-[0px] text-bold content-center">
-          <img src="/img/icon/webflow-icon.png" width={100} height={60} className="scale-150"></img>
+          <img alt="" src="/img/icon/webflow-icon.png" width={100} height={60} className="scale-150"></img>
         </a>
         <a className="text-link text-4xl text-bold content-center pb-[4px]">zoom</a>
       </Row>

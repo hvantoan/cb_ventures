@@ -5,7 +5,7 @@ import { PageHeaders } from '@/components/PageHeaders'
 import Heading from '@/components/Heading'
 import { List } from '@/components/pricing'
 import { Buttons } from '@/components/Buttons'
-import { Cards } from '@/components/Cards/Frame/cards-frame'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
 
 function PricingTable() {
   const PageRoutes = [
