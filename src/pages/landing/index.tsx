@@ -30,7 +30,7 @@ import AdviserData from '@/pages/landing/MeetOurAdvisers/AdviserData'
 import ProTraders from './ProTraders'
 import Subscribe from '@/pages/landing/Subscribe'
 import Footer from '@/pages/landing/Footer'
-import Hero from '@/pages/landing/Hero'
+import Hero from '@/pages/landing/components/Hero'
 
 const Landing = () => {
   return (

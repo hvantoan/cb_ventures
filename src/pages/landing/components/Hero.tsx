@@ -7,7 +7,7 @@ export default function Hero({}) {
   return (
     <div className="relative min-h-screen w-full bg-[url('/image/course.png')] bg-cover bg-no-repeat">
       <div className="absolute inset-0 h-full w-full bg-gray-900/60" />
-      <div className="grid grid-cols-2 sm:grid-cols-1 gap-20  min-h-[calc(100vh-73px)] px-20 py-20">
+      <div className="grid grid-cols-2 sm:grid-cols-1 gap-20 min-h-[calc(100vh-73px)] p-20">
         <div>
           <div className="grid grid-rows-5 gap-4">
             <h1 className="text-6xl">
