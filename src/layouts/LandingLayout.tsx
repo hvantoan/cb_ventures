@@ -52,7 +52,7 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
       <HeaderTop />
       <div className="flex flex-row gap-5 mt-[72px]">
         <Sidebar />
-        <Layout className=" duration-[300ms]">
+        <Layout className="w-screen duration-[300ms]">
           <Content>
             {children}
             <Footer />

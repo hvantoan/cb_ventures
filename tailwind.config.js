@@ -10,8 +10,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#98D083',
-        secondary: '#3B6730',
+        primary: '#00d094',
+        secondary: '#00150f',
         success: '#01B81A',
         pink: '#f2eafb',
         warning: '#FA8B0C',
@@ -48,6 +48,7 @@ module.exports = {
         instagram: 'rgb(209, 32, 143)',
         dribbble: '#c2185b',
         medium: '#66cdaa',
+        "primary-text": '#095754',
         'primary-transparent': 'rgba(130, 49, 211, 0.082)',
         'secondary-transparent': 'rgba(88, 64, 255, 0.082)',
         'link-transparent': 'rgba(88, 64, 255, 0.082)',
@@ -140,11 +141,10 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'landing-bg1': "url('/img/landing/landing-bg1.png')",
         'landing-bg2': "url('/img/landing/landing-bg2.png')",
-         'landing-bg3': "url('/img/landing/landing-bg3.jpg')"
+        'landing-bg3': "url('/img/landing/landing-bg3.jpg')"
       },
     },
     screens: {

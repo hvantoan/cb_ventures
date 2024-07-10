@@ -30,34 +30,17 @@ import AdviserData from '@/pages/landing/MeetOurAdvisers/AdviserData'
 import ProTraders from './ProTraders'
 import Subscribe from '@/pages/landing/Subscribe'
 import Footer from '@/pages/landing/Footer'
-import Hero from '@/pages/landing/components/Hero'
+import Hero from './components/Hero'
+import Partner from './components/Partner'
+import Trading from './components/Trading'
 
 const Landing = () => {
   return (
     <>
       <Hero />
+      <Partner />
+      <Trading />
       <div className="flex-1 h-auto pb-[30px] bg-transparent sm:w-full">
-        <div className="bg-landing-bg1 5xl:py-[100px]">
-          <PageContainer>
-            <Row gutter={25} className="5xl:px-64 sm:px-0">
-              <Col xxl={12} xs={24}>
-                {/* <BannerHeader /> */}
-              </Col>
-              <Col xxl={12} xs={24}>
-                <ImageBanner />
-              </Col>
-            </Row>
-          </PageContainer>
-        </div>
-        <div className="bg-landing-bg2">
-          <PageContainer>
-            <Row gutter={25} className="5xl:px-64 sm:px-0">
-              <Col xs={24}>
-                <PartnerRow />
-              </Col>
-            </Row>
-          </PageContainer>
-        </div>
         <div className="bg-landing-bg1 py-[100px]">
           <PageContainer>
             <Row gutter={25} className="5xl:px-64">

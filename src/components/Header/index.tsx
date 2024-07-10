@@ -34,7 +34,6 @@ const HeaderTop = () => {
 
     const updateDimensions: any = () => {
       if (window.innerWidth <= 1200) {
-        // @ts-ignore
         dispatch(changeMenuCollapse(true))
       }
     }
@@ -86,10 +85,10 @@ const HeaderTop = () => {
             </div>
           </div>
           <div className="flex items-center justify-between flex-auto ltr:mr-[10px] rtl:ml-[10px] [&>div:first-child]:flex [&>div]:items-center ">
-            {isBrowser && window.innerWidth > 1200 && topMenu ? <TopMenu /> : <div></div>}
+            {isBrowser && window.innerWidth > 800 && topMenu ? <TopMenu /> : <div></div>}
             {/* {<Customizer rtl={rtl} />} */}
             <div className="flex flex-row items-center md:hidden me-[17px]">
-              {isBrowser && window.innerWidth > 1200 && topMenu ? (
+              {isBrowser && window.innerWidth > 800 && topMenu ? (
                 <div className="flex top-right-wrap">
                   {/* <Customizer rtl={rtl} /> */}
                   <AuthInfo rtl={rtl} />

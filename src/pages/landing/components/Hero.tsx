@@ -5,18 +5,24 @@ import { UilArrowUpRight, UilPlayCircle } from '@iconscout/react-unicons'
 
 export default function Hero({}) {
   return (
-    <div className="relative min-h-screen w-full bg-[url('/image/course.png')] bg-cover bg-no-repeat">
-      <div className="absolute inset-0 h-full w-full bg-gray-900/60" />
-      <div className="grid grid-cols-2 sm:grid-cols-1 gap-20 min-h-[calc(100vh-73px)] p-20">
+    <div className="relative min-h-[calc(100vh - 72px)] w-full bg-[url('/image/course.png')] bg-cover bg-no-repeat">
+      <div className="absolute inset-0 h-full w-full " />
+      <div className="grid grid-cols-2 md:grid-cols-1 grid-flow-row-dense gap-20 min-h-[calc(100vh-72px)] p-20 bg-[#00150f]">
         <div>
-          <div className="grid grid-rows-5 gap-4">
+          <div className="grid gap-4">
             <h1 className="text-6xl">
               Invest Your Money With <span className="text-primary">Higher Return</span>
             </h1>
             <p className="text-white text-lg">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam atque obcaecati adipisci voluptatum nihil
-              error. Maxime quasi sequi, dolores est exercitationem quibusdam tempore nihil sint? Maxime consectetur
-              itaque corrupti ipsum.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus impedit a et soluta repudiandae quisquam
+              nihil, nobis, aliquam magnam deleniti quidem natus eaque accusamus delectus eveniet vero maxime. Vitae,
+              soluta. Corporis quidem minus excepturi, impedit iure veniam illo nihil in iste id est blanditiis, rerum
+              repudiandae. Quae temporibus aspernatur necessitatibus iste sit amet vitae architecto nisi numquam,
+              praesentium odio est? Suscipit incidunt praesentium culpa placeat ipsum porro, id nemo temporibus at
+              dolorem adipisci consectetur? Minus, mollitia laborum animi, expedita minima, nemo amet cumque veniam vel
+              eveniet saepe? Placeat, voluptates facilis! Omnis, quis. Perspiciatis, voluptas. Dolorum eaque, id,
+              facilis sapiente saepe culpa officiis laudantium accusantium nemo ut tenetur animi earum velit error unde
+              facere distinctio veritatis possimus vitae nulla? Commodi, ad.
             </p>
             <div>
               <div className="grid grid-cols-2 float-start gap-4">
@@ -33,7 +39,7 @@ export default function Hero({}) {
           </div>
         </div>
         <div className="">
-          <div className="h-[400px] w-[600px]">
+          <div className="w-full h-full">
             <img src="/img/landing/image-banner.png" alt="hero" className="object-contain w-full" />
           </div>
         </div>
