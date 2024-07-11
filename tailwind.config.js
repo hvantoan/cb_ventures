@@ -100,6 +100,9 @@ module.exports = {
         whiteDark: 'rgb(255, 255, 255, .10)',
         darkHard: 'rgb(0, 0, 0, .60)',
         currentColor: 'currentColor',
+        // Custom color
+        "slate-gray": "#717D79",
+        "card-active": '#1b2d29',
       },
       boxShadow: {
         regular: '0 5px 20px rgba(160,160,160,0.05)',
@@ -111,6 +114,7 @@ module.exports = {
         dot: '0 0 0 1px #fff',
         btn: '0 8px 13px rgba(130, 49 ,211, 0.13)',
         faq: '0 15px 40px rgba(116, 116 ,116, 0.08)',
+        card: 'rgba(3,19,14,1.000) 0px 3px 8px'
       },
       borderWidth: {
         1: '1px',
@@ -131,6 +135,7 @@ module.exports = {
         13: ['13px', '18px'],
         15: ['15px', '24px'],
         17: ['17px', '26px'],
+        18: ['18px', '28px'],
         22: ['22px', '30px'],
         42: ['42px', '62px'],
         58: ['58px', '86px'],

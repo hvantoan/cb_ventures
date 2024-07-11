@@ -5,7 +5,7 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 
 import { PageHeaders } from '@/components/PageHeaders'
-import { galleryFilter } from '@/redux/gallary/actionCreator'
+// import { galleryFilter } from '@/redux/gallary/actionCreator'
 
 const GalleryCards = dynamic(() => import('./overview/GalleryCard'), {
   loading: () => (
@@ -30,8 +30,8 @@ function Gallery() {
   const dispatch = useDispatch()
   const { gallery, isLoading } = useSelector((state: any) => {
     return {
-      gallery: state.gallery.data,
-      isLoading: state.gallery.loading,
+      gallery: state.gallery?.data,
+      isLoading: state.gallery?.loading,
     }
   })
 

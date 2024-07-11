@@ -2,7 +2,7 @@ export default function Partner() {
   return (
     <div className="relative min-h-[calc(100vh - 72px)] w-full bg-[url('/image/course.png')] bg-cover bg-no-repeat">
       <div className="absolute inset-0 h-full w-full" />
-      <div className="flex justify-between px-20 py-6 bg-[#01291e]">
+      <div className="flex justify-between px-20 py-6  bg-[#01291e]">
         <a className="text-secondary-hbr text-4xl text-bold">coinbase</a>
         <a href="" className="flex justify-center items-center gap-4">
           <div>
