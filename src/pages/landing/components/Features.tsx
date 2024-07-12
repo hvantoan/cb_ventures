@@ -7,9 +7,8 @@ export default function Features() {
     <div className="relative min-h-[calc(100vh - 72px)] w-full bg-[url('/image/course.png')] bg-cover bg-no-repeat">
       <div className="absolute inset-0 h-full w-full bg-[#091d18] z-[-1] " />
       <div className='flex justify-center'>
-        <div className="container grid grid-cols-12 md:grid-cols-1 grid-flow-row-dense gap-20 min-h-screen p-20 pr-0">
-          <div className="col-span-1"></div>
-          <div className="col-span-4 grid gap-4">
+        <div className="container min-h-screen grid sm:grid-cols-1 md:grid-cols-1 grid-cols-12  grid-flow-row-dense sm:gap-4 md:gap-4 gap-20 sm:py-4 md:py-4 py-20">
+          <div className="sm:col-span-1 md:col-span-1 col-span-6 grid gap-4">
             <h1 className="text-5xl place-content-center sm:w-full sm:text-center">
               <span className="text-primary">Tính năng </span>
             </h1>
@@ -36,7 +35,7 @@ export default function Features() {
               </h5>
             </div>
           </div>
-          <div className="col-span-6 content-center">
+          <div className="sm:col-span-1 md:col-span-1 col-span-6 content-center">
             <img src="/img/landing/feature.png" alt="" className="object-fill w-full" />
           </div>
         </div>

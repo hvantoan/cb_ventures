@@ -4,20 +4,20 @@ import { Card } from 'antd'
 
 export default function Advantage() {
   return (
-    <div className="relative min-h-[calc(100vh - 72px)] w-full bg-[url('/image/course.png')] bg-cover bg-no-repeat">
+    <div className="relative min-h-[calc(100vh - 72px)] w-full">
       <div className="absolute inset-0 h-full w-full bg-landing-bg1 z-[-1] " />
       <div className='flex justify-center'>
-        <div className="container grid min-h-screen py-20 px-40">
-          <div>
+        <div className="container grid min-h-screen sm:py-4 md:py-4 py-20">
+          <div className='w-full'>
             <h2 className="text-5xl w-full place-self-center text-center text-primary">Tầm nhìn - Nhiệm vụ</h2>
-            <div className="flex  justify-center">
-              <p className="text-white/60 pt-5 pb-10 text-lg w-[700px] text-center">
+            <div className="flex justify-center">
+              <p className="text-white/60 pt-5 pb-10 text-lg max-w-[700px] text-center">
                 Chúng tôi đã xây dựng một hệ thống tài chính công nghệ giúp khách hàng kiếm thêm thu nhập thụ động trên
                 các sàn thương mại điện tử.
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-1 md:grid-cols-1 grid-cols-3 gap-4">
             <div className="rounded-2xl drop-shadow-lg grid gap-4 p-8 bg-[#0a1f19] border border-primary">
               <div className="flex justify-center">
                 <Card className="rounded-full w-[125px] h-[125px]">

@@ -3,8 +3,10 @@ export default function Partner() {
     <div className="relative min-h-[calc(100vh - 72px)] w-full bg-[url('/image/course.png')] bg-cover bg-no-repeat">
       <div className="absolute inset-0 h-full w-full bg-[#01291e] z-[-1] " />
       <div className='flex justify-center'>
-        <div className="container flex justify-between px-20 py-6">
-          <a className="text-secondary-hbr text-4xl text-bold">coinbase</a>
+        <div className="container grid grid-cols-6 sm:grid-cols-2 md:grid-cols-2 sm:gap-4 md:gap-4 py-4">
+          <div className="flex justify-center items-center gap-4">
+            <a className="text-secondary-hbr text-4xl text-bold">coinbase</a>
+          </div>
           <a href="" className="flex justify-center items-center gap-4">
             <div>
               <img
@@ -38,10 +40,13 @@ export default function Partner() {
             </div>
             <p className="text-pink text-3xl ml-[5px] content-center">Dropbox</p>
           </a>
-          <a className="text-pink text-4xl text-bold content-center">
+
+          <div className="flex justify-center items-center gap-4">
             <img alt="" src="/img/icon/webflow-icon.png" width={100} height={60} className="scale-150"></img>
-          </a>
-          <a className="text-link text-4xl text-bold content-center">zoom</a>
+          </div>
+          <div className="flex justify-center items-center gap-4">
+            <a className="text-secondary-hbr text-4xl text-bold">zoom</a>
+          </div>
         </div>
       </div>
     </div>

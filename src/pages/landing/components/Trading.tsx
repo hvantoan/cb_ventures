@@ -7,15 +7,15 @@ export default function Trading() {
     <div className="relative min-h-[calc(100vh - 72px)] w-full bg-[url('/image/course.png')] bg-cover bg-no-repeat">
       <div className="absolute inset-0 h-full w-full z-[-1]  bg-secondary" />
       <div className='flex justify-center'>
-        <div className="container grid grid-cols-10 md:grid-cols-1 grid-flow-row-dense gap-20 min-h-screen content-center p-20 ">
-          <div className="col-span-4">
-            <div className="w-full h-full">
+        <div className="container min-h-screen grid grid-cols-10 sm:grid-cols-1 md:grid-cols-1 sm:gap-4 md:gap-4 gap-20 sm:py-4 md:py-4 py-20">
+          <div className="sm:col-span-1 md:col-span-1 col-span-4 w-full">
+            <div className="w-full h-full content-center">
               <img src="/img/landing/trading.png" alt="hero" className="object-contain w-full" />
             </div>
           </div>
-          <div className="col-span-6">
+          <div className="sm:col-span-1 md:col-span-1 col-span-6">
             <div className="grid gap-4">
-              <h1 className="text-6xl">
+              <h1 className="sm:text-4xl md:text-5xl text-6xl">
                 Meet<span className="text-primary"> Our Company </span>
                 Unless Miss The Opportunity
               </h1>

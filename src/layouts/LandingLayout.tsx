@@ -11,13 +11,14 @@ const { Content } = Layout
 
 import config from '@/config/config'
 import { RootState } from '@/redux/store'
-import { changeMenuMode } from '@/redux/themeLayout/reducers'
+import { changeLayoutMode, changeMenuMode } from '@/redux/themeLayout/reducers'
 const { theme } = config
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
   const dispatch = useDispatch()
-  const { isLoggedIn, rtl, mainContent } = useSelector((state: RootState) => {
+  const { topMenu, collapsed, isLoggedIn, rtl, mainContent } = useSelector((state: RootState) => {
     return {
+      topMenu: state.layout.topMenu,
       collapsed: state.layout.menuCollapse,
       isLoggedIn: state.auth.isLoggedIn,
       rtl: state.layout.rtlData,
@@ -38,7 +39,6 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
     const html: any = document.querySelector('html')
     html.setAttribute('dir', 'rtl')
   }
-
   const router = useRouter()
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
       <HeaderTop />
       <div className="flex flex-row gap-5 mt-[72px]">
         <Sidebar />
-        <Layout className="max-w-full duration-[300ms]">
+        <Layout className="max-w-full duration-[300ms] overflow-auto">
           <Content>
             {children}
             <Footer />

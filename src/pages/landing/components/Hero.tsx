@@ -8,10 +8,10 @@ export default function Hero({ }) {
     <div className="relative min-h-[calc(100vh - 72px)] w-full">
       <div className="absolute inset-0 h-full w-full bg-[#00150f] z-[-1]" />
       <div className='flex justify-center'>
-        <div className="min-h-screen container grid items-center grid-flow-row-dense sm:grid-cols-1 grid-cols-2 sm:gap-4 gap-20 sm:p-4 p-20 ">
+        <div className="min-h-screen container grid items-center sm:grid-cols-1 md:grid-cols-1 grid-cols-2 sm:gap-4 md:gap-4 gap-20">
           <div>
             <div className="grid gap-10">
-              <h1 className="text-4xl md:text-6xl">
+              <h1 className="sm:text-4xl md:text-5xl text-6xl">
                 Đầu tư tiền của bạn với <span className="text-primary">Lợi nhuận cao hơn</span>
               </h1>
               <p className="text-white text-lg sm:text-base">

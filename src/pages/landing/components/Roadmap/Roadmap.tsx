@@ -17,27 +17,27 @@ export default function Roadmap({ data, roadDone }: RoadmapProps) {
 
   return (
     <div className="relative min-h-[calc(100vh - 72px)] w-full">
-      <div className="absolute inset-0 h-full w-full bg-[#0b1f1a] z-[-1] " /> // TODO: Uncomment this line
+      <div className="absolute inset-0 h-full w-full bg-[#0b1f1a] z-[-1] " />
       <div className='flex justify-center'>
-        <div className="container justify-center grid min-h-screen p-20">
+        <div className="container justify-center grid min-h-screen">
           <div>
             <h2 className="text-5xl w-full place-self-center text-center text-primary">Roadmap</h2>
             <div className="flex justify-center">
-              <p className="text-white/60 pt-5 pb-10 text-lg w-[700px] text-center ">
+              <p className="text-white/60 pt-5 pb-10 text-lg text-center ">
                 Tạo ra một lộ trình sản phẩm giống như lên kế hoạch cho một chuyến đi đường.Đó là tất cả về việc thực hiện
                 đúng các bước để đến đích của bạn.
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-12">
-            <div className="col-span-5 grid gap-10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-2 grid-cols-12">
+            <div className="sm:col-span-1 md:col-span-1 col-span-5 grid gap-10">
               <div className="h-[70px]" />
               {left.map((item: RoadmapItem) => {
                 return <RoadmapCard isLeft={false} data={item} />
               })}
               {data.length % 2 !== 0 && <div className="h-[70px]" />}
             </div>
-            <div className="flex justify-center w-full col-span-2">
+            <div className="flex justify-center w-full sm:col-span-1 md:col-span-1 col-span-2">
               <div className="h-full w-[12px] py-[90px]">
                 <div className={`absolute bg-primary rounded w-[12px] z-10`} style={{
                   height: `${activeHeight}px`
@@ -45,7 +45,7 @@ export default function Roadmap({ data, roadDone }: RoadmapProps) {
                 <div className="bg-success-transparent w-[12px] h-full rounded" />
               </div>
             </div>
-            <div className="col-span-5 grid gap-10">
+            <div className="sm:col-span-1 md:col-span-1 col-span-5 grid gap-10">
               {right.map((item: RoadmapItem) => {
                 return <RoadmapCard isLeft data={item} />
               })
