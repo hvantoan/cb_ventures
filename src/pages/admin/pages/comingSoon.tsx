@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-no-bind */
-/* eslint-disable react/react-in-jsx-scope */
 import { Col, Form, Input, Row } from 'antd'
 import Countdown from 'react-countdown'
 import FontAwesome from 'react-fontawesome'

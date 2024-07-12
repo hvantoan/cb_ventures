@@ -20,57 +20,35 @@ import Partner from './components/Partner'
 import Trading from './components/Trading'
 import Features from './components/Features'
 import Advantage from './components/Advantage'
-import Roadmap from './components/Roadmap';
+import Roadmap from './components/Roadmap/Roadmap';
+import roadmapData from "@/demoData/roadmap.json"
 
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
-import { RoadmapItem } from './components/RoadmapCard'
+import { RoadmapItem } from './components/Roadmap/RoadmapCard'
 
 export const getServerSideProps: GetServerSideProps = (async (ctx) => {
   return {
     props: {
-      Roadmaps: [{ title: 'title', description: 'description', index: 1 }, { title: 'title', description: 'description', index: 2 }, { title: 'title', description: 'description', index: 3 }]
+      Roadmaps: roadmapData.data,
+      RoadDone: 3
     }
   }
 }) satisfies GetServerSideProps<{
   Roadmaps: RoadmapItem[];
+  RoadDone: number;
 }>
 
-const Landing = ({ Roadmaps }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Landing = ({ Roadmaps, RoadDone }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
-    <>
+    <section>
       <Hero />
       <Partner />
       <Trading />
       <Features />
       <Advantage />
-      <Roadmap data={Roadmaps} />
+      <Roadmap data={Roadmaps} roadDone={RoadDone} />
+      {/* TODO: Intergate api to load pricing map */}
       <div className="flex-1 h-auto pb-[30px] bg-transparent sm:w-full">
-        <div className="bg-landing-bg1 py-[100px] bg-full">
-          <PageContainer>
-            <Row gutter={25} className="px-64 place-content-center">
-              <ProductRoadMap></ProductRoadMap>
-            </Row>
-            <Row gutter={25} className="px-64">
-              <Col xxl={11} sm={11} xs={11} className="pt-[170px]">
-                <FramingIdea></FramingIdea>
-                <FinalDesign></FinalDesign>
-                <LaunchProject></LaunchProject>
-              </Col>
-              <Col xxl={2} sm={11} xs={2}>
-                <div className="flex justify-center w-full">
-                  <div className="h-[1170px] bg-success-transparent w-[12px] rounded">
-                    <div className="w-full h-[800px] bg-primary rounded"></div>
-                  </div>
-                </div>
-              </Col>
-              <Col xxl={11} sm={11} xs={11}>
-                <ProductReseach></ProductReseach>
-                <DesignFirstDraft></DesignFirstDraft>
-                <ProjectDevelopment></ProjectDevelopment>
-              </Col>
-            </Row>
-          </PageContainer>
-        </div>
         <div className="bg-success-transparent py-[100px] bg-full">
           <PageContainer>
             <Row gutter={25} className="px-64 place-content-center">
@@ -117,7 +95,7 @@ const Landing = ({ Roadmaps }: InferGetServerSidePropsType<typeof getServerSideP
           <Footer></Footer>
         </div>
       </div>
-    </>
+    </section>
   )
 }
 
