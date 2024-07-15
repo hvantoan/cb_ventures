@@ -1,7 +1,7 @@
 import { UilFacebook, UilInstagram, UilLinkedin, UilRss, UilShareAlt, UilTwitter } from '@iconscout/react-unicons'
 import React from 'react'
 import Link from 'next/link'
-import PopOver from '@/components/Popup'
+import PopOver from '@/components/Popup/PopOver'
 import { Buttons } from '@/components/Buttons'
 
 function ShareButtonPageHeader() {

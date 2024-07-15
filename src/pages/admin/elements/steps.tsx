@@ -3,7 +3,7 @@ import { Row, Col, Divider, Steps } from 'antd'
 import { UserOutlined, SolutionOutlined, CreditCardOutlined, SmileOutlined } from '@ant-design/icons'
 import { PageHeaders } from '@/components/PageHeaders'
 
-import PopOver from '@/components/Popup'
+import PopOver from '@/components/Popup/PopOver'
 import { Step, StepsWidget } from '@/components/steps'
 
 const customDot = (dot: any, { status, index }: any) => (

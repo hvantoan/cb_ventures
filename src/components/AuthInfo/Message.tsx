@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import PopOver from '@/components/Popup'
+import PopOver from '@/components/Popup/PopOver'
 import Heading from '@/components/Heading'
 import Messages from '@/demoData/message.json'
 import { useSelector } from 'react-redux'

@@ -3,7 +3,7 @@ import { Popover } from 'antd'
 import Link from 'next/link'
 import { UilCheckCircle } from '@iconscout/react-unicons'
 
-export function PopOver(props: any) {
+export default function PopOver(props: any) {
   const { content, placement, title, action, children } = props
   const contents = <div>{content ? content : defaultContent}</div>
 

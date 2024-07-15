@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useSelector } from 'react-redux'
 import { ReactSVG } from 'react-svg'
 
-import PopOver from '@/components/Popup'
+import PopOver from '@/components/Popup/PopOver'
 import Heading from '@/components/Heading'
 import { RootState } from '@/redux/store'
 
