@@ -4,7 +4,7 @@ import { Button } from 'antd'
 
 export default function Trading() {
   return (
-    <div className="relative min-h-[calc(100vh - 72px)] w-full bg-[url('/image/course.png')] bg-cover bg-no-repeat">
+    <div className="relative min-h-[calc(100vh - 72px)] w-full">
       <div className="absolute inset-0 h-full w-full z-[-1]  bg-secondary" />
       <div className='flex justify-center'>
         <div className="container min-h-screen grid grid-cols-10 sm:grid-cols-1 md:grid-cols-1 sm:gap-4 md:gap-4 gap-20 sm:py-4 md:py-4 py-20">

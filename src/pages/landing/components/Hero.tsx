@@ -7,7 +7,12 @@ export default function Hero({ }) {
   return (
     <div className="relative min-h-[calc(100vh - 72px)] w-full">
       <div className="absolute inset-0 h-full w-full bg-[#00150f] z-[-1]" />
-      <div className='container mx-auto min-h-screen grid sm:grid-cols-1 md:grid-cols-1 grid-cols-2 sm:gap-4 md:gap-4 gap-20 sm:p-4 md:p-4 p-20'>
+      <div className='
+            container mx-auto 
+            grid sm:grid-cols-1 md:grid-cols-1 grid-cols-2 
+            sm:min-h-0 md:min-h-0 min-h-screen
+            sm:gap-4 md:gap-4 gap-20 sm:py-4 sm:px-0 md:py-4 md:px-0 lg:p-4 p-20
+        '>
         <div>
           <div className="grid gap-4">
             <h1 className="sm:text-4xl md:text-5xl text-6xl">
