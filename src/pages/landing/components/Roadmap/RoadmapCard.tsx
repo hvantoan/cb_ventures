@@ -12,7 +12,7 @@ export type RoadmapItem = {
 }
 
 
-export const RoadmapCard = ({ data, isLeft }: RoadmapCardProps) => {
+export default function RoadmapCard({ data, isLeft }: RoadmapCardProps) {
   return (
     <div className={`${isLeft ? "bg-gradient-to-l" : "bg-gradient-to-r"} from-[#0b1f1a] to-[#132924] sm:p-4 md:p-4 p-8 flex-row items-stretch rounded-[16px] h-[180px]`}>
       <div className='flex justify-between'>

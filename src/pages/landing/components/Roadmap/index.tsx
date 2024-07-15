@@ -1,8 +1,7 @@
 'use client'
 import React from 'react'
-
-import { RoadmapCard, RoadmapItem } from './RoadmapCard';
-
+import RoadmapCard from './RoadmapCard';
+import type { RoadmapItem } from './RoadmapCard'
 export type RoadmapProps = {
   data: RoadmapItem[]
   roadDone: number

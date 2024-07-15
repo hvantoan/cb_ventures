@@ -9,7 +9,7 @@ import roadmapData from "@/demoData/roadmap.json"
 import pricings from "@/demoData/pricing.json"
 
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
-import { RoadmapItem } from './components/Roadmap/RoadmapCard'
+import type { RoadmapItem } from './components/Roadmap/RoadmapCard'
 import { PageContainer } from '@ant-design/pro-layout'
 import { Row } from 'antd'
 import BasicPricing from './Pricing/BasicPricing'
