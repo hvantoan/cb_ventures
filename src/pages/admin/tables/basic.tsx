@@ -4,7 +4,6 @@ import Heading from '@/components/Heading'
 import { PageHeaders } from '@/components/PageHeaders'
 import DragAndDropTable from '@/components/table/DragTable'
 import SaleByLocation from '@/dashboard/demo-1/SalesByLocation'
-import BestSeller from '@/dashboard/demo-2/BestSeller'
 import TopSellingProduct from '@/dashboard/demo-1/TopSellingProducts'
 import BrowserState from '@/dashboard/demo-1/BrowserState'
 
@@ -70,7 +69,7 @@ function Tables() {
             <SaleByLocation />
           </Col>
           <Col xs={24} className="mb-[25px]">
-            <BestSeller />
+            {/* <BestSeller /> */}
           </Col>
           <Col xl={12} xs={24} className="mb-[25px]">
             <TopSellingProduct />

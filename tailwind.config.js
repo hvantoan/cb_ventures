@@ -149,7 +149,8 @@ module.exports = {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'landing-bg1': "url('/img/landing/landing-bg1.png')",
         'landing-bg2': "url('/img/landing/landing-bg2.png')",
-        'landing-bg3': "url('/img/landing/landing-bg3.jpg')"
+        'landing-bg3': "url('/img/landing/landing-bg3.jpg')",
+        "pricing": "url('/img/landing/pricing-bg.png')",
       },
     },
     screens: {

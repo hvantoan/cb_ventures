@@ -3,13 +3,13 @@ import { Row, Col, Skeleton } from 'antd'
 import { PageHeaders } from '@/components/PageHeaders'
 import dynamic from 'next/dynamic'
 
-const OrderSummary = dynamic(() => import('../ecommerce/overview/Ordersummary'), {
-  loading: () => (
-    <>
-      <Skeleton active />
-    </>
-  ),
-})
+// const OrderSummary = dynamic(() => import('../ecommerce/overview/Ordersummary'), {
+//   loading: () => (
+//     <>
+//       <Skeleton active />
+//     </>
+//   ),
+// })
 const SalesByLocation = dynamic(() => import('@/dashboard/demo-1/SalesByLocation'), {
   loading: () => (
     <>
@@ -41,7 +41,7 @@ function WidgetsCard() {
           <Row gutter={25}>
             <Col xxl={8} xl={10} xs={24}>
               <div className="bg-white dark:bg-white/10 xl:mb-[25px] p-[25px] rounded-[4px]">
-                <OrderSummary subtotal={1200} />
+                {/* <OrderSummary subtotal={1200} /> */}
               </div>
             </Col>
             <Col xxl={16} xl={14} xs={24}>

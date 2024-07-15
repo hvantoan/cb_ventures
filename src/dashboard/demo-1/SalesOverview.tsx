@@ -3,14 +3,15 @@ import { UilBookOpen, UilFile, UilFileAlt, UilPrint, UilTimes } from '@iconscout
 import Link from 'next/link'
 import { useSelector } from 'react-redux'
 import { Progress } from 'antd'
-import { Cards } from '@/components/Cards/Frame/cards-frame'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
 
 import salesData from '../../demoData/salesData.json'
+import { RootState } from '@/redux/store'
 
 const SalesOverview = React.memo(() => {
-  const { mainContent } = useSelector((state: any) => {
+  const { mainContent } = useSelector((state: RootState) => {
     return {
-      mainContent: state.ChangeLayoutMode.mode,
+      mainContent: state.layout.mode,
     }
   })
 

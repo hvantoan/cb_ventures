@@ -3,7 +3,6 @@ import { Row, Col } from 'antd'
 import { PageHeaders } from '@/components/PageHeaders'
 
 import SalesGrowth from '@/dashboard/demo-1/SalesGrowth'
-import SaleRevenue from '@/dashboard/demo-2/SaleRevenue'
 import SalesOverview from '@/dashboard/demo-1/SalesOverview'
 import TotalLineChart from '@/dashboard/demo-1/TotalLineChart'
 // import MonthlyEarning from '@/dashboard/demo-3/MonthlyEarning';
@@ -35,7 +34,6 @@ function Widgets() {
             <SalesOverview />
           </Col>
           <Col xxl={15} xs={24} className="mb-[25px]">
-            <SaleRevenue />
           </Col>
           <Col xxl={9} xs={24}>
             <SalesGrowth />

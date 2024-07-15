@@ -41,7 +41,7 @@ function Gallery() {
 
   const handleChange = (value: any) => {
     //@ts-ignore
-    dispatch(galleryFilter('category', value))
+    // dispatch(galleryFilter('category', value))
     setState({
       ...state,
       activeClass: value,
@@ -135,7 +135,7 @@ function Gallery() {
               </div>
             </Col>
           ) : (
-            gallery.map((item: any) => {
+            gallery?.map((item: any) => {
               const { id } = item
               return (
                 <Col key={id} xxl={6} lg={8} sm={12} xs={24}>
