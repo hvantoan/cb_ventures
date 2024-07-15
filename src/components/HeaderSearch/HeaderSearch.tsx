@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 // import { headerSearchAction } from '@/redux/headerSearch/actionCreator'
 
-const PopOver = dynamic(() => import('../Popup'), {
+const PopOver = dynamic(() => import('../Popup/PopOver'), {
   ssr: false,
 })
 
