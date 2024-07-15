@@ -14,7 +14,7 @@ export type PricingCardProps = {
     features: string[]
 }
 
-export default function PricingCard(data: PricingCardProps) {
+export function PricingCard(data: PricingCardProps) {
     return (
         <div className="w-full grid gap-4 sm:p-4 md:p4 p-8 bg-secondary/80 rounded-[16px] transform transition duration-300 sm:hover:scale-100 md:hover:scale-100 hover:scale-110 hover:border-primary hover:border">
             <div className='grid gap-2'>

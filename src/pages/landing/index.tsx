@@ -1,42 +1,31 @@
 import React from 'react'
-import Hero from './components/Hero'
-import Partner from './components/Partner'
-import Trading from './components/Trading'
-import Features from './components/Features'
-import Advantage from './components/Advantage'
-import Roadmap from './components/Roadmap';
+import { Hero, Partner, Trading, Features, Advantage, Roadmap, Advisers, Pricing, PricingCardProps, Articles, Article } from '@/components/Landing'
 import roadmapData from "@/demoData/roadmap.json"
 import pricings from "@/demoData/pricing.json"
+import articlesData from "@/demoData/sampleCards.json"
 
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
-import type { RoadmapItem } from './components/Roadmap/RoadmapCard'
-import { PageContainer } from '@ant-design/pro-layout'
-import { Row } from 'antd'
-import BasicPricing from './Pricing/BasicPricing'
-import Pricing from './components/Pricing'
-import { PricingCardProps } from './components/Pricing/PricingCard'
-import HeadAdvisers from './MeetOurAdvisers/HeadAdvisers'
-import AdviserData from './MeetOurAdvisers/AdviserData'
-import ProTraders from './ProTraders'
-import Subscribe from './Subscribe'
-import Footer from './Footer'
+import { RoadmapItem } from '@/components/Landing/Roadmap/RoadmapCard';
+
 
 export const getServerSideProps: GetServerSideProps = (async (ctx) => {
   return {
     props: {
-      Roadmaps: roadmapData.data,
-      RoadDone: 3,
+      roadmaps: roadmapData.data,
+      roadDone: 3,
       //  Pricing card
-      Pricings: JSON.parse(JSON.stringify(pricings))
+      pricings: JSON.parse(JSON.stringify(pricings)),
+      articles: JSON.parse(JSON.stringify(articlesData.BlogCardData))
     }
   }
 }) satisfies GetServerSideProps<{
-  Roadmaps: RoadmapItem[];
-  RoadDone: number;
-  Pricings: PricingCardProps[];
+  roadmaps: RoadmapItem[];
+  roadDone: number;
+  pricings: PricingCardProps[];
+  articles: Article[];
 }>
 
-const Landing = ({ Roadmaps, RoadDone, Pricings }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Landing = ({ roadmaps, roadDone, pricings, articles }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <section>
       <Hero />
@@ -44,43 +33,16 @@ const Landing = ({ Roadmaps, RoadDone, Pricings }: InferGetServerSidePropsType<t
       <Trading />
       <Features />
       <Advantage />
-      <Roadmap data={Roadmaps} roadDone={RoadDone} />
-      <Pricing data={Pricings} />
-      {/* TODO: Intergate api to load pricing map */}
-      {/* <div className="flex-1 h-auto pb-[30px] bg-transparent sm:w-full">
-        <div className="bg-landing-bg1 py-[100px] bg-full">
-          <PageContainer>
-            <Row gutter={25} className="px-64 place-content-center">
-              <HeadAdvisers></HeadAdvisers>
-            </Row>
-            <div className="px-64 place-content-center">
-              <AdviserData></AdviserData>
-            </div>
-          </PageContainer>
-        </div>
-        <div className="bg-success-transparent py-[100px] bg-full">
-          <PageContainer>
-            <div className="px-64 place-content-center">
-              <ProTraders></ProTraders>
-            </div>
-          </PageContainer>
-        </div>
-        <div className="bg-landing-bg1 py-[100px] bg-full">
-          <PageContainer>
-            <div className="flex flex-row px-64 place-content-center ">
-              <Subscribe></Subscribe>
-            </div>
-          </PageContainer>
-        </div>
-        <div className="bg-landing-bg1 bg-full">
-          <Footer></Footer>
-        </div>
-      </div> */}
+      <Roadmap data={roadmaps} roadDone={roadDone} />
+      <Pricing data={pricings} />
+      <Advisers />
+      <Articles data={articles} />
+      {/* <Footer /> */}
     </section>
   )
 }
-
-
-
 export default Landing
+
+
+
 

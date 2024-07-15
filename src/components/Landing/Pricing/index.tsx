@@ -1,13 +1,14 @@
 'use client'
 import React from 'react'
-import PricingCard, { PricingCardProps } from './PricingCard'
+import type { PricingCardProps } from './PricingCard'
+import { PricingCard } from './PricingCard'
 
 export type PricingProps = {
     data: PricingCardProps[]
 }
 
 
-export default function Pricing({ data }: PricingProps) {
+export function Pricing({ data }: PricingProps) {
     //TODO: Uncomment this line
     return (
         <div className="relative min-h-[calc(100vh - 72px)] w-full">

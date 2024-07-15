@@ -3,7 +3,7 @@ import React from 'react'
 import { Button } from 'antd'
 import { UilArrowUpRight, UilPlayCircle } from '@iconscout/react-unicons'
 
-export default function Hero({ }) {
+export function Hero() {
   return (
     <div className="relative min-h-[calc(100vh - 72px)] w-full">
       <div className="absolute inset-0 h-full w-full bg-[#00150f] z-[-1]" />

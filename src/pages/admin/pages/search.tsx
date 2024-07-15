@@ -69,11 +69,10 @@ function SearchResult() {
                   <Link
                     href="#"
                     onClick={() => setActiveValue('all')}
-                    className={`px-[15px] py-[5px] text-13 font-medium rounded-[5px] shadow-[0_3px_6px_rgba(116,116,116,0.02)] ${
-                      activeValue === 'all'
+                    className={`px-[15px] py-[5px] text-13 font-medium rounded-[5px] shadow-[0_3px_6px_rgba(116,116,116,0.02)] ${activeValue === 'all'
                         ? 'bg-primary text-white'
                         : 'bg-white dark:bg-white/[.06] text-light dark:text-white/60'
-                    }`}
+                      }`}
                   >
                     All
                   </Link>
@@ -82,11 +81,10 @@ function SearchResult() {
                   <Link
                     href="#"
                     onClick={() => setActiveValue('webDesign')}
-                    className={`inline-block px-[15px] py-[5px] text-13 font-medium rounded-[5px] shadow-[0_3px_6px_rgba(116,116,116,0.02)] ${
-                      activeValue === 'webDesign'
+                    className={`inline-block px-[15px] py-[5px] text-13 font-medium rounded-[5px] shadow-[0_3px_6px_rgba(116,116,116,0.02)] ${activeValue === 'webDesign'
                         ? 'bg-primary text-white'
                         : 'bg-white dark:bg-white/[.06] text-light dark:text-white/60'
-                    }`}
+                      }`}
                   >
                     Web Design
                   </Link>
@@ -95,11 +93,10 @@ function SearchResult() {
                   <Link
                     href="#"
                     onClick={() => setActiveValue('uiDesign')}
-                    className={`inline-block px-[15px] py-[5px] text-13 font-medium rounded-[5px] shadow-[0_3px_6px_rgba(116,116,116,0.02)] ${
-                      activeValue === 'uiDesign'
+                    className={`inline-block px-[15px] py-[5px] text-13 font-medium rounded-[5px] shadow-[0_3px_6px_rgba(116,116,116,0.02)] ${activeValue === 'uiDesign'
                         ? 'bg-primary text-white'
                         : 'bg-white dark:bg-white/[.06] text-light dark:text-white/60'
-                    }`}
+                      }`}
                   >
                     UI Design
                   </Link>
@@ -108,11 +105,10 @@ function SearchResult() {
                   <Link
                     href="#"
                     onClick={() => setActiveValue('wireframe')}
-                    className={`inline-block px-[15px] py-[5px] text-13 font-medium rounded-[5px] shadow-[0_3px_6px_rgba(116,116,116,0.02)] ${
-                      activeValue === 'wireframe'
+                    className={`inline-block px-[15px] py-[5px] text-13 font-medium rounded-[5px] shadow-[0_3px_6px_rgba(116,116,116,0.02)] ${activeValue === 'wireframe'
                         ? 'bg-primary text-white'
                         : 'bg-white dark:bg-white/[.06] text-light dark:text-white/60'
-                    }`}
+                      }`}
                   >
                     Wireframe
                   </Link>
@@ -121,11 +117,10 @@ function SearchResult() {
                   <Link
                     href="#"
                     onClick={() => setActiveValue('presentation')}
-                    className={`inline-block px-[15px] py-[5px] text-13 font-medium rounded-[5px] shadow-[0_3px_6px_rgba(116,116,116,0.02)] ${
-                      activeValue === 'presentation'
+                    className={`inline-block px-[15px] py-[5px] text-13 font-medium rounded-[5px] shadow-[0_3px_6px_rgba(116,116,116,0.02)] ${activeValue === 'presentation'
                         ? 'bg-primary text-white'
                         : 'bg-white dark:bg-white/[.06] text-light dark:text-white/60'
-                    }`}
+                      }`}
                   >
                     Presentation
                   </Link>

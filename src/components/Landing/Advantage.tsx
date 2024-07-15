@@ -2,7 +2,7 @@
 import React from 'react'
 import { Card } from 'antd'
 
-export default function Advantage() {
+export function Advantage() {
   return (
     <div className="relative min-h-[calc(100vh - 72px)] w-full">
       <div className="absolute inset-0 h-full w-full bg-landing-bg1 z-[-1] " />

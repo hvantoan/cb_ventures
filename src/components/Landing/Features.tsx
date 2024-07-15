@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 
-export default function Features() {
+export function Features() {
   return (
     <div className="relative min-h-[calc(100vh - 72px)] w-full bg-[url('/image/course.png')] bg-cover bg-no-repeat">
       <div className="absolute inset-0 h-full w-full bg-[#091d18] z-[-1] " />

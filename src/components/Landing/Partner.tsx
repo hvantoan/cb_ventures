@@ -1,4 +1,4 @@
-export default function Partner() {
+export function Partner() {
   return (
     <div className="relative min-h-[calc(100vh - 72px)] w-full">
       <div className="absolute inset-0 h-full w-full bg-[#01291e] z-[-1] " />
