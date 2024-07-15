@@ -1,10 +1,10 @@
 import { Enpoints } from '@/constants/enpoints'
-import { LoginReq, RegisterReq } from '@/models/AuthModel'
 import { axiosNotToken } from './axiosClient'
+import { LoginState, RegisterState } from '@/redux/auth/actionCreator'
 
 const authApi = {
-  login: (data: LoginReq) => axiosNotToken.post(Enpoints.LOGIN, data),
-  register: (body: RegisterReq) => axiosNotToken.post(Enpoints.REGISTER, body),
+  login: (data: LoginState) => axiosNotToken.post(Enpoints.LOGIN, data),
+  register: (body: RegisterState) => axiosNotToken.post(Enpoints.REGISTER, body),
 }
 
 export default authApi

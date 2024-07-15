@@ -18,7 +18,7 @@ import Message from './Message'
 import Notification from './Notification'
 import Settings from './settings'
 
-import PopOver from '@/components/popup'
+import PopOver from '@/components/Popup'
 import Heading from '@/components/Heading'
 import DropDown from '@/components/Dropdown'
 import { logOutAction } from '@/redux/auth/reducers'

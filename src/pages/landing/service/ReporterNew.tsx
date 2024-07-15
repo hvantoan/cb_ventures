@@ -1,7 +1,5 @@
 import React from 'react'
-import { Row, Col, Card, Button, Image } from 'antd'
-import { Cards } from '@/components/Cards/Frame/cards-frame'
-import { scales } from 'chart.js'
+import { Card } from 'antd'
 
 const ReporterNew = React.memo((column: any) => {
   return (

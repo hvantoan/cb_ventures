@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Row, Col } from 'antd'
 import { PageHeaders } from '@/components/PageHeaders'
 import { Buttons } from '@/components/Buttons'
-import { Modals, alertModal } from '@/components/Modals/antd-modals'
+import { Modals, alertModal } from '@/components/Modals/Modals'
 
 const info = () => {
   alertModal.info({
@@ -14,7 +14,7 @@ const info = () => {
         <p className="text-light dark:text-white/[.87] mb-4">Some contents...</p>
       </div>
     ),
-    onOk() {},
+    onOk() { },
   })
 }
 
@@ -65,9 +65,9 @@ const showConfirm = () => {
     onOk() {
       return new Promise((resolve, reject) => {
         setTimeout(Math.random() > 0.5 ? resolve : reject, 1000)
-      }).catch(() => {})
+      }).catch(() => { })
     },
-    onCancel() {},
+    onCancel() { },
   })
 }
 

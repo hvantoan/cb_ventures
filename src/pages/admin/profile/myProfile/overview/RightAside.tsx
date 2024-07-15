@@ -5,14 +5,14 @@ import Link from 'next/link'
 import { Col, Row } from 'antd'
 import ModalVideo from 'react-modal-video'
 import { Buttons } from '@/components/Buttons'
-import { profileFriendsChangeStatus } from '@/redux/profile/actionCreator'
+// import { profileFriendsChangeStatus } from '@/redux/profile/actionCreator'
 
 function RightAside() {
   const dispatch = useDispatch()
   const { friends, gallery } = useSelector((state: any) => {
     return {
-      friends: state.Profile.friends,
-      gallery: state.gallery.data,
+      friends: [],// state.Profile.friends,
+      gallery: [],// state.gallery.data,
     }
   })
 

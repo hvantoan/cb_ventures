@@ -6,7 +6,7 @@ import { Buttons } from '@/components/Buttons'
 
 import { ShareButtonPageHeader } from '@/components/Buttons/ShareButton'
 import { ExportButtonPageHeader } from '@/components/Buttons/ExportButton'
-import { CalendarButtonPageHeader } from '@/components/Buttons/Calendar-button'
+import { CalendarButtonPageHeader } from '@/components/Buttons/CalendarButton'
 
 const routes = [
   {

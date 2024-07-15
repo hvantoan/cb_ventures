@@ -6,11 +6,11 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 
 import { PageHeaders } from '@/components/PageHeaders'
-import { galleryFilter } from '@/redux/gallary/actionCreator'
+// import { galleryFilter } from '@/redux/gallary/actionCreator'
 import { Buttons } from '@/components/Buttons'
 import { ShareButtonPageHeader } from '@/components/Buttons/ShareButton'
 import { ExportButtonPageHeader } from '@/components/Buttons/ExportButton'
-import { CalendarButtonPageHeader } from '@/components/Buttons/Calendar-button'
+import { CalendarButtonPageHeader } from '@/components/Buttons/CalendarButton'
 
 const GalleryCards = dynamic(() => import('./overview/GalleryCard'), {
   loading: () => (
@@ -24,8 +24,8 @@ function GalleryTwo() {
   const dispatch = useDispatch()
   const { gallery, isLoading } = useSelector((state: any) => {
     return {
-      gallery: state.gallery.data,
-      isLoading: state.gallery.loading,
+      gallery: [],//state.gallery.data,
+      isLoading: [],// state.gallery.loading,
     }
   })
   const [state, setState] = useState({
@@ -34,7 +34,7 @@ function GalleryTwo() {
 
   const handleChange = (value: any) => {
     //@ts-ignore
-    dispatch(galleryFilter('category', value))
+    //    dispatch(galleryFilter('category', value))
     setState({
       ...state,
       activeClass: value,

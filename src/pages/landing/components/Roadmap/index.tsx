@@ -33,8 +33,8 @@ export default function Roadmap({ data, roadDone }: RoadmapProps) {
           <div className="grid sm:grid-cols-12 md:grid-cols-12 grid-cols-12 sm:gap-4 md:gap-4">
             {!isMobile && <div className="col-span-5 grid gap-10">
               <div className="h-[70px]" />
-              {left.map((item: RoadmapItem) => {
-                return <RoadmapCard isLeft={false} data={item} />
+              {left.map((item, idx) => {
+                return <RoadmapCard key={idx} isLeft={false} data={item} />
               })}
               {data.length % 2 !== 0 && <div className="h-[70px]" />}
             </div>}
@@ -47,8 +47,8 @@ export default function Roadmap({ data, roadDone }: RoadmapProps) {
               </div>
             </div>
             <div className="sm:col-span-10 md:col-span-10 col-span-5 grid gap-10">
-              {right.map((item: RoadmapItem) => {
-                return <RoadmapCard isLeft data={item} />
+              {right.map((item, idx) => {
+                return <RoadmapCard key={idx} isLeft data={item} />
               })}
               {data.length % 2 === 0 && !isMobile && <div className="h-[70px]" />}
             </div>

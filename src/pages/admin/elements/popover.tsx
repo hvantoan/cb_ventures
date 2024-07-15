@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col, Button } from 'antd'
 import Link from 'next/link'
 import { PageHeaders } from '@/components/PageHeaders'
-import PopOver from '@/components/popup'
+import PopOver from '@/components/Popup'
 
 function Popovers() {
   const PageRoutes = [

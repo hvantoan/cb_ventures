@@ -4,7 +4,7 @@ import React from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
-import { headerSearchAction } from '@/redux/headerSearch/actionCreator'
+// import { headerSearchAction } from '@/redux/headerSearch/actionCreator'
 
 const PopOver = dynamic(() => import('../Popup'), {
   ssr: false,
@@ -17,7 +17,7 @@ function HeaderSearch() {
 
   const search = (e: any) => {
     //@ts-ignore
-    dispatch(headerSearchAction(e.target.value))
+    // dispatch(headerSearchAction(e.target.value))
   }
 
   const content = (

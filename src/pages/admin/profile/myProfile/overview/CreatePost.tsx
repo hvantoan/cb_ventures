@@ -5,7 +5,7 @@ import { UilEllipsisH } from '@iconscout/react-unicons'
 import { Input } from 'antd'
 import { useSelector, useDispatch } from 'react-redux'
 import { Buttons } from '@/components/Buttons'
-import { submitPost } from '@/redux/profile/actionCreator'
+// import { submitPost } from '@/redux/profile/actionCreator'
 
 function Post() {
   const dispatch = useDispatch()
@@ -27,22 +27,22 @@ function Post() {
     if (textValue === '') {
       alert('Please input minumum content')
     } else {
-      dispatch(
-        //@ts-ignore
-        submitPost([
-          ...posts,
-          {
-            postId: max + 1,
-            from: 'David Warner',
-            time: new Date().getTime(),
-            img: ['/img/profile/post/postImage.png'],
-            author: '/img/chat-author/t4.jpg',
-            content: textValue,
-            like: 0,
-            comment: [],
-          },
-        ])
-      )
+      // dispatch(
+      //   //@ts-ignore
+      //   submitPost([
+      //     ...posts,
+      //     {
+      //       postId: max + 1,
+      //       from: 'David Warner',
+      //       time: new Date().getTime(),
+      //       img: ['/img/profile/post/postImage.png'],
+      //       author: '/img/chat-author/t4.jpg',
+      //       content: textValue,
+      //       like: 0,
+      //       comment: [],
+      //     },
+      //   ])
+      // )
       setTextValue('')
     }
     setTimeout(() => {

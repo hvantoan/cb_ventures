@@ -2,7 +2,7 @@ import { UilSearch } from '@iconscout/react-unicons'
 import { Input, Select, Table } from 'antd'
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { dataLiveFilter, filterWithSubmit } from '@/redux/data-filter/actionCreator'
+// import { dataLiveFilter, filterWithSubmit } from '@/redux/data-filter/actionCreator'
 import { Buttons } from '../Buttons'
 
 function DataTable({ filterOption, filterOnchange, rowSelection, tableData, columns }: any) {
@@ -14,13 +14,13 @@ function DataTable({ filterOption, filterOnchange, rowSelection, tableData, colu
   }
   const handleStatusSearch = (value: any) => {
     // @ts-ignore
-    dispatch(dataLiveFilter(value, 'status'))
+    // dispatch(dataLiveFilter(value, 'status'))
   }
 
   const handleDataUser = (e: any) => {
     const { value } = e.currentTarget
     // @ts-ignore
-    dispatch(dataLiveFilter(value, 'name'))
+    // dispatch(dataLiveFilter(value, 'name'))
   }
 
   const handleSearch = () => {

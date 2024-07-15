@@ -10,7 +10,7 @@ import {
   UilFile,
 } from '@iconscout/react-unicons'
 import Link from 'next/link'
-import { Cards } from '@/components/Cards/Frame/cards-frame'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
 import DashboardChart from '@/components/Charts/DashboardChart'
 
 const moreContent = [
@@ -207,7 +207,7 @@ function OverviewContent() {
                     },
                   },
                 }}
-                // options={chartOptions}
+              // options={chartOptions}
               />
             </div>
           </div>

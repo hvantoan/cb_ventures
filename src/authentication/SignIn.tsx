@@ -7,8 +7,7 @@ import { ReactSVG } from 'react-svg'
 import { UilFacebook, UilTwitter, UilGithub } from '@iconscout/react-unicons'
 import { CheckBox } from '@/components/Checkbox'
 import { AppDispatch } from '@/redux/store'
-import { LoginAction } from '@/redux/auth/actionCreator'
-import { LoginReq } from '@/models/AuthModel'
+import { LoginAction, LoginState } from '@/redux/auth/actionCreator'
 
 function SignIn() {
   const [error, setError] = useState('')
@@ -20,12 +19,12 @@ function SignIn() {
 
   // @ts-ignore
 
-  const [data, setData] = useState<LoginReq>({
+  const [data, setData] = useState<LoginState>({
     username: 'admin',
     password: '123',
   })
 
-  const handleLogin = async (req: LoginReq) => {
+  const handleLogin = async (req: LoginState) => {
     try {
       setError('')
       setLoading(true)

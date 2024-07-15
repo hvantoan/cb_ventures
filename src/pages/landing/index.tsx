@@ -4,7 +4,7 @@ import Partner from './components/Partner'
 import Trading from './components/Trading'
 import Features from './components/Features'
 import Advantage from './components/Advantage'
-import Roadmap from './components/Roadmap/Roadmap';
+import Roadmap from './components/Roadmap';
 import roadmapData from "@/demoData/roadmap.json"
 import pricings from "@/demoData/pricing.json"
 
@@ -47,7 +47,7 @@ const Landing = ({ Roadmaps, RoadDone, Pricings }: InferGetServerSidePropsType<t
       <Roadmap data={Roadmaps} roadDone={RoadDone} />
       <Pricing data={Pricings} />
       {/* TODO: Intergate api to load pricing map */}
-      <div className="flex-1 h-auto pb-[30px] bg-transparent sm:w-full">
+      {/* <div className="flex-1 h-auto pb-[30px] bg-transparent sm:w-full">
         <div className="bg-landing-bg1 py-[100px] bg-full">
           <PageContainer>
             <Row gutter={25} className="px-64 place-content-center">
@@ -75,7 +75,7 @@ const Landing = ({ Roadmaps, RoadDone, Pricings }: InferGetServerSidePropsType<t
         <div className="bg-landing-bg1 bg-full">
           <Footer></Footer>
         </div>
-      </div>
+      </div> */}
     </section>
   )
 }

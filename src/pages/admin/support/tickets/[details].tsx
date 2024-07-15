@@ -7,10 +7,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import Avatar from 'antd/lib/avatar/avatar'
 import Picker from 'emoji-picker-react'
 import { PageHeaders } from '@/components/PageHeaders'
-import { Cards } from '@/components/Cards/Frame/cards-frame'
-import { singlePageReade, ticketUpdateData } from '@/redux/supportTickets/actionCreator'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
+// import { singlePageReade, ticketUpdateData } from '@/redux/supportTickets/actionCreator'
 import { Buttons } from '@/components/Buttons'
-import { idGenerator } from '@/utility'
+import { idGenerator } from '@/utils'
 import data from '@/demoData/supportData.json'
 
 const PageRoutes = [

@@ -8,10 +8,8 @@ import { PageHeaders } from '@/components/PageHeaders'
 import Heading from '@/components/Heading'
 import DataTable from '@/components/table/DataTable'
 import UserListTable from '../user/overview/UserTable'
-import TaskList from '../project/[id]/overview/Tasklist'
-import ProjectList from '../project/overview/ProjectList'
 
-import { tableReadData } from '@/redux/data-filter/actionCreator'
+// import { tableReadData } from '@/redux/data-filter/actionCreator'
 
 function DataTables() {
   const dispatch = useDispatch()
@@ -342,7 +340,7 @@ function DataTables() {
                     Project List
                   </Heading>
                 </div>
-                <ProjectList />
+                {/* <ProjectList /> */}
               </div>
             </Col>
             <Col xs={24} className="mb-[25px]">
@@ -447,7 +445,7 @@ function DataTables() {
                   </Heading>
                 </div>
                 <div className="p-[25px]">
-                  <TaskList />
+                  {/* <TaskList /> */}
                 </div>
               </div>
             </Col>
