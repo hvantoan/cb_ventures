@@ -25,7 +25,8 @@ const App: FC<AppProps> = ({ Component, ...rest }) => {
   }, [])
 
   const renderLayout = () => {
-    if (pathname.startsWith('/register') || pathname.startsWith('/forgotPassword') || pathname.startsWith('/login')) {
+    console.log(pathname)
+    if (pathname === "/auth" || pathname.startsWith('auth/register') || pathname.startsWith('auth/forgotPassword') || pathname.startsWith('auth/login')) {
       return (
         <AuthLayout>
           <Component {...pageProps} />

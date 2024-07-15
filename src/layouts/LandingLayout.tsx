@@ -42,6 +42,10 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter()
 
   useEffect(() => {
+    if (router.pathname.includes('/admin')) {
+      router.pathname = '/admin'
+    }
+
     if (router.pathname == '/') {
       router.push('/landing')
     }

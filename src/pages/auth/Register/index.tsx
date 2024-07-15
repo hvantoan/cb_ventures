@@ -2,7 +2,7 @@ import { Spin } from 'antd'
 import dynamic from 'next/dynamic'
 import React from 'react'
 
-const SignIn = dynamic(() => import('../../authentication/SignIn'), {
+const SignUp = dynamic(() => import('@/pages/auth/Register/SignUp'), {
   loading: () => (
     <>
       <div className="spin flex items-center justify-center h-[calc(100vh-132px)]">
@@ -12,8 +12,8 @@ const SignIn = dynamic(() => import('../../authentication/SignIn'), {
   ),
 })
 
-const Login = () => {
-  return <SignIn />
+const Register = () => {
+  return <SignUp />
 }
 
-export default Login
+export default Register

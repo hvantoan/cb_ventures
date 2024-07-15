@@ -17,8 +17,6 @@ function SignIn() {
 
   const router = useRouter()
 
-  // @ts-ignore
-
   const [data, setData] = useState<LoginState>({
     username: 'admin',
     password: '123',
@@ -28,7 +26,6 @@ function SignIn() {
     try {
       setError('')
       setLoading(true)
-      // @ts-ignore
       dispatch(LoginAction(req)).then(() => {
         router.push('/')
       })
