@@ -4,37 +4,38 @@ import { Button, Image } from 'antd'
 
 export function Trading() {
   return (
-    <div className="relative min-h-[calc(100vh - 72px)] w-full">
-      <div className="absolute inset-0 h-full w-full z-[-1] bg-secondary" />
-      <div className="
-          container mx-auto max-w-screen-min-2xl 2xl:max-w-screen-min-lg
-          grid grid-cols-5 sm:grid-cols-1 md:grid-cols-1 
-          sm:gap-4 md:gap-4 gap-20 sm:p-4 md:p-4 py-20
-        ">
-        <div className="sm:col-span-1 md:col-span-1 col-span-2 w-full">
-          <div className="w-full h-full content-center">
+    <section className="relative w-full">
+      <div className="absolute h-full w-full bg-[#00150f] z-[-1]" />
+      <div className='container mx-auto relative grid sm:grid-cols-1 md:grid-cols-1 grid-cols-5 gap-20
+                      sm:gap-4 md:gap-4 p-20 sm:p-0 md:p-0 sm:py-8'>
+        <div className='col-span-2'>
+          <div className="">
             <img src="/img/landing/trading.png" alt="hero" className="object-contain w-full" />
           </div>
         </div>
-        <div className="sm:col-span-1 md:col-span-1 col-span-3">
-          <div className="grid gap-4">
-            <h1 className="sm:text-4xl md:text-5xl text-6xl">
-              Meet<span className="text-primary"> Our Company </span>
-              Unless Miss The Opportunity
-            </h1>
-            <p className="text-white text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur perferendis dolorum sequi, excepturi
-              tenetur nesciunt ducimus vero amet vitae nemo perspiciatis tempora rem porro, asperiores culpa at quaerat
-              eveniet iusto.
-            </p>
+        <div className='col-span-3 content-center py-8'>
+          <div className="grid gap-16 sm:gap-8">
+            <div className='grid gap-12'>
+              <h1 className="text-54 capitalize sm:text-center">
+                Meet<span className="text-primary"> Our Company </span>
+                Unless Miss The Opportunity
+              </h1>
+              <p className="text-white text-18 sm:text-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur perferendis dolorum sequi, excepturi
+                tenetur nesciunt ducimus vero amet vitae nemo perspiciatis tempora rem porro, asperiores culpa at quaerat
+                eveniet iusto.
+              </p>
+            </div>
             <div>
-              <Button className="h-12 px-4 py-2" htmlType="button" type="primary">
-                <p className="text-secondary text-xl">Explore More</p>
-              </Button>
+              <div className="sm:flex sm:justify-center">
+                <Button className="h-12 p-4" htmlType="button" type="primary">
+                  <p className="text-secondary text-20">Explore More</p>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
