@@ -18,9 +18,9 @@ export function Roadmap({ data, roadDone }: RoadmapProps) {
   return (
     <div className="relative min-h-[calc(100vh - 72px)] w-full">
       <div className="absolute inset-0 h-full w-full bg-[#0b1f1a] z-[-1] " />
-      <div className="container justify-center grid min-h-screen sm:py-4 md:py-4 py-20">
+      <div className="container mx-auto grid sm:py-4 md:py-4 py-20">
         <div>
-          <h2 className="text-5xl w-full place-self-center text-center text-primary">Roadmap</h2>
+          <h2 className="sm:text-4xl md:text-5xl text-6xl w-full place-self-center text-center text-primary">Roadmap</h2>
           <div className="flex justify-center">
             <p className="text-white/60 pt-5 pb-10 text-lg text-center ">
               Tạo ra một lộ trình sản phẩm giống như lên kế hoạch cho một chuyến đi đường.Đó là tất cả về việc thực hiện

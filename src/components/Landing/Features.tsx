@@ -6,10 +6,13 @@ export function Features() {
     <div className="relative min-h-[calc(100vh - 72px)] w-full bg-[url('/image/course.png')] bg-cover bg-no-repeat">
       <div className="absolute inset-0 h-full w-full bg-[#091d18] z-[-1] " />
       <div className='flex justify-center'>
-        <div className="container min-h-screen grid sm:grid-cols-1 md:grid-cols-1 grid-cols-12  grid-flow-row-dense sm:gap-4 md:gap-4 gap-20 sm:py-4 md:py-4 py-20">
+        <div className="container mx-auto
+            grid sm:grid-cols-1 md:grid-cols-1 grid-cols-12
+            sm:gap-4 md:gap-4 gap-20 sm:p-4 md:p-4  py-20
+          ">
           <div className="sm:col-span-1 md:col-span-1 col-span-6 grid gap-4">
-            <h1 className="text-5xl place-content-center sm:w-full sm:text-center">
-              <span className="text-primary">Tính năng </span>
+            <h1 className="sm:text-4xl md:text-5xl text-6xl">
+              <span className="text-primary">Tính năng</span>
             </h1>
             <p className="text-white/60 text-lg place-content-center sm:w-full sm:text-center">
               Mở khóa toàn bộ tiềm năng của sản phẩm của chúng tôi với các tính năng tuyệt vời và hỗ trợ khách hàng hàng
@@ -35,7 +38,7 @@ export function Features() {
             </div>
           </div>
           <div className="sm:col-span-1 md:col-span-1 col-span-6 content-center">
-            <img src="/img/landing/feature.png" alt="" className="object-fill w-full" />
+            <img src="/img/landing/feature.png" alt="feature" className="object-fill w-full" />
           </div>
         </div>
       </div>

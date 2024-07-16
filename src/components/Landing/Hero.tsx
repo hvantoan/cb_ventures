@@ -10,7 +10,7 @@ export function Hero() {
       <div className='
             container mx-auto max-w-screen-min-2xl
             grid sm:grid-cols-1 md:grid-cols-1 grid-cols-2
-            sm:min-h-0 md:min-h-0 min-h-screen
+            sm:min-h-0 md:min-h-0
             sm:gap-4 md:gap-4 gap-20 sm:p-4 md:p-4 lg:p-4 py-20
         '>
         <div>

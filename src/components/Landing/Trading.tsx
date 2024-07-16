@@ -8,7 +8,8 @@ export function Trading() {
       <div className="absolute inset-0 h-full w-full z-[-1] bg-secondary" />
       <div className="
           container mx-auto max-w-screen-min-2xl 2xl:max-w-screen-min-lg
-          grid grid-cols-5 sm:grid-cols-1 md:grid-cols-1 sm:gap-4 md:gap-4 gap-20 sm:py-4 md:py-4 py-20
+          grid grid-cols-5 sm:grid-cols-1 md:grid-cols-1 
+          sm:gap-4 md:gap-4 gap-20 sm:p-4 md:p-4 py-20
         ">
         <div className="sm:col-span-1 md:col-span-1 col-span-2 w-full">
           <div className="w-full h-full content-center">
