@@ -5,8 +5,6 @@ import { Cards } from '@/components/Cards/Frame/CardsFrame'
 import { Buttons } from '@/components/Buttons'
 import Heading from '@/components/Heading'
 
-// @Todo console warning from button
-
 function DashboardBase() {
   const PageRoutes = [
     {

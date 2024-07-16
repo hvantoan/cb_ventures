@@ -5,8 +5,7 @@ import pricings from "@/demoData/pricing.json"
 import articlesData from "@/demoData/sampleCards.json"
 
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
-import { RoadmapItem } from '@/components/Landing/Roadmap/RoadmapCard';
-
+import type { RoadmapItem } from '@/components/Landing';
 
 export const getServerSideProps: GetServerSideProps = (async (ctx) => {
   return {

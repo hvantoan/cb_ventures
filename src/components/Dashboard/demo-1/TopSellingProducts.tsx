@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Table } from 'antd'
 import { Cards } from '@/components/Cards/Frame/CardsFrame'
 
-import topProduct from '../../demoData/table-data.json'
+import topProduct from '@/demoData/table-data.json'
 interface sellingData {
   today: string[][]
   week: string[][]

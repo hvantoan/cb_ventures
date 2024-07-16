@@ -8,15 +8,15 @@ export function Hero() {
     <div className="relative min-h-[calc(100vh - 72px)] w-full">
       <div className="absolute inset-0 h-full w-full bg-[#00150f] z-[-1]" />
       <div className='
-            container mx-auto 
-            grid sm:grid-cols-1 md:grid-cols-1 grid-cols-2 
+            container mx-auto max-w-screen-min-2xl
+            grid sm:grid-cols-1 md:grid-cols-1 grid-cols-2
             sm:min-h-0 md:min-h-0 min-h-screen
-            sm:gap-4 md:gap-4 gap-20 sm:py-4 sm:px-0 md:py-4 md:px-0 lg:p-4 p-20
+            sm:gap-4 md:gap-4 gap-20 sm:p-4 md:p-4 lg:p-4 py-20
         '>
         <div>
           <div className="grid gap-4">
             <h1 className="sm:text-4xl md:text-5xl text-6xl">
-              Đầu tư tiền của bạn với <span className="text-primary">Lợi nhuận cao hơn</span>
+              Đầu tư tiền của bạn với <span className="text-primary">Lợi nhuận cao</span>
             </h1>
             <p className="text-white text-lg sm:text-base">
               Trong bối cảnh thị trường tài chính năng động, độ chính xác và hiểu biết là điều quan trọng, CB Ventures

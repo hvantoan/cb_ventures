@@ -6,7 +6,7 @@ import React, { useState } from 'react'
 import { Cards } from '@/components/Cards/Frame/CardsFrame'
 import DashboardChart from '@/components/Charts/DashboardChart'
 
-import chartData from '../../demoData/dashboardChartContent.json'
+import chartData from '@/demoData/dashboardChartContent.json'
 
 const SalesGrowth = React.memo(() => {
   const salesGrowthData: any = chartData.salesGrowth

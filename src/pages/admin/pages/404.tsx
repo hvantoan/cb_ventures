@@ -1,4 +1,4 @@
-import NotFound from '@/pages/shared/404'
+import NotFound from '@/pages/404'
 
 function ErrorPage() {
   return <NotFound />

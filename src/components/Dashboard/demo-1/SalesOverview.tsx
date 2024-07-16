@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { Progress } from 'antd'
 import { Cards } from '@/components/Cards/Frame/CardsFrame'
 
-import salesData from '../../demoData/salesData.json'
+import salesData from '@/demoData/salesData.json'
 import { RootState } from '@/redux/store'
 
 const SalesOverview = React.memo(() => {

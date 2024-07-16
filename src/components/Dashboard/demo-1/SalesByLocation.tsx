@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps'
 import { Tooltip } from 'react-tooltip'
 import { Cards } from '@/components/Cards/Frame/CardsFrame'
-import salesLocations from '../../demoData/table-data.json'
+import salesLocations from '@/demoData/table-data.json'
 import 'react-tooltip/dist/react-tooltip.css'
 import { RootState } from '@/redux/store'
 
@@ -324,7 +324,7 @@ const SaleByLocation = React.memo(() => {
                   onClick={handleZoomIn}
                   className="flex justify-center bg-white rounded-md rounded-b-none dark:bg-[#1b1d2a] border-regular border-1 dark:border-white/30 w-7 h-7 dark:text-white/[.87]"
                 >
-                  {}
+                  { }
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="10"
@@ -342,7 +342,7 @@ const SaleByLocation = React.memo(() => {
                   onClick={handleZoomOut}
                   className="flex justify-center bg-white rounded-md rounded-t-none dark:bg-[#1b1d2a] border-regular border-1 dark:border-white/30 border-t-none w-7 h-7 dark:text-white/[.87]"
                 >
-                  {}
+                  { }
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="10"

@@ -4,8 +4,8 @@ import { Layout } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import Footer from '@/components/Header/footer'
-import Sidebar from '@/components/Sidebar'
 import HeaderTop from '@/components/Header'
+// import "@/layouts/LandingLayout.tsx.css"
 
 const { Content } = Layout
 
@@ -40,13 +40,13 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
     html.setAttribute('dir', 'rtl')
   }
   const router = useRouter()
-
+  console.log(router.pathname)
   useEffect(() => {
     if (router.pathname.includes('/admin')) {
       router.pathname = '/admin'
     }
 
-    if (router.pathname == '/') {
+    if (router.pathname == '/' || !router.pathname) {
       router.push('/landing')
     }
   }, [router])
@@ -55,8 +55,7 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
     <ThemeProvider theme={theme}>
       <HeaderTop />
       <div className="flex flex-row gap-5 mt-[72px]">
-        <Sidebar />
-        <Layout className="max-w-full duration-[300ms] overflow-auto">
+        <Layout className="duration-[300ms] overflow-x-hidden">
           <Content>
             {children}
             <Footer />

@@ -3,9 +3,8 @@ export function Partner() {
     <div className="relative min-h-[calc(100vh - 72px)] w-full">
       <div className="absolute inset-0 h-full w-full bg-[#01291e] z-[-1] " />
       <div className="
-            container mx-auto 
+            container mx-auto m-w-screen-min-2xl
             grid grid-cols-6 sm:grid-cols-2 md:grid-cols-2 sm:gap-4 md:gap-4 py-4
-            sm:px-0 md:px-0 px-20
         ">
         <div className="flex justify-center items-center gap-4">
           <a className="text-secondary-hbr text-4xl text-bold">coinbase</a>

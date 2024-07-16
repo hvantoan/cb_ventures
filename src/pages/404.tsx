@@ -5,11 +5,14 @@ import Link from 'next/link'
 import Heading from '@/components/Heading'
 import { Buttons } from '@/components/Buttons'
 import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 
 function NotFound() {
   const [state, setState] = useState({
     isLoading: true,
   })
+  const { t } = useTranslation()
+
   useEffect(() => {
     setTimeout(() => {
       setState({ isLoading: false })
@@ -32,7 +35,7 @@ function NotFound() {
             404
           </Heading>
           <p className="text-body dark:text-white/60 mb-6 text-lg xs:text-base font-medium">
-            Sorry! the page you are looking for does not exist.
+            {t("404.mesage")}
           </p>
           <Link href="/admin">
             <Buttons size="default" type="primary" to="/admin" className="bg-primary text-white h-11">
