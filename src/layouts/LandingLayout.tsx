@@ -54,14 +54,8 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <ThemeProvider theme={theme}>
       <HeaderTop />
-      <div className="flex flex-row gap-5 mt-[72px]">
-        <Layout className="duration-[300ms] overflow-x-hidden">
-          <Content>
-            {children}
-            <Footer />
-          </Content>
-        </Layout>
-      </div>
+      {children}
+      <Footer />
     </ThemeProvider >
   )
 }

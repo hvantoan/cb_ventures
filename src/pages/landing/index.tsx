@@ -26,7 +26,7 @@ export const getServerSideProps: GetServerSideProps = (async (ctx) => {
 
 const Landing = ({ roadmaps, roadDone, pricings, articles }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
-    <section>
+    <main className='mt-[75px] overflow-x-hidden'>
       <Hero />
       <Partner />
       <Trading />
@@ -37,7 +37,7 @@ const Landing = ({ roadmaps, roadDone, pricings, articles }: InferGetServerSideP
       <Advisers />
       <Articles data={articles} />
       {/* <Footer /> */}
-    </section>
+    </main>
   )
 }
 export default Landing

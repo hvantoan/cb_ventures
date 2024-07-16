@@ -15,7 +15,7 @@ import { AppDispatch, RootState } from '@/redux/store'
 
 const { Header } = Layout
 
-const HeaderTop = () => {
+export default function HeaderTop() {
   const [hide, setHide] = useState(true)
 
   const { rtl, layoutMode, topMenu, collapsed } = useSelector((state: RootState) => {
@@ -117,4 +117,4 @@ const HeaderTop = () => {
   )
 }
 
-export default HeaderTop
+
