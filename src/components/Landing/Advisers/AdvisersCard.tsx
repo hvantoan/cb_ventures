@@ -1,11 +1,10 @@
-import { Card } from "antd";
 import React from "react";
-import { Advisers } from './index';
 
 export type Adviser = {
     img: string;
     name: string;
     designation: string;
+    url?: string;
 };
 
 export type AdviserCardProps = {
@@ -14,13 +13,17 @@ export type AdviserCardProps = {
 
 export function AdviserCard({ adviser }: AdviserCardProps) {
     return (
-        <Card className="w-[300px] card-no-padding">
-            <img src={adviser.img} alt={adviser.name} className="absolute w-full h-full bottom-0 left-0 rounded-lg" />
-            <Card className=" w-full bg-darkHard place-content-center mt-[250px]">
-                <h5 className="text-center">{adviser.name}</h5>
-                <p className="text-center text-pink mt-[10px]">{adviser.designation}</p>
-            </Card>
-        </Card>
+        <div className="relative w-full h-[300px]">
+            <div className="absolute w-full p-4 bottom-0">
+                <div className="bg-darkHard px-4 py-2 bottom-0 rounded-10">
+                    <h5 className="text-center text-22">{adviser.name}</h5>
+                    <p className="text-center mt-1 text-18 text-pink">{adviser.designation}</p>
+                </div>
+            </div>
+            <div className="h-full">
+                <img src={adviser.img} alt={adviser.name} className="w-full h-full rounded-lg object-cover" />
+            </div>
+        </div>
     )
 }
 

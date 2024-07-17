@@ -1,115 +1,109 @@
 import React from 'react'
-import { Row, Col, Card, Button, Image } from 'antd'
+import { Row } from 'antd'
 
 export function Footer() {
   return (
-    <div>
-      <footer>
-        <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-          <div className="md:flex md:justify-between px-64">
-            <div className="grid grid-cols-6 gap-8 sm:gap-6 sm:grid-cols-3">
-              <div className="mb-6 md:mb-0 col-span-2 ">
-                <Row>
-                  <img
-                    width="48"
-                    height="48"
-                    src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-slack-replace-email-text-messaging-and-instant-messaging-for-your-team-logo-color-tal-revivo.png"
-                    alt="external-slack-replace-email-text-messaging-and-instant-messaging-for-your-team-logo-color-tal-revivo"
-                  />
-                  <h1 className="ml-[5px] place-self-center">Meet Our</h1>
-                </Row>
-                <Row>
-                  <p className="text-white/60 pt-5 pb-10 text-lg w-[500px]">
-                    Unlock the full potential of our product with our amazing features and top-notch customer support!
-                  </p>
-                </Row>
-                <Row>
-                  <button className="flex bg-primary rounded-lg p-[4px] place-content-center" type="button">
-                    <img
-                      width="24"
-                      height="24"
-                      src="https://img.icons8.com/material-outlined/48/circled-play.png"
-                      alt="circled-play"
-                      className="mt-[2px]"
-                    />
-                    <div className="ml-[8px] text-left">
-                      <p className="text-[7px]">Download on the</p>
-                      <p className="text-dark text-[15px]">App Store</p>
-                    </div>
-                  </button>
-                  <button className="flex bg-info-hbr rounded-lg p-[4px] place-content-center ml-[5px]" type="button">
-                    <img
-                      width="24"
-                      height="24"
-                      src="https://img.icons8.com/material-outlined/48/circled-play.png"
-                      alt="circled-play"
-                      className="mt-[2px]"
-                    />
-                    <div className="ml-[8px] text-left">
-                      <p className="text-[7px] text-pink">Download on the</p>
-                      <p className="text-pink text-[15px]">App Store</p>
-                    </div>
-                  </button>
-                </Row>
-              </div>
-              <div className="mb-6 md:mb-0"></div>
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <a href="https://flowbite.com/" className="hover:underline">
-                      Flowbite
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://tailwindcss.com/" className="hover:underline">
-                      Tailwind CSS
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <a href="https://github.com/themesberg/flowbite" className="hover:underline ">
-                      Github
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">
-                      Discord
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Privacy Policy
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:underline">
-                      Terms &amp; Conditions
-                    </a>
-                  </li>
-                </ul>
-              </div>
+    <footer>
+      <div className="">
+        <div className="container mx-auto grid grid-cols-2 sm:grid-cols-1 gap-10 py-8">
+          <div>
+            <Row>
+              <img
+                width="48"
+                height="48"
+                src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-slack-replace-email-text-messaging-and-instant-messaging-for-your-team-logo-color-tal-revivo.png"
+                alt="external-slack-replace-email-text-messaging-and-instant-messaging-for-your-team-logo-color-tal-revivo"
+              />
+              <h1 className="ml-[5px] place-self-center">Meet Our</h1>
+            </Row>
+            <p className="text-white/60 pt-5 pb-10 text-16">
+              Unlock the full potential of our product with our amazing features and top-notch customer support!
+            </p>
+            <Row>
+              <button className="flex bg-primary rounded-lg p-[4px] place-content-center" type="button">
+                <img
+                  width="24"
+                  height="24"
+                  src="https://img.icons8.com/material-outlined/48/circled-play.png"
+                  alt="circled-play"
+                  className="mt-[2px]"
+                />
+                <div className="ml-[8px] text-left">
+                  <p className="text-[7px]">Download on the</p>
+                  <p className="text-dark text-[15px]">App Store</p>
+                </div>
+              </button>
+              <button className="flex bg-info-hbr rounded-lg p-[4px] place-content-center ml-[5px]" type="button">
+                <img
+                  width="24"
+                  height="24"
+                  src="https://img.icons8.com/material-outlined/48/circled-play.png"
+                  alt="circled-play"
+                  className="mt-[2px]"
+                />
+                <div className="ml-[8px] text-left">
+                  <p className="text-[7px] text-pink">Download on the</p>
+                  <p className="text-pink text-[15px]">App Store</p>
+                </div>
+              </button>
+            </Row>
+          </div>
+          <div className='grid grid-cols-3 sm:grid-cols-1 gap-6'>
+            <div>
+              <h2 className="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white underline underline-offset-2">Resources</h2>
+              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <li>
+                  <a href="https://flowbite.com/" className="hover:underline">
+                    Flowbite
+                  </a>
+                </li>
+                <li>
+                  <a href="https://tailwindcss.com/" className="hover:underline">
+                    Tailwind CSS
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white underline underline-offset-2">Follow us</h2>
+              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <li>
+                  <a href="https://github.com/themesberg/flowbite" className="hover:underline ">
+                    Github
+                  </a>
+                </li>
+                <li>
+                  <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">
+                    Discord
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white underline underline-offset-2">Legal</h2>
+              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <li>
+                  <a href="#" className="hover:underline">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:underline">
+                    Terms &amp; Conditions
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
-          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8 px-64" />
-          <div className=" flex sm:flex sm:items-center sm:justify-between px-64">
+        </div>
+        <div className="border-t p-4">
+          <div className='container mx-auto flex justify-between'>
             <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-              © 2023{' '}
-              <a href="https://flowbite.com/" className="hover:underline">
-                Design By DatHo
+              <a href="https://github.com/hvantoan" className="hover:underline">
+                © 2023 Design By Văn Toàn. All Rights Reserved.
               </a>
-              . All Rights Reserved.
             </span>
-            <div className="flex sm:justify-center sm:mt-0 sm:mr-0 absolute 5xl:mr-64 end-0 sm:static">
+            <div className="flex sm:justify-center">
               <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                 <svg
                   className="w-4 h-4"
@@ -189,8 +183,8 @@ export function Footer() {
             </div>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   )
 }
 export default Footer

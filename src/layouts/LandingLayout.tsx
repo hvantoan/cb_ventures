@@ -3,15 +3,13 @@ import { useRouter } from 'next/router'
 import { Layout } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import Footer from '@/components/Header/footer'
 import HeaderTop from '@/components/Header'
-// import "@/layouts/LandingLayout.tsx.css"
 
-const { Content } = Layout
 
 import config from '@/config/config'
 import { RootState } from '@/redux/store'
 import { changeLayoutMode, changeMenuMode } from '@/redux/themeLayout/reducers'
+import { Footer } from '@/components/Landing'
 const { theme } = config
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
