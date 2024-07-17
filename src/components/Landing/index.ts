@@ -1,4 +1,3 @@
-export * from './Advantage';
 export * from './Advisers/AdvisersCard';
 export * from './Advisers/index';
 export * from './Articles/ArticlesCard';
@@ -12,3 +11,5 @@ export * from './Pricing/PricingCard';
 export * from './Roadmap/index';
 export * from './Roadmap/RoadmapCard';
 export * from './Trading';
+export * from './Vision/index';
+export * from './Vision/VisionCard';
