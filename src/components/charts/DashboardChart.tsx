@@ -76,7 +76,6 @@ function DashboardChart({
     let chart: any = null
     let unmounted = false
     const canvas = document.getElementById(id) as HTMLCanvasElement // Use optional chaining here
-    console.log(canvas)
     if (!canvas) {
       // Element with the provided ID not found, handle the error or return early
       return
@@ -136,7 +135,6 @@ function DashboardChart({
       })
     }
 
-    console.log(id, scales)
     return () => {
       chart.destroy()
       unmounted = true

@@ -13,7 +13,7 @@ import {
   GoogleMultiLineChart,
   GoogleBasicPieChart,
   Google3dPieChart,
-} from '@/components/charts/google-chart'
+} from '@/components/Charts/GoogleChart'
 
 const {
   barChartData,

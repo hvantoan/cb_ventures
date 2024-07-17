@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Form, Input, Select } from 'antd'
 import { Buttons } from '@/components/Buttons'
-import { Modals } from '@/components/Modals/antd-modals'
+import { Modals } from '@/components/Modals/Modals'
 
 const { Option } = Select
 

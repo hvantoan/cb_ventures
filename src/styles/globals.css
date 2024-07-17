@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+html * {
+  box-sizing: border-box;
+}
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
@@ -68,10 +72,7 @@ h6 {
 .ant-btn-primary {
   @apply bg-primary hover:bg-primary-hbr text-white !important;
 }
-.ant-btn-primary svg,
-.ant-btn-primary i {
-  @apply text-white !important;
-}
+
 .ant-picker,
 .ant-form-item-control-input input,
 .ant-input-number-input-wrap input {
@@ -257,6 +258,7 @@ as conflicts may arise in other places
 
 .ant-layout{
   @apply bg-normalBG dark:bg-[#010413];
+  z-index: 0;
 }
 
 .ant-layout-sider-light{
@@ -1040,9 +1042,9 @@ as conflicts may arise in other places
 .ant-modal-title{
   @apply dark:text-white/[.87];
 }
-.ant-modal-content {
+/* .ant-modal-content {
   @apply !p-0;
-}
+} */
 .ant-modal-footer{
   @apply px-4 py-2.5 border-t border-regular dark:border-white/10;
 }

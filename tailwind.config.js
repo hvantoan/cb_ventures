@@ -10,8 +10,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#98D083',
-        secondary: '#3B6730',
+        primary: '#00d094',
+        secondary: '#00150f',
         success: '#01B81A',
         pink: '#f2eafb',
         warning: '#FA8B0C',
@@ -48,6 +48,7 @@ module.exports = {
         instagram: 'rgb(209, 32, 143)',
         dribbble: '#c2185b',
         medium: '#66cdaa',
+        "primary-text": '#095754',
         'primary-transparent': 'rgba(130, 49, 211, 0.082)',
         'secondary-transparent': 'rgba(88, 64, 255, 0.082)',
         'link-transparent': 'rgba(88, 64, 255, 0.082)',
@@ -99,6 +100,9 @@ module.exports = {
         whiteDark: 'rgb(255, 255, 255, .10)',
         darkHard: 'rgb(0, 0, 0, .60)',
         currentColor: 'currentColor',
+        // Custom color
+        "slate-gray": "#717D79",
+        "card-active": '#1b2d29',
       },
       boxShadow: {
         regular: '0 5px 20px rgba(160,160,160,0.05)',
@@ -110,6 +114,7 @@ module.exports = {
         dot: '0 0 0 1px #fff',
         btn: '0 8px 13px rgba(130, 49 ,211, 0.13)',
         faq: '0 15px 40px rgba(116, 116 ,116, 0.08)',
+        card: 'rgba(3,19,14,1.000) 0px 3px 8px'
       },
       borderWidth: {
         1: '1px',
@@ -129,9 +134,14 @@ module.exports = {
         11: ['11px', '15px'],
         13: ['13px', '18px'],
         15: ['15px', '24px'],
+        16: ["16px", "140%"],
         17: ['17px', '26px'],
+        18: ['18px', '140%'],
+        20: ['20px', '100%'],
         22: ['22px', '30px'],
+        32: ['32px', '110%'],
         42: ['42px', '62px'],
+        54: ['54px', '110%'],
         58: ['58px', '86px'],
       },
       zIndex: {
@@ -140,11 +150,11 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'landing-bg1': "url('/img/landing/landing-bg1.png')",
         'landing-bg2': "url('/img/landing/landing-bg2.png')",
-         'landing-bg3': "url('/img/landing/landing-bg3.jpg')"
+        'landing-bg3': "url('/img/landing/landing-bg3.jpg')",
+        "pricing": "url('/img/landing/pricing-bg.png')",
       },
     },
     screens: {

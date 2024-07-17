@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useState } from 'react'
 import { Row, Col } from 'antd'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Legend } from 'recharts'
 import { PageHeaders } from '@/components/PageHeaders'
-import { Cards } from '@/components/Cards/Frame/cards-frame'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
 
 import reChartData from '@/demoData/recharts.json'
 

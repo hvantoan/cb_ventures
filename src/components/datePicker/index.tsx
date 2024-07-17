@@ -3,8 +3,8 @@ import { DatePicker } from 'antd'
 import { addDays } from 'date-fns'
 import React, { useState } from 'react'
 import { DateRangePicker } from 'react-date-range'
-import 'react-date-range/dist/styles.css' // main style file
-import 'react-date-range/dist/theme/default.css' // theme css file
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 import { Buttons } from '../Buttons'
 
 function DateRangePickerOne() {

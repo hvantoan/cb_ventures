@@ -3,42 +3,42 @@ import React from 'react'
 import { Row, Col, Skeleton } from 'antd'
 import { PageHeaders } from '@/components/PageHeaders'
 
-const OverviewDataList = dynamic(() => import('@/dashboard/demo-1/OverviewDataList'), {
+const OverviewDataList = dynamic(() => import('@/components/Dashboard/demo-1/OverviewDataList'), {
   loading: () => (
     <>
       <Skeleton active />
     </>
   ),
 })
-const SalesReport = dynamic(() => import('@/dashboard/demo-1/SalesReport'), {
+const SalesReport = dynamic(() => import('@/components/Dashboard/demo-1/SalesReport'), {
   loading: () => (
     <>
       <Skeleton active />
     </>
   ),
 })
-const SalesGrowth = dynamic(() => import('@/dashboard/demo-1/SalesGrowth'), {
+const SalesGrowth = dynamic(() => import('@/components/Dashboard/demo-1/SalesGrowth'), {
   loading: () => (
     <>
       <Skeleton active />
     </>
   ),
 })
-const SalesByLocation = dynamic(() => import('@/dashboard/demo-1/SalesByLocation'), {
+const SalesByLocation = dynamic(() => import('@/components/Dashboard/demo-1/SalesByLocation'), {
   loading: () => (
     <>
       <Skeleton active />
     </>
   ),
 })
-const TopSellingProduct = dynamic(() => import('@/dashboard/demo-1/TopSellingProducts'), {
+const TopSellingProduct = dynamic(() => import('@/components/Dashboard/demo-1/TopSellingProducts'), {
   loading: () => (
     <>
       <Skeleton active />
     </>
   ),
 })
-const BrowserState = dynamic(() => import('@/dashboard/demo-1/BrowserState'), {
+const BrowserState = dynamic(() => import('@/components/Dashboard/demo-1/BrowserState'), {
   loading: () => (
     <>
       <Skeleton active />

@@ -181,7 +181,6 @@ const TopMenuStyle = Styled.div`
                                 font-weight: 400;
                                 transition: .3s;
                             }
-                            
                             &:after{
                                 width: 6px;
                                 height: 1px;
@@ -204,5 +203,5 @@ const TopMenuStyle = Styled.div`
 `;
 
 export {
-  TopMenuStyle,
+    TopMenuStyle,
 };

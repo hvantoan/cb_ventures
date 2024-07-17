@@ -21,6 +21,7 @@ import ContactCard from '../contact/overview/ContactCard'
 import UserCards from '../profile/myProfile/overview/UserCard'
 
 import cardData from '@/demoData/sampleCards.json'
+import { RootState } from '@/redux/store'
 
 const { cardOne, cardTwo, cardThree, cardFive, cardSix, cardSeven, BlogCardData } = cardData
 const actions = (
@@ -62,14 +63,14 @@ function WidgetsCard() {
       breadcrumbName: 'Widgets Cards',
     },
   ]
-  const { products, projects, users, team, gallery, contactUsers } = useSelector((state: any) => {
+  const { products, projects, users, team, gallery, contactUsers } = useSelector((state: RootState) => {
     return {
-      products: state.products.data,
-      projects: state.projects.data,
-      users: state.users,
-      team: state.team.data,
-      gallery: state.gallery.data,
-      contactUsers: state.Contact.data,
+      products: [],// state.products.data,
+      projects: [],// state.projects.data,
+      users: [], // state.users,
+      team: [],//state.team.data,
+      gallery: [],// state.gallery.data,
+      contactUsers: state.contact.data,
     }
   })
 

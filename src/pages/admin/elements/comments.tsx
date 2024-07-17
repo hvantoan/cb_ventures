@@ -5,7 +5,7 @@ import moment from 'moment'
 import Link from 'next/link'
 import { LikeOutlined, DislikeOutlined } from '@ant-design/icons'
 import { PageHeaders } from '@/components/PageHeaders'
-import CommentEditor from '@/components/Comments/comments-editor'
+import CommentEditor from '@/components/Comments/CommentsEditor'
 
 function ExampleComment({ children }: any) {
   return (

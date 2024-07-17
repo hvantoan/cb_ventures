@@ -8,10 +8,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import SupportCreate from '../overview/SupportCreate'
 import SupportUpdate from '../overview/SupportUpdate'
 import { PageHeaders } from '@/components/PageHeaders'
-import { Cards } from '@/components/Cards/Frame/cards-frame'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
 import { Buttons } from '@/components/Buttons'
-import { idGenerator } from '@/utility'
-import { ticketReadData, ticketUpdateData, ticketUpdateSearch } from '@/redux/supportTickets/actionCreator'
+import { idGenerator } from '@/utils'
+// import { ticketReadData, ticketUpdateData, ticketUpdateSearch } from '@/redux/supportTickets/actionCreator'
 import dynamic from 'next/dynamic'
 
 const OverviewDataList = dynamic(() => import('../overview/OverviewDataList'), {
@@ -67,7 +67,7 @@ function SupportTicket() {
     dispatch(ticketUpdateData(deleteData))
   }
 
-  const cancel = () => {}
+  const cancel = () => { }
 
   const prefix = (
     <SearchOutlined

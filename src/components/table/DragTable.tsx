@@ -1,4 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { UilEdit, UilExpandArrows, UilTrashAlt } from '@iconscout/react-unicons'
@@ -16,7 +15,7 @@ function DragAndDropTable() {
   })
 
   const usersTableData: any = []
-  users.map((user: any, index: any) => {
+  users?.map((user: any, index: any) => {
     const { name, designation, img } = user
 
     return usersTableData.push({

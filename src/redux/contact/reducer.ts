@@ -1,5 +1,5 @@
 import { create } from 'domain'
-import toData from '../../demoData/contact.json'
+import toData from '@/demoData/contact.json'
 import { createSlice } from '@reduxjs/toolkit'
 import { ContactAddData, ContactDeleteData, ContactGetData, ContactSearchData, OnStarUpdate } from './actionCreator'
 

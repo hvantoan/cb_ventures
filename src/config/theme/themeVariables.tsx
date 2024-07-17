@@ -2,7 +2,7 @@ import themes from './themeConfigure'
 
 const { lightMode, darkMode } = themes
 
-const primaryColor = '#98D083'
+const primaryColor = '#00150f'
 const primaryColorRgb = '152, 208, 131'
 const primaryHover = '#3B6730'
 const secondaryColor = '#5840FF'

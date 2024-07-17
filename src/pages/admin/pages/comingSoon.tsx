@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-no-bind */
-/* eslint-disable react/react-in-jsx-scope */
 import { Col, Form, Input, Row } from 'antd'
 import Countdown from 'react-countdown'
 import FontAwesome from 'react-fontawesome'
@@ -8,6 +6,7 @@ import Link from 'next/link'
 import { Buttons } from '@/components/Buttons'
 import { PageHeaders } from '@/components/PageHeaders'
 import Image from 'next/image'
+import { RootState } from '@/redux/store'
 
 function ComingSoon() {
   const PageRoutes = [
@@ -21,9 +20,9 @@ function ComingSoon() {
     },
   ]
 
-  const { mainContent } = useSelector((state: any) => {
+  const { mainContent } = useSelector((state: RootState) => {
     return {
-      mainContent: state.ChangeLayoutMode.mode,
+      mainContent: state.layout.mode,
     }
   })
 
@@ -41,25 +40,25 @@ function ComingSoon() {
           <span className="text-dark dark:text-white/[.87] text-42 xl:text-3xl sm:text-2xl xs:text-xl font-semibold">
             {days}
           </span>
-          <span className="block text-body dark:text-white/60 text-base sm:text-[15px]">Days</span>
+          <span className="block text-body dark:text-white/60 text-base sm:text-[15px]">Ngày</span>
         </span>
         <span>
           <span className="text-dark dark:text-white/[.87] text-42 xl:text-3xl sm:text-2xl xs:text-xl font-semibold">
             {hours}
           </span>
-          <span className="block text-body dark:text-white/60 text-base sm:text-[15px]">Hours</span>
+          <span className="block text-body dark:text-white/60 text-base sm:text-[15px]">Giờ</span>
         </span>
         <span>
           <span className="text-dark dark:text-white/[.87] text-42 xl:text-3xl sm:text-2xl xs:text-xl font-semibold">
             {minutes}
           </span>
-          <span className="block text-body dark:text-white/60 text-base sm:text-[15px]">Minutes</span>
+          <span className="block text-body dark:text-white/60 text-base sm:text-[15px]">Phút</span>
         </span>
         <span>
           <span className="text-dark dark:text-white/[.87] text-42 xl:text-3xl sm:text-2xl xs:text-xl font-semibold">
             {seconds}
           </span>
-          <span className="block text-body dark:text-white/60 text-base sm:text-[15px]">Seconds</span>
+          <span className="block text-body dark:text-white/60 text-base sm:text-[15px]">Giây</span>
         </span>
       </div>
     )

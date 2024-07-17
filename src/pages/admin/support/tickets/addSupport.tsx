@@ -9,8 +9,8 @@ import SupportCreate from '../overview/SupportCreate'
 import SupportUpdate from '../overview/SupportUpdate'
 import { PageHeaders } from '@/components/PageHeaders'
 import { Buttons } from '@/components/Buttons'
-import { idGenerator } from '@/utility'
-import { ticketReadData, ticketUpdateData, ticketUpdateSearch } from '@/redux/supportTickets/actionCreator'
+import { idGenerator } from '@/utils'
+// import { ticketReadData, ticketUpdateData, ticketUpdateSearch } from '@/redux/supportTickets/actionCreator'
 import dynamic from 'next/dynamic'
 
 const OverviewDataList = dynamic(() => import('../overview/OverviewDataList'), {
@@ -65,7 +65,7 @@ function AddSupportTicket() {
     dispatch(ticketUpdateData(deleteData))
   }
 
-  const cancel = () => {}
+  const cancel = () => { }
 
   const prefix = (
     <SearchOutlined

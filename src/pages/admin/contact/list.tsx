@@ -8,7 +8,7 @@ import Heading from '@/components/Heading'
 import { Buttons } from '@/components/Buttons'
 import { OnStarUpdate, ContactDeleteData } from '@/redux/contact/actionCreator'
 import DropDown from '@/components/Dropdown'
-import { Modals } from '@/components/Modals/antd-modals'
+import { Modals } from '@/components/Modals/Modals'
 
 import ContactLayout from './Layout'
 import { AppDispatch, RootState } from '@/redux/store'
@@ -140,8 +140,7 @@ function ContactTable() {
         action: (
           <div className="min-w-[150px] text-end -m-2">
             <Buttons
-              //@ts-ignore
-              onClick={() => dispatch(OnStarUpdate(users, id))}
+              onClick={() => dispatch(OnStarUpdate({ data: users, id: id }))}
               href="#"
               shape="circle"
               className="inline-flex items-center w-8 h-8 p-0 bg-transparent border-none shadow-none text-light-extra dark:text-white/60"

@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col } from 'antd'
 import { PageHeaders } from '@/components/PageHeaders'
 import Heading from '@/components/Heading'
-import { GoogleMaps } from '@/components/Maps/google-maps'
+import { GoogleMaps } from '@/components/Maps/GoogleMaps'
 import mapData from '@/config/map/google-maps-styles'
 
 const { mapOneStyles, mapStyleDark, mapTwoStyles, mapThreeStyles } = mapData

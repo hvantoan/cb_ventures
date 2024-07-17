@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import React, { useState } from 'react'
 import {
   UilThumbsUp,
@@ -16,12 +15,11 @@ import { Input, Upload, message, Avatar } from 'antd'
 import Picker from 'emoji-picker-react'
 import moment from 'moment'
 import { useSelector, useDispatch } from 'react-redux'
-//@ts-ignore
 import { LightBox } from 'react-lightbox-pack'
 import 'react-lightbox-pack/dist/index.css'
 import { Cards } from '@/components/Cards/Frame/CardsFrame'
 import { Buttons } from '@/components/Buttons'
-import { likeUpdate, commentUpdate, postDelete } from '@/redux/profile/actionCreator'
+// import { likeUpdate, commentUpdate, postDelete } from '@/redux/profile/actionCreator'
 
 function ExampleComment({ children, replay }: any) {
   return (
@@ -62,7 +60,7 @@ function ExampleComment({ children, replay }: any) {
 }
 
 function Posts({ postId, from, time, img, like, comment, content, author }: any) {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   const { posts } = useSelector((state: any) => {
     return {
       posts: state.Profile.posts,
@@ -369,18 +367,18 @@ function Posts({ postId, from, time, img, like, comment, content, author }: any)
               >
                 {comment.length > 1
                   ? comment.map((item: any, key: any) => {
-                      return (
-                        key >= 1 && (
-                          <ExampleComment
-                            replay={{
-                              time: item.time,
-                              name: item.name,
-                              text: item.text,
-                            }}
-                          />
-                        )
+                    return (
+                      key >= 1 && (
+                        <ExampleComment
+                          replay={{
+                            time: item.time,
+                            name: item.name,
+                            text: item.text,
+                          }}
+                        />
                       )
-                    })
+                    )
+                  })
                   : null}
               </ExampleComment>
             </div>

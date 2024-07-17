@@ -3,7 +3,7 @@ import { Row, Col, Card } from 'antd'
 import { UilTimes, UilPrint, UilBookOpen, UilFileAlt, UilFile } from '@iconscout/react-unicons'
 import Link from 'next/link'
 import { PageHeaders } from '@/components/PageHeaders'
-import { Cards } from '@/components/Cards/Frame/cards-frame'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
 
 const content = (
   <>

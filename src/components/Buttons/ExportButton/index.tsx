@@ -1,7 +1,7 @@
 import { UilBook, UilDownloadAlt, UilFile, UilFileAlt, UilPrint, UilTimes } from '@iconscout/react-unicons'
 import React from 'react'
 import Link from 'next/link'
-import PopOver from '@/components/popup'
+import PopOver from '@/components/Popup/PopOver'
 import { Buttons } from '@/components/Buttons'
 
 function ExportButtonPageHeader() {

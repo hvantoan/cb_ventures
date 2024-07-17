@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useState } from 'react'
 import { Row, Col } from 'antd'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceLine } from 'recharts'
 import { PageHeaders } from '@/components/PageHeaders'
-import { Cards } from '@/components/Cards/Frame/cards-frame'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
 import rechartdata from '@/demoData/recharts.json'
 
 const { data, positiveAndNegative } = rechartdata

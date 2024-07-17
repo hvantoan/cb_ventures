@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Row, Col, Input } from 'antd'
 import { useSelector } from 'react-redux'
 import { PageHeaders } from '@/components/PageHeaders'
-import { Cards } from '@/components/Cards/Frame/cards-frame'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
 import { AutoCompleted } from '@/components/AutoComplete'
 
 const { TextArea } = Input

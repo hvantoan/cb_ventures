@@ -7,7 +7,7 @@ import Heading from '@/components/Heading'
 import { AutoCompleted } from '@/components/AutoComplete'
 import { Buttons } from '@/components/Buttons'
 import { ContactDeleteData, ContactSearchData, ContactAddData } from '@/redux/contact/actionCreator'
-import { Modals } from '@/components/Modals/antd-modals'
+import { Modals } from '@/components/Modals/Modals'
 import { RootState } from '@/redux/store'
 
 const ContactLayout = ({ children }: { children: React.ReactNode }) => {

@@ -38,8 +38,10 @@ function Cards(props: any) {
         <Card
           size={size}
           title={title}
-          bodyStyle={bodyStyle && bodyStyle}
-          headStyle={headStyle && headStyle}
+          styles={{
+            body: bodyStyle && bodyStyle,
+            header: headStyle && headStyle,
+          }}
           bordered={border.toString()}
           className={className}
           extra={
@@ -62,7 +64,7 @@ function Cards(props: any) {
           style={{ width: '100%' }}
         >
           {children}
-        </Card>
+        </Card >
       ) : (
         <Card
           bodyStyle={bodyStyle && bodyStyle}
@@ -75,7 +77,8 @@ function Cards(props: any) {
           {caption && <p className="dark:text-white/60">{caption}</p>}
           {children}
         </Card>
-      )}
+      )
+      }
     </>
   )
 }

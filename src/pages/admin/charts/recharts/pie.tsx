@@ -2,7 +2,7 @@ import React, { useState, useLayoutEffect } from 'react'
 import { Row, Col } from 'antd'
 import { PieChart, Pie, Sector, Cell, Tooltip } from 'recharts'
 import { PageHeaders } from '@/components/PageHeaders'
-import { Cards } from '@/components/Cards/Frame/cards-frame'
+import { Cards } from '@/components/Cards/Frame/CardsFrame'
 
 import rechartdata from '@/demoData/recharts.json'
 
