@@ -10,7 +10,7 @@ export function Features() {
                       sm:gap-4 md:gap-4 p-20 sm:p-0 md:p-0 sm:py-8">
           <div className="grid gap-4">
             <h1 className="text-54 sm:text-center">
-              <span className="text-primary">Tính năng</span>
+              <span className="text-primary font-bold">Tính năng</span>
             </h1>
             <p className="text-white/60 text-18 sm:text-center">
               Mở khóa toàn bộ tiềm năng của sản phẩm của chúng tôi với các tính năng tuyệt vời và hỗ trợ khách hàng hàng

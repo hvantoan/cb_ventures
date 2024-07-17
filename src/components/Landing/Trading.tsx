@@ -6,17 +6,16 @@ export function Trading() {
   return (
     <section className="relative w-full">
       <div className="absolute h-full w-full bg-[#00150f] z-[-1]" />
-      <div className='container mx-auto relative grid sm:grid-cols-1 md:grid-cols-1 grid-cols-5 gap-20
-                      sm:gap-4 md:gap-4 p-20 sm:p-0 md:p-0 sm:py-8'>
+      <div className='container mx-auto relative grid sm:grid-cols-1 md:grid-cols-1 grid-cols-5 gap-20 sm:gap-4 md:gap-4 p-20 sm:p-0 md:p-0 sm:py-8'>
         <div className='col-span-2'>
-          <div className="">
+          <div>
             <img src="/img/landing/trading.png" alt="hero" className="object-contain w-full" />
           </div>
         </div>
         <div className='col-span-3 content-center py-8'>
           <div className="grid gap-16 sm:gap-8">
             <div className='grid gap-12'>
-              <h1 className="text-54 capitalize sm:text-center">
+              <h1 className="text-54 font-bold capitalize sm:text-center">
                 Meet<span className="text-primary"> Our Company </span>
                 Unless Miss The Opportunity
               </h1>

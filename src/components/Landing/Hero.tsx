@@ -11,7 +11,7 @@ export function Hero() {
         <div className='content-center py-8'>
           <div className="grid gap-16 sm:gap-8">
             <div className='grid gap-12'>
-              <h1 className="text-54 capitalize sm:text-center">
+              <h1 className="text-54 font-bold capitalize sm:text-center">
                 Đầu tư tiền của bạn với <span className="text-primary">Lợi nhuận cao</span>
               </h1>
               <p className="text-white text-18 sm:text-center">

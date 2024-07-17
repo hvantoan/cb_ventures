@@ -26,7 +26,7 @@ export function VisionCard({ data }: VisionCardProps) {
                 </Card>
             </div>
             <h3 className="text-center text-pink text-22 capitalize">{data.title}</h3>
-            <p className="text-center text-gray-300 text-15 normal-case">{data.description}
+            <p className="text-center text-gray-300 text-16 normal-case">{data.description}
             </p>
         </div >
     )

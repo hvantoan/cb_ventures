@@ -18,15 +18,13 @@ export function Roadmap({ data, roadDone }: RoadmapProps) {
   return (
     <div className="relative min-h-[calc(100vh - 72px)] w-full">
       <div className="absolute inset-0 h-full w-full bg-[#0b1f1a] z-[-1] " />
-      <div className="container mx-auto grid sm:py-4 md:py-4 py-20">
-        <div>
-          <h2 className="sm:text-4xl md:text-5xl text-6xl w-full place-self-center text-center text-primary">Roadmap</h2>
-          <div className="flex justify-center">
-            <p className="text-white/60 pt-5 pb-10 text-lg text-center ">
-              Tạo ra một lộ trình sản phẩm giống như lên kế hoạch cho một chuyến đi đường.Đó là tất cả về việc thực hiện
-              đúng các bước để đến đích của bạn.
-            </p>
-          </div>
+      <div className="container mx-auto grid gap-8 sm:py-4 md:py-4 sm:px-0 p-20">
+        <div className='grid gap-8'>
+          <h2 className="text-54 font-bold text-center text-primary">Roadmap</h2>
+          <p className="text-18 text-pink text-center w-5/6 mx-auto">
+            Tạo ra một lộ trình sản phẩm giống như lên kế hoạch cho một chuyến đi đường.Đó là tất cả về việc thực hiện
+            đúng các bước để đến đích của bạn.
+          </p>
         </div>
         <div className="grid sm:grid-cols-12 md:grid-cols-12 grid-cols-12 sm:gap-4 md:gap-4">
           {!isMobile && <div className="col-span-5 grid gap-10">
