@@ -4,7 +4,7 @@ import { Row } from 'antd'
 export function Footer() {
   return (
     <footer>
-      <div className="">
+      <div>
         <div className="container mx-auto grid grid-cols-2 sm:grid-cols-1 gap-10 py-8">
           <div>
             <Row>

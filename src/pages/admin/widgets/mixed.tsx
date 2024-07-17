@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic'
 //     </>
 //   ),
 // })
-const SalesByLocation = dynamic(() => import('@/dashboard/demo-1/SalesByLocation'), {
+const SalesByLocation = dynamic(() => import('@/components/Dashboard/demo-1/SalesByLocation'), {
   loading: () => (
     <>
       <Skeleton active />

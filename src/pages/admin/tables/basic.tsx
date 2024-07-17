@@ -3,9 +3,9 @@ import { Row, Col, Table } from 'antd'
 import Heading from '@/components/Heading'
 import { PageHeaders } from '@/components/PageHeaders'
 import DragAndDropTable from '@/components/table/DragTable'
-import SaleByLocation from '@/dashboard/demo-1/SalesByLocation'
-import TopSellingProduct from '@/dashboard/demo-1/TopSellingProducts'
-import BrowserState from '@/dashboard/demo-1/BrowserState'
+import SaleByLocation from '@/components/Dashboard/demo-1/SalesByLocation'
+import TopSellingProduct from '@/components/Dashboard/demo-1/TopSellingProducts'
+import BrowserState from '@/components/Dashboard/demo-1/BrowserState'
 
 function Tables() {
   const dataSource = [

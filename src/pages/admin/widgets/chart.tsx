@@ -2,9 +2,9 @@ import React from 'react'
 import { Row, Col } from 'antd'
 import { PageHeaders } from '@/components/PageHeaders'
 
-import SalesGrowth from '@/dashboard/demo-1/SalesGrowth'
-import SalesOverview from '@/dashboard/demo-1/SalesOverview'
-import TotalLineChart from '@/dashboard/demo-1/TotalLineChart'
+import SalesGrowth from '@/components/Dashboard/demo-1/SalesGrowth'
+import SalesOverview from '@/components/Dashboard/demo-1/SalesOverview'
+import TotalLineChart from '@/components/Dashboard/demo-1/TotalLineChart'
 // import MonthlyEarning from '@/dashboard/demo-3/MonthlyEarning';
 
 function Widgets() {
