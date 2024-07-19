@@ -3,10 +3,10 @@ name: Build Docker Container
 on:
   push:
     branches:
-      - production
+      - master
       - staging
 env:
-  BRANCH: ${{ github.ref == 'refs/heads/production' && 'production' || 'staging' }}
+  BRANCH: ${{ github.ref == 'refs/heads/producmastertion' && 'master' || 'staging' }}
 
 jobs:
   docker:
