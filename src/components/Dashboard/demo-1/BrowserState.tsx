@@ -9,7 +9,7 @@ const Table = dynamic(() => import('antd').then((mod) => mod.Table), {
   ssr: false,
 })
 
-import browserStates from '@/demoData/table-data.json'
+import browserStates from '@/data/table-data.json'
 
 interface SellingData {
   today: string[][]

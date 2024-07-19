@@ -39,7 +39,9 @@ function FormLayout({ onChange }: any) {
       onChange(value.toString('html'))
     }
   }
-  const log = () => {}
+  const log = () => {
+    // TODO: console.log
+  }
 
   const props = {
     name: 'file',

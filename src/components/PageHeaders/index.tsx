@@ -15,7 +15,7 @@ function PageHeaders(props: any) {
               <ReactSVG
                 className="relative top-0.5 me-2 [&>div>svg]:text-current group-hover:text-primary dark:group-hover:text-white/[.87] duration-200"
                 src="/img/icon/home.svg"
-              />{' '}
+              />
               <Link
                 href={route.path}
                 className="text-light dark:text-light-extra group-hover:text-primary dark:group-hover:text-white/[.87] text-[14px] leading-[22px]  duration-200"

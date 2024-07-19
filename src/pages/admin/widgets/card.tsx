@@ -20,7 +20,7 @@ import SampleCardSeven from '@/components/Cards/SampleCard/SampleCardSeven'
 import ContactCard from '../contact/overview/ContactCard'
 import UserCards from '../profile/myProfile/overview/UserCard'
 
-import cardData from '@/demoData/sampleCards.json'
+import cardData from '@/data/sampleCards.json'
 import { RootState } from '@/redux/store'
 
 const { cardOne, cardTwo, cardThree, cardFive, cardSix, cardSeven, BlogCardData } = cardData
@@ -65,11 +65,11 @@ function WidgetsCard() {
   ]
   const { products, projects, users, team, gallery, contactUsers } = useSelector((state: RootState) => {
     return {
-      products: [],// state.products.data,
-      projects: [],// state.projects.data,
+      products: [], // state.products.data,
+      projects: [], // state.projects.data,
       users: [], // state.users,
-      team: [],//state.team.data,
-      gallery: [],// state.gallery.data,
+      team: [], //state.team.data,
+      gallery: [], // state.gallery.data,
       contactUsers: state.contact.data,
     }
   })

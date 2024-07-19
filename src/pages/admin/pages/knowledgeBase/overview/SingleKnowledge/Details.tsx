@@ -4,9 +4,8 @@ import FontAwesome from 'react-fontawesome'
 import { Collapse, Row, Col, Form, Input } from 'antd'
 import Link from 'next/link'
 import { Buttons } from '@/components/Buttons'
+import TextArea from 'antd/lib/input/TextArea'
 
-const { Panel } = Collapse
-const { TextArea } = Input
 function SingleKnowledgeDetails() {
   const [state, setState] = useState({
     key: 0,

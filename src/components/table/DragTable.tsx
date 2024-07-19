@@ -6,6 +6,7 @@ import { DndContext, closestCenter } from '@dnd-kit/core'
 import { arrayMove, SortableContext, rectSortingStrategy, useSortable } from '@dnd-kit/sortable'
 import Heading from '@/components/Heading'
 import { Buttons } from '@/components/Buttons'
+import Image from 'next/image'
 
 function DragAndDropTable() {
   const { users } = useSelector((state: any) => {
@@ -24,7 +25,7 @@ function DragAndDropTable() {
       user: (
         <div className="flex items-center gap-x-[10px] gap-y-[10px]">
           <figure className="mb-0">
-            <img style={{ width: '40px' }} src={`/${img}`} alt="" />
+            <Image className="w-10" src={`/${img}`} alt="" />
           </figure>
           <figcaption>
             <Heading className="user-name text-dark dark:text-white/[.87] text-[14px] font-semibold mb-0" as="h6">

@@ -24,7 +24,7 @@ function DataTable({ filterOption, filterOnchange, rowSelection, tableData, colu
   }
 
   const handleSearch = () => {
-    const idElement = document.querySelector('.search-input') as HTMLInputElement | null
+    const idElement = document.querySelector('.search-input') as HTMLInputElement | undefined
     if (idElement) {
       const id = idElement.value
       const status = idElement.title

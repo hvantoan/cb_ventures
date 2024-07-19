@@ -15,7 +15,7 @@ import { selectAuth, selectLayout } from '@/redux/rootReducers'
 const { theme } = config
 
 const AdminLayout = ({ children }: { children: React.ReactNode }) => {
-  var selectLayoutSetting = createSelector(selectAuth, selectLayout, (auth, layout) => {
+  const selectLayoutSetting = createSelector(selectAuth, selectLayout, (auth, layout) => {
     return {
       topMenu: layout.topMenu,
       collapsed: layout.menuCollapse,

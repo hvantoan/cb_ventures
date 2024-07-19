@@ -83,7 +83,7 @@ function ContactTable() {
 
   const usersTableData: any = []
 
-  let sortData = [...users]
+  const sortData = [...users]
   sortData
     .sort((a: Contact, b: Contact) => {
       return b.time - a.time

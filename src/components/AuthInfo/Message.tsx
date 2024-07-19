@@ -4,10 +4,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import PopOver from '@/components/Popup/PopOver'
 import Heading from '@/components/Heading'
-import Messages from '@/demoData/message.json'
+import Messages from '@/data/message.json'
 import { useSelector } from 'react-redux'
 import { ReactSVG } from 'react-svg'
-import { RootState } from '@/redux/store'
+import type { RootState } from '@/redux/store'
 
 const MessageBox = React.memo((props: any) => {
   const { rtl } = useSelector((state: RootState) => {

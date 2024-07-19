@@ -12,7 +12,7 @@ const chartLinearGradient = (canvas: HTMLCanvasElement, height: number, color: a
 
 const customTooltips = (context: any) => {
   // Tooltip Element
-  let chartContainer: any = context.chart.canvas.closest('.hexadash-chart-container')
+  const chartContainer: any = context.chart.canvas.closest('.hexadash-chart-container')
   let tooltipEl: any = chartContainer.querySelector('.chartjs-tooltip')
 
   if (!tooltipEl) {

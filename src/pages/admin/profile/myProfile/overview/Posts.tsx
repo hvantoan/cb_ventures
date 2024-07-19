@@ -19,6 +19,7 @@ import { LightBox } from 'react-lightbox-pack'
 import 'react-lightbox-pack/dist/index.css'
 import { Cards } from '@/components/Cards/Frame/CardsFrame'
 import { Buttons } from '@/components/Buttons'
+import Image from 'next/image'
 // import { likeUpdate, commentUpdate, postDelete } from '@/redux/profile/actionCreator'
 
 function ExampleComment({ children, replay }: any) {
@@ -132,19 +133,17 @@ function Posts({ postId, from, time, img, like, comment, content, author }: any)
   }
 
   const onLikeUpdate = (id: any) => {
-    //@ts-ignore
-    return dispatch(likeUpdate(posts, id))
+    //TODO: Fix this
+    // return dispatch(likeUpdate(posts, id))
   }
 
   const onCommentUpdate = (id: any) => {
-    //@ts-ignore
-    dispatch(commentUpdate(posts, id, textValue))
+    // dispatch(commentUpdate(posts, id, textValue))
     setTextValue('')
   }
 
   const onPostDelete = (id: any) => {
-    //@ts-ignore
-    dispatch(postDelete(posts, id))
+    // dispatch(postDelete(posts, id))
   }
 
   // State
@@ -311,7 +310,7 @@ function Posts({ postId, from, time, img, like, comment, content, author }: any)
           <div>
             <div className="flex items-center sm:flex-wrap px-[25px] pb-[20px] border-b-1 border-regular dark:border-white/10 gap-[10px]">
               <div className="relative flex items-center sm:flex-wrap flex-1 sm:flex-[0_0_100%] gap-[10px]">
-                <img className="max-w-[36px] rounded-full" src={'/img/chat-author/t2.jpg'} alt="" />
+                <Image src={'/img/chat-author/t2.jpg'} alt="" className="max-w-[36px] rounded-full" />
                 <Input.TextArea
                   className="py-[14px] ltr:pr-[82px] rtl:pl-[82px] ltr:pl-[22px] rtl:pr-[22px] h-[52px] rounded-[25px] border-transparent hover:border-primary-transparent focus:border-primary-transparent resize-none bg-normalBG dark:bg-normalBGdark text-dark dark:text-white/[.87] focus:shadow-[0_0_0_2px_rgb(130,49,211,0.2)] dark:placeholder:text-white/60"
                   onChange={onTextChange}
@@ -322,7 +321,7 @@ function Posts({ postId, from, time, img, like, comment, content, author }: any)
                   <span className="relative gap-[18px]">
                     {pickerShow && (
                       <>
-                        <button onClick={() => setPickerShow(false)} />
+                        <button title="show" onClick={() => setPickerShow(false)} />
                         <Picker onEmojiClick={onEmojiClick} />
                       </>
                     )}
@@ -367,18 +366,18 @@ function Posts({ postId, from, time, img, like, comment, content, author }: any)
               >
                 {comment.length > 1
                   ? comment.map((item: any, key: any) => {
-                    return (
-                      key >= 1 && (
-                        <ExampleComment
-                          replay={{
-                            time: item.time,
-                            name: item.name,
-                            text: item.text,
-                          }}
-                        />
+                      return (
+                        key >= 1 && (
+                          <ExampleComment
+                            replay={{
+                              time: item.time,
+                              name: item.name,
+                              text: item.text,
+                            }}
+                          />
+                        )
                       )
-                    )
-                  })
+                    })
                   : null}
               </ExampleComment>
             </div>

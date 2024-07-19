@@ -14,7 +14,7 @@ const info = () => {
         <p className="text-light dark:text-white/[.87] mb-4">Some contents...</p>
       </div>
     ),
-    onOk() { },
+    onOk() {},
   })
 }
 
@@ -65,9 +65,13 @@ const showConfirm = () => {
     onOk() {
       return new Promise((resolve, reject) => {
         setTimeout(Math.random() > 0.5 ? resolve : reject, 1000)
-      }).catch(() => { })
+      }).catch(() => {
+        //
+      })
     },
-    onCancel() { },
+    onCancel() {
+      //
+    },
   })
 }
 

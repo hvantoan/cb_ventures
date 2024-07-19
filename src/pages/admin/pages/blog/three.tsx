@@ -2,7 +2,7 @@ import { Row, Col } from 'antd'
 import React from 'react'
 import { PageHeaders } from '@/components/PageHeaders'
 import BlogCard from '@/components/Cards/BlogCard'
-import cardData from '@/demoData/sampleCards.json'
+import cardData from '@/data/sampleCards.json'
 
 const { BlogCardData } = cardData
 

@@ -1,8 +1,9 @@
 import { Avatar, Form, Input, List } from 'antd'
-import { Comment } from '@ant-design/compatible'
+// import { Comment } from
 import moment from 'moment'
 import React, { useState } from 'react'
 import { Buttons } from '../Buttons'
+import { Comment } from '@ant-design/compatible'
 
 const { TextArea } = Input
 

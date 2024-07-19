@@ -2,7 +2,7 @@ import React from 'react'
 import { UilEllipsisH } from '@iconscout/react-unicons'
 import Link from 'next/link'
 import FontAwesome from 'react-fontawesome'
-import socialMediaLinks from '@/demoData/socialMediaLinks.json'
+import socialMediaLinks from '@/data/socialMediaLinks.json'
 import DropDown from '@/components/Dropdown'
 
 function TeamCard({ user, actions }: any) {

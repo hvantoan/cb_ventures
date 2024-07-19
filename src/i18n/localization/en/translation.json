@@ -158,6 +158,7 @@
   "three": "Three",
   "details": "Details",
   "maintanance": "Maintanance",
+  "404": "404",
   "coming": "Coming",
   "soon": "Soon",
   "terms": "Terms",
@@ -179,9 +180,5 @@
   "6": "6",
   "7": "7",
   "crud": "CRUD",
-  "features": "features",
-  "404": {
-    "title": "404",
-    "mesage": "  Sorry! the page you are looking for does not exist."
-  }
+  "features": "features"
 }

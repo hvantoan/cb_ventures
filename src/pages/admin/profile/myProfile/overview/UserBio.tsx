@@ -2,7 +2,7 @@ import React from 'react'
 import { UilPhone, UilGlobe, UilEnvelope } from '@iconscout/react-unicons'
 import FontAwesome from 'react-fontawesome'
 import { Buttons } from '@/components/Buttons'
-import socialMediaLinks from '@/demoData/socialMediaLinks.json'
+import socialMediaLinks from '@/data/socialMediaLinks.json'
 
 function UserBio() {
   return (

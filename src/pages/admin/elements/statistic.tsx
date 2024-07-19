@@ -19,7 +19,9 @@ function Statistics() {
       breadcrumbName: 'Statistics',
     },
   ]
-  const onFinish = () => {}
+  const onFinish = () => {
+    //
+  }
 
   return (
     <>

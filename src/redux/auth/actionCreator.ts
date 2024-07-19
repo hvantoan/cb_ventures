@@ -23,4 +23,6 @@ export const LoginAction = createAsyncThunk('auth/login', async (userData: Login
     return rejectWithValue(error?.response?.data)
   }
 })
-export const RegisterAction = createAsyncThunk('auth/register', () => {})
+export const RegisterAction = createAsyncThunk('auth/register', () => {
+  //TODO: Implement register action
+})

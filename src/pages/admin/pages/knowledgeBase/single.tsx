@@ -124,9 +124,9 @@ function SingleKnowledge() {
             </div>
           </div>
           <span
+            title="Close Sidebar"
             role="button"
             // tabIndex="0"
-            onKeyPress={() => {}}
             className={collapsed ? 'sidebar-shade show' : 'sidebar-shade'}
             onClick={toggleCollapsed}
           />

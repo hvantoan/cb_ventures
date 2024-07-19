@@ -21,7 +21,7 @@ function SignUp() {
     password: '',
   })
 
-  const handleSignup = async (e: any) => {
+  const handleSignup = async () => {
     if (data.password.length < 6) {
       setError('Mật khẩu phải có ít nhất 6 ký tự!')
       return

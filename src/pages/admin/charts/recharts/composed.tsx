@@ -3,7 +3,7 @@ import { Row, Col } from 'antd'
 import { ComposedChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 import { PageHeaders } from '@/components/PageHeaders'
 import { Cards } from '@/components/Cards/Frame/CardsFrame'
-import rechartdata from '@/demoData/recharts.json'
+import rechartdata from '@/data/recharts.json'
 
 const { data } = rechartdata
 

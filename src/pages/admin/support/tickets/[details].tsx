@@ -11,7 +11,7 @@ import { Cards } from '@/components/Cards/Frame/CardsFrame'
 // import { singlePageReade, ticketUpdateData } from '@/redux/supportTickets/actionCreator'
 import { Buttons } from '@/components/Buttons'
 import { idGenerator } from '@/utils'
-import data from '@/demoData/supportData.json'
+import data from '@/data/supportData.json'
 
 const PageRoutes = [
   {

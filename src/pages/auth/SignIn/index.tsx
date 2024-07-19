@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 import { ReactSVG } from 'react-svg'
 import { UilFacebook, UilTwitter, UilGithub } from '@iconscout/react-unicons'
 import { CheckBox } from '@/components/Checkbox'
-import { AppDispatch } from '@/redux/store'
+import type { AppDispatch } from '@/redux/store'
 import { LoginAction, LoginState } from '@/redux/auth/actionCreator'
 
 function SignIn() {
@@ -47,10 +47,10 @@ function SignIn() {
   }
 
   useEffect(() => {
-    let email = document.querySelector('input[type="text"]')
-    let emailValue = (email as HTMLInputElement).value
-    let password = document.querySelector('input[type="password"]')
-    let passwordValue = (password as HTMLInputElement).value
+    const email = document.querySelector('input[type="text"]')
+    const emailValue = (email as HTMLInputElement).value
+    const password = document.querySelector('input[type="password"]')
+    const passwordValue = (password as HTMLInputElement).value
 
     setData({
       username: emailValue,

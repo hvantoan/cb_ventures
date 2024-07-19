@@ -65,7 +65,9 @@ function AddSupportTicket() {
     dispatch(ticketUpdateData(deleteData))
   }
 
-  const cancel = () => { }
+  const cancel = () => {
+    //TODO: Add cancel logic
+  }
 
   const prefix = (
     <SearchOutlined

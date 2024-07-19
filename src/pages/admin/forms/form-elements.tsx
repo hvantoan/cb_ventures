@@ -37,7 +37,10 @@ function FormElements() {
       breadcrumbName: 'Form Elements',
     },
   ]
-  function onChange() {}
+  function onChange() {
+    //TODO: Implement onChange function
+    // console.log(`checked = ${e.target.checked}`);
+  }
   return (
     <>
       <PageHeaders

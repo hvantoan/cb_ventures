@@ -29,7 +29,7 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from '@/redux/store'
+import type { RootState } from '@/redux/store'
 import { changeDirectionMode, changeLayoutMode, changeMenuMode } from '@/redux/themeLayout/reducers'
 
 function MenuItems() {
@@ -45,9 +45,9 @@ function MenuItems() {
   const { pathname } = router
   const pathArray = pathname && pathname !== '/' ? pathname.split(path) : []
   const mainPath = pathArray.length > 1 ? pathArray[1] : ''
-  const mainPathSplit = mainPath.split('/')
+  const mainPathSplit = mainPath!.split('/')
 
-  const [openKeys, setOpenKeys] = React.useState(
+  const [openKeys, setOpenKeys] = React.useState<any>(
     !topMenu ? [`${mainPathSplit.length > 2 ? mainPathSplit[1] : 'dashboard'}`] : []
   )
   const [openItems, setOpenItems] = React.useState(

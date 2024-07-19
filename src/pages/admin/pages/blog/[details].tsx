@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { PageHeaders } from '@/components/PageHeaders'
 
-import cardData from '@/demoData/sampleCards.json'
+import cardData from '@/data/sampleCards.json'
 
 const { BlogCardData } = cardData
 
 function BlogDetails() {
   const router = useRouter()
-  var slug = router.query.slug
+  let slug = router.query.slug
   if (slug === undefined) {
     slug = 'blog-one'
   }

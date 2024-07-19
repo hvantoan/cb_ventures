@@ -559,7 +559,7 @@ as conflicts may arise in other places
   @apply absolute top-3 start-full ms-[15px] bg-white dark:bg-[#1b1d2a] rounded-6 h-10 w-[260px] hidden [&.show]:block;
 }
 .topMenu-search-form .search-icon {
-  width: fit-content;
+  @apply w-fit;
   line-height: 1;
   position: absolute;
   inset-inline-start: 15px;
