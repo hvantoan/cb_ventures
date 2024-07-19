@@ -4,7 +4,7 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Legend }
 import { PageHeaders } from '@/components/PageHeaders'
 import { Cards } from '@/components/Cards/Frame/CardsFrame'
 
-import reChartData from '@/demoData/recharts.json'
+import reChartData from '@/data/recharts.json'
 
 const { radar } = reChartData
 

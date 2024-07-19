@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Row, Col, Input } from 'antd'
-import { useSelector } from 'react-redux'
 import { PageHeaders } from '@/components/PageHeaders'
 import { Cards } from '@/components/Cards/Frame/CardsFrame'
 import { AutoCompleted } from '@/components/AutoComplete'
@@ -17,32 +16,32 @@ function AutoCompletePage() {
       breadcrumbName: 'AutoComplete',
     },
   ]
-  const searchData = useSelector((state: any) => state.headerSearchData)
+  // const searchData = useSelector((state: any) => state.headerSearchData)
 
   const [state, setState]: any = useState({
     dataSource: [],
-    notData: searchData,
+    notData: [],//searchData,
   })
   const { dataSource, notData } = state
 
   const onSearch = (searchText: any) => {
-    let arrayData: any = []
-    const data = searchData.filter((item: any) => item.title.toUpperCase().startsWith(searchText.toUpperCase()))
-    if (data.length) {
-      data.map((item: any) => arrayData.push(item.title))
-    } else {
-      arrayData = ['Data Not Found!']
-    }
-    setState({
-      dataSource: !searchText ? [] : arrayData,
-    })
+    // let arrayData: any = []
+    // const data = searchData.filter((item: any) => item.title.toUpperCase().startsWith(searchText.toUpperCase()))
+    // if (data.length) {
+    //   data.map((item: any) => arrayData.push(item.title))
+    // } else {
+    //   arrayData = ['Data Not Found!']
+    // }
+    // setState({
+    //   dataSource: !searchText ? [] : arrayData,
+    // })
   }
 
   const patternSearch = (searchText: any) => {
-    const data = searchData.filter((item: any) => item.title.toUpperCase().startsWith(searchText.toUpperCase()))
-    setState({
-      notData: data,
-    })
+    // const data = searchData.filter((item: any) => item.title.toUpperCase().startsWith(searchText.toUpperCase()))
+    // setState({
+    //   notData: data,
+    // })
   }
 
   return (

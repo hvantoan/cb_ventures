@@ -23,8 +23,8 @@ function Selects() {
   const [state, setState]: any = useState({
     selectedItems: [],
     size: 'default',
-    cities: cityData[provinceData[0]],
-    secondCity: cityData[provinceData[0]][0],
+    cities: cityData[provinceData[0]!],
+    secondCity: cityData[provinceData[0]!][0],
   })
 
   const handleChange = (selectedItems: any) => {

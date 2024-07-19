@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Row, Col, Tooltip, Avatar, List } from 'antd'
-import { Comment } from '@ant-design/compatible'
+import { Comment } from '@ant-design/compatible/es'
 import moment from 'moment'
 import Link from 'next/link'
 import { LikeOutlined, DislikeOutlined } from '@ant-design/icons'

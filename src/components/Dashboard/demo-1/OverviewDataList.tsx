@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col } from 'antd'
 import OverviewCard from '@/components/Cards/OverviewCard'
 
-import OverviewData from '@/demoData/overviewData.json'
+import OverviewData from '@/data/overviewData.json'
 
 const OverviewDataList = React.memo((column: any) => {
   const OverviewDataSorted = OverviewData.slice(0, 4)

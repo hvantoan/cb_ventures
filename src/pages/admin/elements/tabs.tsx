@@ -3,14 +3,16 @@ import { Row, Col } from 'antd'
 import { PageHeaders } from '@/components/PageHeaders'
 import { AndroidOutlined, AppleOutlined } from '@ant-design/icons'
 // import { Tab } from '@/components/tabs';
-// import tabData from '@/demoData/tab-data.json';
+// import tabData from '@/data/tab-data.json';
 
 import { Tabs } from 'antd'
 import type { TabsProps } from 'antd'
 
 // const { data, dataIcon, icon } = tabData;
 
-const onChange = (key: string) => {}
+const onChange = (key: string) => {
+  //
+}
 
 const description =
   'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor tellus eget condimentum rhoncus. Aenean massa. Cum sociis natoque penatibus et magnis neque dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.'

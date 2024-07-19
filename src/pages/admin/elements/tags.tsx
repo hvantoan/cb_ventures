@@ -1,9 +1,8 @@
 import { Col, Row } from 'antd'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { PageHeaders } from '@/components/PageHeaders'
 import { Tags } from '@/components/tags'
 import { CloseCircleOutlined } from '@ant-design/icons'
-import type { InputRef } from 'antd'
 import { Tag } from 'antd'
 
 function TagElement() {
@@ -21,7 +20,9 @@ function TagElement() {
     checked: null,
   })
 
-  const log = (e: React.MouseEvent<HTMLElement>) => {}
+  const log = (e: React.MouseEvent<HTMLElement>) => {
+    //
+  }
 
   const checked = (checked: any) => {
     setState({ ...state, checked })
@@ -93,7 +94,7 @@ function TagElement() {
                   <Tags color="geekblue">geekblue</Tags>
                   <Tags color="purple">purple</Tags>
                 </div>
-                <h4 style={{ margin: '16px 0' }}>Custom:</h4>
+                <h4 className="mx-4">Custom:</h4>
                 <div className="taglist-wrap">
                   <Tags color="#f50">#f50</Tags>
                   <Tags color="#2db7f5">#2db7f5</Tags>

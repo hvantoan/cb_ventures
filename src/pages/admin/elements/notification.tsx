@@ -37,7 +37,9 @@ function Notifications() {
       message: 'Notification Title',
       description:
         'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
-      onClick: () => {},
+      onClick: () => {
+        //
+      },
     })
   }
 
@@ -50,7 +52,9 @@ function Notifications() {
     notification.open(args)
   }
 
-  const close = () => {}
+  const close = () => {
+    //
+  }
 
   const openNotification3 = () => {
     const key: any = `open${Date.now()}`

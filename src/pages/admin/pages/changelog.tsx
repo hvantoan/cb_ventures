@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col, Collapse } from 'antd'
 import { PageHeaders } from '@/components/PageHeaders'
-import versions from '@/demoData/changelog.json'
+import versions from '@/data/changelog.json'
 
 const { Panel } = Collapse
 
@@ -32,16 +32,16 @@ function ChangeLog() {
                   <div className="h-[60px] ssm:h-auto px-[25px] text-dark dark:text-white/[.87] font-medium text-[17px] border-regular dark:border-white/10 border-b">
                     <h1 className="mb-0 inline-flex items-center flex-wrap py-[16px] text-[18px] font-semibold gap-[15px]">
                       <span className="text-lg font-medium text-dark dark:text-white/[.87]">
-                        Version {versions[0].version}{' '}
+                        Version {versions[0]?.version}{' '}
                       </span>
                       <span className="mx-2 text-lg font-medium text-dark dark:text-white/[.87]">-</span>
                       <span className="text-[#868eae] dark:text-white/60 text-base font-normal">
-                        {versions[0].date}
+                        {versions[0]?.date}
                       </span>
                     </h1>
                   </div>
                   <div className="p-[25px]">
-                    {versions[0].new && (
+                    {versions[0]?.new && (
                       <div className="mb-[30px]">
                         <span className="inline-block bg-success mb-4 px-2 py-[5px] text-white dark:text-white/[.87] text-xs font-medium leading-4 tracking-[1.4px] rounded">
                           New

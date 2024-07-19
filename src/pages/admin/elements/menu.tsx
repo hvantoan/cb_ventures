@@ -28,7 +28,9 @@ function Menus() {
     })
   }
 
-  const onVerticleHandleClick = () => {}
+  const onVerticleHandleClick = () => {
+    //
+  }
 
   const items: MenuProps['items'] = [
     {

@@ -11,7 +11,8 @@ import { Cards } from '@/components/Cards/Frame/CardsFrame'
 // import { singlePageReade, ticketUpdateData } from '@/redux/supportTickets/actionCreator'
 import { Buttons } from '@/components/Buttons'
 import { idGenerator } from '@/utils'
-import data from '@/demoData/supportData.json'
+import data from '@/data/supportData.json'
+import Image from 'next/image'
 
 const PageRoutes = [
   {
@@ -164,7 +165,7 @@ function SupportTicketDetails() {
                     <div>
                       <h4 className="text-[14px] text-light dark:text-white/60 mb-[12px]">Requested By:</h4>
                       <div className="flex items-center mb-[30px] gap-[15px]">
-                        <img className="w-[30px] rounded-full" src={`/${dataState[0].user.img}`} alt="" />
+                        <Image className="w-[30px] rounded-full" src={`/${dataState[0].user.img}`} alt="" fill />
                         <span className="text-[14px] font-medium text-theme-gray dark:text-white/60">
                           {dataState[0].user.name}
                         </span>
@@ -289,7 +290,7 @@ function SupportTicketDetails() {
                     <div key={index} className="flex ltr:items-start rtl:items-end justify-between mb-[22px] last:mb-0">
                       <div className="flex gap-[10px]">
                         <div>
-                          <img className="w-[40px] h-[40px]" src={`/img/files/${file.type}.png`} alt="File Logo" />
+                          <Image src={`/img/files/${file.type}.png`} alt="File Logo" width={40} height={40} />
                         </div>
                         <div>
                           <span className="text-[15px] font-medium text-theme-gray dark:text-white/60">

@@ -4,7 +4,7 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import { ArrowRightOutlined } from '@ant-design/icons'
 import { Buttons } from '@/components/Buttons'
 
-import articles from '@/demoData/article.json'
+import articles from '@/data/article.json'
 
 function PopularArticle() {
   const path = '/admin/pages/knowledgeBase'

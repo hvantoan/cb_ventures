@@ -1,4 +1,5 @@
 import { Card } from 'antd'
+import Image from 'next/image'
 import React from 'react'
 
 export type VisionData = {
@@ -17,7 +18,7 @@ export function VisionCard({ data }: VisionCardProps) {
         <div className="rounded-2xl drop-shadow-lg bg-gradient-to-r from-[#0b1f1a] to-[#132924] grid gap-4 p-8 hover:border border-primary">
             <div className="flex justify-center">
                 <Card className="rounded-full w-[125px] h-[125px]">
-                    <img
+                    <Image
                         width="96"
                         height="96"
                         src={data.url}

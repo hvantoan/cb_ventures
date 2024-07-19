@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import initialState from '@/demoData/contact.json'
-import { Contact } from './reducer'
+import initialState from '@/data/contact.json'
+import type { Contact } from './reducer'
 
 export const ContactGetData = createAsyncThunk<Contact[]>('contact/get', async (_, { rejectWithValue }) => {
   try {
@@ -54,7 +54,7 @@ interface OnStartUpdateProp {
 
 export const OnStarUpdate = createAsyncThunk(
   'contact/on-start-update',
-  async (prop: OnStartUpdateProp, { rejectWithValue, getState, dispatch }) => {
+  async (prop: OnStartUpdateProp, { rejectWithValue }) => {
     try {
       prop.data.map((item) => {
         if (item.id === prop.id) {

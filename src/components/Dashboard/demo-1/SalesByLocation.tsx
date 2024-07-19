@@ -1,6 +1,5 @@
 import { UilBookOpen, UilFile, UilFileAlt, UilPrint, UilTimes } from '@iconscout/react-unicons'
-import { Col, Row, Table, Button } from 'antd'
-import Image from 'next/image'
+import { Col, Row, Table } from 'antd'
 import React, { useState } from 'react'
 import { Scrollbars } from 'react-custom-scrollbars-2'
 import { useSelector } from 'react-redux'
@@ -8,9 +7,9 @@ import Link from 'next/link'
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps'
 import { Tooltip } from 'react-tooltip'
 import { Cards } from '@/components/Cards/Frame/CardsFrame'
-import salesLocations from '@/demoData/table-data.json'
+import salesLocations from '@/data/table-data.json'
 import 'react-tooltip/dist/react-tooltip.css'
-import { RootState } from '@/redux/store'
+import type { RootState } from '@/redux/store'
 
 interface SalesLocationData {
   today: string[][]
@@ -109,7 +108,7 @@ const regionColumns = [
   },
 ]
 
-const SaleByLocation = React.memo(() => {
+const SalesByLocation = React.memo(function SalesByLocation() {
   const { rtl } = useSelector((state: RootState) => {
     return {
       rtl: state.layout.rtlData,
@@ -166,9 +165,9 @@ const SaleByLocation = React.memo(() => {
       const [region, order, revenue] = value
       saleLocationData.push({
         key: index + 1,
-        region,
-        order,
-        revenue,
+        region: region ?? '',
+        order: order ?? '',
+        revenue: revenue ?? '',
       })
     })
   }
@@ -282,7 +281,7 @@ const SaleByLocation = React.memo(() => {
                   onMoveEnd={handleMoveEnd}
                 >
                   <Geographies geography={geoUrl}>
-                    {({ geographies }) =>
+                    {({ geographies }: any) =>
                       geographies.map((geo: any) => (
                         <Geography
                           key={geo.rsmKey}
@@ -324,7 +323,7 @@ const SaleByLocation = React.memo(() => {
                   onClick={handleZoomIn}
                   className="flex justify-center bg-white rounded-md rounded-b-none dark:bg-[#1b1d2a] border-regular border-1 dark:border-white/30 w-7 h-7 dark:text-white/[.87]"
                 >
-                  { }
+                  {}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="10"
@@ -342,7 +341,7 @@ const SaleByLocation = React.memo(() => {
                   onClick={handleZoomOut}
                   className="flex justify-center bg-white rounded-md rounded-t-none dark:bg-[#1b1d2a] border-regular border-1 dark:border-white/30 border-t-none w-7 h-7 dark:text-white/[.87]"
                 >
-                  { }
+                  {}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="10"
@@ -363,4 +362,4 @@ const SaleByLocation = React.memo(() => {
   )
 })
 
-export default SaleByLocation
+export default SalesByLocation

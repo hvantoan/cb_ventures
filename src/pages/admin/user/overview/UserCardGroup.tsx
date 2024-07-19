@@ -4,6 +4,7 @@ import { Progress } from 'antd'
 import { UilEllipsisH } from '@iconscout/react-unicons'
 import Heading from '@/components/Heading'
 import DropDown from '@/components/Dropdown'
+import Image from 'next/image'
 
 function UserCardGroup({ user }: any) {
   const { title, company, img, icon, content } = user
@@ -13,7 +14,7 @@ function UserCardGroup({ user }: any) {
         <div className="bg-white dark:bg-white/10 p-[25px] rounded-[10px]">
           <div className="card__top">
             <div className="user-card__img">
-              <img src={`/${icon}`} alt="" />
+              <Image src={`/${icon}`} alt="" fill />
             </div>
             <div className="user-card__info">
               <Heading className="card__name" as="h6">
@@ -42,7 +43,7 @@ function UserCardGroup({ user }: any) {
             <p>{content}</p>
             <div className="image-group">
               {img.map((item: any, key: any) => {
-                return <img key={key + 1} src={`/${item}`} alt="" />
+                return <Image key={key + 1} src={`/${item}`} alt="" fill />
               })}
             </div>
           </div>

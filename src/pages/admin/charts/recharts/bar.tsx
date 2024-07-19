@@ -3,7 +3,7 @@ import { Row, Col } from 'antd'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceLine } from 'recharts'
 import { PageHeaders } from '@/components/PageHeaders'
 import { Cards } from '@/components/Cards/Frame/CardsFrame'
-import rechartdata from '@/demoData/recharts.json'
+import rechartdata from '@/data/recharts.json'
 
 const { data, positiveAndNegative } = rechartdata
 

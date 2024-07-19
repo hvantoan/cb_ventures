@@ -4,7 +4,7 @@ import { PieChart, Pie, Sector, Cell, Tooltip } from 'recharts'
 import { PageHeaders } from '@/components/PageHeaders'
 import { Cards } from '@/components/Cards/Frame/CardsFrame'
 
-import rechartdata from '@/demoData/recharts.json'
+import rechartdata from '@/data/recharts.json'
 
 const { data01, data02 } = rechartdata
 

@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Heading from '@/components/Heading'
 import { Buttons } from '@/components/Buttons'
+import Image from 'next/image'
 
 function UserCardList({ user }: any) {
   const { name, designation, img, content } = user
@@ -10,7 +11,7 @@ function UserCardList({ user }: any) {
       <div className="card user-card theme-list">
         <div className="bg-white dark:bg-white/10 p-[30px] rounded-[10px]">
           <figure className="flex items-start justify-between sm:flex-wrap min-sm:gap-[20px] mb-0">
-            <img className="w-[80px] h-[80px] mb-[18px] rounded-full" src={`/${img}`} alt="" />
+            <Image className="w-[80px] h-[80px] mb-[18px] rounded-full" src={`/${img}`} alt="" fill />
 
             <figcaption className="flex items-start justify-between sm:flex-wrap text-start w-full gap-[10px] gap-y-[15px]">
               <div className="static">

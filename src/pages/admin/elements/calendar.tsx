@@ -55,7 +55,7 @@ function Calendars() {
         break
       default:
     }
-    return listData || []
+    return listData ?? []
   }
 
   const cellRender = (value: any) => {

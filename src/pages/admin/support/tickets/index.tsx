@@ -13,6 +13,7 @@ import { Buttons } from '@/components/Buttons'
 import { idGenerator } from '@/utils'
 // import { ticketReadData, ticketUpdateData, ticketUpdateSearch } from '@/redux/supportTickets/actionCreator'
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
 
 const OverviewDataList = dynamic(() => import('../overview/OverviewDataList'), {
   loading: () => (
@@ -67,7 +68,9 @@ function SupportTicket() {
     dispatch(ticketUpdateData(deleteData))
   }
 
-  const cancel = () => { }
+  const cancel = () => {
+    // TODO: Implement cancel
+  }
 
   const prefix = (
     <SearchOutlined
@@ -149,7 +152,7 @@ function SupportTicket() {
         requested: (
           <div className="flex items-center gap-x-[20px] gap-y-[15px]">
             <div>
-              <img className="max-w-[30px] rounded-full" src={`/${user.img}`} alt="" />
+              <Image className="max-w-[30px] rounded-full" src={`/${user.img}`} alt="" fill />
             </div>
             <div>
               <p className="mb-0 text-[15px] text-theme-gray dark:text-white/60 font-medium">{user.name}</p>

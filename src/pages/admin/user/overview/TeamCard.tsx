@@ -2,8 +2,9 @@ import React from 'react'
 import { UilEllipsisH } from '@iconscout/react-unicons'
 import Link from 'next/link'
 import FontAwesome from 'react-fontawesome'
-import socialMediaLinks from '@/demoData/socialMediaLinks.json'
+import socialMediaLinks from '@/data/socialMediaLinks.json'
 import DropDown from '@/components/Dropdown'
+import Image from 'next/image'
 
 function TeamCard({ user, actions }: any) {
   const { name, designation, img } = user
@@ -12,7 +13,7 @@ function TeamCard({ user, actions }: any) {
     <>
       <div className="relative bg-white dark:bg-white/10 p-[25px] rounded-[10px] shadow-[0_5px_20px_rgba(173,181,217,0.01)] text-center">
         <figure className="mb-0">
-          <img className="mb-[20px] w-full rounded-full max-w-[150px] inline-block" src={`/${img}`} alt="" />
+          <Image className="mb-[20px] w-full rounded-full max-w-[150px] inline-block" src={`/${img}`} alt="" fill />
           <figcaption>
             <div className="absolute py-1 dark:bg-transparent ltr:right-[24px] rtl:left-[24px] top-[20px] leading-[0.5] rounded-10 text-light-extra dark:text-white60">
               <DropDown content={actions} action={['click']}>

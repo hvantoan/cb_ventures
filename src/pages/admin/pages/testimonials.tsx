@@ -137,10 +137,10 @@ function Testimonials() {
               })}
             </Swiper>
             <div className="swiper-button-prev">
-              <img src="/img/icon/arrow-left.png" title="" alt="" />
+              <Image src="/img/icon/arrow-left.png" title="" alt="" fill />
             </div>
             <div className="swiper-button-next">
-              <img src="/img/icon/arrow-right.png" title="" alt="" />
+              <Image src="/img/icon/arrow-right.png" title="" alt="" fill />
             </div>
           </div>
           <div className="relative px-24 lg:px-14 md:px-10 sm:px-[15px] xs:px-0 theme-2 pt-16 pb-[75px] lg:pb-[50px]">
@@ -188,10 +188,10 @@ function Testimonials() {
                 )
               })}
               <div className="swiper-button-prev">
-                <img src="/img/icon/arrow-left.png" title="" alt="" />
+                <Image src="/img/icon/arrow-left.png" title="" alt="" fill />
               </div>
               <div className="swiper-button-next">
-                <img src="/img/icon/arrow-right.png" title="" alt="" />
+                <Image src="/img/icon/arrow-right.png" title="" alt="" fill />
               </div>
             </Swiper>
           </div>
@@ -240,7 +240,7 @@ function Testimonials() {
                   <SwiperSlide key={index + 1}>
                     <div className="max-w-[1000px] 3xl:max-w-[570px] lg:max-w-[450px] p-12 sm:px-5 mx-auto text-center bg-white rounded-lg shadow-lg dark:bg-white/10">
                       <div>
-                        <img className="mx-auto mb-6 max-w-100" src={`/${user.img}`} alt="" />
+                        <Image className="mx-auto mb-6 max-w-100" src={`/${user.img}`} alt="" fill />
                       </div>
                       <div>
                         <p className="mb-0 text-base leading-7 text-body dark:text-white/60">
@@ -260,10 +260,10 @@ function Testimonials() {
                 )
               })}
               <div className="swiper-button-prev start-[100px]">
-                <img src="/img/icon/arrow-left.png" title="" alt="" />
+                <Image src="/img/icon/arrow-left.png" title="" alt="" fill />
               </div>
               <div className="swiper-button-next end-[100px]">
-                <img src="/img/icon/arrow-right.png" title="" alt="" />
+                <Image src="/img/icon/arrow-right.png" title="" alt="" fill />
               </div>
             </Swiper>
           </div>

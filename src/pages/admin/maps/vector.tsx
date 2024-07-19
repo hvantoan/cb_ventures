@@ -13,17 +13,17 @@ import 'react-tooltip/dist/react-tooltip.css'
 const geoUrl = 'https://unpkg.com/world-atlas@2.0.2/countries-110m.json'
 
 function VectorMaps() {
-  const [position, setPosition] = useState({ coordinates: [0, 0], zoom: 1 })
+  const [position, setPosition] = useState<any>({ coordinates: [0, 0], zoom: 1 })
   const [content, setContent] = useState('')
 
   function handleZoomIn() {
     if (position.zoom >= 4) return
-    setPosition((pos) => ({ ...pos, zoom: pos.zoom * 2 }))
+    setPosition((pos: any) => ({ ...pos, zoom: pos.zoom * 2 }))
   }
 
   function handleZoomOut() {
     if (position.zoom <= 1) return
-    setPosition((pos) => ({ ...pos, zoom: pos.zoom / 2 }))
+    setPosition((pos: any) => ({ ...pos, zoom: pos.zoom / 2 }))
   }
 
   function handleMoveEnd(pos: any) {
@@ -61,8 +61,8 @@ function VectorMaps() {
                       onMoveEnd={handleMoveEnd}
                     >
                       <Geographies geography={geoUrl}>
-                        {({ geographies }) =>
-                          geographies.map((geo) => (
+                        {({ geographies }: any) =>
+                          geographies.map((geo: any) => (
                             <Geography
                               key={geo.rsmKey}
                               geography={geo}
@@ -98,6 +98,7 @@ function VectorMaps() {
                   </ComposableMap>
                   <div className="flex items-center flex-col absolute ltr:right-5 rtl:left-5 bottom-5">
                     <button
+                      title="Zoom In"
                       type="button"
                       onClick={handleZoomIn}
                       className="flex justify-center bg-white dark:text-white/[.87] dark:bg-white/10 w-7 h-7 border border-regular dark:border-white/10 rounded-md rounded-b-none"
@@ -115,6 +116,7 @@ function VectorMaps() {
                       </svg>
                     </button>
                     <button
+                      title="Zoom Out"
                       type="button"
                       onClick={handleZoomOut}
                       className="flex justify-center dark:text-white/[.87] bg-white dark:bg-white/10 w-7 h-7 border border-regular dark:border-white/10 rounded-md rounded-t-none"

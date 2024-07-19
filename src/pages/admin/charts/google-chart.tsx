@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col } from 'antd'
 import { PageHeaders } from '@/components/PageHeaders'
-import gCharts from '@/demoData/google-charts.json'
+import gCharts from '@/data/google-charts.json'
 import {
   GoogleBasicBarChart,
   GoogleMaterialBarChart,

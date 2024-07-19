@@ -1,9 +1,10 @@
 'use client'
+import Image from 'next/image'
 import React from 'react'
 
 export function Features() {
   return (
-    <div className="relative min-h-[calc(100vh - 72px)] w-full bg-[url('/image/course.png')] bg-cover bg-no-repeat">
+    <div className="relative min-h-[calc(100vh - 72px)] w-full">
       <div className="absolute inset-0 h-full w-full bg-[#091d18] z-[-1] " />
       <div className='flex justify-center'>
         <div className="container mx-auto relative grid sm:grid-cols-1 md:grid-cols-1 grid-cols-2 gap-20
@@ -36,7 +37,7 @@ export function Features() {
             </div>
           </div>
           <div className="content-center">
-            <img src="/img/landing/feature.png" alt="feature" className="object-fill w-full" />
+            <Image src="/img/landing/feature.png" fill alt="feature" className="object-fill w-full" />
           </div>
         </div>
       </div>

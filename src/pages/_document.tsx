@@ -1,36 +1,43 @@
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext,
-  DocumentInitialProps,
-} from 'next/document'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
+import type { DocumentContext, DocumentInitialProps } from 'next/document'
+import { createCache, extractStyle, StyleProvider } from '@ant-design/cssinjs/es';
 
 class MyDocument extends Document {
-  static async getInitialProps(
-    ctx: DocumentContext
-  ): Promise<DocumentInitialProps> {
+  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+    const cache = createCache();
     const originalRenderPage = ctx.renderPage
 
     // Run the React rendering logic synchronously
     ctx.renderPage = () =>
       originalRenderPage({
         // Useful for wrapping the whole react tree
-        enhanceApp: (App) => App,
+        enhanceApp: (App) => (props) => (
+          <StyleProvider cache={cache}>
+            <App {...props} />
+          </StyleProvider>
+        ),
         // Useful for wrapping in a per-page basis
         enhanceComponent: (Component) => Component,
       })
 
     // Run the parent `getInitialProps`, it now includes the custom `renderPage`
     const initialProps = await Document.getInitialProps(ctx)
+    const style = extractStyle(cache, true);
 
-    return initialProps
+    return {
+      ...initialProps,
+      styles: (
+        <>
+          {initialProps.styles}
+          <style dangerouslySetInnerHTML={{ __html: style }} />
+        </>
+      ),
+    };
   }
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" dir="ltr">
         <Head title="CB Ventures">
           <link rel="icon" href="/favicon.svg" />
           <link

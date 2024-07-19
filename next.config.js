@@ -1,31 +1,53 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//     images: {
-//         domains: ["cdn.imagin.studio"]
-//     },
-//     reactStrictMode: true,
-// }
+/**
+ * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
+ * for Docker builds.
+ */
+await import('./src/env.js')
 
-// module.exports = nextConfig
+/** @type {import("next").NextConfig} */
+const config = {
+  output: 'standalone',
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/landing',
+        basePath: false,
+        permanent: false,
+      },
+    ]
+  },
+  images: {
+    remotePatterns: [
+      {
+        hostname: 'img.icons8.com',
+      },
+    ],
+  },
+  reactStrictMode: true,
 
+  /**
+   * If you are using `appDir` then you must comment the below `i18n` config out.
+   *
+   * @see https://github.com/vercel/next.js/issues/41980
+   */
+  i18n: {
+    locales: ['vi'],
+    defaultLocale: 'vi',
+  },
+  transpilePackages: [
+    'geist',
+    'antd',
+    '@ant-design',
+    '@ant-design/pro-layout',
+    'rc-util',
+    'rc-pagination',
+    'rc-picker',
+    'rc-notification',
+    'rc-tooltip',
+    'rc-tree',
+    'rc-table',
+  ],
+}
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    async redirects() {
-        return [
-            {
-                source: '/',
-                destination: '/landing',
-                basePath: false,
-                permanent: false
-            }
-        ]
-    },
-    reactStrictMode: true,
-    images: {
-      domains: ['lh3.googleusercontent.com'],
-    },
-  }
-  
-  module.exports = nextConfig
-  
+export default config

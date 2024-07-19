@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col } from 'antd'
 import OverviewCard from '@/components/Cards/OverviewCard'
 
-import SupportOverview from '@/demoData/supportOverview.json'
+import SupportOverview from '@/data/supportOverview.json'
 
 const OverviewDataList = React.memo(() => {
   return (

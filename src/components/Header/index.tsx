@@ -2,16 +2,15 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { UilEllipsisV } from '@iconscout/react-unicons'
-import Customizer from '../Customizer'
 import TopMenu from '@/components/Sidebar/TopMenu'
-import Search from '@/components/AuthInfo/Search'
-import AuthInfo from '@/components/AuthInfo/Info'
 import { ReactSVG } from 'react-svg'
 
 import { Col, Layout, Row } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeMenuCollapse } from '@/redux/themeLayout/reducers'
 import { AppDispatch, RootState } from '@/redux/store'
+import AuthInfo from '@/layouts/AuthInfo/info'
+import SearchBar from '@/layouts/AuthInfo/Search'
 
 const { Header } = Layout
 
@@ -74,6 +73,7 @@ export default function HeaderTop() {
               </Link>
               {!topMenu || (typeof window !== 'undefined' && window.innerWidth <= 1200) ? (
                 <button
+                  title="ok"
                   className="p-0 bg-transparent border-none dark:border-transparent dark:bg-transparent dark:hover:text-primary text-[#525768] dark:text-white/60 hover:text-primary"
                   onClick={() => {
                     toggleCollapsed(!collapsed)
@@ -97,7 +97,7 @@ export default function HeaderTop() {
             </div>
           </div>
           <div className="hidden md:flex items-center ltr:pr-[25px] rtl:pl-[25px] ltr:ssm:pr-[10px] rtl:ssm:pl-[10px] sm:gap-x-[10px]">
-            <Search />
+            <SearchBar />
             <Link className="inline-flex text-light dark:text-white/60" onClick={onShowHide} href="#">
               <UilEllipsisV className="w-[18px] h-[18px]" />
             </Link>
@@ -116,5 +116,3 @@ export default function HeaderTop() {
     </>
   )
 }
-
-

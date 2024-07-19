@@ -1,5 +1,5 @@
-import { create } from 'domain'
-import toData from '@/demoData/contact.json'
+
+import toData from '@/data/contact.json'
 import { createSlice } from '@reduxjs/toolkit'
 import { ContactAddData, ContactDeleteData, ContactGetData, ContactSearchData, OnStarUpdate } from './actionCreator'
 
@@ -42,7 +42,7 @@ const contactReducer = createSlice({
       })
       .addCase(ContactGetData.rejected, (state, action) => {
         state.loading = false
-        state.error = action.error.message || ''
+        state.error = action.error.message ?? ''
       })
     // Add Contact
     builder
@@ -55,7 +55,7 @@ const contactReducer = createSlice({
       })
       .addCase(ContactAddData.rejected, (state, action) => {
         state.loading = false
-        state.error = action.error.message || ''
+        state.error = action.error.message ?? ''
       })
 
     builder
@@ -68,7 +68,7 @@ const contactReducer = createSlice({
       })
       .addCase(ContactDeleteData.rejected, (state, action) => {
         state.loading = false
-        state.error = action.error.message || ''
+        state.error = action.error.message ?? ''
       })
 
     builder
@@ -81,7 +81,7 @@ const contactReducer = createSlice({
       })
       .addCase(ContactSearchData.rejected, (state, action) => {
         state.loading = false
-        state.error = action.error.message || ''
+        state.error = action.error.message ?? ''
       })
 
     builder
@@ -94,7 +94,7 @@ const contactReducer = createSlice({
       })
       .addCase(OnStarUpdate.rejected, (state, action) => {
         state.loading = false
-        state.error = action.error.message || ''
+        state.error = action.error.message ?? ''
       })
   },
 })
