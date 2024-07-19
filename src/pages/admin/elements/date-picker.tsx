@@ -3,7 +3,7 @@ import { Row, Col, DatePicker } from 'antd'
 import dayjs from 'dayjs'
 import type { Dayjs } from 'dayjs'
 import { PageHeaders } from '@/components/PageHeaders'
-import { DateRangePickerOne, CustomDateRange } from '@/components/DatePicker'
+import { DateRangePickerOne, CustomDateRange } from '@/components/DatePicker/index'
 import type { TimeRangePickerProps } from 'antd'
 import type { DatePickerProps } from 'antd'
 
