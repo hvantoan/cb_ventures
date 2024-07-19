@@ -28,7 +28,6 @@ import {
 } from 'chart.js'
 import { useEffect } from 'react'
 import { customTooltips } from '../utilities'
-import { he } from 'date-fns/locale'
 
 Chart.register(
   ArcElement,
