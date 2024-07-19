@@ -3,14 +3,14 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { UilEllipsisV } from '@iconscout/react-unicons'
 import TopMenu from '@/components/Sidebar/TopMenu'
-import Search from '@/components/AuthInfo/Search'
-import AuthInfo from '@/components/AuthInfo'
 import { ReactSVG } from 'react-svg'
 
 import { Col, Layout, Row } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeMenuCollapse } from '@/redux/themeLayout/reducers'
 import { AppDispatch, RootState } from '@/redux/store'
+import AuthInfo from '@/layouts/AuthInfo/info'
+import SearchBar from '@/layouts/AuthInfo/Search'
 
 const { Header } = Layout
 
@@ -97,7 +97,7 @@ export default function HeaderTop() {
             </div>
           </div>
           <div className="hidden md:flex items-center ltr:pr-[25px] rtl:pl-[25px] ltr:ssm:pr-[10px] rtl:ssm:pl-[10px] sm:gap-x-[10px]">
-            <Search />
+            <SearchBar />
             <Link className="inline-flex text-light dark:text-white/60" onClick={onShowHide} href="#">
               <UilEllipsisV className="w-[18px] h-[18px]" />
             </Link>

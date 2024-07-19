@@ -17,10 +17,11 @@ import Message from './Message'
 import Notification from './Notification'
 import Settings from './settings'
 
-import PopOver from '../Popup/PopOver'
-import Heading from '../Heading'
-import DropDown from '..//Dropdown'
+
 import { logOutAction } from '@/redux/auth/reducers'
+import Heading from '@/components/Heading'
+import DropDown from '@/components/Dropdown'
+import PopOver from '@/components/Popup/PopOver'
 
 const AuthInfo = React.memo((props: any) => {
   // const router = useRouter()

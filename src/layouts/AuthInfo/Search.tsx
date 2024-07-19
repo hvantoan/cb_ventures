@@ -6,7 +6,6 @@ import {
 import { Form, Input } from 'antd';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 
 const SearchBar = React.memo(() => {
   const [form] = Form.useForm();
@@ -15,14 +14,14 @@ const SearchBar = React.memo(() => {
     openSearch: false,
   });
 
-  const openSearchbar = (e:any) => {
+  const openSearchbar = (e: any) => {
     e.preventDefault();
     setState({
       ...state,
       openSearch: true,
     });
   };
-  const closeSearchbar = (e:any) => {
+  const closeSearchbar = (e: any) => {
     e.preventDefault();
     setState({
       ...state,
