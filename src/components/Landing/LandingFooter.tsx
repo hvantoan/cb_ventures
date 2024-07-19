@@ -1,18 +1,19 @@
 import React from 'react'
 import { Row } from 'antd'
+import Image from 'next/image'
 
-export function Footer() {
+export function LandingFooter() {
   return (
     <footer>
       <div>
         <div className="container mx-auto grid grid-cols-2 sm:grid-cols-1 gap-10 py-8">
           <div>
             <Row>
-              <img
+              <Image
+                src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-slack-replace-email-text-messaging-and-instant-messaging-for-your-team-logo-color-tal-revivo.png"
+                alt="revivo"
                 width="48"
                 height="48"
-                src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-slack-replace-email-text-messaging-and-instant-messaging-for-your-team-logo-color-tal-revivo.png"
-                alt="external-slack-replace-email-text-messaging-and-instant-messaging-for-your-team-logo-color-tal-revivo"
               />
               <h1 className="ml-[5px] place-self-center">Meet Our</h1>
             </Row>
@@ -21,12 +22,12 @@ export function Footer() {
             </p>
             <Row>
               <button className="flex bg-primary rounded-lg p-[4px] place-content-center" type="button">
-                <img
-                  width="24"
-                  height="24"
+                <Image
+                  className="mt-[2px]"
                   src="https://img.icons8.com/material-outlined/48/circled-play.png"
                   alt="circled-play"
-                  className="mt-[2px]"
+                  width="24"
+                  height="24"
                 />
                 <div className="ml-[8px] text-left">
                   <p className="text-[7px]">Download on the</p>
@@ -34,7 +35,7 @@ export function Footer() {
                 </div>
               </button>
               <button className="flex bg-info-hbr rounded-lg p-[4px] place-content-center ml-[5px]" type="button">
-                <img
+                <Image
                   width="24"
                   height="24"
                   src="https://img.icons8.com/material-outlined/48/circled-play.png"
@@ -48,9 +49,11 @@ export function Footer() {
               </button>
             </Row>
           </div>
-          <div className='grid grid-cols-3 sm:grid-cols-1 gap-6'>
+          <div className="grid grid-cols-3 sm:grid-cols-1 gap-6">
             <div>
-              <h2 className="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white underline underline-offset-2">Resources</h2>
+              <h2 className="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white underline underline-offset-2">
+                Resources
+              </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li>
                   <a href="https://flowbite.com/" className="hover:underline">
@@ -65,7 +68,9 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white underline underline-offset-2">Follow us</h2>
+              <h2 className="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white underline underline-offset-2">
+                Follow us
+              </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li>
                   <a href="https://github.com/themesberg/flowbite" className="hover:underline ">
@@ -80,7 +85,9 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white underline underline-offset-2">Legal</h2>
+              <h2 className="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white underline underline-offset-2">
+                Legal
+              </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li>
                   <a href="#" className="hover:underline">
@@ -97,7 +104,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t p-4">
-          <div className='container mx-auto flex justify-between'>
+          <div className="container mx-auto flex justify-between">
             <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
               <a href="https://github.com/hvantoan" className="hover:underline">
                 © 2023 Design By Văn Toàn. All Rights Reserved.
@@ -187,4 +194,4 @@ export function Footer() {
     </footer>
   )
 }
-export default Footer
+export default LandingFooter

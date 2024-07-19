@@ -6,7 +6,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-function BlogCard(item:any, theme:any) {
+function BlogCard(item: any, theme: any) {
   const { slug, content, title, img } = item.item;
 
   const path = '/admin/pages/blog';
@@ -14,10 +14,10 @@ function BlogCard(item:any, theme:any) {
   return (
     <figure className="group p-6 mb-0 bg-white dark:bg-white/10 rounded-10 shadow-regular dark:shadow-none">
       <div className="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full">
-        <Image 
-          className="w-full max-h-[217px] rounded-10" 
-          src={`/img/blogs/${img}`} 
-          alt="hexadash Blog" 
+        <Image
+          className="w-full max-h-[217px] rounded-10"
+          src={`/img/blogs/${img}`}
+          alt="hexadash Blog"
           width="455"
           height="217"
         />
@@ -53,9 +53,9 @@ function BlogCard(item:any, theme:any) {
         <p className="mb-4 text-base text-dark dark:text-white/[.87]">{content}</p>
         <div className="flex justify-between">
           <div className="flex items-center gap-x-4">
-            <Image 
-              className="rounded-full max-w-[32px]" 
-              src='/img/chat-author/t1.jpg' 
+            <Image
+              className="rounded-full max-w-[32px]"
+              src='/img/chat-author/t1.jpg'
               alt=""
               width="32"
               height="32"

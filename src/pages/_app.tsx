@@ -2,15 +2,16 @@ import '@/styles/globals.css'
 import '../i18n/config'
 
 import type { AppProps } from 'next/app'
-import type { FC } from 'react'
+import { useEffect, useState, type FC } from 'react'
 
 import { useRouter } from 'next/router'
 import AdminLayout from '@/layouts/AdminLayout'
 import AuthLayout from '@/layouts/AuthLayout'
 import { wrapper } from '@/redux/store'
-import { useEffect, useState } from 'react'
 import { Provider } from 'react-redux'
 import LandingLayout from '@/layouts/LandingLayout'
+
+import { ConfigProvider } from 'antd';
 
 const App: FC<AppProps> = ({ Component, ...rest }) => {
   const router = useRouter()
@@ -53,6 +54,10 @@ const App: FC<AppProps> = ({ Component, ...rest }) => {
     )
   }
 
-  return <Provider store={store}>{docEnv && renderLayout()}</Provider>
+  return (
+    <ConfigProvider>
+      <Provider store={store}>{docEnv && renderLayout()}</Provider>
+    </ConfigProvider>
+  )
 }
 export default wrapper.withRedux(App)

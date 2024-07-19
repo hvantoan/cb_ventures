@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { PageHeaders } from '@/components/PageHeaders'
 
 import cardData from '@/data/sampleCards.json'
+import Image from 'next/image'
 
 const { BlogCardData } = cardData
 
@@ -104,7 +105,7 @@ function BlogDetails() {
                       get more done in less time, even when time is tight and pressures are high. Failing to manage your
                       time damages your effectiveness and causes stress.
                     </p>
-                    <img src="/img/blogs/blog-details/details.png" alt={title} />
+                    <Image src="/img/blogs/blog-details/details.png" alt={title} fill />
                     <h3 className="mt-12 mb-5 text-2xl font-semibold text-dark dark:text-white/[.87] md:text-xl sm:text-lg">
                       How Can you Use your Time Properly?
                     </h3>
@@ -116,17 +117,19 @@ function BlogDetails() {
                     <blockquote className="mb-1">
                       <div className="relative max-w-[630px] ltr:pl-10 rtl:pr-10 before:absolute before:h-full before:w-0.5 ltr:before:left-2 rtl:before:right-2 before:top-0  before:bg-primary before:opacity-30">
                         <p className="relative text-xl ltr:pl-5 rtl:pr-5 text-dark dark:text-white/[.87]">
-                          <img
+                          <Image
                             className="absolute ltr:left-0 rtl:right-0 top-1 max-w-[15px]"
                             src="/img/icon/quote-left.png"
                             alt="hexadash blockquote"
+                            fill
                           />
                           Usability design is to improve the usability of a product, which is an important part to guide
                           the actual design. It can also be regarded. A month ago, I agreed to
-                          <img
+                          <Image
                             className="inline-block -mb-1 ltr:ml-1 rtl:mr-1 max-w-[15px]"
                             src="/img/icon/quote-right.png"
                             alt="hexadash blockquote"
+                            fill
                           />
                         </p>
                         <span className="block relative ltr:pl-8 rtl:pr-8 text-body dark:text-white/60 text-lg before:absolute before:h-0.5 before:w-5 ltr:before:left-0 rtl:before:right-0 before:top-[12px] before:bg-light dark:before:bg-white/60 before:opacity-30">
@@ -283,7 +286,7 @@ function BlogDetails() {
                   </ul>
                   <div className="flex items-start gap-5 mt-12 bg-white rounded-lg sm:flex-col dark:bg-white/10 p-9 shadow-custom dark:shadow-none">
                     <div>
-                      <img className="max-w-[70px]" src="/img/users/1.png" alt="hexadash Blog" />
+                      <Image className="max-w-[70px]" src="/img/users/1.png" alt="hexadash Blog" fill />
                     </div>
                     <div>
                       <span className="text-body dark:text-white/60 text-15">Written By</span>

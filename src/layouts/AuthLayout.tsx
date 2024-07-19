@@ -10,7 +10,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   const { isLoggedIn } = useSelector(selectAuth)
   const router = useRouter()
 
-  useEffect(() => {}, [router])
+  useEffect(() => { }, [router])
 
   return (
     <div

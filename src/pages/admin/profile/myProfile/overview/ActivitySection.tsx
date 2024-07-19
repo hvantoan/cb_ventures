@@ -3,6 +3,7 @@ import { UilAt, UilHeart, UilInbox, UilUpload, UilSignout, UilEllipsisH, UilComm
 import Link from 'next/link'
 import DropDown from '@/components/Dropdown'
 import { Button } from 'antd'
+import Image from 'next/image'
 
 const items = [
   {
@@ -39,7 +40,7 @@ function ActivityContent() {
           </span>
           <div className="flex items-center justify-between flex-1">
             <div className="flex items-center gap-[20px]">
-              <img className="rounded-full max-w-[40px]" src="/img/chat-author/t1.jpg" alt="" />
+              <Image className="rounded-full max-w-[40px]" src="/img/chat-author/t1.jpg" alt="" fill />
               <p className="mb-0 text-[14px] text-theme-gray dark:text-white/60">
                 <span className="inline-block font-medium text-primary">James</span> Send you a message{' '}
                 <span className="block mt-[3px] text-light-extra dark:text-white/60">5 hours ago</span>
@@ -58,7 +59,7 @@ function ActivityContent() {
           </span>
           <div className="flex items-center justify-between flex-1">
             <div className="flex items-center gap-[20px]">
-              <img className="rounded-full max-w-[40px]" src="/img/chat-author/t2.jpg" alt="" />
+              <Image className="rounded-full max-w-[40px]" src="/img/chat-author/t2.jpg" alt="" fill />
               <p className="mb-0 text-[14px] text-theme-gray dark:text-white/60">
                 <span className="inline-block font-medium text-primary">Adam</span> upload website template for sale{' '}
                 <span className="block mt-[3px] text-light-extra dark:text-white/60">5 hours ago</span>
@@ -77,7 +78,7 @@ function ActivityContent() {
           </span>
           <div className="flex items-center justify-between flex-1">
             <div className="flex items-center gap-[20px]">
-              <img className="rounded-full max-w-[40px]" src="/img/chat-author/t3.jpg" alt="" />
+              <Image className="rounded-full max-w-[40px]" src="/img/chat-author/t3.jpg" alt="" fill />
               <p className="mb-0 text-[14px] text-theme-gray dark:text-white/60">
                 <span className="inline-block font-medium text-primary">Mumtahin</span> has registered{' '}
                 <span className="block mt-[3px] text-light-extra dark:text-white/60">5 hours ago</span>
@@ -96,7 +97,7 @@ function ActivityContent() {
           </span>
           <div className="flex items-center justify-between flex-1">
             <div className="flex items-center gap-[20px]">
-              <img className="rounded-full max-w-[40px]" src="/img/chat-author/t4.jpg" alt="" />
+              <Image className="rounded-full max-w-[40px]" src="/img/chat-author/t4.jpg" alt="" fill />
               <p className="mb-0 text-[14px] text-theme-gray dark:text-white/60">
                 <span className="inline-block font-medium text-primary">James</span> Send you a message{' '}
                 <span className="block mt-[3px] text-light-extra dark:text-white/60">5 hours ago</span>
@@ -115,7 +116,7 @@ function ActivityContent() {
           </span>
           <div className="flex items-center justify-between flex-1">
             <div className="flex items-center gap-[20px]">
-              <img className="rounded-full max-w-[40px]" src="/img/chat-author/t5.png" alt="" />
+              <Image className="rounded-full max-w-[40px]" src="/img/chat-author/t5.png" alt="" fill />
               <p className="mb-0 text-[14px] text-theme-gray dark:text-white/60">
                 <span className="inline-block font-medium text-primary">Adam</span> upload website template for sale{' '}
                 <span className="block mt-[3px] text-light-extra dark:text-white/60">5 hours ago</span>
@@ -134,7 +135,7 @@ function ActivityContent() {
           </span>
           <div className="flex items-center justify-between flex-1">
             <div className="flex items-center gap-[20px]">
-              <img className="rounded-full max-w-[40px]" src="/img/chat-author/t1.jpg" alt="" />
+              <Image className="rounded-full max-w-[40px]" src="/img/chat-author/t1.jpg" alt="" fill />
               <p className="mb-0 text-[14px] text-theme-gray dark:text-white/60">
                 <span className="inline-block font-medium text-primary">Mumtahin</span> has registered{' '}
                 <span className="block mt-[3px] text-light-extra dark:text-white/60">5 hours ago</span>
@@ -153,7 +154,7 @@ function ActivityContent() {
           </span>
           <div className="flex items-center justify-between flex-1">
             <div className="flex items-center gap-[20px]">
-              <img className="rounded-full max-w-[40px]" src="/img/chat-author/t6.png" alt="" />
+              <Image className="rounded-full max-w-[40px]" src="/img/chat-author/t6.png" alt="" fill />
               <p className="mb-0 text-[14px] text-theme-gray dark:text-white/60">
                 <span className="inline-block font-medium text-primary">James</span> Send you a message{' '}
                 <span className="block mt-[3px] text-light-extra dark:text-white/60">5 hours ago</span>
@@ -172,7 +173,7 @@ function ActivityContent() {
           </span>
           <div className="flex items-center justify-between flex-1">
             <div className="flex items-center gap-[20px]">
-              <img className="rounded-full max-w-[40px]" src="/img/chat-author/t7.png" alt="" />
+              <Image className="rounded-full max-w-[40px]" src="/img/chat-author/t7.png" alt="" fill />
               <p className="mb-0 text-[14px] text-theme-gray dark:text-white/60">
                 <span className="inline-block font-medium text-primary">Mumtahin</span> has registered{' '}
                 <span className="block mt-[3px] text-light-extra dark:text-white/60">5 hours ago</span>
@@ -191,7 +192,7 @@ function ActivityContent() {
           </span>
           <div className="flex items-center justify-between flex-1">
             <div className="flex items-center gap-[20px]">
-              <img className="rounded-full max-w-[40px]" src="/img/chat-author/t8.png" alt="" />
+              <Image className="rounded-full max-w-[40px]" src="/img/chat-author/t8.png" alt="" fill />
               <p className="mb-0 text-[14px] text-theme-gray dark:text-white/60">
                 <span className="inline-block font-medium text-primary">Adam</span> upload website template for sale{' '}
                 <span className="block mt-[3px] text-light-extra dark:text-white/60">5 hours ago</span>
@@ -210,7 +211,7 @@ function ActivityContent() {
           </span>
           <div className="flex items-center justify-between flex-1">
             <div className="flex items-center gap-[20px]">
-              <img className="rounded-full max-w-[40px]" src="/img/chat-author/t1.jpg" alt="" />
+              <Image className="rounded-full max-w-[40px]" src="/img/chat-author/t1.jpg" alt="" fill />
               <p className="mb-0 text-[14px] text-theme-gray dark:text-white/60">
                 <span className="inline-block font-medium text-primary">James</span> Send you a message{' '}
                 <span className="block mt-[3px] text-light-extra dark:text-white/60">5 hours ago</span>

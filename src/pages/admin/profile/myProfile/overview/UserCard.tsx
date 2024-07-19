@@ -12,7 +12,7 @@ function UserCards({ user }: any) {
     <div className="relative">
       <div className="bg-white dark:bg-white/10 px-[25px] pt-[30px] pb-[18px] rounded-[10px] text-center">
         <figure className="mb-0">
-          <Image className="mb-[18px] max-w-[120px] w-full rounded-full inline-block" src={`/${img}`} alt="" />
+          <Image className="mb-[18px] max-w-[120px] w-full rounded-full inline-block" src={`/${img}`} alt="" fill />
         </figure>
         <figcaption>
           <div className="static">

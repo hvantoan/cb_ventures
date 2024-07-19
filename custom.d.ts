@@ -1,7 +1,6 @@
 declare module 'build'
 declare module '@iconscout/react-unicons'
 declare module 'peity-react'
-declare module 'react-lightbox-pack'
 declare module 'react-simple-maps'
 declare module 'react-date-range'
 declare module 'leaflet'

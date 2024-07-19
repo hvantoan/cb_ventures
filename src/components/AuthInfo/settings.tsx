@@ -3,8 +3,8 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ReactSVG } from 'react-svg'
-import PopOver from '@/components/Popup/PopOver'
-import Heading from '@/components/Heading'
+import PopOver from '../Popup/PopOver'
+import Heading from '../Heading'
 
 const Settings = React.memo(() => {
   const content = (

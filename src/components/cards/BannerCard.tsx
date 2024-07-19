@@ -3,6 +3,7 @@ import React from 'react'
 import DropDown from '../Dropdown'
 import { Buttons } from '../Buttons'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function BannerCard({ item }: any) {
   const moreContent = [
@@ -55,7 +56,7 @@ function BannerCard({ item }: any) {
         <h4
           className={`text-[16px] font-medium items-center mb-[14px] ${titleColor} dark:[&.text-dark]:text-white flex gap-[10px]`}
         >
-          <img className="w-[14px] h-[14px]" src={`/img/icon/${icon}`} alt="HexaDash Banner" />
+          <Image width={14} height={14} src={`/img/icon/${icon}`} alt="HexaDash Banner" />
           <span>{title}</span>
         </h4>
         <DropDown customContent={moreContent}>
@@ -72,7 +73,7 @@ function BannerCard({ item }: any) {
       </div>
       <div className="flex flex-wrap items-center justify-between">
         <div className="flex items-center gap-[15px]">
-          <img className="w-[30px] h-[30px] rounded-full" src={`/img/users/${authorImg}`} alt="" />
+          <Image fill className="w-[30px] h-[30px] rounded-full" src={`/img/users/${authorImg}`} alt="" />
           <span className={`${subTitleColor} text-[15px] font-medium dark:text-white/60`}>{authorName}</span>
         </div>
         <div>

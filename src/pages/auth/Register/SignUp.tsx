@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { ReactSVG } from 'react-svg'
 import { Row, Col, Form, Input, Button } from 'antd'
 import { UilFacebook, UilTwitter, UilGithub } from '@iconscout/react-unicons'
@@ -11,8 +10,6 @@ import { RegisterAction } from '@/redux/auth/actionCreator'
 
 function SignUp() {
   const [error, setError] = useState('')
-
-  const router = useRouter()
   const dispatch = useDispatch()
 
   const [data, setData] = useState({

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { Layout } from 'antd'
 import { useSelector } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import Footer from '@/components/Header/footer'
+import AdminFooter from '@/components/Header/AdminFooter'
 import Sidebar from '@/components/Sidebar'
 import HeaderTop from '@/components/Header'
 
@@ -51,13 +51,12 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
       <div className="flex flex-row gap-5 mt-[72px]">
         <Sidebar />
         <Layout
-          className={`max-w-full duration-[300ms] ${
-            !topMenu ? `xl:ps-0 ease-[ease] ${collapsed ? 'ps-[80px]' : 'ps-[280px] delay-[150ms]'}` : ''
-          }`}
+          className={`max-w-full duration-[300ms] ${!topMenu ? `xl:ps-0 ease-[ease] ${collapsed ? 'ps-[80px]' : 'ps-[280px] delay-[150ms]'}` : ''
+            }`}
         >
           <Content>
             {children}
-            <Footer />
+            <AdminFooter />
           </Content>
         </Layout>
       </div>

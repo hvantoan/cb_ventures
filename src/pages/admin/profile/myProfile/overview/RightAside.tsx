@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Col, Row } from 'antd'
 import ModalVideo from 'react-modal-video'
 import { Buttons } from '@/components/Buttons'
+import Image from 'next/image'
 // import { profileFriendsChangeStatus } from '@/redux/profile/actionCreator'
 
 function RightAside() {
@@ -35,7 +36,7 @@ function RightAside() {
                 key={key}
               >
                 <div className="flex gap-[10px]">
-                  <img className="w-[46px] h-[46px] rounded-full" src={`/${img}`} alt="" />
+                  <Image className="w-[46px] h-[46px] rounded-full" src={`/${img}`} alt="" fill />
                   <p className="p-0 m-0 text-[14px] font-semibold text-dark dark:text-white/[.87]">
                     {name}{' '}
                     <span className="block mt-[3px] font-normal text-light dark:text-white/60">{designation}</span>
@@ -81,7 +82,7 @@ function RightAside() {
               return (
                 id <= 6 && (
                   <Col className="my-[4px]" key={id} xxl={8} lg={4} md={4} sm={8} xs={8}>
-                    <img className="w-full min-4xl:max-w-[103px] rounded-[6px]" src={`/${img}`} alt="" />
+                    <Image className="w-full min-4xl:max-w-[103px] rounded-[6px]" src={`/${img}`} alt="" fill />
                   </Col>
                 )
               )
@@ -109,7 +110,7 @@ function RightAside() {
                       onClick={() => setOpen(true)}
                       href="#"
                     >
-                      <img className="w-full min-4xl:max-w-[103px] rounded-[6px]" src={`/${img}`} alt="" />
+                      <Image className="w-full min-4xl:max-w-[103px] rounded-[6px]" src={`/${img}`} alt="" fill />
                       <span className="w-[30px] h-[30px] rounded-full flex items-center justify-center absolute top-[50%] start-[50%] z-[5] bg-dark/[38%] translate-x-[-50%] translate-y-[-50%] group-hover:bg-primary">
                         <UilPlay className="w-[14px] h-[14px] text-white" />
                       </span>

@@ -4,6 +4,7 @@ import { Table } from 'antd'
 import Link from 'next/link'
 import { UilEye, UilEdit, UilTrashAlt } from '@iconscout/react-unicons'
 import Heading from '@/components/Heading'
+import Image from 'next/image'
 
 function UserListTable() {
   const { users } = useSelector((state: any) => {
@@ -22,7 +23,7 @@ function UserListTable() {
       user: (
         <div className="flex items-center">
           <figure className="mx-2 mb-0">
-            <img style={{ width: '40px' }} src={`/${img}`} alt="" />
+            <Image className='w-10' src={`/${img}`} alt="" fill />
           </figure>
           <figcaption>
             <Heading className="mb-1 text-sm font-medium text-dark dark:text-white/[.87]" as="h6">

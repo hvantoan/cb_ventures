@@ -3,6 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 
 import DropDown from '@/components/Dropdown'
+import Image from 'next/image'
 
 function SampleCardSix({ item }: any) {
   const moreContent = [
@@ -44,7 +45,7 @@ function SampleCardSix({ item }: any) {
   return (
     <figure className="mb-0 p-[25px] bg-white dark:bg-white/10 shadow-[0_5px_20px_rgba(173,181,217,0.01)] flex m-0 relative gap-[20px] rounded-10">
       <div className={`w-[60px] h-[60px] rounded-[12px] flex items-center justify-center bg-${className}`}>
-        <img src={`/${img}`} alt="" />
+        <Image src={`/${img}`} alt="" fill />
       </div>
       <figcaption>
         <h2 className="text-dark dark:text-white/[.87] text-[20px] font-semibold mb-0">{title}</h2>

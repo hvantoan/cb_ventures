@@ -13,6 +13,7 @@ import { Modals } from '@/components/Modals/Modals'
 import ContactLayout from './Layout'
 import { AppDispatch, RootState } from '@/redux/store'
 import { Contact } from '@/redux/contact/reducer'
+import Image from 'next/image'
 
 function ContactTable() {
   const dispatch = useDispatch<AppDispatch>()
@@ -123,7 +124,7 @@ function ContactTable() {
         user: (
           <div className="flex items-center">
             <figure className="mx-2 mb-0">
-              <img className="w-[40px] h-[40px] min-w-[40px]" src={`/${img}`} alt="" />
+              <Image className='rounded-full' src={`/${img}`} alt="" width={40} height={40} />
             </figure>
             <figcaption>
               <Heading className="mb-1 text-sm font-medium text-dark dark:text-white/[.87]" as="h6">

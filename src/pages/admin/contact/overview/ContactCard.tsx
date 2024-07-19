@@ -9,6 +9,7 @@ import { ContactDeleteData } from '@/redux/contact/actionCreator'
 import { Buttons } from '@/components/Buttons'
 import { Modals } from '@/components/Modals/Modals'
 import { RootState } from '@/redux/store'
+import Image from 'next/image'
 
 function ContactCard({ user }: any) {
   const dispatch = useDispatch()
@@ -21,8 +22,7 @@ function ContactCard({ user }: any) {
 
   const onHandleDelete = (id: any) => {
     const value = users.filter((item: any) => item.id !== id)
-    //@ts-ignore
-    dispatch(ContactDeleteData(value))
+    // dispatch(ContactDeleteData(value))
   }
 
   const [state, setState] = useState({
@@ -98,8 +98,8 @@ function ContactCard({ user }: any) {
       }
       return true
     })
-    //@ts-ignore
-    dispatch(contactAddData(updateUsers))
+    // TODO: Update the contact data
+    // dispatch(contactAddData(updateUsers))
     form.resetFields()
   }
 
@@ -116,7 +116,7 @@ function ContactCard({ user }: any) {
           </Buttons>
         </DropDown>
         <figure className="m-0 text-center">
-          <img className="inline-block rounded-full w-[120px] h-[120px]" src={`/${img}`} alt="" />
+          <Image className="inline-block rounded-full" src={`/${img}`} alt="" width={120} height={120} />
           <figcaption className="mt-[20px]">
             <h3 className="text-[18px] font-semibold mb-0 text-dark dark:text-white/[.87]">{name}</h3>
             <span className="text-theme-gray dark:text-white/60">{designation}</span>

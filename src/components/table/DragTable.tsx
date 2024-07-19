@@ -25,7 +25,7 @@ function DragAndDropTable() {
       user: (
         <div className="flex items-center gap-x-[10px] gap-y-[10px]">
           <figure className="mb-0">
-            <Image className="w-10" src={`/${img}`} alt="" />
+            <Image className="w-10" src={`/${img}`} alt="" fill />
           </figure>
           <figcaption>
             <Heading className="user-name text-dark dark:text-white/[.87] text-[14px] font-semibold mb-0" as="h6">

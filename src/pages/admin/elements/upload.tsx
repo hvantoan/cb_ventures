@@ -4,6 +4,7 @@ import { UploadOutlined, LoadingOutlined, PlusOutlined } from '@ant-design/icons
 import { PageHeaders } from '@/components/PageHeaders'
 
 import { Buttons } from '@/components/Buttons'
+import Image from 'next/image'
 
 const props: any = {
   name: 'file',
@@ -177,7 +178,7 @@ function Uploads() {
                   beforeUpload={beforeUpload}
                   onChange={onHandleChange}
                 >
-                  {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton}
+                  {imageUrl ? <Image src={imageUrl} alt="avatar" style={{ width: '100%' }} fill /> : uploadButton}
                 </Upload>
               </div>
             </div>

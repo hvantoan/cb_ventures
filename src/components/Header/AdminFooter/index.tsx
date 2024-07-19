@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Col, Row } from 'antd';
 
-const Footer = () => {
+const AdminFooter = () => {
 
   return (
     <footer className="bg-white dark:bg-[#1B1E2B] pt-5 px-[30px] pb-[18px] w-full shadow-[0_-5px_10px_rgba(146,153,184,0.05)]">
@@ -32,4 +32,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default AdminFooter;

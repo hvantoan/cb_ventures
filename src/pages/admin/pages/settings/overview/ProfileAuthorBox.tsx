@@ -37,11 +37,10 @@ function AuthorBox() {
             <li>
               <Link
                 href={`${path}/profile`}
-                className={`flex items-center mb-3 px-5 py-3 rounded-[6px] ${
-                  currentPath === 'profile' || currentPath === '' || currentPath === undefined
-                    ? 'bg-primary-transparent text-primary font-medium'
-                    : 'bg-transparent text-light dark:text-white/60 font-normal'
-                }`}
+                className={`flex items-center mb-3 px-5 py-3 rounded-[6px] ${currentPath === 'profile' || currentPath === '' || currentPath === undefined
+                  ? 'bg-primary-transparent text-primary font-medium'
+                  : 'bg-transparent text-light dark:text-white/60 font-normal'
+                  }`}
               >
                 <UilUser className="w-4 h-4 ltr:mr-3 rtl:ml-3 mb-0.5" />
                 Edit Profile
@@ -50,11 +49,10 @@ function AuthorBox() {
             <li>
               <Link
                 href={`${path}/account`}
-                className={`flex items-center mb-3 px-5 py-3 rounded-[6px] ${
-                  currentPath === 'account'
-                    ? 'bg-primary-transparent text-primary font-medium'
-                    : 'bg-transparent text-light dark:text-white/60 font-normal'
-                }`}
+                className={`flex items-center mb-3 px-5 py-3 rounded-[6px] ${currentPath === 'account'
+                  ? 'bg-primary-transparent text-primary font-medium'
+                  : 'bg-transparent text-light dark:text-white/60 font-normal'
+                  }`}
               >
                 <UilSetting className="w-4 h-4 ltr:mr-3 rtl:ml-3 mb-0.5" />
                 Account Settings
@@ -63,11 +61,10 @@ function AuthorBox() {
             <li>
               <Link
                 href={`${path}/password`}
-                className={`flex items-center mb-3 px-5 py-3 rounded-[6px] ${
-                  currentPath === 'password'
-                    ? 'bg-primary-transparent text-primary font-medium'
-                    : 'bg-transparent text-light dark:text-white/60 font-normal'
-                }`}
+                className={`flex items-center mb-3 px-5 py-3 rounded-[6px] ${currentPath === 'password'
+                  ? 'bg-primary-transparent text-primary font-medium'
+                  : 'bg-transparent text-light dark:text-white/60 font-normal'
+                  }`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,11 +86,10 @@ function AuthorBox() {
             <li>
               <Link
                 href={`${path}/social`}
-                className={`flex items-center mb-3 px-5 py-3 rounded-[6px] ${
-                  currentPath === 'social'
-                    ? 'bg-primary-transparent text-primary font-medium'
-                    : 'bg-transparent text-light dark:text-white/60 font-normal'
-                }`}
+                className={`flex items-center mb-3 px-5 py-3 rounded-[6px] ${currentPath === 'social'
+                  ? 'bg-primary-transparent text-primary font-medium'
+                  : 'bg-transparent text-light dark:text-white/60 font-normal'
+                  }`}
               >
                 <UilUsersAlt className="w-4 h-4 ltr:mr-3 rtl:ml-3 mb-0.5" />
                 Social Profile
@@ -102,11 +98,10 @@ function AuthorBox() {
             <li>
               <Link
                 href={`${path}/notification`}
-                className={`flex items-center mb-3 px-5 py-3 rounded-[6px] ${
-                  currentPath === 'notification'
-                    ? 'bg-primary-transparent text-primary font-medium'
-                    : 'bg-transparent text-light dark:text-white/60 font-normal'
-                }`}
+                className={`flex items-center mb-3 px-5 py-3 rounded-[6px] ${currentPath === 'notification'
+                  ? 'bg-primary-transparent text-primary font-medium'
+                  : 'bg-transparent text-light dark:text-white/60 font-normal'
+                  }`}
               >
                 <UilBell className="w-4 h-4 ltr:mr-3 rtl:ml-3 mb-0.5" />
                 Notification

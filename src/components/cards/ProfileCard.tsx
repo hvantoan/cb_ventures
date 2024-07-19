@@ -1,18 +1,19 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import Link from 'next/link';
+import Image from 'next/image';
 
-function ProfileCard( image:any, bgImage:any, title:any, tag:any ) {
+function ProfileCard(image: any, bgImage: any, title: any, tag: any) {
   return (
     <figure className="w-full min-h-[360px] bg-white dark:bg-white/10 text-center rounded-10 shadow-[0px_5px_20px_rgba(160, 160, 160, 0.02)] mb-0">
       <figcaption>
-        <img className="static w-full" src={require(`../../${bgImage}`)} alt="banner" />
+        <Image className="static w-full" src={require(`../../${bgImage}`)} fill alt="banner" />
         <div className="pb-[30px] mt-[-75px]">
           <div className="mb-[10px]">
-            <img
+            <Image
               className="p-[5px] rounded-full max-w-[110px] bg-white dark:bg-white/10 inline-block"
               src={require(`../../${image}`)}
-              alt="profile"
+              alt="profile" fill
             />
           </div>
           <h4 className="text-[18px] font-semibold mb-[2px] text-dark dark:text-white/[.87]">{title}</h4>

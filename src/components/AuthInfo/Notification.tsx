@@ -1,20 +1,12 @@
 import { UilHdd, UilUpload, UilFileExport, UilHeart } from '@iconscout/react-unicons'
 import React from 'react'
 import Link from 'next/link'
-import { useSelector } from 'react-redux'
 import { ReactSVG } from 'react-svg'
 
 import PopOver from '@/components/Popup/PopOver'
 import Heading from '@/components/Heading'
-import { RootState } from '@/redux/store'
 
 const NotificationBox = React.memo(() => {
-  const { rtl } = useSelector((state: RootState) => {
-    return {
-      rtl: state.layout.rtlData,
-    }
-  })
-
   const content = (
     <div className="min-sm:min-w-[370px] sm:max-w-full">
       <Heading

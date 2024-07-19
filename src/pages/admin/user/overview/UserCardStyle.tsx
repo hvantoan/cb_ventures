@@ -3,6 +3,7 @@ import { UilCommentAlt } from '@iconscout/react-unicons'
 import Link from 'next/link'
 import Heading from '@/components/Heading'
 import { Buttons } from '@/components/Buttons'
+import Image from 'next/image'
 
 function UserCardStyle({ user }: any) {
   const { name, designation, img, cover } = user
@@ -12,7 +13,7 @@ function UserCardStyle({ user }: any) {
         <div className="bg-white dark:bg-[#1b1d2a] rounded-[10px]">
           <figure className="relative mb-0">
             <div className="mb-0 absolute top-[80px] ltr:left-[50%] rtl:right-[50%] translate-x-[-50%] w-[132px] h-[132px] rounded-full bg-white z-[22] dark:bg-dark p-[5px]">
-              <img className="rounded-full" src={`/${img}`} alt="" />
+              <Image className="rounded-full" src={`/${img}`} alt="" fill />
             </div>
 
             <figcaption>

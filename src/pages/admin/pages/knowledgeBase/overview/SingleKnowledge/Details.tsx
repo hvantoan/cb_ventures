@@ -5,6 +5,7 @@ import { Collapse, Row, Col, Form, Input } from 'antd'
 import Link from 'next/link'
 import { Buttons } from '@/components/Buttons'
 import TextArea from 'antd/lib/input/TextArea'
+import Image from 'next/image'
 
 function SingleKnowledgeDetails() {
   const [state, setState] = useState({
@@ -46,7 +47,7 @@ function SingleKnowledgeDetails() {
             clita kasd gubergren, no sea takimata sanctus.
           </p>
           <div className="mt-8">
-            <img src="/img/knowledgebase/wp-research.png" alt="StrikingDash" />
+            <Image src="/img/knowledgebase/wp-research.png" alt="StrikingDash" fill />
           </div>
         </div>
         <div className="mb-10">

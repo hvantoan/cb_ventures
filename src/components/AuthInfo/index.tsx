@@ -9,7 +9,7 @@ import {
 } from '@iconscout/react-unicons'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import Search from './Search'
@@ -17,9 +17,9 @@ import Message from './Message'
 import Notification from './Notification'
 import Settings from './settings'
 
-import PopOver from '@/components/Popup/PopOver'
-import Heading from '@/components/Heading'
-import DropDown from '@/components/Dropdown'
+import PopOver from '../Popup/PopOver'
+import Heading from '../Heading'
+import DropDown from '..//Dropdown'
 import { logOutAction } from '@/redux/auth/reducers'
 
 const AuthInfo = React.memo((props: any) => {
@@ -34,12 +34,12 @@ const AuthInfo = React.memo((props: any) => {
 
   const user: any = {}
   const currentUser: any = {}
-  useEffect(() => {
-    dispatch(logOutAction())
-    console.log('Logged Out!')
-  }, [])
+  // useEffect(() => {
+  //   dispatch(logOutAction())
+  //   console.log('Logged Out!')
+  // }, [])
 
-  const handleLogout = async (e: any) => {
+  const handleLogout = async () => {
     try {
       dispatch(logOutAction())
       console.log('Successfully Logged Out!')

@@ -2,20 +2,27 @@
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
  * for Docker builds.
  */
-await import("./src/env.js");
+await import('./src/env.js')
 
 /** @type {import("next").NextConfig} */
 const config = {
-  output: "standalone",
+  output: 'standalone',
   async redirects() {
-      return [
-          {
-              source: '/',
-              destination: '/landing',
-              basePath: false,
-              permanent: false
-          }
-      ]
+    return [
+      {
+        source: '/',
+        destination: '/landing',
+        basePath: false,
+        permanent: false,
+      },
+    ]
+  },
+  images: {
+    remotePatterns: [
+      {
+        hostname: 'img.icons8.com',
+      },
+    ],
   },
   reactStrictMode: true,
 
@@ -25,10 +32,22 @@ const config = {
    * @see https://github.com/vercel/next.js/issues/41980
    */
   i18n: {
-    locales: ["vi"],
-    defaultLocale: "vi",
+    locales: ['vi'],
+    defaultLocale: 'vi',
   },
-  transpilePackages: ["geist", "antd", "@ant-design", "rc-util", "rc-pagination", "rc-picker", "rc-notification", "rc-tooltip", "rc-tree", "rc-table"],
-};
+  transpilePackages: [
+    'geist',
+    'antd',
+    '@ant-design',
+    '@ant-design/pro-layout',
+    'rc-util',
+    'rc-pagination',
+    'rc-picker',
+    'rc-notification',
+    'rc-tooltip',
+    'rc-tree',
+    'rc-table',
+  ],
+}
 
-export default config;
+export default config

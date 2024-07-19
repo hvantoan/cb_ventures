@@ -5,11 +5,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import HeaderTop from '@/components/Header'
 
-
 import config from '@/config/config'
 import { RootState } from '@/redux/store'
 import { changeLayoutMode, changeMenuMode } from '@/redux/themeLayout/reducers'
-import { Footer } from '@/components/Landing'
+import { LandingFooter } from '@/components/Landing'
 const { theme } = config
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
@@ -53,8 +52,8 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
     <ThemeProvider theme={theme}>
       <HeaderTop />
       {children}
-      <Footer />
-    </ThemeProvider >
+      <LandingFooter />
+    </ThemeProvider>
   )
 }
 

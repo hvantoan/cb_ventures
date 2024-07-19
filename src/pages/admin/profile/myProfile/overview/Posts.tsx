@@ -10,13 +10,11 @@ import {
 } from '@iconscout/react-unicons'
 import Link from 'next/link'
 import Masonry from 'react-masonry-css'
-import { Comment } from '@ant-design/compatible'
+import { Comment } from '@ant-design/compatible/es'
 import { Input, Upload, message, Avatar } from 'antd'
 import Picker from 'emoji-picker-react'
 import moment from 'moment'
-import { useSelector, useDispatch } from 'react-redux'
-import { LightBox } from 'react-lightbox-pack'
-import 'react-lightbox-pack/dist/index.css'
+import { useSelector } from 'react-redux'
 import { Cards } from '@/components/Cards/Frame/CardsFrame'
 import { Buttons } from '@/components/Buttons'
 import Image from 'next/image'
@@ -199,7 +197,7 @@ function Posts({ postId, from, time, img, like, comment, content, author }: any)
         className="rounded-10 [&>.ant-card-head]:px-[25px] [&>.ant-card-body]:py-[20px] [&>.ant-card-body]:px-0 mb-[25px] [&>div>.ant-card-head-wrapper]:flex-row"
         title={
           <h3 className="flex items-center gap-[15px] py-[15px]">
-            <img className="w-[46px] h-[46px] rounded-full" src={`/${author}`} alt="" />
+            <Image className="w-[46px] h-[46px] rounded-full" src={`/${author}`} alt="" fill />
             <p className="text-[14px] font-medium text-dark dark:text-white/[.87] m-0">
               {from}{' '}
               <span className="text-[13px] font-normal block m-0 text-light dark:text-white/60 text-start">
@@ -229,7 +227,7 @@ function Posts({ postId, from, time, img, like, comment, content, author }: any)
                             lightBoxHandler(true, key)
                           }}
                         >
-                          <img className="mb-[10px] rounded-[8px] w-full" key={key + 1} src={`/${src}`} alt="" />
+                          <Image className="mb-[10px] rounded-[8px] w-full" key={key + 1} src={`/${src}`} alt="" fill />
                         </a>
                       )
                     )
@@ -251,7 +249,7 @@ function Posts({ postId, from, time, img, like, comment, content, author }: any)
                               lightBoxHandler(true, key)
                             }}
                           >
-                            <img className="mb-[10px] rounded-[8px] w-full" key={key + 1} src={`/${src}`} alt="" />
+                            <Image className="mb-[10px] rounded-[8px] w-full" key={key + 1} src={`/${src}`} alt="" fill />
                           </a>
                         )
                       )
@@ -260,7 +258,7 @@ function Posts({ postId, from, time, img, like, comment, content, author }: any)
                 )}
               </>
             ) : null}
-            <LightBox
+            {/* <LightBox
               state={toggle}
               event={lightBoxHandler}
               data={dataImages}
@@ -270,7 +268,7 @@ function Posts({ postId, from, time, img, like, comment, content, author }: any)
               thumbnailWidth={50}
               setImageIndex={setSIndex}
               imageIndex={sIndex}
-            />
+            /> */}
           </div>
           <div className="border-b-1 border-regular dark:border-white/10 px-[25px] pb-[20px] mb-[20px]">
             <p className="text-[15px] mb-0 text-theme-gray dark:text-white/60">{content}</p>
@@ -310,7 +308,7 @@ function Posts({ postId, from, time, img, like, comment, content, author }: any)
           <div>
             <div className="flex items-center sm:flex-wrap px-[25px] pb-[20px] border-b-1 border-regular dark:border-white/10 gap-[10px]">
               <div className="relative flex items-center sm:flex-wrap flex-1 sm:flex-[0_0_100%] gap-[10px]">
-                <Image src={'/img/chat-author/t2.jpg'} alt="" className="max-w-[36px] rounded-full" />
+                <Image src={'/img/chat-author/t2.jpg'} alt="" className="max-w-[36px] rounded-full" fill />
                 <Input.TextArea
                   className="py-[14px] ltr:pr-[82px] rtl:pl-[82px] ltr:pl-[22px] rtl:pr-[22px] h-[52px] rounded-[25px] border-transparent hover:border-primary-transparent focus:border-primary-transparent resize-none bg-normalBG dark:bg-normalBGdark text-dark dark:text-white/[.87] focus:shadow-[0_0_0_2px_rgb(130,49,211,0.2)] dark:placeholder:text-white/60"
                   onChange={onTextChange}
@@ -366,18 +364,18 @@ function Posts({ postId, from, time, img, like, comment, content, author }: any)
               >
                 {comment.length > 1
                   ? comment.map((item: any, key: any) => {
-                      return (
-                        key >= 1 && (
-                          <ExampleComment
-                            replay={{
-                              time: item.time,
-                              name: item.name,
-                              text: item.text,
-                            }}
-                          />
-                        )
+                    return (
+                      key >= 1 && (
+                        <ExampleComment
+                          replay={{
+                            time: item.time,
+                            name: item.name,
+                            text: item.text,
+                          }}
+                        />
                       )
-                    })
+                    )
+                  })
                   : null}
               </ExampleComment>
             </div>

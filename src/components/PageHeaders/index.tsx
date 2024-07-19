@@ -1,5 +1,6 @@
+import React from 'react';
 import { Breadcrumb } from 'antd'
-import { PageHeader } from '@ant-design/pro-layout'
+import { PageHeader } from '@ant-design/pro-layout/es'
 import Link from 'next/link'
 import { ReactSVG } from 'react-svg'
 
@@ -7,24 +8,24 @@ function PageHeaders(props: any) {
   const { title, subTitle, routes, buttons, ghost, bgColor, className } = props
   const breadcrumbItems = routes
     ? routes.map((route: any, index: any) => ({
-        title:
-          index + 1 === routes.length ? (
-            route.breadcrumbName
-          ) : (
-            <div className="inline-flex items-start group text-light dark:text-light-extra">
-              <ReactSVG
-                className="relative top-0.5 me-2 [&>div>svg]:text-current group-hover:text-primary dark:group-hover:text-white/[.87] duration-200"
-                src="/img/icon/home.svg"
-              />
-              <Link
-                href={route.path}
-                className="text-light dark:text-light-extra group-hover:text-primary dark:group-hover:text-white/[.87] text-[14px] leading-[22px]  duration-200"
-              >
-                {route.breadcrumbName}
-              </Link>
-            </div>
-          ),
-      }))
+      title:
+        index + 1 === routes.length ? (
+          route.breadcrumbName
+        ) : (
+          <div className="inline-flex items-start group text-light dark:text-light-extra">
+            <ReactSVG
+              className="relative top-0.5 me-2 [&>div>svg]:text-current group-hover:text-primary dark:group-hover:text-white/[.87] duration-200"
+              src="/img/icon/home.svg"
+            />
+            <Link
+              href={route.path}
+              className="text-light dark:text-light-extra group-hover:text-primary dark:group-hover:text-white/[.87] text-[14px] leading-[22px]  duration-200"
+            >
+              {route.breadcrumbName}
+            </Link>
+          </div>
+        ),
+    }))
     : []
 
   const breadcrumb = (
