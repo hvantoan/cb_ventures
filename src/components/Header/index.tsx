@@ -2,10 +2,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { UilEllipsisV } from '@iconscout/react-unicons'
-import Customizer from '../Customizer'
 import TopMenu from '@/components/Sidebar/TopMenu'
 import Search from '@/components/AuthInfo/Search'
-import AuthInfo from '@/components/AuthInfo/Info'
+import AuthInfo from '@/components/AuthInfo'
 import { ReactSVG } from 'react-svg'
 
 import { Col, Layout, Row } from 'antd'
@@ -74,6 +73,7 @@ export default function HeaderTop() {
               </Link>
               {!topMenu || (typeof window !== 'undefined' && window.innerWidth <= 1200) ? (
                 <button
+                  title="ok"
                   className="p-0 bg-transparent border-none dark:border-transparent dark:bg-transparent dark:hover:text-primary text-[#525768] dark:text-white/60 hover:text-primary"
                   onClick={() => {
                     toggleCollapsed(!collapsed)
@@ -116,5 +116,3 @@ export default function HeaderTop() {
     </>
   )
 }
-
-

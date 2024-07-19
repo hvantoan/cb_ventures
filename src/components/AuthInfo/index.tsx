@@ -9,7 +9,6 @@ import {
 } from '@iconscout/react-unicons'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
@@ -24,7 +23,7 @@ import DropDown from '@/components/Dropdown'
 import { logOutAction } from '@/redux/auth/reducers'
 
 const AuthInfo = React.memo((props: any) => {
-  const router = useRouter()
+  // const router = useRouter()
   const [state, setState] = useState({
     flag: 'vi',
   })
