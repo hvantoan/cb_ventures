@@ -9,7 +9,7 @@ env:
   BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'staging' }}
 
 jobs:
-  docker:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Set up QEMU
@@ -26,6 +26,22 @@ jobs:
         with:
           push: true
           tags: itvantoan/cb_ventures:${{ env.BRANCH }}
-      # - name: Rebuild service
-      #   run: |
-      #     docker-compose -f docker-compose.yml -f docker-compose.${{ env.BRANCH }}.yml up -d --build
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Login to GitHub
+        uses: actions/checkout@v2
+
+      - name: Deploy to Ventures
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          script: 'eval `ssh-agent -s` && ssh-add ~/.ssh/github && cd ~/ctx/host-config && git pull && cd ventures && docker compose up --build -d'
