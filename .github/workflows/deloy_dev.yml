@@ -26,8 +26,6 @@ jobs:
         with:
           push: true
           tags: itvantoan/cb_ventures:${{ env.BRANCH }}
-      # - name: Triger deployment
-      #   uses: peter-evans/branch-cleanup-action@v1
-      #   with:
-      #     branches: ${{ env.BRANCH }}
-      #     token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Rebuild service
+      #   run: |
+      #     docker-compose -f docker-compose.yml -f docker-compose.${{ env.BRANCH }}.yml up -d --build
