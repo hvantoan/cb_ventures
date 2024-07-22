@@ -6,7 +6,7 @@ on:
       - master
       - staging
 env:
-  BRANCH: ${{ github.ref == 'refs/heads/producmastertion' && 'master' || 'staging' }}
+  BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'staging' }}
 
 jobs:
   docker:
@@ -26,3 +26,8 @@ jobs:
         with:
           push: true
           tags: itvantoan/cb_ventures:${{ env.BRANCH }}
+      # - name: Triger deployment
+      #   uses: peter-evans/branch-cleanup-action@v1
+      #   with:
+      #     branches: ${{ env.BRANCH }}
+      #     token: ${{ secrets.GITHUB_TOKEN }}
