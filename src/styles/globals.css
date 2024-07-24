@@ -7,6 +7,10 @@ html * {
   box-sizing: border-box;
 }
 
+h1 {
+  line-height: 1.067;
+}
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
@@ -1950,7 +1954,6 @@ as conflicts may arise in other places
 .ant-card-body-p-25 .ant-card-body {
   @apply p-[25px] !important;
 }
-  
 .ant-card-body-px-0 .ant-card-body {
   @apply ps-0 pr-0 !important;
 }
@@ -2049,7 +2052,7 @@ as conflicts may arise in other places
 
 /* Chartjs Tooltip */
 .chartjs-tooltip {
-  @apply z-10 min-sm:-translate-x-[70%] sm:-translate-x-[80%]  -translate-y-[5%];
+  @apply z-10 sm:-translate-x-[80%]  -translate-y-[5%];
 }
 
 /* Radial Chart */
@@ -2057,37 +2060,8 @@ as conflicts may arise in other places
   @apply fill-dark dark:fill-white;
 }
 
-/* Chat */
-.ant-upload-list-picture-card .ant-upload-list-item-actions button svg,
-.ant-upload-list-picture-card .ant-upload-list-item-actions a svg{
-  @apply text-white dark:text-white/60;
-}
 
-/* Social */
 
-.emoji-picker-react{
-  @apply z-998;
-}
-
-.social-post .ant-upload-list-picture-card-container{
-  @apply w-[30px] h-[30px] m-0;
-}
-
-.social-post .ant-upload-list-picture-card .ant-upload-list-item{
-  @apply !p-[2px];
-}
-
-.social-post .ant-upload-list{
-  @apply gap-[3px];
-}
-
-/* Product Grid */
-.ant-layout-content.overlay {
-  @apply relative z-[1];
-}
-.ant-layout-content.overlay:after {
-  @apply content-[''] w-full h-full ltr:left-0 rtl:right-0 top-0 xl:absolute xl:bg-dark/30;
-}
 
 /* Faq */
 .ant-card-custom-style.ant-collapse-item-active {

@@ -16,8 +16,8 @@ export function Partner() {
             autoPlay
             customTransition='transform 1500ms ease-in-out'
             dotListClass=""
-            infinite
-            itemClass=""
+            infinite={true}
+            itemClass="px-6"
             keyBoardControl
             minimumTouchDrag={80}
             pauseOnHover={false}
@@ -59,7 +59,7 @@ export function Partner() {
             slidesToSlide={1}
           >
             {Array.from({ length: 6 }).map((_, index) => (
-              <a key={index} href='#' className='flex justify-center items-center   h-full w-full'>
+              <a key={index} href='#' className='flex justify-center items-center h-full w-full'>
                 <Image src={`/img/home/barnd0${index + 1}-2.png`} height={48} alt='barm' />
               </a>
             ))}
