@@ -2757,3 +2757,36 @@ as conflicts may arise in other places
 .card-no-padding .ant-card-body {
   padding: 8px !important;
 }
+
+/* Slider Parner page */
+.partner-gradient::after {
+  background: #003E2C;
+}
+.partner-gradient {
+  position: relative;
+  display: block;
+  padding-block: 30px;
+}
+.partner-gradient::after {
+  content: "";
+  left: 0;
+  top: -5px;
+  height: 119px;
+  width: 100%;
+  background-color: linear-gradient(150.39deg, rgb(237, 242, 248) 15.02%, #EDF2F8 99.59%);
+  transform: rotate(2deg);
+  z-index: 2;
+  position: absolute;
+  @apply dark:bg-[#003E2C]
+}
+
+.partner-gradient:before {
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  @apply bg-tertiary_color border-body_color border-y-8 border-solid ;
+  z-index: 3;
+  position: absolute;
+}

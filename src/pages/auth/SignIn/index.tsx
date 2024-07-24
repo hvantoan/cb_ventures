@@ -61,7 +61,7 @@ function SignIn() {
   return (
     <Row justify="center">
       <Col xxl={6} xl={8} md={12} sm={18} xs={24}>
-        <div className="mt-6 bg-white rounded-md dark:bg-white/10 shadow-regular dark:shadow-none">
+        <div className=" bg-white rounded-md dark:bg-white/10 shadow-regular dark:shadow-none">
           <div className="px-5 py-4 text-center border-b border-gray-200 dark:border-white/10">
             <h2 className="mb-0 text-xl font-semibold text-dark dark:text-white/[.87]">Đăng nhập CB Ventures</h2>
           </div>

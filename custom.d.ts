@@ -7,3 +7,4 @@ declare module 'leaflet'
 declare module 'react-responsive-masonry'
 declare module 'react-modal-video'
 declare module 'js-cookie'
+// declare module "aos";

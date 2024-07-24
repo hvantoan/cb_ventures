@@ -37,7 +37,7 @@ export function Features() {
             </div>
           </div>
           <div className="content-center">
-            <Image src="/img/landing/feature.png" fill alt="feature" className="object-fill w-full" />
+            <Image src="/img/landing/feature.png" fill alt="feature" className="object-fill relative" />
           </div>
         </div>
       </div>

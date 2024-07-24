@@ -12,7 +12,7 @@ export default {
     extend: {
       colors: {
         primary: '#00d094',
-        secondary: '#00150f',
+
         success: '#01B81A',
         pink: '#f2eafb',
         warning: '#FA8B0C',
@@ -102,8 +102,11 @@ export default {
         darkHard: 'rgb(0, 0, 0, .60)',
         currentColor: 'currentColor',
         // Custom color
-        'slate-gray': '#717D79',
-        'card-active': '#1b2d29',
+        secondary: '#00D094',
+        "body_color": "#00150F",
+        "text_color": "rgba(255, 255, 255, 0.6)",
+        trk:'#0C263A',
+        "tertiary_color": "#002A1E"
       },
       boxShadow: {
         regular: '0 5px 20px rgba(160,160,160,0.05)',
@@ -144,6 +147,7 @@ export default {
         42: ['42px', '62px'],
         54: ['54px', '110%'],
         58: ['58px', '86px'],
+        60: ['60px', '1.067'],
       },
       zIndex: {
         998: '998',
@@ -156,6 +160,7 @@ export default {
         'landing-bg2': "url('/img/landing/landing-bg2.png')",
         'landing-bg3': "url('/img/landing/landing-bg3.jpg')",
         pricing: "url('/img/landing/pricing-bg.png')",
+        "banner_bg": "url('/img/home/banner_bg.png')",
       },
     },
     screens: {

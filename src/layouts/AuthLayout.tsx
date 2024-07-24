@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
@@ -10,19 +9,19 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   const { isLoggedIn } = useSelector(selectAuth)
   const router = useRouter()
 
-  useEffect(() => { }, [router])
+  useEffect(() => {
+    if (isLoggedIn) {
+      router.push('/admin')
+    }
+  })
 
   return (
     <div
       style={{
         backgroundImage: `url(${backgroundImage.src})`,
       }}
-      className="bg-top bg-no-repeat"
-    >
-      <div className="py-[120px] 2xl:py-[80px] px-[15px]">
-        <div className="flex justify-center">
-          <Image src="/img/logo_horizontal.png" alt="Logo Dark" width="250" height="32" />
-        </div>
+      className="bg-top bg-no-repeat h-screen"  >
+      <div className="container h-full mx-auto content-center">
         {children}
       </div>
     </div>

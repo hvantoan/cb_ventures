@@ -57,7 +57,7 @@ export default function HeaderTop() {
 
   return (
     <>
-      <Header className="fixed w-screen top-0 ltr:left-0 rtl:right-0 p-0 flex items-center justify-between bg-white dark:bg-[#1b1e2b] dark:shadow-[0_5px_20px_rgba(160,160,160,.02)] h-[72px] z-[99] font-Jost">
+      <Header className="fixed w-screen top-0 ltr:left-0 rtl:right-0 p-0 flex items-center justify-between bg-secondary/5 dark:shadow-[0_5px_20px_rgba(160,160,160,.02)] h-[72px] z-[100000] font-Jost">
         <div className="flex flex-row items-center flex-1 h-full">
           <div className="rtl:ssm:pr-[15px] ltr:pr-5 rtl:pl-5 ltr:ssm:pl-[15px] ltr:ssm:pr-[15px] rtl:ssm::pl:[15px] ltr:pl-[30px] rtl:pr-[30px] xs:ltr:pl-[20px] xs:rtl:pr-[20px] min-w-[280px] ssm:min-w-0 xs:min-w-[0px] h-full grid align-middle">
             <div className="flex items-center justify-between">
@@ -74,7 +74,7 @@ export default function HeaderTop() {
               {!topMenu || (typeof window !== 'undefined' && window.innerWidth <= 1200) ? (
                 <button
                   title="ok"
-                  className="p-0 bg-transparent border-none dark:border-transparent dark:bg-transparent dark:hover:text-primary text-[#525768] dark:text-white/60 hover:text-primary"
+                  className="p-0 bg-transparent border-none dark:border-transparent dark:bg-transparent dark:hover:text-primary text-white dark:text-white hover:text-primary"
                   onClick={() => {
                     toggleCollapsed(!collapsed)
                   }}

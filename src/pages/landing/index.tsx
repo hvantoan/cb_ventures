@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type {} from '@/components/Landing'
+import type { } from '@/components/Landing'
 import { Hero, Partner, Trading, Features, Roadmap, Advisers, Pricing, Articles, Vision } from '@/components/Landing'
 import roadmapData from '@/data/roadmap.json'
 import pricings from '@/data/pricing.json'
@@ -11,7 +11,7 @@ import friends from '@/data/friends.json'
 import type { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import type { Adviser, RoadmapItem, VisionData, Article, PricingCardProps } from '@/components/Landing'
 
-export const getServerSideProps: GetServerSideProps = (async (ctx) => {
+export const getServerSideProps: GetServerSideProps = (async (_) => {
   return {
     props: {
       roadmaps: roadmapData.data,
@@ -41,7 +41,7 @@ const Landing = ({
   advisers,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
-    <main className="mt-[75px] overflow-x-hidden">
+    <main className='bg-body_color'>
       <Hero />
       <Partner />
       <Trading />
