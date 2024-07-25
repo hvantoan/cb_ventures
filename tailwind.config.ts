@@ -113,10 +113,13 @@ export default {
         currentColor: 'currentColor',
         // Custom color
         secondary: '#00D094',
-        "body_color": "#00150F",
-        "text_color": "rgba(255, 255, 255, 0.6)",
+        body_color: "#00150F",
+        text_color: "rgba(255, 255, 255, 0.6)",
         trk:'#0C263A',
-        "tertiary_color": "#002A1E"
+        tertiary_color: "#002A1E",
+        heading_title: "#6B777F",
+        floating_border_color: "rgba(0, 0, 0, 0.02)",
+        floating_bg_color: "rgba(63, 81, 75, 0.97)"
       },
       boxShadow: {
         regular: '0 5px 20px rgba(160,160,160,0.05)',
@@ -138,6 +141,7 @@ export default {
         4: '4px',
         6: '6px',
         10: '10px',
+        16: '16px',
       },
       fontFamily: {
         Roboto: ['Roboto', 'sans-serif'],
@@ -148,13 +152,14 @@ export default {
         11: ['11px', '15px'],
         13: ['13px', '18px'],
         15: ['15px', '24px'],
-        16: ['16px', '140%'],
+        16: ['16px', '1.625em'],
         17: ['17px', '26px'],
         18: ['18px', '140%'],
         20: ['20px', '100%'],
         22: ['22px', '30px'],
         32: ['32px', '110%'],
         42: ['42px', '62px'],
+        48: ['48px', '1.25em'],
         54: ['54px', '110%'],
         58: ['58px', '86px'],
         60: ['60px', '1.067'],
@@ -174,14 +179,10 @@ export default {
       },
     },
     screens: {
-      '5xl': { max: '1899px' },
       '4xl': { max: '1699px' },
       '3xl': { max: '1599px' },
-    
-     
       ssm: { max: '480px' },
       xs: { max: '380px' },
-      xxs: { max: '320px' },
       'min-xxs': '320px',
       'min-xs': '380px',
       'min-ssm': '480px',

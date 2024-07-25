@@ -7,9 +7,6 @@ html * {
   box-sizing: border-box;
 }
 
-h1 {
-  line-height: 1.067;
-}
 
 @layer utilities {
   /* Chrome, Safari and Opera */
@@ -49,6 +46,7 @@ a:hover {
 }
 h1 {
   @apply text-3xl font-semibold leading-[38px];
+  line-height: 1.067;
 }
 h2 {
   @apply text-2xl font-semibold leading-[30px];
@@ -2764,3 +2762,4 @@ as conflicts may arise in other places
   z-index: 3;
   position: absolute;
 }
+
