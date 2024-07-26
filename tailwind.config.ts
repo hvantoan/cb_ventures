@@ -119,7 +119,7 @@ export default {
         heading_title: "#6B777F",
         floating_border_color: "rgba(0, 0, 0, 0.02)",
         floating_bg_color: "rgba(63, 81, 75, 0.97)",
-        floating_bg_color_2: "rgba(63, 81, 75, 0.08)",
+        floating_bg_color_2: "rgba(63, 81, 75, 0.5)",
         title_color: "#FFFFFF",
         wh_color: '#1B2D29',
         card_boder: '#e6edfb1f',
@@ -150,6 +150,7 @@ export default {
         32: '32px',
         40: '40px',
         80: '80px',
+        "25%": '25%',
       },
       fontFamily: {
         Roboto: ['Roboto', 'sans-serif'],
@@ -177,13 +178,8 @@ export default {
         99998: '99998',
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'landing-bg1': "url('/img/landing/landing-bg1.png')",
-        'landing-bg2': "url('/img/landing/landing-bg2.png')",
-        'landing-bg3': "url('/img/landing/landing-bg3.jpg')",
         pricing: "url('/img/landing/pricing-bg.png')",
-        "banner_bg": "url('/img/home/banner_bg.png')",
+        banner_bg: "url('/img/home/banner_bg.png')",
       },
     },
     screens: {

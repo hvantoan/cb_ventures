@@ -10,7 +10,7 @@ export type ArticlesProps = {
 export function Articles({ data }: ArticlesProps) {
     return (
         <div className="relative min-h-[calc(100vh - 72px)] w-full">
-            <div className="absolute inset-0 h-full w-full bg-landing-bg1 z-[-1] " />
+            <div className="absolute inset-0 h-full w-full z-[-1] " />
             <div className="container mx-auto grid sm:py-4 md:py-4 py-20 sm:px-0 md:px-0 px-20">
                 <div className='w-full'>
                     <h2 className="text-5xl w-full place-self-center text-center">Bài viết cho <span className='text-primary'>Pro Trader</span></h2>

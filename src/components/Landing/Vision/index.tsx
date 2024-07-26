@@ -12,7 +12,7 @@ export function Vision({ data }: VisionsProps) {
             <div className="absolute inset-0 h-full w-full bg-pricing z-[-1] " />
             <div className="container mx-auto grid sm:py-4 sm:px-0 p-20">
                 <div className='w-full'>
-                    <h2 className="sm:text-4xl md:text-5xl text-6xl w-full place-self-center text-center text-primary">Tầm nhìn - Nhiệm vụ</h2>
+                    <h2 className="text-48 w-full place-self-center text-center text-primary">Tầm nhìn - Nhiệm vụ</h2>
                     <div className="flex justify-center">
                         <p className="text-white/60 pt-5 pb-10 text-lg max-w-[700px] text-center">
                             Chúng tôi đã xây dựng một hệ thống tài chính công nghệ giúp khách hàng kiếm thêm thu nhập thụ động trên

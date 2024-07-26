@@ -10,7 +10,7 @@ export type AdvisersProps = {
 export function Advisers({ data }: AdvisersProps) {
   return (
     <div className="relative min-h-[calc(100vh - 72px)] w-full">
-      <div className="absolute inset-0 h-full w-full bg-landing-bg1 z-[-1] " />
+      <div className="absolute inset-0 h-full w-full z-[-1] " />
       <div className="container mx-auto grid sm:py-4 md:py-4 p-20 sm:px-0">
         <div className='w-full'>
           <h2 className="w-full place-self-center text-center text-54">Gặp <span className='text-primary'>Cố Vấn</span></h2>

@@ -6,20 +6,20 @@ import Image from 'next/image'
 export function Trading() {
   return (
     <section className="relative w-full min-h-[calc(100vh-72px)]">
-      <div className="absolute h-full w-full bg-[#00150f] z-[-1]" />
-      <div className='container mx-auto relative grid sm:grid-cols-1 md:grid-cols-1 grid-cols-2 gap-20 sm:gap-4 md:gap-4 py-20 sm:p-0 md:p-0 sm:py-8'>
-        <div data-aos="fade-right" data-aos-duration="1000" >
+      <div className="absolute h-full w-full z-[-1]" />
+      <div className='container mx-auto relative grid sm:grid-cols-1 md:grid-cols-1 grid-cols-2 gap-20 sm:gap-4 md:gap-4 p-20 sm:p-0 md:p-0 sm:py-8'>
+        <div className='relative h-full' data-aos="fade-right" data-aos-duration="1000" >
           <div className='relative w-full h-full'>
-            <Image src="/img/home/about01-2.png" alt="hero" className="sm:relative max-w-full h-auto" fill />
-            <div about="top" className='absolute top-20'>
+            <Image src="/img/home/about01-2.png" alt="hero" className="sm:relative object-contain max-w-full h-full" fill />
+            <div about="top" className='absolute top-[10%] sm:top-[5%]'>
               <div className='border-floating_border_color border-solid border-1 rounded-16 bg-floating_bg_color px-6 py-4 gap-2 grid'>
-                <h3 className='text-secondary text-32'>10 Năm</h3>
+                <h3 className='text-secondary text-32 sm:text-22'>10 Năm</h3>
                 <p className='text-20 text-white'>Kinh nghiệm Trading</p>
               </div>
             </div>
-            <div about="bottom" className='absolute bottom-10 right-0'>
+            <div about="bottom" className='absolute bottom-[5%] sm:bottom-0 right-0'>
               <div className='border-floating_border_color border-solid border-1 rounded-16 bg-floating_bg_color px-6 py-4 gap-2 grid'>
-                <h3 className='text-secondary text-32'>25K+</h3>
+                <h3 className='text-secondary text-32 sm:text-22'>25K+</h3>
                 <p className='text-20 text-white'>Khách hàng hài lòng</p>
               </div>
             </div>
@@ -28,7 +28,7 @@ export function Trading() {
         <div className='content-center py-8'>
           <div className="grid gap-8">
             <div className='grid gap-8'>
-              <h1 className="text-48 font-bold capitalize sm:text-center">
+              <h1 className="text-48 sm:text-32 font-bold capitalize sm:text-center">
                 Gặp gỡ <span className="text-primary"> công ty của chúng tôi </span>
                 trừ khi bỏ lỡ cơ hội
               </h1>

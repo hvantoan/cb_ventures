@@ -2775,3 +2775,29 @@ as conflicts may arise in other places
 .linear_bg  {
   background: linear-gradient(152deg, rgba(237, 242, 248, 0.02) 0%, rgba(237, 242, 248, 0.08) 100%);
 }
+
+.feature .feature_shape-item span {
+  position: absolute;
+  top: 0%;
+  right: -1%;
+  content: "";
+  height: 92vh;
+  width: 900px;
+  background: linear-gradient(219deg, rgba(255, 255, 255, 0.00) 0%, #253A33 100%);
+  border-bottom-left-radius: 25%;
+  top: 5%;
+  right: -1%;
+}
+
+.feature .feature_shape-item {
+  content: "";
+  height: 100vh;
+  width: 920px;
+  border: 2px solid #253A33;
+  padding: 40px;
+  border-bottom-left-radius: 25%;
+  top: -40%;
+  right: -40%;
+  transform: rotate(-10deg);
+  z-index: 1;
+}

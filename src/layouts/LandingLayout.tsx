@@ -48,9 +48,11 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <HeaderTop />
-      {children}
-      <LandingFooter />
+      <main className='overflow-x-hidden sm:overflow-auto'>
+        <HeaderTop />
+        {children}
+        <LandingFooter />
+      </main>
     </ThemeProvider>
   )
 }
