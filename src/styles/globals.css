@@ -64,6 +64,13 @@ h6 {
   @apply text-base font-semibold leading-[20px];
 }
 
+h1, h2, h3, h4, h5, h6 {
+  @apply text-title_color;
+  font-family: "Anek Telugu", sans-serif;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
 /* tag */
 .ant-tag .ant-tag-close-icon{
   @apply dark:text-white/60;
@@ -2763,3 +2770,8 @@ as conflicts may arise in other places
   position: absolute;
 }
 
+/* Feature */
+
+.linear_bg  {
+  background: linear-gradient(152deg, rgba(237, 242, 248, 0.02) 0%, rgba(237, 242, 248, 0.08) 100%);
+}

@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export function Trading() {
   return (
-    <section className="relative w-full">
+    <section className="relative w-full min-h-[calc(100vh-72px)]">
       <div className="absolute h-full w-full bg-[#00150f] z-[-1]" />
       <div className='container mx-auto relative grid sm:grid-cols-1 md:grid-cols-1 grid-cols-2 gap-20 sm:gap-4 md:gap-4 py-20 sm:p-0 md:p-0 sm:py-8'>
         <div data-aos="fade-right" data-aos-duration="1000" >

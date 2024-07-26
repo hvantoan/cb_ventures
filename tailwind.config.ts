@@ -22,7 +22,6 @@ export default {
       },
       colors: {
         primary: '#00d094',
-
         success: '#01B81A',
         pink: '#f2eafb',
         warning: '#FA8B0C',
@@ -119,7 +118,12 @@ export default {
         tertiary_color: "#002A1E",
         heading_title: "#6B777F",
         floating_border_color: "rgba(0, 0, 0, 0.02)",
-        floating_bg_color: "rgba(63, 81, 75, 0.97)"
+        floating_bg_color: "rgba(63, 81, 75, 0.97)",
+        floating_bg_color_2: "rgba(63, 81, 75, 0.08)",
+        title_color: "#FFFFFF",
+        wh_color: '#1B2D29',
+        card_boder: '#e6edfb1f',
+        bg_color_trans: 'rgba(237, 242, 248, 0.02)'
       },
       boxShadow: {
         regular: '0 5px 20px rgba(160,160,160,0.05)',
@@ -131,7 +135,7 @@ export default {
         dot: '0 0 0 1px #fff',
         btn: '0 8px 13px rgba(130, 49 ,211, 0.13)',
         faq: '0 15px 40px rgba(116, 116 ,116, 0.08)',
-        card: 'rgba(3,19,14,1.000) 0px 3px 8px',
+        card: '0px 12px 30px rgba(14, 4, 0, 0.24)',
       },
       borderWidth: {
         1: '1px',
@@ -140,8 +144,12 @@ export default {
       borderRadius: {
         4: '4px',
         6: '6px',
+        8: '8px',
         10: '10px',
         16: '16px',
+        32: '32px',
+        40: '40px',
+        80: '80px',
       },
       fontFamily: {
         Roboto: ['Roboto', 'sans-serif'],
