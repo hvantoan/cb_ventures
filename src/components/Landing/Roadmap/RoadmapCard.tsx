@@ -14,12 +14,14 @@ export type RoadmapItem = {
 
 export function RoadmapCard({ data, isLeft }: RoadmapCardProps) {
   return (
-    <div className={`${isLeft ? "bg-gradient-to-l" : "bg-gradient-to-r"} from-[#0b1f1a] to-[#132924] sm:p-4 md:p-4 p-8 rounded-[16px] h-[180px] grid gap-4`}>
-      <div className='flex justify-between'>
-        <h2 className="text-white text-22">{data.title}</h2>
-        <p className="text-primary text-22 font-bold">P{data.index}</p>
+    <div className={`flex ${isLeft ? 'justify-start' : 'justify-end'}`} data-aos={`${isLeft ? "fade-right" : "fade-left"}`} data-aos-duration="800">
+      <div className={`${isLeft ? "bg-gradient-to-br" : "bg-gradient-to-bl"} from-bg_color_trans to-bg_color sm:p-4 md:p-4 p-8 rounded-[16px] grid gap-4 w-[calc(100%/2-100px)] sm:w-full`}>
+        <div className='flex justify-between'>
+          <h3 className="text-white text-32 sm:text-24">{data.title}</h3>
+          <span className="text-primary text-32 sm:text-24 font-bold">P{data.index}</span>
+        </div>
+        <p className="text-16 text-white line-clamp-6">{data.description}</p>
       </div>
-      <p className="text-16 text-pink line-clamp-4">{data.description}</p>
     </div>
   );
 }

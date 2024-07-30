@@ -123,7 +123,8 @@ export default {
         title_color: "#FFFFFF",
         wh_color: '#1B2D29',
         card_boder: '#e6edfb1f',
-        bg_color_trans: 'rgba(237, 242, 248, 0.02)'
+        bg_color_trans: 'rgba(237, 242, 248, 0.02)',
+        bg_color: "rgba(237, 242, 248, 0.08)"
       },
       boxShadow: {
         regular: '0 5px 20px rgba(160,160,160,0.05)',
@@ -166,6 +167,7 @@ export default {
         18: ['18px', '140%'],
         20: ['20px', '100%'],
         22: ['22px', '30px'],
+        24: ['24px', '1.5em'],
         32: ['32px', '110%'],
         42: ['42px', '62px'],
         48: ['48px', '1.25em'],
