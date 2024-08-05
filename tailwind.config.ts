@@ -113,6 +113,8 @@ export default {
         // Custom color
         secondary: '#00D094',
         body_color: "#00150F",
+        bg_adviser: "#00150fcc",
+        adviser_sub: "#ffffff99",
         text_color: "rgba(255, 255, 255, 0.6)",
         trk:'#0C263A',
         tertiary_color: "#002A1E",
@@ -124,7 +126,8 @@ export default {
         wh_color: '#1B2D29',
         card_boder: '#e6edfb1f',
         bg_color_trans: 'rgba(237, 242, 248, 0.02)',
-        bg_color: "rgba(237, 242, 248, 0.08)"
+        bg_color: "rgba(237, 242, 248, 0.08)",
+        brand_color: "#00D094",
       },
       boxShadow: {
         regular: '0 5px 20px rgba(160,160,160,0.05)',
@@ -137,6 +140,7 @@ export default {
         btn: '0 8px 13px rgba(130, 49 ,211, 0.13)',
         faq: '0 15px 40px rgba(116, 116 ,116, 0.08)',
         card: '0px 12px 30px rgba(14, 4, 0, 0.24)',
+        pricing_shadow: '0px 16px 40px 0px rgba(26, 64, 137, 0.06)',
       },
       borderWidth: {
         1: '1px',
@@ -161,6 +165,7 @@ export default {
         10: ['10px', '14px'],
         11: ['11px', '15px'],
         13: ['13px', '18px'],
+        14: ['14px', '20px'],
         15: ['15px', '24px'],
         16: ['16px', '1.625em'],
         17: ['17px', '26px'],

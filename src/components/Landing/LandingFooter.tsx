@@ -15,10 +15,10 @@ export function LandingFooter() {
                 width="48"
                 height="48"
               />
-              <h1 className="ml-[5px] place-self-center">Meet Our</h1>
+              <h1 className="ml-[5px] place-self-center">Gặp chúng tôi</h1>
             </Row>
             <p className="text-white/60 pt-5 pb-10 text-16">
-              Unlock the full potential of our product with our amazing features and top-notch customer support!
+              Mở khóa toàn bộ tiềm năng của sản phẩm của chúng tôi với các tính năng tuyệt vời và hỗ trợ khách hàng hàng đầu của chúng tôi!
             </p>
             <Row>
               <button className="flex bg-primary rounded-lg p-[4px] place-content-center" type="button">
@@ -30,7 +30,7 @@ export function LandingFooter() {
                   height="24"
                 />
                 <div className="ml-[8px] text-left">
-                  <p className="text-[7px]">Download on the</p>
+                  <p className="text-[7px]">Tải xuống trên</p>
                   <p className="text-dark text-[15px]">App Store</p>
                 </div>
               </button>
@@ -43,7 +43,7 @@ export function LandingFooter() {
                   className="mt-[2px]"
                 />
                 <div className="ml-[8px] text-left">
-                  <p className="text-[7px] text-pink">Download on the</p>
+                  <p className="text-[7px] text-pink"> Tải xuống trên</p>
                   <p className="text-pink text-[15px]">App Store</p>
                 </div>
               </button>

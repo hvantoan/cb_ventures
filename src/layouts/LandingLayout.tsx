@@ -35,7 +35,6 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
     html.setAttribute('dir', 'rtl')
   }
   const router = useRouter()
-  console.log(router.pathname)
   useEffect(() => {
     if (router.pathname.includes('/admin')) {
       router.pathname = '/admin'
