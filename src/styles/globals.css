@@ -7,6 +7,7 @@ html * {
   box-sizing: border-box;
 }
 
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
@@ -45,6 +46,7 @@ a:hover {
 }
 h1 {
   @apply text-3xl font-semibold leading-[38px];
+  line-height: 1.067;
 }
 h2 {
   @apply text-2xl font-semibold leading-[30px];
@@ -60,6 +62,13 @@ h5 {
 }
 h6 {
   @apply text-base font-semibold leading-[20px];
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-title_color;
+  font-family: "Anek Telugu", sans-serif;
+  line-height: 1.25;
+  font-weight: 600;
 }
 
 /* tag */
@@ -1950,7 +1959,6 @@ as conflicts may arise in other places
 .ant-card-body-p-25 .ant-card-body {
   @apply p-[25px] !important;
 }
-  
 .ant-card-body-px-0 .ant-card-body {
   @apply ps-0 pr-0 !important;
 }
@@ -2049,7 +2057,7 @@ as conflicts may arise in other places
 
 /* Chartjs Tooltip */
 .chartjs-tooltip {
-  @apply z-10 min-sm:-translate-x-[70%] sm:-translate-x-[80%]  -translate-y-[5%];
+  @apply z-10 sm:-translate-x-[80%]  -translate-y-[5%];
 }
 
 /* Radial Chart */
@@ -2057,37 +2065,8 @@ as conflicts may arise in other places
   @apply fill-dark dark:fill-white;
 }
 
-/* Chat */
-.ant-upload-list-picture-card .ant-upload-list-item-actions button svg,
-.ant-upload-list-picture-card .ant-upload-list-item-actions a svg{
-  @apply text-white dark:text-white/60;
-}
 
-/* Social */
 
-.emoji-picker-react{
-  @apply z-998;
-}
-
-.social-post .ant-upload-list-picture-card-container{
-  @apply w-[30px] h-[30px] m-0;
-}
-
-.social-post .ant-upload-list-picture-card .ant-upload-list-item{
-  @apply !p-[2px];
-}
-
-.social-post .ant-upload-list{
-  @apply gap-[3px];
-}
-
-/* Product Grid */
-.ant-layout-content.overlay {
-  @apply relative z-[1];
-}
-.ant-layout-content.overlay:after {
-  @apply content-[''] w-full h-full ltr:left-0 rtl:right-0 top-0 xl:absolute xl:bg-dark/30;
-}
 
 /* Faq */
 .ant-card-custom-style.ant-collapse-item-active {
@@ -2756,4 +2735,69 @@ as conflicts may arise in other places
 
 .card-no-padding .ant-card-body {
   padding: 8px !important;
+}
+
+/* Slider Parner page */
+.partner-gradient::after {
+  background: #003E2C;
+}
+.partner-gradient {
+  position: relative;
+  display: block;
+  padding-block: 30px;
+}
+.partner-gradient::after {
+  content: "";
+  left: 0;
+  top: -5px;
+  height: 119px;
+  width: 100%;
+  background-color: linear-gradient(150.39deg, rgb(237, 242, 248) 15.02%, #EDF2F8 99.59%);
+  transform: rotate(2deg);
+  z-index: 2;
+  position: absolute;
+  @apply dark:bg-[#003E2C]
+}
+
+.partner-gradient:before {
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  @apply bg-tertiary_color border-body_color border-y-8 border-solid ;
+  z-index: 3;
+  position: absolute;
+}
+
+/* Feature */
+
+.linear_bg  {
+  background: linear-gradient(152deg, rgba(237, 242, 248, 0.02) 0%, rgba(237, 242, 248, 0.08) 100%);
+}
+
+.feature .feature_shape-item span {
+  position: absolute;
+  top: 0%;
+  right: -1%;
+  content: "";
+  height: 92vh;
+  width: 900px;
+  background: linear-gradient(219deg, rgba(255, 255, 255, 0.00) 0%, #253A33 100%);
+  border-bottom-left-radius: 25%;
+  top: 5%;
+  right: -1%;
+}
+
+.feature .feature_shape-item {
+  content: "";
+  height: 100vh;
+  width: 920px;
+  border: 2px solid #253A33;
+  padding: 40px;
+  border-bottom-left-radius: 25%;
+  top: -40%;
+  right: -40%;
+  transform: rotate(-10deg);
+  z-index: 1;
 }

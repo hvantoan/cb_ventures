@@ -27,11 +27,10 @@ export interface Article {
 
 function ArticlesCard({ item, theme = "style-2" }: ArticleCardProps) {
     const { slug, content, title, img } = item;
-
     const path = '/admin/pages/blog';
 
     return (
-        <figure className="group p-6 mb-0 bg-white dark:bg-white/10 rounded-10 shadow-regular dark:shadow-none">
+        <figure className="group p-6 mb-0 bg-wh_color dark:bg-white/10 rounded-10 shadow-regular dark:shadow-none border border-transparent hover:border-primary" data-aos="fade-up" data-aos-duration="800">
             <div className="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full">
                 <Image
                     className="w-full max-h-[217px] rounded-10"
@@ -65,7 +64,7 @@ function ArticlesCard({ item, theme = "style-2" }: ArticleCardProps) {
                     ''
                 )}
                 <h2 className="mt-4 mb-3 text-xl font-semibold">
-                    <Link href={`${path}/${slug}`} className="text-dark hover:text-primary dark:text-white/[.87] dark:hover:text-primary">
+                    <Link href={`${path}/${slug}`} className="text-dark group-hover:text-primary dark:text-white/[.87] dark:group-hover:text-primary">
                         {title}
                     </Link>
                 </h2>

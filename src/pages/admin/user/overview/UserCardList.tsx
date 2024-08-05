@@ -34,7 +34,7 @@ function UserCardList({ user }: any) {
                   </span>
                 </p>
               </div>
-              <div className="static text-end flex min-xs:justify-center xs:justify-start min-2xl:justify-end gap-[10px] flex-wrap">
+              <div className="static text-end flex min-xs:justify-center xs:justify-start gap-[10px] flex-wrap">
                 <Buttons
                   size="default"
                   type="white"

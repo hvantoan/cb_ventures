@@ -43,7 +43,7 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
     if (!isLoggedIn && !router.pathname.startsWith('/admin')) {
       router.push('/login')
     }
-  }, [router])
+  }, [isLoggedIn, router])
 
   return (
     <ThemeProvider theme={theme}>
@@ -51,8 +51,7 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
       <div className="flex flex-row gap-5 mt-[72px]">
         <Sidebar />
         <Layout
-          className={`max-w-full duration-[300ms] ${!topMenu ? `xl:ps-0 ease-[ease] ${collapsed ? 'ps-[80px]' : 'ps-[280px] delay-[150ms]'}` : ''
-            }`}
+          className={`max-w-full duration-[300ms] ${!topMenu ? `sm:ps-0 ease-[ease] ${collapsed ? 'ps-[80px]' : 'ps-[280px] delay-[150ms]'}` : ''}`}
         >
           <Content>
             {children}

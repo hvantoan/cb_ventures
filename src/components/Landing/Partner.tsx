@@ -1,55 +1,71 @@
+import { Image } from 'antd';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
 export function Partner() {
   return (
-    <div className="relative min-h-[calc(100vh - 72px)] w-full">
-      <div className="absolute inset-0 h-full w-full bg-[#01291e] z-[-1] " />
-      <div className="
-            container mx-auto relative
-            grid grid-cols-6 sm:grid-cols-2 md:grid-cols-2 sm:gap-4 md:gap-4 py-4 px-8 sm:px-0 md:px-0
-        ">
-        <div className="flex justify-center items-center gap-4">
-          <a className="text-secondary-hbr text-4xl text-bold">coinbase</a>
-        </div>
-        <a href="" className="flex justify-center items-center gap-4">
-          <div>
-            <img
-              width="48"
-              height="48"
-              src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-spotify-a-swedish-audio-streaming-platform-that-provides-drm-protected-logo-color-tal-revivo.png"
-              alt="external-spotify-a-swedish-audio-streaming-platform-that-provides-drm-protected-logo-color-tal-revivo"
-            />
-          </div>
-          <p className="text-success-hbr text-3xl content-center">Spotify</p>
-        </a>
-        <a href="" className="flex justify-center items-center gap-4">
-          <div>
-            <img
-              width="48"
-              height="48"
-              src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-slack-replace-email-text-messaging-and-instant-messaging-for-your-team-logo-color-tal-revivo.png"
-              alt="external-slack-replace-email-text-messaging-and-instant-messaging-for-your-team-logo-color-tal-revivo"
-            />
-          </div>
-          <p className="text-pink text-3xl content-center">Slack</p>
-        </a>
-        <a href="" className="flex justify-center items-center gap-4">
-          <div>
-            <img
-              width="48"
-              height="48"
-              src="https://img.icons8.com/external-those-icons-flat-those-icons/48/external-Dropbox-logos-and-brands-those-icons-flat-those-icons.png"
-              alt="external-Dropbox-logos-and-brands-those-icons-flat-those-icons"
-            />
-          </div>
-          <p className="text-pink text-3xl ml-[5px] content-center">Dropbox</p>
-        </a>
-
-        <div className="flex justify-center items-center gap-4">
-          <img alt="" src="/img/icon/webflow-icon.png" width={100} height={60} className="scale-150"></img>
-        </div>
-        <div className="flex justify-center items-center gap-4">
-          <a className="text-secondary-hbr text-4xl text-bold">zoom</a>
+    <section className='bg-tertiary_color'>
+      <div className='partner-gradient'>
+        <div className='container mx-auto px-20 sm:px-0 relative z-10'>
+          <Carousel
+            className='p-'
+            additionalTransfrom={0}
+            arrows={false}
+            autoPlaySpeed={3000}
+            centerMode={true}
+            autoPlay
+            customTransition='transform 1500ms ease-in-out'
+            dotListClass=""
+            infinite={true}
+            itemClass="px-6"
+            keyBoardControl
+            minimumTouchDrag={80}
+            pauseOnHover={false}
+            renderArrowsWhenDisabled={false}
+            renderButtonGroupOutside={false}
+            renderDotsOutside={false}
+            responsive={{
+              desktop: {
+                breakpoint: {
+                  max: 3000,
+                  min: 1024
+                },
+                items: 6,
+                partialVisibilityGutter: 40
+              },
+              mobile: {
+                breakpoint: {
+                  max: 464,
+                  min: 0
+                },
+                items: 1,
+                partialVisibilityGutter: 30
+              },
+              tablet: {
+                breakpoint: {
+                  max: 1024,
+                  min: 464
+                },
+                items: 2,
+                partialVisibilityGutter: 30
+              }
+            }}
+            rewind={false}
+            rewindWithAnimation={false}
+            rtl={false}
+            ssr={true}
+            shouldResetAutoplay
+            sliderClass=""
+            slidesToSlide={1}
+          >
+            {Array.from({ length: 6 }).map((_, index) => (
+              <a key={index} href='#' className='flex justify-center items-center h-full w-full'>
+                <Image src={`/img/home/barnd0${index + 1}-2.png`} height={48} alt='barm' />
+              </a>
+            ))}
+          </Carousel>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

@@ -1,19 +1,18 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { Layout } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import HeaderTop from '@/components/Header'
 
 import config from '@/config/config'
 import { RootState } from '@/redux/store'
-import { changeLayoutMode, changeMenuMode } from '@/redux/themeLayout/reducers'
+import { changeMenuMode } from '@/redux/themeLayout/reducers'
 import { LandingFooter } from '@/components/Landing'
 const { theme } = config
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
   const dispatch = useDispatch()
-  const { topMenu, collapsed, isLoggedIn, rtl, mainContent } = useSelector((state: RootState) => {
+  const { rtl, mainContent } = useSelector((state: RootState) => {
     return {
       topMenu: state.layout.topMenu,
       collapsed: state.layout.menuCollapse,
@@ -29,7 +28,6 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
 
   if (mainContent === 'darkMode') {
     document.body.classList.add('dark')
-    document.body.classList.add('dark')
   }
 
   if (rtl) {
@@ -37,7 +35,6 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
     html.setAttribute('dir', 'rtl')
   }
   const router = useRouter()
-  console.log(router.pathname)
   useEffect(() => {
     if (router.pathname.includes('/admin')) {
       router.pathname = '/admin'
@@ -50,9 +47,11 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <HeaderTop />
-      {children}
-      <LandingFooter />
+      <main className='overflow-x-hidden sm:overflow-auto'>
+        <HeaderTop />
+        {children}
+        <LandingFooter />
+      </main>
     </ThemeProvider>
   )
 }

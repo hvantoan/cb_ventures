@@ -2,10 +2,10 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
 import staticData from '../../config/config'
 
-interface layout {
+export interface AppLayout {
   rtlData: boolean
   topMenu: boolean
-  mode: string
+  mode: "darkMode" | "lightMode"
   menuCollapse: boolean
   loading: boolean
   rtlLoading: boolean
@@ -14,10 +14,10 @@ interface layout {
   error: null
 }
 
-const initLayout: layout = {
+const initLayout: AppLayout = {
   rtlData: staticData.rtl,
   topMenu: staticData.topMenu,
-  mode: staticData.mainTemplate,
+  mode: staticData.mainTemplate as "darkMode" | "lightMode",
   menuCollapse: staticData.menuCollapse,
   loading: false,
   rtlLoading: false,
@@ -31,7 +31,7 @@ const layoutReducer = createSlice({
   name: 'layout',
   reducers: {
     changeLayoutMode(state, action: PayloadAction<string>) {
-      state.mode = action.payload
+      state.mode = action.payload as "darkMode" | "lightMode"
     },
 
     changeDirectionMode(state, action: PayloadAction<boolean>) {

@@ -10,9 +10,18 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        rolating: {
+          '0%': { transform: 'rotate(0deg)' },
+          '50%': { transform: 'rotate(360deg)' },
+          '100%': { transform: 'rotate(0deg)' },
+        },
+      },
+      animation: {
+        rolating: 'rolating 6s infinite',
+      },
       colors: {
         primary: '#00d094',
-        secondary: '#00150f',
         success: '#01B81A',
         pink: '#f2eafb',
         warning: '#FA8B0C',
@@ -102,8 +111,23 @@ export default {
         darkHard: 'rgb(0, 0, 0, .60)',
         currentColor: 'currentColor',
         // Custom color
-        'slate-gray': '#717D79',
-        'card-active': '#1b2d29',
+        secondary: '#00D094',
+        body_color: "#00150F",
+        bg_adviser: "#00150fcc",
+        adviser_sub: "#ffffff99",
+        text_color: "rgba(255, 255, 255, 0.6)",
+        trk:'#0C263A',
+        tertiary_color: "#002A1E",
+        heading_title: "#6B777F",
+        floating_border_color: "rgba(0, 0, 0, 0.02)",
+        floating_bg_color: "rgba(63, 81, 75, 0.97)",
+        floating_bg_color_2: "rgba(63, 81, 75, 0.5)",
+        title_color: "#FFFFFF",
+        wh_color: '#1B2D29',
+        card_boder: '#e6edfb1f',
+        bg_color_trans: 'rgba(237, 242, 248, 0.02)',
+        bg_color: "rgba(237, 242, 248, 0.08)",
+        brand_color: "#00D094",
       },
       boxShadow: {
         regular: '0 5px 20px rgba(160,160,160,0.05)',
@@ -115,7 +139,8 @@ export default {
         dot: '0 0 0 1px #fff',
         btn: '0 8px 13px rgba(130, 49 ,211, 0.13)',
         faq: '0 15px 40px rgba(116, 116 ,116, 0.08)',
-        card: 'rgba(3,19,14,1.000) 0px 3px 8px',
+        card: '0px 12px 30px rgba(14, 4, 0, 0.24)',
+        pricing_shadow: '0px 16px 40px 0px rgba(26, 64, 137, 0.06)',
       },
       borderWidth: {
         1: '1px',
@@ -124,7 +149,13 @@ export default {
       borderRadius: {
         4: '4px',
         6: '6px',
+        8: '8px',
         10: '10px',
+        16: '16px',
+        32: '32px',
+        40: '40px',
+        80: '80px',
+        "25%": '25%',
       },
       fontFamily: {
         Roboto: ['Roboto', 'sans-serif'],
@@ -134,52 +165,53 @@ export default {
         10: ['10px', '14px'],
         11: ['11px', '15px'],
         13: ['13px', '18px'],
+        14: ['14px', '20px'],
         15: ['15px', '24px'],
-        16: ['16px', '140%'],
+        16: ['16px', '1.625em'],
         17: ['17px', '26px'],
         18: ['18px', '140%'],
         20: ['20px', '100%'],
         22: ['22px', '30px'],
+        24: ['24px', '1.5em'],
         32: ['32px', '110%'],
         42: ['42px', '62px'],
+        48: ['48px', '1.25em'],
         54: ['54px', '110%'],
         58: ['58px', '86px'],
+        60: ['60px', '1.067'],
       },
       zIndex: {
         998: '998',
         99998: '99998',
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'landing-bg1': "url('/img/landing/landing-bg1.png')",
-        'landing-bg2': "url('/img/landing/landing-bg2.png')",
-        'landing-bg3': "url('/img/landing/landing-bg3.jpg')",
         pricing: "url('/img/landing/pricing-bg.png')",
+        banner_bg: "url('/img/home/banner_bg.png')",
       },
     },
     screens: {
-      '5xl': { max: '1899px' },
       '4xl': { max: '1699px' },
       '3xl': { max: '1599px' },
-      '2xl': { max: '1299px' },
-      xl: { max: '1199px' },
-      lg: { max: '991px' },
-      md: { max: '767px' },
-      sm: { max: '575px' },
       ssm: { max: '480px' },
       xs: { max: '380px' },
-      xxs: { max: '320px' },
       'min-xxs': '320px',
       'min-xs': '380px',
       'min-ssm': '480px',
-      'min-sm': '575px',
-      'min-md': '768px',
-      'min-lg': '991px',
-      'min-xl': '1199px',
-      'min-2xl': '1299px',
-      'min-3xl': '1599px',
-      'min-4xl': '1699px',
+
+      'sm': {'max': '767px'},
+      // => @media (min-width: 640px and max-width: 767px) { ... }
+
+      'md': {'min': '768px', 'max': '1023px'},
+      // => @media (min-width: 768px and max-width: 1023px) { ... }
+
+      'lg': {'min': '1024px', 'max': '1279px'},
+      // => @media (min-width: 1024px and max-width: 1279px) { ... }
+
+      'xl': {'min': '1280px', 'max': '1535px'},
+      // => @media (min-width: 1280px and max-width: 1535px) { ... }
+
+      '2xl': {'min': '1536px'},
+      // => @media (min-width: 1536px) { ... }
     },
   },
   plugins: [],
