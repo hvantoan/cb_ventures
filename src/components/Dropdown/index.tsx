@@ -1,10 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
-import { Dropdown } from 'antd';
-import { PrinterOutlined,FilePdfOutlined,FileTextOutlined,FileExcelOutlined,FileOutlined } from '@ant-design/icons';
+import { Dropdown, MenuProps } from 'antd';
+import { PrinterOutlined, FilePdfOutlined, FileTextOutlined, FileExcelOutlined, FileOutlined } from '@ant-design/icons';
 
-function DropDown(props:any) {
-  const { customContent, content, placement, action, children, style, className } = props;
+
+
+export type DropDownProps = {
+  action?: 'click' | 'hover' | 'contextMenu';
+  customContent?: MenuProps;
+  placement?: "bottomLeft" | "bottomCenter" | "bottomRight" | "topLeft" | "topCenter" | "topRight" | "top" | "bottom";
+  children: React.ReactNode;
+  style?: React.CSSProperties;
+  className?: string;
+}
+function DropDown(props: any) {
+  const { customContent, placement, action, children, style, className } = props;
 
   const items = [
     {
@@ -14,7 +24,7 @@ function DropDown(props:any) {
           className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
           href="#"
         >
-          <PrinterOutlined className="text-[14px] ltr:mr-2 rtl:ml-2"/>
+          <PrinterOutlined className="text-[14px] ltr:mr-2 rtl:ml-2" />
           <span>Printer</span>
         </Link>
       ),
@@ -26,7 +36,7 @@ function DropDown(props:any) {
           className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
           href="#"
         >
-          <FilePdfOutlined className="text-[14px] ltr:mr-2 rtl:ml-2"/>
+          <FilePdfOutlined className="text-[14px] ltr:mr-2 rtl:ml-2" />
           <span>PDF</span>
         </Link>
       ),
@@ -38,7 +48,7 @@ function DropDown(props:any) {
           className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
           href="#"
         >
-          <FileTextOutlined className="text-[14px] ltr:mr-2 rtl:ml-2"/>
+          <FileTextOutlined className="text-[14px] ltr:mr-2 rtl:ml-2" />
           <span>Google Sheets</span>
         </Link>
       ),
@@ -84,30 +94,7 @@ function DropDown(props:any) {
   );
 }
 
-const contents = (
-  <>
-    <div className="block bg-white dark:bg-[#1b1e2b] shadow-regular dark:shadow-[0_5px_30px_rgba(1,4,19,.40)] py-1">
-      <Link
-        className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
-        href="#"
-      >
-        <span>Export to CSV</span>
-      </Link>
-      <Link
-        className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
-        href="#"
-      >
-        <span>Export to XML</span>
-      </Link>
-      <Link
-        className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
-        href="#"
-      >
-        <span>Export to Drive</span>
-      </Link>
-    </div>
-  </>
-);
+
 
 
 export default DropDown;

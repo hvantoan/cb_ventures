@@ -2,13 +2,14 @@ import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import HeaderTop from '@/components/Header'
 
 import config from '@/config/config'
 import { RootState } from '@/redux/store'
 import { changeMenuMode } from '@/redux/themeLayout/reducers'
-import { LandingFooter } from '@/components/Landing'
 const { theme } = config
+
+
+
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
   const dispatch = useDispatch()
@@ -47,11 +48,7 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <main className='overflow-x-hidden sm:overflow-auto'>
-        <HeaderTop />
-        {children}
-        <LandingFooter />
-      </main>
+      {children}
     </ThemeProvider>
   )
 }

@@ -17,6 +17,7 @@ import AOS from "aos";
 
 import "aos/dist/aos.css";
 
+
 const App: FC<AppProps> = ({ Component, ...rest }) => {
   const router = useRouter()
   const { pathname } = router
@@ -87,3 +88,4 @@ const App: FC<AppProps> = ({ Component, ...rest }) => {
   )
 }
 export default wrapper.withRedux(App)
+
