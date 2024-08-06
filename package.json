@@ -17,7 +17,7 @@
     "@ant-design/pro-table": "^3.16.5",
     "@iconscout/react-unicons": "^2.0.2",
     "@react-google-maps/api": "^2.19.3",
-    "@reduxjs/toolkit": "^2.2.6",
+    "@reduxjs/toolkit": "^2.2.7",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@tinymce/tinymce-react": "^5.1.1",
     "@types/aos": "^3.0.7",
