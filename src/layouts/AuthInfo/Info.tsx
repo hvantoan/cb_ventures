@@ -12,16 +12,14 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
-import Search from './Search'
-import Message from './Message'
-import Notification from './Notification'
-import Settings from './settings'
+
 
 
 import { logOutAction } from '@/redux/auth/reducers'
 import Heading from '@/components/Heading'
 import DropDown from '@/components/Dropdown'
 import PopOver from '@/components/Popup/PopOver'
+import { AppDispatch } from '@/redux/store'
 
 const AuthInfo = React.memo((props: any) => {
   // const router = useRouter()
@@ -31,7 +29,7 @@ const AuthInfo = React.memo((props: any) => {
   const { i18n } = useTranslation()
   const { flag } = state
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
 
   const user: any = {}
   const currentUser: any = {}
@@ -43,7 +41,6 @@ const AuthInfo = React.memo((props: any) => {
   const handleLogout = async () => {
     try {
       dispatch(logOutAction())
-      console.log('Successfully Logged Out!')
     } catch (err) {
       console.log(err)
     }
@@ -51,7 +48,7 @@ const AuthInfo = React.memo((props: any) => {
 
   const userContent = (
     <div>
-      <div className="min-w-[280px] sm:min-w-full">
+      <div className="min-w-[280px] sm:min-w-full ">
         <figure className="flex items-center text-sm rounded-[8px] bg-section dark:bg-white/10 py-[20px] px-[25px] mb-[12px]">
           <Image
             className="rounded-full ltr:mr-4 rtl:ml-4"
@@ -62,9 +59,9 @@ const AuthInfo = React.memo((props: any) => {
           />
           <figcaption>
             <Heading className="text-dark dark:text-white/[.87] mb-0.5 text-sm" as="h5">
-              {user ? user.name : currentUser ? currentUser.displayName : 'Abdullah Bin Talha'}
+              {user ? user.name : currentUser ? currentUser.displayName : 'Hô Văn Toàn'}
             </Heading>
-            <p className="mb-0 text-xs text-body dark:text-white/60">UI Expert</p>
+            <p className="mb-0 text-xs text-body dark:text-white/60">Chuyên gia UI</p>
           </figcaption>
         </figure>
         <ul className="mb-[10px]">
@@ -73,7 +70,7 @@ const AuthInfo = React.memo((props: any) => {
               href="#"
               className="inline-flex items-center hover:bg-primary/[.05] rounded-4 text-light dark:text-white/60 dark:hover:text-white hover:text-primary dark:hover:bg-white/10 dark:rounded-4 hover:pl-6 w-full px-2.5 py-3 text-sm transition-all ease-in-out delay-150"
             >
-              <UilUser className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Profile
+              <UilUser className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Hồ sơ
             </Link>
           </li>
           <li>
@@ -81,7 +78,7 @@ const AuthInfo = React.memo((props: any) => {
               href="#"
               className="inline-flex items-center hover:bg-primary/[.05] rounded-4 text-light dark:text-white/60 dark:hover:text-white hover:text-primary dark:hover:bg-white/10 dark:rounded-4 hover:pl-6 w-full px-2.5 py-3 text-sm transition-all ease-in-out delay-150"
             >
-              <UilSetting className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Settings
+              <UilSetting className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Cài đặt
             </Link>
           </li>
           <li>
@@ -89,7 +86,7 @@ const AuthInfo = React.memo((props: any) => {
               href="#"
               className="inline-flex items-center hover:bg-primary/[.05] rounded-4 text-light dark:text-white/60 dark:hover:text-white hover:text-primary dark:hover:bg-white/10 dark:rounded-4 hover:pl-6 w-full px-2.5 py-3 text-sm transition-all ease-in-out delay-150"
             >
-              <UilDollarSign className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Billing
+              <UilDollarSign className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Hóa đơn
             </Link>
           </li>
           <li>
@@ -97,7 +94,7 @@ const AuthInfo = React.memo((props: any) => {
               href="#"
               className="inline-flex items-center hover:bg-primary/[.05] rounded-4 text-light dark:text-white/60 dark:hover:text-white hover:text-primary dark:hover:bg-white/10 dark:rounded-4 hover:pl-6 w-full px-2.5 py-3 text-sm transition-all ease-in-out delay-150"
             >
-              <UilUsersAlt className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Activity
+              <UilUsersAlt className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Hoạt động
             </Link>
           </li>
           <li>
@@ -105,7 +102,7 @@ const AuthInfo = React.memo((props: any) => {
               href="#"
               className="inline-flex items-center hover:bg-primary/[.05] rounded-4 text-light dark:text-white/60 dark:hover:text-white hover:text-primary dark:hover:bg-white/10 dark:rounded-4 hover:pl-6 w-full px-2.5 py-3 text-sm transition-all ease-in-out delay-150"
             >
-              <UilBell className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Help
+              <UilBell className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Giúp đỡ
             </Link>
           </li>
         </ul>
@@ -114,7 +111,7 @@ const AuthInfo = React.memo((props: any) => {
           href={user ? '/api/auth/logout' : '#'}
           className="flex items-center justify-center text-sm font-medium bg-[#f4f5f7] dark:bg-[#32333f] h-[50px] text-light hover:text-primary dark:hover:text-white/60 dark:text-white/[.87] mx-[-12px] mb-[-15px] rounded-b-6"
         >
-          <UilSignout className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Sign Out
+          <UilSignout className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Đăng xuất
         </Link>
       </div>
     </div>
@@ -153,7 +150,7 @@ const AuthInfo = React.memo((props: any) => {
           className="flex items-center bg-white dark:bg-white/10 hover:bg-primary/[.05] rounded-4 px-3 py-1.5 text-sm text-dark dark:text-white/60"
         >
           <Image className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" src="/img/flag/vi.png" alt="" width="20" height="20" />
-          <span>Arabic</span>
+          <span>Việt Nam</span>
         </Link>
       ),
     },
@@ -161,14 +158,8 @@ const AuthInfo = React.memo((props: any) => {
 
   return (
     <div className="flex items-center justify-end flex-auto gap-6 lg:gap-4">
-      <div className="lg:visible md:hidden">
-        <Search />
-      </div>
-      <Message />
-      <Notification />
-      <Settings />
-      <div className="flex">
-        <DropDown placement="bottomRight" customContent={country}>
+      <div className=" z-998">
+        <DropDown placement="bottomRight" className="z-998" action="" customContent={country} >
           <Link href="#" className="flex">
             <Image src="/img/flag/en.png" alt="" width="20" height="20" />
           </Link>

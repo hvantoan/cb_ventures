@@ -1,10 +1,12 @@
 import React from 'react'
-import { Row } from 'antd'
+import { Row, Layout } from 'antd'
 import Image from 'next/image'
+
+
 
 export function LandingFooter() {
   return (
-    <footer>
+    <Layout.Footer>
       <div>
         <div className="container mx-auto grid grid-cols-2 sm:grid-cols-1 gap-10 py-8">
           <div>
@@ -191,7 +193,7 @@ export function LandingFooter() {
           </div>
         </div>
       </div>
-    </footer>
+    </Layout.Footer>
   )
 }
 export default LandingFooter
