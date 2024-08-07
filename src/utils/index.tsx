@@ -3,13 +3,13 @@
  * @param {string} text
  * @param {number} size
  */
-const ellipsis = (text:any, size:any) => {
+const ellipsis = (text: any, size: any) => {
   return `${text.split(' ').slice(0, size).join(' ')}...`;
 };
 
-const idGenerator = (events:any, length = 1) => {
-  const arrayData:any = [];
-  events.map((data:any) => {
+const idGenerator = (events: any, length = 1) => {
+  const arrayData: any = [];
+  events.map((data: any) => {
     return arrayData.push(parseInt(data.id, 10));
   });
   const number = (Math.max(...arrayData) + 1).toString();

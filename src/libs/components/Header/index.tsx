@@ -6,17 +6,21 @@ import { UilEllipsisV } from '@iconscout/react-unicons'
 import { ReactSVG } from 'react-svg'
 
 import { Col, Layout, Row } from 'antd'
-import TopMenu from '../Sidebar/TopMenu'
-import AuthInfo from '../AuthInfo/Info'
-import SearchBar from '../AuthInfo/Search'
-import { changeMenuCollapse, useAppDispatch, useAppSelector } from '@/redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { AppDispatch } from '@/redux/store'
+import { useAppDispatch } from '@/redux/hooks/useAppDispatch'
+import { useAppSelector } from '@/redux/hooks/useAppSelector'
+import { changeMenuCollapse } from '@/redux/reducers/themeLayout/reducers'
+import TopMenu from '@/components/Sidebar/TopMenu'
+import AuthInfo from '@/components/AuthInfo/Info'
+import SearchBar from '@/components/AuthInfo/Search'
 
 const { Header } = Layout
 
 
 export default function HeaderTop() {
   const [hide, setHide] = useState(true)
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
   const { rtl, layoutMode, topMenu, collapsed } = useAppSelector((state) => {
     return {
       rtl: state.layout.rtlData,

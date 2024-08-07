@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from 'react'
 import Link from 'next/link'
-import { TopMenuStyle } from '../../layouts/Style'
+import { TopMenuStyle } from './Style'
 
 function TopMenu() {
   const path = '/landing'
