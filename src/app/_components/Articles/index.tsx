@@ -1,6 +1,5 @@
-'use client'
-import { Button } from 'antd'
 import ArticlesCard, { Article } from './ArticlesCard'
+import { PrimaryButton } from '../Button/PrimaryButton'
 
 export type ArticlesProps = {
     data: Article[]
@@ -14,7 +13,7 @@ export function Articles({ data }: ArticlesProps) {
             <div className="absolute inset-0 h-full w-full z-[-1]" />
             <div className="container mx-auto grid sm:py-4 md:py-4 py-20 sm:px-0 md:px-0 px-20">
                 <div className='w-full'>
-                    <h2 className="text-54 sm:text-32 w-full place-self-center text-center">Bài viết cho <span className='text-primary'>Pro Trader</span></h2>
+                    <h2 className="text-54 sm:text-32 text-white w-full place-self-center text-center">Bài viết cho <span className='text-primary'>Pro Trader</span></h2>
                     <div className="flex justify-center">
                         <p className="text-white/60 pt-5 pb-10 text-lg max-w-[700px] text-center">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, veritatis facere blanditiis id provident facilis quisquam corrupti modi ratione iure pariatur deserunt nostrum temporibus itaque illo sapiente quos voluptatum. Laboriosam?
@@ -25,9 +24,9 @@ export function Articles({ data }: ArticlesProps) {
                     {data?.slice(0, 3).map((art, idx) => <ArticlesCard key={idx} item={art} theme='style-2' />)}
                 </div>
                 <div className="flex place-content-center mt-[20px]">
-                    <Button className="px-6 py-5 text-16 text-black bg-secondary border-secondary" htmlType="button">
-                        Xem thêm
-                    </Button>
+                    <PrimaryButton>
+                        <p className='text-16'>Xem thêm</p>
+                    </PrimaryButton>
                 </div>
             </div>
         </div>

@@ -2,6 +2,7 @@
 import React from 'react'
 import { Button } from 'antd'
 import Image from 'next/image'
+import { PrimaryButton } from './Button/PrimaryButton'
 
 export function Trading() {
   return (
@@ -28,7 +29,7 @@ export function Trading() {
         <div className='content-center py-8'>
           <div className="grid gap-8">
             <div className='grid gap-8'>
-              <h1 className="text-48 sm:text-32 font-bold capitalize sm:text-center">
+              <h1 className="text-48 sm:text-32 text-white font-bold capitalize sm:text-center">
                 Gặp gỡ <span className="text-primary"> công ty của chúng tôi </span>
                 trừ khi bỏ lỡ cơ hội
               </h1>
@@ -38,9 +39,9 @@ export function Trading() {
             </div>
             <div>
               <div className="sm:flex sm:justify-center">
-                <Button className="hover:bg-secondary gap-2 p-6 group" htmlType="button" type="primary">
+                <PrimaryButton>
                   <p className='text-trk text-16'>Tìm hiểu thêm </p>
-                </Button>
+                </PrimaryButton>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Row } from 'antd'
 import { UilArrowRight, UilPlayCircle } from '@iconscout/react-unicons'
 import Image from 'next/image'
+import { PrimaryButton, SubButton } from './Button/PrimaryButton'
 
 export function Hero() {
   return (
@@ -25,16 +26,16 @@ export function Hero() {
             </div>
             <div>
               <Row className="gap-4 sm:justify-center">
-                <Button className="hover:bg-secondary gap-2 p-6 group" htmlType="button" type="primary">
+                <PrimaryButton>
                   <Row>
                     <p className='text-trk text-16'>Bắt đầu</p>
                     <UilArrowRight className="text-trk group-hover:animate-spin" />
                   </Row>
-                </Button>
-                <Button className="p-6 text-16 bg-transparent text-secondary border-secondary" htmlType="button">
+                </PrimaryButton>
+                <SubButton >
                   <UilPlayCircle className="text-secondary" />
                   Xem video
-                </Button>
+                </SubButton>
               </Row>
             </div>
             <div className='sm:hidden h-[200px]'></div>

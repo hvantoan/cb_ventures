@@ -27,10 +27,10 @@ const middleware = withAuth(
           return dayjs().isBefore(dayjs(token.expiredTime));
         }
         return false;
-      }
+      },
     },
     pages: {
-      signIn: '/landing'
+      signIn: '/login',
     }
   }
 );

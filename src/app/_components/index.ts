@@ -4,7 +4,6 @@ export * from './Articles/ArticlesCard';
 export * from './Articles/index';
 export * from './Features';
 export * from './Hero';
-export * from '../../../components/Footer/LandingFooter';
 export * from './Partner';
 export * from './Pricing/index';
 export * from './Pricing/PricingCard';

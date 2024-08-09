@@ -8,16 +8,6 @@ await import("./src/env.js");
 /** @type {import("next").NextConfig} */
 const config = {
   output: "standalone",
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/landing",
-        basePath: false,
-        permanent: false,
-      },
-    ];
-  },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>

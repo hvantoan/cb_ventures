@@ -27,10 +27,10 @@ function ArticlesCard({ item, theme = "style-2" }: ArticleCardProps) {
     const path = '/admin/pages/blog';
 
     return (
-        <figure className="group p-6 mb-0 bg-wh_color dark:bg-white/10 rounded-10 shadow-wh_color dark:shadow-none border border-transparent hover:border-primary" data-aos="fade-up" data-aos-duration="800">
+        <figure className="group p-6 mb-0 bg-wh_color/80 rounded-10 shadow-wh_color dark:shadow-none border border-transparent hover:border-primary" data-aos="fade-up" data-aos-duration="800">
             <div className="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full">
                 <Image
-                    className="w-full max-h-[217px] rounded-10"
+                    className="w-full rounded-10 aspect-video"
                     src={`/img/blogs/${img}`}
                     alt="hexadash Blog"
                     width="455"
@@ -50,7 +50,7 @@ function ArticlesCard({ item, theme = "style-2" }: ArticleCardProps) {
                 ) : theme === 'style-3' ? (
                     <div className="flex justify-between items-center mt-2.5">
                         <span className="inline-block m-1 text-light dark:text-white/60 text-15">01 July 2020</span>
-                        <span className="relative inline-block m-1 ltr:pl-2.5 rtl:pr-2.5 text-light dark:text-white/60 text-15 before:absolute before:h-1 before:w-1 ltr:before:left-0 rtl:before:right-0 before:top-1/2 before:-translate-y-1/2 before:bg-light before:rounded-full">
+                        <span className="relative inline-block m-1 ltr:pl-2.5 rtl:pr-2.5 text-white text-15 before:absolute before:h-1 before:w-1 ltr:before:left-0 rtl:before:right-0 before:top-1/2 before:-translate-y-1/2 before:bg-light before:rounded-full">
                             Web Development
                         </span>
                         <span className="relative inline-block m-1 ltr:pl-2.5 rtl:pr-2.5 text-light dark:text-white/60 text-15 before:absolute before:h-1 before:w-1 ltr:before:left-0 rtl:before:right-0 before:top-1/2 before:-translate-y-1/2 before:bg-light dark:before:bg-white/10 before:rounded-full">
@@ -61,11 +61,11 @@ function ArticlesCard({ item, theme = "style-2" }: ArticleCardProps) {
                     ''
                 )}
                 <h2 className="mt-4 mb-3 text-xl font-semibold">
-                    <Link href={`${path}/${slug}`} className="text-dark group-hover:text-primary dark:text-white/[.87] dark:group-hover:text-primary">
+                    <Link href={`${path}/${slug}`} className="text-white group-hover:text-primary dark:text-white/[.87] dark:group-hover:text-primary">
                         {title}
                     </Link>
                 </h2>
-                <p className="mb-4 text-base text-dark dark:text-white/[.87]">{content}</p>
+                <p className="mb-4 text-base text-subtext ">{content}</p>
                 <div className="flex justify-between">
                     <div className="flex items-center gap-x-4">
                         <Image

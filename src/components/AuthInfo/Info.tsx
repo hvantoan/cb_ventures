@@ -1,10 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
-import { useTranslation } from 'react-i18next'
-
-
-
+import React from 'react'
 
 import Heading from '../Heading'
 import PopOver from '../Popup/PopOver'
@@ -13,20 +9,11 @@ import { logOutAction, useAppDispatch } from '@/redux'
 import { UilAngleDown, UilBell, UilDollarSign, UilSetting, UilSignout, UilUser, UilUsersAlt } from '@iconscout/react-unicons'
 
 
-const AuthInfo = React.memo((props: any) => {
-  // const router = useRouter()
-  const [state, setState] = useState({ flag: 'vi' })
-  const { i18n } = useTranslation()
-  const { flag } = state
-
+const AuthInfo = React.memo(() => {
   const dispatch = useAppDispatch()
 
   const user: any = {}
   const currentUser: any = {}
-  // useEffect(() => {
-  //   dispatch(logOutAction())
-  //   console.log('Logged Out!')
-  // }, [])
 
   const handleLogout = async () => {
     try {
@@ -109,11 +96,6 @@ const AuthInfo = React.memo((props: any) => {
 
   const onFlagChangeHandle = (value: any, e: any) => {
     e.preventDefault()
-    setState({
-      ...state,
-      flag: value,
-    })
-    i18n.changeLanguage(value)
   }
 
   const country = [

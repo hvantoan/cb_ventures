@@ -24,7 +24,7 @@ export function Features() {
             </p>
             {data.map((item, idx) => (
               <div key={idx} className="bg-body_color hover:bg-wh_color hover:shadow-card content-center p-4 rounded-8 text-left border-card_boder border border-solid group">
-                <h6 className="text-text_color group-hover:text-pink text-18">
+                <h6 className="text-subtext group-hover:text-pink text-18">
                   {item}
                 </h6>
               </div>

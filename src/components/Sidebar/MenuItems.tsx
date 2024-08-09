@@ -4,23 +4,15 @@ import {
   UilAt,
   UilBookAlt,
   UilBookOpen,
-  UilChartBar,
   UilCircle,
   UilClock,
-  UilCompactDisc,
   UilDocumentLayoutLeft,
-  UilEdit,
   UilExclamationOctagon,
   UilFile,
-  UilIcons,
   UilImages,
-  UilLayerGroup,
-  UilMap,
   UilPresentation,
   UilSearch,
-  UilServer,
   UilSetting,
-  UilTable,
   UilEllipsisV,
 } from '@iconscout/react-unicons'
 import React, { useEffect } from 'react'
@@ -80,33 +72,7 @@ function MenuItems() {
     } else {
       html.classList.remove('hexadash-topmenu')
     }
-    //@ts-ignore
     dispatch(changeMenuMode(topMode))
-  }
-
-  const changeLayoutDirection = (rtlMode: any) => {
-    if (rtlMode) {
-      const html: any = document.querySelector('html')
-      html.setAttribute('dir', 'rtl')
-    } else {
-      const html: any = document.querySelector('html')
-      html.setAttribute('dir', 'ltr')
-    }
-    //@ts-ignore
-    dispatch(changeDirectionMode(rtlMode))
-  }
-
-  const changeLayout = (mode: any) => {
-    //@ts-ignore
-    dispatch(changeLayoutMode(mode))
-  }
-
-  const darkmodeActivated = () => {
-    document.body.classList.add('dark')
-  }
-
-  const darkmodeDiactivated = () => {
-    document.body.classList.remove('dark')
   }
 
   function getItem(label: any, key: any, icon: any, children: any) {

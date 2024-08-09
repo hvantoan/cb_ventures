@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
-import { GeistSans } from "geist/font/sans";
 import { Viewport, type Metadata } from "next";
-import ThemeRegistry from "@/app/theme/ThemeRegistry";
+import ThemeRegistry from "@/theme/ThemeRegistry";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "CB Ventures",
@@ -21,11 +21,13 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="vi" className={`${GeistSans.variable}`}>
+    <html lang="vi">
       <body suppressHydrationWarning={true}>
-        <ThemeRegistry>
-          {children}
-        </ThemeRegistry>
+        <Providers>
+          <ThemeRegistry>
+            {children}
+          </ThemeRegistry>
+        </Providers>
       </body>
     </html>
   );

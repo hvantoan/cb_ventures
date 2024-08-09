@@ -18,7 +18,7 @@ export function AdviserCard({ adviser }: AdviserCardProps) {
             <div className="absolute w-full p-4 bottom-0 z-10">
                 <div className="bg-bg_adviser px-4 py-2 bottom-0 rounded-10">
                     <h6 className="text-center select-none text-20 text-white font-semibold group-hover:text-secondary">{adviser.name}</h6>
-                    <p className="text-center mt-1 text-14 text-adviser_sub select-none">{adviser.designation}</p>
+                    <p className="text-center mt-1 text-14 text-subtext select-none">{adviser.designation}</p>
                 </div>
             </div>
             <div className="h-full bg-wh_color rounded-16">
