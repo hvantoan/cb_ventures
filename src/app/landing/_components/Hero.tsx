@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import { Button, Row } from 'antd'
 import { UilArrowRight, UilPlayCircle } from '@iconscout/react-unicons'
@@ -41,8 +40,8 @@ export function Hero() {
             <div className='sm:hidden h-[200px]'></div>
           </div>
         </div>
-        <div data-aos="fade-left" data-aos-duration="1000"  >
-          <Image decoding="async" src="/img/home/banner_img-2.png" alt="hero" className="sm:relative max-w-full h-auto" fill />
+        <div data-aos="fade-left" data-aos-duration="1000" className='flex items-center' >
+          <Image src="/img/home/banner_img-2.png" alt="hero" className="max-w-full h-auto" height={800} width={800} />
         </div>
       </div>
     </section>

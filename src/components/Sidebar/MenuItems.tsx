@@ -28,14 +28,13 @@ import { Menu } from 'antd'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
-import { useDispatch, useSelector } from 'react-redux'
-import type { RootState } from '@/redux/store'
 import { changeDirectionMode, changeLayoutMode, changeMenuMode } from '@/redux/reducers/themeLayout/reducers'
+import { useAppDispatch, useAppSelector } from '@/redux'
 
 function MenuItems() {
   const path = '/admin'
   const { t } = useTranslation()
-  const { topMenu } = useSelector((state: RootState) => {
+  const { topMenu } = useAppSelector((state) => {
     return {
       topMenu: state.layout.topMenu,
     }
@@ -72,7 +71,7 @@ function MenuItems() {
     if (item.keyPath.length === 1) setOpenKeys([])
   }
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const changeNavbar = (topMode: any) => {
     const html: any = document.querySelector('html')
@@ -325,7 +324,7 @@ function MenuItems() {
       'termcondition',
       !topMenu && (
         <Link className="menuItem-icon" href={`${path}/pages/termCondition`}>
-          <UilFile />
+          <UilFile size={24} color="white" />
         </Link>
       ),
       null

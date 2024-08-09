@@ -1,13 +1,3 @@
-"use client"
-import {
-  UilAngleDown,
-  UilBell,
-  UilDollarSign,
-  UilSetting,
-  UilSignout,
-  UilUser,
-  UilUsersAlt,
-} from '@iconscout/react-unicons'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -20,13 +10,12 @@ import Heading from '../Heading'
 import PopOver from '../Popup/PopOver'
 import DropDown from '../Dropdown'
 import { logOutAction, useAppDispatch } from '@/redux'
+import { UilAngleDown, UilBell, UilDollarSign, UilSetting, UilSignout, UilUser, UilUsersAlt } from '@iconscout/react-unicons'
 
 
 const AuthInfo = React.memo((props: any) => {
   // const router = useRouter()
-  const [state, setState] = useState({
-    flag: 'vi',
-  })
+  const [state, setState] = useState({ flag: 'vi' })
   const { i18n } = useTranslation()
   const { flag } = state
 
@@ -178,7 +167,7 @@ const AuthInfo = React.memo((props: any) => {
             <span className="ms-2.5 lg:ms-1.5 me-1.5 text-body dark:text-white/60 text-sm font-medium md:hidden">
               {user ? user.name : currentUser ? currentUser.displayName : 'Abdullah Bin Talha'}
             </span>
-            <UilAngleDown className="w-4 h-4 min-w-[16px]" />
+            <UilAngleDown className="w-4 h-4 min-w-[16px]" size='24' color="white" />
           </Link>
         </PopOver>
       </div>

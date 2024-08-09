@@ -28,7 +28,7 @@ export function PricingCard(data: PricingCardProps) {
                 <ul role="list" className="mt-4 space-y-3">
                     {data.features.slice(0, 5).map((feature, index) => (
                         <li key={index + data.id} className="flex space-x-4">
-                            <UilFolderCheck className="text-secondary" />
+                            <UilFolderCheck className="text-secondary" size={24} color="text-white/60" />
                             <span className="text-16 text-pink">{feature}</span>
                         </li>
                     ))}

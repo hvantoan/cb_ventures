@@ -3,24 +3,26 @@
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
  * for Docker builds.
  */
-await import('./src/env.js')
+await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
 const config = {
-  output: 'standalone',
+  output: "standalone",
   async redirects() {
     return [
       {
-        source: '/',
-        destination: '/landing',
+        source: "/",
+        destination: "/landing",
         basePath: false,
         permanent: false,
       },
-    ]
+    ];
   },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
-    const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'))
+    const fileLoaderRule = config.module.rules.find((rule) =>
+      rule.test?.test?.(".svg"),
+    );
     config.module.rules.push(
       // Reapply the existing rule, but only for svg imports ending in ?url
       {
@@ -33,20 +35,20 @@ const config = {
         test: /\.svg$/i,
         issuer: fileLoaderRule.issuer,
         resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
-        use: ['@svgr/webpack'],
-      }
-    )
+        use: ["@svgr/webpack"],
+      },
+    );
 
     // Modify the file loader rule to ignore *.svg, since we have it handled now.
-    fileLoaderRule.exclude = /\.svg$/i
-    config.resolve.alias.canvas = false
+    fileLoaderRule.exclude = /\.svg$/i;
+    config.resolve.alias.canvas = false;
 
-    return config
+    return config;
   },
   images: {
     remotePatterns: [
       {
-        hostname: 'img.icons8.com',
+        hostname: "img.icons8.com",
       },
     ],
   },
@@ -57,9 +59,9 @@ const config = {
    * @see https://github.com/vercel/next.js/issues/41980
    */
   i18n: {
-    locales: ['vi'],
-    defaultLocale: 'vi',
+    locales: ["vi"],
+    defaultLocale: "vi",
   },
-}
+};
 
-export default config
+export default config;

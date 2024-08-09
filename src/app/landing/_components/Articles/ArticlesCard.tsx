@@ -1,7 +1,4 @@
-import {
-    UilFile,
-    UilHeart
-} from '@iconscout/react-unicons';
+import { UilFile, UilHeart } from '@iconscout/react-unicons';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -30,7 +27,7 @@ function ArticlesCard({ item, theme = "style-2" }: ArticleCardProps) {
     const path = '/admin/pages/blog';
 
     return (
-        <figure className="group p-6 mb-0 bg-wh_color dark:bg-white/10 rounded-10 shadow-regular dark:shadow-none border border-transparent hover:border-primary" data-aos="fade-up" data-aos-duration="800">
+        <figure className="group p-6 mb-0 bg-wh_color dark:bg-white/10 rounded-10 shadow-wh_color dark:shadow-none border border-transparent hover:border-primary" data-aos="fade-up" data-aos-duration="800">
             <div className="relative after:absolute after:h-0 after:w-full ltr:after:left-0 rtl:after:right-0 after:top-0 after:bg-[#0a0a0a15] after:rounded-10 after:transition-all after:duration-300 group-hover:after:h-full">
                 <Image
                     className="w-full max-h-[217px] rounded-10"
@@ -83,13 +80,13 @@ function ArticlesCard({ item, theme = "style-2" }: ArticleCardProps) {
                     <ul className="flex items-center -m-2">
                         <li className="m-2">
                             <span className="flex items-center leading-none gap-x-1 text-light dark:text-white/60 text-13">
-                                <UilHeart className="w-3 h-3 text-light dark:text-white/60" />
+                                <UilHeart className="w-3 h-3 text-light dark:text-white/60" size={24} color="text-white/60" />
                                 <span className="flex items-center leading-none text-light dark:text-white/60 text-13">70</span>
                             </span>
                         </li>
                         <li className="m-2">
                             <span className="flex items-center leading-none gap-x-1 text-light dark:text-white/60 text-13">
-                                <UilFile className="w-3 h-3 text-light dark:text-white/60" />
+                                <UilFile className="w-3 h-3 text-light dark:text-white/60" size={24} color="white" />
                                 <span className="flex items-center leading-none text-light dark:text-white/60 text-13">120</span>
                             </span>
                         </li>

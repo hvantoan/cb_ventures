@@ -3,7 +3,7 @@
     /* Base Options: */
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "es2022",
+    "target": "ES2022",
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
@@ -13,6 +13,7 @@
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "checkJs": true,
+    "forceConsistentCasingInFileNames": true, // Add this line
 
     /* Bundled projects */
     "lib": ["dom", "dom.iterable", "ES2022"],
@@ -36,7 +37,8 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.js",
-    ".next/types/**/*.ts"
-, "next.config.mjs"  ],
+    ".next/types/**/*.ts",
+    "/src/styles/global.d.ts"
+  ],
   "exclude": ["node_modules"]
 }

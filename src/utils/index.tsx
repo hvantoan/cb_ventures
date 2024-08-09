@@ -1,3 +1,4 @@
+
 /**
  * Return ellipsis of a given string
  * @param {string} text
@@ -17,3 +18,5 @@ const idGenerator = (events: any, length = 1) => {
 };
 
 export { ellipsis, idGenerator };
+
+

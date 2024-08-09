@@ -116,7 +116,7 @@ export default {
         bg_adviser: "#00150fcc",
         adviser_sub: "#ffffff99",
         text_color: "rgba(255, 255, 255, 0.6)",
-        trk:'#0C263A',
+        trk: '#0C263A',
         tertiary_color: "#002A1E",
         heading_title: "#6B777F",
         floating_border_color: "rgba(0, 0, 0, 0.02)",
@@ -198,19 +198,19 @@ export default {
       'min-xs': '380px',
       'min-ssm': '480px',
 
-      'sm': {'max': '767px'},
+      'sm': { 'max': '767px' },
       // => @media (min-width: 640px and max-width: 767px) { ... }
 
-      'md': {'min': '768px', 'max': '1023px'},
+      'md': { 'min': '768px', 'max': '1023px' },
       // => @media (min-width: 768px and max-width: 1023px) { ... }
 
-      'lg': {'min': '1024px', 'max': '1279px'},
+      'lg': { 'min': '1024px', 'max': '1279px' },
       // => @media (min-width: 1024px and max-width: 1279px) { ... }
 
-      'xl': {'min': '1280px', 'max': '1535px'},
+      'xl': { 'min': '1280px', 'max': '1535px' },
       // => @media (min-width: 1280px and max-width: 1535px) { ... }
 
-      '2xl': {'min': '1536px'},
+      '2xl': { 'min': '1536px' },
       // => @media (min-width: 1536px) { ... }
     },
   },

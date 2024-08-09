@@ -81,7 +81,7 @@ const NotificationBox = React.memo(() => {
             >
               <div className="flex items-start">
                 <div className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary/10 text-secondary ltr:mr-4 rtl:ml-4">
-                  <UilFileExport className="w-4 h-4" />
+                  <UilFileExport className="w-4 h-4" size={24} color="white" />
                 </div>
                 <div className="flex items-center justify-between flex-1">
                   <div>

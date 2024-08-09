@@ -1,8 +1,7 @@
 import "@/styles/globals.css";
-
 import { GeistSans } from "geist/font/sans";
 import { Viewport, type Metadata } from "next";
-import Providers from "./providers";
+import ThemeRegistry from "@/app/theme/ThemeRegistry";
 
 export const metadata: Metadata = {
   title: "CB Ventures",
@@ -24,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="vi" className={`${GeistSans.variable}`}>
       <body suppressHydrationWarning={true}>
-        {children}
+        <ThemeRegistry>
+          {children}
+        </ThemeRegistry>
       </body>
     </html>
   );

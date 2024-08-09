@@ -1,4 +1,6 @@
 "use client";
+import "aos/dist/aos.css";
+
 import roadmapData from '@/libs/data/roadmap.json'
 import pricingsData from '@/libs/data/pricing.json'
 import articlesData from '@/libs/data/sampleCards.json'
@@ -6,7 +8,7 @@ import visionData from '@/libs/data/visions.json'
 import friends from '@/libs/data/friends.json'
 import { Advisers, Articles, Features, Hero, Partner, Pricing, Roadmap, Trading, Vision } from './_components'
 import Aos from 'aos'
-import { use, useEffect } from 'react';
+import { useEffect } from 'react';
 const Landing = () => {
 
     const { roadmaps, roadDone, pricings, articles, visions, advisers } = {
