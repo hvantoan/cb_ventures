@@ -86,3 +86,28 @@ h6 {
   transform: rotate(-10deg);
   z-index: 1;
 }
+
+/* Antd overide css */
+
+.ant-menu-item.ant-menu-item-active,
+.ant-menu-item.ant-menu-item-selected,
+.ant-menu-item.ant-menu-item-active > svg,
+.ant-menu-item.ant-menu-item-selected > svg,
+.ant-menu-submenu-popup .ant-menu-item-selected a,
+.ant-menu-item.ant-menu-item-active > .menuItem-icon,
+.ant-menu-item.ant-menu-item-selected > .menuItem-icon,
+.ant-menu .ant-menu-submenu-open .ant-menu-submenu-title,
+.ant-menu .ant-menu-submenu-active .ant-menu-submenu-title,
+.ant-menu .ant-menu-submenu-open .ant-menu-submenu-title > svg,
+.ant-menu .ant-menu-submenu-active .ant-menu-submenu-title > svg,
+.ant-menu-submenu-popup .ant-menu .ant-menu-item.ant-menu-item-active,
+.ant-menu .ant-menu-item.ant-menu-item-active .ant-menu-item-icon > svg,
+.ant-menu .ant-menu-item.ant-menu-item-selected .ant-menu-item-icon > svg,
+.ant-menu .ant-menu-submenu-open .ant-menu-submenu-title >.ant-menu-submenu-arrow,
+.ant-menu .ant-menu-submenu-active .ant-menu-submenu-title >.ant-menu-submenu-arrow,
+.ant-menu .ant-menu-submenu .ant-menu-sub.ant-menu-inline .ant-menu-item.ant-menu-item-active,
+.ant-menu .ant-menu-submenu .ant-menu-sub.ant-menu-inline .ant-menu-item.ant-menu-item-selected,
+.ant-menu .ant-menu-submenu .ant-menu-sub.ant-menu-inline .ant-menu-item.ant-menu-item-active > svg,
+.ant-menu .ant-menu-submenu .ant-menu-sub.ant-menu-inline .ant-menu-item.ant-menu-item-selected > svg {
+  @apply text-primary bg-transparent !important;
+}

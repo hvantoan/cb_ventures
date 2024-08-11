@@ -1,3 +1,5 @@
+
+'use client'
 import React, { useLayoutEffect } from 'react'
 import Link from 'next/link'
 import { TopMenuStyle } from './Style'
@@ -37,7 +39,7 @@ function TopMenu() {
   }
 
   return (
-    <TopMenuStyle>
+    <TopMenuStyle >
       <div className="hexadash-top-menu ps-[20px] xl:ps-[10px]">
         <ul className="flex items-center [&>li]:pr-[14px] [&>li>a.active]:text-primary">
           <li>

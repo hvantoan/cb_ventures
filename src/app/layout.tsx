@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import { Viewport, type Metadata } from "next";
 import ThemeRegistry from "@/theme/ThemeRegistry";
 import Providers from "./providers";
+import { LandingLayout } from "@/Layout/layout";
 
 export const metadata: Metadata = {
   title: "CB Ventures",
@@ -25,7 +26,9 @@ export default function RootLayout({
       <body suppressHydrationWarning={true}>
         <Providers>
           <ThemeRegistry>
-            {children}
+            <LandingLayout>
+              {children}
+            </LandingLayout>
           </ThemeRegistry>
         </Providers>
       </body>

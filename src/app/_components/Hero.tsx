@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Row } from 'antd'
+import { Row } from 'antd'
 import { UilArrowRight, UilPlayCircle } from '@iconscout/react-unicons'
 import Image from 'next/image'
 import { PrimaryButton, SubButton } from './Button/PrimaryButton'
@@ -18,7 +18,7 @@ export function Hero() {
               <h1 className="sm:text-32 text-60 text-white font-bold capitalize sm:text-center">
                 Đầu tư tiền của bạn với <span className="text-secondary">Lợi nhuận cao</span>
               </h1>
-              <p className="text-text_color text-16 sm:text-center">
+              <p className="text-subtext text-16 sm:text-center">
                 Trong bối cảnh thị trường tài chính năng động, độ chính xác và hiểu biết là điều quan trọng, CB Ventures
                 được thành lập để cung cấp giải pháp tài chính công nghệ giúp khách hàng kiếm thêm thu nhập thụ động trên
                 các sàn thương mại điện tử.

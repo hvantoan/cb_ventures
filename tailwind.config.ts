@@ -1,3 +1,4 @@
+import {  bodyColor, primaryColor, secondaryColor } from './src/constant'
 import { type Config } from 'tailwindcss'
 
 export default {
@@ -21,7 +22,7 @@ export default {
         rolating: 'rolating 6s infinite',
       },
       colors: {
-        primary: '#00d094',
+     
         success: '#01B81A',
         pink: '#f2eafb',
         warning: '#FA8B0C',
@@ -111,8 +112,9 @@ export default {
         darkHard: 'rgb(0, 0, 0, .60)',
         currentColor: 'currentColor',
         // Custom color
-        secondary: '#00D094',
-        body_color: "#00150F",
+        primary: primaryColor,
+        secondary: secondaryColor,
+        body_color: bodyColor,
         bg_adviser: "#00150fcc",
         subtext: "#ffffff99",
         trk: '#0C263A',

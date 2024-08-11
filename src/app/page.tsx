@@ -10,6 +10,7 @@ import Aos from 'aos'
 import { useEffect } from 'react';
 import { Layout } from "antd";
 import HeaderTop from "@/components/Header";
+import { PageContainer } from "@ant-design/pro-components";
 const Landing = () => {
 
     const { roadmaps, roadDone, pricings, articles, visions, advisers } = {
@@ -47,20 +48,23 @@ const Landing = () => {
     }, [])
 
     return (
-        <Layout>
-            <HeaderTop />
-            <Layout.Content className='bg-body_color'>
-                <Hero />
-                <Partner />
-                <Trading />
-                <Features />
-                <Vision data={visions} />
-                <Roadmap data={roadmaps} roadDone={roadDone} />
-                <Pricing data={pricings} />
-                <Advisers data={advisers} />
-                <Articles data={articles} />
-            </Layout.Content>
-        </Layout>
+        <PageContainer
+            token={{
+                paddingBlockPageContainerContent: 0,
+                paddingInlinePageContainerContent: 0,
+            }}
+            fixedHeader
+            className='bg-body_color' >
+            <Hero />
+            <Partner />
+            <Trading />
+            <Features />
+            <Vision data={visions} />
+            <Roadmap data={roadmaps} roadDone={roadDone} />
+            <Pricing data={pricings} />
+            <Advisers data={advisers} />
+            <Articles data={articles} />
+        </PageContainer>
     )
 }
 export default Landing;

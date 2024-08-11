@@ -16,7 +16,7 @@ export type PricingCardProps = {
 
 export function PricingCard(data: PricingCardProps) {
     return (
-        <div className="w-full grid gap-4 p-8 bg-wh_color rounded-16 shadow-pricing_shadow z-10 group  border border-transparent hover:border-brand_color" data-aos="fade-up" data-aos-duration="800">
+        <div className="w-full grid gap-4 p-8 bg-wh_color rounded-16 shadow-pricing_shadow z-10 group  border border-transparent hover:border-primary" data-aos="fade-up" data-aos-duration="800">
             <div className='grid gap-2'>
                 <h2 className='text-20 uppercase text-white'>{data.type}</h2>
                 <h3>
