@@ -1,4 +1,4 @@
-import { theme } from './theme/themeVariables'
+import { theme } from "@/theme/themeVariables"
 
 const config = {
   menuCollapse: false,

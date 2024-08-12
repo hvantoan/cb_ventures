@@ -22,7 +22,6 @@ export default {
         rolating: 'rolating 6s infinite',
       },
       colors: {
-     
         success: '#01B81A',
         pink: '#f2eafb',
         warning: '#FA8B0C',
