@@ -8,18 +8,8 @@ import { ROLE_KEY } from "@/app/(authenticated)/constants";
 const middleware = withAuth(
   async (request) => {
     const { pathname } = request.nextUrl;
-    if (request.nextUrl.pathname.startsWith("/api")) {
+    if (request.nextUrl.pathname.startsWith("/api") || !pathname.match(/((?!\.well-known(?:\/.*)?)(?:[^/]+\/)*[^/]+\.\w+)/)) {
       return NextResponse.next();
-    }
-
-    // apply trailing slash handling
-    if (
-      !pathname.endsWith("/") &&
-      !pathname.match(/((?!\.well-known(?:\/.*)?)(?:[^/]+\/)*[^/]+\.\w+)/)
-    ) {
-      return NextResponse.redirect(
-        new URL(`${request.nextUrl.pathname}/`, request.nextUrl),
-      );
     }
 
     const payload = decodeJwt(request.nextauth.token?.token as string);
