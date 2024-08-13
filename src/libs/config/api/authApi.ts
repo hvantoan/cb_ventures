@@ -1,6 +1,6 @@
+import { LoginState, RegisterState } from '@/redux'
 import { Enpoints } from '../constants/enpoints'
 import { axiosNotToken } from './axiosClient'
-import { LoginState, RegisterState } from '@/libs/redux/auth/actionCreator'
 
 const authApi = {
   login: (data: LoginState) => axiosNotToken.post(Enpoints.LOGIN, data),

@@ -1,16 +1,14 @@
-/* eslint-disable react/jsx-no-bind */
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import PopOver from '@/components/Popup/PopOver'
 import Heading from '@/components/Heading'
-import Messages from '@/data/message.json'
-import { useSelector } from 'react-redux'
+import Messages from '@/libs/data/message.json'
 import { ReactSVG } from 'react-svg'
-import type { RootState } from '@/redux/store'
+import { useAppSelector } from '@/redux'
 
 const MessageBox = React.memo((props: any) => {
-  const { rtl } = useSelector((state: RootState) => {
+  const { rtl } = useAppSelector((state) => {
     return {
       rtl: state.layout.rtlData,
     }

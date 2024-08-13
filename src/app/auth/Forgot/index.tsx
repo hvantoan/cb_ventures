@@ -2,7 +2,7 @@ import { Spin } from 'antd'
 import dynamic from 'next/dynamic'
 import React from 'react'
 
-const ForgotPassword = dynamic(() => import('@/pages/auth/Forgot/ForgotPassword'), {
+const ForgotPassword = dynamic(() => import('@/app/auth/Forgot/ForgotPassword'), {
   loading: () => (
     <>
       <div className="spin flex items-center justify-center h-[calc(100vh-132px)]">

@@ -4,13 +4,12 @@ import { ReactSVG } from 'react-svg'
 import { Row, Col, Form, Input, Button } from 'antd'
 import { UilFacebook, UilTwitter, UilGithub } from '@iconscout/react-unicons'
 
-import { useDispatch } from 'react-redux'
 import { CheckBox } from '@/components/Checkbox'
-import { RegisterAction } from '@/redux/auth/actionCreator'
+import { RegisterAction, useAppDispatch } from '@/redux'
 
 function SignUp() {
   const [error, setError] = useState('')
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const [data, setData] = useState({
     name: '',
@@ -24,7 +23,6 @@ function SignUp() {
       return
     }
     try {
-      // @ts-ignore
       dispatch(RegisterAction())
     } catch (err) {
       console.log(err)
