@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - staging
 env:
   BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'staging' }}
 
