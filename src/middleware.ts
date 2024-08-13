@@ -1,20 +1,32 @@
-import dayjs from 'dayjs';
-import { decodeJwt } from 'jose';
-import withAuth from 'next-auth/middleware';
-import { NextResponse } from 'next/server';
-import { routeRoleMapping } from '@/route-role-mapping';
-import { ROLE_KEY } from '@/app/(authenticated)/constants';
-
+import dayjs from "dayjs";
+import { decodeJwt } from "jose";
+import withAuth from "next-auth/middleware";
+import { NextResponse } from "next/server";
+import { routeRoleMapping } from "@/route-role-mapping";
+import { ROLE_KEY } from "@/app/(authenticated)/constants";
 
 const middleware = withAuth(
   async (request) => {
-    if (request.nextUrl.pathname.startsWith('/api') || request.nextUrl.pathname.startsWith('/.well-known') || request.nextUrl.pathname.startsWith('/')) {
+    const { pathname } = request.nextUrl;
+    if (request.nextUrl.pathname.startsWith("/api")) {
       return NextResponse.next();
+    }
+
+    // apply trailing slash handling
+    if (
+      !pathname.endsWith("/") &&
+      !pathname.match(/((?!\.well-known(?:\/.*)?)(?:[^/]+\/)*[^/]+\.\w+)/)
+    ) {
+      return NextResponse.redirect(
+        new URL(`${request.nextUrl.pathname}/`, request.nextUrl),
+      );
     }
 
     const payload = decodeJwt(request.nextauth.token?.token as string);
     const roles = payload?.[ROLE_KEY] as Array<string>;
-    const target = routeRoleMapping.find((route) => request.nextUrl.pathname?.startsWith(route.route));
+    const target = routeRoleMapping.find((route) =>
+      request.nextUrl.pathname?.startsWith(route.route),
+    );
 
     if (!target || (target && roles.includes(target.role))) {
       return NextResponse.next();
@@ -30,9 +42,9 @@ const middleware = withAuth(
       },
     },
     pages: {
-      signIn: '/login',
-    }
-  }
+      signIn: "/login",
+    },
+  },
 );
 
 export default middleware;
@@ -40,11 +52,11 @@ export default middleware;
 export const config = {
   matcher: [
     {
-      source: '/((?!_next/static|_next/image|favicon.ico|assets|img).*)',
+      source: "/((?!_next/static|_next/image|favicon.ico|assets|img).*)",
       missing: [
-        { type: 'header', key: 'next-router-prefetch' },
-        { type: 'header', key: 'purpose', value: 'prefetch' }
-      ]
-    }
-  ]
+        { type: "header", key: "next-router-prefetch" },
+        { type: "header", key: "purpose", value: "prefetch" },
+      ],
+    },
+  ],
 };
