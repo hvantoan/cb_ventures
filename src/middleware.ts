@@ -8,7 +8,7 @@ import { ROLE_KEY } from '@/app/(authenticated)/constants';
 
 const middleware = withAuth(
   async (request) => {
-    if (request.nextUrl.pathname.startsWith('/api')) {
+    if (request.nextUrl.pathname.startsWith('/api') || request.nextUrl.pathname.startsWith('/.well-known') || request.nextUrl.pathname.startsWith('/')) {
       return NextResponse.next();
     }
 
