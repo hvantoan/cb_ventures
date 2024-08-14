@@ -9,22 +9,18 @@ import {
 } from '@ant-design/icons';
 import type { ProSettings } from '@ant-design/pro-components';
 import {
-    PageContainer,
-    ProCard,
-    ProConfigProvider,
-    ProLayout,
-    SettingDrawer,
+    ProLayout
 } from '@ant-design/pro-components';
 import {
-    Button,
-    ConfigProvider,
     Dropdown,
     Input,
-    theme,
+    theme
 } from 'antd';
 import React, { useState } from 'react';
-import { defaultProps } from './_defaultProps';
-import LandingFooter from '@/components/Footer/LandingFooter';
+import { defaultProps } from '@/layouts/_defaultProps';
+import Link from 'next/link';
+import { bodyColor, primaryColor } from '@/theme';
+import { whColor, whiteColor } from '../theme/themeVariables';
 
 const SearchInput = () => {
     const { token } = theme.useToken();
@@ -70,35 +66,36 @@ const SearchInput = () => {
 
 const LandingLayout: React.FC<WrappedComponentProps> = ({ children }) => {
     const [settings] = useState<Partial<ProSettings> | undefined>({
-        fixSiderbar: true,
-        layout: 'mix',
-        splitMenus: true,
+        fixedHeader: true,
+        layout: 'top',
+        // suppressSiderWhenMenuEmpty: true,
     });
 
-    const [pathname, setPathname] = useState('/list/sub-page/sub-sub-page1');
+    const [pathname, setPathname] = useState('/');
     if (typeof document === 'undefined') {
         return <div />;
     }
     return (
         <ProLayout
-            title=""
             logo="/img/logo_horizontal.png"
-            prefixCls="my-prefix"
-            bgLayoutImgList={[]}
+            about='Hệ thống quản lý'
             {...defaultProps}
             location={{
                 pathname,
             }}
             token={{
+                colorPrimary: primaryColor,
                 header: {
-                    colorBgHeader: "transparent",
-                    colorTextMenu: "#ffffff",
-                    colorTextMenuActive: "",
+                    colorBgHeader: whColor,
+                    colorTextMenu: whiteColor,
+                    colorTextMenuActive: primaryColor,
+                    colorTextMenuSelected: primaryColor,
+                    heightLayoutHeader: 64,
                 },
             }}
-            siderMenuType="group"
             menu={{
                 collapsedShowGroupTitle: true,
+                defaultOpenAll: true,
             }}
             avatarProps={{
                 src: 'https://gw.alipayobjects.com/zos/antfincdn/efFD%24IOql2/weixintupian_20170331104822.jpg',
@@ -126,32 +123,17 @@ const LandingLayout: React.FC<WrappedComponentProps> = ({ children }) => {
                 if (props.isMobile) return [];
                 if (typeof window === 'undefined') return [];
                 return [
-                    props.layout !== 'side' && document.body.clientWidth > 1400 ? (
-                        <SearchInput />
-                    ) : undefined,
                     <QuestionCircleFilled key="QuestionCircleFilled" />,
                     <GithubFilled key="GithubFilled" />,
                 ];
             }}
-            headerTitleRender={(logo, title, _) => {
-                const defaultDom = (
-                    <a>{logo}</a>
-                );
-                if (typeof window === 'undefined') return defaultDom;
-                if (document.body.clientWidth < 1400) {
-                    return defaultDom;
-                }
-                if (_.isMobile) return defaultDom;
-                return (
-                    <>
-                        {defaultDom}
-                    </>
-                );
+            headerTitleRender={(logo) => {
+                return <a>{logo}</a>
             }}
             onMenuHeaderClick={(e) => console.log(e)}
-            menuItemRender={(item, dom) => (
-                <div onClick={() => setPathname(item.path ?? '/welcome')} >{dom}</div>
-            )}
+            menuItemRender={(item, dom) => {
+                return <div onClick={() => setPathname(item.path ?? '/')} >{dom}</div>
+            }}
             {...settings}
         >
             {children}

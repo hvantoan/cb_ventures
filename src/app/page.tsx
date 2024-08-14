@@ -8,8 +8,6 @@ import friends from '@/libs/data/friends.json'
 import { Advisers, Articles, Features, Hero, Partner, Pricing, Roadmap, Trading, Vision } from '@/app/_components'
 import Aos from 'aos'
 import { useEffect } from 'react';
-import { Layout } from "antd";
-import HeaderTop from "@/components/Header";
 import { PageContainer } from "@ant-design/pro-components";
 const Landing = () => {
 
@@ -53,7 +51,6 @@ const Landing = () => {
                 paddingBlockPageContainerContent: 0,
                 paddingInlinePageContainerContent: 0,
             }}
-            fixedHeader
             className='bg-body_color' >
             <Hero />
             <Partner />

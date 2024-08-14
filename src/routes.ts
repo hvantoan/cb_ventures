@@ -2,6 +2,6 @@ export const basePath = '/';
 
 
 export const loginPath = '/login';
-export const landingPath = '/landing';
 
-export const dashboardPath = '/dashboard';
+export const adminPath = '/admin';
+export const dashboardPath = `/${adminPath}/dashboard`;
