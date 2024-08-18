@@ -130,7 +130,7 @@ const AuthInfo = React.memo(() => {
   return (
     <div className="flex items-center justify-end flex-auto gap-6 lg:gap-4">
       <div className=" z-998">
-        <DropDown placement="bottomRight" className="z-998" action="" customContent={country} >
+        <DropDown placement="bottomRight" className="z-998" customContent={country} >
           <Link href="#" className="flex">
             <Image src="/img/flag/en.png" alt="" width="20" height="20" />
           </Link>

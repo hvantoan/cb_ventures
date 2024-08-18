@@ -1,25 +1,17 @@
-'use client'
+"use client";
 
 import {
-    GithubFilled,
     LogoutOutlined,
     PlusCircleFilled,
-    QuestionCircleFilled,
     SearchOutlined,
-} from '@ant-design/icons';
-import type { ProSettings } from '@ant-design/pro-components';
-import {
-    ProLayout
-} from '@ant-design/pro-components';
-import {
-    Dropdown,
-    Input,
-    theme
-} from 'antd';
-import React, { useState } from 'react';
-import { defaultProps } from '@/layouts/_defaultProps';
-import Link from 'next/link';
-import { bodyColor, primaryColor } from '@/theme';
+} from "@ant-design/icons";
+import { UilQuestionCircle, UilGithub } from "@iconscout/react-unicons";
+import type { ProSettings } from "@ant-design/pro-components";
+import { ProLayout } from "@ant-design/pro-components";
+import { Dropdown, Input, theme } from "antd";
+import React, { useState } from "react";
+import { defaultProps } from "@/layouts/_defaultProps";
+import { primaryColor } from "@/theme";
 import { whColor, whiteColor } from '../theme/themeVariables';
 
 const SearchInput = () => {
@@ -29,8 +21,8 @@ const SearchInput = () => {
             key="SearchOutlined"
             aria-hidden
             style={{
-                display: 'flex',
-                alignItems: 'center',
+                display: "flex",
+                alignItems: "center",
                 marginInlineEnd: 24,
             }}
             onMouseDown={(e) => {
@@ -67,26 +59,40 @@ const SearchInput = () => {
 const LandingLayout: React.FC<WrappedComponentProps> = ({ children }) => {
     const [settings] = useState<Partial<ProSettings> | undefined>({
         fixedHeader: true,
-        layout: 'top',
-        // suppressSiderWhenMenuEmpty: true,
+        layout: "top",
+        colorPrimary: whColor,
+        colorWeak: false,
+        navTheme: undefined,
     });
 
-    const [pathname, setPathname] = useState('/');
-    if (typeof document === 'undefined') {
+    const [pathname, setPathname] = useState("/");
+    if (typeof document === "undefined") {
         return <div />;
     }
     return (
         <ProLayout
             logo="/img/logo_horizontal.png"
-            about='Hệ thống quản lý'
+            about="Hệ thống quản lý"
             {...defaultProps}
             location={{
                 pathname,
             }}
+            pageTitleRender={false}
             token={{
-                colorPrimary: primaryColor,
+                bgLayout: whColor,
+                pageContainer: {
+                    colorBgPageContainer: whColor,
+                    paddingBlockPageContainerContent: 0,
+                    paddingInlinePageContainerContent: 0,
+                },
+
                 header: {
-                    colorBgHeader: whColor,
+                    colorBgHeader: "transparent",
+                    colorBgMenuItemSelected: whColor,
+                    colorBgScrollHeader: whColor,
+                    colorBgMenuElevated: whColor,
+                    colorBgMenuItemHover: whColor,
+                    colorBgRightActionsItemHover: whColor,
                     colorTextMenu: whiteColor,
                     colorTextMenuActive: primaryColor,
                     colorTextMenuSelected: primaryColor,
@@ -98,18 +104,18 @@ const LandingLayout: React.FC<WrappedComponentProps> = ({ children }) => {
                 defaultOpenAll: true,
             }}
             avatarProps={{
-                src: 'https://gw.alipayobjects.com/zos/antfincdn/efFD%24IOql2/weixintupian_20170331104822.jpg',
-                size: 'small',
-                title: 'Hồ Văn Toàn',
+                src: "https://gw.alipayobjects.com/zos/antfincdn/efFD%24IOql2/weixintupian_20170331104822.jpg",
+                size: "small",
+                title: "Hồ Văn Toàn",
                 render: (props, dom) => {
                     return (
                         <Dropdown
                             menu={{
                                 items: [
                                     {
-                                        key: 'logout',
+                                        key: "logout",
                                         icon: <LogoutOutlined />,
-                                        label: 'Đăng xuất',
+                                        label: "Đăng xuất",
                                     },
                                 ],
                             }}
@@ -119,20 +125,30 @@ const LandingLayout: React.FC<WrappedComponentProps> = ({ children }) => {
                     );
                 },
             }}
+            subMenuItemRender={(item, dom) => {
+                console.log(item);
+                return <div className="bg-wh_color">{dom}</div>;
+            }}
             actionsRender={(props) => {
                 if (props.isMobile) return [];
-                if (typeof window === 'undefined') return [];
-                return [
-                    <QuestionCircleFilled key="QuestionCircleFilled" />,
-                    <GithubFilled key="GithubFilled" />,
-                ];
+                if (typeof window === "undefined") return [];
+                return (
+                    <div className="grid grid-cols-2 gap-4  items-center justify-center h-16">
+                        <UilQuestionCircle key="UilQuestionCircle" className="h-6 w-6" />
+                        <UilGithub key="UilGithub" className="h-6 w-6" />
+                    </div>
+                )
             }}
+            breadcrumbRender={undefined}
             headerTitleRender={(logo) => {
-                return <a>{logo}</a>
+                return <a>{logo}</a>;
             }}
-            onMenuHeaderClick={(e) => console.log(e)}
+            headerRender={(_, dom) => {
+                return <div className="container mx-auto flex items-center">{dom}</div>;
+            }}
+            onMenuHeaderClick={(e) => console.log("Tab", e)}
             menuItemRender={(item, dom) => {
-                return <div onClick={() => setPathname(item.path ?? '/')} >{dom}</div>
+                return <div onClick={() => setPathname(item.path ?? "/")}>{dom}</div>;
             }}
             {...settings}
         >
@@ -141,4 +157,4 @@ const LandingLayout: React.FC<WrappedComponentProps> = ({ children }) => {
     );
 };
 
-export { LandingLayout }
+export { LandingLayout };

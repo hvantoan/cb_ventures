@@ -51,6 +51,7 @@ const Landing = () => {
                 paddingBlockPageContainerContent: 0,
                 paddingInlinePageContainerContent: 0,
             }}
+            header={undefined}
             className='bg-body_color' >
             <Hero />
             <Partner />

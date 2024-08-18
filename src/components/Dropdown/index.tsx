@@ -1,17 +1,17 @@
 import React from 'react';
-import { Dropdown, MenuProps } from 'antd';
+import { Dropdown } from 'antd';
 
 
 
 export type DropDownProps = {
   action?: 'click' | 'hover' | 'contextMenu';
-  customContent?: MenuProps;
+  customContent?: any;
   placement?: "bottomLeft" | "bottomCenter" | "bottomRight" | "topLeft" | "topCenter" | "topRight" | "top" | "bottom";
   children: React.ReactNode;
   style?: React.CSSProperties;
   className?: string;
 }
-function DropDown(props: any) {
+function DropDown(props: DropDownProps) {
   const { customContent, placement, action, children, style, className } = props;
 
 

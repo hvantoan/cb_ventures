@@ -13,6 +13,9 @@ const config = {
       {
         hostname: "img.icons8.com",
       },
+      {
+        hostname: "gw.alipayobjects.com",
+      },
     ],
   },
   reactStrictMode: true,

@@ -5,6 +5,7 @@ import authReducer from '@/redux/reducers/auth/reducers';
 import contactReducer from '@/redux/reducers/contact/reducer';
 import headerSearchReducer from '@/redux/reducers/headerSearch/reducers';
 import layoutReducer from '@/redux/reducers/themeLayout/reducers';
+import { generalReducer } from './reducers/general/reducers';
 
 
 const persistConfig = {
@@ -14,10 +15,11 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
+  [generalReducer.name]: generalReducer.reducer,
   [authReducer.name]: authReducer.reducer,
   [contactReducer.name]: contactReducer.reducer,
   [headerSearchReducer.name]: headerSearchReducer.reducer,
-  [layoutReducer.name]: layoutReducer.reducer
+  [layoutReducer.name]: layoutReducer.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
