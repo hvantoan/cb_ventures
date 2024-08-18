@@ -4,23 +4,15 @@ import {
   UilAt,
   UilBookAlt,
   UilBookOpen,
-  UilChartBar,
   UilCircle,
   UilClock,
-  UilCompactDisc,
   UilDocumentLayoutLeft,
-  UilEdit,
   UilExclamationOctagon,
   UilFile,
-  UilIcons,
   UilImages,
-  UilLayerGroup,
-  UilMap,
   UilPresentation,
   UilSearch,
-  UilServer,
   UilSetting,
-  UilTable,
   UilEllipsisV,
 } from '@iconscout/react-unicons'
 import React, { useEffect } from 'react'
@@ -28,14 +20,13 @@ import { Menu } from 'antd'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
-import { useDispatch, useSelector } from 'react-redux'
-import type { RootState } from '@/redux/store'
-import { changeDirectionMode, changeLayoutMode, changeMenuMode } from '@/redux/themeLayout/reducers'
+import { changeDirectionMode, changeLayoutMode, changeMenuMode } from '@/redux/reducers/themeLayout/reducers'
+import { useAppDispatch, useAppSelector } from '@/redux'
 
 function MenuItems() {
   const path = '/admin'
   const { t } = useTranslation()
-  const { topMenu } = useSelector((state: RootState) => {
+  const { topMenu } = useAppSelector((state) => {
     return {
       topMenu: state.layout.topMenu,
     }
@@ -72,7 +63,7 @@ function MenuItems() {
     if (item.keyPath.length === 1) setOpenKeys([])
   }
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const changeNavbar = (topMode: any) => {
     const html: any = document.querySelector('html')
@@ -81,33 +72,7 @@ function MenuItems() {
     } else {
       html.classList.remove('hexadash-topmenu')
     }
-    //@ts-ignore
     dispatch(changeMenuMode(topMode))
-  }
-
-  const changeLayoutDirection = (rtlMode: any) => {
-    if (rtlMode) {
-      const html: any = document.querySelector('html')
-      html.setAttribute('dir', 'rtl')
-    } else {
-      const html: any = document.querySelector('html')
-      html.setAttribute('dir', 'ltr')
-    }
-    //@ts-ignore
-    dispatch(changeDirectionMode(rtlMode))
-  }
-
-  const changeLayout = (mode: any) => {
-    //@ts-ignore
-    dispatch(changeLayoutMode(mode))
-  }
-
-  const darkmodeActivated = () => {
-    document.body.classList.add('dark')
-  }
-
-  const darkmodeDiactivated = () => {
-    document.body.classList.remove('dark')
   }
 
   function getItem(label: any, key: any, icon: any, children: any) {
@@ -325,7 +290,7 @@ function MenuItems() {
       'termcondition',
       !topMenu && (
         <Link className="menuItem-icon" href={`${path}/pages/termCondition`}>
-          <UilFile />
+          <UilFile size={24} color="white" />
         </Link>
       ),
       null

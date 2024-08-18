@@ -1,3 +1,4 @@
+import {  bodyColor, primaryColor, secondaryColor } from './src/constant'
 import { type Config } from 'tailwindcss'
 
 export default {
@@ -21,7 +22,6 @@ export default {
         rolating: 'rolating 6s infinite',
       },
       colors: {
-        primary: '#00d094',
         success: '#01B81A',
         pink: '#f2eafb',
         warning: '#FA8B0C',
@@ -111,12 +111,12 @@ export default {
         darkHard: 'rgb(0, 0, 0, .60)',
         currentColor: 'currentColor',
         // Custom color
-        secondary: '#00D094',
-        body_color: "#00150F",
+        primary: primaryColor,
+        secondary: secondaryColor,
+        body_color: bodyColor,
         bg_adviser: "#00150fcc",
-        adviser_sub: "#ffffff99",
-        text_color: "rgba(255, 255, 255, 0.6)",
-        trk:'#0C263A',
+        subtext: "#ffffff99",
+        trk: '#0C263A',
         tertiary_color: "#002A1E",
         heading_title: "#6B777F",
         floating_border_color: "rgba(0, 0, 0, 0.02)",
@@ -198,19 +198,19 @@ export default {
       'min-xs': '380px',
       'min-ssm': '480px',
 
-      'sm': {'max': '767px'},
+      'sm': { 'max': '767px' },
       // => @media (min-width: 640px and max-width: 767px) { ... }
 
-      'md': {'min': '768px', 'max': '1023px'},
+      'md': { 'min': '768px', 'max': '1023px' },
       // => @media (min-width: 768px and max-width: 1023px) { ... }
 
-      'lg': {'min': '1024px', 'max': '1279px'},
+      'lg': { 'min': '1024px', 'max': '1279px' },
       // => @media (min-width: 1024px and max-width: 1279px) { ... }
 
-      'xl': {'min': '1280px', 'max': '1535px'},
+      'xl': { 'min': '1280px', 'max': '1535px' },
       // => @media (min-width: 1280px and max-width: 1535px) { ... }
 
-      '2xl': {'min': '1536px'},
+      '2xl': { 'min': '1536px' },
       // => @media (min-width: 1536px) { ... }
     },
   },

@@ -1,13 +1,12 @@
-import { useSelector } from 'react-redux'
 import MenuItems from '@/components/Sidebar/MenuItems'
 
 import { Layout } from 'antd'
-import { RootState } from '@/redux/store'
+import { useAppSelector } from '@/redux'
 
 const { Sider } = Layout
 
 const Sidebar = () => {
-  const { topMenu, collapsed } = useSelector((state: RootState) => {
+  const { topMenu, collapsed } = useAppSelector((state) => {
     return {
       topMenu: state.layout.topMenu,
       collapsed: state.layout.menuCollapse,
