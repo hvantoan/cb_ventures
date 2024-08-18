@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import { Viewport, type Metadata } from "next";
 import ThemeRegistry from "@/theme/ThemeRegistry";
 import Providers from "./providers";
-import { LandingLayout } from "@/Layout/layout";
+import { LandingLayout } from "@/layouts/layout";
 
 export const metadata: Metadata = {
   title: "CB Ventures",

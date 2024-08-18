@@ -44,43 +44,4 @@ const contents = (
     </div>
   </>
 )
-
-const items = [
-  {
-    key: '1',
-    label: (
-      <Link
-        className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
-        href="#"
-      >
-        <span>Export to CSV</span>
-      </Link>
-    ),
-  },
-  {
-    key: '2',
-    label: (
-      <Link
-        className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
-        href="#"
-      >
-        <span>Export to XML</span>
-      </Link>
-    ),
-    disabled: true,
-  },
-  {
-    key: '3',
-    label: (
-      <Link
-        className="flex items-center text-theme-gray dark:text-white/60 hover:bg-primary-transparent hover:text-primary dark:hover:bg-white/10 px-3 py-1.5 text-sm active"
-        href="#"
-      >
-        <span>Export to Drive</span>
-      </Link>
-    ),
-    disabled: true,
-  },
-]
-
 export default DropDown

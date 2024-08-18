@@ -2,11 +2,15 @@ import themes from './themeConfigure'
 
 const { lightMode, darkMode } = themes
 
-const primaryColor = '#00D094'
-const primaryColorRgb = '0, 208, 148'
-const primaryHover = '#3B6730'
-const secondaryColor = '#5840FF'
-const secondaryHover = '#3520C8'
+export const primaryColor = '#00D094'
+export const primaryColorRgb = '0, 208, 148'
+export const primaryHover = '#3B6730'
+export const secondaryColor = '#5840FF'
+export const secondaryHover = '#3520C8'
+export const bodyColor = "#00150F";
+export const whiteColor = '#ffffff'
+export const whColor = '#1B2D29'
+
 const linkColor = '#1890ff'
 const linkHover = '#0d79df'
 const successColor = '#01B81A'
@@ -23,7 +27,6 @@ const grayColor = '#404040'
 const grayHover = '#585858'
 const lightColor = '#747474'
 const lightHover = '#747474'
-const whiteColor = '#ffffff'
 const whiteHover = '#ADB5D9'
 const dangerColor = '#FF0F0F'
 const dangerHover = '#CB0000'

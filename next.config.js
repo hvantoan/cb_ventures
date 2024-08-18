@@ -8,7 +8,21 @@ await import("./src/env.js");
 /** @type {import("next").NextConfig} */
 const config = {
   output: "standalone",
-  skipMiddlewareUrlNormalize: true,
+  images: {
+    remotePatterns: [
+      {
+        hostname: "img.icons8.com",
+      },
+      {
+        hostname: "gw.alipayobjects.com",
+      },
+    ],
+  },
+  reactStrictMode: true,
+  i18n: {
+    locales: ["vi"],
+    defaultLocale: "vi",
+  },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
@@ -30,28 +44,10 @@ const config = {
       },
     );
 
-    // Modify the file loader rule to ignore *.svg, since we have it handled now.
     fileLoaderRule.exclude = /\.svg$/i;
     config.resolve.alias.canvas = false;
 
     return config;
-  },
-  images: {
-    remotePatterns: [
-      {
-        hostname: "img.icons8.com",
-      },
-    ],
-  },
-  reactStrictMode: true,
-  /**
-   * If you are using `appDir` then you must comment the below `i18n` config out.
-   *
-   * @see https://github.com/vercel/next.js/issues/41980
-   */
-  i18n: {
-    locales: ["vi"],
-    defaultLocale: "vi",
   },
 };
 

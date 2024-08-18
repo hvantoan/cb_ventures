@@ -7,11 +7,6 @@ import { ROLE_KEY } from "@/app/(authenticated)/constants";
 
 const middleware = withAuth(
   async (request) => {
-    const { pathname } = request.nextUrl;
-    if (request.nextUrl.pathname.startsWith("/api") || !pathname.match(/((?!\.well-known(?:\/.*)?)(?:[^/]+\/)*[^/]+\.\w+)/)) {
-      return NextResponse.next();
-    }
-
     const payload = decodeJwt(request.nextauth.token?.token as string);
     const roles = payload?.[ROLE_KEY] as Array<string>;
     const target = routeRoleMapping.find((route) =>
@@ -42,7 +37,7 @@ export default middleware;
 export const config = {
   matcher: [
     {
-      source: "/((?!_next/static|_next/image|favicon.ico|assets|img).*)",
+      source: "/((?!api|_next/static|_next/image|favicon.ico|assets|img).*)",
       missing: [
         { type: "header", key: "next-router-prefetch" },
         { type: "header", key: "purpose", value: "prefetch" },
