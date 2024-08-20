@@ -158,7 +158,7 @@ export default {
         "25%": '25%',
       },
       fontFamily: {
-        Roboto: ['Roboto', 'sans-serif'],
+        Jost: ['Jost', 'sans-serif'],
         Awesome: ['FontAwesome'],
       },
       fontSize: {
@@ -192,26 +192,24 @@ export default {
     screens: {
       '4xl': { max: '1699px' },
       '3xl': { max: '1599px' },
+      '2xl': { max: '1299px' },
+      xl: { max: '1199px' },
+      lg: { max: '991px' },
+      md: { max: '767px' },
+      sm: { max: '575px' },
       ssm: { max: '480px' },
       xs: { max: '380px' },
+      xxs: { max: '320px' },
       'min-xxs': '320px',
       'min-xs': '380px',
       'min-ssm': '480px',
-
-      'sm': { 'max': '767px' },
-      // => @media (min-width: 640px and max-width: 767px) { ... }
-
-      'md': { 'min': '768px', 'max': '1023px' },
-      // => @media (min-width: 768px and max-width: 1023px) { ... }
-
-      'lg': { 'min': '1024px', 'max': '1279px' },
-      // => @media (min-width: 1024px and max-width: 1279px) { ... }
-
-      'xl': { 'min': '1280px', 'max': '1535px' },
-      // => @media (min-width: 1280px and max-width: 1535px) { ... }
-
-      '2xl': { 'min': '1536px' },
-      // => @media (min-width: 1536px) { ... }
+      'min-sm': '575px',
+      'min-md': '768px',
+      'min-lg': '991px',
+      'min-xl': '1199px',
+      'min-2xl': '1299px',
+      'min-3xl': '1599px',
+      'min-4xl': '1699px',
     },
   },
   plugins: [],
