@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import { Viewport, type Metadata } from "next";
 import ThemeRegistry from "@/theme/ThemeRegistry";
 import Providers from "./providers";
-import { LandingLayout } from "@/layouts/layout";
+import { AdminLayout } from "@/layouts/AdminLayout";
 
 export const metadata: Metadata = {
   title: "CB Ventures",
@@ -21,14 +21,18 @@ export const viewport: Viewport = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+
+
+
+
   return (
-    <html lang="vi">
+    <html lang="vi" dir="ltr">
       <body suppressHydrationWarning={true}>
         <Providers>
           <ThemeRegistry>
-            <LandingLayout>
+            <AdminLayout>
               {children}
-            </LandingLayout>
+            </AdminLayout>
           </ThemeRegistry>
         </Providers>
       </body>
