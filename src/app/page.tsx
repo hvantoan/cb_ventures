@@ -46,13 +46,7 @@ const Landing = () => {
     }, [])
 
     return (
-        <PageContainer
-            token={{
-                paddingBlockPageContainerContent: 0,
-                paddingInlinePageContainerContent: 0,
-            }}
-            header={undefined}
-            className='bg-body_color' >
+        <>
             <Hero />
             <Partner />
             <Trading />
@@ -62,7 +56,7 @@ const Landing = () => {
             <Pricing data={pricings} />
             <Advisers data={advisers} />
             <Articles data={articles} />
-        </PageContainer>
+        </>
     )
 }
 export default Landing;

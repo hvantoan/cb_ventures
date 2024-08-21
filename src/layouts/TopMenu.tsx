@@ -3,8 +3,6 @@ import Link from 'next/link';
 import { TopMenuStyle } from './Style';
 
 function TopMenu() {
-  const path = '/admin';
-
   useLayoutEffect(() => {
     const active: any = document.querySelector('.hexadash-top-menu a.active');
     const activeDefault = () => {
@@ -39,22 +37,10 @@ function TopMenu() {
     <TopMenuStyle>
       <div className="hexadash-top-menu ps-[20px] xl:ps-[10px]">
         <ul className="flex items-center [&>li]:pr-[14px] [&>li>a.active]:text-primary">
-          <li className="has-subMenu">
-            <Link href="#" className="parent">
-              Dashboard
+          <li>
+            <Link href="/" className="parent">
+              Trang chủ
             </Link>
-            <ul className="subMenu">
-              <li>
-                <Link href={`${path}`} onClick={addParentActive}>
-                  Demo 1
-                </Link>
-              </li>
-              <li>
-                <Link href={`${path}/demo-2`} onClick={addParentActive}>
-                  Demo 2
-                </Link>
-              </li>
-            </ul>
           </li>
         </ul>
       </div>

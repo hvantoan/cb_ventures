@@ -11,7 +11,7 @@ function DropDown(props: any) {
         overlayClassName={className}
         overlayStyle={style}
         placement={placement}
-        overlay={content ? content : contents}
+        overlay={content || contents}
         trigger={action}
       >
         <span>{children}</span>

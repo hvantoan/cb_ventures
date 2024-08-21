@@ -17,12 +17,12 @@ const Sidebar = () => {
     <>
       {!topMenu || typeof window !== 'undefined' && window.innerWidth < 1200 ? (
         <Sider
-          width={collapsed ? 80 : 280}
+          width={collapsed ? 80 : 220}
           collapsed={collapsed}
           className={`fixed h-[100vh] scrollbar bg-white dark:bg-[#1b1d2a] py-5 pb-[74px] z-998 overflow-y-auto shadow-[0_0_20px_rgba(160,160,160,0.02)] [&.ant-layout-sider-collapsed]:xl:-ms-20 duration-[300ms]`}
         >
           <MenuItems />
-        </Sider>
+        </Sider >
       ) : null}
     </>
   );

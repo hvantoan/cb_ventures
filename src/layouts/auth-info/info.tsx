@@ -11,15 +11,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import Search from './Search';
-import Settings from './settings';
 import Heading from '@/components/Heading';
-import DropDown from '@/components/Dropdown/language';
 import PopOver from '@/components/Popup/PopOver';
+import DropDown from '@/components/Dropdown';
 
-const AuthInfo = React.memo((props: any) => {
+const AuthInfo = React.memo((_: any) => {
   const [state, setState] = useState({
-    flag: 'en',
+    flag: 'vi',
   });
   const { i18n } = useTranslation();
 
@@ -44,7 +42,7 @@ const AuthInfo = React.memo((props: any) => {
               href="#"
               className="inline-flex items-center hover:bg-primary/[.05] rounded-4 text-light dark:text-white/60 dark:hover:text-white hover:text-primary dark:hover:bg-white/10 dark:rounded-4 hover:pl-6 w-full px-2.5 py-3 text-sm transition-all ease-in-out delay-150"
             >
-              <UilUser className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Profile
+              <UilUser className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Hồ sơ
             </Link>
           </li>
           <li>
@@ -52,7 +50,7 @@ const AuthInfo = React.memo((props: any) => {
               href="#"
               className="inline-flex items-center hover:bg-primary/[.05] rounded-4 text-light dark:text-white/60 dark:hover:text-white hover:text-primary dark:hover:bg-white/10 dark:rounded-4 hover:pl-6 w-full px-2.5 py-3 text-sm transition-all ease-in-out delay-150"
             >
-              <UilSetting className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Settings
+              <UilSetting className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Cài đặt
             </Link>
           </li>
           <li>
@@ -60,7 +58,7 @@ const AuthInfo = React.memo((props: any) => {
               href="#"
               className="inline-flex items-center hover:bg-primary/[.05] rounded-4 text-light dark:text-white/60 dark:hover:text-white hover:text-primary dark:hover:bg-white/10 dark:rounded-4 hover:pl-6 w-full px-2.5 py-3 text-sm transition-all ease-in-out delay-150"
             >
-              <UilDollarSign className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Billing
+              <UilDollarSign className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Hóa đơn
             </Link>
           </li>
           <li>
@@ -68,7 +66,7 @@ const AuthInfo = React.memo((props: any) => {
               href="#"
               className="inline-flex items-center hover:bg-primary/[.05] rounded-4 text-light dark:text-white/60 dark:hover:text-white hover:text-primary dark:hover:bg-white/10 dark:rounded-4 hover:pl-6 w-full px-2.5 py-3 text-sm transition-all ease-in-out delay-150"
             >
-              <UilUsersAlt className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Activity
+              <UilUsersAlt className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Hoạt động
             </Link>
           </li>
           <li>
@@ -76,7 +74,7 @@ const AuthInfo = React.memo((props: any) => {
               href="#"
               className="inline-flex items-center hover:bg-primary/[.05] rounded-4 text-light dark:text-white/60 dark:hover:text-white hover:text-primary dark:hover:bg-white/10 dark:rounded-4 hover:pl-6 w-full px-2.5 py-3 text-sm transition-all ease-in-out delay-150"
             >
-              <UilBell className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Help
+              <UilBell className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Giúp đỡ
             </Link>
           </li>
         </ul>
@@ -86,7 +84,7 @@ const AuthInfo = React.memo((props: any) => {
           }}
           className="flex items-center justify-center text-sm font-medium bg-[#f4f5f7] dark:bg-[#32333f] h-[50px] text-light hover:text-primary dark:hover:text-white/60 dark:text-white/[.87] mx-[-12px] mb-[-15px] rounded-b-6"
         >
-          <UilSignout className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Sign Out
+          <UilSignout className="w-4 h-4 ltr:mr-3 rtl:ml-3" /> Đăng xuất
         </div>
       </div>
     </div>
@@ -121,35 +119,18 @@ const AuthInfo = React.memo((props: any) => {
       label: (
         <Link
           href="#"
-          onClick={(e) => onFlagChangeHandle('esp', e)}
+          onClick={(e) => onFlagChangeHandle('vi', e)}
           className="flex items-center bg-white dark:bg-white/10 hover:bg-primary/[.05] rounded-4 px-3 py-1.5 text-sm text-dark dark:text-white/60"
         >
-          <Image className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" src='/img/flag/esp.png' alt="" width="20" height="20" />
-          <span>Spanish</span>
+          <Image className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" src='/img/flag/vi.png' alt="" width="20" height="20" />
+          <span>Tiếng việt</span>
         </Link>
       ),
     },
-    {
-      key: '3',
-      label: (
-        <Link
-          href="#"
-          onClick={(e) => onFlagChangeHandle('ar', e)}
-          className="flex items-center bg-white dark:bg-white/10 hover:bg-primary/[.05] rounded-4 px-3 py-1.5 text-sm text-dark dark:text-white/60"
-        >
-          <Image className="w-3.5 h-3.5 ltr:mr-2 rtl:ml-2" src='/img/flag/ar.png' alt="" width="20" height="20" />
-          <span>Arabic</span>
-        </Link>
-      ),
-    }
   ];
 
   return (
     <div className="flex items-center justify-end flex-auto gap-6 lg:gap-4">
-      <div className="lg:visible md:hidden">
-        <Search />
-      </div>
-      <Settings />
       <div className="flex">
         <DropDown placement="bottomRight" customContent={country}>
           <div className="flex">

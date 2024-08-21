@@ -6,7 +6,7 @@ import { PrimaryButton, SubButton } from './Button/PrimaryButton'
 
 export function Hero() {
   return (
-    <section className="relative aspect-auto min-h-screen ">
+    <section className="relative aspect-auto min-h-screen">
       <div className="absolute h-full w-screen bg-banner_bg bg-no-repeat bg-cover opacity-[.1]" />
       <div className='container mx-auto relative grid sm:grid-cols-1 md:grid-cols-1 grid-cols-2 gap-20 sm:gap-4 md:gap-4 pt-[75px] px-20 sm:px-0'>
         <div data-aos="fade-right" data-aos-duration="1000" className='content-center py-8'>
