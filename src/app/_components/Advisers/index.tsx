@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import { Button } from 'antd'
 import { Adviser, AdviserCard } from './AdvisersCard'
 import { PrimaryButton } from '../Button/PrimaryButton'
 
