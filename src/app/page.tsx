@@ -8,7 +8,6 @@ import friends from '@/libs/data/friends.json'
 import { Advisers, Articles, Features, Hero, Partner, Pricing, Roadmap, Trading, Vision } from '@/app/_components'
 import Aos from 'aos'
 import { useEffect } from 'react';
-import { PageContainer } from "@ant-design/pro-components";
 const Landing = () => {
 
     const { roadmaps, roadDone, pricings, articles, visions, advisers } = {
