@@ -4,6 +4,7 @@ import HeaderTop from "./header";
 import Sidebar from "./sidebar";
 import Footer from "./footer";
 import { useAppSelector } from "@/redux";
+import { Content } from "antd/es/layout/layout";
 
 interface AdminLayoutProps {
 	children: React.ReactNode;
@@ -25,6 +26,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
 
 	if (mainContent === 'darkMode') {
 		document.body.classList.add('dark');
+		document.body.classList.add('dark');
 	}
 
 	if (rtl) {
@@ -35,17 +37,15 @@ export function AdminLayout({ children }: AdminLayoutProps) {
 	}
 
 	return (
-		<>
+		<Layout className="bg-body_color">
 			<HeaderTop />
-			<div className='flex flex-row gap-5 mt-[72px]'>
+			<Layout className='flex flex-row gap-5 mt-[72px]'>
 				<Sidebar />
-				<Layout className={`max-w-full duration-[300ms] ${!topMenu ? `xl:ps-0 ease-[ease] ${collapsed ? 'ps-[80px]' : 'ps-[280px] delay-[150ms]'}` : ''}`}>
-					<Layout.Content>
-						{children}
-						<Footer />
-					</Layout.Content>
-				</Layout>
-			</div>
-		</>
+				<Content className={`bg-body_color max-w-full duration-[300ms] ${!topMenu ? `xl:ps-0 ease-[ease] ${collapsed ? 'ps-[80px]' : 'ps-[220px] delay-[150ms]'}` : ''}`}>
+					{children}
+				</Content>
+			</Layout>
+			<Footer />
+		</Layout>
 	);
 }
