@@ -16,7 +16,7 @@ export const prefetchHandler = (handler: () => Promise<AxiosResponse>) => {
         return permanentRedirect(loginPath);
       }
 
-      return Promise.reject(error);
+      // return Promise.reject(error);
     }
   };
 };

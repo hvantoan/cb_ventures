@@ -29,19 +29,17 @@ const config = {
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-empty-function": "warn",
     "@typescript-eslint/consistent-type-imports": "off",
+    "prefer-promise-reject-errors": "off",
+    "@typescript-eslint/prefer-promise-reject-errors": "error",
     // End
     "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/triple-slash-reference": "off",
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/non-nullable-type-assertion-style": "off",
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      {
-        argsIgnorePattern: "^_",
-      },
-    ],
+    "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/require-await": "off",
     "@typescript-eslint/dot-notation": "off",
+
     "@typescript-eslint/no-misused-promises": [
       "error",
       {

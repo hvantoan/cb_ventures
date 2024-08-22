@@ -15,7 +15,7 @@ export type VisionCardProps = {
 
 export function VisionCard({ data }: VisionCardProps) {
     return (
-        <div data-aos="fade-up" data-aos-duration="800" className="rounded-2xl drop-shadow-lg bg-gradient-to-br from-bg_color_trans to-bg_color grid gap-4 p-8 hover:border border-primary">
+        <div data-aos="fade-up" data-aos-duration="800" className="rounded-2xl drop-shadow-lg bg-gradient-to-br from-bg_color_trans to-bg_color grid gap-4 p-8 border border-transparent hover:border-primary">
             <div className="flex justify-center">
                 <Card className="rounded-full w-[125px] h-[125px]">
                     <Image
