@@ -3,7 +3,13 @@ import type { Awaitable, RequestInternal } from 'next-auth';
 import type { CommonProviderOptions, CredentialInput } from 'next-auth/providers';
 
 declare module 'next-auth' {
-  export interface User extends BaseResponse<LoginDto> {}
+  export interface User extends BaseResponse<LoginDto> {
+    id: string;
+    email: string;
+    name: string;
+    image: string;
+    roles: string[];
+  }
   export interface CredentialsConfig<C extends Record<string, CredentialInput> = Record<string, CredentialInput>>
     extends CommonProviderOptions {
     type: 'credentials';

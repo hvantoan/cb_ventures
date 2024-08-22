@@ -1,20 +1,20 @@
 import Cookies from 'js-cookie';
-const getItem = (key:string) => {
+const getItem = (key: string) => {
   const data = Cookies.get(key);
 
   try {
     return JSON.parse(data as string);
-  } catch (err) {
+  } catch {
     return data;
   }
 };
 
-const setItem = (key:any, value:any) => {
+const setItem = (key: any, value: any) => {
   const stringify = typeof value !== 'string' ? JSON.stringify(value) : value;
   return Cookies.set(key, stringify);
 };
 
-const removeItem = (key:any) => {
+const removeItem = (key: any) => {
   Cookies.remove(key);
 };
 
