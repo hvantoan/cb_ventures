@@ -1,6 +1,4 @@
 declare interface LoginUser {
-  merchantCode: string;
-  merchantName: string;
   name: string;
 }
 

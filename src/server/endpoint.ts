@@ -1,0 +1,1 @@
+export const CLOUD_LOGIN_ENDPOINT = '/auth/login';

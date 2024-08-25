@@ -1,6 +1,5 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
-import staticData from '@/config/config'
 
 export interface AppLayout {
   rtlData: boolean
@@ -15,10 +14,10 @@ export interface AppLayout {
 }
 
 const initLayout: AppLayout = {
-  rtlData: staticData.rtl,
-  topMenu: staticData.topMenu,
-  mode: staticData.mainTemplate as "darkMode" | "lightMode",
-  menuCollapse: staticData.menuCollapse,
+  rtlData: false,
+  topMenu: true,
+  mode: "darkMode" ,
+  menuCollapse: false,
   loading: false,
   rtlLoading: false,
   menuLoading: false,

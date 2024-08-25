@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { StoreProvider } from "@/components/StoreProvider";
 import config from "@/config/config";
 import { store } from "@/redux/store";
@@ -6,15 +6,26 @@ import { basePath } from "@/routes";
 import { SessionProvider } from "next-auth/react";
 import { useEffect } from "react";
 import { ThemeProvider } from "styled-components";
-import { ConfigProvider } from 'antd';
+import { ConfigProvider } from "antd";
 
-const theme = config
+const theme = config;
 
 const Init = () => {
   useEffect(() => {
-    window.history.scrollRestoration = 'manual';
+    window.history.scrollRestoration = "manual";
   }, []);
   return null;
+};
+
+const originalConsoleError = console.error;
+console.error = (message, ...args) => {
+  if (
+    typeof message === "string" &&
+    message.includes("defaultProps will be removed")
+  ) {
+    return;
+  }
+  originalConsoleError.apply(console, [message, ...args]);
 };
 
 const Providers: React.FC<WrappedComponentProps> = ({ children }) => {
@@ -22,14 +33,11 @@ const Providers: React.FC<WrappedComponentProps> = ({ children }) => {
     <StoreProvider store={store}>
       <SessionProvider basePath={`${basePath}/api/auth`}>
         <ConfigProvider>
-          <ThemeProvider theme={theme}>
-            {children}
-          </ThemeProvider>
+          <ThemeProvider theme={theme}>{children}</ThemeProvider>
         </ConfigProvider>
       </SessionProvider>
       <Init />
     </StoreProvider>
-
   );
 };
 
