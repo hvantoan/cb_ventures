@@ -26,7 +26,6 @@ export function AdminLayout({ children }: AdminLayoutProps) {
 
 	if (mainContent === 'darkMode') {
 		document.body.classList.add('dark');
-		document.body.classList.add('dark');
 	}
 
 	if (rtl) {
