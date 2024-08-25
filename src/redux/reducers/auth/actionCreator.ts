@@ -1,4 +1,4 @@
-import authApi from '@/libs/config/api/authApi'
+import authApi from '@/config/api/authApi'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
 export interface LoginState {

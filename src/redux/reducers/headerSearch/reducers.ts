@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import staticData from '@/libs/data/header-search.json'
+import staticData from '@/data/header-search.json'
 
 interface headerSearchItem {
   id: number

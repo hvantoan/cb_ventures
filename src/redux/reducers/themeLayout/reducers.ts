@@ -1,6 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
-import staticData from '@/libs/config/config'
+import staticData from '@/config/config'
 
 export interface AppLayout {
   rtlData: boolean

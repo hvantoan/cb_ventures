@@ -1,10 +1,10 @@
 "use client";
 import "aos/dist/aos.css";
-import roadmapData from '@/libs/data/roadmap.json'
-import pricingsData from '@/libs/data/pricing.json'
-import articlesData from '@/libs/data/sampleCards.json'
-import visionData from '@/libs/data/visions.json'
-import friends from '@/libs/data/friends.json'
+import roadmapData from '@/data/roadmap.json'
+import pricingsData from '@/data/pricing.json'
+import articlesData from '@/data/sampleCards.json'
+import visionData from '@/data/visions.json'
+import friends from '@/data/friends.json'
 import { Advisers, Articles, Features, Hero, Partner, Pricing, Roadmap, Trading, Vision } from '@/app/_components'
 import Aos from 'aos'
 import { useEffect } from 'react';

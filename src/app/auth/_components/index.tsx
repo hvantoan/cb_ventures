@@ -2,7 +2,7 @@ import { Spin } from 'antd'
 import dynamic from 'next/dynamic'
 import React from 'react'
 
-const SignIn = dynamic(() => import('./sign-in'), {
+const SignIn = dynamic(() => import('./Login'), {
   loading: () => (
     <>
       <div className="spin flex items-center justify-center h-[calc(100vh-132px)]">

@@ -1,6 +1,6 @@
 'use client';
 import { StoreProvider } from "@/components/StoreProvider";
-import config from "@/libs/config/config";
+import config from "@/config/config";
 import { store } from "@/redux/store";
 import { basePath } from "@/routes";
 import { SessionProvider } from "next-auth/react";

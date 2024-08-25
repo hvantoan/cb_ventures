@@ -7,15 +7,14 @@ import { ReactSVG } from 'react-svg'
 import { UilFacebook, UilTwitter, UilGithub } from '@iconscout/react-unicons'
 import { CheckBox } from '@/components/Checkbox'
 import type { AppDispatch } from '@/redux/store'
-import { LoginAction, LoginState } from '@/redux'
+import { LoginAction, LoginState, useAppDispatch } from '@/redux'
 
 function SignIn() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const dispatch = useDispatch<AppDispatch>()
-
   const router = useRouter()
+  const dispatch = useAppDispatch()
 
   const [data, setData] = useState<LoginState>({
     username: 'admin',
@@ -29,7 +28,6 @@ function SignIn() {
       dispatch(LoginAction(req)).then(() => {
         router.push('/')
       })
-      console.log('Succesfully Logged In!')
     } catch (err) {
       console.log(err)
       setLoading(false)

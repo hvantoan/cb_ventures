@@ -35,12 +35,3 @@ declare module 'next-auth/jwt' {
     expiredTime: number;
   }
 }
-
-declare module '@tanstack/react-table' {
-  export interface ColumnFilter<TKey extends string = string, TValue = any> {
-    id: TKey;
-    value: TValue;
-  }
-
-  export type ColumnFiltersState<TKey extends string = string, TValue = any> = Array<ColumnFilter<TKey, TValue>>;
-}

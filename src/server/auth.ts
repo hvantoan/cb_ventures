@@ -1,39 +1,18 @@
-import {
-  getServerSession,
-  type DefaultSession,
-  type NextAuthOptions,
-} from "next-auth";
-import DiscordProvider from "next-auth/providers/discord";
-
 import { env } from "@/env";
-
-/**
- * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
- * object and keep type safety.
- *
- * @see https://next-auth.js.org/getting-started/typescript#module-augmentation
- */
-declare module "next-auth" {
-  interface Session extends DefaultSession {
-    user: {
-      id: string;
-      // ...other properties
-      // role: UserRole;
-    } & DefaultSession["user"];
-  }
-
-  // interface User {
-  //   // ...other properties
-  //   // role: UserRole;
-  // }
-}
-
+import axios from "axios";
+import DiscordProvider from "next-auth/providers/discord";
+import CredentialsProvider from 'next-auth/providers/credentials';
+import { headers } from "next/headers";
+import { AuthOptions, getServerSession } from "next-auth";
 /**
  * Options for NextAuth.js used to configure adapters, providers, callbacks, etc.
  *
  * @see https://next-auth.js.org/configuration/options
  */
-export const authOptions: NextAuthOptions = {
+export const authOptions: AuthOptions = {
+  pages: {
+    signIn: "/auth/login"
+  },
   callbacks: {
     session: ({ session, token }) => ({
       ...session,
@@ -48,6 +27,33 @@ export const authOptions: NextAuthOptions = {
       clientId: env.DISCORD_CLIENT_ID,
       clientSecret: env.DISCORD_CLIENT_SECRET,
     }),
+    // CredentialsProvider({
+    //   name: 'Basic Auth',
+    //   credentials: {
+    //     username: { type: 'text' },
+    //     password: { type: 'password' }
+    //   },
+    //   authorize: async (credentials) => {
+    //     try {
+    //       const reqHeaders = headers();
+    //       const host = reqHeaders.get(HOST_KEY);
+    //       const merchantCode = host?.split('.')[0] ?? '';
+    //       const payload = {
+    //         ...credentials,
+    //         merchantCode,
+    //         permission: 1
+    //       };
+
+    //       const res = await axios.post<BaseResponse<LoginDto> & { id: string }>(CLOUD_LOGIN_ENDPOINT, payload, {
+    //         baseURL: process.env.API_URL
+    //       });
+
+    //       return res.data;
+    //     } catch {
+    //       return null;
+    //     }
+    //   }
+    // })
     /**
      * ...add more providers here.
      *

@@ -1,8 +1,8 @@
 import "@/styles/globals.css";
 import { Viewport, type Metadata } from "next";
-import ThemeRegistry from "@/theme/ThemeRegistry";
 import Providers from "./providers";
 import { AdminLayout } from "@/layouts/AdminLayout";
+import ThemeRegistry from "@/config/theme/ThemeRegistry";
 
 export const metadata: Metadata = {
   title: "CB Ventures",

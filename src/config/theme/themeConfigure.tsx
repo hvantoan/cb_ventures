@@ -1,4 +1,4 @@
-export default {
+const themeConfigure = {
   lightMode: {
     primary: '#98D083',
     'primary-color-rgb': '152, 208, 131', // primary color for all components
@@ -73,3 +73,5 @@ export default {
     'input-bg': '#282B37',
   },
 }
+
+export default themeConfigure

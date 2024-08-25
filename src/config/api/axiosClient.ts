@@ -1,4 +1,4 @@
-import { getItem } from '../../../utils/localStorageControl';
+import { getItem } from '@/utils/localStorageControl';
 import axios from "axios";
 
 const API_ENDPOINT = `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api`;

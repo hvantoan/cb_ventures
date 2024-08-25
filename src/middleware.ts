@@ -27,7 +27,7 @@ const middleware = withAuth(
       },
     },
     pages: {
-      signIn: "/auth",
+      signIn: "/auth/login",
     },
   },
 );

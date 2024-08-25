@@ -1,4 +1,4 @@
-import { theme } from "@/theme/themeVariables"
+import { theme } from "@/config/theme/themeVariables"
 
 const config = {
   topMenu: true,
