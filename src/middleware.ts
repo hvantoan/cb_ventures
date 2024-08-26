@@ -27,7 +27,7 @@ const middleware = withAuth(
       },
     },
     pages: {
-      signIn: "/login",
+      signIn: "/auth/login",
     },
   },
 );
@@ -37,7 +37,7 @@ export default middleware;
 export const config = {
   matcher: [
     {
-      source: "/((?!api|_next/static|_next/image|favicon.ico|assets|img).*)",
+      source: "/((?!api|home|_next/static|_next/image|favicon.ico|assets|img).*)",
       missing: [
         { type: "header", key: "next-router-prefetch" },
         { type: "header", key: "purpose", value: "prefetch" },

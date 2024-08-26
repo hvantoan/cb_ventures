@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import initialState from '@/libs/data/contact.json'
+import initialState from '@/data/contact.json'
 import type { Contact } from './reducer'
 
 export const ContactGetData = createAsyncThunk<Contact[]>('contact/get', async (_, { rejectWithValue }) => {
