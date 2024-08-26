@@ -10,6 +10,7 @@ import DiscordProvider from "next-auth/providers/discord";
 import { env } from "@/env";
 import { CommonProviderOptions, CredentialInput } from "next-auth/providers/index";
 import CredentialsProvider from 'next-auth/providers/credentials';
+import GoogleProvider from "next-auth/providers/google";
 import { CLOUD_LOGIN_ENDPOINT } from "./endpoint";
 import axiosClient from "@/config/api/axiosClient";
 import axios from "axios";
@@ -60,19 +61,41 @@ declare module 'next-auth/jwt' {
  * @see https://next-auth.js.org/configuration/options
  */
 export const authOptions: NextAuthOptions = {
+  // callbacks: {
+  //   session: ({ session, token }) => ({
+  //     ...session,
+  //     user: {
+  //       ...session.user,
+  //       id: token.sub,
+  //     },
+  //   }),
+  // },
   callbacks: {
-    session: ({ session, token }) => ({
-      ...session,
-      user: {
-        ...session.user,
-        id: token.sub,
-      },
-    }),
+    async signIn({user ,account, profile }:any) {
+      if (account && profile && account.provider === "google") {
+        return profile.email_verified
+      }
+      if (account && account.provider === "discord") {
+        return true
+      }
+      return true // Do different verification for other providers that don't have `email_verified`
+    },
   },
   providers: [
     DiscordProvider({
       clientId: env.DISCORD_CLIENT_ID,
       clientSecret: env.DISCORD_CLIENT_SECRET,
+    }),
+    GoogleProvider({
+      clientId: env.GOOGLE_ID,
+      clientSecret: env.GOOGLE_SECRET,
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code"
+        }
+      }
     }),
     CredentialsProvider({
       name: 'Basic Auth',

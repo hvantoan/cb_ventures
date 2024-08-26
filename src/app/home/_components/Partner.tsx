@@ -1,21 +1,21 @@
-'use client'
-import { Image } from 'antd';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+"use client";
+import { Image } from "antd";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 export function Partner() {
   return (
-    <section className='bg-tertiary_color'>
-      <div className='partner-gradient'>
-        <div className='container mx-auto px-20 sm:px-0 relative z-10'>
+    <section className="bg-tertiary_color">
+      <div className="partner-gradient">
+        <div className="container relative z-10 mx-auto px-20 sm:px-0">
           <Carousel
-            className='p-'
+            className="p-"
             additionalTransfrom={0}
             arrows={false}
             autoPlaySpeed={3000}
             centerMode={true}
             autoPlay
-            customTransition='transform 1500ms ease-in-out'
+            customTransition="transform 1500ms ease-in-out"
             dotListClass=""
             infinite={true}
             itemClass="px-6"
@@ -29,27 +29,27 @@ export function Partner() {
               desktop: {
                 breakpoint: {
                   max: 3000,
-                  min: 1024
+                  min: 1024,
                 },
                 items: 6,
-                partialVisibilityGutter: 40
+                partialVisibilityGutter: 40,
               },
               mobile: {
                 breakpoint: {
                   max: 464,
-                  min: 0
+                  min: 0,
                 },
                 items: 1,
-                partialVisibilityGutter: 30
+                partialVisibilityGutter: 30,
               },
               tablet: {
                 breakpoint: {
                   max: 1024,
-                  min: 464
+                  min: 464,
                 },
                 items: 2,
-                partialVisibilityGutter: 30
-              }
+                partialVisibilityGutter: 30,
+              },
             }}
             rewind={false}
             rewindWithAnimation={false}
@@ -60,13 +60,21 @@ export function Partner() {
             slidesToSlide={1}
           >
             {Array.from({ length: 6 }).map((_, index) => (
-              <a key={index} href='#' className='flex justify-center items-center h-full w-full'>
-                <Image src={`/img/home/barnd0${index + 1}-2.png`} height={48} alt='barm' />
+              <a
+                key={index}
+                href="#"
+                className="flex h-full w-full items-center justify-center"
+              >
+                <Image
+                  src={`/img/home/barnd0${index + 1}-2.png`}
+                  height={48}
+                  alt="barm"
+                />
               </a>
             ))}
           </Carousel>
         </div>
       </div>
     </section>
-  )
+  );
 }

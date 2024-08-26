@@ -2,7 +2,6 @@
 import { StoreProvider } from "@/components/StoreProvider";
 import config from "@/config/config";
 import { store } from "@/redux/store";
-import { basePath } from "@/routes";
 import { SessionProvider } from "next-auth/react";
 import { useEffect } from "react";
 import { ThemeProvider } from "styled-components";
@@ -21,7 +20,8 @@ const originalConsoleError = console.error;
 console.error = (message, ...args) => {
   if (
     typeof message === "string" &&
-    message.includes("defaultProps will be removed")
+    (message.includes("defaultProps will be removed") ||
+      message.includes("Extra attributes from the server"))
   ) {
     return;
   }
@@ -31,7 +31,7 @@ console.error = (message, ...args) => {
 const Providers: React.FC<WrappedComponentProps> = ({ children }) => {
   return (
     <StoreProvider store={store}>
-      <SessionProvider basePath={`${basePath}/api/auth`}>
+      <SessionProvider basePath={`/api/auth`}>
         <ConfigProvider>
           <ThemeProvider theme={theme}>{children}</ThemeProvider>
         </ConfigProvider>

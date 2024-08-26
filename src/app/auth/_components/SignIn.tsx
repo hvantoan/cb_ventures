@@ -6,6 +6,7 @@ import { ReactSVG } from "react-svg";
 import { UilFacebook, UilTwitter, UilGithub } from "@iconscout/react-unicons";
 import { CheckBox } from "@/components/Checkbox";
 import { LoginAction, LoginState, useAppDispatch } from "@/redux";
+import { signIn } from "next-auth/react";
 
 function SignIn() {
   const [error, setError] = useState("");
@@ -54,7 +55,7 @@ function SignIn() {
   }, []);
 
   return (
-    <Row justify="center">
+    <Row justify="center" align="middle" className="h-screen">
       <Col xxl={6} xl={8} md={12} sm={18} xs={24}>
         <div className="rounded-md bg-white shadow-regular dark:bg-white/10 dark:shadow-none">
           <div className="border-b border-gray-200 px-5 py-4 text-center dark:border-white/10">
@@ -140,46 +141,46 @@ function SignIn() {
                   {error}
                 </p>
               )}
-              <p className="relative -mt-2.5 mb-6 text-center text-13 font-medium text-body before:absolute before:top-1/2 before:z-10 before:h-px before:w-full before:-translate-y-1/2 before:bg-gray-200 dark:text-white/60 dark:before:bg-white/10 ltr:before:left-0 rtl:before:right-0">
+              <p className="relative text-center text-13 font-medium text-body before:absolute before:top-1/2 before:z-10 before:h-px before:w-full before:-translate-y-1/2 before:bg-gray-200 dark:text-white/60 dark:before:bg-white/10 ltr:before:left-0 rtl:before:right-0">
                 <span className="relative z-20 bg-white px-4 dark:bg-[#1b1d2a]">
                   Or
                 </span>
               </p>
               <ul className="mb-0 flex items-center justify-center">
                 <li className="px-1.5 pb-2.5 pt-3">
-                  <Link
-                    href="#"
+                  <div
+                    onClick={() => signIn("google")}
                     className="google-social group flex h-12 items-center justify-center rounded-md bg-google-plus-transparent px-4 text-google-plus hover:bg-google-plus hover:text-white"
                   >
                     <ReactSVG
                       className="[&>div>svg>path]:fill-google-plus group-hover:[&>div>svg>path]:fill-white"
                       src="/img/icon/google-plus.svg"
                     />
-                  </Link>
+                  </div>
                 </li>
-                <li className="px-1.5 pb-2.5 pt-3">
+                {/* <li className="px-1.5 pb-2.5 pt-3">
                   <Link
                     href="#"
                     className="facebook-social flex h-12 items-center justify-center rounded-md bg-facebook-transparent px-4 text-facebook hover:bg-facebook hover:text-white"
                   >
                     <UilFacebook />
                   </Link>
-                </li>
-                <li className="px-1.5 pb-2.5 pt-3">
+                </li> */}
+                {/* <li className="px-1.5 pb-2.5 pt-3">
                   <Link
                     href="#"
                     className="twitter-social flex h-12 items-center justify-center rounded-md bg-twitter-transparent px-4 text-twitter hover:bg-twitter hover:text-white"
                   >
                     <UilTwitter />
                   </Link>
-                </li>
+                </li> */}
                 <li className="px-1.5 pb-2.5 pt-3">
-                  <Link
-                    href="#"
+                  <div
+                    onClick={() => signIn("discord")}
                     className="github-social flex h-12 items-center justify-center rounded-md bg-github-transparent px-4 text-github hover:bg-github hover:text-white"
                   >
                     <UilGithub />
-                  </Link>
+                  </div>
                 </li>
               </ul>
             </Form>
