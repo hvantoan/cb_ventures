@@ -25,6 +25,7 @@ export const env = createEnv({
     DISCORD_CLIENT_SECRET: z.string(),
     GOOGLE_ID: z.string(),
     GOOGLE_SECRET: z.string(),
+    API_ENDPOINT: z.string(),
   },
 
   /**
@@ -48,6 +49,7 @@ export const env = createEnv({
     DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
     GOOGLE_ID: process.env.GOOGLE_ID,
     GOOGLE_SECRET: process.env.GOOGLE_SECRET,
+    API_ENDPOINT: process.env.API_ENDPOINT,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**

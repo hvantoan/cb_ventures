@@ -27,7 +27,9 @@ ENV NEXTAUTH_SECRET="vantoanvantoanvantoan" \
     NEXTAUTH_URL="http://ventures.hvantoan.io.vn" \
     DISCORD_CLIENT_ID="1263685207291334666" \
     DISCORD_CLIENT_SECRET="_T0FJmMn5UDllcRdlQ6nCGIilkXOqMrR" \
-    NEXT_PUBLIC_API_ENDPOINT="http://ventures-api.hvantoan.io.vn" \
+    GOOGLE_ID="521305244575-jfj3unj0nb5mpsr6k4vf4gcald1u82rm.apps.googleusercontent.com"\
+    GOOGLE_SECRET="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"\
+    NEXT_PUBLIC_API_ENDPOINT="http://ventures.dc.hvantoan.io.vn" \
     NEXT_TELEMETRY_DISABLED=1
 
 RUN SKIP_ENV_VALIDATION=1 npm run build
@@ -42,6 +44,8 @@ ENV NEXTAUTH_SECRET="vantoanvantoanvantoan" \
     NEXTAUTH_URL="http://ventures.hvantoan.io.vn" \
     DISCORD_CLIENT_ID="1263685207291334666" \
     DISCORD_CLIENT_SECRET="_T0FJmMn5UDllcRdlQ6nCGIilkXOqMrR" \
+    GOOGLE_ID="521305244575-jfj3unj0nb5mpsr6k4vf4gcald1u82rm.apps.googleusercontent.com"\
+    GOOGLE_SECRET="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"\
     NEXT_PUBLIC_API_ENDPOINT="http://ventures-api.hvantoan.io.vn" \
     NEXT_TELEMETRY_DISABLED=1
 # ENV NEXT_TELEMETRY_DISABLED 1

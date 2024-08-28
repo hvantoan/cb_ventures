@@ -8,11 +8,14 @@ import {
 import DiscordProvider from "next-auth/providers/discord";
 
 import { env } from "@/env";
-import { CommonProviderOptions, CredentialInput } from "next-auth/providers/index";
-import CredentialsProvider from 'next-auth/providers/credentials';
+import {
+  CommonProviderOptions,
+  CredentialInput,
+} from "next-auth/providers/index";
+import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
-import { CLOUD_LOGIN_ENDPOINT } from "./endpoint";
-import axiosClient from "@/config/api/axiosClient";
+import { LOGIN_ENDPOINT, LOGIN_GOOGLE_ENDPOINT } from "./endpoint";
+import axiosClient, { API_ENDPOINT } from "@/config/api/axiosClient";
 import axios from "axios";
 
 /**
@@ -35,18 +38,19 @@ declare module "next-auth" {
     image?: string;
     roles?: string[];
   }
-  export interface CredentialsConfig<C extends Record<string, CredentialInput> = Record<string, CredentialInput>>
-    extends CommonProviderOptions {
-    type: 'credentials';
+  export interface CredentialsConfig<
+    C extends Record<string, CredentialInput> = Record<string, CredentialInput>,
+  > extends CommonProviderOptions {
+    type: "credentials";
     credentials: C;
     authorize: (
       credentials: Record<keyof C, string> | undefined,
-      req: Pick<RequestInternal, 'body' | 'query' | 'headers' | 'method'>
-    ) => Awaitable<BaseResponse<LoginDto>| null>;
+      req: Pick<RequestInternal, "body" | "query" | "headers" | "method">,
+    ) => Awaitable<BaseResponse<LoginDto> | null>;
   }
 }
 
-declare module 'next-auth/jwt' {
+declare module "next-auth/jwt" {
   export interface DefaultJWT {
     token: string;
     refreshToken: string;
@@ -61,24 +65,32 @@ declare module 'next-auth/jwt' {
  * @see https://next-auth.js.org/configuration/options
  */
 export const authOptions: NextAuthOptions = {
-  // callbacks: {
-  //   session: ({ session, token }) => ({
-  //     ...session,
-  //     user: {
-  //       ...session.user,
-  //       id: token.sub,
-  //     },
-  //   }),
-  // },
   callbacks: {
-    async signIn({user ,account, profile }:any) {
-      if (account && profile && account.provider === "google") {
-        return profile.email_verified
+    async signIn({ user, account, profile }: any) {
+      if (account.provider === "google") {
+        // Set google config
+        const config = {
+          baseURL: API_ENDPOINT,
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${account.id_token}`,
+          },
+        };
+
+        // Check accout and register if not exist
+        const res = await axios.post<BaseResponse<LoginDto>>(
+          LOGIN_GOOGLE_ENDPOINT,
+          user,
+          config,
+        );
+        return res && res.status === 200 && res.data.success;
       }
+
       if (account && account.provider === "discord") {
-        return true
+        return true;
       }
-      return true // Do different verification for other providers that don't have `email_verified`
+
+      return false;
     },
   },
   providers: [
@@ -93,28 +105,33 @@ export const authOptions: NextAuthOptions = {
         params: {
           prompt: "consent",
           access_type: "offline",
-          response_type: "code"
-        }
-      }
+          response_type: "code",
+        },
+      },
     }),
     CredentialsProvider({
-      name: 'Basic Auth',
+      name: "Basic Auth",
       credentials: {
         username: { type: "text" },
-        password: { type: "password" }
+        password: { type: "password" },
       },
       authorize: async (credentials) => {
+        console.log(credentials);
         try {
-          const res = await axios.post<BaseResponse<LoginDto> & {id: string}>(CLOUD_LOGIN_ENDPOINT, credentials, {
-            baseURL: process.env.API_URL
-          });
+          const res = await axios.post<BaseResponse<LoginDto> & { id: string }>(
+            LOGIN_ENDPOINT,
+            credentials,
+            {
+              baseURL: process.env.API_URL,
+            },
+          );
 
           return res.data;
         } catch {
           return null;
         }
-      }
-    })
+      },
+    }),
     /**
      * ...add more providers here.
      *
