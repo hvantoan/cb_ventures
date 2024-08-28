@@ -1,7 +1,10 @@
-import { type CallbacksOptions, getServerSession } from 'next-auth';
+import { type CallbacksOptions, getServerSession } from "next-auth";
+import { authOptions } from "../server/auth";
 
-
-const serverSessionCallback: CallbacksOptions['session'] = async ({ session, token }) => {
+const serverSessionCallback: CallbacksOptions["session"] = async ({
+  session,
+  token,
+}) => {
   session.user = token.user;
   session.token = token.token;
   session.refreshToken = token.refreshToken;
@@ -10,11 +13,11 @@ const serverSessionCallback: CallbacksOptions['session'] = async ({ session, tok
 };
 
 const serverOptions = {
-  // ...authOptions,
+  ...authOptions,
   callbacks: {
-    // ...authOptions.callbacks,
-    session: serverSessionCallback
-  }
+    ...authOptions.callbacks,
+    session: serverSessionCallback,
+  },
 };
 
 export const getSession = () => getServerSession(serverOptions);

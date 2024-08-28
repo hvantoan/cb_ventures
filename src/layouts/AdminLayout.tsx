@@ -12,24 +12,19 @@ interface AdminLayoutProps {
 }
 
 export function AdminLayout({ children }: AdminLayoutProps) {
-  const { topMenu, collapsed, rtl, mainContent } = useAppSelector((state) => {
-    return {
-      topMenu: state.layout.topMenu,
-      collapsed: state.layout.menuCollapse,
-      rtl: state.layout.rtlData,
-      mainContent: state.layout.mode,
-    };
-  });
+  const { topMenu, mode, rtlData, menuCollapse } = useAppSelector(
+    (state) => state.layout,
+  );
 
   if (typeof document === "undefined") {
     return <div />;
   }
 
-  if (mainContent === "darkMode") {
+  if (mode === "darkMode") {
     document.body.classList.add("dark");
   }
 
-  if (rtl) {
+  if (rtlData) {
     const htmlElement: HTMLElement | null = document.querySelector("html");
     if (htmlElement) {
       htmlElement.setAttribute("dir", "rtl");
@@ -42,7 +37,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
       <Layout className="mt-[72px] flex flex-row gap-5">
         <Sidebar />
         <Content
-          className={`max-w-full bg-body_color duration-[300ms] ${!topMenu ? `ease-[ease] xl:ps-0 ${collapsed ? "ps-[80px]" : "ps-[220px] delay-[150ms]"}` : ""}`}
+          className={`max-w-full bg-body_color duration-[300ms] ${!topMenu ? `ease-[ease] xl:ps-0 ${menuCollapse ? "ps-[80px]" : "ps-[220px] delay-[150ms]"}` : ""}`}
         >
           {children}
         </Content>
