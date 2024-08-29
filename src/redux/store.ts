@@ -18,7 +18,7 @@ import { generalReducer } from "./reducers/general/reducers";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: [layoutReducer.name],
+  whitelist: [layoutReducer.name, authReducer.name],
 };
 
 const rootReducer = combineReducers({

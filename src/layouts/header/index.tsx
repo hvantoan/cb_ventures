@@ -14,14 +14,9 @@ const HeaderTop = () => {
   const dispatch = useAppDispatch();
   const [hide, setHide] = useState(true);
 
-  const { rtl, layoutMode, topMenu, collapsed } = useAppSelector((state) => {
-    return {
-      rtl: state.layout.rtlData,
-      layoutMode: state.layout.mode,
-      topMenu: state.layout.topMenu,
-      collapsed: state.layout.menuCollapse,
-    };
-  });
+  const { rtlData, mode, topMenu, menuCollapse } = useAppSelector(
+    (state) => state.layout,
+  );
 
   const [isBrowser, setIsBrowser] = useState(false);
 
@@ -60,7 +55,7 @@ const HeaderTop = () => {
                 <Image
                   className="w-full max-w-[120px] xs:max-w-[100px]"
                   src={
-                    layoutMode === "lightMode"
+                    mode === "lightMode"
                       ? "/img/logo_horizontal.png"
                       : "/img/logo_horizontal.png"
                   }
@@ -74,7 +69,7 @@ const HeaderTop = () => {
                 <button
                   className="border-none bg-transparent p-0 text-[#525768] hover:text-primary dark:border-transparent dark:bg-transparent dark:text-white/60 dark:hover:text-primary"
                   onClick={() => {
-                    toggleCollapsed(!collapsed);
+                    toggleCollapsed(!menuCollapse);
                   }}
                 >
                   <ReactSVG
@@ -94,10 +89,10 @@ const HeaderTop = () => {
             <div className="me-[17px] flex flex-row items-center md:hidden">
               {isBrowser && window.innerWidth > 1200 && topMenu ? (
                 <div className="top-right-wrap flex">
-                  <AuthInfo rtl={rtl} />
+                  <AuthInfo rtl={rtlData} />
                 </div>
               ) : (
-                <AuthInfo rtl={rtl} />
+                <AuthInfo rtl={rtlData} />
               )}
             </div>
           </div>
@@ -116,7 +111,7 @@ const HeaderTop = () => {
           <div
             className={`fixed top-0 w-full bg-white py-2.5 shadow-[0px_2px_30px_#9299b810] dark:bg-[#1b1e2b] md:px-[15px] md:py-2.5 ltr:left-0 rtl:right-0 [&>.hexadash-nav-actions__searchbar]:hidden ${hide ? "-z-10 mt-0 opacity-0" : "z-10 mt-[72px] opacity-100"}`}
           >
-            <AuthInfo rtl={rtl} />
+            <AuthInfo rtl={rtlData} />
           </div>
         </Col>
       </Row>

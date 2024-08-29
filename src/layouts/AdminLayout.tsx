@@ -5,31 +5,29 @@ import Sidebar from "./sidebar";
 import Footer from "./footer";
 import { useAppSelector } from "@/redux";
 import { Content } from "antd/es/layout/layout";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 interface AdminLayoutProps {
   children: React.ReactNode;
 }
 
 export function AdminLayout({ children }: AdminLayoutProps) {
-  const { topMenu, mode, rtlData, menuCollapse } = useAppSelector(
+  const { topMenu, mode, menuCollapse, rtlData } = useAppSelector(
     (state) => state.layout,
   );
 
-  if (typeof document === "undefined") {
-    return <div />;
-  }
-
-  if (mode === "darkMode") {
-    document.body.classList.add("dark");
-  }
-
-  if (rtlData) {
-    const htmlElement: HTMLElement | null = document.querySelector("html");
-    if (htmlElement) {
-      htmlElement.setAttribute("dir", "rtl");
+  useEffect(() => {
+    if (mode === "darkMode") {
+      document.body.classList.add("dark");
     }
-  }
+
+    if (rtlData) {
+      const htmlElement: HTMLElement | null = document.querySelector("html");
+      if (htmlElement) {
+        htmlElement.setAttribute("dir", "rtl");
+      }
+    }
+  }, [mode, rtlData]);
 
   return (
     <Layout className="bg-body_color">

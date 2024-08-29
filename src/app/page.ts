@@ -1,7 +1,8 @@
-import { redirect } from "next/navigation"
+import { redirect } from "next/navigation";
 
 const RootPage = () => {
-    return redirect("home")
-}
+  console.log("Có render không ta");
+  return redirect("home");
+};
 
-export default RootPage
+export default RootPage;

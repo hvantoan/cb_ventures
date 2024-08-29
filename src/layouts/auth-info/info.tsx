@@ -15,15 +15,19 @@ import { useTranslation } from "react-i18next";
 import Heading from "@/components/Heading";
 import PopOver from "@/components/Popup/PopOver";
 import DropDown from "@/components/Dropdown";
+import { useAppSelector } from "@/redux";
 
-const AuthInfo = React.memo((_: any) => {
+interface Props {
+  rtl: boolean;
+}
+
+const AuthInfo = ({}: Props) => {
   const [state, setState] = useState({
     flag: "vi",
   });
   const { i18n } = useTranslation();
 
-  const user: any = {};
-  const currentUser: any = {};
+  const { user } = useAppSelector((state) => state.auth);
 
   const userContent = (
     <div>
@@ -31,7 +35,7 @@ const AuthInfo = React.memo((_: any) => {
         <figure className="mb-[12px] flex items-center rounded-[8px] bg-section px-[25px] py-[20px] text-sm dark:bg-white/10">
           <Image
             className="rounded-full ltr:mr-4 rtl:ml-4"
-            src={user?.picture ?? "/img/avatar/chat-auth.png"}
+            src={user?.image ?? "/img/avatar/chat-auth.png"}
             alt=""
             width="50"
             height="50"
@@ -41,11 +45,7 @@ const AuthInfo = React.memo((_: any) => {
               className="mb-0.5 text-sm text-dark dark:text-white/[.87]"
               as="h5"
             >
-              {user
-                ? user.name
-                : currentUser
-                  ? currentUser.displayName
-                  : "Hồ Văn Toàn"}
+              {user?.name ?? "Hồ Văn Toàn"}
             </Heading>
             <p className="mb-0 text-xs text-body dark:text-white/60">
               Hồ Văn Toàn
@@ -173,18 +173,14 @@ const AuthInfo = React.memo((_: any) => {
         <PopOver placement="bottomRight" content={userContent} action="click">
           <div className="flex items-center overflow-x-auto whitespace-nowrap text-light">
             <Image
-              src={user?.picture ?? "/img/avatar/matureman1.png"}
+              src={user?.image ?? "/img/avatar/matureman1.png"}
               alt="Avatar"
               width="32"
               height="32"
               className="rounded-full"
             />
             <span className="me-1.5 ms-2.5 text-sm font-medium text-body dark:text-white/60 lg:ms-1.5 md:hidden">
-              {user
-                ? user.name
-                : currentUser
-                  ? currentUser.displayName
-                  : "Abdullah Bin Talha"}
+              {user?.name}
             </span>
             <UilAngleDown className="h-4 w-4 min-w-[16px]" />
           </div>
@@ -192,6 +188,6 @@ const AuthInfo = React.memo((_: any) => {
       </div>
     </div>
   );
-});
+};
 
 export default AuthInfo;
