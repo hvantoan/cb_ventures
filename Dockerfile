@@ -23,7 +23,7 @@ ENV GOOGLE_SECRET=""
 ENV API_ENDPOINT=""
 ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN SKIP_ENV_VALIDATION=1 npm run build
+RUN npm run build
 
 ##### RUNNER
 FROM --platform=linux/amd64 gcr.io/distroless/nodejs20-debian12 AS runner
