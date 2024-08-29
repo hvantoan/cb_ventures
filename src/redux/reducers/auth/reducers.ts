@@ -25,6 +25,11 @@ const authReducer = createSlice({
       removeItem("access_token");
       setItem("loggedIn", false);
       state.isLoggedIn = false;
+      state.user = null;
+    },
+    setUser(state, action) {
+      state.isLoggedIn = true;
+      state.user = action.payload;
     },
   },
   extraReducers(builder) {
@@ -43,5 +48,5 @@ const authReducer = createSlice({
       });
   },
 });
-export const { logOutAction } = authReducer.actions;
+export const { logOutAction, setUser } = authReducer.actions;
 export default authReducer;

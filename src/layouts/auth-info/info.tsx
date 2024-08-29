@@ -15,19 +15,49 @@ import { useTranslation } from "react-i18next";
 import Heading from "@/components/Heading";
 import PopOver from "@/components/Popup/PopOver";
 import DropDown from "@/components/Dropdown";
-import { useAppSelector } from "@/redux";
+import { logOutAction, useAppDispatch, useAppSelector } from "@/redux";
+import { signOut } from "next-auth/react";
 
 interface Props {
   rtl: boolean;
 }
 
-const AuthInfo = ({}: Props) => {
-  const [state, setState] = useState({
-    flag: "vi",
-  });
-  const { i18n } = useTranslation();
+interface ProfileConfig {
+  name: string;
+  path: string;
+  icon: React.ReactNode;
+}
 
+const profileActions: ProfileConfig[] = [
+  {
+    name: "Hồ sơ",
+    path: "#",
+    icon: <UilUser className="h-4 w-4 ltr:mr-3 rtl:ml-3" />,
+  },
+  {
+    name: "Cài đặt",
+    path: "#",
+    icon: <UilSetting className="h-4 w-4 ltr:mr-3 rtl:ml-3" />,
+  },
+  {
+    name: "Hóa đơn",
+    path: "#",
+    icon: <UilDollarSign className="h-4 w-4 ltr:mr-3 rtl:ml-3" />,
+  },
+  {
+    name: "Hoạt động",
+    path: "#",
+    icon: <UilUsersAlt className="h-4 w-4 ltr:mr-3 rtl:ml-3" />,
+  },
+];
+
+const AuthInfo = ({}: Props) => {
+  const dispatch = useAppDispatch();
+  const { i18n } = useTranslation();
   const { user } = useAppSelector((state) => state.auth);
+
+  // State
+  const [state, setState] = useState({ flag: "vi" });
 
   const userContent = (
     <div>
@@ -53,50 +83,23 @@ const AuthInfo = ({}: Props) => {
           </figcaption>
         </figure>
         <ul className="mb-[10px]">
-          <li>
-            <Link
-              href="#"
-              className="inline-flex w-full items-center rounded-4 px-2.5 py-3 text-sm text-light transition-all delay-150 ease-in-out hover:bg-primary/[.05] hover:pl-6 hover:text-primary dark:rounded-4 dark:text-white/60 dark:hover:bg-white/10 dark:hover:text-white"
-            >
-              <UilUser className="h-4 w-4 ltr:mr-3 rtl:ml-3" /> Hồ sơ
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="inline-flex w-full items-center rounded-4 px-2.5 py-3 text-sm text-light transition-all delay-150 ease-in-out hover:bg-primary/[.05] hover:pl-6 hover:text-primary dark:rounded-4 dark:text-white/60 dark:hover:bg-white/10 dark:hover:text-white"
-            >
-              <UilSetting className="h-4 w-4 ltr:mr-3 rtl:ml-3" /> Cài đặt
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="inline-flex w-full items-center rounded-4 px-2.5 py-3 text-sm text-light transition-all delay-150 ease-in-out hover:bg-primary/[.05] hover:pl-6 hover:text-primary dark:rounded-4 dark:text-white/60 dark:hover:bg-white/10 dark:hover:text-white"
-            >
-              <UilDollarSign className="h-4 w-4 ltr:mr-3 rtl:ml-3" /> Hóa đơn
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="inline-flex w-full items-center rounded-4 px-2.5 py-3 text-sm text-light transition-all delay-150 ease-in-out hover:bg-primary/[.05] hover:pl-6 hover:text-primary dark:rounded-4 dark:text-white/60 dark:hover:bg-white/10 dark:hover:text-white"
-            >
-              <UilUsersAlt className="h-4 w-4 ltr:mr-3 rtl:ml-3" /> Hoạt động
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="inline-flex w-full items-center rounded-4 px-2.5 py-3 text-sm text-light transition-all delay-150 ease-in-out hover:bg-primary/[.05] hover:pl-6 hover:text-primary dark:rounded-4 dark:text-white/60 dark:hover:bg-white/10 dark:hover:text-white"
-            >
-              <UilBell className="h-4 w-4 ltr:mr-3 rtl:ml-3" /> Giúp đỡ
-            </Link>
-          </li>
+          {profileActions.map((item, index) => {
+            return (
+              <li key={index}>
+                <Link
+                  href={item.path}
+                  className="inline-flex w-full items-center rounded-4 px-2.5 py-3 text-sm text-light transition-all delay-150 ease-in-out hover:bg-primary/[.05] hover:pl-6 hover:text-primary dark:rounded-4 dark:text-white/60 dark:hover:bg-white/10 dark:hover:text-white"
+                >
+                  {item.icon} {item.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
         <div
           onClick={() => {
-            // TODO: Handle logout
+            signOut();
+            dispatch(logOutAction());
           }}
           className="mx-[-12px] mb-[-15px] flex h-[50px] items-center justify-center rounded-b-6 bg-[#f4f5f7] text-sm font-medium text-light hover:text-primary dark:bg-[#32333f] dark:text-white/[.87] dark:hover:text-white/60"
         >

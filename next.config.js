@@ -16,6 +16,7 @@ const config = {
       {
         hostname: "gw.alipayobjects.com",
       },
+      { hostname: "lh3.googleusercontent.com" },
     ],
   },
   reactStrictMode: true,

@@ -7,7 +7,7 @@ const { Sider } = Layout;
 
 const Sidebar = () => {
   const { topMenu, menuCollapse } = useAppSelector((state) => state.layout);
-  const [innerWidth, setInnerWidth] = useState(0);
+  const [innerWidth, setInnerWidth] = useState(1920);
   useEffect(() => {
     setInnerWidth(window.innerWidth);
   }, []);

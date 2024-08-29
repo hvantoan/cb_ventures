@@ -9,6 +9,10 @@ import { Col, Layout, Row } from "antd";
 import { changeMenuCollapse, useAppDispatch, useAppSelector } from "@/redux";
 import AuthInfo from "../auth-info/info";
 import TopMenu from "../TopMenu";
+import {
+  PrimaryButton,
+  SubButton,
+} from "@/app/home/_components/Button/PrimaryButton";
 
 const HeaderTop = () => {
   const dispatch = useAppDispatch();
@@ -17,6 +21,8 @@ const HeaderTop = () => {
   const { rtlData, mode, topMenu, menuCollapse } = useAppSelector(
     (state) => state.layout,
   );
+
+  const { isLoggedIn } = useAppSelector((state) => state.auth);
 
   const [isBrowser, setIsBrowser] = useState(false);
 
@@ -89,7 +95,15 @@ const HeaderTop = () => {
             <div className="me-[17px] flex flex-row items-center md:hidden">
               {isBrowser && window.innerWidth > 1200 && topMenu ? (
                 <div className="top-right-wrap flex">
-                  <AuthInfo rtl={rtlData} />
+                  {isLoggedIn ? (
+                    <AuthInfo rtl={rtlData} />
+                  ) : (
+                    <Link href="/auth">
+                      <PrimaryButton>
+                        <span className="text-trk">Đăng nhập</span>
+                      </PrimaryButton>
+                    </Link>
+                  )}
                 </div>
               ) : (
                 <AuthInfo rtl={rtlData} />
