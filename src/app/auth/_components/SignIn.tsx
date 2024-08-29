@@ -23,9 +23,7 @@ function SignIn() {
     try {
       setError("");
       setLoading(true);
-      dispatch(LoginAction(req)).then(() => {
-        // .push("/");
-      });
+      // dispatch(LoginAction(req)).then(() => {});
     } catch (err) {
       console.log(err);
       setLoading(false);
@@ -158,22 +156,22 @@ function SignIn() {
                     />
                   </div>
                 </li>
-                {/* <li className="px-1.5 pb-2.5 pt-3">
+                <li className="px-1.5 pb-2.5 pt-3">
                   <Link
                     href="#"
                     className="facebook-social flex h-12 items-center justify-center rounded-md bg-facebook-transparent px-4 text-facebook hover:bg-facebook hover:text-white"
                   >
                     <UilFacebook />
                   </Link>
-                </li> */}
-                {/* <li className="px-1.5 pb-2.5 pt-3">
+                </li>
+                <li className="px-1.5 pb-2.5 pt-3">
                   <Link
                     href="#"
                     className="twitter-social flex h-12 items-center justify-center rounded-md bg-twitter-transparent px-4 text-twitter hover:bg-twitter hover:text-white"
                   >
                     <UilTwitter />
                   </Link>
-                </li> */}
+                </li>
                 <li className="px-1.5 pb-2.5 pt-3">
                   <div
                     onClick={() => signIn("discord")}

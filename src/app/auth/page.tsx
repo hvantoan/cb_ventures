@@ -3,7 +3,7 @@ import { type Session } from "next-auth";
 import { redirect } from "next/navigation";
 
 import { dashboardPath, loginPath } from "@/routes";
-import { getSession } from "@/helpers/getSession";
+import { getSession } from "next-auth/react";
 
 const LoginPage: React.FC = async () => {
   const session = (await getSession()) as Session;

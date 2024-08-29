@@ -1,24 +1,28 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-export const generalReducerName = 'general';
+interface GeneralState {
+  sidebar: {
+    expanded: boolean | undefined;
+  };
+  loading: {
+    api: boolean;
+  };
+}
+
+const initialState: GeneralState = {
+  sidebar: {
+    expanded: true,
+  },
+  loading: {
+    api: false,
+  },
+};
+
+export const generalReducerName = "general";
 
 export const generalReducer = createSlice({
   name: generalReducerName,
-  initialState: {
-    sidebar: {
-      expanded: undefined
-    },
-    loading: {
-      api: false
-    }
-  } as {
-    sidebar: {
-      expanded: boolean | undefined;
-    };
-    loading: {
-      api: boolean;
-    };
-  },
+  initialState: initialState,
   reducers: {
     toggleSidebar: (state) => {
       if (state.sidebar.expanded === undefined) {
@@ -37,8 +41,14 @@ export const generalReducer = createSlice({
     },
     hideApiLoading: (state) => {
       state.loading.api = false;
-    }
-  }
+    },
+  },
 });
 
-export const { closeSidebar, hideApiLoading, openSidebar, showApiLoading, toggleSidebar } = generalReducer.actions;
+export const {
+  closeSidebar,
+  hideApiLoading,
+  openSidebar,
+  showApiLoading,
+  toggleSidebar,
+} = generalReducer.actions;

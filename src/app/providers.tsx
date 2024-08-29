@@ -33,10 +33,12 @@ const Providers: React.FC<WrappedComponentProps> = ({ children }) => {
     <StoreProvider store={store}>
       <SessionProvider basePath={`/api/auth`}>
         <ConfigProvider>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          <ThemeProvider theme={theme}>
+            {children}
+            <Init />
+          </ThemeProvider>
         </ConfigProvider>
       </SessionProvider>
-      <Init />
     </StoreProvider>
   );
 };

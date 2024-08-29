@@ -15,7 +15,7 @@ import {
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import { LOGIN_ENDPOINT, LOGIN_GOOGLE_ENDPOINT } from "./endpoint";
-import axiosClient, { API_ENDPOINT } from "@/config/api/axiosClient";
+import { API_ENDPOINT } from "@/config/api/axiosClient";
 import axios from "axios";
 
 /**

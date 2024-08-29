@@ -18,9 +18,9 @@ declare interface User {
   username: string;
   name: string;
   phone: string;
-  province: AdministrativeUnit;
-  district: AdministrativeUnit;
-  commune: AdministrativeUnit;
+  province: string;
+  district: string;
+  commune: string;
   address: string;
   isActive: boolean;
   isAdmin: boolean;

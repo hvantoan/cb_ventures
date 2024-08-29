@@ -1,28 +1,27 @@
-'use client'
-import { Layout } from 'antd';
-import MenuItems from '../MenuItems';
-import { useAppSelector } from '@/redux';
+"use client";
+import { Layout } from "antd";
+import MenuItems from "../MenuItems";
+import { useAppSelector } from "@/redux";
+import { useEffect, useState } from "react";
 const { Sider } = Layout;
 
 const Sidebar = () => {
-
-  const { topMenu, collapsed } = useAppSelector((state) => {
-    return {
-      topMenu: state.layout.topMenu,
-      collapsed: state.layout.menuCollapse,
-    };
-  });
+  const { topMenu, menuCollapse } = useAppSelector((state) => state.layout);
+  const [innerWidth, setInnerWidth] = useState(1920);
+  useEffect(() => {
+    setInnerWidth(window.innerWidth);
+  }, []);
 
   return (
     <>
-      {!topMenu || typeof window !== 'undefined' && window.innerWidth < 1200 ? (
+      {!topMenu || innerWidth < 1200 ? (
         <Sider
-          width={collapsed ? 80 : 220}
-          collapsed={collapsed}
-          className={`fixed h-[100vh] scrollbar bg-white dark:bg-[#1b1d2a] py-5 pb-[74px] z-998 overflow-y-auto shadow-[0_0_20px_rgba(160,160,160,0.02)] [&.ant-layout-sider-collapsed]:xl:-ms-20 duration-[300ms]`}
+          width={menuCollapse ? 80 : 220}
+          collapsed={menuCollapse}
+          className={`scrollbar fixed z-998 h-[100vh] overflow-y-auto bg-white py-5 pb-[74px] shadow-[0_0_20px_rgba(160,160,160,0.02)] duration-[300ms] dark:bg-[#1b1d2a] [&.ant-layout-sider-collapsed]:xl:-ms-20`}
         >
           <MenuItems />
-        </Sider >
+        </Sider>
       ) : null}
     </>
   );

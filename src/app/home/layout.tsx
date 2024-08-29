@@ -1,4 +1,3 @@
-"use client";
 import { AdminLayout } from "@/layouts/AdminLayout";
 import Providers from "../providers";
 import ThemeRegistry from "@/config/theme/ThemeRegistry";

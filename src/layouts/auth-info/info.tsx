@@ -15,15 +15,49 @@ import { useTranslation } from "react-i18next";
 import Heading from "@/components/Heading";
 import PopOver from "@/components/Popup/PopOver";
 import DropDown from "@/components/Dropdown";
+import { logOutAction, useAppDispatch, useAppSelector } from "@/redux";
+import { signOut } from "next-auth/react";
 
-const AuthInfo = React.memo((_: any) => {
-  const [state, setState] = useState({
-    flag: "vi",
-  });
+interface Props {
+  rtl: boolean;
+}
+
+interface ProfileConfig {
+  name: string;
+  path: string;
+  icon: React.ReactNode;
+}
+
+const profileActions: ProfileConfig[] = [
+  {
+    name: "Hồ sơ",
+    path: "#",
+    icon: <UilUser className="h-4 w-4 ltr:mr-3 rtl:ml-3" />,
+  },
+  {
+    name: "Cài đặt",
+    path: "#",
+    icon: <UilSetting className="h-4 w-4 ltr:mr-3 rtl:ml-3" />,
+  },
+  {
+    name: "Hóa đơn",
+    path: "#",
+    icon: <UilDollarSign className="h-4 w-4 ltr:mr-3 rtl:ml-3" />,
+  },
+  {
+    name: "Hoạt động",
+    path: "#",
+    icon: <UilUsersAlt className="h-4 w-4 ltr:mr-3 rtl:ml-3" />,
+  },
+];
+
+const AuthInfo = ({}: Props) => {
+  const dispatch = useAppDispatch();
   const { i18n } = useTranslation();
+  const { user } = useAppSelector((state) => state.auth);
 
-  const user: any = {};
-  const currentUser: any = {};
+  // State
+  const [state, setState] = useState({ flag: "vi" });
 
   const userContent = (
     <div>
@@ -31,7 +65,7 @@ const AuthInfo = React.memo((_: any) => {
         <figure className="mb-[12px] flex items-center rounded-[8px] bg-section px-[25px] py-[20px] text-sm dark:bg-white/10">
           <Image
             className="rounded-full ltr:mr-4 rtl:ml-4"
-            src={user?.picture ?? "/img/avatar/chat-auth.png"}
+            src={user?.image ?? "/img/avatar/chat-auth.png"}
             alt=""
             width="50"
             height="50"
@@ -41,11 +75,7 @@ const AuthInfo = React.memo((_: any) => {
               className="mb-0.5 text-sm text-dark dark:text-white/[.87]"
               as="h5"
             >
-              {user
-                ? user.name
-                : currentUser
-                  ? currentUser.displayName
-                  : "Hồ Văn Toàn"}
+              {user?.name ?? "Hồ Văn Toàn"}
             </Heading>
             <p className="mb-0 text-xs text-body dark:text-white/60">
               Hồ Văn Toàn
@@ -53,50 +83,23 @@ const AuthInfo = React.memo((_: any) => {
           </figcaption>
         </figure>
         <ul className="mb-[10px]">
-          <li>
-            <Link
-              href="#"
-              className="inline-flex w-full items-center rounded-4 px-2.5 py-3 text-sm text-light transition-all delay-150 ease-in-out hover:bg-primary/[.05] hover:pl-6 hover:text-primary dark:rounded-4 dark:text-white/60 dark:hover:bg-white/10 dark:hover:text-white"
-            >
-              <UilUser className="h-4 w-4 ltr:mr-3 rtl:ml-3" /> Hồ sơ
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="inline-flex w-full items-center rounded-4 px-2.5 py-3 text-sm text-light transition-all delay-150 ease-in-out hover:bg-primary/[.05] hover:pl-6 hover:text-primary dark:rounded-4 dark:text-white/60 dark:hover:bg-white/10 dark:hover:text-white"
-            >
-              <UilSetting className="h-4 w-4 ltr:mr-3 rtl:ml-3" /> Cài đặt
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="inline-flex w-full items-center rounded-4 px-2.5 py-3 text-sm text-light transition-all delay-150 ease-in-out hover:bg-primary/[.05] hover:pl-6 hover:text-primary dark:rounded-4 dark:text-white/60 dark:hover:bg-white/10 dark:hover:text-white"
-            >
-              <UilDollarSign className="h-4 w-4 ltr:mr-3 rtl:ml-3" /> Hóa đơn
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="inline-flex w-full items-center rounded-4 px-2.5 py-3 text-sm text-light transition-all delay-150 ease-in-out hover:bg-primary/[.05] hover:pl-6 hover:text-primary dark:rounded-4 dark:text-white/60 dark:hover:bg-white/10 dark:hover:text-white"
-            >
-              <UilUsersAlt className="h-4 w-4 ltr:mr-3 rtl:ml-3" /> Hoạt động
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="inline-flex w-full items-center rounded-4 px-2.5 py-3 text-sm text-light transition-all delay-150 ease-in-out hover:bg-primary/[.05] hover:pl-6 hover:text-primary dark:rounded-4 dark:text-white/60 dark:hover:bg-white/10 dark:hover:text-white"
-            >
-              <UilBell className="h-4 w-4 ltr:mr-3 rtl:ml-3" /> Giúp đỡ
-            </Link>
-          </li>
+          {profileActions.map((item, index) => {
+            return (
+              <li key={index}>
+                <Link
+                  href={item.path}
+                  className="inline-flex w-full items-center rounded-4 px-2.5 py-3 text-sm text-light transition-all delay-150 ease-in-out hover:bg-primary/[.05] hover:pl-6 hover:text-primary dark:rounded-4 dark:text-white/60 dark:hover:bg-white/10 dark:hover:text-white"
+                >
+                  {item.icon} {item.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
         <div
           onClick={() => {
-            // TODO: Handle logout
+            signOut();
+            dispatch(logOutAction());
           }}
           className="mx-[-12px] mb-[-15px] flex h-[50px] items-center justify-center rounded-b-6 bg-[#f4f5f7] text-sm font-medium text-light hover:text-primary dark:bg-[#32333f] dark:text-white/[.87] dark:hover:text-white/60"
         >
@@ -173,18 +176,14 @@ const AuthInfo = React.memo((_: any) => {
         <PopOver placement="bottomRight" content={userContent} action="click">
           <div className="flex items-center overflow-x-auto whitespace-nowrap text-light">
             <Image
-              src={user?.picture ?? "/img/avatar/matureman1.png"}
+              src={user?.image ?? "/img/avatar/matureman1.png"}
               alt="Avatar"
               width="32"
               height="32"
               className="rounded-full"
             />
             <span className="me-1.5 ms-2.5 text-sm font-medium text-body dark:text-white/60 lg:ms-1.5 md:hidden">
-              {user
-                ? user.name
-                : currentUser
-                  ? currentUser.displayName
-                  : "Abdullah Bin Talha"}
+              {user?.name}
             </span>
             <UilAngleDown className="h-4 w-4 min-w-[16px]" />
           </div>
@@ -192,6 +191,6 @@ const AuthInfo = React.memo((_: any) => {
       </div>
     </div>
   );
-});
+};
 
 export default AuthInfo;
