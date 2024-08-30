@@ -1,5 +1,7 @@
 import "@/styles/globals.css";
 import { Viewport, type Metadata } from "next";
+import Providers from "./providers";
+import ThemeRegistry from "@/config/theme/ThemeRegistry";
 
 export const metadata: Metadata = {
   title: "CB Ventures",
@@ -19,7 +21,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="vi" dir="ltr">
-      <body suppressHydrationWarning={true}>{children}</body>
+      <body suppressHydrationWarning={true}>
+        <Providers>
+          <ThemeRegistry>{children}</ThemeRegistry>
+        </Providers>
+      </body>
     </html>
   );
 }

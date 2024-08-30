@@ -5,8 +5,9 @@ import Sidebar from "./sidebar";
 import Footer from "./footer";
 import { setUser, useAppDispatch, useAppSelector } from "@/redux";
 import { Content } from "antd/es/layout/layout";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { getSession } from "next-auth/react";
+import Loading from "@/app/loading";
 
 interface AdminLayoutProps {
   children: React.ReactNode;
@@ -47,11 +48,11 @@ export function AdminLayout({ children }: AdminLayoutProps) {
     <Layout className="bg-body_color">
       <HeaderTop />
       <Layout className="mt-[72px] flex flex-row gap-5">
-        {/* <Sidebar /> */}
+        <Sidebar />
         <Content
           className={`max-w-full bg-body_color duration-[300ms] ${!topMenu ? `ease-[ease] xl:ps-0 ${menuCollapse ? "ps-[80px]" : "ps-[220px] delay-[150ms]"}` : ""}`}
         >
-          {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
         </Content>
       </Layout>
       <Footer />

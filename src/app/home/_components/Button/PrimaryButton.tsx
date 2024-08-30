@@ -1,18 +1,29 @@
-import { Button } from "antd";
+import { Button, ButtonProps } from "antd";
 import { FC } from "react";
 
-const PrimaryButton: FC<WrappedComponentProps> = ({ children }) => (
-    <Button className="hover:bg-secondary gap-2 p-6 group bg-primary border-transparent" htmlType="button">
-        {children}
-    </Button>
-);
+interface Props
+  extends ButtonProps,
+    React.RefAttributes<HTMLButtonElement | HTMLAnchorElement> {
+  children: React.ReactNode;
+}
 
+const PrimaryButton = ({ children, ...props }: Props) => (
+  <Button
+    {...props}
+    className="group gap-2 border-transparent bg-primary p-6 hover:bg-secondary"
+    htmlType="button"
+  >
+    {children}
+  </Button>
+);
 
 const SubButton: FC<WrappedComponentProps> = ({ children }) => (
-    <Button className="p-6 text-16 bg-transparent text-secondary border-secondary" htmlType="button">
-        {children}
-    </Button>
+  <Button
+    className="border-secondary bg-transparent p-6 text-16 text-secondary"
+    htmlType="button"
+  >
+    {children}
+  </Button>
 );
-
 
 export { PrimaryButton, SubButton };

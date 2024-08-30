@@ -1,12 +1,9 @@
 "use client";
-import Providers from "../providers";
-import ThemeRegistry from "@/config/theme/ThemeRegistry";
+import { Suspense, useEffect } from "react";
+import Loading from "../loading";
+import { useAppSelector } from "@/redux";
 
 const HomeLayout: React.FC<WrappedComponentProps> = ({ children }) => {
-  return (
-    <Providers>
-      <ThemeRegistry>{children}</ThemeRegistry>
-    </Providers>
-  );
+  return <Suspense fallback={<Loading />}>{children}</Suspense>;
 };
 export default HomeLayout;
