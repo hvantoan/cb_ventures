@@ -9,21 +9,19 @@ import { Col, Layout, Row } from "antd";
 import { changeMenuCollapse, useAppDispatch, useAppSelector } from "@/redux";
 import AuthInfo from "../auth-info/info";
 import TopMenu from "../TopMenu";
-import {
-  PrimaryButton,
-  SubButton,
-} from "@/app/home/_components/Button/PrimaryButton";
+import { PrimaryButton } from "@/app/home/_components/Button/PrimaryButton";
+import { redirect, useRouter } from "next/navigation";
+import { authPath } from "@/routes";
 
 const HeaderTop = () => {
   const dispatch = useAppDispatch();
-  const [hide, setHide] = useState(true);
-
+  const router = useRouter();
+  const { isLoggedIn } = useAppSelector((state) => state.auth);
   const { rtlData, mode, topMenu, menuCollapse } = useAppSelector(
     (state) => state.layout,
   );
 
-  const { isLoggedIn } = useAppSelector((state) => state.auth);
-
+  const [hide, setHide] = useState(true);
   const [isBrowser, setIsBrowser] = useState(false);
 
   useEffect(() => {
@@ -98,11 +96,13 @@ const HeaderTop = () => {
                   {isLoggedIn ? (
                     <AuthInfo rtl={rtlData} />
                   ) : (
-                    <Link href="/auth">
-                      <PrimaryButton>
-                        <span className="text-trk">Đăng nhập</span>
-                      </PrimaryButton>
-                    </Link>
+                    <PrimaryButton
+                      onClick={() => {
+                        router.push(authPath);
+                      }}
+                    >
+                      <span className="text-trk">Đăng nhập</span>
+                    </PrimaryButton>
                   )}
                 </div>
               ) : (
