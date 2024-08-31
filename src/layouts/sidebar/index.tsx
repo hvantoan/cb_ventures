@@ -1,8 +1,8 @@
-"use client";
-import { Layout } from "antd";
-import MenuItems from "../MenuItems";
-import { useAppSelector } from "@/redux";
-import { useEffect, useState } from "react";
+'use client';
+import { Layout } from 'antd';
+import MenuItems from '../MenuItems';
+import { useAppSelector } from '@/redux';
+import { useEffect, useState } from 'react';
 const { Sider } = Layout;
 
 const Sidebar = () => {

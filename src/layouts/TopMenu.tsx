@@ -1,34 +1,44 @@
-"use client";
-import { Menu } from "antd";
-import { MenuItemType } from "antd/es/menu/interface";
-import { usePathname } from "next/navigation";
-import React from "react";
+'use client';
+import { contactPath, homePath, pricingPath } from '@/routes';
+import { Menu } from 'antd';
+import { MenuItemType } from 'antd/es/menu/interface';
+import { usePathname, useRouter } from 'next/navigation';
+import React from 'react';
 
 function TopMenu() {
   const pathname = usePathname();
-
-  console.log(pathname);
+  const route = useRouter();
 
   const items: MenuItemType[] = [
     {
-      label: "Trang chủ",
-      key: "/",
+      label: 'Trang chủ',
+      key: homePath,
+    },
+    // {
+    //   label: "Roadmap",
+    //   key: "/roadmap",
+    // },
+    {
+      label: 'Giá cả',
+      key: pricingPath,
     },
     {
-      label: "Chúng tôi",
-      key: "/about",
+      label: 'Liên hệ',
+      key: contactPath,
     },
   ];
+
   return (
     <Menu
-      className="bg-transparent"
+      className="bg-transparent flex-1"
       mode="horizontal"
       items={items}
-      defaultSelectedKeys={["/"]}
+      defaultSelectedKeys={['home']}
+      selectedKeys={[pathname]}
       theme="dark"
       color="white"
       onClick={(item) => {
-        // if (item.keyPath.length === 1) setOpenKeys([]);
+        route.push(item.key);
       }}
     />
   );
