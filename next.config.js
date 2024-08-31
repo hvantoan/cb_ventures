@@ -14,6 +14,7 @@ const config = {
       { hostname: 'gw.alipayobjects.com' },
       { hostname: 'lh3.googleusercontent.com' },
       { hostname: 'cdn.discordapp.com' },
+      { hostname: 't4.ftcdn.net' },
     ],
   },
   reactStrictMode: true,

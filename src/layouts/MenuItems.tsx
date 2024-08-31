@@ -1,14 +1,14 @@
-import { UilEllipsisV, UilCreateDashboard } from '@iconscout/react-unicons';
+import { UilEllipsisV, UilCreateDashboard, UilCommentAltMedical } from '@iconscout/react-unicons';
 import React, { useEffect, useState } from 'react';
 import { Menu } from 'antd';
-import { useTranslation } from 'react-i18next';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useAppSelector } from '@/redux';
+import { contactPath, contactsPath, dashboardPath, settingPath } from '@/routes';
 
 function MenuItems() {
-  const path = '/admin';
-  const { t } = useTranslation();
+  const path = '/manage';
   const pathname = usePathname();
+  const route = useRouter();
   const { topMenu } = useAppSelector((state) => state.layout);
 
   const pathArray = pathname && pathname !== '/' ? pathname.split(path) : [];
@@ -27,8 +27,7 @@ function MenuItems() {
 
   useEffect(() => {
     if (pathname === path) {
-      setOpenKeys(['dashboard']); // active menu key.
-      setOpenItems(['demo-1']); // active menu item.
+      setOpenKeys(pathname.split('/')); // active menu key.
     }
   }, [pathname]);
 
@@ -54,11 +53,14 @@ function MenuItems() {
     };
   }
 
-  const items = [getItem('Dashboard', 'dashboard', !topMenu && <UilCreateDashboard />, null)];
+  const items = [
+    getItem('Dashboard', dashboardPath, !topMenu && <UilCreateDashboard />, null),
+    getItem('Liên hệ', contactsPath, !topMenu && <UilCommentAltMedical />, null),
+  ];
 
   return (
     <Menu
-      onClick={onClick}
+      onClick={(o) => onClick(o)}
       onOpenChange={onOpenChange}
       mode={!topMenu || innerWidth <= 991 ? 'inline' : 'horizontal'}
       defaultSelectedKeys={openKeys}

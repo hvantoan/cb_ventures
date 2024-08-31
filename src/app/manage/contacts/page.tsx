@@ -243,7 +243,7 @@ function ContactTable() {
               name="email"
               rules={[
                 {
-                  message: 'Please input your email!',
+                  message: 'Vui lòng nhập email!',
                   type: 'email',
                 },
               ]}
@@ -283,7 +283,7 @@ function ContactTable() {
               key="submit"
               className="px-5 text-sm font-semibold bg-primary hover:bg-primary-hbr h-11"
             >
-              Add New Contact
+              Thêm mới liên hệ
             </Buttons>
           </Form>
         </div>

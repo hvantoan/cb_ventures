@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import { useSelector, useDispatch } from 'react-redux';
 import { Row, Form, Input } from 'antd';
 import Link from 'next/link';
 import Heading from '@/components/Heading';
 import { AutoCompleted } from '@/components/AutoComplete';
 import { Buttons } from '@/components/Buttons';
 import { Modals } from '@/components/Modals/Modals';
-import { useAppDispatch, useAppSelector } from '@/redux';
+import { ContactDeleteData, ContactSearchData, useAppDispatch, useAppSelector } from '@/redux';
 
 const ContactLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
@@ -32,13 +31,11 @@ const ContactLayout = ({ children }: { children: React.ReactNode }) => {
 
   const handleSearch = (searchText: string) => {
     console.log(searchText);
-    //@ts-ignore
     dispatch(ContactSearchData(searchText));
   };
 
   const onHandleDelete = (id: any) => {
     const value = users.filter((item: any) => item.id !== id);
-    //@ts-ignore
     dispatch(ContactDeleteData(value));
   };
 

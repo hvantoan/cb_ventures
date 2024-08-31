@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import {
   UilAngleDown,
   UilBell,
@@ -7,16 +7,17 @@ import {
   UilSignout,
   UilUser,
   UilUsersAlt,
-} from "@iconscout/react-unicons";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import Heading from "@/components/Heading";
-import PopOver from "@/components/Popup/PopOver";
-import DropDown from "@/components/Dropdown";
-import { logOutAction, useAppDispatch, useAppSelector } from "@/redux";
-import { signOut } from "next-auth/react";
+} from '@iconscout/react-unicons';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import Heading from '@/components/Heading';
+import PopOver from '@/components/Popup/PopOver';
+import DropDown from '@/components/Dropdown';
+import { logOutAction, useAppDispatch, useAppSelector } from '@/redux';
+import { signOut } from 'next-auth/react';
+import { profilePath } from '@/routes';
 
 interface Props {
   rtl: boolean;
@@ -30,23 +31,23 @@ interface ProfileConfig {
 
 const profileActions: ProfileConfig[] = [
   {
-    name: "Hồ sơ",
-    path: "#",
+    name: 'Hồ sơ',
+    path: profilePath,
     icon: <UilUser className="h-4 w-4 ltr:mr-3 rtl:ml-3" />,
   },
   {
-    name: "Cài đặt",
-    path: "#",
+    name: 'Cài đặt',
+    path: '#',
     icon: <UilSetting className="h-4 w-4 ltr:mr-3 rtl:ml-3" />,
   },
   {
-    name: "Hóa đơn",
-    path: "#",
+    name: 'Hóa đơn',
+    path: '#',
     icon: <UilDollarSign className="h-4 w-4 ltr:mr-3 rtl:ml-3" />,
   },
   {
-    name: "Hoạt động",
-    path: "#",
+    name: 'Hoạt động',
+    path: '#',
     icon: <UilUsersAlt className="h-4 w-4 ltr:mr-3 rtl:ml-3" />,
   },
 ];
@@ -57,7 +58,7 @@ const AuthInfo = ({}: Props) => {
   const { user } = useAppSelector((state) => state.auth);
 
   // State
-  const [state, setState] = useState({ flag: "vi" });
+  const [state, setState] = useState({ flag: 'vi' });
 
   const userContent = (
     <div>
@@ -65,21 +66,16 @@ const AuthInfo = ({}: Props) => {
         <figure className="mb-[12px] flex items-center rounded-[8px] bg-section px-[25px] py-[20px] text-sm dark:bg-white/10">
           <Image
             className="rounded-full ltr:mr-4 rtl:ml-4"
-            src={user?.image ?? "/img/avatar/chat-auth.png"}
+            src={user?.image ?? '/img/avatar/chat-auth.png'}
             alt=""
             width="50"
             height="50"
           />
           <figcaption>
-            <Heading
-              className="mb-0.5 text-sm text-dark dark:text-white/[.87]"
-              as="h5"
-            >
-              {user?.name ?? "Hồ Văn Toàn"}
+            <Heading className="mb-0.5 text-sm text-dark dark:text-white/[.87]" as="h5">
+              {user?.name ?? 'Hồ Văn Toàn'}
             </Heading>
-            <p className="mb-0 text-xs text-body dark:text-white/60">
-              Hồ Văn Toàn
-            </p>
+            <p className="mb-0 text-xs text-body dark:text-white/60">Dev</p>
           </figcaption>
         </figure>
         <ul className="mb-[10px]">
@@ -109,10 +105,7 @@ const AuthInfo = ({}: Props) => {
     </div>
   );
 
-  const onFlagChangeHandle = (
-    value: string,
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-  ) => {
+  const onFlagChangeHandle = (value: string, e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
     setState({
       ...state,
@@ -124,39 +117,27 @@ const AuthInfo = ({}: Props) => {
 
   const country = [
     {
-      key: "1",
+      key: '1',
       label: (
         <Link
           href="#"
-          onClick={(e) => onFlagChangeHandle("en", e)}
+          onClick={(e) => onFlagChangeHandle('en', e)}
           className="flex items-center rounded-4 bg-white px-3 py-1.5 text-sm text-dark hover:bg-primary/[.05] dark:bg-white/10 dark:text-white/60"
         >
-          <Image
-            className="h-3.5 w-3.5 ltr:mr-2 rtl:ml-2"
-            src="/img/flag/en.png"
-            alt=""
-            width="20"
-            height="20"
-          />
+          <Image className="h-3.5 w-3.5 ltr:mr-2 rtl:ml-2" src="/img/flag/en.png" alt="" width="20" height="20" />
           <span>English</span>
         </Link>
       ),
     },
     {
-      key: "2",
+      key: '2',
       label: (
         <Link
           href="#"
-          onClick={(e) => onFlagChangeHandle("vi", e)}
+          onClick={(e) => onFlagChangeHandle('vi', e)}
           className="flex items-center rounded-4 bg-white px-3 py-1.5 text-sm text-dark hover:bg-primary/[.05] dark:bg-white/10 dark:text-white/60"
         >
-          <Image
-            className="h-3.5 w-3.5 ltr:mr-2 rtl:ml-2"
-            src="/img/flag/vi.png"
-            alt=""
-            width="20"
-            height="20"
-          />
+          <Image className="h-3.5 w-3.5 ltr:mr-2 rtl:ml-2" src="/img/flag/vi.png" alt="" width="20" height="20" />
           <span>Tiếng việt</span>
         </Link>
       ),
@@ -176,7 +157,7 @@ const AuthInfo = ({}: Props) => {
         <PopOver placement="bottomRight" content={userContent} action="click">
           <div className="flex items-center overflow-x-auto whitespace-nowrap text-light">
             <Image
-              src={user?.image ?? "/img/avatar/matureman1.png"}
+              src={user?.image ?? '/img/avatar/matureman1.png'}
               alt="Avatar"
               width="32"
               height="32"
