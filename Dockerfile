@@ -13,21 +13,14 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Set default values for environment variables
-ARG NEXTAUTH_SECRET
-ARG NEXTAUTH_URL
-ARG DISCORD_CLIENT_ID
-ARG DISCORD_CLIENT_SECRET
-ARG GOOGLE_ID
-ARG GOOGLE_SECRET
-ARG API_ENDPOINT
-ENV NEXTAUTH_SECRET=${NEXTAUTH_SECRET:-default_secret}
-ENV NEXTAUTH_URL=${NEXTAUTH_URL:-http://localhost:3000}
-ENV DISCORD_CLIENT_ID=${DISCORD_CLIENT_ID:-default_discord_id}
-ENV DISCORD_CLIENT_SECRET=${DISCORD_CLIENT_SECRET:-default_discord_secret}
-ENV GOOGLE_ID=${GOOGLE_ID:-default_google_id}
-ENV GOOGLE_SECRET=${GOOGLE_SECRET:-default_google_secret}
-ENV API_ENDPOINT=${API_ENDPOINT:-http://localhost:8080}
+# Không cần đặt giá trị trực tiếp ở đây
+ENV NEXTAUTH_SECRET="vantoanvantoanvantoan"
+ENV NEXTAUTH_URL="https://ventures.hvantoan.io.vn"
+ENV DISCORD_CLIENT_ID="1263685207291334666"
+ENV DISCORD_CLIENT_SECRET="_T0FJmMn5UDllcRdlQ6nCGIilkXOqMrR"
+ENV GOOGLE_ID="521305244575-jfj3unj0nb5mpsr6k4vf4gcald1u82rm.apps.googleusercontent.com"
+ENV GOOGLE_SECRET="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"
+ENV API_ENDPOINT="https://ventures.dc.hvantoan.io.vn/"
 ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN npm run build
@@ -36,18 +29,16 @@ RUN npm run build
 FROM --platform=linux/amd64 gcr.io/distroless/nodejs20-debian12 AS runner
 WORKDIR /app
 
-ENV NODE_ENV=production
-# Set default values for environment variables in the runner stage
-ENV NEXTAUTH_SECRET=${NEXTAUTH_SECRET:-default_secret}
-ENV NEXTAUTH_URL=${NEXTAUTH_URL:-http://localhost:3000}
-ENV DISCORD_CLIENT_ID=${DISCORD_CLIENT_ID:-default_discord_id}
-ENV DISCORD_CLIENT_SECRET=${DISCORD_CLIENT_SECRET:-default_discord_secret}
-ENV GOOGLE_ID=${GOOGLE_ID:-default_google_id}
-ENV GOOGLE_SECRET=${GOOGLE_SECRET:-default_google_secret}
-ENV API_ENDPOINT=${API_ENDPOINT:-http://localhost:8080}
-ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production \
+    NEXTAUTH_SECRET="vantoanvantoanvantoan" \
+    NEXTAUTH_URL="https://ventures.hvantoan.io.vn/" \
+    DISCORD_CLIENT_ID="1263685207291334666" \
+    DISCORD_CLIENT_SECRET="_T0FJmMn5UDllcRdlQ6nCGIilkXOqMrR" \
+    GOOGLE_ID="521305244575-jfj3unj0nb5mpsr6k4vf4gcald1u82rm.apps.googleusercontent.com" \
+    GOOGLE_SECRET="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" \
+    API_ENDPOINT="https://ventures.dc.hvantoan.io.vn" \
+    NEXT_TELEMETRY_DISABLED=1
 
-# Copy necessary files to the runner stage
 COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./package.json
@@ -58,4 +49,4 @@ COPY --from=builder /app/.next/static ./.next/static
 EXPOSE 3000
 ENV PORT=3000
 
-CMD ["node", "server.js"]
+CMD ["server.js"]
