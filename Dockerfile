@@ -15,12 +15,12 @@ COPY . .
 
 # Không cần đặt giá trị trực tiếp ở đây
 ENV NEXTAUTH_SECRET="vantoanvantoanvantoan"
-ENV NEXTAUTH_URL="http://localhost:3000"
+ENV NEXTAUTH_URL="https://ventures.hvantoan.io.vn"
 ENV DISCORD_CLIENT_ID="1263685207291334666"
 ENV DISCORD_CLIENT_SECRET="_T0FJmMn5UDllcRdlQ6nCGIilkXOqMrR"
 ENV GOOGLE_ID="521305244575-jfj3unj0nb5mpsr6k4vf4gcald1u82rm.apps.googleusercontent.com"
 ENV GOOGLE_SECRET="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"
-ENV API_ENDPOINT="http://localhost:9090"
+ENV API_ENDPOINT="https://ventures.dc.hvantoan.io.vn/"
 ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN npm run build
@@ -31,12 +31,12 @@ WORKDIR /app
 
 ENV NODE_ENV=production \
     NEXTAUTH_SECRET="vantoanvantoanvantoan" \
-    NEXTAUTH_URL="http://localhost:3000" \
+    NEXTAUTH_URL="https://ventures.hvantoan.io.vn/" \
     DISCORD_CLIENT_ID="1263685207291334666" \
     DISCORD_CLIENT_SECRET="_T0FJmMn5UDllcRdlQ6nCGIilkXOqMrR" \
     GOOGLE_ID="521305244575-jfj3unj0nb5mpsr6k4vf4gcald1u82rm.apps.googleusercontent.com" \
     GOOGLE_SECRET="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" \
-    API_ENDPOINT="http://localhost:9090" \
+    API_ENDPOINT="https://ventures.dc.hvantoan.io.vn" \
     NEXT_TELEMETRY_DISABLED=1
 
 COPY --from=builder /app/next.config.js ./

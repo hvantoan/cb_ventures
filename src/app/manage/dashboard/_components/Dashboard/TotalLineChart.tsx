@@ -1,11 +1,11 @@
 /* eslint-disable react/display-name */
 /* eslint-disable no-param-reassign */
-import React from 'react'
-import { Row, Col } from 'antd'
-import { UilArrowDown, UilArrowUp } from '@iconscout/react-unicons'
-import DashboardChart from '@/components/Charts/DashboardChart'
+import React from 'react';
+import { Row, Col } from 'antd';
+import { UilArrowDown, UilArrowUp } from '@iconscout/react-unicons';
+import DashboardChart from '@/components/Charts/DashboardChart';
 
-import totalChartData from '@/data/TotalSaleChart.json'
+import totalChartData from '@/data/TotalSaleChart.json';
 const TotalLineChart = React.memo(() => {
   return (
     <Row gutter={25}>
@@ -54,26 +54,26 @@ const TotalLineChart = React.memo(() => {
                         z: 5,
                       },
                     ]}
-                    height={window.innerWidth <= 575 ? 200 : 180}
+                    height={typeof window !== 'undefined' && window.innerWidth <= 575 ? 200 : 180}
                     tooltip={{
                       custom(tooltip: any) {
-                        if (!tooltip) return
-                        tooltip.displayColors = false
+                        if (!tooltip) return;
+                        tooltip.displayColors = false;
                       },
                       callbacks: {
                         title(t: any) {
-                          const { label } = t[0]
-                          return `${label}`
+                          const { label } = t[0];
+                          return `${label}`;
                         },
                         label(t: any) {
-                          const { formattedValue } = t
-                          return `  ${item.title}: ${formattedValue}k`
+                          const { formattedValue } = t;
+                          return `  ${item.title}: ${formattedValue}k`;
                         },
                         labelColor() {
                           return {
                             backgroundColor: item.lineColor,
                             borderColor: 'transparent',
-                          }
+                          };
                         },
                       },
                     }}
@@ -82,10 +82,10 @@ const TotalLineChart = React.memo(() => {
               </div>
             </div>
           </Col>
-        )
+        );
       })}
     </Row>
-  )
-})
+  );
+});
 
-export default TotalLineChart
+export default TotalLineChart;

@@ -1,5 +1,6 @@
+'use client';
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
+import { usePathname, useRouter } from 'next/navigation';
 import { Row, Form, Input } from 'antd';
 import Link from 'next/link';
 import Heading from '@/components/Heading';
@@ -10,7 +11,7 @@ import { ContactDeleteData, ContactSearchData, useAppDispatch, useAppSelector } 
 
 const ContactLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
-  const { pathname } = router;
+  const pathname = usePathname();
   const currentPath = pathname.split('/')[3];
 
   const dispatch = useAppDispatch();

@@ -1,5 +1,6 @@
-import React from 'react'
-import Link from 'next/link'
+'use client';
+import React from 'react';
+import Link from 'next/link';
 import {
   UilArrowDown,
   UilArrowUp,
@@ -8,10 +9,10 @@ import {
   UilFileAlt,
   UilFile,
   UilTimes,
-} from '@iconscout/react-unicons'
-import DashboardChart from '@/components/Charts/DashboardChart'
-import { Cards } from '@/components/Cards/Frame/CardsFrame'
-import { customTooltips } from '@/components/utilities'
+} from '@iconscout/react-unicons';
+import DashboardChart from '@/components/Charts/DashboardChart';
+import { Cards } from '@/components/Cards/Frame/CardsFrame';
+import { customTooltips } from '@/components/utilities';
 
 const salesRevenue = {
   users: ['72.6K', [0, 25, 20, 5, 60, 18, 20, 45, 35, 50, 48, 45], [20, 40, 55, 26, 40, 55, 38, 35, 25, 70, 20, 80]],
@@ -20,7 +21,7 @@ const salesRevenue = {
   totalSales: '5550',
   salesDown: '15',
   labels: ['Jan', 'Feb', 'Mar', 'App', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-}
+};
 
 const SalesReport = React.memo((title: any) => {
   const moreContent = [
@@ -84,7 +85,7 @@ const SalesReport = React.memo((title: any) => {
         </Link>
       ),
     },
-  ]
+  ];
 
   const salesRevenueDatasets = [
     {
@@ -127,7 +128,7 @@ const SalesReport = React.memo((title: any) => {
       pointStyle: 'circle',
       pointHoverBorderWidth: 2,
     },
-  ]
+  ];
 
   return (
     <div className="h-full">
@@ -198,7 +199,7 @@ const SalesReport = React.memo((title: any) => {
                     stepSize: 20,
                     padding: 10,
                     callback(label: any) {
-                      return `${label}k`
+                      return `${label}k`;
                     },
                   },
                 },
@@ -223,21 +224,23 @@ const SalesReport = React.memo((title: any) => {
                 custom: customTooltips,
                 callbacks: {
                   title() {
-                    return `Total Revenue`
+                    return `Total Revenue`;
                   },
                   label(t: any) {
-                    const { formattedValue, dataset } = t
-                    return `${dataset.label}: ${formattedValue}k`
+                    const { formattedValue, dataset } = t;
+                    return `${dataset.label}: ${formattedValue}k`;
                   },
                 },
               }}
-              height={window.innerWidth < 1399 ? (window.innerWidth < 575 ? 175 : 100) : 100}
+              height={
+                typeof window !== 'undefined' && window.innerWidth < 1399 ? (window.innerWidth < 575 ? 175 : 100) : 100
+              }
             />
           </div>
         </Cards>
       )}
     </div>
-  )
-})
+  );
+});
 
-export default SalesReport
+export default SalesReport;

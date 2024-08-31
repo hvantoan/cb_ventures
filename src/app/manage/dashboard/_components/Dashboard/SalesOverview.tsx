@@ -1,19 +1,14 @@
-import React from 'react'
-import { UilBookOpen, UilFile, UilFileAlt, UilPrint, UilTimes } from '@iconscout/react-unicons'
-import Link from 'next/link'
-import { useSelector } from 'react-redux'
-import { Progress } from 'antd'
-import { Cards } from '@/components/Cards/Frame/CardsFrame'
+import React from 'react';
+import { UilBookOpen, UilFile, UilFileAlt, UilPrint, UilTimes } from '@iconscout/react-unicons';
+import Link from 'next/link';
+import { Progress } from 'antd';
+import { Cards } from '@/components/Cards/Frame/CardsFrame';
 
-import salesData from '@/data/salesData.json'
-import { RootState } from '@/redux/store'
+import salesData from '@/data/salesData.json';
+import { useAppSelector } from '@/redux';
 
 const SalesOverview = React.memo(() => {
-  const { mainContent } = useSelector((state: RootState) => {
-    return {
-      mainContent: state.layout.mode,
-    }
-  })
+  const { mode } = useAppSelector((state) => state.layout);
 
   const moreContent = (
     <div className="block bg-white dark:bg-[#1b1e2b] shadow-regular dark:shadow-[0_5px_30px_rgba(1,4,19,.60)] rounded-4">
@@ -53,7 +48,7 @@ const SalesOverview = React.memo(() => {
         <span>CSV</span>
       </Link>
     </div>
-  )
+  );
 
   return (
     <div className="h-full">
@@ -68,7 +63,7 @@ const SalesOverview = React.memo(() => {
             percent={75}
             size={250}
             strokeColor="#8231D3"
-            trailColor={mainContent === 'lightMode' ? '#E6D5F6' : '#322035'}
+            trailColor={mode === 'lightMode' ? '#E6D5F6' : '#322035'}
           />
           <div className="flex justify-center text-center mt-[20px]">
             {salesData.map((item, i) => {
@@ -81,13 +76,13 @@ const SalesOverview = React.memo(() => {
                     {item.salesCount}
                   </h4>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </Cards>
     </div>
-  )
-})
+  );
+});
 
-export default SalesOverview
+export default SalesOverview;

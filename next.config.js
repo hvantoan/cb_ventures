@@ -18,16 +18,11 @@ const config = {
     ],
   },
   reactStrictMode: true,
-  i18n: {
-    locales: ['vi'],
-    defaultLocale: 'vi',
-  },
+  // i18n: {
+  //   locales: ['vi'],
+  //   defaultLocale: 'vi',
+  // },
   webpack(config, { isServer }) {
-    if (isServer) {
-      // Ignore self-signed certificates
-      process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-    }
-
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));
     config.module.rules.push(

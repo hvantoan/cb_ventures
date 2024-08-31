@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+'use client';
+import { useState } from 'react';
 import { Col, Table } from 'antd';
 import { UilStar, UilEllipsisV } from '@iconscout/react-unicons';
 import Link from 'next/link';
@@ -11,7 +11,7 @@ import { Modals } from '@/components/Modals/Modals';
 
 import ContactLayout from './layout';
 import Image from 'next/image';
-import { Contact, ContactAddData, ContactDeleteData, OnStarUpdate, useAppDispatch, useAppSelector } from '@/redux';
+import { Contact, ContactDeleteData, OnStarUpdate, useAppDispatch, useAppSelector } from '@/redux';
 
 function ContactTable() {
   const dispatch = useAppDispatch();
