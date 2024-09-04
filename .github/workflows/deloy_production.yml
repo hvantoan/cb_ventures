@@ -24,6 +24,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
+          context: .
           file: 'apps/ventures/Dockerfile'
           tags: itvantoan/cb_ventures:${{ env.BRANCH }}
           build-args: |

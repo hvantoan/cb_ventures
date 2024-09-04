@@ -9,8 +9,5 @@ export const merchantFormLabels: Record<keyof Omit<Merchant, 'id'>, string> = {
   district: 'Quận/Huyện',
   commune: 'Phường/Xã',
   address: 'Địa chỉ',
-  logo: 'Logo',
-  receiptLogo: 'Logo (Excel)',
-  icon: 'Icon (Web Bán hàng)',
-  banners: 'Banner (Cho ứng dụng di động)'
+  logo: 'Logo'
 };
