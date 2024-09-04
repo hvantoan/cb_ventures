@@ -1,0 +1,28 @@
+{
+  "extends": ["../../tsconfig.base.json"],
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "moduleResolution": "bundler",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      },
+      {
+        "name": "@styled/typescript-styled-plugin"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@modules/*": ["./src/app/(authenticated)/*"],
+      "@/*": ["./src/*"]
+    },
+    "typeRoots": ["./index.d.ts", "./libs-overrides.d.ts"],
+    "strictPropertyInitialization": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": false
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "build/types/**/*.ts"],
+  "exclude": ["node_modules", "build/"]
+}

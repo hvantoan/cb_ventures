@@ -1,0 +1,10 @@
+{
+  "extends": ["../../tsconfig.base.json"],
+  "compilerOptions": {
+    "moduleResolution": "Node",
+    "typeRoots": ["mui-theme.d.ts"],
+    "jsx": "preserve",
+  },
+  "include": ["**/*.ts", "**/*.tsx", "index.d.ts", "svg.d.ts"],
+  "exclude": ["node_modules"]
+}

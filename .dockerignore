@@ -1,0 +1,8 @@
+node_modules
+.nx
+.husky
+.gitignore
+.git
+README.md
+.env
+.env.local

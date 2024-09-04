@@ -1,0 +1,26 @@
+{
+  "name": "ventures",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "targets": {
+    "container": {
+      "executor": "@nx-tools/nx-container:build",
+      "options": {
+        "push": true,
+        "engine": "docker",
+        "build-args": [
+          "API_URL=${MAN_API_URL}",
+          "NEXTAUTH_SECRET=${MAN_API_SECRET}",
+          "NEXTAUTH_URL=${MAN_NEXTAUTH_URL}"
+        ],
+        "cache-from": ["type=registry,ref=${MAN_IMAGE}:buildcache"],
+        "cache-to": ["type=registry,ref=${MAN_IMAGE}:buildcache,mode=max"],
+        "metadata": {
+          "images": ["${MAN_IMAGE}"],
+          "tags": ["${MAN_TAG}"],
+          "load": true
+        }
+      }
+    }
+  }
+}
