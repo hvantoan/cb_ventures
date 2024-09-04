@@ -26,6 +26,11 @@ jobs:
           push: true
           file: 'apps/ventures/Dockerfile'
           tags: itvantoan/cb_ventures:${{ env.BRANCH }}
+          build-args: |
+            API_URL=https://ventures.dc.hvantoan.io.vn/api
+            NEXTAUTH_URL=https://ventures.hvantoan.io.vn/ventures/api/auth
+            NEXTAUTH_SECRET=593c3acd23d92d6cf83ffa7a940233ce702f9f911d2540e4ceedc3e1cbe52614
+          platforms: linux/amd64
   deploy:
     needs: build
     runs-on: ubuntu-latest
