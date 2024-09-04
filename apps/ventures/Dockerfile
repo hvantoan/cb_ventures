@@ -39,14 +39,13 @@ COPY --from=builder /app/${APP_PATH}/build/static ./${APP_PATH}/build/static
 COPY --from=builder --chown=nextjs:nodejs /usr/local/lib/node_modules/sharp /usr/local/lib/node_modules/sharp
 RUN chown -R nextjs:nodejs /app
 
-
 ENV API_URL=${API_URL} \
     NEXTAUTH_URL=${NEXTAUTH_URL} \
     NEXTAUTH_SECRET=${NEXTAUTH_SECRET} \
     NEXT_TELEMETRY_DISABLED=1 \
     HOSTNAME=0.0.0.0 \
-    PORT=4400
+    PORT=3000
 
 USER nextjs
-EXPOSE 4400
+EXPOSE 3000
 CMD ["dumb-init", "node", "./apps/ventures/server.js"]
