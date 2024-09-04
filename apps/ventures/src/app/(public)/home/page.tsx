@@ -13,7 +13,7 @@ import {
   Roadmap,
   Trading,
   Vision
-} from '@/app/(landing)/home/_components';
+} from '@/app/(public)/home/_components';
 import friends from '@/data/friends.json';
 import pricingsData from '@/data/pricing.json';
 import roadmapData from '@/data/roadmap.json';

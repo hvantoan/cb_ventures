@@ -35,9 +35,9 @@ jobs:
           file: 'apps/ventures/Dockerfile'
           tags: itvantoan/cb_ventures:${{ env.BRANCH }}
           build-args: |
-            API_URL=https://ventures.dc.hvantoan.io.vn/api
-            NEXTAUTH_URL=https://ventures.hvantoan.io.vn/ventures/api/auth
-            NEXTAUTH_SECRET=593c3acd23d92d6cf83ffa7a940233ce702f9f911d2540e4ceedc3e1cbe52614
+            API_URL=${{ vars.API_URL }}
+            NEXTAUTH_URL=${{ vars.NEXTAUTH_URL }}
+            NEXTAUTH_SECRET=${{ vars.NEXTAUTH_SECRET }}
           cache-from: type=registry,ref=${{ env.CACHE_IMAGE }}
           cache-to: type=registry,ref=${{ env.CACHE_IMAGE }}
           platforms: linux/amd64
