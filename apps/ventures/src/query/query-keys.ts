@@ -16,3 +16,5 @@ export const USER_QK = 'user';
 export const ROLE_QK = 'role';
 export const PERMISSION_QK = 'permission';
 export const USER_REQUEST_QK = 'user-request';
+
+export const CONTACT_QK = 'contact';
