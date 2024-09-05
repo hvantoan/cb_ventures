@@ -45,7 +45,7 @@
     "@iconify-json/mdi": "^1.1.65",
     "@iconify-json/mingcute": "^1.1.17",
     "@iconify-json/solar": "^1.1.9",
-    "@types/react": "^18.2.45",
+    "@types/react": "^18.3.5",
     "@types/react-date-range": "^1.4.9",
     "@types/react-datepicker": "^6.2.0",
     "autoprefixer": "^10.0.1",
