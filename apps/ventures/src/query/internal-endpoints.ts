@@ -9,3 +9,5 @@ export const INTERNAL_AU_ENDPOINT = 'administrative-units';
 
 export const INTERNAL_CONFIG_ENDPOINT = 'config';
 export const INTERNAL_CONFIG_PERSIST_SIDEBAR_STATE_ENDPOINT = `${INTERNAL_CONFIG_ENDPOINT}/persist-sidebar-state`;
+
+export const INTERNAL_CONTACTS_ENDPOINT = 'contacts';

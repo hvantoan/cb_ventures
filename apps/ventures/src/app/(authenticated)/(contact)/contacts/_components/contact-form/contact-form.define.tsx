@@ -1,4 +1,4 @@
-import { Contact } from '../../_model/contact';
+import { Contact } from '../../../_model/contact';
 
 export const contactFormLabels: Record<keyof Omit<Contact, 'id'>, string> = {
   name: 'Họ và Tên',

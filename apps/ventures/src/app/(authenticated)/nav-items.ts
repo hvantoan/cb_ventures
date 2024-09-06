@@ -8,6 +8,23 @@ export const navItems: Array<NavigationWithRole> = [
     icon: 'i-solar-code-scan-bold-duotone'
   },
   {
+    name: 'Liên hệ',
+    path: 'contact',
+    icon: 'i-solar-code-scan-bold-duotone'
+  },
+  {
+    name: 'Liên hệ',
+    path: 'contact',
+    icon: 'i-solar-code-scan-bold-duotone',
+    children: [
+      {
+        name: 'Danh sách liên hệ',
+        path: 'contacts',
+        role: Roles.Contact
+      }
+    ]
+  },
+  {
     name: 'Tổng quan',
     path: 'dashboard',
     role: Roles.Dashboard,
