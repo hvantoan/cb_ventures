@@ -1,8 +1,12 @@
-import { Box, Button, Container, Typography } from '@mui/material';
-import { HydrationBoundary } from '@tanstack/react-query';
+import { getQueryClient } from '@fumy/utilities/query';
+import { LoadingButton } from '@mui/lab';
+import { Box, Container, Typography } from '@mui/material';
+import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 
 import { PageHeader } from '@/components/page-header';
+import { ME_QK } from '@/query/query-keys';
 
+import { getMeAction } from './_actions/get-me-action';
 import { ContactForm } from './_components/contact-form';
 
 const TITLE = 'Thông tin chung';
@@ -16,16 +20,24 @@ const FORM_ID = 'contact-form';
 const SUBMIT_BUTTON_LABEL = 'Liên hệ';
 
 const ContactPage: React.FC = () => {
+  const hydrateClient = getQueryClient();
+
+  hydrateClient.prefetchQuery({
+    queryKey: [ME_QK],
+    queryFn: async () => getMeAction()
+  });
+
+  const dehydratedState = dehydrate(hydrateClient);
   return (
     <Container className='py-10'>
       <PageHeader title={Title} />
-      <HydrationBoundary>
+      <HydrationBoundary state={dehydratedState}>
         <ContactForm formId={FORM_ID} />
       </HydrationBoundary>
       <Box display='flex' justifyContent='center' mt={2}>
-        <Button type='submit' color='primary' form={FORM_ID} className='w-32'>
+        <LoadingButton type='submit' color='primary' form={FORM_ID} className='w-32'>
           {SUBMIT_BUTTON_LABEL}
-        </Button>
+        </LoadingButton>
       </Box>
     </Container>
   );

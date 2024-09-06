@@ -4,23 +4,23 @@ import ImageUploader from '@modules/_components/image-uploader';
 import { Typography } from '@mui/material';
 import { Control, Controller } from 'react-hook-form';
 
-import { Contact } from '../../_model/contact';
-import { contactFormLabels } from './contact-form.define';
+import { Contact } from '../../../_model/contact';
+import { bankCardFormLabels } from './bank-card-form.define';
 
-interface ContactFormIdentityProps {
+interface ContactFormBankProps {
   control: Control<Contact>;
 }
 
-const ContactFormIdentity: React.FC<ContactFormIdentityProps> = ({ control }) => {
+const ContactFormBank: React.FC<ContactFormBankProps> = ({ control }) => {
   return (
     <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
       <Controller
         control={control}
-        name='frontIdentityCard'
+        name='bankCard.frontBankCard'
         render={({ field: { onChange, value } }) => (
           <div className='flex flex-col gap-2'>
             <Typography typography='subtitle1' className='text-white/80'>
-              {contactFormLabels.frontIdentityCard}
+              {bankCardFormLabels.frontBankCard}
             </Typography>
             <ImageUploader image={value} onChange={onChange} className='text-white/80' />
           </div>
@@ -28,11 +28,11 @@ const ContactFormIdentity: React.FC<ContactFormIdentityProps> = ({ control }) =>
       />
       <Controller
         control={control}
-        name='backIdentityCard'
+        name='bankCard.backBankCard'
         render={({ field: { onChange, value } }) => (
           <div className='flex flex-col gap-2'>
             <Typography typography='subtitle1' className='text-white/80'>
-              {contactFormLabels.backIdentityCard}
+              {bankCardFormLabels.backBankCard}
             </Typography>
             <ImageUploader image={value} onChange={onChange} className='text-white/80' />
           </div>
@@ -42,4 +42,4 @@ const ContactFormIdentity: React.FC<ContactFormIdentityProps> = ({ control }) =>
   );
 };
 
-export default ContactFormIdentity;
+export default ContactFormBank;

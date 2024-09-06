@@ -18,3 +18,5 @@ export const PERMISSION_QK = 'permission';
 export const USER_REQUEST_QK = 'user-request';
 
 export const CONTACT_QK = 'contact';
+
+export const ME_QK = 'me';

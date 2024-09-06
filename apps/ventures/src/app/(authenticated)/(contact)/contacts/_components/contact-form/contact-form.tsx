@@ -11,9 +11,9 @@ import { toast } from 'react-toastify';
 
 import { CONTACT_QK } from '@/query/query-keys';
 
-import { saveContactAction } from '../../_actions/save-contact-action';
-import { Contact } from '../../_model/contact';
-import { useQueryMe } from '../../_queries/use-query-me';
+import { saveContactAction } from '../../../_actions/save-contact-action';
+import { Contact } from '../../../_model/contact';
+import { useQueryMe } from '../../../_queries/use-query-me';
 import { bankCardFormLabels } from './bank-card-form.define';
 import ContactFormBank from './contact-form-bank';
 import ContactFormIdentity from './contact-form-identity';

@@ -4,7 +4,7 @@ import ImageUploader from '@modules/_components/image-uploader';
 import { Typography } from '@mui/material';
 import { Control, Controller } from 'react-hook-form';
 
-import { Contact } from '../../_model/contact';
+import { Contact } from '../../../_model/contact';
 import { contactFormLabels } from './contact-form.define';
 
 interface ContactFormIdentityProps {

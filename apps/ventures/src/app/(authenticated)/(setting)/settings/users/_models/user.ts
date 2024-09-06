@@ -1,9 +1,10 @@
 import { Role } from '@modules/(setting)/settings/role/_models/role';
 import { Type } from 'class-transformer';
-import { IsDefined, Matches, MaxLength, MinLength, ValidateIf } from 'class-validator';
+import { IsDefined, IsEmail, Matches, MaxLength, MinLength, ValidateIf } from 'class-validator';
 import { Nullable } from 'class-validator-extended';
 import 'reflect-metadata';
 
+import { BankCard } from '@/app/(public)/contact/_model/bank-card';
 import { AdministrativeUnit } from '@/models/administrative-unit';
 
 export class User {
@@ -28,6 +29,12 @@ export class User {
   @ValidateIf((_, value) => value?.length > 0)
   public phone: string = '';
 
+  @IsEmail(undefined, { message: 'Email không hợp lệ.' })
+  @ValidateIf((_, value) => value?.length > 0)
+  public email: string = '';
+
+  public identityCard: string;
+
   @Type(() => AdministrativeUnit)
   public province: AdministrativeUnit;
 
@@ -48,4 +55,7 @@ export class User {
   @Type(() => Role)
   @IsDefined({ message: 'Vui lòng chọn quyền truy cập.' })
   public role: Role;
+
+  @Type(() => Array<BankCard>)
+  public bankCard: BankCard[];
 }

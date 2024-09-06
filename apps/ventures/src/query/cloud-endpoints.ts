@@ -40,5 +40,9 @@ export const CLOUD_ROLE_SAVE_ENDPOINT = `${CLOUD_ROLE_ENDPOINT}/save`;
 export const CLOUD_ROLE_DELETE_ENDPOINT = `${CLOUD_ROLE_ENDPOINT}/delete`;
 export const CLOUD_ROLE_PERMISSIONS_ENDPOINT = `${CLOUD_ROLE_ENDPOINT}/permission`;
 
-export const CLOUD_CONTACT_ENDPOINT = '/contact';
+export const CLOUD_CONTACT_ENDPOINT = '/contacts';
 export const CLOUD_CONTACT_SAVE_ENDPOINT = `${CLOUD_CONTACT_ENDPOINT}/save`;
+export const CLOUD_CONTACT_LIST_ENDPOINT = `${CLOUD_CONTACT_ENDPOINT}/list`;
+
+export const CLOUD_ME_ENDPOINT = '/me';
+export const CLOUD_ME_CHANGE_PASSWORD_ENDPOINT = `${CLOUD_ME_ENDPOINT}/change-password`;

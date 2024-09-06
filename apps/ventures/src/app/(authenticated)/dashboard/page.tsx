@@ -4,7 +4,6 @@ import axios from 'axios';
 
 import { TOP_PRODUCTS_QK } from '@/query/query-keys';
 
-import { HotCoins } from './_components/hot-coins';
 import { RevenueChart } from './_components/revenue-chart';
 
 const DashboardPage: React.FC = () => {
@@ -21,7 +20,7 @@ const DashboardPage: React.FC = () => {
     <div className='h-full'>
       <HydrationBoundary state={dehydratedState}>
         <div className='flex grid-cols-1 flex-col gap-2 md:grid md:grid-cols-12'>
-          <div className='col-span-12 auto-rows-max lg:col-span-5 xl:col-span-4'>
+          {/* <div className='col-span-12 auto-rows-max lg:col-span-5 xl:col-span-4'>
             <HotCoins key={1} />
           </div>
           <div className='col-span-12 auto-rows-max lg:col-span-5 xl:col-span-4'>
@@ -29,7 +28,7 @@ const DashboardPage: React.FC = () => {
           </div>
           <div className='col-span-12 auto-rows-max lg:col-span-5 xl:col-span-4'>
             <HotCoins key={3} />
-          </div>
+          </div> */}
           <div className='col-span-12'>
             <RevenueChart />
           </div>
