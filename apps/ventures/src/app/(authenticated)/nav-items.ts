@@ -8,14 +8,14 @@ export const navItems: Array<NavigationWithRole> = [
     icon: 'i-solar-code-scan-bold-duotone'
   },
   {
-    name: 'Liên hệ',
+    name: 'Chúng tôi',
     path: 'contact',
-    icon: 'i-solar-code-scan-bold-duotone'
+    icon: 'i-solar-chat-round-money-bold'
   },
   {
     name: 'Liên hệ',
     path: 'contact',
-    icon: 'i-solar-code-scan-bold-duotone',
+    icon: 'i-solar-smartphone-2-bold',
     children: [
       {
         name: 'Danh sách liên hệ',

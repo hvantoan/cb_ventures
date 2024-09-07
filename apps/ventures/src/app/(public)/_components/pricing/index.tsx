@@ -13,14 +13,14 @@ export function Pricing({ data }: PricingProps) {
   return (
     <div className='relative min-h-[calc(100vh-72px)] w-full'>
       <div className='from-bg_color_trans to-bg_color absolute h-full w-screen bg-gradient-to-br' />
-      <Container className='grid gap-8 py-20'>
+      <Container className='grid gap-8 py-10'>
         <div className='grid gap-8'>
-          <h2 className='lg:text-54 text-32 text-center font-bold text-white'>
+          <h2 className='lg:text-54 text-32 m-0 text-center font-bold text-white'>
             Kế hoạch
             <span className='text-h_primary'> Pricings </span>
             của chúng tôi
           </h2>
-          <p className='text-18 mx-auto w-5/6 text-center text-white'>
+          <p className='text-18 m-0 mx-auto w-5/6 text-center text-white'>
             Tạo ra một lộ trình sản phẩm giống như lên kế hoạch cho một chuyến đi đường.Đó là tất cả về việc thực hiện
             đúng các bước để đến đích của bạn.
           </p>
