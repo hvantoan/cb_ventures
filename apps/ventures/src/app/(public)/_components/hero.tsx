@@ -22,16 +22,16 @@ export function Hero() {
                 decoding='async'
                 src={BannerCoinImage}
                 alt='logo'
-                className='animate-rolating max-sm:h-8 max-sm:w-8'
+                className='animate-rolating max-sm:h-4 max-sm:w-4'
                 height={100}
                 width={100}
               />
             </div>
             <div className='grid'>
-              <h1 className='lg:text-60 text-32 text-center font-bold capitalize text-white lg:text-left'>
+              <h1 className='lg:text-54 text-32 mt-0 text-center font-bold capitalize text-white lg:text-left'>
                 Đầu tư tiền của bạn với <span className='text-h_secondary'>Lợi nhuận cao</span>
               </h1>
-              <p className='text-16 text-subtext text-center lg:text-left'>
+              <p className='text-16 text-subtext m-0 text-center lg:text-left'>
                 Trong bối cảnh thị trường tài chính năng động, độ chính xác và hiểu biết là điều quan trọng, CB Ventures
                 được thành lập để cung cấp giải pháp tài chính công nghệ giúp khách hàng kiếm thêm thu nhập thụ động
                 trên các sàn thương mại điện tử.

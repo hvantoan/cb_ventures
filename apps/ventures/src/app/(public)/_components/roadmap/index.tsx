@@ -24,9 +24,11 @@ export function Roadmap({ data }: RoadmapProps) {
         </div>
         <div className='relative'>
           <div className='grid max-sm:gap-4'>
-            {data.map((item, idx) => (
-              <RoadmapCard key={-idx} isLeft={idx % 2 !== 0} data={item} />
-            ))}
+            {data && data.length > 0 ? (
+              data.map((item, idx) => <RoadmapCard key={-idx} isLeft={idx % 2 !== 0} data={item} />)
+            ) : (
+              <div>No data</div>
+            )}
           </div>
           <div className='absolute left-[calc(50%-6px)] top-0 h-full w-[12px] py-[10em] max-sm:hidden'>
             <div className='bg-h_primary absolute z-10 h-[50%] w-[12px] rounded' />

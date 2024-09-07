@@ -1,221 +1,98 @@
 'use client';
 
+import { useToggle } from '@fumy/utilities/hooks';
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
-import { Box, TextField } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { Contact } from '@modules/(contact)/_model/contact';
+import { LoadingButton } from '@mui/lab';
+import { Box, Card } from '@mui/material';
 import { useQueryClient } from '@tanstack/react-query';
 import { instanceToPlain } from 'class-transformer';
-import { useCallback, useEffect } from 'react';
-import { Controller, SubmitErrorHandler, useForm } from 'react-hook-form';
+import { useRouter } from 'next/navigation';
+import { useCallback } from 'react';
+import { Controller, FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 import { CONTACT_QK } from '@/query/query-keys';
+import { contactsPath } from '@/routes';
 
-import { saveContactAction } from '../../../_actions/save-contact-action';
-import { Contact } from '../../../_model/contact';
-import { useQueryMe } from '../../../_queries/use-query-me';
-import { bankCardFormLabels } from './bank-card-form.define';
-import ContactFormBank from './contact-form-bank';
-import ContactFormIdentity from './contact-form-identity';
-import { contactFormLabels } from './contact-form.define';
+import { modifyContactAction } from '../../_actions/modify-contact-action';
+import StoreInfoHeader from '../contact-info-header';
+import ContactFormInit from './contact-form-init';
+import { fields } from './contact-info.schema';
+
+interface ContactFormProps {
+  contactId?: string;
+}
+
+const SAVE_BUTTON_LABEL = 'Lưu';
 
 const resolver = classValidatorResolver(Contact);
 
-const validateError: SubmitErrorHandler<Contact> = (error) => {
-  console.info('Contact validate failed', error);
+const handleKeyDown: React.KeyboardEventHandler<HTMLFormElement> = (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+  }
 };
 
-interface ContactFormProps {
-  formId: string;
-}
-
-const ContactForm: React.FC<ContactFormProps> = ({ formId }) => {
-  const { data: me } = useQueryMe();
-  const theme = useTheme();
-
-  const { control, handleSubmit, reset } = useForm<Contact>({
+const StoreForm: React.FC<ContactFormProps> = ({ contactId }) => {
+  const formMethods = useForm<Contact>({
     resolver,
     defaultValues: new Contact(),
     reValidateMode: 'onChange'
   });
+
+  const { isOpen: isLoading, handleOpen: startLoading, handleClose: stopLoading } = useToggle();
+  const { handleSubmit, control, setValue } = formMethods;
+  const router = useRouter();
   const queryClient = useQueryClient();
 
-  useEffect(() => {
-    if (me) {
-      reset({
-        name: me.name,
-        phone: me.phone,
-        email: me.email,
-        identityCard: me.identityCard,
-        bankCard: me.bankCard ? me.bankCard[0] : undefined
-      });
-    }
-  }, [me]);
-
-  const validateSuccess = useCallback(async (formData: Contact) => {
-    const payload = instanceToPlain(formData) as Contact;
-    const promise = saveContactAction(payload);
-    try {
-      await toast.promise(
-        promise,
-        {
-          pending: 'Đang lưu...',
-          success: {
-            render: ({ data }) => {
-              return data?.message;
-            }
-          },
-          error: {
-            render: ({ data }) => {
-              return (data as Error)?.message;
-            }
-          }
-        },
-        { delay: 0 }
-      );
+  const onValid = useCallback(async (data: Contact) => {
+    startLoading();
+    const payload = instanceToPlain(data) as Contact;
+    const res = await modifyContactAction(payload);
+    if (res.success) {
+      toast.success(res.message);
       await queryClient.invalidateQueries({ queryKey: [CONTACT_QK] });
-    } catch (e) {
-      // nothing
+      router.push(contactsPath);
+    } else {
+      toast.error(res.message);
+      stopLoading();
     }
   }, []);
 
-  const textFieldSx = {
-    '& label': {
-      color: 'white'
-    },
-    '& label.Mui-focused': {
-      color: 'white'
-    },
-    '& .MuiInputLabel-shrink': {
-      color: 'white !important'
-    },
-    '& .MuiOutlinedInput-root': {
-      '&.Mui-focused fieldset': {
-        borderColor: theme.palette.primary.main
-      }
-    },
-    '& .MuiInputBase-input': {
-      color: 'white' // This ensures the input text color is white
-    }
-  };
-
   return (
-    <Box className='my-4'>
-      <form
-        className='flex flex-col gap-4'
-        id={formId}
-        noValidate
-        onSubmit={handleSubmit(validateSuccess, validateError)}
-      >
-        <div className='grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4'>
-          <Controller
-            control={control}
-            name='name'
-            render={({ field: { value, onChange } }) => (
-              <TextField
-                label={contactFormLabels.name}
-                value={value ?? ''}
-                onChange={onChange}
-                sx={textFieldSx}
-                required
+    <Box
+      component='form'
+      className='flex flex-col gap-6'
+      noValidate
+      onSubmit={handleSubmit(onValid, (e) => {
+        console.error(e);
+      })}
+      onKeyDown={handleKeyDown}
+    >
+      <FormProvider {...formMethods}>
+        <StoreInfoHeader contactId={contactId} />
+        <Card>
+          <div className='grid grid-cols-12 gap-4 p-6'>
+            {fields.map(({ name, render }) => (
+              <Controller
+                key={name}
+                control={control}
+                name={name}
+                render={(params) => render({ ...params, control, setValue })}
               />
-            )}
-          />
-          <Controller
-            control={control}
-            name='phone'
-            render={({ field: { value, onChange }, fieldState: { error } }) => (
-              <TextField
-                label={contactFormLabels.phone}
-                value={value ?? ''}
-                onChange={onChange}
-                helperText={error?.message}
-                error={Boolean(error)}
-                sx={textFieldSx}
-                required
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name='email'
-            render={({ field: { value, onChange }, fieldState: { error } }) => (
-              <TextField
-                label={contactFormLabels.email}
-                InputProps={{ readOnly: false }}
-                value={value ?? ''}
-                onChange={onChange}
-                helperText={error?.message}
-                error={Boolean(error)}
-                sx={textFieldSx}
-                required
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name='identityCard'
-            render={({ field: { value, onChange } }) => (
-              <TextField
-                label={contactFormLabels.identityCard}
-                InputProps={{ readOnly: false }}
-                value={value ?? ''}
-                onChange={onChange}
-                sx={textFieldSx}
-                required
-              />
-            )}
-          />
+            ))}
+          </div>
+        </Card>
+        <div className='flex items-center justify-end gap-4 [&>.MuiButton-root]:min-w-40'>
+          <LoadingButton size='large' type='submit' loading={isLoading}>
+            <span>{SAVE_BUTTON_LABEL}</span>
+          </LoadingButton>
         </div>
-        <ContactFormIdentity control={control} />
-        <div className='grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4'>
-          <Controller
-            control={control}
-            name='bankCard.cardNumber'
-            render={({ field: { value, onChange } }) => (
-              <TextField
-                label={bankCardFormLabels.cardNumber}
-                InputProps={{ readOnly: false }}
-                value={value ?? ''}
-                onChange={onChange}
-                sx={textFieldSx}
-                required
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name='bankCard.name'
-            render={({ field: { value, onChange } }) => (
-              <TextField
-                label={bankCardFormLabels.name}
-                InputProps={{ readOnly: false }}
-                value={value ?? ''}
-                onChange={onChange}
-                sx={textFieldSx}
-                required
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name='bankCard.cardBranch'
-            render={({ field: { value, onChange } }) => (
-              <TextField
-                label={bankCardFormLabels.cardBranch}
-                InputProps={{ readOnly: false }}
-                value={value ?? ''}
-                onChange={onChange}
-                sx={textFieldSx}
-                required
-              />
-            )}
-          />
-        </div>
-        <ContactFormBank control={control} />
-      </form>
+        <ContactFormInit contactId={contactId} />
+      </FormProvider>
     </Box>
   );
 };
 
-export default ContactForm;
+export default StoreForm;

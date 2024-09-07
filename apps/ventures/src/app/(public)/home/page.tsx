@@ -3,30 +3,15 @@
 import Aos from 'aos';
 import { useEffect } from 'react';
 
-import {
-  Advisers,
-  Articles,
-  Features,
-  Hero,
-  Partner,
-  Pricing,
-  Roadmap,
-  Trading,
-  Vision
-} from '@/app/(public)/home/_components';
+import { Advisers, Articles, Features, Hero, Partner, Trading, Vision } from '@/app/(public)/_components';
 import friends from '@/data/friends.json';
-import pricingsData from '@/data/pricing.json';
-import roadmapData from '@/data/roadmap.json';
 import articlesData from '@/data/sampleCards.json';
 import visionData from '@/data/visions.json';
 
 import 'aos/dist/aos.css';
 
 const Landing = () => {
-  const { roadmaps, pricings, articles, visions, advisers } = {
-    roadmaps: roadmapData.data,
-    //  Pricing card
-    pricings: JSON.parse(JSON.stringify(pricingsData)),
+  const { articles, visions, advisers } = {
     articles: JSON.parse(JSON.stringify(articlesData.BlogCardData)),
     visions: visionData,
     advisers: JSON.parse(JSON.stringify(friends))
@@ -61,8 +46,6 @@ const Landing = () => {
       <Trading />
       <Features />
       <Vision data={visions} />
-      <Roadmap data={roadmaps} />
-      <Pricing data={pricings} />
       <Advisers data={advisers} />
       <Articles data={articles} />
     </main>

@@ -1,6 +1,11 @@
+'use client';
+
 import { KeyboardArrowRight } from '@mui/icons-material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { Button, Card, CardActions, Chip, Divider, List, ListItem, Stack, Typography } from '@mui/material';
+import { useRouter } from 'next/navigation';
+
+import { contactPath } from '@/routes';
 
 export type PricingType = 'Basic' | 'Pro' | 'Premium' | 'Enterprise';
 export type PricingInterval = 'Monthly' | 'Yearly';
@@ -10,6 +15,7 @@ interface Props {
 }
 
 export function PricingCard({ data }: Props) {
+  const router = useRouter();
   return (
     <Card
       variant='outlined'
@@ -44,7 +50,12 @@ export function PricingCard({ data }: Props) {
         <span className='text-h_secondary mr-auto text-[26px] font-bold'>
           {`${data.price}${data.monetaryUnit}`}/<span className='text-18 capitalize text-white'>{data.interval}</span>
         </span>
-        <Button variant='soft' color='primary' className='group-hover:bg-h_primary group-hover:text-white'>
+        <Button
+          variant='soft'
+          color='primary'
+          onClick={() => router.push(contactPath)}
+          className='group-hover:bg-h_primary group-hover:text-white'
+        >
           Bắt đầu
           <KeyboardArrowRight />
         </Button>
