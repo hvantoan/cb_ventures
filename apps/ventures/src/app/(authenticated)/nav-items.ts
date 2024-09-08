@@ -13,6 +13,18 @@ export const navItems: Array<NavigationWithRole> = [
     icon: 'i-solar-chat-round-money-bold'
   },
   {
+    name: 'Giao dịch',
+    path: 'transaction',
+    icon: 'i-solar-chat-round-money-bold',
+    children: [
+      {
+        name: 'Danh sách giao dịch',
+        path: 'transactions',
+        role: Roles.Contact
+      }
+    ]
+  },
+  {
     name: 'Liên hệ',
     path: 'contact',
     icon: 'i-solar-smartphone-2-bold',
