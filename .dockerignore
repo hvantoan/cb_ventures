@@ -1,8 +1,8 @@
-.env
-Dockerfile
-.dockerignore
 node_modules
-npm-debug.log
-README.md
-.next
+.nx
+.husky
+.gitignore
 .git
+README.md
+.env
+.env.local

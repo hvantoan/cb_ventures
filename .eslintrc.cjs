@@ -1,51 +1,51 @@
-/** @type {import("eslint").Linter.Config} */
-const config = {
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-        project: true,
+/** @type { import('@types/eslint').Linter.Config } */
+module.exports = {
+  parserOptions: {
+    ecmaVersion: 2022,
+    tsconfigRootDir: __dirname,
+    ecmaFeatures: {
+      jsx: true
     },
-    // @ts-ignore
-    plugins: ['@typescript-eslint'],
-    extends: [
-        'next/core-web-vitals',
-        'plugin:@typescript-eslint/recommended-type-checked',
-        'plugin:@typescript-eslint/stylistic-type-checked',
-    ],
-    rules: {
-        '@typescript-eslint/array-type': 'off',
-        // Remove to fix
-        '@typescript-eslint/no-explicit-any': 'off',
-        '@typescript-eslint/consistent-type-definitions': 'off',
-        '@typescript-eslint/no-unsafe-assignment': 'off',
-        '@typescript-eslint/no-unsafe-call': 'off',
-        '@typescript-eslint/no-unsafe-member-access': 'off',
-        '@typescript-eslint/no-unsafe-return': 'off',
-        '@typescript-eslint/prefer-optional-chain': 'off',
-        '@typescript-eslint/no-unsafe-argument': 'off',
-        'react/display-name': ['off', { ignoreTranspilerName: false, checkContextObjects: false }],
-        '@typescript-eslint/ban-ts-comment': 'off',
-        '@typescript-eslint/no-empty-function': 'warn',
-        '@typescript-eslint/consistent-type-imports': 'off',
-        'prefer-promise-reject-errors': 'off',
-        '@typescript-eslint/prefer-promise-reject-errors': 'error',
-        // End
-        '@typescript-eslint/no-floating-promises': 'off',
-        '@typescript-eslint/triple-slash-reference': 'off',
-        '@typescript-eslint/no-empty-interface': 'off',
-        '@typescript-eslint/non-nullable-type-assertion-style': 'off',
-        '@typescript-eslint/no-unused-vars': 'off',
-        '@typescript-eslint/require-await': 'off',
-        '@typescript-eslint/dot-notation': 'off',
-        'react-hooks/exhaustive-deps': 'off',
-
-        '@typescript-eslint/no-misused-promises': [
-            'error',
-            {
-                checksVoidReturn: {
-                    attributes: false,
-                },
-            },
-        ],
-    },
+    project: ['./apps/*/tsconfig.json', './libs/*/tsconfig.json']
+  },
+  extends: [
+    'airbnb',
+    'airbnb-typescript',
+    'plugin:@tanstack/eslint-plugin-query/recommended',
+    'plugin:@next/next/recommended',
+    'prettier'
+  ],
+  plugins: ['prettier', '@typescript-eslint', '@tanstack/query'],
+  rules: {
+    'prettier/prettier': 1,
+    'react/react-in-jsx-scope': 0,
+    'react/jsx-props-no-spreading': 0,
+    'import/extensions': 0,
+    'import/prefer-default-export': 0,
+    'no-restricted-exports': 0,
+    'react/function-component-definition': 0,
+    'import/no-named-as-default': 0,
+    'no-param-reassign': 0,
+    'react/require-default-props': 0,
+    'react/prop-types': 0,
+    'arrow-body-style': 0,
+    'react/destructuring-assignment': 0,
+    'prefer-destructuring': 0,
+    'consistent-return': 0,
+    'react/jsx-pascal-case': [1, { ignore: ['MRT_*'] }],
+    '@typescript-eslint/lines-between-class-members': 0,
+    'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
+    'max-lines': ['warn', { max: 300, skipBlankLines: true, skipComments: true }],
+    'no-underscore-dangle': 0,
+    '@typescript-eslint/no-var-requires': 0,
+    'react/no-array-index-key': 0,
+    'react/no-unknown-property': 0,
+    // TODO: remove this rule
+    'react/no-unstable-nested-components': 0
+  },
+  root: true,
+  env: {
+    browser: true,
+    node: true
+  }
 };
-module.exports = config;

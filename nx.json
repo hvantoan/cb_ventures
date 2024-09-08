@@ -1,0 +1,13 @@
+{
+  "affected": {
+    "defaultBase": "main"
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ]
+    }
+  },
+  "nxCloudAccessToken": "ODE0NTliYzEtNjI3NS00MDk1LThlMGQtMTJkOTRhOWM2NmM5fHJlYWQtd3JpdGU="
+}
