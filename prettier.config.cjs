@@ -2,7 +2,7 @@
 module.exports = {
   arrowParens: 'always',
   bracketSpacing: true,
-  endOfLine: 'lf',
+  endOfLine: 'crlf',
   jsxSingleQuote: true,
   printWidth: 120,
   semi: true,
@@ -11,5 +11,10 @@ module.exports = {
   importOrder: ['<THIRD_PARTY_MODULES>', '^@/.', '^[./]', '.css'],
   importOrderSeparation: true,
   plugins: ['@trivago/prettier-plugin-sort-imports', 'prettier-plugin-tailwindcss'],
-  importOrderParserPlugins: ['classProperties','["decorators", { "decoratorsBeforeExport": true }]', 'typescript', 'jsx',],
+  importOrderParserPlugins: [
+    'classProperties',
+    '["decorators", { "decoratorsBeforeExport": true }]',
+    'typescript',
+    'jsx'
+  ]
 };
