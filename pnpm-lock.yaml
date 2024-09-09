@@ -133,7 +133,7 @@ importers:
         version: 5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-query-next-experimental':
         specifier: ^5.49.2
-        version: 5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(next@14.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        version: 5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(next@14.2.4(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@tanstack/react-table':
         specifier: ^8.15.3
         version: 8.20.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -343,7 +343,7 @@ importers:
         version: 5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-query-next-experimental':
         specifier: ^5.49.2
-        version: 5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(next@14.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        version: 5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(next@14.2.4(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       clsx:
         specifier: ^2.0.0
         version: 2.1.1
@@ -391,8 +391,8 @@ importers:
         specifier: ^1.1.10
         version: 1.1.11
       '@iconify-json/ic':
-        specifier: ^1.1.17
-        version: 1.1.18
+        specifier: ^1.2.0
+        version: 1.2.0
       '@iconify-json/iconamoon':
         specifier: ^1.1.4
         version: 1.1.5
@@ -1329,8 +1329,8 @@ packages:
   '@iconify-json/eva@1.1.11':
     resolution: {integrity: sha512-eiUvJbiGg8L0VefKd6/CfZuDS8cgtpk0uED24+1x3/hWQtkBn5agK7TMYBGpwd93SBLcOJ2HtJuBFfO7yRZX1g==}
 
-  '@iconify-json/ic@1.1.18':
-    resolution: {integrity: sha512-RcfnSFVmQP6aEKQJM3Iczg9e5TXWlN0slIjiyH9l378YkhDPAhXdQ8xP8+tBwfz7B9jysqsV+vs9Iu8DMHvE6Q==}
+  '@iconify-json/ic@1.2.0':
+    resolution: {integrity: sha512-L4+m77xTQB08X3I+3xs1+IrvK+aNcuN/7ODu5aUPznHKLU+/8UYcsjUgNHze6vPOGPQ0AG+kCwvy91EYPXSRxw==}
 
   '@iconify-json/iconamoon@1.1.5':
     resolution: {integrity: sha512-BT1VVfQCjCoigDQ7vLHa3gPf9aT3c4ErZ9VWxvqeDD1iTCbEhP+rl6THTmHcLVluH52stc9PcwNChuYVLna9+g==}
@@ -6465,7 +6465,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/ic@1.1.18':
+  '@iconify-json/ic@1.2.0':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -7189,7 +7189,7 @@ snapshots:
       '@tanstack/react-query': 5.52.1(react@18.3.1)
       react: 18.3.1
 
-  '@tanstack/react-query-next-experimental@5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(next@14.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-query-next-experimental@5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(next@14.2.4(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/react-query': 5.52.1(react@18.3.1)
       next: 14.2.4(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
