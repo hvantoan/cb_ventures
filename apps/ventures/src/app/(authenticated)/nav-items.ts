@@ -3,14 +3,10 @@ import { Roles } from '@/enums/role.enum';
 
 export const navItems: Array<NavigationWithRole> = [
   {
-    name: 'Home',
-    path: 'home',
+    name: 'Tổng quan',
+    path: 'dashboard',
+    role: Roles.Dashboard,
     icon: 'i-solar-code-scan-bold-duotone'
-  },
-  {
-    name: 'Chúng tôi',
-    path: 'contact',
-    icon: 'i-solar-chat-round-money-bold'
   },
   {
     name: 'Giao dịch',
@@ -36,12 +32,7 @@ export const navItems: Array<NavigationWithRole> = [
       }
     ]
   },
-  {
-    name: 'Tổng quan',
-    path: 'dashboard',
-    role: Roles.Dashboard,
-    icon: 'i-solar-code-scan-bold-duotone'
-  },
+
   {
     name: 'Cài đặt',
     path: 'setting',
@@ -64,5 +55,15 @@ export const navItems: Array<NavigationWithRole> = [
         role: Roles.SettingRole
       }
     ]
+  },
+  {
+    name: 'Trang chủ',
+    path: 'home',
+    icon: 'i-solar-code-scan-bold-duotone'
+  },
+  {
+    name: 'Chúng tôi',
+    path: 'contact',
+    icon: 'i-solar-boombox-broken'
   }
 ];

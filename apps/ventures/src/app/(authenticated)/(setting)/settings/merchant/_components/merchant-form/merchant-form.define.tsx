@@ -1,8 +1,8 @@
 import { type Merchant } from '@modules/(setting)/settings/merchant/_models/merchant';
 
 export const merchantFormLabels: Record<keyof Omit<Merchant, 'id'>, string> = {
-  code: 'Mã cửa hàng',
-  name: 'Tên cửa hàng',
+  code: 'Mã liên hệ',
+  name: 'Tên liên hệ',
   phone: 'Số điện thoại',
   email: 'Email',
   province: 'Tỉnh/Thành phố',

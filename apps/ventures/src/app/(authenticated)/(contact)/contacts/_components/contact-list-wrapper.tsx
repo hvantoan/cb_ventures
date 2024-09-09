@@ -8,7 +8,7 @@ interface ContactListWrapperProps {
   initFilters: BaseListRequest;
 }
 
-const TITLE = 'Cửa hàng';
+const TITLE = 'Liên hệ';
 
 const ContactListWrapper: React.FC<ContactListWrapperProps> = ({ initFilters }) => {
   return (
