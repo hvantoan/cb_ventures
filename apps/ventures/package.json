@@ -71,7 +71,7 @@
   "devDependencies": {
     "@hookform/devtools": "^4.3.1",
     "@iconify-json/carbon": "^1.1.31",
-    "@iconify-json/eva": "^1.1.10",
+    "@iconify-json/eva": "^1.2.0",
     "@iconify-json/vscode-icons": "^1.1.34",
     "@styled/typescript-styled-plugin": "^1.0.1",
     "@svgr/webpack": "^8.1.0",
