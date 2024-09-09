@@ -13,7 +13,7 @@
     "@fumy/utilities": "workspace:^",
     "@mui/icons-material": "^5.15.15",
     "@mui/lab": "5.0.0-alpha.170",
-    "@mui/material": "^5.15.15",
+    "@mui/material": "^6.0.2",
     "@mui/material-nextjs": "^5.15.11",
     "@mui/system": "^5.15.0",
     "@mui/x-data-grid": "^6.19.10",
