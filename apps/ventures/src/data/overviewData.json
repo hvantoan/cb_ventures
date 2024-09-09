@@ -11,7 +11,7 @@
     "statusRate": "25.36",
     "decimal": 0,
     "dataPeriod": "Since last month",
-    "statusColor":"success"
+    "statusColor": "success"
   },
   {
     "id": 2,
@@ -26,7 +26,7 @@
     "decimals": 0,
     "separator": ",",
     "dataPeriod": "Since last month",
-    "statusColor":"success"
+    "statusColor": "success"
   },
   {
     "id": 3,
@@ -41,7 +41,7 @@
     "decimals": 0,
     "separator": ",",
     "dataPeriod": "Since last month",
-    "statusColor":"danger"
+    "statusColor": "danger"
   },
   {
     "id": 4,
@@ -56,7 +56,7 @@
     "decimals": 0,
     "separator": ",",
     "dataPeriod": "Since last month",
-    "statusColor":"success"
+    "statusColor": "success"
   },
   {
     "id": 5,
@@ -71,7 +71,7 @@
     "decimals": 0,
     "separator": ",",
     "dataPeriod": "Since last month",
-    "statusColor":"success"
+    "statusColor": "success"
   },
   {
     "id": 6,
@@ -85,7 +85,7 @@
     "statusRate": "9.87",
     "decimals": 0,
     "dataPeriod": "Since last month",
-    "statusColor":"success"
+    "statusColor": "success"
   },
   {
     "id": 7,
@@ -99,7 +99,7 @@
     "statusRate": "12.36",
     "decimals": 0,
     "dataPeriod": "Since last month",
-    "statusColor":"danger"
+    "statusColor": "danger"
   },
   {
     "id": 8,
@@ -113,6 +113,6 @@
     "statusRate": "9.87",
     "decimals": 2,
     "dataPeriod": "Since last month",
-    "statusColor":"success"
+    "statusColor": "success"
   }
 ]
