@@ -22,3 +22,5 @@ export const CONTACT_QK = 'contact';
 export const TRANSACTION_QK = 'transaction';
 
 export const ME_QK = 'me';
+
+export const BOT_QK = 'bot';
