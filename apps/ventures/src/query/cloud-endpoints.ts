@@ -51,3 +51,9 @@ export const CLOUD_ME_CHANGE_PASSWORD_ENDPOINT = `${CLOUD_ME_ENDPOINT}/change-pa
 
 export const CLOUD_TRANSACTION_ENDPOINT = '/transaction';
 export const CLOUD_TRANSACTION_LIST_ENDPOINT = `${CLOUD_TRANSACTION_ENDPOINT}/list`;
+
+export const CLOUD_BOT_ENDPOINT = '/bots';
+export const CLOUD_BOT_GET_ENDPOINT = `${CLOUD_BOT_ENDPOINT}/get`;
+export const CLOUD_BOT_SAVE_ENDPOINT = `${CLOUD_BOT_ENDPOINT}/save`;
+export const CLOUD_BOT_LIST_ENDPOINT = `${CLOUD_BOT_ENDPOINT}/list`;
+export const CLOUD_BOT_DELETE_ENDPOINT = `${CLOUD_BOT_ENDPOINT}/delete`;

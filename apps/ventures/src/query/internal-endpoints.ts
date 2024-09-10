@@ -13,3 +13,5 @@ export const INTERNAL_CONFIG_PERSIST_SIDEBAR_STATE_ENDPOINT = `${INTERNAL_CONFIG
 export const INTERNAL_CONTACTS_ENDPOINT = 'contacts';
 
 export const INTERNAL_TRANSACTIONS_ENDPOINT = 'transactions';
+
+export const INTERNAL_BOTS_ENDPOINT = 'bots';

@@ -32,7 +32,19 @@ export const navItems: Array<NavigationWithRole> = [
       }
     ]
   },
-
+  {
+    name: 'Danh mục',
+    path: 'category',
+    icon: 'i-solar-bill-list-bold',
+    role: Roles.Category,
+    children: [
+      {
+        name: 'Bot',
+        path: 'bots',
+        role: Roles.Bot
+      }
+    ]
+  },
   {
     name: 'Cài đặt',
     path: 'setting',
@@ -63,7 +75,7 @@ export const navItems: Array<NavigationWithRole> = [
   },
   {
     name: 'Chúng tôi',
-    path: 'contact',
+    path: 'we',
     icon: 'i-solar-boombox-broken'
   }
 ];

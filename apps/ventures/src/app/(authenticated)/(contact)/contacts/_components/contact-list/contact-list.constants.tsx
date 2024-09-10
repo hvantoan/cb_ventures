@@ -15,9 +15,7 @@ export const columns: Array<MRT_ColumnDef<Contact>> = [
   {
     header: 'CMND/CCCD',
     accessorKey: 'identityCard',
-    Cell: ({ renderedCellValue, row }) => {
-      return <FumyLink href={`${contactsPath}/${row.original.id}`}>{renderedCellValue}</FumyLink>;
-    }
+    Cell: ({ renderedCellValue }) => renderedCellValue
   },
   {
     header: 'Số điện thoại',
@@ -27,11 +25,6 @@ export const columns: Array<MRT_ColumnDef<Contact>> = [
   {
     header: 'Email',
     accessorKey: 'email',
-    Cell: ({ renderedCellValue }) => renderedCellValue
-  },
-  {
-    header: 'Số điện thoại',
-    accessorKey: 'phone',
     Cell: ({ renderedCellValue }) => renderedCellValue
   },
   {
