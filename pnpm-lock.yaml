@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@next/eslint-plugin-next':
-        specifier: ^14.0.4
-        version: 14.2.6
+        specifier: ^14.2.10
+        version: 14.2.10
       '@nx-tools/container-metadata':
         specifier: ^5.1.0
         version: 5.3.1(@nx/devkit@18.3.5(nx@17.2.3))(dotenv@16.4.5)(tslib@2.7.0)
@@ -1698,6 +1698,9 @@ packages:
 
   '@next/env@14.2.4':
     resolution: {integrity: sha512-3EtkY5VDkuV2+lNmKlbkibIJxcO4oIHEhBWne6PaAp+76J9KoSsGvNikp6ivzAT8dhhBMYrm6op2pS1ApG0Hzg==}
+
+  '@next/eslint-plugin-next@14.2.10':
+    resolution: {integrity: sha512-LqJcPP5QkmKewpwO3zX8SoVfWwKn5NKwfcs/j52oJa5EsEDyUsqjsmj5IRzmAJA0FSuB4umhjG55AGayY306fw==}
 
   '@next/eslint-plugin-next@14.2.6':
     resolution: {integrity: sha512-d3+p4AjIYmhqzYHhhmkRYYN6ZU35TwZAKX08xKRfnHkz72KhWL2kxMFsDptpZs5e8bBGdepn7vn1+9DaF8iX+A==}
@@ -6819,6 +6822,10 @@ snapshots:
       - '@types/react'
 
   '@next/env@14.2.4': {}
+
+  '@next/eslint-plugin-next@14.2.10':
+    dependencies:
+      glob: 10.3.10
 
   '@next/eslint-plugin-next@14.2.6':
     dependencies:
