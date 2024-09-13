@@ -8,7 +8,6 @@ export const getDefaultTransactionFilter = (): QueryTransactionFilter => {
     pageSize: 15,
     endDate: dayjs().endOf('date').toISOString(),
     startDate: dayjs().startOf('month').startOf('date').toISOString(),
-    isCount: true,
-    includeDeleted: false
+    isCount: true
   };
 };

@@ -11,16 +11,16 @@ interface TransactionStatusChipProps {
 const TransactionStatusChip: React.FC<TransactionStatusChipProps> = ({
   className,
   size = 'medium',
-  status = TransactionType.INCOME
+  status = TransactionType.Income
 }) => {
   const { color, label } = useMemo(() => {
     const newLabel = TransactionTypeMap[status];
     let newColor: ChipProps['color'] = 'info';
     switch (status) {
-      case TransactionType.OUTCOME:
+      case TransactionType.Outcome:
         newColor = 'error';
         break;
-      case TransactionType.INCOME:
+      case TransactionType.Income:
         newColor = 'primary';
         break;
       default:

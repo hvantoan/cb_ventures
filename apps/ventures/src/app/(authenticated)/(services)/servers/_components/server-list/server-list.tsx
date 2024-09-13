@@ -83,7 +83,6 @@ const ServerList = forwardRef<ServerListRef, ServerListProps>(({ initFilters }, 
         pageIndex: filters.pageIndex,
         pageSize: filters.pageSize
       },
-      columnFilters: Object.entries(filters).map(([key, value]) => ({ id: key as keyof QueryServerFilter, value })),
       showSkeletons: isLoading
     },
     rowCount: data?.count ?? 0,
@@ -93,6 +92,7 @@ const ServerList = forwardRef<ServerListRef, ServerListProps>(({ initFilters }, 
     initialState: {
       density: 'compact'
     },
+    enableColumnActions: false,
     enableColumnFilters: false
   });
   return (

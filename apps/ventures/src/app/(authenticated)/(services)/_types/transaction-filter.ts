@@ -1,4 +1,4 @@
 export type QueryTransactionFilter = BaseListRequest & {
-  customerId?: string;
+  userBotId?: string | null;
   isDeleted?: boolean;
 };

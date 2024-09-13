@@ -1,11 +1,17 @@
 import { DATE_TIME_FORMAT } from '@fumy/utilities/constants';
 import { currencyFormatter } from '@fumy/utilities/helpers/number-formatter';
 import { Server } from '@modules/(services)/_models/server';
+import { IconButton } from '@mui/material';
 import dayjs from 'dayjs';
 import type { MRT_ColumnDef } from 'material-react-table';
 
 import FumyLink from '@/components/fumy-link';
 import { serversPath } from '@/routes';
+
+const handleNavigate = (serverId: string) => {
+  const url = `?serverId=${serverId}`;
+  window.history.pushState(undefined, '', url);
+};
 
 export const columns: Array<MRT_ColumnDef<Server>> = [
   {
@@ -54,5 +60,20 @@ export const columns: Array<MRT_ColumnDef<Server>> = [
       align: 'right'
     },
     Cell: ({ row }) => currencyFormatter.format(row.original.balance)
+  },
+  {
+    header: '',
+    id: 'actions',
+    enableHiding: false,
+    muiTableBodyCellProps: {
+      align: 'center'
+    },
+    Cell: ({ row }) => {
+      return (
+        <IconButton color='primary' onClick={() => handleNavigate(row.original.id)}>
+          <span className='i-solar-info-circle-bold-duotone h-6 w-6' />
+        </IconButton>
+      );
+    }
   }
 ];

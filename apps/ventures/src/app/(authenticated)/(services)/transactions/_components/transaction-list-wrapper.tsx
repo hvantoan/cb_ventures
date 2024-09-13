@@ -20,24 +20,6 @@ const TransactionListWrapper: React.FC<TransactionListWrapperProps> = ({ initFil
     <>
       <div className='mb-6 flex items-center justify-between'>
         <Typography typography='h4'>{TITLE}</Typography>
-        <div className='flex items-center gap-2'>
-          {/* <Button
-            component={Link}
-            href={`${receiptsPath}/new`}
-            startIcon={<span className='i-eva-plus-outline h-4 w-4' />}
-            color='info'
-          >
-            {RECEIPT_TEXT}
-          </Button>
-          <Button
-            component={Link}
-            href={`${paymentsPath}/new`}
-            startIcon={<span className='i-eva-plus-outline h-4 w-4' />}
-            color='secondary'
-          >
-            {PAYMENT_TEXT}
-          </Button> */}
-        </div>
       </div>
       <TransactionList initFilter={initFilter} ref={listRef} />
     </>
