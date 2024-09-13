@@ -61,6 +61,9 @@ const nextConfig = {
       },
       {
         hostname: 'img.icons8.com'
+      },
+      {
+        hostname: 'ftp.hvantoan.io.vn'
       }
     ]
   },

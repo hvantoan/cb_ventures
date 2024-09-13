@@ -10,7 +10,7 @@ export const fields: Array<ExtendedControllerProps<Contact>> = [
     render: ({ field: { onChange, value }, fieldState: { error } }) => (
       <TextField
         className='col-span-12 md:col-span-4'
-        label='Tên cửa hàng'
+        label='Tên liên hệ'
         onChange={onChange}
         value={value ?? ''}
         InputLabelProps={{ shrink: true }}

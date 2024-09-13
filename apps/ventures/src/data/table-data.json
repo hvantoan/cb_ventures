@@ -1,100 +1,28 @@
 {
   "salesLocation": {
     "today": [
-      [
-        "United states",
-        "90",
-        "$536"
-      ],
-      [
-        "United kingdom",
-        "70",
-        "$573"
-      ],
-      [
-        "Canada",
-        "70",
-        "$457"
-      ],
-      [
-        "Japan",
-        "30",
-        "$524"
-      ],
-      [
-        "Bangladesh",
-        "50",
-        "$354"
-      ],
-      [
-        "India",
-        "60",
-        "$654"
-      ]
+      ["United states", "90", "$536"],
+      ["United kingdom", "70", "$573"],
+      ["Canada", "70", "$457"],
+      ["Japan", "30", "$524"],
+      ["Bangladesh", "50", "$354"],
+      ["India", "60", "$654"]
     ],
     "week": [
-      [
-        "Japan",
-        "90",
-        "$336"
-      ],
-      [
-        "United kingdom",
-        "70",
-        "$873"
-      ],
-      [
-        "Canada",
-        "70",
-        "$557"
-      ],
-      [
-        "Japan",
-        "30",
-        "$525"
-      ],
-      [
-        "Bangladesh",
-        "50",
-        "$352"
-      ],
-      [
-        "Pakistan",
-        "60",
-        "$658"
-      ]
+      ["Japan", "90", "$336"],
+      ["United kingdom", "70", "$873"],
+      ["Canada", "70", "$557"],
+      ["Japan", "30", "$525"],
+      ["Bangladesh", "50", "$352"],
+      ["Pakistan", "60", "$658"]
     ],
     "month": [
-      [
-        "Russia",
-        "90",
-        "$534"
-      ],
-      [
-        "Germany",
-        "70",
-        "$573"
-      ],
-      [
-        "Canada",
-        "70",
-        "$487"
-      ],
-      [
-        "Japan",
-        "30",
-        "$514"
-      ],
-      [
-        "Bangladesh",
-        "50",
-        "$394"
-      ],
-      [
-        "Vutan",
-        "60",
-        "$354"
-      ]
+      ["Russia", "90", "$534"],
+      ["Germany", "70", "$573"],
+      ["Canada", "70", "$487"],
+      ["Japan", "30", "$514"],
+      ["Bangladesh", "50", "$394"],
+      ["Vutan", "60", "$354"]
     ]
   },
   "topSaleProduct": {
@@ -527,21 +455,21 @@
     ]
   },
   "trafficChannel": [
-      {
-        "icon": "facebook",
-        "name": "Facebook",
-        "user": "3,397",
-        "session": "123",
-        "bounce": "2,584",
-        "duration": "00:01:05"
-      },
-      {
-        "icon": "twitter",
-        "name": "Twitter",
-        "user": "2,397",
-        "session": "433",
-        "bounce": "2,024",
-        "duration": "00:02:35"
+    {
+      "icon": "facebook",
+      "name": "Facebook",
+      "user": "3,397",
+      "session": "123",
+      "bounce": "2,584",
+      "duration": "00:01:05"
+    },
+    {
+      "icon": "twitter",
+      "name": "Twitter",
+      "user": "2,397",
+      "session": "433",
+      "bounce": "2,024",
+      "duration": "00:02:35"
     },
     {
       "icon": "instagram",

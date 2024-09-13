@@ -4,6 +4,8 @@ export const MuiCssBaseline: Components<CssVarsTheme>['MuiCssBaseline'] = {
   styleOverrides: (theme) => ({
     '*': {
       boxSizing: 'border-box',
+      scrollbarWidth: 'thin',
+      scrollbarColor: `${theme.vars.palette.grey[400]} transparent`,
       '&::-webkit-scrollbar': {
         width: 8,
         height: 6,

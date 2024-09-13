@@ -3,14 +3,22 @@ import { Roles } from '@/enums/role.enum';
 
 export const navItems: Array<NavigationWithRole> = [
   {
-    name: 'Home',
-    path: 'home',
+    name: 'Tổng quan',
+    path: 'dashboard',
+    role: Roles.Dashboard,
     icon: 'i-solar-code-scan-bold-duotone'
   },
   {
-    name: 'Chúng tôi',
-    path: 'contact',
-    icon: 'i-solar-chat-round-money-bold'
+    name: 'Giao dịch',
+    path: 'transaction',
+    icon: 'i-solar-chat-round-money-bold',
+    children: [
+      {
+        name: 'Danh sách giao dịch',
+        path: 'transactions',
+        role: Roles.Contact
+      }
+    ]
   },
   {
     name: 'Liên hệ',
@@ -25,10 +33,17 @@ export const navItems: Array<NavigationWithRole> = [
     ]
   },
   {
-    name: 'Tổng quan',
-    path: 'dashboard',
-    role: Roles.Dashboard,
-    icon: 'i-solar-code-scan-bold-duotone'
+    name: 'Danh mục',
+    path: 'category',
+    icon: 'i-solar-bill-list-bold',
+    role: Roles.Category,
+    children: [
+      {
+        name: 'Bot',
+        path: 'bots',
+        role: Roles.Bot
+      }
+    ]
   },
   {
     name: 'Cài đặt',
@@ -52,5 +67,15 @@ export const navItems: Array<NavigationWithRole> = [
         role: Roles.SettingRole
       }
     ]
+  },
+  {
+    name: 'Trang chủ',
+    path: 'home',
+    icon: 'i-solar-code-scan-bold-duotone'
+  },
+  {
+    name: 'Chúng tôi',
+    path: 'we',
+    icon: 'i-solar-boombox-broken'
   }
 ];

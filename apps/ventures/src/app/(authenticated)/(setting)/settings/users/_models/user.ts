@@ -4,7 +4,7 @@ import { IsDefined, IsEmail, Matches, MaxLength, MinLength, ValidateIf } from 'c
 import { Nullable } from 'class-validator-extended';
 import 'reflect-metadata';
 
-import { BankCard } from '@/app/(public)/contact/_model/bank-card';
+import { BankCard } from '@/app/(public)/we/_model/bank-card';
 import { AdministrativeUnit } from '@/models/administrative-unit';
 
 export class User {

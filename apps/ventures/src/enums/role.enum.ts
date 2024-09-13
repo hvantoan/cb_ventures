@@ -6,5 +6,9 @@ export enum Roles {
   SettingUserReset = 'BO.User.Reset',
   SettingRole = 'BO.Role',
   Contact = 'BO.Contact',
+
+  Category = 'BO.Category',
+  Bot = 'BO.Bot',
+
   Nested = 'Nested'
 }

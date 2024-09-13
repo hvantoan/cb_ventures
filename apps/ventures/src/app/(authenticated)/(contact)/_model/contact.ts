@@ -1,5 +1,5 @@
 import { Type } from 'class-transformer';
-import { IsEmail, Matches, ValidateIf, IsNotEmpty } from 'class-validator';
+import { IsDefined, IsEmail, Matches, ValidateIf } from 'class-validator';
 import 'reflect-metadata';
 
 import { Image } from '@/models/image';
@@ -11,6 +11,7 @@ export class Contact {
 
   bankCardId: string;
 
+  @IsDefined({ message: 'Tên không được để trống.' })
   name: string = '';
 
   @Matches(/[\s\\+-;\b|]/, { message: 'Số điện thoại không hợp lệ.' })
@@ -21,20 +22,20 @@ export class Contact {
   @ValidateIf((_, value) => value?.length > 0)
   email: string = '';
 
-  @IsNotEmpty({ message: 'CMND/CCCD không được để trống.' })
+  @IsDefined({ message: 'CMND/CCCD không được để trống.' })
   identityCard: string = '';
 
   botId?: string;
 
   @Type(() => Image)
-  @IsNotEmpty({ message: 'Ảnh CMND/CCCD mặt trước không được để trống.' })
+  @IsDefined({ message: 'Ảnh CMND/CCCD mặt trước không được để trống.' })
   frontIdentityCard: Image;
 
   @Type(() => Image)
-  @IsNotEmpty({ message: 'Ảnh CMND/CCCD mặt sau không được để trống.' })
+  @IsDefined({ message: 'Ảnh CMND/CCCD mặt sau không được để trống.' })
   backIdentityCard: Image;
 
   @Type(() => BankCard)
-  @IsNotEmpty({ message: 'Thông tin thẻ ngân hàng không được để trống.' })
+  @IsDefined({ message: 'Thông tin thẻ ngân hàng không được để trống.' })
   bankCard: BankCard;
 }
