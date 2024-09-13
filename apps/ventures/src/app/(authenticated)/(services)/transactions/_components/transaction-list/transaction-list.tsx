@@ -1,9 +1,9 @@
 'use client';
 
 import { DateRangePicker } from '@fumy/ui/components';
-import { Transaction } from '@modules/(services)/_models/transaction';
 import { useQueryTransactions } from '@modules/(services)/_queries/use-query-transactions';
 import { QueryTransactionFilter } from '@modules/(services)/_types/transaction-filter';
+import { Transaction } from '@modules/(services)/transactions/_models/transaction';
 import { Card } from '@mui/material';
 import { type ColumnFiltersState, OnChangeFn } from '@tanstack/react-table';
 import dayjs from 'dayjs';

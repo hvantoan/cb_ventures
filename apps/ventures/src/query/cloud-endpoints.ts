@@ -50,7 +50,7 @@ export const CLOUD_CONTACT_DELETE_ENDPOINT = `${CLOUD_CONTACT_ENDPOINT}/delete`;
 export const CLOUD_ME_ENDPOINT = '/me';
 export const CLOUD_ME_CHANGE_PASSWORD_ENDPOINT = `${CLOUD_ME_ENDPOINT}/change-password`;
 
-export const CLOUD_TRANSACTION_ENDPOINT = '/transaction';
+export const CLOUD_TRANSACTION_ENDPOINT = '/transactions';
 export const CLOUD_TRANSACTION_LIST_ENDPOINT = `${CLOUD_TRANSACTION_ENDPOINT}/list`;
 
 export const CLOUD_BOT_ENDPOINT = '/bots';

@@ -5,8 +5,8 @@ import { clientInstance } from '@/query/client-instance';
 import { INTERNAL_TRANSACTIONS_ENDPOINT } from '@/query/internal-endpoints';
 import { TRANSACTION_QK } from '@/query/query-keys';
 
-import { Transaction } from '../_models/transaction';
 import { QueryTransactionFilter } from '../_types/transaction-filter';
+import { Transaction } from '../transactions/_models/transaction';
 
 const select = (input: BaseResponse<BaseListData<Transaction>>): BaseListData<Transaction> => {
   const items = plainToInstance(Transaction, input.data.items);

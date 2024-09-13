@@ -4,7 +4,7 @@ import { Type } from 'class-transformer';
 import { IsNotEmpty, Max, Min } from 'class-validator';
 import { Dayjs } from 'dayjs';
 
-import { Transaction } from './transaction';
+import { Transaction } from '../transactions/_models/transaction';
 
 export class Server {
   id: string = '';
