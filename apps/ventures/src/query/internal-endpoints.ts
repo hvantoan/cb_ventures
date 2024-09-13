@@ -15,3 +15,5 @@ export const INTERNAL_CONTACTS_ENDPOINT = 'contacts';
 export const INTERNAL_TRANSACTIONS_ENDPOINT = 'transactions';
 
 export const INTERNAL_BOTS_ENDPOINT = 'bots';
+export const INTERNAL_SERVERS_ENDPOINT = 'servers';
+export const INTERNAL_USERS_ENDPOINT = 'users';

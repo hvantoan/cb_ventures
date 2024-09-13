@@ -7,7 +7,7 @@ const NumericField: React.FC<BaseNumericFieldProps> = (props) => {
 
   return (
     <BaseNumericField
-      decimalScale={numberFormat.numberDecimalDigitsForQuantity}
+      decimalScale={0}
       {...props}
       decimalSeparator={numberFormat.decimalSeparator}
       fixedDecimalScale
