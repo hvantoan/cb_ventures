@@ -53,7 +53,6 @@ const BotInfoHeader: React.FC<BotDetailFormProps> = ({ botId }) => {
       stopLoading();
     }
   }, [botId]);
-
   return (
     <PageHeader
       title={

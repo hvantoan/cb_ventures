@@ -11,6 +11,7 @@ export const roadmapPath = '/roadmap';
 export const loginPath = '/login';
 export const contactsPath = '/contacts';
 export const botsPath = '/bots';
+export const serversPath = '/servers';
 
 export const settingMerchantPath = '/settings/merchant';
 export const settingRolePath = '/settings/role';

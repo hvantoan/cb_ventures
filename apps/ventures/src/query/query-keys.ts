@@ -16,11 +16,10 @@ export const USER_QK = 'user';
 export const ROLE_QK = 'role';
 export const PERMISSION_QK = 'permission';
 export const USER_REQUEST_QK = 'user-request';
-
-export const CONTACT_QK = 'contact';
-
-export const TRANSACTION_QK = 'transaction';
-
 export const ME_QK = 'me';
 
 export const BOT_QK = 'bot';
+export const CONTACT_QK = 'contact';
+
+export const TRANSACTION_QK = 'transaction';
+export const SERVER_QK = 'server';
