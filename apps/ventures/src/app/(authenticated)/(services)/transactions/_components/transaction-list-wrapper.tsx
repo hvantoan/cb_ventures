@@ -1,6 +1,6 @@
 'use client';
 
-import { QueryTransactionFilter } from '@modules/(transaction)/_types/transaction-filter';
+import { QueryTransactionFilter } from '@modules/(services)/_types/transaction-filter';
 import { Typography } from '@mui/material';
 import { useRef } from 'react';
 
@@ -11,7 +11,7 @@ interface TransactionListWrapperProps {
   initFilter: QueryTransactionFilter;
 }
 
-const TITLE = 'Phiếu thu/chi';
+const TITLE = 'Phiếu giao dịch';
 
 const TransactionListWrapper: React.FC<TransactionListWrapperProps> = ({ initFilter }) => {
   const listRef = useRef<TransactionListRef>(null);
