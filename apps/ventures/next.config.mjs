@@ -64,6 +64,9 @@ const nextConfig = {
       },
       {
         hostname: 'ftp.hvantoan.io.vn'
+      },
+      {
+        hostname: 'ventures.dc.hvantoan.io.vn'
       }
     ]
   },
