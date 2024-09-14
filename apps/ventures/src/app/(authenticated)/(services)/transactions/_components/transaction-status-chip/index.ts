@@ -1,1 +1,1 @@
-export { default as PaymentStatusChip } from './transaction-status-chip';
+export { default as TransactionStatusChip } from './transaction-status-chip';

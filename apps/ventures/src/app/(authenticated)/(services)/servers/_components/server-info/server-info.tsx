@@ -8,11 +8,12 @@ import { useQueryTransactions } from '@modules/(services)/_queries/use-query-tra
 import { Button, Dialog, DialogContent, Typography } from '@mui/material';
 import { MRT_TableContainer, useMaterialReactTable, type MRT_TableOptions } from 'material-react-table';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { tableOptions } from '@/configs/table-options';
 
 import { TransactionType } from '../../../_enums/transaction-type';
+import ServerCreateTransaction from '../server-create-transaction/server-create-transaction';
 import { columns } from './server-info.define';
 
 const TITLE = 'Công nợ khách hàng';
@@ -24,16 +25,27 @@ const ServerInfo: React.FC = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const serverId = searchParams.get('serverId');
-  const type = searchParams.get('type');
+  const [serverId, setServerId] = useState(searchParams.get('serverId'));
+  const [transactionType, setTransactionType] = useState<TransactionType | undefined>();
 
-  const { data: server } = useQueryServer(serverId ?? '');
-  const { data: transactions } = useQueryTransactions({
+  const { data: server, refetch: refetchServer } = useQueryServer(serverId!);
+  const { data: transactions, refetch: refetchTransactions } = useQueryTransactions({
     pageIndex: 0,
     pageSize: 100,
     isAll: true,
     userBotId: serverId ?? ''
   });
+
+  const refresh = () => {
+    refetchServer();
+    refetchTransactions();
+  };
+
+  useEffect(() => {
+    const id = searchParams.get('serverId');
+    setServerId(id);
+    if (id) refresh();
+  }, [searchParams]);
 
   const table = useMaterialReactTable({
     ...(tableOptions as MRT_TableOptions<Transaction>),
@@ -47,52 +59,60 @@ const ServerInfo: React.FC = () => {
   });
 
   const handleClose = useCallback(() => {
+    setTransactionType(undefined);
     router.back();
   }, []);
 
-  const handleNavigate = (data: TransactionType) => {
-    const url = `?serverId=${serverId}&type=${data}`;
-    window.history.pushState(undefined, '', url);
-  };
-
   return (
-    <Dialog open={Boolean(serverId) && !type} maxWidth='lg'>
-      <DialogHeader
-        title={server ? `${TITLE} (${server?.iD_MT4} - ${server.user.name})` : TITLE}
-        onClose={handleClose}
-      />
-      <DialogContent className='px-0'>
-        <div className='flex flex-col'>
-          <div className='mb-2 flex flex-col items-center justify-between gap-4 p-4 md:flex-row'>
-            <Typography variant='subtitle1' component='div' className='shadow-dropdown rounded-md px-4 py-2'>
-              {BALANCE_TITLE}
-              {currencyFormatter.format(server?.balance ?? 0)}
-            </Typography>
-            <div className='flex items-center gap-3'>
-              <Button
-                className='w-32'
-                color='primary'
-                rel='noopener noreferrer'
-                onClick={() => handleNavigate(TransactionType.Income)}
-              >
-                {CREATE_RECEIPT_BUTTON_LABEL}
-              </Button>
-              <Button
-                className='w-32'
-                color='secondary'
-                rel='noopener noreferrer'
-                onClick={() => handleNavigate(TransactionType.Outcome)}
-              >
-                {CREATE_REFUND_BUTTON_LABEL}
-              </Button>
+    <>
+      <Dialog open={Boolean(serverId)} maxWidth='lg'>
+        <DialogHeader
+          title={server ? `${TITLE} (${server?.iD_MT4} - ${server.user.name})` : TITLE}
+          onClose={handleClose}
+        />
+        <DialogContent className='px-0'>
+          <div className='flex flex-col'>
+            <div className='mb-2 flex flex-col items-center justify-between gap-4 p-4 md:flex-row'>
+              <Typography variant='subtitle1' component='div' className='shadow-dropdown rounded-md px-4 py-2'>
+                {BALANCE_TITLE}
+                {currencyFormatter.format(server?.balance ?? 0)}
+              </Typography>
+              <div className='flex items-center gap-3'>
+                <Button
+                  className='w-32'
+                  color='primary'
+                  rel='noopener noreferrer'
+                  onClick={() => setTransactionType(TransactionType.Income)}
+                >
+                  {CREATE_RECEIPT_BUTTON_LABEL}
+                </Button>
+                <Button
+                  className='w-32'
+                  color='secondary'
+                  rel='noopener noreferrer'
+                  onClick={() => setTransactionType(TransactionType.Outcome)}
+                >
+                  {CREATE_REFUND_BUTTON_LABEL}
+                </Button>
+              </div>
+            </div>
+            <div>
+              <MRT_TableContainer table={table} />
             </div>
           </div>
-          <div>
-            <MRT_TableContainer table={table} />
-          </div>
-        </div>
-      </DialogContent>
-    </Dialog>
+        </DialogContent>
+      </Dialog>
+      {serverId && transactionType && (
+        <ServerCreateTransaction
+          serverId={serverId}
+          transactionType={transactionType}
+          onClose={() => {
+            setTransactionType(undefined);
+            refresh();
+          }}
+        />
+      )}
+    </>
   );
 };
 

@@ -25,6 +25,7 @@ export const columns: Array<MRT_ColumnDef<Transaction>> = [
     Cell: ({ renderedCellValue }) => `${currencyFormatter.format(renderedCellValue as number)}`
   },
   {
+    id: 'transactionType',
     header: 'Loại giao dịch',
     accessorKey: 'transactionType',
     muiTableHeadCellProps: {
