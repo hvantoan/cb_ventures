@@ -12,7 +12,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { tableOptions } from '@/configs/table-options';
 
-import { TransactionType } from '../../../_enums/transaction-type';
+import { ETransactionType } from '../../../_enums/transaction-type';
 import ServerCreateTransaction from '../server-create-transaction/server-create-transaction';
 import { columns } from './server-info.define';
 
@@ -26,7 +26,7 @@ const ServerInfo: React.FC = () => {
   const router = useRouter();
 
   const [serverId, setServerId] = useState(searchParams.get('serverId'));
-  const [transactionType, setTransactionType] = useState<TransactionType | undefined>();
+  const [transactionType, setTransactionType] = useState<ETransactionType | undefined>();
 
   const { data: server, refetch: refetchServer } = useQueryServer(serverId!);
   const { data: transactions, refetch: refetchTransactions } = useQueryTransactions({
@@ -82,7 +82,7 @@ const ServerInfo: React.FC = () => {
                   className='w-32'
                   color='primary'
                   rel='noopener noreferrer'
-                  onClick={() => setTransactionType(TransactionType.Income)}
+                  onClick={() => setTransactionType(ETransactionType.Income)}
                 >
                   {CREATE_RECEIPT_BUTTON_LABEL}
                 </Button>
@@ -90,7 +90,7 @@ const ServerInfo: React.FC = () => {
                   className='w-32'
                   color='secondary'
                   rel='noopener noreferrer'
-                  onClick={() => setTransactionType(TransactionType.Outcome)}
+                  onClick={() => setTransactionType(ETransactionType.Outcome)}
                 >
                   {CREATE_REFUND_BUTTON_LABEL}
                 </Button>

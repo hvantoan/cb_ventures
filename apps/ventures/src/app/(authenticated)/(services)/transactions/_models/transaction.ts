@@ -3,7 +3,7 @@ import { Type } from 'class-transformer';
 import { IsNotEmpty, Min } from 'class-validator';
 import { Dayjs } from 'dayjs';
 
-import { TransactionType } from '../../_enums/transaction-type';
+import { ETransactionType } from '../../_enums/transaction-type';
 
 export class Transaction {
   id: string = '';
@@ -17,7 +17,7 @@ export class Transaction {
 
   @Type(() => String)
   @IsNotEmpty({ message: 'Loại giao dịch không được để trống' })
-  transactionType: TransactionType = TransactionType.Income;
+  transactionType: ETransactionType = ETransactionType.Income;
 
   @Type(() => String)
   transactionAt?: Dayjs;

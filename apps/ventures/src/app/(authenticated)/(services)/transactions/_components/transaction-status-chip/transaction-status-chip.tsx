@@ -1,8 +1,9 @@
-import { TransactionType, TransactionTypeMap } from '@modules/(services)/_enums/transaction-type';
+import { ETransactionType, TransactionTypeMap } from '@modules/(services)/_enums/transaction-type';
 import { Chip, ChipProps } from '@mui/material';
+import React, { useMemo } from 'react';
 
 interface TransactionStatusChipProps {
-  status?: TransactionType;
+  status: ETransactionType;
   size?: ChipProps['size'];
   className?: string;
 }
@@ -10,22 +11,29 @@ interface TransactionStatusChipProps {
 const TransactionStatusChip: React.FC<TransactionStatusChipProps> = ({
   className,
   size = 'medium',
-  status = TransactionType.Income
+  status = ETransactionType.Income
 }) => {
-  const newLabel = TransactionTypeMap[status];
-  let newColor: ChipProps['color'] = 'info';
-  switch (status) {
-    case TransactionType.Outcome:
-      newColor = 'error';
-      break;
-    case TransactionType.Income:
-      newColor = 'info';
-      break;
-    default:
-      break;
-  }
+  const { color, label } = useMemo(() => {
+    const newLabel = TransactionTypeMap[status];
+    let newColor: ChipProps['color'] = 'default';
+    switch (Number(status)) {
+      case ETransactionType.Income:
+        newColor = 'primary';
+        break;
+      case ETransactionType.Outcome:
+        newColor = 'error';
+        break;
+      case ETransactionType.Profit:
+        newColor = 'warning';
+        break;
+      default:
+        newColor = 'default'; // Set a default color if none match
+        break;
+    }
+    return { label: newLabel, color: newColor };
+  }, [status]);
 
-  return <Chip label={newLabel} color={newColor} variant='soft' size={size} className={className} />;
+  return <Chip label={label} color={color} variant='soft' size={size} className={className} />;
 };
 
 export default TransactionStatusChip;

@@ -1,6 +1,6 @@
 import { DATE_TIME_FORMAT } from '@fumy/utilities/constants';
 import { currencyFormatter } from '@fumy/utilities/helpers/number-formatter';
-import { TransactionType } from '@modules/(services)/_enums/transaction-type';
+import { ETransactionType } from '@modules/(services)/_enums/transaction-type';
 import { Transaction } from '@modules/(services)/transactions/_models/transaction';
 import dayjs from 'dayjs';
 import { MRT_ColumnDef } from 'material-react-table';
@@ -44,6 +44,6 @@ export const columns: Array<MRT_ColumnDef<Transaction>> = [
     muiTableBodyCellProps: {
       align: 'center'
     },
-    Cell: ({ renderedCellValue }) => <TransactionStatusChip status={renderedCellValue as TransactionType} />
+    Cell: ({ renderedCellValue }) => <TransactionStatusChip status={renderedCellValue as ETransactionType} />
   }
 ];

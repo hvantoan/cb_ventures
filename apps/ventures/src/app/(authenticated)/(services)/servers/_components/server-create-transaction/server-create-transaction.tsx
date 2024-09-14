@@ -4,7 +4,7 @@ import { DialogHeader } from '@fumy/ui/components';
 import { useToggle } from '@fumy/utilities/hooks';
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
 import { modifyTransactionAction } from '@modules/(services)/_actions/modify-transaction-action';
-import { TransactionType } from '@modules/(services)/_enums/transaction-type';
+import { ETransactionType } from '@modules/(services)/_enums/transaction-type';
 import { Transaction } from '@modules/(services)/_models';
 import { LoadingButton } from '@mui/lab';
 import { Box, Dialog, DialogContent } from '@mui/material';
@@ -32,7 +32,7 @@ const handleKeyDown: React.KeyboardEventHandler<HTMLFormElement> = (event) => {
 
 interface ServerCreateTransactionProps {
   serverId?: string;
-  transactionType?: TransactionType;
+  transactionType?: ETransactionType;
   onClose: () => void;
 }
 
@@ -76,7 +76,7 @@ const ServerCreateTransaction: React.FC<ServerCreateTransactionProps> = ({ serve
   return (
     <Dialog open={Boolean(searchParams.get('serverId')) && Boolean(transactionType)} maxWidth='lg'>
       <DialogHeader
-        title={transactionType === TransactionType.Income ? INCOME_TITLE : OUTCOME_TITLE}
+        title={transactionType === ETransactionType.Income ? INCOME_TITLE : OUTCOME_TITLE}
         onClose={handleClose}
       />
       <DialogContent className='px-0'>
