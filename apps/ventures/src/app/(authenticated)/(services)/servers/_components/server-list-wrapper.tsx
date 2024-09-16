@@ -5,6 +5,7 @@ import { Typography } from '@mui/material';
 import { useRef } from 'react';
 
 import QuickActions from './quick-actions';
+import { ServerInfo } from './server-info';
 import { ServerList } from './server-list';
 import { ServerListRef } from './server-list/server-list';
 
@@ -24,6 +25,7 @@ const ServerListWrapper: React.FC<ServerListWrapperProps> = ({ initFilters }) =>
         <QuickActions />
       </div>
       <ServerList initFilters={initFilters} ref={serverRef} />
+      <ServerInfo />
     </>
   );
 };

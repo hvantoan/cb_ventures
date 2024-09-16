@@ -6,11 +6,13 @@ import { SERVER_QK } from '@/query/query-keys';
 import { serverInstance } from '@/query/server-instance';
 
 import { getDefaultServerFilter } from '../_helpers/get-default-server-filter';
-import ServerCreateTransaction from './_components/server-create-transaction/server-create-transaction';
-import { ServerInfo } from './_components/server-info';
 import ServerListWrapper from './_components/server-list-wrapper';
 
-const ServerPage: React.FC = async () => {
+type SearchParamProps = {
+  searchParams: Record<string, string> | null | undefined;
+};
+
+const ServerPage: React.FC<SearchParamProps> = async () => {
   const initFilters = getDefaultServerFilter();
   const hydrateClient = getQueryClient();
 
@@ -25,13 +27,9 @@ const ServerPage: React.FC = async () => {
   const dehydratedState = dehydrate(hydrateClient);
 
   return (
-    <>
-      <HydrationBoundary state={dehydratedState}>
-        <ServerListWrapper initFilters={initFilters} />
-      </HydrationBoundary>
-      <ServerInfo />
-      <ServerCreateTransaction />
-    </>
+    <HydrationBoundary state={dehydratedState}>
+      <ServerListWrapper initFilters={initFilters} />
+    </HydrationBoundary>
   );
 };
 

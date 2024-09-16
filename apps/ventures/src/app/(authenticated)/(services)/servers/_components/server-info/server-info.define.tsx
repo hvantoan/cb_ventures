@@ -1,6 +1,6 @@
 import { DATE_TIME_FORMAT } from '@fumy/utilities/constants';
 import { currencyFormatter } from '@fumy/utilities/helpers/number-formatter';
-import { TransactionType } from '@modules/(services)/_enums/transaction-type';
+import { ETransactionType } from '@modules/(services)/_enums/transaction-type';
 import { Transaction } from '@modules/(services)/_models';
 import TransactionStatusChip from '@modules/(services)/transactions/_components/transaction-status-chip/transaction-status-chip';
 import dayjs from 'dayjs';
@@ -25,6 +25,7 @@ export const columns: Array<MRT_ColumnDef<Transaction>> = [
     Cell: ({ renderedCellValue }) => `${currencyFormatter.format(renderedCellValue as number)}`
   },
   {
+    id: 'transactionType',
     header: 'Loại giao dịch',
     accessorKey: 'transactionType',
     muiTableHeadCellProps: {
@@ -33,6 +34,6 @@ export const columns: Array<MRT_ColumnDef<Transaction>> = [
     muiTableBodyCellProps: {
       align: 'center'
     },
-    Cell: ({ renderedCellValue }) => <TransactionStatusChip status={renderedCellValue as TransactionType} />
+    Cell: ({ renderedCellValue }) => <TransactionStatusChip status={renderedCellValue as ETransactionType} />
   }
 ];
