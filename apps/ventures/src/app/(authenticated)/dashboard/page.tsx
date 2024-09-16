@@ -1,13 +1,17 @@
 import { getQueryClient } from '@fumy/utilities/query';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import axios from 'axios';
+import { redirect } from 'next/navigation';
 
 import { TOP_PRODUCTS_QK } from '@/query/query-keys';
+import { contactsPath } from '@/routes';
 
 import { HotCoins } from './_components/hot-coins';
 
 const DashboardPage: React.FC = () => {
   const hydrateClient = getQueryClient();
+
+  redirect(contactsPath);
 
   hydrateClient.prefetchQuery({
     queryKey: [TOP_PRODUCTS_QK],
