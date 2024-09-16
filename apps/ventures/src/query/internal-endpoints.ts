@@ -1,4 +1,5 @@
 export const INTERNAL_DOWNLOAD_ENDPOINT = `download`;
+export const INTERNAL_BOT_REPORT_CHART_ENDPOINT = 'charts/bot-report-chart';
 export const INTERNAL_REVENUE_CHART_ENDPOINT = 'charts/revenue-chart';
 export const INTERNAL_SALE_BRAND_CHART_ENDPOINT = 'charts/sale-brand-chart';
 export const INTERNAL_TOP_PRODUCTS_ENDPOINT = 'charts/top-products';

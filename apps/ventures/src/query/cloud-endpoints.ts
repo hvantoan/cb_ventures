@@ -1,9 +1,5 @@
 export const CLOUD_LOGIN_ENDPOINT = '/auth/login';
-export const CLOUD_REVENUE_CHART_ENDPOINT = '/dashboard/chart';
-export const CLOUD_SALE_BRAND_CHART_ENDPOINT = '/dashboard/summary-sale-by-brand';
-export const CLOUD_TOP_PRODUCTS_ENDPOINT = '/dashboard/top-product';
-export const CLOUD_SALE_PROVINCE_CHART_ENDPOINT = '/dashboard/summary-sale-by-province';
-export const CLOUD_NEARLY_SOLD_OUT_CHART_ENDPOINT = '/dashboard/nearly-sold-out';
+export const CLOUD_BOT_REPORT_CHART_ENDPOINT = '/reports/bot';
 
 export const CLOUD_AU_ENDPOINT = '/resource/administrative-unit';
 

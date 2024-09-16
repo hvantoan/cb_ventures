@@ -55,7 +55,7 @@ const BotForm: React.FC<BotFormProps> = ({ botId }) => {
   const router = useRouter();
   const queryClient = useQueryClient();
 
-  const { handleOpen: startLoading, handleClose: stopLoading } = useToggle();
+  const { isOpen: isLoading, handleOpen: startLoading, handleClose: stopLoading } = useToggle();
 
   const onValid = useCallback(async (data: Bot) => {
     startLoading();
@@ -63,15 +63,15 @@ const BotForm: React.FC<BotFormProps> = ({ botId }) => {
     if (!payload.avatar?.id && payload.avatar?.image) {
       payload.avatar.data = convertToByteArray(payload.avatar.image);
     }
+
     const res = await modifyBotAction(payload);
     if (res.success) {
       toast.success(res.message);
       await queryClient.invalidateQueries({ queryKey: [BOT_QK] });
       router.push(botsPath);
-    } else {
-      toast.error(res.message);
-      stopLoading();
-    }
+    } else toast.error(res.message);
+
+    stopLoading();
   }, []);
 
   const handleImageChange = (onChange: (...event: any[]) => void) => (e: ChangeEvent<HTMLInputElement>) => {
@@ -107,7 +107,7 @@ const BotForm: React.FC<BotFormProps> = ({ botId }) => {
       onKeyDown={handleKeyDown}
     >
       <FormProvider {...formMethods}>
-        <BotInfoHeader botId={botId} />
+        <BotInfoHeader botId={botId} isLoading={isLoading} startLoading={startLoading} stopLoading={stopLoading} />
         <Card>
           <div className='grid grid-cols-12 gap-8'>
             <div className='col-span-12 m-6 flex flex-col items-center md:col-span-3'>

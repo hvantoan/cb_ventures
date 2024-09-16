@@ -1,5 +1,5 @@
 import { DATE_TIME_FORMAT } from '@fumy/utilities/constants';
-import { currencyFormatter } from '@fumy/utilities/helpers/number-formatter';
+import { toCurrency } from '@fumy/utilities/helpers/number-formatter';
 import { Server } from '@modules/(services)/_models/server';
 import { IconButton } from '@mui/material';
 import dayjs from 'dayjs';
@@ -17,12 +17,14 @@ export const columns: Array<MRT_ColumnDef<Server>> = [
   {
     header: 'Ngày đăng ký',
     accessorKey: 'createAt',
+    size: 150,
     Cell: ({ renderedCellValue }) => dayjs(renderedCellValue as string).format(DATE_TIME_FORMAT),
     enableColumnFilter: false
   },
   {
     header: 'ID MT4',
     accessorKey: 'iD_MT4',
+    size: 100,
     Cell: ({ renderedCellValue, row }) => {
       return <FumyLink href={`${serversPath}/${row.original.id}`}>{renderedCellValue}</FumyLink>;
     }
@@ -30,6 +32,7 @@ export const columns: Array<MRT_ColumnDef<Server>> = [
   {
     header: 'Broker Server',
     accessorKey: 'brokerServer',
+    size: 150,
     Cell: ({ renderedCellValue }) => renderedCellValue
   },
   {
@@ -48,6 +51,7 @@ export const columns: Array<MRT_ColumnDef<Server>> = [
   {
     header: 'Tên BOT',
     accessorKey: 'bot.name',
+    size: 100,
     Cell: ({ renderedCellValue }) => renderedCellValue
   },
   {
@@ -59,12 +63,13 @@ export const columns: Array<MRT_ColumnDef<Server>> = [
     muiTableBodyCellProps: {
       align: 'right'
     },
-    Cell: ({ row }) => currencyFormatter.format(row.original.balance)
+    Cell: ({ row }) => toCurrency(row.original.balance)
   },
   {
     header: '',
     id: 'actions',
     enableHiding: false,
+    size: 50,
     muiTableBodyCellProps: {
       align: 'center'
     },

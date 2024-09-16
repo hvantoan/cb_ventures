@@ -1,7 +1,6 @@
 'use client';
 
 import { confirm } from '@fumy/ui/helpers';
-import { useToggle } from '@fumy/utilities/hooks';
 import { deleteBotAction } from '@modules/(category)/_actions/delete-bot-action';
 import { LoadingButton } from '@mui/lab';
 import { Tooltip, Typography } from '@mui/material';
@@ -16,6 +15,9 @@ import { serversPath } from '@/routes';
 
 interface ServerDetailFormProps {
   serverId?: string;
+  isLoading: boolean; // Add loading state prop
+  startLoading: () => void; // Add start loading function prop
+  stopLoading: () => void; // Add stop loading function prop
 }
 
 const TITLE = 'Server #';
@@ -23,11 +25,9 @@ const SAVE_BUTTON_LABEL = 'Lưu';
 const REMOVE_BUTTON_TEXT = 'Xóa';
 const TITLE_NEW = 'Thêm Server';
 
-const ServerInfoHeader: React.FC<ServerDetailFormProps> = ({ serverId }) => {
+const ServerInfoHeader: React.FC<ServerDetailFormProps> = ({ serverId, isLoading, startLoading, stopLoading }) => {
   const queryClient = useQueryClient();
   const router = useRouter();
-
-  const { isOpen: isLoading, handleOpen: startLoading, handleClose: stopLoading } = useToggle();
 
   const handleDeleteBot = useCallback(async () => {
     const check = await confirm({

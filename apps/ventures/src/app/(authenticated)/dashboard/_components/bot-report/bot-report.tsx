@@ -1,29 +1,32 @@
 'use client';
 
 import { QuantityDisplay } from '@modules/_components/numeric-display';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
+import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { MRT_ColumnDef, MRT_TableContainer, useMaterialReactTable } from 'material-react-table';
 
-import { TOP_PRODUCTS_QK } from '@/query/query-keys';
+import { clientInstance } from '@/query/client-instance';
+import { INTERNAL_BOT_REPORT_CHART_ENDPOINT } from '@/query/internal-endpoints';
+import { BOT_REPORT_QK } from '@/query/query-keys';
 
 import ChartCard from '../chart-card';
 
-const HotCoins: React.FC = () => {
-  const { data, isFetching } = useQuery<Array<BotReport>>({
-    queryKey: [TOP_PRODUCTS_QK],
-    queryFn: async () => (await axios.get('https://api.binance.com/api/v3/ticker/24hr')).data
+const BotReports: React.FC = () => {
+  const { data, isFetching } = useQuery<BaseResponse<Array<BotReport>>>({
+    queryKey: [BOT_REPORT_QK],
+    queryFn: async () =>
+      (await clientInstance.get<BaseResponse<Array<BotReport>>>(INTERNAL_BOT_REPORT_CHART_ENDPOINT)).data,
+    placeholderData: keepPreviousData
   });
-
   const columns: Array<MRT_ColumnDef<BotReport>> = [
     {
       header: 'Bot',
-      accessorKey: 'botName'
+      accessorKey: 'bot.name'
     },
+
     {
       header: 'Vốn tối thiểu',
-      accessorKey: 'banlance',
-      // Cell: ({ row }) => <Price value={Number(row.original.lastPrice) / Number(res.price)} />,
+      accessorKey: 'balance',
+      Cell: ({ row }) => <QuantityDisplay value={row.original.balance} suffix=' $' />,
       maxSize: 50,
       muiTableBodyCellProps: {
         align: 'right'
@@ -38,8 +41,8 @@ const HotCoins: React.FC = () => {
       Cell: ({ row }) => (
         <QuantityDisplay
           value={row.original.profit}
-          className={`${Number(row.original.profit) > 0 ? 'text-success-light' : 'text-red-500'}`}
-          suffix='%'
+          className={`${Number(row.original.profit) >= 0 ? 'text-success-light' : 'text-red-500'}`}
+          suffix=' $'
         />
       ),
       muiTableBodyCellProps: {
@@ -52,11 +55,11 @@ const HotCoins: React.FC = () => {
     },
     {
       header: '% Lợi nhuận',
-      accessorKey: 'profitPercen',
+      accessorKey: 'profitPercent',
       Cell: ({ row }) => (
         <QuantityDisplay
           value={row.original.profitPercent}
-          className={`${Number(row.original.profit) > 0 ? 'text-success-light' : 'text-red-500'}`}
+          className={`${Number(row.original.profit) >= 0 ? 'text-success-light' : 'text-red-500'}`}
           suffix='%'
         />
       ),
@@ -69,9 +72,8 @@ const HotCoins: React.FC = () => {
       maxSize: 60
     }
   ];
-
   const table = useMaterialReactTable({
-    data: data?.slice(0, 3) || [],
+    data: data?.data || [],
     columns,
     enableColumnActions: false,
     enableSorting: false,
@@ -92,4 +94,4 @@ const HotCoins: React.FC = () => {
   );
 };
 
-export default HotCoins;
+export default BotReports;

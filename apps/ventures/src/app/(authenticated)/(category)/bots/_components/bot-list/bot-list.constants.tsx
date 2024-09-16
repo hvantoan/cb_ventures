@@ -10,6 +10,7 @@ export const columns: Array<MRT_ColumnDef<Bot>> = [
   {
     header: 'Hình bot',
     accessorKey: 'avatar',
+    size: 100,
     Cell: ({ row }) => (
       <Image
         src={row.original.avatar?.image || DefaultProductImage}

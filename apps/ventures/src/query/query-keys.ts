@@ -1,8 +1,4 @@
-export const REVENUE_CHART_QK = 'sale-chart';
-export const SALE_BRAND_CHART_QK = 'sale-brand-chart';
-export const TOP_PRODUCTS_QK = 'top-products';
-export const SALE_PROVINCE_CHART_QK = 'sale-province-chart';
-export const NEARLY_SOLD_OUT_CHART_QK = 'nearly-sold-out';
+export const BOT_REPORT_QK = 'bot-report';
 
 export const SEARCH_QK = 'search';
 export const AU_QK = 'au';

@@ -1,7 +1,7 @@
 'use client';
 
 import { DialogHeader } from '@fumy/ui/components';
-import { currencyFormatter } from '@fumy/utilities/helpers/number-formatter';
+import { toCurrency } from '@fumy/utilities/helpers/number-formatter';
 import { Transaction } from '@modules/(services)/_models';
 import { useQueryServer } from '@modules/(services)/_queries/use-query-server';
 import { useQueryTransactions } from '@modules/(services)/_queries/use-query-transactions';
@@ -54,7 +54,7 @@ const ServerInfo: React.FC = () => {
     enableStickyHeader: true,
     enableColumnActions: false,
     muiTableContainerProps: {
-      className: 'max-h-[480px]'
+      className: 'max-h-[480px] w-full'
     }
   });
 
@@ -75,7 +75,7 @@ const ServerInfo: React.FC = () => {
             <div className='mb-2 flex flex-col items-center justify-between gap-4 p-4 md:flex-row'>
               <Typography variant='subtitle1' component='div' className='shadow-dropdown rounded-md px-4 py-2'>
                 {BALANCE_TITLE}
-                {currencyFormatter.format(server?.balance ?? 0)}
+                {toCurrency(server?.balance ?? 0)}
               </Typography>
               <div className='flex items-center gap-3'>
                 <Button
@@ -96,7 +96,7 @@ const ServerInfo: React.FC = () => {
                 </Button>
               </div>
             </div>
-            <div>
+            <div style={{ width: '100%' }}>
               <MRT_TableContainer table={table} />
             </div>
           </div>
