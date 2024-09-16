@@ -1,11 +1,12 @@
 import { getQueryClient } from '@fumy/utilities/query';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 
-import { CLOUD_BOT_REPORT_CHART_ENDPOINT } from '@/query/cloud-endpoints';
-import { BOT_REPORT_QK } from '@/query/query-keys';
+import { CLOUD_BOT_REPORT_CHART_ENDPOINT, CLOUD_SERVER_REPORT_CHART_ENDPOINT } from '@/query/cloud-endpoints';
+import { BOT_REPORT_QK, SERVER_REPORT_QK } from '@/query/query-keys';
 import { serverInstance } from '@/query/server-instance';
 
 import { BotReports } from './_components/bot-report';
+import ServerReports from './_components/server-report/server-report';
 
 const DashboardPage: React.FC = () => {
   const now = new Date();
@@ -21,6 +22,17 @@ const DashboardPage: React.FC = () => {
       ).data
   });
 
+  hydrateClient.prefetchQuery({
+    queryKey: [SERVER_REPORT_QK],
+    queryFn: async () =>
+      (
+        await serverInstance.post(CLOUD_SERVER_REPORT_CHART_ENDPOINT, {
+          month: now.getMonth() + 1,
+          year: now.getFullYear()
+        })
+      ).data
+  });
+
   const dehydratedState = dehydrate(hydrateClient);
 
   return (
@@ -30,7 +42,9 @@ const DashboardPage: React.FC = () => {
           <div className='col-span-12 auto-rows-max lg:col-span-5 xl:col-span-6'>
             <BotReports />
           </div>
-          <div className='col-span-12'>{/* <RevenueChart /> */}</div>
+          <div className='col-span-12'>
+            <ServerReports />
+          </div>
         </div>
       </HydrationBoundary>
     </div>

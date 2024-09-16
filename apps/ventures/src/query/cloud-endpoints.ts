@@ -1,5 +1,6 @@
 export const CLOUD_LOGIN_ENDPOINT = '/auth/login';
 export const CLOUD_BOT_REPORT_CHART_ENDPOINT = '/reports/bot';
+export const CLOUD_SERVER_REPORT_CHART_ENDPOINT = '/reports/server';
 
 export const CLOUD_AU_ENDPOINT = '/resource/administrative-unit';
 

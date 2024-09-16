@@ -1,4 +1,5 @@
 export const BOT_REPORT_QK = 'bot-report';
+export const SERVER_REPORT_QK = 'server-report';
 
 export const SEARCH_QK = 'search';
 export const AU_QK = 'au';
