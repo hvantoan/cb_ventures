@@ -41,7 +41,7 @@ const ServerForm: React.FC<ServerFormProps> = ({ serverId }) => {
   const { handleSubmit } = formMethods;
   const router = useRouter();
   const queryClient = useQueryClient();
-  const { handleOpen: startLoading, handleClose: stopLoading } = useToggle();
+  const { isOpen: isLoading, handleOpen: startLoading, handleClose: stopLoading } = useToggle();
 
   const onValid = useCallback(async (data: Server) => {
     startLoading();
@@ -72,7 +72,12 @@ const ServerForm: React.FC<ServerFormProps> = ({ serverId }) => {
       onKeyDown={handleKeyDown}
     >
       <FormProvider {...formMethods}>
-        <ServerInfoHeader serverId={serverId} />
+        <ServerInfoHeader
+          serverId={serverId}
+          isLoading={isLoading}
+          startLoading={startLoading}
+          stopLoading={stopLoading}
+        />
         <Card>
           <ServerInfo />
         </Card>

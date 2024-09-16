@@ -1,7 +1,6 @@
 'use client';
 
 import { confirm } from '@fumy/ui/helpers';
-import { useToggle } from '@fumy/utilities/hooks';
 import { deleteBotAction } from '@modules/(category)/_actions/delete-bot-action';
 import { LoadingButton } from '@mui/lab';
 import { Button, Tooltip, Typography } from '@mui/material';
@@ -18,6 +17,9 @@ import { botsPath } from '@/routes';
 
 interface BotDetailFormProps {
   botId?: string;
+  isLoading: boolean; // Add loading state prop
+  startLoading: () => void; // Add start loading function prop
+  stopLoading: () => void; // Add stop loading function prop
 }
 
 const TITLE = 'Bot #';
@@ -26,14 +28,12 @@ const EDIT_BUTTON_TEXT = 'Chỉnh sửa';
 const REMOVE_BUTTON_TEXT = 'Xóa';
 const TITLE_NEW = 'Thêm bot';
 
-const BotInfoHeader: React.FC<BotDetailFormProps> = ({ botId }) => {
+const BotInfoHeader: React.FC<BotDetailFormProps> = ({ botId, isLoading, startLoading, stopLoading }) => {
   const queryClient = useQueryClient();
   const router = useRouter();
   const pathname = usePathname();
   const isEditing = pathname.includes(editRoute);
   const isNew = pathname.includes(newRoute);
-
-  const { isOpen: isLoading, handleOpen: startLoading, handleClose: stopLoading } = useToggle();
 
   const handleDeleteBot = useCallback(async () => {
     const check = await confirm({
@@ -53,6 +53,7 @@ const BotInfoHeader: React.FC<BotDetailFormProps> = ({ botId }) => {
       stopLoading();
     }
   }, [botId]);
+
   return (
     <PageHeader
       title={

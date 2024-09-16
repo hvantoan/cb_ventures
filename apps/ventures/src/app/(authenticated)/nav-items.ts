@@ -12,16 +12,17 @@ export const navItems: Array<NavigationWithRole> = [
     name: 'Dịch vụ',
     path: 'services',
     icon: 'i-solar-chat-round-money-bold',
+    role: Roles.Service,
     children: [
       {
         name: 'Danh sách giao dịch',
         path: 'transactions',
-        role: Roles.Contact
+        role: Roles.Transaction
       },
       {
         name: 'Danh sách Server',
         path: 'servers',
-        role: Roles.Contact
+        role: Roles.Server
       }
     ]
   },
