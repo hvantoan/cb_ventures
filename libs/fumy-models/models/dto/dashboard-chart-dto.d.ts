@@ -17,10 +17,11 @@ declare interface SaleBrandChartDto {
   summarySaleByBrandChartData: Array<SaleBrandData>;
 }
 
-declare interface HotCoinsDto {
-  symbol: string;
-  priceChangePercent: string;
-  lastPrice: string;
+declare interface BotReport {
+  botName: string;
+  banlance: string;
+  profit: number;
+  profitPercent: number;
 }
 
 declare interface SaleProvinceChartDto {

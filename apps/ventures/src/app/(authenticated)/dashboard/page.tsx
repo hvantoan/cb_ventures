@@ -1,13 +1,17 @@
 import { getQueryClient } from '@fumy/utilities/query';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import axios from 'axios';
+import { redirect } from 'next/navigation';
 
 import { TOP_PRODUCTS_QK } from '@/query/query-keys';
+import { contactsPath } from '@/routes';
 
-import { RevenueChart } from './_components/revenue-chart';
+import { HotCoins } from './_components/hot-coins';
 
 const DashboardPage: React.FC = () => {
   const hydrateClient = getQueryClient();
+
+  redirect(contactsPath);
 
   hydrateClient.prefetchQuery({
     queryKey: [TOP_PRODUCTS_QK],
@@ -20,18 +24,10 @@ const DashboardPage: React.FC = () => {
     <div className='h-full'>
       <HydrationBoundary state={dehydratedState}>
         <div className='flex grid-cols-1 flex-col gap-2 md:grid md:grid-cols-12'>
-          {/* <div className='col-span-12 auto-rows-max lg:col-span-5 xl:col-span-4'>
-            <HotCoins key={1} />
+          <div className='col-span-12 auto-rows-max lg:col-span-5 xl:col-span-6'>
+            <HotCoins />
           </div>
-          <div className='col-span-12 auto-rows-max lg:col-span-5 xl:col-span-4'>
-            <HotCoins key={2} />
-          </div>
-          <div className='col-span-12 auto-rows-max lg:col-span-5 xl:col-span-4'>
-            <HotCoins key={3} />
-          </div> */}
-          <div className='col-span-12'>
-            <RevenueChart />
-          </div>
+          <div className='col-span-12'>{/* <RevenueChart /> */}</div>
         </div>
       </HydrationBoundary>
     </div>

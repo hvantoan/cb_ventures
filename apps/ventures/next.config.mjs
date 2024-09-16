@@ -47,27 +47,13 @@ const nextConfig = {
   },
   images: {
     remotePatterns: [
-      {
-        hostname: 'staging-api.fumydatacenter.com'
-      },
-      {
-        hostname: 'api.fumydatacenter.com'
-      },
-      {
-        hostname: 'staging-man-api.fumydatacenter.com'
-      },
-      {
-        hostname: 'storage.fumydatacenter.com'
-      },
-      {
-        hostname: 'img.icons8.com'
-      },
-      {
-        hostname: 'ftp.hvantoan.io.vn'
-      },
-      {
-        hostname: 'ventures.dc.hvantoan.io.vn'
-      }
+      { hostname: 'staging-api.fumydatacenter.com' },
+      { hostname: 'api.fumydatacenter.com' },
+      { hostname: 'staging-man-api.fumydatacenter.com' },
+      { hostname: 'storage.fumydatacenter.com' },
+      { hostname: 'img.icons8.com' },
+      { hostname: 'ftp.hvantoan.io.vn' },
+      { hostname: 'ventures.dc.hvantoan.io.vn' }
     ]
   },
   basePath: '/ventures',

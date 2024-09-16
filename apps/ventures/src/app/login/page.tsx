@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 
 import { LoginView } from '@/app/login/_components/login-view';
 import { getSession } from '@/helpers/getSession';
-import { dashboardPath } from '@/routes';
+import { homePath } from '@/routes';
 
 import LoginForm from './_components/login-form/login-form';
 
@@ -14,7 +14,7 @@ const LoginPage: React.FC = async () => {
 
   if (session?.token) {
     if (dayjs().isBefore(dayjs(session.expiredTime))) {
-      return redirect(dashboardPath);
+      return redirect(homePath);
     }
   }
 

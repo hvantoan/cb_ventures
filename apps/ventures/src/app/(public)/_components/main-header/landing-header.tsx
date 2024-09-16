@@ -9,7 +9,7 @@ import {
   DESKTOP_HEADER_HEIGHT,
   MOBILE_HEADER_HEIGHT
 } from '@/app/(authenticated)/_components/main-header/main-header.constants';
-import { loginPath } from '@/routes';
+import { homePath, loginPath, roadmapPath, wePath } from '@/routes';
 
 import { StyledLandingAppBar, StyledLandingToolbar } from './landing-header.styles';
 import MenuToggler from './menu-toggler';
@@ -45,7 +45,7 @@ const LandingHeader: React.FC<Props> = ({ session }) => {
   const navItems = [
     {
       label: 'Trang chủ',
-      href: '/home'
+      href: homePath
     },
     {
       label: 'Giá',
@@ -53,11 +53,11 @@ const LandingHeader: React.FC<Props> = ({ session }) => {
     },
     {
       label: 'Kế hoạch',
-      href: '/roadmap'
+      href: roadmapPath
     },
     {
       label: 'Liên hệ',
-      href: '/contact'
+      href: wePath
     }
   ];
 

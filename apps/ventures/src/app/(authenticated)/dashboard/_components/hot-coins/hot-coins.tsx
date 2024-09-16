@@ -10,25 +10,20 @@ import { TOP_PRODUCTS_QK } from '@/query/query-keys';
 import ChartCard from '../chart-card';
 
 const HotCoins: React.FC = () => {
-  const { data, isFetching } = useQuery<Array<HotCoinsDto>>({
+  const { data, isFetching } = useQuery<Array<BotReport>>({
     queryKey: [TOP_PRODUCTS_QK],
     queryFn: async () => (await axios.get('https://api.binance.com/api/v3/ticker/24hr')).data
   });
 
-  const { data: res } = useQuery<any>({
-    queryKey: [TOP_PRODUCTS_QK],
-    queryFn: async () => (await axios.get('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT')).data
-  });
-
-  const columns: Array<MRT_ColumnDef<HotCoinsDto>> = [
+  const columns: Array<MRT_ColumnDef<BotReport>> = [
     {
-      header: 'Mã',
-      accessorKey: 'symbol'
+      header: 'Bot',
+      accessorKey: 'botName'
     },
     {
-      header: 'Giá',
-      accessorKey: 'lastPrice',
-      Cell: ({ row }) => <QuantityDisplay value={Number(row.original.lastPrice) / Number(res.price)} />,
+      header: 'Vốn tối thiểu',
+      accessorKey: 'banlance',
+      // Cell: ({ row }) => <Price value={Number(row.original.lastPrice) / Number(res.price)} />,
       maxSize: 50,
       muiTableBodyCellProps: {
         align: 'right'
@@ -38,12 +33,30 @@ const HotCoins: React.FC = () => {
       }
     },
     {
-      header: 'Tỷ lệ thay đổi',
-      accessorKey: 'priceChangePercent',
+      header: 'Lợi nhuận',
+      accessorKey: 'profit',
       Cell: ({ row }) => (
         <QuantityDisplay
-          value={row.original.priceChangePercent}
-          className={`${Number(row.original.priceChangePercent) > 0 ? 'text-success-light' : 'text-red-500'}`}
+          value={row.original.profit}
+          className={`${Number(row.original.profit) > 0 ? 'text-success-light' : 'text-red-500'}`}
+          suffix='%'
+        />
+      ),
+      muiTableBodyCellProps: {
+        align: 'right'
+      },
+      muiTableHeadCellProps: {
+        align: 'right'
+      },
+      maxSize: 60
+    },
+    {
+      header: '% Lợi nhuận',
+      accessorKey: 'profitPercen',
+      Cell: ({ row }) => (
+        <QuantityDisplay
+          value={row.original.profitPercent}
+          className={`${Number(row.original.profit) > 0 ? 'text-success-light' : 'text-red-500'}`}
           suffix='%'
         />
       ),
