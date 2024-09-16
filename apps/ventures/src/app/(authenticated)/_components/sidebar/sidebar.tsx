@@ -11,7 +11,7 @@ import { Navigation, NavigationWithRole } from '@/components/navigation';
 import { SIDEBAR_COLLAPSED } from '@/components/navigation/navigation.constants';
 import { clientInstance } from '@/query/client-instance';
 import { INTERNAL_CONFIG_PERSIST_SIDEBAR_STATE_ENDPOINT } from '@/query/internal-endpoints';
-import { contactPath, homePath, pricingPath, roadmapPath } from '@/routes';
+import { contactPath, homePath, pricingPath, roadmapPath, wePath } from '@/routes';
 import { useAppDispatch, useAppSelector } from '@/store';
 import { closeSidebar, openSidebar, toggleSidebar } from '@/store/reducers/general';
 
@@ -22,7 +22,7 @@ interface SidebarProps {
   initState?: boolean;
 }
 
-export const noSidebarPaths = [homePath, pricingPath, contactPath, roadmapPath];
+export const noSidebarPaths = [homePath, pricingPath, contactPath, roadmapPath, wePath];
 
 const Sidebar: React.FC<SidebarProps> = ({ initState, navItems }) => {
   const pathname = usePathname();

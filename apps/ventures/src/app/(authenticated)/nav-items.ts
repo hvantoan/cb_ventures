@@ -2,12 +2,12 @@ import { NavigationWithRole } from '@/components/navigation';
 import { Roles } from '@/enums/role.enum';
 
 export const navItems: Array<NavigationWithRole> = [
-  {
-    name: 'Tổng quan',
-    path: 'dashboard',
-    role: Roles.Dashboard,
-    icon: 'i-solar-code-scan-bold-duotone'
-  },
+  // {
+  //   name: 'Tổng quan',
+  //   path: 'dashboard',
+  //   role: Roles.Dashboard,
+  //   icon: 'i-solar-code-scan-bold-duotone'
+  // },
   {
     name: 'Dịch vụ',
     path: 'services',

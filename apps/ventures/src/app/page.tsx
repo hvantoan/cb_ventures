@@ -2,12 +2,12 @@ import { type Session } from 'next-auth';
 import { redirect } from 'next/navigation';
 
 import { getSession } from '@/helpers/getSession';
-import { dashboardPath, homePath } from '@/routes';
+import { wePath, homePath } from '@/routes';
 
 const Home: React.FC = async () => {
   const session = (await getSession()) as Session;
   if (session?.token) {
-    redirect(dashboardPath);
+    redirect(wePath);
   } else {
     redirect(homePath);
   }

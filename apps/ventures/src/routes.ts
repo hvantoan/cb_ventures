@@ -6,6 +6,7 @@ export const pricingPath = '/pricing';
 export const aboutPath = '/about';
 export const contactPath = '/contact';
 export const roadmapPath = '/roadmap';
+export const wePath = '/we';
 
 // Authentication
 export const loginPath = '/login';
