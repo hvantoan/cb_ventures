@@ -6,7 +6,10 @@ export enum Roles {
   SettingUserReset = 'BO.User.Reset',
   SettingRole = 'BO.Role',
   Contact = 'BO.Contact',
+  Transaction = 'BO.Transaction',
+  Server = 'BO.Server',
 
+  Service = 'BO.Service',
   Category = 'BO.Category',
   Bot = 'BO.Bot',
 

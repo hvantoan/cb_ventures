@@ -16,7 +16,8 @@ import {
   useMaterialReactTable,
   type MRT_TableOptions
 } from 'material-react-table';
-import { forwardRef, useCallback, useImperativeHandle } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { forwardRef, useCallback, useEffect, useImperativeHandle } from 'react';
 import { useImmer } from 'use-immer';
 
 import { tableOptions } from '@/configs/table-options';
@@ -37,13 +38,18 @@ interface ServerListProps {
 type ServerColumnFilters = ColumnFiltersState<keyof QueryServerFilter, any>;
 
 const ServerList = forwardRef<ServerListRef, ServerListProps>(({ initFilters }, ref) => {
+  const searchParams = useSearchParams();
   const [filters, setFilters] = useImmer<QueryServerFilter>(initFilters);
 
-  const { data, isLoading } = useQueryServers(filters);
+  const { data, isLoading, refetch } = useQueryServers(filters);
 
   const getFilters = useCallback(() => filters, [filters]);
 
   useImperativeHandle(ref, () => ({ getFilters }));
+
+  useEffect(() => {
+    if (searchParams.size === 0) refetch();
+  }, [searchParams]);
 
   const handleFiltersChanged = useCallback<OnChangeFn<ServerColumnFilters>>((updater) => {
     setFilters((draft) => {

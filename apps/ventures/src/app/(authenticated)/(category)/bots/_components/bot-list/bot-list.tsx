@@ -94,7 +94,10 @@ const BotList = forwardRef<BotListRef, BotListProps>(({ initFilters }, ref) => {
     initialState: {
       density: 'compact'
     },
-    enableColumnFilters: false
+    enableColumnFilters: false,
+    muiTableContainerProps: {
+      className: 'w-full'
+    }
   });
   return (
     <Card>

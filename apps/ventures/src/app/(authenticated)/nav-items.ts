@@ -2,26 +2,27 @@ import { NavigationWithRole } from '@/components/navigation';
 import { Roles } from '@/enums/role.enum';
 
 export const navItems: Array<NavigationWithRole> = [
-  // {
-  //   name: 'Tổng quan',
-  //   path: 'dashboard',
-  //   role: Roles.Dashboard,
-  //   icon: 'i-solar-code-scan-bold-duotone'
-  // },
+  {
+    name: 'Tổng quan',
+    path: 'dashboard',
+    role: Roles.Dashboard,
+    icon: 'i-solar-code-scan-bold-duotone'
+  },
   {
     name: 'Dịch vụ',
     path: 'services',
     icon: 'i-solar-chat-round-money-bold',
+    role: Roles.Service,
     children: [
       {
         name: 'Danh sách giao dịch',
         path: 'transactions',
-        role: Roles.Contact
+        role: Roles.Transaction
       },
       {
         name: 'Danh sách Server',
         path: 'servers',
-        role: Roles.Contact
+        role: Roles.Server
       }
     ]
   },

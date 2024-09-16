@@ -1,12 +1,13 @@
 import { Server } from '@modules/(services)/_models';
 import { Type } from 'class-transformer';
-import { Min } from 'class-validator';
+import { IsNotEmpty, Min } from 'class-validator';
 import { Dayjs } from 'dayjs';
 
-import { TransactionType } from '../../_enums/transaction-type';
+import { ETransactionType } from '../../_enums/transaction-type';
 
 export class Transaction {
   id: string = '';
+
   userBotId?: string = '';
   name?: string = '';
 
@@ -15,7 +16,8 @@ export class Transaction {
   amount: number = 0;
 
   @Type(() => String)
-  transactionType: TransactionType = TransactionType.Income;
+  @IsNotEmpty({ message: 'Loại giao dịch không được để trống' })
+  transactionType: ETransactionType = ETransactionType.Income;
 
   @Type(() => String)
   transactionAt?: Dayjs;

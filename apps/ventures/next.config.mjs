@@ -16,7 +16,7 @@ const nextConfig = {
     optimizePackageImports: ['@fumy/ui', '@fumy/utilities', '@mui/x-charts', 'material-react-table', '@mui/lab'],
     scrollRestoration: false,
     serverActions: {
-      bodySizeLimit: '3mb'
+      bodySizeLimit: '10mb'
     }
   },
   webpack(config) {

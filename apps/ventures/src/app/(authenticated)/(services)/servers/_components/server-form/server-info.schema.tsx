@@ -139,17 +139,21 @@ export const fields: Array<ExtendedControllerProps<Server>> = [
   },
   {
     name: 'balance',
-    render: ({ field: { onChange, value }, fieldState: { error } }) => (
-      <NumericField
-        className='col-span-6'
-        label='Tổng vốn'
-        onValueChange={(values) => onChange(values.floatValue)}
-        value={value as number}
-        error={Boolean(error)}
-        helperText={error?.message}
-        min={0}
-        required
-      />
-    )
+    render: ({ field: { onChange, value }, fieldState: { error }, control }) => {
+      const id = useWatch({ control, name: 'id' });
+      return (
+        <NumericField
+          className='col-span-6'
+          label='Tổng vốn'
+          readOnly={Boolean(id)}
+          onValueChange={(values) => onChange(values.floatValue)}
+          value={value as number}
+          error={Boolean(error)}
+          helperText={error?.message}
+          min={0}
+          required
+        />
+      );
+    }
   }
 ];
