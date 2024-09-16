@@ -16,7 +16,7 @@ const middleware = withAuth(
     const roles = payload?.[ROLE_KEY] as Array<string>;
     const target = routeRoleMapping.find((route) => request.nextUrl.pathname?.startsWith(route.route));
 
-    if (!target || (target && roles.includes(target.role))) {
+    if (!target || (target && roles?.includes(target.role))) {
       return NextResponse.next();
     }
   },

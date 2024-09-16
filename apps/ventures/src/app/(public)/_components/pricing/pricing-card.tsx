@@ -5,7 +5,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { Button, Card, CardActions, Chip, Divider, List, ListItem, Stack, Typography } from '@mui/material';
 import { useRouter } from 'next/navigation';
 
-import { contactPath } from '@/routes';
+import { wePath } from '@/routes';
 
 export type PricingType = 'Basic' | 'Pro' | 'Premium' | 'Enterprise';
 export type PricingInterval = 'Monthly' | 'Yearly';
@@ -53,7 +53,7 @@ export function PricingCard({ data }: Props) {
         <Button
           variant='soft'
           color='primary'
-          onClick={() => router.push(contactPath)}
+          onClick={() => router.push(wePath)}
           className='group-hover:bg-h_primary group-hover:text-white'
         >
           Bắt đầu
