@@ -31,7 +31,7 @@ const BotDetail: React.FC<BotDetailProps> = ({ botId }) => {
           <CardContent>
             <Typography variant='h5'>{bot?.name}</Typography>
             <Stack className='pb-4 pt-4' spacing={1}>
-              {Boolean(bot?.description) && <BotField label='Mô tả' value={bot!.description} isDescription />}
+              {Boolean(bot?.description) && <BotField label='Mô tả' value={bot?.description ?? ''} isDescription />}
             </Stack>
           </CardContent>
         </Card>
