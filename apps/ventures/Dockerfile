@@ -11,6 +11,8 @@ RUN corepack enable
 ARG API_URL
 ARG NEXTAUTH_URL
 ARG NEXTAUTH_SECRET
+ARG GOOGLE_CLIENT_ID
+ARG GOOGLE_SECRET
 ARG APP_PATH=apps/ventures
 
 FROM base AS builder
@@ -23,6 +25,8 @@ RUN npm install -g --arch=x64 --platform=linux --libc=musl sharp
 ENV API_URL=${API_URL} \
     NEXTAUTH_URL=${NEXTAUTH_URL} \
     NEXTAUTH_SECRET=${NEXTAUTH_SECRET} \
+    GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID} \
+    GOOGLE_SECRET=${GOOGLE_SECRET} \
     NEXT_TELEMETRY_DISABLED=1
 
 RUN pnpm -F=ventures build

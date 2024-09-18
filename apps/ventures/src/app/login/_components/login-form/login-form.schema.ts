@@ -1,12 +1,12 @@
 import { BaseField } from '@fumy/ui/base';
 import { TextField } from '@mui/material';
-import { IsDefined } from 'class-validator';
+import { IsNotEmpty } from 'class-validator';
 
 export class LoginDto {
-  @IsDefined({ message: 'Tên đăng nhập không được để trống' })
+  @IsNotEmpty({ message: 'Tên đăng nhập không được để trống' })
   public username: string = '';
 
-  @IsDefined({ message: 'Mật khẩu không được để trống' })
+  @IsNotEmpty({ message: 'Mật khẩu không được để trống' })
   public password: string = '';
 }
 

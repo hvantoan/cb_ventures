@@ -1,8 +1,9 @@
 import axios from 'axios';
 import type { AuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import GoogleProvider from 'next-auth/providers/google';
 
-import { CLOUD_LOGIN_ENDPOINT } from '@/query/cloud-endpoints';
+import { CLOUD_LOGIN_ENDPOINT, CLOUD_LOGIN_GOOGLE_ENDPOINT } from '@/query/cloud-endpoints';
 
 export const authOptions: AuthOptions = {
   pages: {
@@ -33,10 +34,40 @@ export const authOptions: AuthOptions = {
           return null;
         }
       }
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID || '',
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
+      authorization: {
+        params: {
+          prompt: 'consent',
+          access_type: 'offline',
+          response_type: 'code'
+        }
+      }
     })
   ],
   callbacks: {
-    signIn: async ({ user }) => {
+    signIn: async ({ user, account }) => {
+      if (account?.provider === 'google') {
+        const axiosConfig = {
+          baseURL: process.env.API_URL,
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${account.id_token}`
+          }
+        };
+
+        console.log(account);
+        // Call the API with the username
+        const response = await axios.post<BaseResponse<LoginDto>>(CLOUD_LOGIN_GOOGLE_ENDPOINT, user, axiosConfig);
+
+        if (response.data.success) {
+          return true;
+        }
+        throw new Error(response.data.message);
+      }
+
       if (user.success) {
         return true;
       }
