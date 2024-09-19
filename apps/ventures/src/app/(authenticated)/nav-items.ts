@@ -1,5 +1,6 @@
 import { NavigationWithRole } from '@/components/navigation';
 import { Roles } from '@/enums/role.enum';
+import { homePath, pricingPath, roadmapPath, wePath } from '@/routes';
 
 export const navItems: Array<NavigationWithRole> = [
   {
@@ -30,6 +31,7 @@ export const navItems: Array<NavigationWithRole> = [
     name: 'Liên hệ',
     path: 'contact',
     icon: 'i-solar-smartphone-2-bold',
+    role: Roles.Contact,
     children: [
       {
         name: 'Danh sách liên hệ',
@@ -76,12 +78,22 @@ export const navItems: Array<NavigationWithRole> = [
   },
   {
     name: 'Trang chủ',
-    path: 'home',
+    path: homePath,
+    icon: 'i-solar-code-scan-bold-duotone'
+  },
+  {
+    name: 'Giá',
+    path: pricingPath,
+    icon: 'i-solar-code-scan-bold-duotone'
+  },
+  {
+    name: 'Kế hoạch',
+    path: roadmapPath,
     icon: 'i-solar-code-scan-bold-duotone'
   },
   {
     name: 'Chúng tôi',
-    path: 'we',
+    path: wePath,
     icon: 'i-solar-boombox-broken'
   }
 ];

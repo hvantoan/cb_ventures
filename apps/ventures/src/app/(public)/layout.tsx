@@ -24,7 +24,6 @@ const LandingLayout: React.FC<WrappedComponentProps> = async ({ children }) => {
     ? (decodeJwt(session?.token as string)[ROLE_KEY] as Array<Roles>)
     : new Array<Roles>();
   const validNavItems = getValidNavigationItems(navItems, roles);
-
   return (
     <div className='flex h-full w-full'>
       <InitContextProvider isMobile={isMobile}>

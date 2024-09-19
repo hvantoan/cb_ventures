@@ -2,6 +2,7 @@ declare interface LoginUser {
   merchantCode: string;
   merchantName: string;
   name: string;
+  avatar: string;
 }
 
 declare interface LoginDto extends LoginUser {

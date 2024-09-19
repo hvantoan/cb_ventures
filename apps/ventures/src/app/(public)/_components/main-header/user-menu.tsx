@@ -1,10 +1,14 @@
 'use client';
 
 import { useToggle } from '@fumy/utilities/hooks';
-import { Divider, IconButton, MenuItem, Popover, Typography } from '@mui/material';
-import { useSession, signOut } from 'next-auth/react';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import HistoryIcon from '@mui/icons-material/History';
+import PinIcon from '@mui/icons-material/Pin';
+import { Avatar, Divider, IconButton, MenuItem, Popover, Stack, Typography } from '@mui/material';
+import { signOut, useSession } from 'next-auth/react';
 import { useRef } from 'react';
 
+// Import the icon
 import { basePath, loginPath } from '@/routes';
 
 const UserMenu: React.FC = () => {
@@ -19,7 +23,7 @@ const UserMenu: React.FC = () => {
         ref={ref}
       >
         <div className='flex h-6 w-6 items-center justify-center rounded-full border-2 border-solid border-white p-0.5'>
-          <span className='i-solar-user-rounded-bold-duotone bg-grey-600 h-5 w-5' />
+          <Avatar alt={session?.data?.user.name} src={session?.data?.user.avatar} className='h-6 w-6' />
         </div>
       </IconButton>
       <Popover
@@ -38,16 +42,30 @@ const UserMenu: React.FC = () => {
           <Typography variant='subtitle2' component='h6'>
             {session?.data?.user?.name}
           </Typography>
-          <Typography variant='caption'>{session?.data?.user?.merchantName}</Typography>
         </div>
         <Divider variant='fullWidth' className='!border-dashed' />
         <div className='p-2'>
-          <MenuItem>Đổi mật khẩu</MenuItem>
-          <MenuItem>Đổi mã PIN</MenuItem>
+          <MenuItem>
+            <Stack direction='row' spacing={1}>
+              <HistoryIcon />
+              <Typography>Lịch sử liên hệ</Typography>
+            </Stack>
+          </MenuItem>
+          <MenuItem>
+            <Stack direction='row' spacing={1}>
+              <PinIcon />
+              <Typography>Đổi mật khẩu</Typography>
+            </Stack>
+          </MenuItem>
         </div>
         <Divider variant='fullWidth' className='!border-dashed' />
         <div className='p-2'>
-          <MenuItem onClick={() => signOut({ callbackUrl: `${basePath}${loginPath}` })}>Đăng xuất</MenuItem>
+          <MenuItem className='group' onClick={() => signOut({ callbackUrl: `${basePath}${loginPath}` })}>
+            <Stack direction='row' spacing={1}>
+              <ExitToAppIcon className='group-hover:pro' />
+              <Typography> Đăng xuất</Typography>
+            </Stack>
+          </MenuItem>
         </div>
       </Popover>
     </>
