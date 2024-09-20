@@ -79,21 +79,21 @@ export const navItems: Array<NavigationWithRole> = [
   {
     name: 'Trang chủ',
     path: homePath,
-    icon: 'i-solar-code-scan-bold-duotone'
+    icon: 'i-solar-home-bold'
   },
   {
     name: 'Giá',
     path: pricingPath,
-    icon: 'i-solar-code-scan-bold-duotone'
+    icon: 'i-solar-tag-price-bold'
   },
   {
     name: 'Kế hoạch',
     path: roadmapPath,
-    icon: 'i-solar-code-scan-bold-duotone'
+    icon: 'i-solar-plate-bold'
   },
   {
     name: 'Chúng tôi',
     path: wePath,
-    icon: 'i-solar-boombox-broken'
+    icon: 'i-solar-info-square-bold'
   }
 ];

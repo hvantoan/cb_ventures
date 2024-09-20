@@ -17,6 +17,11 @@ const nextConfig = {
     scrollRestoration: false,
     serverActions: {
       bodySizeLimit: '10mb'
+    },
+    api: {
+      bodyParser: {
+        sizeLimit: '20mb'
+      }
     }
   },
   webpack(config) {
