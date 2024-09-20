@@ -38,6 +38,10 @@ jobs:
             API_URL=${{ vars.API_URL }}
             NEXTAUTH_URL=${{ vars.NEXTAUTH_URL }}
             NEXTAUTH_SECRET=${{ vars.NEXTAUTH_SECRET }}
+            GOOGLE_CLIENT_ID=${{vars.GOOGLE_CLIENT_ID}}
+            GOOGLE_CLIENT_SECRET=${{vars.GOOGLE_CLIENT_SECRET}}
+            GITHUB_ID=${{vars.GH_CLIENT_ID}}
+            GITHUB_SECRET=${{vars.GH_SECRET}}
           cache-from: type=registry,ref=${{ env.CACHE_IMAGE }}
           cache-to: type=registry,ref=${{ env.CACHE_IMAGE }}
           platforms: linux/amd64
