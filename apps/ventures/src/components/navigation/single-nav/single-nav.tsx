@@ -20,7 +20,7 @@ const SingleNav: React.FC<SingleNavProps> = ({ navInfo }) => {
   const pathName = usePathname();
   const sidebarExpanded = useAppSelector((state) => Boolean(state.general.sidebar.expanded));
 
-  const isActive = useMemo(() => pathName === `/${navInfo.path}`, [pathName]);
+  const isActive = useMemo(() => pathName === `/${navInfo.path}` || pathName === navInfo.path, [pathName]);
 
   const handleClick = useHandleLinkClick();
 

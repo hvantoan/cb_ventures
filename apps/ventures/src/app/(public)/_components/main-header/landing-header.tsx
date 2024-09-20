@@ -9,7 +9,7 @@ import {
   DESKTOP_HEADER_HEIGHT,
   MOBILE_HEADER_HEIGHT
 } from '@/app/(authenticated)/_components/main-header/main-header.constants';
-import { homePath, loginPath, roadmapPath, wePath } from '@/routes';
+import { homePath, loginPath, pricingPath, roadmapPath, wePath } from '@/routes';
 
 import { StyledLandingAppBar, StyledLandingToolbar } from './landing-header.styles';
 import MenuToggler from './menu-toggler';
@@ -49,7 +49,7 @@ const LandingHeader: React.FC<Props> = ({ session }) => {
     },
     {
       label: 'Giá',
-      href: '/pricing'
+      href: pricingPath
     },
     {
       label: 'Kế hoạch',
@@ -67,21 +67,23 @@ const LandingHeader: React.FC<Props> = ({ session }) => {
         <StyledLandingToolbar ref={ref}>
           <Stack direction='row' spacing={2} className='h-full'>
             <MenuToggler />
-            <Stack direction='row'>
-              {navItems.map((nav, idx) => {
-                return (
-                  <Button
-                    variant='text'
-                    color='primary'
-                    key={idx}
-                    onClick={() => router.push(nav.href)}
-                    className={`${pathname === nav.href ? 'text-h_primary' : 'text-white'} text-13`}
-                  >
-                    {nav.label}
-                  </Button>
-                );
-              })}
-            </Stack>
+            {Boolean(typeof window !== 'undefined' && window.innerWidth > 720) && (
+              <Stack direction='row'>
+                {navItems.map((nav, idx) => {
+                  return (
+                    <Button
+                      variant='text'
+                      color='primary'
+                      key={idx}
+                      onClick={() => router.push(nav.href)}
+                      className={`${pathname === nav.href ? 'text-h_primary' : 'text-white'} text-13`}
+                    >
+                      {nav.label}
+                    </Button>
+                  );
+                })}
+              </Stack>
+            )}
           </Stack>
           {session?.user ? (
             <div>

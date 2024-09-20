@@ -12,7 +12,9 @@ export class User {
 
   @IsDefined({ message: 'Tên đăng nhập không được để trống.' })
   @MaxLength(50, { message: 'Tên đăng nhập dài không quá 50 ký tự.' })
-  @Matches(/^[a-zA-Z0-9.\-_]+$/, { message: 'Tên đăng nhập phải viết liền không dấu và chỉ chứa chữ cái và số' })
+  @Matches(/^[a-zA-Z0-9.\-_]+$|^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, {
+    message: 'Tên đăng nhập hoặc email không hợp lệ. Chỉ chứa chữ cái, số và ký tự đặc biệt.'
+  })
   @MinLength(2, { message: 'Tên đăng nhập không ngắn hơn 2 ký tự.' })
   public username: string;
 
