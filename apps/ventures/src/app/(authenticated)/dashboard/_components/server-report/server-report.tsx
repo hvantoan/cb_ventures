@@ -1,10 +1,12 @@
 'use client';
 
+import { NoRecordView } from '@fumy/ui/components/no-record-view';
 import { toCurrency } from '@fumy/utilities/helpers/number-formatter';
 import { QuantityDisplay } from '@modules/_components/numeric-display';
 import { type ServerReport } from '@modules/dashboard/_models/server-report';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { MRT_ColumnDef, MRT_TableContainer, useMaterialReactTable } from 'material-react-table';
+import { createElement } from 'react';
 
 import { clientInstance } from '@/query/client-instance';
 import { INTERNAL_SERVER_REPORT_CHART_ENDPOINT } from '@/query/internal-endpoints';
@@ -16,19 +18,25 @@ const ServerReports: React.FC = () => {
   const { data, isFetching } = useQuery<BaseResponse<Array<ServerReport>>>({
     queryKey: [SERVER_REPORT_QK],
     queryFn: async () =>
-      (await clientInstance.get<BaseResponse<Array<ServerReport>>>(INTERNAL_SERVER_REPORT_CHART_ENDPOINT)).data,
+      (await clientInstance.post<BaseResponse<Array<ServerReport>>>(INTERNAL_SERVER_REPORT_CHART_ENDPOINT)).data,
     placeholderData: keepPreviousData
   });
+
   const columns: Array<MRT_ColumnDef<ServerReport>> = [
     {
-      header: 'Bot',
-      accessorKey: 'userBot.user.name'
+      header: 'Họ tên',
+      accessorKey: 'userBot.user.name',
+      Cell: ({ renderedCellValue }) => renderedCellValue
+    },
+    {
+      header: 'Email',
+      accessorKey: 'userBot.user.email',
+      Cell: ({ renderedCellValue }) => renderedCellValue
     },
     {
       header: 'Vốn (USD)',
       accessorKey: 'beforeBalance',
       Cell: ({ row }) => <QuantityDisplay value={row.original.beforeBalance} suffix=' $' />,
-      maxSize: 50,
       muiTableBodyCellProps: {
         align: 'right'
       },
@@ -45,8 +53,7 @@ const ServerReports: React.FC = () => {
       },
       muiTableHeadCellProps: {
         align: 'right'
-      },
-      maxSize: 60
+      }
     },
     {
       header: 'Tổng vốn',
@@ -57,8 +64,7 @@ const ServerReports: React.FC = () => {
       },
       muiTableHeadCellProps: {
         align: 'right'
-      },
-      maxSize: 60
+      }
     },
     {
       header: 'Lợi nhuận (UC)',
@@ -69,8 +75,7 @@ const ServerReports: React.FC = () => {
       },
       muiTableHeadCellProps: {
         align: 'right'
-      },
-      maxSize: 60
+      }
     },
     {
       header: 'Lợi nhuận (%)',
@@ -93,8 +98,7 @@ const ServerReports: React.FC = () => {
       },
       muiTableHeadCellProps: {
         align: 'right'
-      },
-      maxSize: 60
+      }
     },
     {
       header: 'Tổng tài sản (UC)',
@@ -149,11 +153,12 @@ const ServerReports: React.FC = () => {
     enableSorting: false,
     enableCellActions: false,
     enableStickyHeader: true,
+    renderEmptyRowsFallback: () => createElement(NoRecordView),
     state: {
       showSkeletons: isFetching
     },
     muiTableContainerProps: {
-      className: 'md:overflow-y-auto md:max-h-[360px]'
+      className: 'md:overflow-y-auto md:max-h-[360px] min-h-[calc(50vh-60px)]'
     }
   });
 

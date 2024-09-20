@@ -19,11 +19,11 @@ const NotFoundPage: React.FC = () => {
         }}
       >
         <Typography variant='h3' sx={{ mb: 3 }}>
-          Xin lỗi, trang không tìm thấy!
+          Xin lỗi, trang không tồn tại!
         </Typography>
 
         <Typography color='text.secondary'>
-          Xin lỗi, chúng tôi không thể tìm thấy trang mà bạn đang tìm kiếm.Có lẽ bạn đã nhầm URL?Hãy chắc chắn để kiểm
+          Xin lỗi, chúng tôi không thể tìm thấy trang mà bạn đang tìm kiếm. Có lẽ bạn đã nhầm URL? Hãy chắc chắn để kiểm
           tra Chính tả.
         </Typography>
 

@@ -73,23 +73,26 @@ export const authOptions: AuthOptions = {
         };
 
         // Call the API with the username
-        const response = await axios.post<BaseResponse<LoginDto>>(
-          CLOUD_LOGIN_GOOGLE_ENDPOINT,
-          { ...user, merchantCode },
-          axiosConfig
-        );
-
-        const googleUser = response.data;
-        if (response.data.success && response.data && trigger === 'signIn') {
-          token.token = googleUser.data.token;
-          token.refreshToken = googleUser.data.refreshToken;
-          token.expiredTime = googleUser.data?.expiredTime;
-          token.user = {
-            name: googleUser.data.name,
-            merchantCode: googleUser.data.merchantCode,
-            merchantName: googleUser.data.merchantName,
-            avatar: googleUser.data.avatar
-          };
+        try {
+          const response = await axios.post<BaseResponse<LoginDto>>(
+            CLOUD_LOGIN_GOOGLE_ENDPOINT,
+            { ...user, merchantCode },
+            axiosConfig
+          );
+          const googleUser = response.data;
+          if (response.data.success && response.data && trigger === 'signIn') {
+            token.token = googleUser.data.token;
+            token.refreshToken = googleUser.data.refreshToken;
+            token.expiredTime = googleUser.data?.expiredTime;
+            token.user = {
+              name: googleUser.data.name,
+              merchantCode: googleUser.data.merchantCode,
+              merchantName: googleUser.data.merchantName,
+              avatar: googleUser.data.avatar
+            };
+          }
+        } catch (error) {
+          console.error('Không thể kết nối đến Server');
         }
       } else if (user && trigger === 'signIn') {
         token.token = user.data.token;

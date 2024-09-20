@@ -1,8 +1,10 @@
 'use client';
 
+import { NoRecordView } from '@fumy/ui/components/no-record-view';
 import { QuantityDisplay } from '@modules/_components/numeric-display';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { MRT_ColumnDef, MRT_TableContainer, useMaterialReactTable } from 'material-react-table';
+import { createElement } from 'react';
 
 import { clientInstance } from '@/query/client-instance';
 import { INTERNAL_BOT_REPORT_CHART_ENDPOINT } from '@/query/internal-endpoints';
@@ -14,13 +16,14 @@ const BotReports: React.FC = () => {
   const { data, isFetching } = useQuery<BaseResponse<Array<BotReport>>>({
     queryKey: [BOT_REPORT_QK],
     queryFn: async () =>
-      (await clientInstance.get<BaseResponse<Array<BotReport>>>(INTERNAL_BOT_REPORT_CHART_ENDPOINT)).data,
+      (await clientInstance.post<BaseResponse<Array<BotReport>>>(INTERNAL_BOT_REPORT_CHART_ENDPOINT)).data,
     placeholderData: keepPreviousData
   });
   const columns: Array<MRT_ColumnDef<BotReport>> = [
     {
       header: 'Bot',
-      accessorKey: 'bot.name'
+      accessorKey: 'bot.name',
+      Cell: ({ renderedCellValue }) => renderedCellValue
     },
 
     {
@@ -79,11 +82,12 @@ const BotReports: React.FC = () => {
     enableSorting: false,
     enableCellActions: false,
     enableStickyHeader: true,
+    renderEmptyRowsFallback: () => createElement(NoRecordView),
     state: {
       showSkeletons: isFetching
     },
     muiTableContainerProps: {
-      className: 'md:overflow-y-auto md:max-h-[360px]'
+      className: 'md:overflow-y-auto md:max-h-[360px] min-h-[calc(50vh-60px)]'
     }
   });
 
