@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/ventures/package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "env": {
+    "API_URL": "@api_url",
+    "NEXTAUTH_URL": "@nextauth_url",
+    "NEXTAUTH_SECRET": "@nextauth_secret",
+    "GOOGLE_CLIENT_ID": "@google_client_id",
+    "GOOGLE_SECRET": "@google_secret",
+    "GITHUB_ID": "@github_id",
+    "GITHUB_SECRET": "@github_secret"
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "apps/ventures/server.js"
+    }
+  ]
+}
