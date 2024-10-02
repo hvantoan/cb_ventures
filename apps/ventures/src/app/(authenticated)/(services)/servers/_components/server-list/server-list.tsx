@@ -39,8 +39,8 @@ type ServerColumnFilters = ColumnFiltersState<keyof QueryServerFilter, any>;
 
 const ServerList = forwardRef<ServerListRef, ServerListProps>(({ initFilters }, ref) => {
   const searchParams = useSearchParams();
-  const [filters, setFilters] = useImmer<QueryServerFilter>(initFilters);
 
+  const [filters, setFilters] = useImmer<QueryServerFilter>(initFilters);
   const { data, isLoading, refetch } = useQueryServers(filters);
 
   const getFilters = useCallback(() => filters, [filters]);
@@ -101,6 +101,7 @@ const ServerList = forwardRef<ServerListRef, ServerListProps>(({ initFilters }, 
     enableColumnActions: false,
     enableColumnFilters: false
   });
+
   return (
     <Card>
       <div className='flex flex-col justify-between gap-2 p-4 md:flex-row'>

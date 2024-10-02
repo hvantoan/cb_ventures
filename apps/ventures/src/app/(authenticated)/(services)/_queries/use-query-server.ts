@@ -1,5 +1,3 @@
-'use client';
-
 import { type DefaultError, useQuery } from '@tanstack/react-query';
 import { plainToInstance } from 'class-transformer';
 
@@ -15,10 +13,7 @@ const select = (data: BaseResponse<Server>) => {
 export const useQueryServer = (serverId?: string) => {
   return useQuery<BaseResponse<Server>, DefaultError, Server>({
     queryKey: [SERVER_QK, serverId],
-    queryFn: async () => {
-      const res = await clientInstance.get(`${INTERNAL_SERVERS_ENDPOINT}/${serverId}`);
-      return res.data;
-    },
+    queryFn: async () => (await clientInstance.get(`${INTERNAL_SERVERS_ENDPOINT}/${serverId}`)).data,
     enabled: Boolean(serverId),
     select
   });

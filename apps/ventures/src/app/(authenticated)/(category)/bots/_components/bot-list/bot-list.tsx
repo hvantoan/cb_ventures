@@ -91,13 +91,10 @@ const BotList = forwardRef<BotListRef, BotListProps>(({ initFilters }, ref) => {
     onColumnFiltersChange: handleFiltersChanged,
     onPaginationChange: setFilters,
     localization: dataGridLocalization,
-    initialState: {
-      density: 'compact'
-    },
+    initialState: { density: 'comfortable' },
+    muiTableContainerProps: { className: 'w-full' },
     enableColumnFilters: false,
-    muiTableContainerProps: {
-      className: 'w-full'
-    }
+    enableColumnActions: false
   });
   return (
     <Card>

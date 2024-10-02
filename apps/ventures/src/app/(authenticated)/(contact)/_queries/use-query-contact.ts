@@ -1,5 +1,3 @@
-'use client';
-
 import { type DefaultError, useQuery } from '@tanstack/react-query';
 import { plainToInstance } from 'class-transformer';
 

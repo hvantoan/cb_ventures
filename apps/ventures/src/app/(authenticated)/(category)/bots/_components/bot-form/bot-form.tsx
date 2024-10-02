@@ -11,7 +11,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { instanceToPlain } from 'class-transformer';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { ChangeEvent, useCallback } from 'react';
+import React, { ChangeEvent, useCallback } from 'react';
 import { Controller, FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 

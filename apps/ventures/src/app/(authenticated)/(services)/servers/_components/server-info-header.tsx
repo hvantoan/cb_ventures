@@ -20,7 +20,7 @@ interface ServerDetailFormProps {
   stopLoading: () => void; // Add stop loading function prop
 }
 
-const TITLE = 'Server #';
+const TITLE = 'Server';
 const SAVE_BUTTON_LABEL = 'Lưu';
 const REMOVE_BUTTON_TEXT = 'Xóa';
 const TITLE_NEW = 'Thêm Server';

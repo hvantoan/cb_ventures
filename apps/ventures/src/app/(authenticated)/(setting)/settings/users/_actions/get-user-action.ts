@@ -7,6 +7,5 @@ import { User } from '../_models/user';
 
 export const getUserAction = async (id: string) => {
   const res = await serverInstance.post<BaseResponse<User>>(CLOUD_USER_GET_ENDPOINT, { id });
-
   return res.data;
 };

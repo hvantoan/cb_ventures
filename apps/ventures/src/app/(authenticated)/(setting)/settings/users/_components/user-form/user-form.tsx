@@ -31,12 +31,13 @@ const validateError: SubmitErrorHandler<AddUserDto> = (error) => {
 const resolver = classValidatorResolver(AddUserDto);
 
 const UserForm: React.FC<UserFormProps> = ({ userId }) => {
+  const router = useRouter();
+  const queryClient = useQueryClient();
+
   const { control, handleSubmit, setValue, reset } = useForm<AddUserDto>({
     resolver,
     defaultValues: new AddUserDto()
   });
-  const queryClient = useQueryClient();
-  const router = useRouter();
 
   const successCallback = useCallback(
     debounce(async (formData: User) => {
