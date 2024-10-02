@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Container, Stack, Typography } from '@mui/material';
+import { Avatar, Button, Container, Stack, Typography } from '@mui/material';
 import type { Session } from 'next-auth';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useRef } from 'react';
@@ -65,7 +65,8 @@ const LandingHeader: React.FC<Props> = ({ session }) => {
     <StyledLandingAppBar className='backdrop-blur-2xlxl bg-transparent shadow-2xl'>
       <Container>
         <StyledLandingToolbar ref={ref}>
-          <Stack direction='row' spacing={2} className='h-full'>
+          <Stack direction='row' spacing={2} className='h-full' alignItems='center'>
+            <Avatar alt='Home' src='/ventures/img/logo_vertical.png' className='h-6 w-6 bg-white' />
             <MenuToggler />
             {Boolean(typeof window !== 'undefined' && window.innerWidth > 720) && (
               <Stack direction='row'>

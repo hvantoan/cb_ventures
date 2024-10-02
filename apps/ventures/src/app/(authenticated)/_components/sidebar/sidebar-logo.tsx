@@ -10,7 +10,7 @@ const SidebarLogo: React.FC = () => {
   return (
     <SidebarLogoBox>
       <Link href='/'>
-        <Image alt='logo' src={DefaultLogo} className='h-7 w-7' priority />
+        <Image alt='logo' src={DefaultLogo} className='h-7 w-auto' priority />
       </Link>
     </SidebarLogoBox>
   );

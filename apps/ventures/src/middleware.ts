@@ -40,11 +40,7 @@ export default middleware;
 export const config = {
   matcher: [
     {
-      source: '/((?!_next/static|home|pricing|roadmap|img|_next/image|favicon.ico|assets).*)',
-      missing: [
-        { type: 'header', key: 'next-router-prefetch' },
-        { type: 'header', key: 'purpose', value: 'prefetch' }
-      ]
+      source: '/((?!_next/static|home|pricing|roadmap|img|_next/image|favicon.ico|assets).*)'
     }
   ]
 };
