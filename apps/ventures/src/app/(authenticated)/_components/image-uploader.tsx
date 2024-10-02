@@ -12,11 +12,13 @@ interface ImageUploaderProps extends DropzoneOptions {
   image?: Image;
   className?: string;
   onChange?: (image: Image) => void;
+  maxSize?: number;
 }
 
 const INSTRUCTION = 'Kéo và thả hoặc nhấn để chọn ảnh';
 const TOOLTIP = 'Xóa ảnh';
 const WRONG_IMAGE_TYPE_ERROR_MESSAGE = 'Hình ảnh không hợp lệ';
+const EXCEED_MAX_IMAGE_SIZE_ERROR_MESSAGE = 'Dung lượng của hình ảnh không được lớn hơn 2MB';
 
 const onDropRejected: DropzoneOptions['onDropRejected'] = (fileRejections) => {
   const fileRejection = fileRejections[0];
@@ -25,12 +27,15 @@ const onDropRejected: DropzoneOptions['onDropRejected'] = (fileRejections) => {
       toast.error(WRONG_IMAGE_TYPE_ERROR_MESSAGE);
       break;
     }
+    case ErrorCode.FileTooLarge:
+      toast.error(EXCEED_MAX_IMAGE_SIZE_ERROR_MESSAGE);
+      break;
     default:
       break;
   }
 };
 
-const ImageUploader: React.FC<ImageUploaderProps> = ({ image, className, onChange, ...props }) => {
+const ImageUploader: React.FC<ImageUploaderProps> = ({ image, className, onChange, maxSize = 1048576, ...props }) => {
   const onDropAccepted = useCallback(
     async (files: Array<File>) => {
       const res = await new Promise<string | ArrayBuffer | null>((resolve, reject) => {
@@ -63,6 +68,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ image, className, onChang
     onDropAccepted,
     onDropRejected,
     accept: { 'image/*': [] },
+    maxSize,
     ...props
   });
 

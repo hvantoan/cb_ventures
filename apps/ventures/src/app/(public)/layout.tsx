@@ -31,7 +31,7 @@ const LandingLayout: React.FC<WrappedComponentProps> = async ({ children }) => {
         <div className='main bg-body_color flex-grow'>
           <LandingHeader session={session} />
           <main className='bg-body_color'>
-            <div className='mx-auto w-[100svw] pb-4 sm:w-full '>{children}</div>
+            <div className='mx-auto w-[100svw] pb-4 sm:w-full'>{children}</div>
           </main>
         </div>
       </InitContextProvider>

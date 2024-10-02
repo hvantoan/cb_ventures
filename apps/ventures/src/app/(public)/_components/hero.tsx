@@ -16,15 +16,15 @@ export function Hero() {
       <div className='bg-banner_bg absolute h-full w-screen bg-cover bg-no-repeat opacity-[.1]' />
       <Container className='relative grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-20'>
         <div data-aos='fade-right' data-aos-duration='1000' className='content-center py-8'>
-          <div className='grid gap-8'>
+          <div className='grid gap-4'>
             <div className='lg:visible'>
               <Image
                 decoding='async'
                 src={BannerCoinImage}
                 alt='logo'
                 className='animate-rolating max-sm:h-4 max-sm:w-4'
-                height={100}
-                width={100}
+                height={70}
+                width={70}
               />
             </div>
             <div className='grid'>
@@ -48,7 +48,7 @@ export function Hero() {
                 <Button variant='outlined' color='primary'>
                   <Stack direction='row' alignItems='center' gap={1}>
                     <PlayCircleOutlineIcon />
-                    <p className='text-16 m-0 text-white'> Xem video</p>
+                    <p className='text-16 m-0 text-white'>Xem video</p>
                   </Stack>
                 </Button>
               </Stack>
