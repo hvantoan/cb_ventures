@@ -48,7 +48,7 @@ export function Hero() {
                 <Button variant='outlined' color='primary'>
                   <Stack direction='row' alignItems='center' gap={1}>
                     <PlayCircleOutlineIcon />
-                    <p className='text-16 m-0 text-white'> Xem video</p>
+                    <p className='text-16 m-0 text-white'>Xem video</p>
                   </Stack>
                 </Button>
               </Stack>

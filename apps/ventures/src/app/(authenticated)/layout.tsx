@@ -13,6 +13,8 @@ import { getSession } from '@/helpers/getSession';
 
 import { MainHeader } from './_components/main-header';
 
+export const revalidate = 0;
+
 const AuthenticatedLayout: React.FC<WrappedComponentProps> = async ({ children }) => {
   const isMobile = isFromMobileBrowser();
 
