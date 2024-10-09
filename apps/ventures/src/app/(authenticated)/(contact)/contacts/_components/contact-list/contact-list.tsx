@@ -84,7 +84,8 @@ const ContactList: React.FC<ContactListProps> = ({ initFilters }) => {
     initialState: {
       density: 'compact'
     },
-    enableColumnFilters: false
+    enableColumnFilters: false,
+    enableColumnActions: false
   });
   return (
     <Card>

@@ -1,7 +1,13 @@
 {
-  "extends": ["../../tsconfig.base.json"],
+  "extends": [
+    "../../tsconfig.base.json"
+  ],
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "moduleResolution": "bundler",
     "incremental": true,
     "plugins": [
@@ -14,15 +20,31 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@modules/*": ["./src/app/(authenticated)/*"],
-      "@/*": ["./src/*"]
+      "@modules/*": [
+        "./src/app/(authenticated)/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
     },
-    "typeRoots": ["./index.d.ts", "./libs-overrides.d.ts"],
+    "typeRoots": [
+      "./index.d.ts",
+      "./libs-overrides.d.ts"
+    ],
     "strictPropertyInitialization": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "declaration": false
+    "declaration": false,
+    "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "build/types/**/*.ts"],
-  "exclude": ["node_modules", "build/"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "build/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build/"
+  ]
 }

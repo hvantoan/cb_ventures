@@ -16,7 +16,7 @@ export class BankCard {
 
   cvv?: string;
 
-  @IsNotEmpty({ message: 'Ngày hết hạng không được để trống.' })
+  @IsNotEmpty({ message: 'Ngày hết hạn không được để trống.' })
   expirationDate: string;
   createdDate: Date;
   isDelete: boolean;
