@@ -12,8 +12,8 @@ importers:
         specifier: ^14.0.4
         version: 14.2.6
       '@nx-tools/container-metadata':
-        specifier: ^5.1.0
-        version: 5.3.1(@nx/devkit@18.3.5(nx@17.2.3))(dotenv@16.4.5)(tslib@2.7.0)
+        specifier: ^6.1.0
+        version: 6.1.0(@nx/devkit@18.3.5(nx@17.2.3))(tslib@2.7.0)
       '@nx-tools/nx-container':
         specifier: ^5.1.0
         version: 5.3.1(@nx/devkit@18.3.5(nx@17.2.3))(dotenv@16.4.5)(tslib@2.7.0)
@@ -133,7 +133,7 @@ importers:
         version: 5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-query-next-experimental':
         specifier: ^5.49.2
-        version: 5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(next@14.2.13(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        version: 5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(next@14.2.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@tanstack/react-table':
         specifier: ^8.15.3
         version: 8.20.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -343,7 +343,7 @@ importers:
         version: 5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-query-next-experimental':
         specifier: ^5.49.2
-        version: 5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(next@14.2.13(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        version: 5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(next@14.2.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       clsx:
         specifier: ^2.0.0
         version: 2.1.1
@@ -466,8 +466,8 @@ packages:
   '@actions/exec@1.1.1':
     resolution: {integrity: sha512-+sCcHHbVdk93a0XT19ECtO/gIXoxvdsgQLzb2fE2/5sIZmWQuluYyjPQtrtTHdU1YzTZ7bAPN4sITq2xi1679w==}
 
-  '@actions/github@5.1.1':
-    resolution: {integrity: sha512-Nk59rMDoJaV+mHCOJPXuvB1zIbomlKS0dmSIqPGxd0enAXBnOfn4VWF+CGtRCwXZG9Epa54tZA7VIRlJDS8A6g==}
+  '@actions/github@6.0.0':
+    resolution: {integrity: sha512-alScpSVnYmjNEXboZjarjukQEzgCRmjMv6Xj47fsdnqGS73bjJNDpiiXmp8jr0UZLdUB6d9jW63IcmddUP+l0g==}
 
   '@actions/http-client@2.2.3':
     resolution: {integrity: sha512-mx8hyJi/hjFvbPokCg4uRd4ZX78t+YyRPtnKWwIl+RzNaVuFpQHfmlGVfsKEJN8LwTCvL+DfVgAM04XaHkm6bA==}
@@ -1775,23 +1775,28 @@ packages:
     resolution: {integrity: sha512-tbSgRw/Yda+5XAt2swhZv37f8YqWEa0Qn8lch+BhHZmRq4EamG1wUKNF+YjQH51RFODmaB/U0gU6ZBehNMe++A==}
     hasBin: true
 
-  '@nx-tools/ci-context@5.3.1':
-    resolution: {integrity: sha512-4eChxDeN2mLaZNmDvPuOr56j26qDlB9GVAjDAm91tYqbeAwAXPF4YMFk6tLFhmkfDLFTB37h0gNU4qgPQn2vVA==}
+  '@nx-tools/ci-context@6.1.0':
+    resolution: {integrity: sha512-RUTbrSeqA9iA4PH/NEmWczDJ/VJmHRIPOtaJs39NbJCHy9bG93iyF5j5LCPrVgK26RFvMXXJy8kuyg2o7AqrXQ==}
     peerDependencies:
-      tslib: ^2.5.3
+      tslib: ^2.5.0
 
-  '@nx-tools/container-metadata@5.3.1':
-    resolution: {integrity: sha512-dvJ7WWZR8XZYZ9T65b6g+yWSXNNHO/c7XWgsSxiEVaeCQxhxsife6i1BSryvauLgTU1TonyUStIE0lwLCFACyg==}
+  '@nx-tools/container-metadata@6.1.0':
+    resolution: {integrity: sha512-RzG3AxO4t+MJDwRYaTUjJXyGwWETSDef+2FWOaqV9D+bo98nAWNXbrz3PKajBCrDj6yo5LFbsBasqKt/0CHzGw==}
     peerDependencies:
-      '@nx/devkit': ^16.0.0 || ^17.0.0 || ^18.0.0
-      dotenv: '>=10.0.0'
-      tslib: ^2.5.3
+      '@nx/devkit': ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0
+      tslib: ^2.5.0
 
   '@nx-tools/core@5.3.1':
     resolution: {integrity: sha512-eOLwHqzMh9lLOJev4/7hBQ1tszLU7okyX+1UY6cRyRHGiEmwaivI2u3TjGHLttRvZzCfw+KlktXXirhALO1i+g==}
     peerDependencies:
       '@nx/devkit': ^16.0.0 || ^17.0.0 || ^18.0.0
       tslib: ^2.5.3
+
+  '@nx-tools/core@6.1.0':
+    resolution: {integrity: sha512-jVy3mR2G0/UpuW1oh46ZR/hut4qN8passzqPGYA8FwavtB/6dG1x+Syz6lE2feI8UbExFvLBU2hu4FUmIVvRSA==}
+    peerDependencies:
+      '@nx/devkit': ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0
+      tslib: ^2.5.0
 
   '@nx-tools/nx-container@5.3.1':
     resolution: {integrity: sha512-xv5yn8LkJTk2SMLe0M37nwdnW9ohqG1TR7j7LrO+mZWd17epjdzAVqdO2nS8x+pB/fdEmKSRNhwpr8eUg6gtFw==}
@@ -1865,39 +1870,53 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@octokit/auth-token@2.5.0':
-    resolution: {integrity: sha512-r5FVUJCOLl19AxiuZD2VRZ/ORjp/4IN98Of6YJoJOkY75CIBuYfmiNHGrDwXr+aLGG55igl9QrxX3hbiXlLb+g==}
+  '@octokit/auth-token@4.0.0':
+    resolution: {integrity: sha512-tY/msAuJo6ARbK6SPIxZrPBms3xPbfwBrulZe0Wtr/DIY9lje2HeV1uoebShn6mx7SjCHif6EjMvoREj+gZ+SA==}
+    engines: {node: '>= 18'}
 
-  '@octokit/core@3.6.0':
-    resolution: {integrity: sha512-7RKRKuA4xTjMhY+eG3jthb3hlZCsOwg3rztWh75Xc+ShDWOfDDATWbeZpAHBNRpm4Tv9WgBMOy1zEJYXG6NJ7Q==}
+  '@octokit/core@5.2.0':
+    resolution: {integrity: sha512-1LFfa/qnMQvEOAdzlQymH0ulepxbxnCYAKJZfMci/5XJyIHWgEYnDmgnKakbTh7CH2tFQ5O60oYDvns4i9RAIg==}
+    engines: {node: '>= 18'}
 
-  '@octokit/endpoint@6.0.12':
-    resolution: {integrity: sha512-lF3puPwkQWGfkMClXb4k/eUT/nZKQfxinRWJrdZaJO85Dqwo/G0yOC434Jr2ojwafWJMYqFGFa5ms4jJUgujdA==}
+  '@octokit/endpoint@9.0.5':
+    resolution: {integrity: sha512-ekqR4/+PCLkEBF6qgj8WqJfvDq65RH85OAgrtnVp1mSxaXF03u2xW/hUdweGS5654IlC0wkNYC18Z50tSYTAFw==}
+    engines: {node: '>= 18'}
 
-  '@octokit/graphql@4.8.0':
-    resolution: {integrity: sha512-0gv+qLSBLKF0z8TKaSKTsS39scVKF9dbMxJpj3U0vC7wjNWFuIpL/z76Qe2fiuCbDRcJSavkXsVtMS6/dtQQsg==}
+  '@octokit/graphql@7.1.0':
+    resolution: {integrity: sha512-r+oZUH7aMFui1ypZnAvZmn0KSqAUgE1/tUXIWaqUCa1758ts/Jio84GZuzsvUkme98kv0WFY8//n0J1Z+vsIsQ==}
+    engines: {node: '>= 18'}
 
-  '@octokit/openapi-types@12.11.0':
-    resolution: {integrity: sha512-VsXyi8peyRq9PqIz/tpqiL2w3w80OgVMwBHltTml3LmVvXiphgeqmY9mvBw9Wu7e0QWk/fqD37ux8yP5uVekyQ==}
+  '@octokit/openapi-types@20.0.0':
+    resolution: {integrity: sha512-EtqRBEjp1dL/15V7WiX5LJMIxxkdiGJnabzYx5Apx4FkQIFgAfKumXeYAqqJCj1s+BMX4cPFIFC4OLCR6stlnA==}
 
-  '@octokit/plugin-paginate-rest@2.21.3':
-    resolution: {integrity: sha512-aCZTEf0y2h3OLbrgKkrfFdjRL6eSOo8komneVQJnYecAxIej7Bafor2xhuDJOIFau4pk0i/P28/XgtbyPF0ZHw==}
+  '@octokit/openapi-types@22.2.0':
+    resolution: {integrity: sha512-QBhVjcUa9W7Wwhm6DBFu6ZZ+1/t/oYxqc2tp81Pi41YNuJinbFRx8B133qVOrAaBbF7D/m0Et6f9/pZt9Rc+tg==}
+
+  '@octokit/plugin-paginate-rest@9.2.1':
+    resolution: {integrity: sha512-wfGhE/TAkXZRLjksFXuDZdmGnJQHvtU/joFQdweXUgzo1XwvBCD4o4+75NtFfjfLK5IwLf9vHTfSiU3sLRYpRw==}
+    engines: {node: '>= 18'}
     peerDependencies:
-      '@octokit/core': '>=2'
+      '@octokit/core': '5'
 
-  '@octokit/plugin-rest-endpoint-methods@5.16.2':
-    resolution: {integrity: sha512-8QFz29Fg5jDuTPXVtey05BLm7OB+M8fnvE64RNegzX7U+5NUXcOcnpTIK0YfSHBg8gYd0oxIq3IZTe9SfPZiRw==}
+  '@octokit/plugin-rest-endpoint-methods@10.4.1':
+    resolution: {integrity: sha512-xV1b+ceKV9KytQe3zCVqjg+8GTGfDYwaT1ATU5isiUyVtlVAO3HNdzpS4sr4GBx4hxQ46s7ITtZrAsxG22+rVg==}
+    engines: {node: '>= 18'}
     peerDependencies:
-      '@octokit/core': '>=3'
+      '@octokit/core': '5'
 
-  '@octokit/request-error@2.1.0':
-    resolution: {integrity: sha512-1VIvgXxs9WHSjicsRwq8PlR2LR2x6DwsJAaFgzdi0JfJoGSO8mYI/cHJQ+9FbN21aa+DrgNLnwObmyeSC8Rmpg==}
+  '@octokit/request-error@5.1.0':
+    resolution: {integrity: sha512-GETXfE05J0+7H2STzekpKObFe765O5dlAKUTLNGeH+x47z7JjXHfsHKo5z21D/o/IOZTUEI6nyWyR+bZVP/n5Q==}
+    engines: {node: '>= 18'}
 
-  '@octokit/request@5.6.3':
-    resolution: {integrity: sha512-bFJl0I1KVc9jYTe9tdGGpAMPy32dLBXXo1dS/YwSCTL/2nd9XeHsY616RE3HPXDVk+a+dBuzyz5YdlXwcDTr2A==}
+  '@octokit/request@8.4.0':
+    resolution: {integrity: sha512-9Bb014e+m2TgBeEJGEbdplMVWwPmL1FPtggHQRkV+WVsMggPtEkLKPlcVYm/o8xKLkpJ7B+6N8WfQMtDLX2Dpw==}
+    engines: {node: '>= 18'}
 
-  '@octokit/types@6.41.0':
-    resolution: {integrity: sha512-eJ2jbzjdijiL3B4PrSQaSjuF2sPEQPVCPzBvTHJD9Nz+9dw2SGH4K4xeQJ77YfTq5bRQ+bD8wT11JbeDPmxmGg==}
+  '@octokit/types@12.6.0':
+    resolution: {integrity: sha512-1rhSOfRa6H9w4YwK0yrf5faDaDTb+yLyBUKOCV4xtCDB5VmIPqd/v9yr9o6SAzOAlRxMiRiCic6JVM1/kunVkw==}
+
+  '@octokit/types@13.6.1':
+    resolution: {integrity: sha512-PHZE9Z+kWXb23Ndik8MKPirBPziOc0D2/3KH1P+6jK5nGWe96kadZuE4jev2/Jq7FvIfTlT2Ltg8Fv2x1v0a5g==}
 
   '@panva/hkdf@1.2.1':
     resolution: {integrity: sha512-6oclG6Y3PiDFcoyk8srjLfVKyMfVCKJ27JwNPViuXziFpmdz+MZnZN/aKY0JGXgYuO/VghU0jcOAZgWXZ1Dmrw==}
@@ -2555,6 +2574,10 @@ packages:
     resolution: {integrity: sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ==}
     engines: {node: '>=8'}
 
+  ci-info@4.0.0:
+    resolution: {integrity: sha512-TdHqgGf9odd8SXNuxtUBVx8Nv+qZOejE6qyqiy5NtbYYQOeFa6zmHkxlPzmaLxWWHsU6nJmB7AETdVPi+2NBUg==}
+    engines: {node: '>=8'}
+
   class-transformer@0.5.1:
     resolution: {integrity: sha512-SQa1Ws6hUbfC98vKGxZH3KFY0Y1lm5Zm0SY8XX9zbK7FJCyVEac3ATW0RIpwzW+oOfmHE5PMPufDG9hCfoEOMw==}
 
@@ -3117,6 +3140,7 @@ packages:
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -3534,10 +3558,6 @@ packages:
   is-path-inside@3.0.3:
     resolution: {integrity: sha512-Fd4gABb+ycGAmKou8eMftCupSir5lRxqf4aD/vd0cD2qc4HL07OjCeuHMr8Ro4CoMaeCKDB0/ECBOVWjTwUvPQ==}
     engines: {node: '>=8'}
-
-  is-plain-object@5.0.0:
-    resolution: {integrity: sha512-VRSzKkbMm5jMDoKLbltAkFQ5Qr7VDiTFGXxYFXXowVj387GeGNOCsOH6Msy00SGZ3Fp84b1Naa1psqgcCIEP5Q==}
-    engines: {node: '>=0.10.0'}
 
   is-regex@1.1.4:
     resolution: {integrity: sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==}
@@ -4489,9 +4509,8 @@ packages:
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
 
-  properties-file@2.2.4:
-    resolution: {integrity: sha512-+DOHK/QgbEeyu96G5MB1Sc1dfdPr/E5dpD6BexTn0XYVLn6VZhfYmWQRaz7sMjrj4nEdIaWX+tYaDboEnk50GQ==}
-    engines: {node: ^14.18.1 || >=16.0.0}
+  properties-file@3.5.9:
+    resolution: {integrity: sha512-04pqpblRKTG7S6Juyx2rYdAwJJ+hK9SIycmDwwic1T+m3Ek6nBSKvHalIoF10RNpx7Xi3891JZZkyIIVCJETaQ==}
 
   property-expr@2.0.6:
     resolution: {integrity: sha512-SVtmxhRE/CGkn3eZY1T6pC8Nln6Fr/lu1mKSgRud0eC73whjGfoAogbn78LkD8aFL0zz3bAFerKSnOl7NlErBA==}
@@ -5302,14 +5321,12 @@ snapshots:
     dependencies:
       '@actions/io': 1.1.3
 
-  '@actions/github@5.1.1':
+  '@actions/github@6.0.0':
     dependencies:
       '@actions/http-client': 2.2.3
-      '@octokit/core': 3.6.0
-      '@octokit/plugin-paginate-rest': 2.21.3(@octokit/core@3.6.0)
-      '@octokit/plugin-rest-endpoint-methods': 5.16.2(@octokit/core@3.6.0)
-    transitivePeerDependencies:
-      - encoding
+      '@octokit/core': 5.2.0
+      '@octokit/plugin-paginate-rest': 9.2.1(@octokit/core@5.2.0)
+      '@octokit/plugin-rest-endpoint-methods': 10.4.1(@octokit/core@5.2.0)
 
   '@actions/http-client@2.2.3':
     dependencies:
@@ -6878,32 +6895,28 @@ snapshots:
       - '@swc/core'
       - debug
 
-  '@nx-tools/ci-context@5.3.1(@nx/devkit@18.3.5(nx@17.2.3))(tslib@2.7.0)':
+  '@nx-tools/ci-context@6.1.0(@nx/devkit@18.3.5(nx@17.2.3))(tslib@2.7.0)':
     dependencies:
-      '@actions/github': 5.1.1
-      '@nx-tools/core': 5.3.1(@nx/devkit@18.3.5(nx@17.2.3))(tslib@2.7.0)
-      '@octokit/openapi-types': 12.11.0
-      ci-info: 3.9.0
-      properties-file: 2.2.4
+      '@actions/github': 6.0.0
+      '@nx-tools/core': 6.1.0(@nx/devkit@18.3.5(nx@17.2.3))(tslib@2.7.0)
+      '@octokit/openapi-types': 22.2.0
+      ci-info: 4.0.0
+      properties-file: 3.5.9
       tslib: 2.7.0
     transitivePeerDependencies:
       - '@nx/devkit'
-      - encoding
 
-  '@nx-tools/container-metadata@5.3.1(@nx/devkit@18.3.5(nx@17.2.3))(dotenv@16.4.5)(tslib@2.7.0)':
+  '@nx-tools/container-metadata@6.1.0(@nx/devkit@18.3.5(nx@17.2.3))(tslib@2.7.0)':
     dependencies:
-      '@nx-tools/ci-context': 5.3.1(@nx/devkit@18.3.5(nx@17.2.3))(tslib@2.7.0)
-      '@nx-tools/core': 5.3.1(@nx/devkit@18.3.5(nx@17.2.3))(tslib@2.7.0)
+      '@nx-tools/ci-context': 6.1.0(@nx/devkit@18.3.5(nx@17.2.3))(tslib@2.7.0)
+      '@nx-tools/core': 6.1.0(@nx/devkit@18.3.5(nx@17.2.3))(tslib@2.7.0)
       '@nx/devkit': 18.3.5(nx@17.2.3)
       '@renovate/pep440': 1.0.0
       csv-parse: 5.5.6
-      dotenv: 16.4.5
       handlebars: 4.7.8
       moment-timezone: 0.5.45
       semver: 7.6.3
       tslib: 2.7.0
-    transitivePeerDependencies:
-      - encoding
 
   '@nx-tools/core@5.3.1(@nx/devkit@18.3.5(nx@17.2.3))(tslib@2.7.0)':
     dependencies:
@@ -6911,6 +6924,16 @@ snapshots:
       '@nx/devkit': 18.3.5(nx@17.2.3)
       chalk: 4.1.2
       ci-info: 3.9.0
+      tslib: 2.7.0
+
+  '@nx-tools/core@6.1.0(@nx/devkit@18.3.5(nx@17.2.3))(tslib@2.7.0)':
+    dependencies:
+      '@actions/exec': 1.1.1
+      '@actions/io': 1.1.3
+      '@nx/devkit': 18.3.5(nx@17.2.3)
+      chalk: 4.1.2
+      ci-info: 4.0.0
+      csv-parse: 5.5.6
       tslib: 2.7.0
 
   '@nx-tools/nx-container@5.3.1(@nx/devkit@18.3.5(nx@17.2.3))(dotenv@16.4.5)(tslib@2.7.0)':
@@ -6966,69 +6989,63 @@ snapshots:
   '@nx/nx-win32-x64-msvc@17.2.3':
     optional: true
 
-  '@octokit/auth-token@2.5.0':
-    dependencies:
-      '@octokit/types': 6.41.0
+  '@octokit/auth-token@4.0.0': {}
 
-  '@octokit/core@3.6.0':
+  '@octokit/core@5.2.0':
     dependencies:
-      '@octokit/auth-token': 2.5.0
-      '@octokit/graphql': 4.8.0
-      '@octokit/request': 5.6.3
-      '@octokit/request-error': 2.1.0
-      '@octokit/types': 6.41.0
+      '@octokit/auth-token': 4.0.0
+      '@octokit/graphql': 7.1.0
+      '@octokit/request': 8.4.0
+      '@octokit/request-error': 5.1.0
+      '@octokit/types': 13.6.1
       before-after-hook: 2.2.3
       universal-user-agent: 6.0.1
-    transitivePeerDependencies:
-      - encoding
 
-  '@octokit/endpoint@6.0.12':
+  '@octokit/endpoint@9.0.5':
     dependencies:
-      '@octokit/types': 6.41.0
-      is-plain-object: 5.0.0
+      '@octokit/types': 13.6.1
       universal-user-agent: 6.0.1
 
-  '@octokit/graphql@4.8.0':
+  '@octokit/graphql@7.1.0':
     dependencies:
-      '@octokit/request': 5.6.3
-      '@octokit/types': 6.41.0
+      '@octokit/request': 8.4.0
+      '@octokit/types': 13.6.1
       universal-user-agent: 6.0.1
-    transitivePeerDependencies:
-      - encoding
 
-  '@octokit/openapi-types@12.11.0': {}
+  '@octokit/openapi-types@20.0.0': {}
 
-  '@octokit/plugin-paginate-rest@2.21.3(@octokit/core@3.6.0)':
+  '@octokit/openapi-types@22.2.0': {}
+
+  '@octokit/plugin-paginate-rest@9.2.1(@octokit/core@5.2.0)':
     dependencies:
-      '@octokit/core': 3.6.0
-      '@octokit/types': 6.41.0
+      '@octokit/core': 5.2.0
+      '@octokit/types': 12.6.0
 
-  '@octokit/plugin-rest-endpoint-methods@5.16.2(@octokit/core@3.6.0)':
+  '@octokit/plugin-rest-endpoint-methods@10.4.1(@octokit/core@5.2.0)':
     dependencies:
-      '@octokit/core': 3.6.0
-      '@octokit/types': 6.41.0
-      deprecation: 2.3.1
+      '@octokit/core': 5.2.0
+      '@octokit/types': 12.6.0
 
-  '@octokit/request-error@2.1.0':
+  '@octokit/request-error@5.1.0':
     dependencies:
-      '@octokit/types': 6.41.0
+      '@octokit/types': 13.6.1
       deprecation: 2.3.1
       once: 1.4.0
 
-  '@octokit/request@5.6.3':
+  '@octokit/request@8.4.0':
     dependencies:
-      '@octokit/endpoint': 6.0.12
-      '@octokit/request-error': 2.1.0
-      '@octokit/types': 6.41.0
-      is-plain-object: 5.0.0
-      node-fetch: 2.7.0
+      '@octokit/endpoint': 9.0.5
+      '@octokit/request-error': 5.1.0
+      '@octokit/types': 13.6.1
       universal-user-agent: 6.0.1
-    transitivePeerDependencies:
-      - encoding
 
-  '@octokit/types@6.41.0':
+  '@octokit/types@12.6.0':
     dependencies:
-      '@octokit/openapi-types': 12.11.0
+      '@octokit/openapi-types': 20.0.0
+
+  '@octokit/types@13.6.1':
+    dependencies:
+      '@octokit/openapi-types': 22.2.0
 
   '@panva/hkdf@1.2.1': {}
 
@@ -7189,7 +7206,7 @@ snapshots:
       '@tanstack/react-query': 5.52.1(react@18.3.1)
       react: 18.3.1
 
-  '@tanstack/react-query-next-experimental@5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(next@14.2.13(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-query-next-experimental@5.52.1(@tanstack/react-query@5.52.1(react@18.3.1))(next@14.2.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/react-query': 5.52.1(react@18.3.1)
       next: 14.2.13(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7798,6 +7815,8 @@ snapshots:
     optional: true
 
   ci-info@3.9.0: {}
+
+  ci-info@4.0.0: {}
 
   class-transformer@0.5.1: {}
 
@@ -8951,8 +8970,6 @@ snapshots:
 
   is-path-inside@3.0.3: {}
 
-  is-plain-object@5.0.0: {}
-
   is-regex@1.1.4:
     dependencies:
       call-bind: 1.0.7
@@ -9376,6 +9393,7 @@ snapshots:
   node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
+    optional: true
 
   node-machine-id@1.1.12: {}
 
@@ -9858,7 +9876,7 @@ snapshots:
       object-assign: 4.1.1
       react-is: 16.13.1
 
-  properties-file@2.2.4: {}
+  properties-file@3.5.9: {}
 
   property-expr@2.0.6: {}
 
@@ -10485,7 +10503,8 @@ snapshots:
 
   toposort@2.0.2: {}
 
-  tr46@0.0.3: {}
+  tr46@0.0.3:
+    optional: true
 
   ts-api-utils@1.3.0(typescript@5.5.4):
     dependencies:
@@ -10649,12 +10668,14 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
 
-  webidl-conversions@3.0.1: {}
+  webidl-conversions@3.0.1:
+    optional: true
 
   whatwg-url@5.0.0:
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
+    optional: true
 
   which-boxed-primitive@1.0.2:
     dependencies:
