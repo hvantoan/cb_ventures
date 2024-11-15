@@ -240,8 +240,8 @@ importers:
         specifier: ^0.33.0
         version: 0.33.5
       type-fest:
-        specifier: ^4.9.0
-        version: 4.25.0
+        specifier: ^4.27.0
+        version: 4.27.0
       use-immer:
         specifier: ^0.9.0
         version: 0.9.0(immer@10.1.1)(react@18.3.1)
@@ -3117,6 +3117,7 @@ packages:
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -5073,8 +5074,8 @@ packages:
     resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
     engines: {node: '>=12.20'}
 
-  type-fest@4.25.0:
-    resolution: {integrity: sha512-bRkIGlXsnGBRBQRAY56UXBm//9qH4bmJfFvq83gSz41N282df+fjy8ofcEgc1sM8geNt5cl6mC2g9Fht1cs8Aw==}
+  type-fest@4.27.0:
+    resolution: {integrity: sha512-3IMSWgP7C5KSQqmo1wjhKrwsvXAtF33jO3QY+Uy++ia7hqvgSK6iXbbg5PbDBc1P2ZbNEDgejOrN4YooXvhwCw==}
     engines: {node: '>=16'}
 
   typed-array-buffer@1.0.2:
@@ -10524,7 +10525,7 @@ snapshots:
 
   type-fest@2.19.0: {}
 
-  type-fest@4.25.0: {}
+  type-fest@4.27.0: {}
 
   typed-array-buffer@1.0.2:
     dependencies:
