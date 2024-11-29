@@ -1,7 +1,7 @@
 'use client';
 
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
-import { Box, TextField } from '@mui/material';
+import { Box, Stack, TextField } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useQueryClient } from '@tanstack/react-query';
 import { instanceToPlain } from 'class-transformer';
@@ -14,22 +14,26 @@ import { CONTACT_QK } from '@/query/query-keys';
 import { saveContactAction } from '../../_actions/save-contact-action';
 import { Contact } from '../../_model/contact';
 import { useQueryMe } from '../../_queries/use-query-me';
-import { bankCardFormLabels } from './bank-card-form.define';
 import ContactFormBank from './contact-form-bank';
 import ContactFormIdentity from './contact-form-identity';
-import { contactFormLabels } from './contact-form.define';
 
 const resolver = classValidatorResolver(Contact);
 
-const validateError: SubmitErrorHandler<Contact> = (error) => {
-  console.info('Contact validate failed', error);
+const validateError: SubmitErrorHandler<Contact> = (errors: any) => {
+  console.info('Contact validate failed', errors);
+  const errorMessages = Object.values(errors).map((error: any) => error.message);
+  // Display each error message as a toast notification
+  errorMessages.forEach((message) => {
+    toast.error(message);
+  });
 };
 
 interface ContactFormProps {
   formId: string;
+  children: React.ReactNode;
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({ formId }) => {
+const ContactForm: React.FC<ContactFormProps> = ({ formId, children: actions }) => {
   const { data: me } = useQueryMe();
   const theme = useTheme();
 
@@ -74,7 +78,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ formId }) => {
         { delay: 0 }
       );
       await queryClient.invalidateQueries({ queryKey: [CONTACT_QK] });
-    } catch (e) {
+    } catch {
       // nothing
     }
   }, []);
@@ -100,120 +104,130 @@ const ContactForm: React.FC<ContactFormProps> = ({ formId }) => {
   };
 
   return (
-    <Box className='my-4'>
-      <form
-        className='flex flex-col gap-4'
-        id={formId}
-        noValidate
-        onSubmit={handleSubmit(validateSuccess, validateError)}
-      >
-        <div className='grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4'>
-          <Controller
-            control={control}
-            name='name'
-            render={({ field: { value, onChange } }) => (
-              <TextField
-                label={contactFormLabels.name}
-                value={value ?? ''}
-                onChange={onChange}
-                sx={textFieldSx}
-                required
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name='phone'
-            render={({ field: { value, onChange }, fieldState: { error } }) => (
-              <TextField
-                label={contactFormLabels.phone}
-                value={value ?? ''}
-                onChange={onChange}
-                helperText={error?.message}
-                error={Boolean(error)}
-                sx={textFieldSx}
-                required
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name='email'
-            render={({ field: { value, onChange }, fieldState: { error } }) => (
-              <TextField
-                label={contactFormLabels.email}
-                InputProps={{ readOnly: false }}
-                value={value ?? ''}
-                onChange={onChange}
-                helperText={error?.message}
-                error={Boolean(error)}
-                sx={textFieldSx}
-                required
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name='identityCard'
-            render={({ field: { value, onChange } }) => (
-              <TextField
-                label={contactFormLabels.identityCard}
-                InputProps={{ readOnly: false }}
-                value={value ?? ''}
-                onChange={onChange}
-                sx={textFieldSx}
-                required
-              />
-            )}
-          />
-        </div>
-        <ContactFormIdentity control={control} />
-        <div className='grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4'>
-          <Controller
-            control={control}
-            name='bankCard.cardNumber'
-            render={({ field: { value, onChange } }) => (
-              <TextField
-                label={bankCardFormLabels.cardNumber}
-                InputProps={{ readOnly: false }}
-                value={value ?? ''}
-                onChange={onChange}
-                sx={textFieldSx}
-                required
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name='bankCard.name'
-            render={({ field: { value, onChange } }) => (
-              <TextField
-                label={bankCardFormLabels.name}
-                InputProps={{ readOnly: false }}
-                value={value ?? ''}
-                onChange={onChange}
-                sx={textFieldSx}
-                required
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name='bankCard.cardBranch'
-            render={({ field: { value, onChange } }) => (
-              <TextField
-                label={bankCardFormLabels.cardBranch}
-                InputProps={{ readOnly: false }}
-                value={value ?? ''}
-                onChange={onChange}
-                sx={textFieldSx}
-                required
-              />
-            )}
-          />
-        </div>
-        <ContactFormBank control={control} />
-      </form>
+    <Box
+      className='my-4 flex flex-col gap-4'
+      component='form'
+      id={formId}
+      noValidate
+      onSubmit={handleSubmit(validateSuccess, validateError)}
+    >
+      <div className='grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4'>
+        <Controller
+          control={control}
+          name='name'
+          render={({ field: { value, onChange }, fieldState: { error } }) => (
+            <TextField
+              label='Tên liên hệ'
+              value={value ?? ''}
+              onChange={onChange}
+              sx={textFieldSx}
+              error={Boolean(error)}
+              helperText={error?.message}
+              InputProps={{ readOnly: true }}
+            />
+          )}
+        />
+        <Controller
+          control={control}
+          name='phone'
+          render={({ field: { value, onChange }, fieldState: { error } }) => (
+            <TextField
+              label='Số điện thoại'
+              value={value ?? ''}
+              onChange={onChange}
+              helperText={error?.message}
+              error={Boolean(error)}
+              sx={textFieldSx}
+              InputProps={{ readOnly: true }}
+            />
+          )}
+        />
+        <Controller
+          control={control}
+          name='email'
+          render={({ field: { value, onChange }, fieldState: { error } }) => (
+            <TextField
+              label='Email'
+              InputProps={{ readOnly: true }}
+              value={value ?? ''}
+              onChange={onChange}
+              helperText={error?.message}
+              error={Boolean(error)}
+              sx={textFieldSx}
+            />
+          )}
+        />
+        <Controller
+          control={control}
+          name='identityCard'
+          render={({ field: { value, onChange }, fieldState: { error } }) => (
+            <TextField
+              label='CMND/CCCD'
+              InputProps={{ readOnly: false }}
+              value={value ?? ''}
+              onChange={onChange}
+              sx={textFieldSx}
+              error={Boolean(error)}
+              helperText={error?.message}
+              required
+            />
+          )}
+        />
+      </div>
+      <ContactFormIdentity control={control} />
+      <div className='grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4'>
+        <Controller
+          control={control}
+          name='bankCard.cardNumber'
+          render={({ field: { value, onChange }, fieldState: { error } }) => (
+            <TextField
+              label='Số thẻ ngân hàng'
+              InputProps={{ readOnly: false }}
+              value={value ?? ''}
+              onChange={onChange}
+              sx={textFieldSx}
+              error={Boolean(error)}
+              helperText={error?.message}
+              required
+            />
+          )}
+        />
+        <Controller
+          control={control}
+          name='bankCard.name'
+          render={({ field: { value, onChange }, fieldState: { error } }) => (
+            <TextField
+              label='Tên chủ thẻ'
+              InputProps={{ readOnly: false }}
+              value={value ?? ''}
+              onChange={onChange}
+              sx={textFieldSx}
+              error={Boolean(error)}
+              helperText={error?.message}
+              required
+            />
+          )}
+        />
+        <Controller
+          control={control}
+          name='bankCard.cardBranch'
+          render={({ field: { value, onChange }, fieldState: { error } }) => (
+            <TextField
+              label='Chi nhánh thẻ'
+              InputProps={{ readOnly: false }}
+              value={value ?? ''}
+              onChange={onChange}
+              sx={textFieldSx}
+              error={Boolean(error)}
+              helperText={error?.message}
+            />
+          )}
+        />
+      </div>
+      <ContactFormBank control={control} />
+      <Stack direction='row' gap={1} justifyContent='center' alignItems='center'>
+        {actions}
+      </Stack>
     </Box>
   );
 };

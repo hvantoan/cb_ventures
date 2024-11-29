@@ -1,7 +1,7 @@
 import { Contact } from '@modules/(contact)/_model/contact';
 import type { MRT_ColumnDef } from 'material-react-table';
 
-import FumyLink from '@/components/fumy-link';
+import AppLink from '@/components/app-link';
 import { contactsPath } from '@/routes';
 
 export const columns: Array<MRT_ColumnDef<Contact>> = [
@@ -9,7 +9,7 @@ export const columns: Array<MRT_ColumnDef<Contact>> = [
     header: 'Họ và tên',
     accessorKey: 'name',
     Cell: ({ renderedCellValue, row }) => {
-      return <FumyLink href={`${contactsPath}/${row.original.id}`}>{renderedCellValue}</FumyLink>;
+      return <AppLink href={`${contactsPath}/${row.original.id}`}>{renderedCellValue}</AppLink>;
     }
   },
   {

@@ -1,9 +1,9 @@
-import DefaultProductImage from '@fumy/ui/assets/images/product-default.png';
+import DefaultProductImage from '@hvantoan/ui/assets/images/product-default.png';
 import { Bot } from '@modules/(category)/_models/bot';
 import type { MRT_ColumnDef } from 'material-react-table';
 import Image from 'next/image';
 
-import FumyLink from '@/components/fumy-link';
+import AppLink from '@/components/app-link';
 import { botsPath } from '@/routes';
 
 export const columns: Array<MRT_ColumnDef<Bot>> = [
@@ -32,7 +32,7 @@ export const columns: Array<MRT_ColumnDef<Bot>> = [
     header: 'Tên bot',
     accessorKey: 'name',
     Cell: ({ renderedCellValue, row }) => {
-      return <FumyLink href={`${botsPath}/${row.original.id}`}>{renderedCellValue}</FumyLink>;
+      return <AppLink href={`${botsPath}/${row.original.id}`}>{renderedCellValue}</AppLink>;
     }
   },
   {

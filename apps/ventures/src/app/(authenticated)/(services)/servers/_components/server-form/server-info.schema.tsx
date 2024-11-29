@@ -1,4 +1,4 @@
-import { type ExtendedControllerProps } from '@fumy/ui/base';
+import { type ExtendedControllerProps } from '@hvantoan/ui/base';
 import { Bot } from '@modules/(category)/_models/bot';
 import BotSelect from '@modules/(category)/bots/_components/bot-select/bot-select';
 import { Server } from '@modules/(services)/_models/server';

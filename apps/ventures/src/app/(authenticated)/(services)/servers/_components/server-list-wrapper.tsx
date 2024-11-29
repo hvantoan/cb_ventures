@@ -2,7 +2,7 @@
 
 import { QueryServerFilter } from '@modules/(services)/_types/server-filter';
 import { Typography } from '@mui/material';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 
 import QuickActions from './quick-actions';
 import { ServerInfo } from './server-info';

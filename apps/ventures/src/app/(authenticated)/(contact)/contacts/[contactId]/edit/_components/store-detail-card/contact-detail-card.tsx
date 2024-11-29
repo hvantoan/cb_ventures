@@ -1,6 +1,6 @@
 'use client';
 
-import DefaultCreditCardImage from '@fumy/ui/assets/images/credit-card-default.png';
+import DefaultCreditCardImage from '@hvantoan/ui/assets/images/credit-card-default.png';
 import { useQueryContact } from '@modules/(contact)/_queries/use-query-contact';
 import { Card, CardContent, Stack, Typography } from '@mui/material';
 import Image from 'next/image';

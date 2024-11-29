@@ -1,11 +1,13 @@
-import { DATE_TIME_FORMAT } from '@fumy/utilities/constants';
-import { toCurrency } from '@fumy/utilities/helpers/number-formatter';
+'use client';
+
+import { DATE_TIME_FORMAT } from '@hvantoan/utilities/constants';
+import { toCurrency } from '@hvantoan/utilities/helpers/number-formatter';
 import { Server } from '@modules/(services)/_models/server';
 import { IconButton } from '@mui/material';
 import dayjs from 'dayjs';
 import type { MRT_ColumnDef } from 'material-react-table';
 
-import FumyLink from '@/components/fumy-link';
+import AppLink from '@/components/app-link';
 import { serversPath } from '@/routes';
 
 const handleNavigate = (serverId: string) => {
@@ -26,33 +28,30 @@ export const columns: Array<MRT_ColumnDef<Server>> = [
     accessorKey: 'iD_MT4',
     size: 100,
     Cell: ({ renderedCellValue, row }) => {
-      return <FumyLink href={`${serversPath}/${row.original.id}`}>{renderedCellValue}</FumyLink>;
+      return <AppLink href={`${serversPath}/${row.original.id}`}>#{renderedCellValue}</AppLink>;
     }
   },
   {
     header: 'Broker Server',
     accessorKey: 'brokerServer',
-    size: 150,
-    Cell: ({ renderedCellValue }) => renderedCellValue
+    size: 150
   },
   {
     header: 'Khách hàng',
     id: 'userId',
-    accessorKey: 'user.name',
-    Cell: ({ renderedCellValue }) => renderedCellValue
+    accessorKey: 'user.name'
   },
   {
     header: 'Gmail',
     id: 'email',
-    accessorKey: 'user.email',
-    Cell: ({ renderedCellValue }) => renderedCellValue
+    accessorKey: 'user.email'
   },
 
   {
     header: 'Tên BOT',
+    id: 'botName',
     accessorKey: 'bot.name',
-    size: 100,
-    Cell: ({ renderedCellValue }) => renderedCellValue
+    size: 100
   },
   {
     header: 'Tổng vốn',

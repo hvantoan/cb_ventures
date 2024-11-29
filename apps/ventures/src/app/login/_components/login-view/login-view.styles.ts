@@ -1,4 +1,4 @@
-import Overlay from '@fumy/ui/assets/images/overlay-2.png';
+import Overlay from '@hvantoan/ui/assets/images/overlay-2.png';
 import { Stack, styled } from '@mui/material';
 
 export const StyledStack = styled(Stack)`

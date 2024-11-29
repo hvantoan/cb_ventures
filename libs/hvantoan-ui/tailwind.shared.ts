@@ -10,8 +10,8 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    '../../libs/fumy-ui/components/**/*.{js,ts,jsx,tsx,mdx}', // relative to apps/project/tailwind.config.ts
-    '../../libs/fumy-ui/theme/**/*.{js,ts,jsx,tsx,mdx}' // relative to apps/project/tailwind.config.ts
+    '../../libs/hvantoan-ui/components/**/*.{js,ts,jsx,tsx,mdx}', // relative to apps/project/tailwind.config.ts
+    '../../libs/hvantoan-ui/theme/**/*.{js,ts,jsx,tsx,mdx}' // relative to apps/project/tailwind.config.ts
   ],
   corePlugins: {
     preflight: false

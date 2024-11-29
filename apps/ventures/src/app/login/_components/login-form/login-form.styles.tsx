@@ -1,6 +1,6 @@
 'use client';
 
-import Overlay from '@fumy/ui/assets/images/overlay-4.png';
+import Overlay from '@hvantoan/ui/assets/images/overlay-4.png';
 import { styled } from '@mui/material';
 
 export const FormBox = styled('div')`

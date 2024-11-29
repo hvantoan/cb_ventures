@@ -1,6 +1,6 @@
 'use client';
 
-import { confirm } from '@fumy/ui/helpers';
+import { confirm } from '@hvantoan/ui/helpers';
 import { deleteBotAction } from '@modules/(category)/_actions/delete-bot-action';
 import { LoadingButton } from '@mui/lab';
 import { Tooltip, Typography } from '@mui/material';
@@ -20,7 +20,7 @@ interface ServerDetailFormProps {
   stopLoading: () => void; // Add stop loading function prop
 }
 
-const TITLE = 'Server #';
+const TITLE = 'Server';
 const SAVE_BUTTON_LABEL = 'Lưu';
 const REMOVE_BUTTON_TEXT = 'Xóa';
 const TITLE_NEW = 'Thêm Server';

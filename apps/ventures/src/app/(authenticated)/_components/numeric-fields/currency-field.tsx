@@ -1,5 +1,5 @@
-import { BaseNumericField, BaseNumericFieldProps } from '@fumy/ui/components';
-import { currencyChar } from '@fumy/utilities/helpers/number-formatter';
+import { BaseNumericField, BaseNumericFieldProps } from '@hvantoan/ui/components';
+import { currencyChar } from '@hvantoan/utilities/helpers/number-formatter';
 
 import { useAppSelector } from '@/store';
 

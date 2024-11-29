@@ -1,8 +1,8 @@
 'use client';
 
-import DefaultBotImage from '@fumy/ui/assets/images/product-default.png';
-import { useToggle } from '@fumy/utilities/hooks';
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
+import DefaultBotImage from '@hvantoan/ui/assets/images/product-default.png';
+import { useToggle } from '@hvantoan/utilities/hooks';
 import { modifyBotAction } from '@modules/(category)/_actions/modify-bot-action';
 import { Bot } from '@modules/(category)/_models/bot';
 import BackupIcon from '@mui/icons-material/Backup';
@@ -11,7 +11,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { instanceToPlain } from 'class-transformer';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { ChangeEvent, useCallback } from 'react';
+import React, { ChangeEvent, useCallback } from 'react';
 import { Controller, FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 

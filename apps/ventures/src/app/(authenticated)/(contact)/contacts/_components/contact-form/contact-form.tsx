@@ -1,7 +1,7 @@
 'use client';
 
-import { useToggle } from '@fumy/utilities/hooks';
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
+import { useToggle } from '@hvantoan/utilities/hooks';
 import { Contact } from '@modules/(contact)/_model/contact';
 import { LoadingButton } from '@mui/lab';
 import { Box, Card } from '@mui/material';

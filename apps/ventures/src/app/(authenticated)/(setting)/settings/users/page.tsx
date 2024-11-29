@@ -1,4 +1,4 @@
-import { getQueryClient } from '@fumy/utilities/query';
+import { getQueryClient } from '@hvantoan/utilities/query';
 import { UserList } from '@modules/(setting)/settings/users/_components/user-list';
 import { Button, Typography } from '@mui/material';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';

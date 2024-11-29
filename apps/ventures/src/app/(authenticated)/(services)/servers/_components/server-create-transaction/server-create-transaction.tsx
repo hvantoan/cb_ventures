@@ -1,8 +1,8 @@
 'use client';
 
-import { DialogHeader } from '@fumy/ui/components';
-import { useToggle } from '@fumy/utilities/hooks';
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
+import { DialogHeader } from '@hvantoan/ui/components';
+import { useToggle } from '@hvantoan/utilities/hooks';
 import { modifyTransactionAction } from '@modules/(services)/_actions/modify-transaction-action';
 import { ETransactionType } from '@modules/(services)/_enums/transaction-type';
 import { Transaction } from '@modules/(services)/_models';

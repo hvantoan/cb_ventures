@@ -1,4 +1,4 @@
-import { FileUploadIcon } from '@fumy/ui/assets/icons';
+import { FileUploadIcon } from '@hvantoan/ui/assets/icons';
 import { Fade, IconButton, Tooltip, Typography } from '@mui/material';
 import { clsx } from 'clsx';
 import NextImage from 'next/image';
@@ -12,6 +12,8 @@ interface ImageUploaderProps extends DropzoneOptions {
   image?: Image;
   className?: string;
   onChange?: (image: Image) => void;
+  error?: boolean;
+  helpText?: string | null;
   maxSize?: number;
 }
 
@@ -35,7 +37,15 @@ const onDropRejected: DropzoneOptions['onDropRejected'] = (fileRejections) => {
   }
 };
 
-const ImageUploader: React.FC<ImageUploaderProps> = ({ image, className, onChange, maxSize = 1048576, ...props }) => {
+const ImageUploader: React.FC<ImageUploaderProps> = ({
+  image,
+  className,
+  onChange,
+  error,
+  helpText,
+  maxSize = 1048576,
+  ...props
+}) => {
   const onDropAccepted = useCallback(
     async (files: Array<File>) => {
       const res = await new Promise<string | ArrayBuffer | null>((resolve, reject) => {
@@ -45,7 +55,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ image, className, onChang
           const base64 = (reader.result as string)?.replace('data:', '').replace(/^.+,/, '');
           resolve(base64);
         };
-        reader.onerror = (error) => reject(error);
+        reader.onerror = (ex) => reject(ex);
       });
       if (image) {
         const newImage = URL.createObjectURL(files[0]);
@@ -57,7 +67,6 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ image, className, onChang
         const newImageData = URL.createObjectURL(files[0]);
         newImage.image = newImageData;
         newImage.data = res as string;
-
         onChange?.(newImage);
       }
     },
@@ -125,6 +134,12 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ image, className, onChang
           </Fade>
         )}
       </div>
+      {/* Create error message */}
+      {Boolean(error) && (
+        <Typography typography='body2' color='error' textAlign='center'>
+          {helpText}
+        </Typography>
+      )}
     </div>
   );
 };

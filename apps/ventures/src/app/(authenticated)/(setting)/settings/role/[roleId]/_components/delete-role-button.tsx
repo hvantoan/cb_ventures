@@ -1,6 +1,6 @@
 'use client';
 
-import { confirm } from '@fumy/ui/helpers';
+import { confirm } from '@hvantoan/ui/helpers';
 import { Button } from '@mui/material';
 import { useQueryClient } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';

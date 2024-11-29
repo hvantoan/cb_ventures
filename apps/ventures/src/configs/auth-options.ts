@@ -91,7 +91,7 @@ export const authOptions: AuthOptions = {
               avatar: googleUser.data.avatar
             };
           }
-        } catch (error) {
+        } catch {
           console.error('Không thể kết nối đến Server');
         }
       } else if (user && trigger === 'signIn') {

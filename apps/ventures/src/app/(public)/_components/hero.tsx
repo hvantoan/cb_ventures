@@ -1,7 +1,7 @@
 'use client';
 
-import BannerCoinImage from '@fumy/ui/assets/images/banner_coin.png';
-import BannerImage from '@fumy/ui/assets/images/banner_img-2.png';
+import BannerCoinImage from '@hvantoan/ui/assets/images/banner_coin.png';
+import BannerImage from '@hvantoan/ui/assets/images/banner_img-2.png';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import { Button, Container, Stack } from '@mui/material';

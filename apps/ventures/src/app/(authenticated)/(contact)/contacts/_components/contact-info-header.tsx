@@ -1,7 +1,7 @@
 'use client';
 
-import { confirm } from '@fumy/ui/helpers';
-import { useToggle } from '@fumy/utilities/hooks';
+import { confirm } from '@hvantoan/ui/helpers';
+import { useToggle } from '@hvantoan/utilities/hooks';
 import { LoadingButton } from '@mui/lab';
 import { Button, Tooltip, Typography } from '@mui/material';
 import { useQueryClient } from '@tanstack/react-query';

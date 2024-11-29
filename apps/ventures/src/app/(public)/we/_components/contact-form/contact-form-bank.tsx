@@ -5,7 +5,6 @@ import { Typography } from '@mui/material';
 import { Control, Controller } from 'react-hook-form';
 
 import { Contact } from '../../_model/contact';
-import { bankCardFormLabels } from './bank-card-form.define';
 
 interface ContactFormBankProps {
   control: Control<Contact>;
@@ -17,24 +16,36 @@ const ContactFormBank: React.FC<ContactFormBankProps> = ({ control }) => {
       <Controller
         control={control}
         name='bankCard.frontBankCard'
-        render={({ field: { onChange, value } }) => (
+        render={({ field: { onChange, value }, fieldState: { error } }) => (
           <div className='flex flex-col gap-2'>
             <Typography typography='subtitle1' className='text-white/80'>
-              {bankCardFormLabels.frontBankCard}
+              Mặt trước thẻ ngân hàng
             </Typography>
-            <ImageUploader image={value} onChange={onChange} className='text-white/80' />
+            <ImageUploader
+              image={value}
+              onChange={onChange}
+              error={Boolean(error)}
+              helpText={error?.message}
+              className='text-white/80'
+            />
           </div>
         )}
       />
       <Controller
         control={control}
         name='bankCard.backBankCard'
-        render={({ field: { onChange, value } }) => (
+        render={({ field: { onChange, value }, fieldState: { error } }) => (
           <div className='flex flex-col gap-2'>
             <Typography typography='subtitle1' className='text-white/80'>
-              {bankCardFormLabels.backBankCard}
+              Mặt sau thẻ ngân hàng
             </Typography>
-            <ImageUploader image={value} onChange={onChange} className='text-white/80' />
+            <ImageUploader
+              image={value}
+              onChange={onChange}
+              className='text-white/80'
+              error={Boolean(error)}
+              helpText={error?.message}
+            />
           </div>
         )}
       />

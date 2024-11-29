@@ -1,6 +1,6 @@
 'use client';
 
-import { dataGridLocalization } from '@fumy/ui/constants/localization';
+import { dataGridLocalization } from '@hvantoan/ui/constants/localization';
 import { Bot } from '@modules/(category)/_models/bot';
 import { useQueryBots } from '@modules/(category)/_queries/use-query-bots';
 import { QueryBotFilter } from '@modules/(category)/_types/bot-filter';
@@ -91,13 +91,10 @@ const BotList = forwardRef<BotListRef, BotListProps>(({ initFilters }, ref) => {
     onColumnFiltersChange: handleFiltersChanged,
     onPaginationChange: setFilters,
     localization: dataGridLocalization,
-    initialState: {
-      density: 'compact'
-    },
+    initialState: { density: 'comfortable' },
+    muiTableContainerProps: { className: 'w-full' },
     enableColumnFilters: false,
-    muiTableContainerProps: {
-      className: 'w-full'
-    }
+    enableColumnActions: false
   });
   return (
     <Card>

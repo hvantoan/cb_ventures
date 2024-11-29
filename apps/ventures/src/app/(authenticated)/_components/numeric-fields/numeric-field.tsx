@@ -1,4 +1,4 @@
-import { BaseNumericField, BaseNumericFieldProps } from '@fumy/ui/components';
+import { BaseNumericField, BaseNumericFieldProps } from '@hvantoan/ui/components';
 
 import { useAppSelector } from '@/store';
 

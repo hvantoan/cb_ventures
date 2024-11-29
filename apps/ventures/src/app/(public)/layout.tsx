@@ -1,4 +1,4 @@
-import { isFromMobileBrowser } from '@fumy/utilities/helpers/is-from-mobile-browser';
+import { isFromMobileBrowser } from '@hvantoan/utilities/helpers/is-from-mobile-browser';
 import { decodeJwt } from 'jose';
 import type { Session } from 'next-auth';
 import { cookies } from 'next/headers';
@@ -23,6 +23,7 @@ const LandingLayout: React.FC<WrappedComponentProps> = async ({ children }) => {
   const roles = (session?.token as string)
     ? (decodeJwt(session?.token as string)[ROLE_KEY] as Array<Roles>)
     : new Array<Roles>();
+
   const validNavItems = getValidNavigationItems(navItems, roles);
   return (
     <div className='flex h-full w-full'>

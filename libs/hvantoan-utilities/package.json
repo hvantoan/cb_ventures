@@ -1,7 +1,7 @@
 {
-  "name": "@fumy/utilities",
+  "name": "@hvantoan/utilities",
   "version": "1.0.0",
-  "description": "Utilities and helpers for Fumy",
+  "description": "Utilities and helpers for hvantoan",
   "type": "module",
   "private": true,
   "exports": {
@@ -9,7 +9,7 @@
     "./helpers/*": "./helpers/*.ts"
   },
   "dependencies": {
-    "@fumy/models": "workspace:^",
+    "@hvantoan/models": "workspace:^",
     "@tanstack/react-query": "^5.49.2",
     "class-validator": "^0.14.1",
     "iron-session": "^8.0.1",
@@ -21,4 +21,3 @@
     "axios": "^1.6.2"
   }
 }
-

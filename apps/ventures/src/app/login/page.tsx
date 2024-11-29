@@ -1,4 +1,4 @@
-import { isFromMobileBrowser } from '@fumy/utilities/helpers/is-from-mobile-browser';
+import { isFromMobileBrowser } from '@hvantoan/utilities/helpers/is-from-mobile-browser';
 import dayjs from 'dayjs';
 import { type Session } from 'next-auth';
 import { redirect } from 'next/navigation';

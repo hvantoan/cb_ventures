@@ -1,5 +1,5 @@
-import { DialogHeader } from '@fumy/ui/components';
-import { useToggle } from '@fumy/utilities/hooks';
+import { DialogHeader } from '@hvantoan/ui/components';
+import { useToggle } from '@hvantoan/utilities/hooks';
 import {
   Button,
   Dialog,

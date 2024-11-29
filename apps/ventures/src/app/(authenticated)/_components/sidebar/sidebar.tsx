@@ -38,7 +38,7 @@ const Sidebar: React.FC<SidebarProps> = ({ initState, navItems }) => {
     await clientInstance.put(INTERNAL_CONFIG_PERSIST_SIDEBAR_STATE_ENDPOINT, { expended: !collapsed });
   }, [collapsed]);
 
-  const [noSidebar, setNoSidebar] = useState(false);
+  const [noSidebar, setNoSidebar] = useState(true);
 
   useEffect(() => {
     setNoSidebar(noSidebarPaths.includes(pathname));

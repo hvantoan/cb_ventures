@@ -1,6 +1,6 @@
 'use client';
 
-import { useToggle } from '@fumy/utilities/hooks';
+import { useToggle } from '@hvantoan/utilities/hooks';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import HistoryIcon from '@mui/icons-material/History';
 import PinIcon from '@mui/icons-material/Pin';

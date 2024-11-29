@@ -1,4 +1,4 @@
-import { type ExtendedControllerProps } from '@fumy/ui/base';
+import { type ExtendedControllerProps } from '@hvantoan/ui/base';
 import { Contact } from '@modules/(contact)/_model/contact';
 import { TextField } from '@mui/material';
 

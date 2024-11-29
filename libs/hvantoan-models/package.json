@@ -1,5 +1,5 @@
 {
-  "name": "@fumy/models",
+  "name": "@hvantoan/models",
   "version": "1.0.0",
   "description": "Declare repo models and base types",
   "type": "module",
@@ -13,3 +13,4 @@
     ".": "./index.d.ts"
   }
 }
+

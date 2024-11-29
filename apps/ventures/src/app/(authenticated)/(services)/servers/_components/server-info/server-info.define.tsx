@@ -1,5 +1,5 @@
-import { DATE_TIME_FORMAT } from '@fumy/utilities/constants';
-import { toCurrency } from '@fumy/utilities/helpers/number-formatter';
+import { DATE_TIME_FORMAT } from '@hvantoan/utilities/constants';
+import { toCurrency } from '@hvantoan/utilities/helpers/number-formatter';
 import { ETransactionType } from '@modules/(services)/_enums/transaction-type';
 import { Transaction } from '@modules/(services)/_models';
 import TransactionStatusChip from '@modules/(services)/transactions/_components/transaction-status-chip/transaction-status-chip';

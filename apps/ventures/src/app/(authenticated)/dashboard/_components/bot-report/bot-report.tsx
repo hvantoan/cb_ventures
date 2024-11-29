@@ -1,6 +1,6 @@
 'use client';
 
-import { NoRecordView } from '@fumy/ui/components/no-record-view';
+import { NoRecordView } from '@hvantoan/ui/components/no-record-view';
 import { QuantityDisplay } from '@modules/_components/numeric-display';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { MRT_ColumnDef, MRT_TableContainer, useMaterialReactTable } from 'material-react-table';

@@ -1,6 +1,6 @@
 'use client';
 
-import { useToggle } from '@fumy/utilities/hooks';
+import { useToggle } from '@hvantoan/utilities/hooks';
 
 import BotInfoHeader from '../_components/bot-info-header';
 import { BotDetailCard } from './_components';

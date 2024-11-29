@@ -1,7 +1,7 @@
 'use client';
 
-import { DialogHeader } from '@fumy/ui/components';
-import { toCurrency } from '@fumy/utilities/helpers/number-formatter';
+import { DialogHeader } from '@hvantoan/ui/components';
+import { toCurrency } from '@hvantoan/utilities/helpers/number-formatter';
 import { Transaction } from '@modules/(services)/_models';
 import { useQueryServer } from '@modules/(services)/_queries/use-query-server';
 import { useQueryTransactions } from '@modules/(services)/_queries/use-query-transactions';
