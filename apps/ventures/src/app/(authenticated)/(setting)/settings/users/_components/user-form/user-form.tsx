@@ -65,7 +65,7 @@ const UserForm: React.FC<UserFormProps> = ({ userId }) => {
         if (!formData?.id) {
           router.replace(settingUserPath);
         }
-      } catch (e) {
+      } catch {
         // nothing
       }
     }, 300),

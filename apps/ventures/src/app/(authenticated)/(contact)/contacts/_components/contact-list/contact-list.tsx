@@ -1,6 +1,6 @@
 'use client';
 
-import { dataGridLocalization } from '@fumy/ui/constants/localization';
+import { dataGridLocalization } from '@hvantoan/ui/constants/localization';
 import { Contact } from '@modules/(contact)/_model/contact';
 import { useQueryContacts } from '@modules/(contact)/_queries/use-query-contacts';
 import SearchIcon from '@mui/icons-material/Search';

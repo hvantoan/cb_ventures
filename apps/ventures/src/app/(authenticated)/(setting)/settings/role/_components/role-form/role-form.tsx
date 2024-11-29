@@ -63,7 +63,7 @@ const RoleForm: React.FC<RoleFormProps> = ({ roleId }) => {
         if (!formData?.id) {
           router.replace(settingRolePath);
         }
-      } catch (e) {
+      } catch {
         // nothing
       }
     }, 300),

@@ -1,7 +1,7 @@
 /// <reference types="redux-persist" />
-/// <reference types="@fumy/ui/mui-theme" />
-/// <reference types="@fumy/ui/base-ui" />
-/// <reference types="@fumy/models" />
+/// <reference types="@hvantoan/ui/mui-theme" />
+/// <reference types="@hvantoan/ui/base-ui" />
+/// <reference types="@hvantoan/models" />
 
 declare module 'aos';
 declare interface NavigationInfo {

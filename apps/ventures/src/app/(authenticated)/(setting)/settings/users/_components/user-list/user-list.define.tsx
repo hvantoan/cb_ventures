@@ -2,7 +2,7 @@ import { User } from '@modules/(setting)/settings/users/_models/user';
 import { Chip, Typography } from '@mui/material';
 import { MRT_ColumnDef } from 'material-react-table';
 
-import FumyLink from '@/components/fumy-link';
+import AppLink from '@/components/app-link';
 import { settingUserPath } from '@/routes';
 
 const ADMIN_ROLE = 'Administrator';
@@ -18,7 +18,7 @@ export const columns: Array<MRT_ColumnDef<User>> = [
           {renderedCellValue}
         </Typography>
       ) : (
-        <FumyLink href={`${settingUserPath}/${row.original.id}`}>{renderedCellValue}</FumyLink>
+        <AppLink href={`${settingUserPath}/${row.original.id}`}>{renderedCellValue}</AppLink>
       )
   },
   {

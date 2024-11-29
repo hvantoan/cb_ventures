@@ -13,7 +13,13 @@ const nextConfig = {
         canvas: './empty-module.ts'
       }
     },
-    optimizePackageImports: ['@fumy/ui', '@fumy/utilities', '@mui/x-charts', 'material-react-table', '@mui/lab'],
+    optimizePackageImports: [
+      '@hvantoan/ui',
+      '@hvantoan/utilities',
+      '@mui/x-charts',
+      'material-react-table',
+      '@mui/lab'
+    ],
     scrollRestoration: false,
     serverActions: {
       bodySizeLimit: '10mb'
@@ -63,10 +69,6 @@ const nextConfig = {
   },
   images: {
     remotePatterns: [
-      { hostname: 'staging-api.fumydatacenter.com' },
-      { hostname: 'api.fumydatacenter.com' },
-      { hostname: 'staging-man-api.fumydatacenter.com' },
-      { hostname: 'storage.fumydatacenter.com' },
       { hostname: 'img.icons8.com' },
       { hostname: 'ftp.hvantoan.io.vn' },
       { hostname: 'ventures.dc.hvantoan.io.vn' }

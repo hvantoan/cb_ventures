@@ -1,8 +1,8 @@
 'use client';
 
-import { QueryProvider, StoreProvider, ToastContainer } from '@fumy/ui/components';
-import { MountPoint } from '@fumy/ui/helpers';
-import { ThemeRegistry } from '@fumy/ui/theme';
+import { QueryProvider, StoreProvider, ToastContainer } from '@hvantoan/ui/components';
+import { MountPoint } from '@hvantoan/ui/helpers';
+import { ThemeRegistry } from '@hvantoan/ui/theme';
 import { NoSsr } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';

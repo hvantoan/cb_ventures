@@ -1,6 +1,6 @@
 'use client';
 
-import { confirm } from '@fumy/ui/helpers';
+import { confirm } from '@hvantoan/ui/helpers';
 import { deleteBotAction } from '@modules/(category)/_actions/delete-bot-action';
 import { LoadingButton } from '@mui/lab';
 import { Button, Tooltip, Typography } from '@mui/material';

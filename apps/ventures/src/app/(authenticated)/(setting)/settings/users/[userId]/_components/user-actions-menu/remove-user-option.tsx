@@ -44,7 +44,7 @@ const RemoveUserOption: React.FC<RemoveUserOptionProps> = ({ closeMenu, userId }
       );
       await queryClient.invalidateQueries({ queryKey: [USER_QK] });
       router.replace(settingUserPath);
-    } catch (e) {
+    } catch {
       // nothing
     }
   }, [userId]);

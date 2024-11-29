@@ -1,4 +1,4 @@
-import { font } from '@fumy/ui/constants/fonts';
+import { font } from '@hvantoan/ui/constants/fonts';
 import type { Metadata, Viewport } from 'next';
 
 import { basePath } from '@/routes';

@@ -1,6 +1,6 @@
 'use client';
 
-import { dataGridLocalization } from '@fumy/ui/constants/localization';
+import { dataGridLocalization } from '@hvantoan/ui/constants/localization';
 import { Server } from '@modules/(services)/_models/server';
 import { useQueryServers } from '@modules/(services)/_queries/use-query-servers';
 import { QueryServerFilter } from '@modules/(services)/_types/server-filter';

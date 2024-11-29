@@ -1,4 +1,4 @@
-import { type ExtendedControllerProps } from '@fumy/ui/base';
+import { type ExtendedControllerProps } from '@hvantoan/ui/base';
 import { Transaction } from '@modules/(services)/_models';
 import { NumericField } from '@modules/_components/numeric-fields';
 

@@ -1,7 +1,7 @@
 'use client';
 
-import { DialogHeader, PasswordField } from '@fumy/ui/components';
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
+import { DialogHeader, PasswordField } from '@hvantoan/ui/components';
 import { Button, DialogActions, DialogContent, Typography } from '@mui/material';
 import { instanceToPlain } from 'class-transformer';
 import { useRouter } from 'next/navigation';
@@ -65,7 +65,7 @@ const ResetPinCodeDialogPage: React.FC<Params<'userId'>> = ({ params: { userId }
         { delay: 0 }
       );
       handleCancel();
-    } catch (e) {
+    } catch {
       // nothing
     }
   }, []);

@@ -1,4 +1,4 @@
-/// <reference types="@fumy/models" />
+/// <reference types="@hvantoan/models" />
 /// <reference types="redux-persist" />
 
 declare module '*.svg' {

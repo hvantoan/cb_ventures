@@ -1,7 +1,7 @@
 'use client';
 
-import { NoRecordView } from '@fumy/ui/components/no-record-view';
-import { toCurrency } from '@fumy/utilities/helpers/number-formatter';
+import { NoRecordView } from '@hvantoan/ui/components/no-record-view';
+import { toCurrency } from '@hvantoan/utilities/helpers/number-formatter';
 import { QuantityDisplay } from '@modules/_components/numeric-display';
 import { type ServerReport } from '@modules/dashboard/_models/server-report';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';

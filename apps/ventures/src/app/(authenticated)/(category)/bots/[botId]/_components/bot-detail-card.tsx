@@ -1,6 +1,6 @@
 'use client';
 
-import DefaultProductImage from '@fumy/ui/assets/images/product-default.png';
+import DefaultProductImage from '@hvantoan/ui/assets/images/product-default.png';
 import { useQueryBot } from '@modules/(category)/_queries/use-query-bot';
 import { Card, CardContent, Stack, Typography } from '@mui/material';
 import Image from 'next/image';

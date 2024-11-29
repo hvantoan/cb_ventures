@@ -7,7 +7,7 @@ interface LinkProps extends TypographyProps<'a'> {
   scroll?: boolean;
 }
 
-const FumyLink: React.FC<LinkProps> = ({
+const AppLink: React.FC<LinkProps> = ({
   href,
   scroll,
   fontWeight = 500,
@@ -29,4 +29,4 @@ const FumyLink: React.FC<LinkProps> = ({
   );
 };
 
-export default FumyLink;
+export default AppLink;

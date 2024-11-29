@@ -1,6 +1,6 @@
 'use client';
 
-import { dataGridLocalization } from '@fumy/ui/constants/localization';
+import { dataGridLocalization } from '@hvantoan/ui/constants/localization';
 import { Bot } from '@modules/(category)/_models/bot';
 import { useQueryBots } from '@modules/(category)/_queries/use-query-bots';
 import { QueryBotFilter } from '@modules/(category)/_types/bot-filter';

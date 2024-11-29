@@ -1,6 +1,6 @@
 'use client';
 
-import { useToggle } from '@fumy/utilities/hooks';
+import { useToggle } from '@hvantoan/utilities/hooks';
 import { Box, Grow, MenuList, Paper, Popper, PopperProps } from '@mui/material';
 import Link from 'next/link';
 import { useSelectedLayoutSegments } from 'next/navigation';

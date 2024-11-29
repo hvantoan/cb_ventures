@@ -61,7 +61,7 @@ const MerchantForm: React.FC<MerchantFormProps> = ({ formId }) => {
         { delay: 0 }
       );
       await queryClient.invalidateQueries({ queryKey: [MERCHANT_QK] });
-    } catch (e) {
+    } catch {
       // nothing
     }
   }, []);

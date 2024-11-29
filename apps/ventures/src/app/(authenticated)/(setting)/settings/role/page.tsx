@@ -1,4 +1,4 @@
-import { getQueryClient } from '@fumy/utilities/query';
+import { getQueryClient } from '@hvantoan/utilities/query';
 import { Button, Typography } from '@mui/material';
 import { HydrationBoundary } from '@tanstack/react-query';
 import Link from 'next/link';

@@ -1,6 +1,6 @@
 'use client';
 
-import TradingImage from '@fumy/ui/assets/images/about01-2.png';
+import TradingImage from '@hvantoan/ui/assets/images/about01-2.png';
 import { Button, Container } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';

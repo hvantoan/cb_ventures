@@ -1,6 +1,6 @@
 'use client';
 
-import { PasswordField } from '@fumy/ui/components';
+import { PasswordField } from '@hvantoan/ui/components';
 import { RoleSelect } from '@modules/(setting)/settings/role/_components/role-select';
 import { Card, CardContent, CardHeader, FormControlLabel, Switch, TextField } from '@mui/material';
 import { useCallback } from 'react';

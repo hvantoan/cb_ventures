@@ -1,6 +1,6 @@
 'use client';
 
-import { DateRangePicker } from '@fumy/ui/components';
+import { DateRangePicker } from '@hvantoan/ui/components';
 import { useQueryTransactions } from '@modules/(services)/_queries/use-query-transactions';
 import { QueryTransactionFilter } from '@modules/(services)/_types/transaction-filter';
 import { Transaction } from '@modules/(services)/transactions/_models/transaction';

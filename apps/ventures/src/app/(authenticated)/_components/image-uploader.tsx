@@ -1,4 +1,4 @@
-import { FileUploadIcon } from '@fumy/ui/assets/icons';
+import { FileUploadIcon } from '@hvantoan/ui/assets/icons';
 import { Fade, IconButton, Tooltip, Typography } from '@mui/material';
 import { clsx } from 'clsx';
 import NextImage from 'next/image';

@@ -1,4 +1,4 @@
-import shareConfig from '@fumy/ui/tailwind.shared';
+import shareConfig from '@hvantoan/ui/tailwind.shared';
 
 const config = {
   presets: [shareConfig],

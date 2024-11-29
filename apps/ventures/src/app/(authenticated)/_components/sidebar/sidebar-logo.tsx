@@ -1,6 +1,6 @@
 'use client';
 
-import DefaultLogo from '@fumy/ui/assets/images/default-logo.png';
+import DefaultLogo from '@hvantoan/ui/assets/images/default-logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 

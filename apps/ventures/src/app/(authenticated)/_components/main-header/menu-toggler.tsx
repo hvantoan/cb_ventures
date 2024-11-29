@@ -1,6 +1,6 @@
 'use client';
 
-import { MenuItemIcon } from '@fumy/ui/assets/icons';
+import { MenuItemIcon } from '@hvantoan/ui/assets/icons';
 import { IconButton } from '@mui/material';
 import { useCallback } from 'react';
 

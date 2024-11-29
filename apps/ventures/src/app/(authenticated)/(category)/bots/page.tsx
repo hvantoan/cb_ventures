@@ -1,4 +1,4 @@
-import { getQueryClient } from '@fumy/utilities/query';
+import { getQueryClient } from '@hvantoan/utilities/query';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 
 import { CLOUD_BOT_LIST_ENDPOINT } from '@/query/cloud-endpoints';

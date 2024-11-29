@@ -1,4 +1,4 @@
-import { isFromMobileBrowser } from '@fumy/utilities/helpers/is-from-mobile-browser';
+import { isFromMobileBrowser } from '@hvantoan/utilities/helpers/is-from-mobile-browser';
 import { decodeJwt } from 'jose';
 import type { Session } from 'next-auth';
 import { cookies } from 'next/headers';

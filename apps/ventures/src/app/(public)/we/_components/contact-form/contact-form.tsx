@@ -78,7 +78,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ formId, children: actions }) 
         { delay: 0 }
       );
       await queryClient.invalidateQueries({ queryKey: [CONTACT_QK] });
-    } catch (e) {
+    } catch {
       // nothing
     }
   }, []);

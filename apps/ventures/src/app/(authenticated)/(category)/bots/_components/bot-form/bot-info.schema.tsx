@@ -1,5 +1,5 @@
-import { type ExtendedControllerProps } from '@fumy/ui/base';
-import { TextArea } from '@fumy/ui/components';
+import { type ExtendedControllerProps } from '@hvantoan/ui/base';
+import { TextArea } from '@hvantoan/ui/components';
 import { Bot } from '@modules/(category)/_models/bot';
 import { TextField } from '@mui/material';
 

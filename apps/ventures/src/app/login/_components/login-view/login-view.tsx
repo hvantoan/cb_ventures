@@ -1,6 +1,6 @@
 'use client';
 
-import LoginIllustration from '@fumy/ui/assets/illustrations/illustration-login.png';
+import LoginIllustration from '@hvantoan/ui/assets/illustrations/illustration-login.png';
 import { Typography, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
 

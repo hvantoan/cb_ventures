@@ -1,13 +1,13 @@
 'use client';
 
-import { DATE_TIME_FORMAT } from '@fumy/utilities/constants';
-import { toCurrency } from '@fumy/utilities/helpers/number-formatter';
+import { DATE_TIME_FORMAT } from '@hvantoan/utilities/constants';
+import { toCurrency } from '@hvantoan/utilities/helpers/number-formatter';
 import { Server } from '@modules/(services)/_models/server';
 import { IconButton } from '@mui/material';
 import dayjs from 'dayjs';
 import type { MRT_ColumnDef } from 'material-react-table';
 
-import FumyLink from '@/components/fumy-link';
+import AppLink from '@/components/app-link';
 import { serversPath } from '@/routes';
 
 const handleNavigate = (serverId: string) => {
@@ -28,7 +28,7 @@ export const columns: Array<MRT_ColumnDef<Server>> = [
     accessorKey: 'iD_MT4',
     size: 100,
     Cell: ({ renderedCellValue, row }) => {
-      return <FumyLink href={`${serversPath}/${row.original.id}`}>#{renderedCellValue}</FumyLink>;
+      return <AppLink href={`${serversPath}/${row.original.id}`}>#{renderedCellValue}</AppLink>;
     }
   },
   {

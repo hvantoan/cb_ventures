@@ -1,6 +1,6 @@
 'use client';
 
-import { useToggle } from '@fumy/utilities/hooks';
+import { useToggle } from '@hvantoan/utilities/hooks';
 import { Button } from '@mui/material';
 import { useEffect } from 'react';
 import { toast, ToastItem } from 'react-toastify';

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { autoHideScrollbarStyle } from '@fumy/ui/styles';
+import { autoHideScrollbarStyle } from '@hvantoan/ui/styles';
 import { TableContainer } from '@mui/material';
 
 export const StyledTableContainer = styled(TableContainer)`

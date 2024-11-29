@@ -17,6 +17,8 @@ module.exports = {
   ],
   plugins: ['prettier', '@typescript-eslint', '@tanstack/query'],
   rules: {
+    '@typescript-eslint/no-throw-literal': 0,
+    'linebreak-style': ['warn', 'windows'],
     'prettier/prettier': 1,
     'react/react-in-jsx-scope': 0,
     'react/jsx-props-no-spreading': 0,

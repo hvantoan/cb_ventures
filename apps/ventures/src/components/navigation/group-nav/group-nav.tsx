@@ -1,6 +1,6 @@
 'use client';
 
-import { useToggle } from '@fumy/utilities/hooks';
+import { useToggle } from '@hvantoan/utilities/hooks';
 import { Collapse } from '@mui/material';
 import React, { useLayoutEffect, useRef } from 'react';
 

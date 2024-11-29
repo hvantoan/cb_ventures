@@ -1,4 +1,4 @@
-import { Match } from '@fumy/utilities/decorators';
+import { Match } from '@hvantoan/utilities/decorators';
 import { User } from '@modules/(setting)/settings/users/_models/user';
 import { MinLength, ValidateIf } from 'class-validator';
 
