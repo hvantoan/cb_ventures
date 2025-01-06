@@ -19,7 +19,7 @@
     "@hvantoan/ui": "workspace:^",
     "@hvantoan/utilities": "workspace:^",
     "@hookform/resolvers": "^3.3.4",
-    "@mui/icons-material": "^5.16.7",
+    "@mui/icons-material": "^6.3.1",
     "@mui/lab": "5.0.0-alpha.170",
     "@mui/material": "^5.16.7",
     "@mui/system": "^5.16.7",
